@@ -1,0 +1,175 @@
+{
+  "checked_at_utc": "2026-10-22T10:44:47.509776+00:00",
+  "repository": "https://github.com/Xiaoman-0vo/urban-cooling-platform-demo",
+  "release_id": 420561725,
+  "release_tag": "v0.1.0-collab-20261022",
+  "release_url": "https://github.com/Xiaoman-0vo/urban-cooling-platform-demo/releases/tag/v0.1.0-collab-20261022",
+  "draft": false,
+  "prerelease": true,
+  "published_at": "2026-10-22T10:42:56Z",
+  "api_method": "Connected GitHub fetch GET release metadata; public unauthenticated HEAD or bounded GET probe for downloads",
+  "remote_digest_method": "GitHub Release asset SHA256 digest compared to independently verified local package SHA256",
+  "full_remote_payload_rehashed": false,
+  "full_2GB_download_performed": false,
+  "all_sizes_and_GitHub_digests_match": true,
+  "all_public_downloads_available": true,
+  "checksum_asset": {
+    "asset_id": 665533599,
+    "remote_bytes": 375,
+    "local_bytes": 375,
+    "bytes_match": true,
+    "remote_digest": "sha256:fa9795b86b694493394f99893d731bda3b4d10f10208604eddbc33fa21866abe",
+    "local_sha256": "fa9795b86b694493394f99893d731bda3b4d10f10208604eddbc33fa21866abe",
+    "digest_matches": true
+  },
+  "assets": [
+    {
+      "name": "01_WorldPop2020_China.zip",
+      "asset_id": 665431917,
+      "expected_bytes": 855466230,
+      "remote_bytes": 855466230,
+      "bytes_match": true,
+      "expected_sha256": "a44bc1c37ce51cc02c9554b22eaf8d7f6ffdebb34ff57da637630cd9b041a9b8",
+      "GitHub_remote_digest": "sha256:a44bc1c37ce51cc02c9554b22eaf8d7f6ffdebb34ff57da637630cd9b041a9b8",
+      "digest_matches": true,
+      "remote_state": "uploaded",
+      "public_download_probe": {
+        "name": "01_WorldPop2020_China.zip",
+        "public_url": "https://github.com/Xiaoman-0vo/urban-cooling-platform-demo/releases/download/v0.1.0-collab-20261022/01_WorldPop2020_China.zip",
+        "attempts": [
+          {
+            "method": "HEAD",
+            "status": 200,
+            "final_url_without_ephemeral_query": "https://release-assets.githubusercontent.com/github-production-release-asset/1428215653/ca564f15-cd09-4d7f-be10-015f8aab9b76",
+            "content_length": "855466230",
+            "content_range": null,
+            "bytes_read": 0,
+            "sample_hex": null
+          }
+        ],
+        "available": true
+      }
+    },
+    {
+      "name": "02_CLCD2020_China.zip",
+      "asset_id": 665452849,
+      "expected_bytes": 756021034,
+      "remote_bytes": 756021034,
+      "bytes_match": true,
+      "expected_sha256": "21c33c1b1b79ab6456e4ea784ab5700172d1330c7c37f7ae965ae8db899a55c2",
+      "GitHub_remote_digest": "sha256:21c33c1b1b79ab6456e4ea784ab5700172d1330c7c37f7ae965ae8db899a55c2",
+      "digest_matches": true,
+      "remote_state": "uploaded",
+      "public_download_probe": {
+        "name": "02_CLCD2020_China.zip",
+        "public_url": "https://github.com/Xiaoman-0vo/urban-cooling-platform-demo/releases/download/v0.1.0-collab-20261022/02_CLCD2020_China.zip",
+        "attempts": [
+          {
+            "method": "HEAD",
+            "status": 200,
+            "final_url_without_ephemeral_query": "https://release-assets.githubusercontent.com/github-production-release-asset/1428215653/9dfb6119-1f86-42fd-802b-8fc9c2fc9d88",
+            "content_length": "756021034",
+            "content_range": null,
+            "bytes_read": 0,
+            "sample_hex": null
+          }
+        ],
+        "available": true
+      }
+    },
+    {
+      "name": "03_Chengdu_Buildings_Greenness.zip",
+      "asset_id": 665458458,
+      "expected_bytes": 296274587,
+      "remote_bytes": 296274587,
+      "bytes_match": true,
+      "expected_sha256": "0e31f03a16dd5e17ebff86ab28f44050332cb2bfc875614e52b62dcdc5caac07",
+      "GitHub_remote_digest": "sha256:0e31f03a16dd5e17ebff86ab28f44050332cb2bfc875614e52b62dcdc5caac07",
+      "digest_matches": true,
+      "remote_state": "uploaded",
+      "public_download_probe": {
+        "name": "03_Chengdu_Buildings_Greenness.zip",
+        "public_url": "https://github.com/Xiaoman-0vo/urban-cooling-platform-demo/releases/download/v0.1.0-collab-20261022/03_Chengdu_Buildings_Greenness.zip",
+        "attempts": [
+          {
+            "method": "HEAD",
+            "status": 200,
+            "final_url_without_ephemeral_query": "https://release-assets.githubusercontent.com/github-production-release-asset/1428215653/07ae3373-9346-4b06-826d-90058028f8d6",
+            "content_length": "296274587",
+            "content_range": null,
+            "bytes_read": 0,
+            "sample_hex": null
+          }
+        ],
+        "available": true
+      }
+    },
+    {
+      "name": "04_Landsat_OSM_Basemaps.zip",
+      "asset_id": 665461362,
+      "expected_bytes": 26948673,
+      "remote_bytes": 26948673,
+      "bytes_match": true,
+      "expected_sha256": "755d16c3381203059e4c9822a88575766ad6d2810608ebed2203e71a0f218533",
+      "GitHub_remote_digest": "sha256:755d16c3381203059e4c9822a88575766ad6d2810608ebed2203e71a0f218533",
+      "digest_matches": true,
+      "remote_state": "uploaded",
+      "public_download_probe": {
+        "name": "04_Landsat_OSM_Basemaps.zip",
+        "public_url": "https://github.com/Xiaoman-0vo/urban-cooling-platform-demo/releases/download/v0.1.0-collab-20261022/04_Landsat_OSM_Basemaps.zip",
+        "attempts": [
+          {
+            "method": "HEAD",
+            "status": 200,
+            "final_url_without_ephemeral_query": "https://release-assets.githubusercontent.com/github-production-release-asset/1428215653/bb1c6dc9-3863-4804-8a51-e9782e7c0a1e",
+            "content_length": "26948673",
+            "content_range": null,
+            "bytes_read": 0,
+            "sample_hex": null
+          }
+        ],
+        "available": true
+      }
+    }
+  ],
+  "status": "passed",
+  "download_tool_check": {
+    "argument_syntax": "Positional commands list and verify; --list and --verify are not supported flags",
+    "cli_runs": [
+      {
+        "arguments": [
+          "list"
+        ],
+        "returncode": 0,
+        "stdout": "Release status: published; tag: v0.1.0-collab-20261022\n01_WorldPop2020_China.zip\t855466230 bytes\ta44bc1c37ce51cc02c9554b22eaf8d7f6ffdebb34ff57da637630cd9b041a9b8\n02_CLCD2020_China.zip\t756021034 bytes\t21c33c1b1b79ab6456e4ea784ab5700172d1330c7c37f7ae965ae8db899a55c2\n03_Chengdu_Buildings_Greenness.zip\t296274587 bytes\t0e31f03a16dd5e17ebff86ab28f44050332cb2bfc875614e52b62dcdc5caac07\n04_Landsat_OSM_Basemaps.zip\t26948673 bytes\t755d16c3381203059e4c9822a88575766ad6d2810608ebed2203e71a0f218533\n",
+        "stderr": ""
+      },
+      {
+        "arguments": [
+          "verify",
+          "04_Landsat_OSM_Basemaps.zip",
+          "--directory",
+          "/Users/wangyanbo/科研/国自然——高密度街区降温/ICT创新赛/2026-2027/GitHub数据发布包_20261022"
+        ],
+        "returncode": 0,
+        "stdout": "Local SHA256 verified: 04_Landsat_OSM_Basemaps.zip\n",
+        "stderr": ""
+      }
+    ],
+    "existing_local_04_package_verified": true,
+    "network_download_performed_by_tool": false,
+    "offline_tests_after_published_status": {
+      "returncode": 0,
+      "passed_count": 8,
+      "stdout": "",
+      "stderr": "test_existing_valid_file_skips_network (test_download_data.DownloadDataTests.test_existing_valid_file_skips_network) ... ok\ntest_existing_wrong_file_is_never_overwritten (test_download_data.DownloadDataTests.test_existing_wrong_file_is_never_overwritten) ... ok\ntest_network_failure_does_not_leave_partial_zip (test_download_data.DownloadDataTests.test_network_failure_does_not_leave_partial_zip) ... ok\ntest_oversized_response_rejected (test_download_data.DownloadDataTests.test_oversized_response_rejected) ... ok\ntest_unsafe_index_filename_rejected (test_download_data.DownloadDataTests.test_unsafe_index_filename_rejected) ... ok\ntest_valid_index_matches_known_four_local_assets (test_download_data.DownloadDataTests.test_valid_index_matches_known_four_local_assets) ... ok\ntest_valid_response_is_saved_and_verified (test_download_data.DownloadDataTests.test_valid_response_is_saved_and_verified) ... ok\ntest_wrong_hash_cleans_only_own_temporary_file (test_download_data.DownloadDataTests.test_wrong_hash_cleans_only_own_temporary_file) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.005s\n\nOK\n"
+    }
+  },
+  "local_release_assets_updated": {
+    "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/ICT创新赛/2026-2027/GitHub协作版/datasets/release_assets.json",
+    "status": "published",
+    "remote_assets_verified": true,
+    "all_four_assets_remote_verified": true,
+    "only_this_datasets_file_edited": true
+  }
+}

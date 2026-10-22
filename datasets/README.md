@@ -4,17 +4,17 @@
 
 ## 当前交付状态
 
-截至本次本地整理，四个 ZIP 已生成且逐成员完整性检查通过；**远程 Release 与附件尚待发布（pending）**。以下链接是固定的预定地址，在发布完成前可能返回 404。只有发布者实际确认远程附件后，才把 [release_assets.json](release_assets.json) 中的状态改为 `published`；这个状态文件本身不替代下载后的 SHA256 校验。
+2026-10-22，四个 ZIP 已公开发布。本地已逐成员检查完整性，远端 Release 返回的四个附件字节数及 SHA256 与本地清单一致。[release_assets.json](release_assets.json) 记录发布与核查状态；该状态本身不替代队友下载后的 SHA256 校验。
 
-预定 Release：[`v0.1.0-collab-20261022`](https://github.com/Xiaoman-0vo/urban-cooling-platform-demo/releases/tag/v0.1.0-collab-20261022)。
+已发布 Release：[`v0.1.0-collab-20261022`](https://github.com/Xiaoman-0vo/urban-cooling-platform-demo/releases/tag/v0.1.0-collab-20261022)。
 
-| 数据包及预定下载地址 | 实际 ZIP 字节 | 约 GB | 状态 |
+| 数据包及下载地址 | 实际 ZIP 字节 | 约 GB | 状态 |
 | --- | ---: | ---: | --- |
-| [01_WorldPop2020_China.zip](https://github.com/Xiaoman-0vo/urban-cooling-platform-demo/releases/download/v0.1.0-collab-20261022/01_WorldPop2020_China.zip) | 855,466,230 | 0.855 | pending |
-| [02_CLCD2020_China.zip](https://github.com/Xiaoman-0vo/urban-cooling-platform-demo/releases/download/v0.1.0-collab-20261022/02_CLCD2020_China.zip) | 756,021,034 | 0.756 | pending |
-| [03_Chengdu_Buildings_Greenness.zip](https://github.com/Xiaoman-0vo/urban-cooling-platform-demo/releases/download/v0.1.0-collab-20261022/03_Chengdu_Buildings_Greenness.zip) | 296,274,587 | 0.296 | pending |
-| [04_Landsat_OSM_Basemaps.zip](https://github.com/Xiaoman-0vo/urban-cooling-platform-demo/releases/download/v0.1.0-collab-20261022/04_Landsat_OSM_Basemaps.zip) | 26,948,673 | 0.027 | pending |
-| **总计** | **1,934,710,524** | **1.935** | 本地已核验，远程待发布 |
+| [01_WorldPop2020_China.zip](https://github.com/Xiaoman-0vo/urban-cooling-platform-demo/releases/download/v0.1.0-collab-20261022/01_WorldPop2020_China.zip) | 855,466,230 | 0.855 | 已发布 |
+| [02_CLCD2020_China.zip](https://github.com/Xiaoman-0vo/urban-cooling-platform-demo/releases/download/v0.1.0-collab-20261022/02_CLCD2020_China.zip) | 756,021,034 | 0.756 | 已发布 |
+| [03_Chengdu_Buildings_Greenness.zip](https://github.com/Xiaoman-0vo/urban-cooling-platform-demo/releases/download/v0.1.0-collab-20261022/03_Chengdu_Buildings_Greenness.zip) | 296,274,587 | 0.296 | 已发布 |
+| [04_Landsat_OSM_Basemaps.zip](https://github.com/Xiaoman-0vo/urban-cooling-platform-demo/releases/download/v0.1.0-collab-20261022/04_Landsat_OSM_Basemaps.zip) | 26,948,673 | 0.027 | 已发布 |
+| **总计** | **1,934,710,524** | **1.935** | 四包远端身份已核对 |
 
 GB 按 10 亿字节计算，总量约 1.802 GiB。清单中的 118 项源文件及元数据解压后合计 2,356,992,143 字节；压缩包和解压内容同时保留约需 4.3 GB，建议预留至少 5 GB。没有把全国所有年份、其他城市或未取得的完整卫星影像算进来。
 
@@ -46,13 +46,13 @@ a44bc1c37ce51cc02c9554b22eaf8d7f6ffdebb34ff57da637630cd9b041a9b8  01_WorldPop202
 
 `download_data.py` 使用 Python 3.11 及以上版本的标准库，不安装第三方依赖。以下命令从仓库根目录执行。macOS 使用 `python3`；Windows 通常使用 `py -3`。先确认所用解释器版本符合要求。
 
-查看预定附件与校验信息，不连接外网：
+查看附件与校验信息，不连接外网：
 
 ```text
 python3 datasets/download_data.py list
 ```
 
-Release 发布后，下载全部或只下载较小的观测道路包：
+下载全部或只下载较小的观测道路包：
 
 ```text
 python3 datasets/download_data.py download --all
@@ -75,7 +75,7 @@ python3 datasets/download_data.py verify 04_Landsat_OSM_Basemaps.zip --directory
 
 脚本只在明确执行 `download` 时联网。它逐块读取并同时要求大小与 SHA256 符合清单；验证完成后才保存为正式 ZIP。已有且一致的文件会跳过，已有但不一致的文件会报错保留，**不自动覆盖**。网络失败、校验失败或正常中断会清理本次创建的临时文件；强制结束进程可能留下带随机后缀的 `.partial`，确认属于本次下载后可自行移走。脚本不支持断点续传，不自动解压，不运行研究代码，也不会把“网络请求成功”当成“已核验”。
 
-当前索引仍为 pending 时，脚本会明确提示可能 404；这不是已验证的远程下载。不要修改预期 SHA256 来迁就一个错误文件。若出现不同内容，重新核对下载来源和 Release 版本。
+较早源码快照中的索引可能仍是 `pending`，请使用当前 `main` 分支的索引。不要修改预期 SHA256 来迁就一个错误文件；若出现不同内容，重新核对下载来源和 Release 版本。
 
 ## 不使用脚本时的 macOS / Windows 校验
 

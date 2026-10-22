@@ -1,42 +1,72 @@
 {
-  "status": "pending",
+  "status": "published",
   "repository": "https://github.com/Xiaoman-0vo/urban-cooling-platform-demo",
   "release_tag": "v0.1.0-collab-20261022",
   "release_page": "https://github.com/Xiaoman-0vo/urban-cooling-platform-demo/releases/tag/v0.1.0-collab-20261022",
-  "remote_assets_verified": false,
-  "notes": "Local ZIP generation and integrity verification passed. This file does not claim that the GitHub Release or downloads are published. Update status only after root verifies the published assets.",
+  "remote_assets_verified": true,
+  "notes": "Published Release and all four data assets verified by API digests and public HEAD availability. ZIP-embedded documentation preserves its earlier packaging snapshot; repository metadata records current publication status.",
   "assets": [
     {
       "name": "01_WorldPop2020_China.zip",
       "bytes": 855466230,
       "sha256": "a44bc1c37ce51cc02c9554b22eaf8d7f6ffdebb34ff57da637630cd9b041a9b8",
       "url": "https://github.com/Xiaoman-0vo/urban-cooling-platform-demo/releases/download/v0.1.0-collab-20261022/01_WorldPop2020_China.zip",
-      "status": "pending",
-      "remote_verified": false
+      "status": "published",
+      "remote_verified": true,
+      "asset_id": 665431917,
+      "remote_digest": "sha256:a44bc1c37ce51cc02c9554b22eaf8d7f6ffdebb34ff57da637630cd9b041a9b8",
+      "remote_verified_at_utc": "2026-10-22T10:44:47.509776+00:00",
+      "remote_verification_method": "GitHub API size/digest match plus public HEAD 200; full remote payload not downloaded",
+      "public_head_status": 200,
+      "remote_full_payload_rehashed": false
     },
     {
       "name": "02_CLCD2020_China.zip",
       "bytes": 756021034,
       "sha256": "21c33c1b1b79ab6456e4ea784ab5700172d1330c7c37f7ae965ae8db899a55c2",
       "url": "https://github.com/Xiaoman-0vo/urban-cooling-platform-demo/releases/download/v0.1.0-collab-20261022/02_CLCD2020_China.zip",
-      "status": "pending",
-      "remote_verified": false
+      "status": "published",
+      "remote_verified": true,
+      "asset_id": 665452849,
+      "remote_digest": "sha256:21c33c1b1b79ab6456e4ea784ab5700172d1330c7c37f7ae965ae8db899a55c2",
+      "remote_verified_at_utc": "2026-10-22T10:44:47.509776+00:00",
+      "remote_verification_method": "GitHub API size/digest match plus public HEAD 200; full remote payload not downloaded",
+      "public_head_status": 200,
+      "remote_full_payload_rehashed": false
     },
     {
       "name": "03_Chengdu_Buildings_Greenness.zip",
       "bytes": 296274587,
       "sha256": "0e31f03a16dd5e17ebff86ab28f44050332cb2bfc875614e52b62dcdc5caac07",
       "url": "https://github.com/Xiaoman-0vo/urban-cooling-platform-demo/releases/download/v0.1.0-collab-20261022/03_Chengdu_Buildings_Greenness.zip",
-      "status": "pending",
-      "remote_verified": false
+      "status": "published",
+      "remote_verified": true,
+      "asset_id": 665458458,
+      "remote_digest": "sha256:0e31f03a16dd5e17ebff86ab28f44050332cb2bfc875614e52b62dcdc5caac07",
+      "remote_verified_at_utc": "2026-10-22T10:44:47.509776+00:00",
+      "remote_verification_method": "GitHub API size/digest match plus public HEAD 200; full remote payload not downloaded",
+      "public_head_status": 200,
+      "remote_full_payload_rehashed": false
     },
     {
       "name": "04_Landsat_OSM_Basemaps.zip",
       "bytes": 26948673,
       "sha256": "755d16c3381203059e4c9822a88575766ad6d2810608ebed2203e71a0f218533",
       "url": "https://github.com/Xiaoman-0vo/urban-cooling-platform-demo/releases/download/v0.1.0-collab-20261022/04_Landsat_OSM_Basemaps.zip",
-      "status": "pending",
-      "remote_verified": false
+      "status": "published",
+      "remote_verified": true,
+      "asset_id": 665461362,
+      "remote_digest": "sha256:755d16c3381203059e4c9822a88575766ad6d2810608ebed2203e71a0f218533",
+      "remote_verified_at_utc": "2026-10-22T10:44:47.509776+00:00",
+      "remote_verification_method": "GitHub API size/digest match plus public HEAD 200; full remote payload not downloaded",
+      "public_head_status": 200,
+      "remote_full_payload_rehashed": false
     }
-  ]
+  ],
+  "release_id": 420561725,
+  "published_at": "2026-10-22T10:42:56Z",
+  "prerelease": true,
+  "remote_verified_at_utc": "2026-10-22T10:44:47.509776+00:00",
+  "remote_verification_method": "GitHub Release API asset size and SHA256 digest match verified local packages; each public download unauthenticated HEAD returned HTTP 200 with matching Content-Length. No full remote payload downloaded or independently rehashed.",
+  "remote_full_payload_rehashed": false
 }

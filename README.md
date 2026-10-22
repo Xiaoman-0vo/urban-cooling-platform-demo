@@ -4,12 +4,18 @@
 
 本仓库从现有本地平台独立复制，保留原型功能、展示资料、六类证据登记和历史核验材料。目前提供可运行的资料展示与工程交接原型；模型在线服务仍待接入。此版本日期：2026-10-22。
 
+![协作版原型界面](verification/前缀页面.png)
+
+原型界面预览，图中光点用于植被显示。
+
 ## 先看什么
 
-- 只想看原型：按下文安装 Node.js 依赖，运行 `npm run dev`，在浏览器打开 `http://127.0.0.1:5173/`。
+- 只想看原型：直接打开[在线演示](https://xiaoman-0vo.github.io/urban-cooling-platform-demo/)，无需安装；希望本地运行时，按下文安装依赖并执行 `npm run dev`。
 - 准备开发：先读“当前能做什么”“研究模块与边界”“团队协作”，再看 `src/App.jsx`、`src/project.js` 和相应证据模块。
-- 想拿原始数据或模型：先读“数据怎么取得”。运行前端已有展示资料不需要下载全部原始数据；在线预测还需要单独整理研究代码、权重和输入。
+- 想拿原始数据：查看[数据下载与校验说明](datasets/README.md)和[已发布的数据 Release](https://github.com/Xiaoman-0vo/urban-cooling-platform-demo/releases/tag/v0.1.0-collab-20261022)。运行前端已有展示资料不需要下载全部原始数据；在线预测还需要单独整理研究代码、权重和输入。
 - 想复核证据：查看界面的来源/证据面板、`public/data/*-state.json`、`DATA_SOURCES.md` 与 `evidence/`。旧材料中的状态只对应其快照日期。
+
+当前源码、展示资料及四个原始数据包均已公开发布；在线原型通过 GitHub Pages 提供。首次[云端检查与部署](https://github.com/Xiaoman-0vo/urban-cooling-platform-demo/actions/runs/39764595820)已通过。网页提供当前原型功能，尚未连接在线模型计算服务。
 
 ## 当前能做什么
 
@@ -31,8 +37,6 @@
 git clone https://github.com/Xiaoman-0vo/urban-cooling-platform-demo.git
 cd urban-cooling-platform-demo
 ```
-
-上传整理期间，以仓库中实际出现的文件为准；只有 README 的阶段还不能启动。源码齐备后再执行以下安装步骤。
 
 需要 Node.js 20.19 及以上的 20.x，或 22.12 及以上版本，并带 npm。依赖版本已固定在 `package-lock.json`；推荐使用 Node.js 22，`.nvmrc` 提供 22.12.0 环境基线。
 
@@ -64,7 +68,7 @@ dist/server/index.js         保留的静态资源 Worker 适配器
 dist/.openai/hosting.json    构建时从 config/sites-hosting.json 生成的适配配置
 ```
 
-静态托管使用 `dist/client/`。Vite 的 `base` 为 `./`，展示数据和 MapLibre Worker 均按部署前缀取文件，适合仓库子路径；发布端仍须实际检查访问地址、资源和证据加载。`worker/` 保留既有适配代码，本次没有承诺或执行特定云平台部署。根目录无需私有 `.openai` 配置，`config/sites-hosting.json` 仅含空资源绑定。构建产物和 `node_modules` 不进入源码提交。
+静态托管使用 `dist/client/`。Vite 的 `base` 为 `./`，展示数据和 MapLibre Worker 均按部署前缀取文件，适合仓库子路径；发布端仍须实际检查访问地址、资源和证据加载。当前静态原型通过 GitHub Pages 部署；`worker/` 保留既有 Sites 适配代码。根目录无需私有 `.openai` 配置，`config/sites-hosting.json` 仅含空资源绑定。构建产物和 `node_modules` 不进入源码提交。
 
 ## 目录结构
 
@@ -80,6 +84,9 @@ config/                      可随仓库复制的非私有构建配置
 evidence/                    历史软件核验、回读、截图、错误样例与受控代码快照
 documentation/              原平台 README 与协作约定的历史副本
 verification/               本协作副本的复制清单、路径审计与验证记录
+datasets/                   原始数据索引、来源许可、下载工具与校验清单
+.github/                    软件检查、Pages 发布、Issue 与 PR 模板
+CONTRIBUTING.md             开发、提交与评审约定
 DATA_SOURCES.md              原有展示来源说明
 ```
 
@@ -121,7 +128,7 @@ DATA_SOURCES.md              原有展示来源说明
 
 这些登记有内嵌来源字节和独立哈希校验；原快照日期、科学采用状态和准入边界保持原含义。本副本没有改包内 SHA，也没有把旧证据更新成新结论。研究状态登记只含解析索引和原身份声明的部分，不应把重新解析说成重新取得了缺失的原字节。
 
-**这不是“全部原始科研数据已公开”。** 前端展示资料、原始数据、模型推理输入和正式研究代码是不同层次。下列原始数据准备通过单独的 Release 资产分包交付，避免把全部栅格和原始压缩包混入日常源码修改。
+前端展示资料、原始数据、模型推理输入和正式研究代码是不同层次。下列已有原始数据已通过单独的 Release 资产分包交付；模型权重、全部研究代码和未取得的源产品不在本次交付范围。大栅格与原始压缩包不进入日常源码修改。
 
 ### 原始资料的时间与空间支撑
 
@@ -138,15 +145,17 @@ DATA_SOURCES.md              原有展示来源说明
 
 正式二环操作围合区约 60.4185 km²；研究米制计算采用 EPSG:32648，网页 GeoJSON 展示采用 WGS84。任意城市或任意框选区域需要另行准备同口径指标、图邻域、质量状态和模型适用性判断，不能直接沿用成都冻结模型承诺有效结果。
 
-### Release 下载计划（尚未发布）
+### 已发布的原始数据 Release
 
-计划使用标签 **`v0.1.0-collab-20261022`**：
+发布标签 **`v0.1.0-collab-20261022`**：
 
-[计划中的团队数据 Release 页面](https://github.com/Xiaoman-0vo/urban-cooling-platform-demo/releases/tag/v0.1.0-collab-20261022)
+[团队数据 Release 页面](https://github.com/Xiaoman-0vo/urban-cooling-platform-demo/releases/tag/v0.1.0-collab-20261022) · [逐包下载、来源与校验步骤](datasets/README.md)
 
-**当前此链接是预定发布位置，不代表资产已上传或可下载。** 四个 ZIP 已在本地生成并逐成员读回验证，尚未远程发布：
+四个 ZIP 已公开发布。发布平台返回的每个附件字节数和 SHA256 与本地清单一致；本地打包时已逐成员读回验证。队友下载后仍应自行校验：
 
-| 计划附件名 | 主要内容 | 实际 ZIP 字节数 |
+仅想先了解数据，可下载约 77 KB 的 [00_Dataset_Documentation.zip](https://github.com/Xiaoman-0vo/urban-cooling-platform-demo/releases/download/v0.1.0-collab-20261022/00_Dataset_Documentation.zip)，其中包含数据清单、产品说明、许可记录和下载工具；它不包含四个大数据包。
+
+| 附件名 | 主要内容 | 实际 ZIP 字节数 |
 | --- | --- | ---: |
 | `01_WorldPop2020_China.zip` | 全国 2020 人口源栅格，约束型 R2025A v1 | 855,466,230 |
 | `02_CLCD2020_China.zip` | 全国 2020 土地覆盖源栅格及发布者分类表 | 756,021,034 |
@@ -155,7 +164,7 @@ DATA_SOURCES.md              原有展示来源说明
 
 四包合计 **1,934,710,524 字节（1.9347 GB，约 1.802 GiB）**；118 项源文件/成员合计 2,356,992,143 字节。全国人口和 CLCD 未裁剪，Landsat 为既有窗口而非完整卫星场景，OSM 路网也不是成都全市全覆盖。此包未增加新裁剪、重投影或模型计算。
 
-四包先按包分目录解压，避免公共清单互相覆盖；再按 manifest 按需合并数据，保留各包元数据。Shapefile 的 `.shp/.shx/.dbf/.prj/.cpg` 必须同目录保留。实际发布后先核对 `SHA256SUMS.packages.txt`，再按 `manifest.csv/json` 和 `SHA256SUMS.files.txt` 检查文件；`data_products.json` 记录版本、坐标、年份及限制，`license_verification.json` 保留逐产品许可核验，`verification_report.json` 记录四包读回结果。原数据中含发布者加工或估计产品，不全部是第一手实测记录。
+四包先按包分目录解压，避免公共清单互相覆盖；再按 manifest 按需合并数据，保留各包元数据。Shapefile 的 `.shp/.shx/.dbf/.prj/.cpg` 必须同目录保留。下载后先核对 `SHA256SUMS.packages.txt`，再按 `manifest.csv/json` 和 `SHA256SUMS.files.txt` 检查文件；`data_products.json` 记录版本、坐标、年份及限制，`license_verification.json` 保留逐产品许可核验，`verification_report.json` 记录四包读回结果。原数据中含发布者加工或估计产品，不全部是第一手实测记录。
 
 取得数据后建议放在自己的独立数据目录，按清单校验哈希，不覆盖本仓库 `public/data/`。已有展示资料不要求你复刻作者的 Mac 目录。若要重新生成展示数据或复核当前研究原件，需要另行取得相应源文件并显式配置自己的路径。
 
@@ -184,6 +193,10 @@ npm test
 
 默认测试保留包内可独立运行的地图导航、证据状态、工程兼容与 Worker 检查，另有六类内嵌证据及全登记工程 JSON/ZIP 往返测试。包内核验不等于重新证明当前研究目录中的原件仍完全一致。Mac 运行工具的本机案例在其他系统按测试定义跳过；本次实际验证的操作系统与执行结果见 `verification/`，不把未实跑 Windows 写成已验证。
 
+首次 GitHub 云端验收在 Ubuntu 24.04、Node.js 22.23.3 上完成：依赖安装和构建成功，76 项 npm 检查中 74 项通过、2 项 Mac 专用案例按定义跳过、0 项失败；8 项 Python 下载工具离线检查全部通过，Pages 部署成功。[查看运行记录](https://github.com/Xiaoman-0vo/urban-cooling-platform-demo/actions/runs/39764595820)。之后每次向 `main` 提交会重新检查和发布，PR 会先运行检查。下载工具离线检查可在根目录执行 `python3 -m unittest discover -s datasets -p 'test_download_data.py' -v`。
+
+在线原型另经实际浏览器验收：首页、Worker 与展示资料加载成功，五类证据入口、工程保存/恢复、JSON 与 ZIP 导出/重开和刷新恢复均通过；48 个随源码提供的公开资源逐字节一致。[线上验收记录](verification/online-publication.json) 保留实际请求、交互、浏览器版本及一次未复现的控制台资源提示。[数据发布核查](datasets/publication-verification.json) 记录四包远端大小、GitHub SHA256 digest 和公开下载 HEAD 检查；没有为核查重复下载约 2 GB 正文。
+
 `npm run test:research-source` 保留原十五文件测试入口，用于配齐相应原目录后的进一步复核。它包括源件字节比较，和默认自足软件检查的覆盖范围不同。
 
 提交前还应实际打开网页，检查所改页面、数据加载与工程保存/恢复。改动展示来源、坐标、单位、准入范围或登记协议时，同时检查来源说明和对应的拒绝案例；普通界面修改不需要重跑科研模型。
@@ -196,7 +209,7 @@ npm test
 4. 不提交 `node_modules/`、`dist/`、`.runtime/`、私钥、令牌或本机 `.env`。原始数据按 Release 清单管理；新增来源应说明发布者、许可、时间、空间支撑和处理过程。
 5. 评审后合并，不直接覆盖他人工作。模型调用、原资料变更、数据准入和解释边界须由对应负责人核对；不要因更换框架或增加 Agent 自行改变研究口径。
 
-目前没有规定最终技术后端、最终赛题题目或团队身份；也没有用这份 README 宣告网站或模型服务已上线。
+详细流程见 [CONTRIBUTING.md](CONTRIBUTING.md)。仓库目前公开可读，队友可直接浏览、下载和 Fork；直接写入权限需要仓库所有者按各自 GitHub 用户名邀请。最终技术后端、赛题题目与团队职责仍待共同确定；当前已上线的是网页原型。
 
 ## 暂定路线与待共同决定的问题
 

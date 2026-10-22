@@ -161,5 +161,13 @@
     "unchanged_03_SHA256_from_immediate_prior_readback": "0e31f03a16dd5e17ebff86ab28f44050332cb2bfc875614e52b62dcdc5caac07",
     "release_status_remains": "pending",
     "notes": "copied_documents above records the earlier baseline copy. license_verification.json was intentionally updated during this follow-up; use the appended current hashes."
+  },
+  "publication_followup": {
+    "checked_at_utc": "2026-10-22T10:46:50.907363+00:00",
+    "release_status": "published",
+    "remote_verification_record": "publication-verification.json",
+    "index": "release_assets.json",
+    "readme_and_historical_note_updated": true,
+    "notes": "Earlier entries above are dated local packaging and copying snapshots; publication metadata now records actual public Release and asset verification. Four data ZIPs remain unchanged."
   }
 }

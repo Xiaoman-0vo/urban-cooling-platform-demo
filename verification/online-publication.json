@@ -1,0 +1,1442 @@
+{
+  "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/",
+  "commit": "2516a57e3df81240be1ec1d24b469739c7d156d8",
+  "checkedAt": "2026-10-22T10:45:16.333Z",
+  "browserVersion": "154.0.8037.92",
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 404 ()"
+  ],
+  "pageErrors": [],
+  "internalFailures": [],
+  "externalFailures": [
+    {
+      "url": "https://tile.openstreetmap.org/10/808/420.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/10/807/420.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/10/808/419.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/10/807/419.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/10/808/421.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/10/807/421.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/10/809/420.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/10/806/420.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/11/1616/840.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/11/1615/840.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/11/1616/841.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/11/1615/841.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/11/1616/839.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/11/1615/839.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/11/1617/840.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/11/1617/841.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/12/3232/1681.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/12/3231/1681.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/12/3232/1682.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/12/3232/1680.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/12/3231/1682.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/12/3233/1681.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/12/3231/1680.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/12/3233/1682.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/13/6464/3363.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/13/6464/3362.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/13/6465/3363.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/13/6463/3363.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/13/6465/3362.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/13/6463/3362.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/13/6464/3364.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/13/6465/3364.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/14/12927/6726.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/14/12930/6727.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/14/12927/6725.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/14/12929/6724.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/14/12928/6724.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/14/12927/6727.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/14/12930/6724.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/14/12931/6726.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/15/25859/13449.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103436/53810.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103436/53803.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103427/53806.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103435/53803.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103428/53805.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103434/53803.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103427/53807.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103428/53806.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103431/53804.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103435/53804.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103432/53804.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103434/53804.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103428/53807.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103433/53804.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103430/53805.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103436/53805.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103429/53806.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103428/53808.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103431/53805.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103435/53805.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103429/53807.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103432/53805.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103430/53806.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103434/53805.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103433/53805.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103429/53808.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103431/53806.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103435/53806.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103430/53807.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103429/53809.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103436/53807.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103433/53806.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103430/53808.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103431/53807.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103436/53808.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103435/53807.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103432/53813.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103430/53809.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103430/53810.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103431/53812.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103436/53809.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103435/53812.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103433/53807.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103431/53808.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103435/53808.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103432/53812.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103431/53811.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103434/53812.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103431/53809.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103433/53812.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103431/53810.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103435/53809.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103434/53808.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103435/53810.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103433/53808.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103432/53811.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103434/53811.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103432/53809.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103434/53809.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103433/53811.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103432/53810.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103434/53810.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/17/103433/53809.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/9/407/206.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/9/399/209.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/9/400/211.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/9/407/206.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/9/399/209.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tile.openstreetmap.org/9/400/211.png",
+      "failure": "net::ERR_ABORTED"
+    }
+  ],
+  "responses": [
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/assets/index-ByFs1Hb_.css",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/assets/index-VARwF94G.js",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/sichuan_rivers.geojson",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/manifest.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/chengdu_city_effects.geojson",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/chengdu_green_context.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/study_selection_boundary.geojson",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/sichuan_boundary.geojson",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/chengdu_urban_green_points.geojson",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/sichuan_places.geojson",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/regional_green_points.geojson",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/regional_map_context.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/regional_roads_2021.geojson",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/chengdu_city_green_points.geojson",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/macro_nodes.geojson",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/chengdu_navigation_boundary.geojson",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/scene.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/research-state.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/preparation-state.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/supplement-state.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/source-preparation-state.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/source-geometry-state.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/conditional-source-state.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/maplibre/6.12.0/maplibre-gl-worker.mjs",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/maplibre/6.12.0/maplibre-gl-shared.mjs",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/assets/index-VARwF94G.js",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/assets/index-ByFs1Hb_.css",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/manifest.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/scene.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/macro_nodes.geojson",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/regional_green_points.geojson",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/regional_roads_2021.geojson",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/regional_map_context.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/study_selection_boundary.geojson",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/sichuan_boundary.geojson",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/sichuan_rivers.geojson",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/sichuan_places.geojson",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/chengdu_green_context.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/chengdu_navigation_boundary.geojson",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/chengdu_city_green_points.geojson",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/chengdu_urban_green_points.geojson",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/chengdu_city_effects.geojson",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/research-state.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/preparation-state.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/supplement-state.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/source-preparation-state.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/source-geometry-state.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/conditional-source-state.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/maplibre/6.12.0/maplibre-gl-worker.mjs",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/maplibre/6.12.0/maplibre-gl-shared.mjs",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/assets/index-VARwF94G.js",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/assets/index-ByFs1Hb_.css",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/manifest.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/scene.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/macro_nodes.geojson",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/regional_green_points.geojson",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/regional_roads_2021.geojson",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/regional_map_context.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/study_selection_boundary.geojson",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/sichuan_boundary.geojson",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/sichuan_rivers.geojson",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/sichuan_places.geojson",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/chengdu_green_context.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/chengdu_navigation_boundary.geojson",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/chengdu_city_green_points.geojson",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/chengdu_urban_green_points.geojson",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/chengdu_city_effects.geojson",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/research-state.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/preparation-state.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/supplement-state.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/source-preparation-state.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/source-geometry-state.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/conditional-source-state.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/maplibre/6.12.0/maplibre-gl-worker.mjs",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/maplibre/6.12.0/maplibre-gl-shared.mjs",
+      "status": 200
+    }
+  ],
+  "workers": [
+    "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/maplibre/6.12.0/maplibre-gl-worker.mjs",
+    "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/maplibre/6.12.0/maplibre-gl-worker.mjs",
+    "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/maplibre/6.12.0/maplibre-gl-worker.mjs"
+  ],
+  "interactions": [
+    {
+      "operation": "浏览真实工程样例→进入场地",
+      "passed": true
+    },
+    {
+      "operation": "证据入口:来源准备审阅",
+      "heading": "三组来源准备",
+      "textExcerpt": "场地资料与证据\n三组来源准备\n三组来源准备审阅\n\n0 / 3组已接纳，可独立随工程保存、JSON和ZIP重开。\n\n接纳三组来源准备\n核心范围与重复面积\n天气表示与待核时标\n道路参考与未接纳连接\n同一位置由哪些来源共同覆盖？\n\n16个互斥来源面 · 41条覆盖关系 · 132个源键 · 2条跨层交叠 · 12条零面积道路支持\n\n来源覆盖闭合10000 m²，未形成可改地面或实施权限。屋顶与植被交叠167.60753857181282 m²仍待解释；3条低于1e−6 m²的正关系完整保留。132个源键与旧104对象不累计，三个植被裁片仍来自同一17696连通组。\n\n当前是已核验的待接纳来源副本；尚未写入工程。来源样例 E4125_N33891，独立于当前场地层及既有五组成果。\n\n查看来源地图\n完整原件与原记录\n\n全部原字段、原字符串空项及版本分别保留。下方程序原件仅供下载审阅，不作为可运行研究入口。\n\nREADME.md\n6,713 bytes · md\nbuild_source_scope_overlay.py\n40,613 bytes · py\n分区与源对象正面积关系.csv\n8,360 bytes · csv\n分区闭合与来源.csv\n8,486 bytes · csv\n来源叠合分区_UTM48N.gpkg\n151,552 bytes · gpkg\n来源叠合分区_WGS84.geojson\n46,162 bytes · geojson\n核心来源闭合与线性支持.png\n689,842 bytes · png\n核心来源闭合与线性支持.svg\n504,071 bytes · svg\n核心来源闭合与线性支持_灰度审阅.png\n336,085 bytes · png\n核查记录.json\n34,806 bytes · json\n根独立几何回读核查.json\n11,087 bytes · json\n源对象几何审阅.csv\n31,720 bytes · csv\n研究动作提案_未采用.json\n1,249 bytes · json\n跨层正面积交叠关系.csv\n671 bytes · csv\n道路分区线支持.csv\n2,679 bytes · csv\n道路分区线支持_WGS84.geojson\n8,647 bytes · geojson\n下载本组完整来源ZIP\n下载31件原接入清单\n软件审阅范围与独立接入回执\n\n新场地预测、物理仿真、舒适度、实际服务、公平性、最少面积搜索、候选生成、排序和规划响应均未开放。来源地图不会写回场景或科学属性。\n\n导出工程JSON\n保存\n导出交接",
+      "passed": true
+    },
+    {
+      "operation": "证据入口:来源几何与对象审阅",
+      "heading": "来源几何与对象",
+      "textExcerpt": "场地资料与证据\n来源几何与对象\n来源几何与对象审阅\n\n0 / 3组已接纳。72个原件（其中4件未接受历史）、16张主表与32,834条主记录分别保留。\n\n接纳三组来源几何与对象\n建筑几何与天空可视\n窗口与来源连通\n来源标记与开放空间\n固定建筑背景能说明哪些几何天空可视条件？\n\n当前为已核验的待接纳副本，尚未写入工程。来源固定为E4125_N33891，与当前场景、31件来源准备及旧登记独立。\n\n查看来源几何地图\n六个候选点、四档采样与逐方向贡献\n候选点\nH1\nH2\nH3\nV1\nV2\nV3\n采样方向数\n360\n720\n1440\n2880\n原方向序号\n\n水平余弦权重 SVF\n0.73543539640172639\n\n无权天空立体角诊断\n0.57840923921553633\n\n无地平线上建筑方向比例\n0.043749999999999997\n\n三种量分别保留，后两项为诊断。方位沿UTM格网北顺时针取区间中点；不是现场真北校准。已接受受体高度、物理SVF与场景采用仍为空。\n\n定位所选方向的来源支持\n所选SVF完整15原字段\n所选方向完整20原字段 · 0.0625°\nreceptor_key\n6e852b128a3378dbe314b06885eec45a683387cf3c99ccda9bedc2b0a740a4f4/receptor_candidates/H1\nreceptor_id\nH1\nsampling_N\n2880\ndirection_index_0based\n0\nazimuth_deg_grid_north_clockwise\n0.0625\nhorizon_elevation_rad\n0.78345236243435978\nhorizon_elevation_deg\n44.888513817042536\nhorizontal_SVF_integrand_cos2\n0.5019457960517073\nwinning_building_merged_id\n154324\nwinning_source_object_key\n6e852b128a3378dbe314b06885eec45a683387cf3c99ccda9bedc2b0a740a4f4/buildings_uncut/154324\nwinning_source_part_key\n6e852b128a3378dbe314b06885eec45a683387cf3c99ccda9bedc2b0a740a4f4/buildings_uncut/154324/part/1\nwinning_part_index\n1\nwinning_entry_distance_m\n7.7805272009467643\nwinning_work_top_z_m\n9.2503072501751902\nwinning_entry_UTM_E_m\n412542.71661884827\nwinning_entry_UTM_N_m\n3389158.6424003644\nall_tied_max_source_part_keys_json\n[\"6e852b128a3378dbe314b06885eec45a683387cf3c99ccda9bedc2b0a740a4f4/buildings_uncut/154324/part",
+      "passed": true
+    },
+    {
+      "operation": "证据入口:成果资料",
+      "heading": "五组成果资料",
+      "textExcerpt": "场地资料与证据\n五组成果资料\n规划与场地成果资料\n\n0 / 5组已接纳，可随工程保存、导出和重开。\n\n接纳五组成果资料\n来源内现状描述\n配置开发信息\n候选资源与窗口\n可改空间证据\n本格与周边描述\n\n尚未接纳成果资料。接纳后可审阅完整来源记录。\n\n新场地预测、物理仿真、舒适度、实际服务、公平性、最少面积搜索和排序仍未开放。天气、地形和道路候选保持原状态。\n\n导出工程JSON\n保存\n导出交接",
+      "passed": true
+    },
+    {
+      "operation": "证据入口:来源与版本",
+      "heading": "来源与冻结版本",
+      "textExcerpt": "场地资料与证据\n来源与冻结版本\n\n24个原件为本地引用清单；此平台使用受控展示副本。\n\n联结表版本不同\n\n微观准备包保持冻结来源；当前宏观联结表另行保留，未自动重建场景。\n\n冻结SHA256\ne4230eb55e8835f45f69e50896be6314ff252d4cba51df3014b4fedbb28ace87\n当前SHA256\n98a8bd68c9dd0290da3cdf7940f1cbe294ad8e8ae52abcf9b9d64fb8fbd430e5\n来源几何与对象审阅\n\n0 / 3组已接纳。72个原件（其中4件未接受历史）、16张主表与32,834条主记录分别保留。\n\n接纳三组来源几何与对象\n\n建筑几何能说明什么、窗外来源支持如何相连、标签点是否真实入口，分别沿原保存值审阅；物理与服务应用未开放。\n\n审阅三组几何与完整原件\n三组来源准备审阅\n\n0 / 3组已接纳，可独立随工程保存、JSON和ZIP重开。\n\n接纳三组来源准备\n\n核心范围是否重复计面积、天气表示是否被误作驱动、道路来源是否被误作服务网络，分别查看原件与待核边界。\n\n审阅三组来源与完整原件\n规划与场地成果资料\n\n0 / 5组已接纳，可随工程保存、导出和重开。\n\n接纳五组成果资料\n来源内现状描述\n配置开发信息\n候选资源与窗口\n可改空间证据\n本格与周边描述\n\n尚未接纳成果资料。接纳后可审阅完整来源记录。\n\n新场地预测、物理仿真、舒适度、实际服务、公平性、最少面积搜索和排序仍未开放。天气、地形和道路候选保持原状态。\n\n导出工程JSON\n试点准备资料\n\n这份工程尚未接纳试点准备资料。\n\n资料 2026年10月6日 03:35 · 14 项原件\n\n共同试点已有资料与缺项\n资料\t已有\t还缺什么\n宏观九格\t8/9 格输入接受\tE4126_N33890 缺建筑来源及 R 数值；核心输入接受、温度监督未接纳，模型应用尚未认证。\n住宅来源\t6 个完整 Residence 标签源面\t全部在500米准备窗内、300米窗外；标签尚未认证实际入住。\n人口支持\t6 个原生人口格\t人数／原生像元，不是建筑人口；展示几何不带人数，无住宅—受体 OD。\n微观输入\t33 项接受值仍为 null\t同期驱动、地面与植被、材料、求解设置和独立验证仍需补齐。\n天气与地形\t2 类气象、1 类地形候选\tEPW 7月源年2021，为典型年；ERA5为月背景，NASADEM像元及求解输入未验收。\n受体与服务\t6 候选受体／12 双分支占位\t热值、路径、停留与人口仍为 null；原位置与公共目的地角色待核。\n\n现有输入用于规划现状与条件对照，尚无具体配置—LST关联量级；开发 MAE 不作为改造效应。100／300／500米分别为核心、邻域、准备窗，物理求解域未定义。\n\n来源与版本追溯\n当前准备包 · 尚未接纳\n2026年10月6日 03:35 · 14 项源件\n接纳试点准备资料\n科研开发进度\n\n开发证据已保存 · 最终与应用验证待完成\n\n一跳邻域开发\n72 次\n配置来源四版本\n96 次\n完整参照组别消融\n216 次\n\n登记 2026年10月6日 03:03 · 8 项新来源引用 · 26 条开发误差记录。项目开发记录与当前位置分别保存。\n\n当前细配置 C 的联合增量尚无稳定正向证据。开发 MAE 的 ℃ 表示模型误差，不是位置",
+      "passed": true
+    },
+    {
+      "operation": "证据入口:两种评价情景",
+      "heading": "分别保存评价假设",
+      "textExcerpt": "场地资料与证据\n分别保存评价假设\n\n统一开放用于宏观P02A候选情景；现实条件是来源核对，后续实际服务主张由04研究接入。两种草稿各自保存。\n\n统一开放假设\n现实条件核对\n\n新来源尚未接纳。原工程和已登记资料会保留。\n\n接纳26件条件来源创建统一开放假设草稿审阅制度、温度与26件原件\n导出情景工程JSON\n导出情景交接ZIP\n保存\n导出交接",
+      "passed": true
+    },
+    {
+      "operation": "保存场地并读回",
+      "passed": true,
+      "toast": "已保存并读回核对：科研登记 1 份，冻结准备 0 份，成果 0 组，来源准备 0 组，来源几何 0 组。原科学状态保留。"
+    },
+    {
+      "operation": "导出工程JSON",
+      "passed": true,
+      "suggestedFilename": "街区交接_E4125_N33891_2026-10-22T10-46-25-385Z.json",
+      "bytes": 4712769,
+      "rootKeys": [
+        "supplementRegistrations",
+        "export_schema_version",
+        "exported_at",
+        "package_kind",
+        "sourcePackage",
+        "scene",
+        "layers",
+        "uiState",
+        "imports",
+        "researchRegistrations",
+        "preparationRegistrations",
+        "software_receipt"
+      ]
+    },
+    {
+      "operation": "导出工程ZIP",
+      "passed": true,
+      "suggestedFilename": "街区交接_E4125_N33891_2026-10-22T10-46-26-156Z.zip",
+      "bytes": 819043
+    },
+    {
+      "operation": "重开导出的工程JSON",
+      "passed": true,
+      "notice": "© OpenStreetMap contributors | 植被分类：CLCD · Yang & Huang / UBGG · Xu & Zhao；空间预览，非热模拟\n街区绿色空间研究\n城市尺度 · 精细场地 · 科学分析\n1\n定位场地\n2\n检查资料\n3\n分析条件\n成都\n四川\n情景\n已重开\n区域\n工程样例 E4125_N33891\n104.087474°E, 30.631781°N · 可替换准备样例，非正式研究样本\n工作高度待核\n\n空间图层\n\n范围\n建筑\n植被\n道路线\n候选点\n宏观格网\n资料概况\n待补输入\n来源与版本\n成果资料\n来源准备\n来源几何\n已有指标\n分析条件\n高亮边界 · 可选研究区\n全市地图光效\n建筑来源几何\n100米核心\n500米准备窗\n植被 / 分类投影\n青蓝源线 · 2021参考\n在线底图仅供导航 · DEM未接入 · 尚未仿真\n拖动移动 · 滚轮缩放 · 右键拖动旋转\n已从文件重开E4125_N33891；来源哈希、空值与四类状态已保留。"
+    },
+    {
+      "operation": "重开导出的工程ZIP",
+      "passed": true,
+      "notice": "© OpenStreetMap contributors | 植被分类：CLCD · Yang & Huang / UBGG · Xu & Zhao；空间预览，非热模拟\n街区绿色空间研究\n城市尺度 · 精细场地 · 科学分析\n1\n定位场地\n2\n检查资料\n3\n分析条件\n成都\n四川\n情景\n已重开\n区域\n工程样例 E4125_N33891\n104.087474°E, 30.631781°N · 可替换准备样例，非正式研究样本\n工作高度待核\n\n空间图层\n\n范围\n建筑\n植被\n道路线\n候选点\n宏观格网\n资料概况\n待补输入\n来源与版本\n成果资料\n来源准备\n来源几何\n已有指标\n分析条件\n高亮边界 · 可选研究区\n全市地图光效\n建筑来源几何\n100米核心\n500米准备窗\n植被 / 分类投影\n青蓝源线 · 2021参考\n在线底图仅供导航 · DEM未接入 · 尚未仿真\n拖动移动 · 滚轮缩放 · 右键拖动旋转\n已从文件重开E4125_N33891；来源哈希、空值与四类状态已保留。"
+    },
+    {
+      "operation": "刷新后恢复本地保存",
+      "passed": true,
+      "notice": "已恢复本地保存的场地、准备资料与视图；科学状态保持原值。"
+    }
+  ],
+  "screenshots": [
+    "线上首页.png",
+    "线上工程样例.png",
+    "线上证据_来源准备审阅.png",
+    "线上证据_来源几何与对象审阅.png",
+    "线上证据_成果资料.png",
+    "线上证据_来源与版本.png",
+    "线上证据_两种评价情景.png",
+    "线上恢复工程.png"
+  ],
+  "limitations": [
+    "本次为已部署静态原型的软件验收，未调用或重新运行科研模型。",
+    "缩放/切换视野时出现OpenStreetMap瓦片ERR_ABORTED，属于取消中的外部导航瓦片请求，已分别保留记录。",
+    "本地dist/client已被清理：public全部资源与线上逐字节比较；3个生成资源只检查HTTP状态并记录远程SHA256，未声称本地构建字节比对。",
+    "初次控制台有1条未能定位资源的404提示；内部响应未发现404，独立新上下文复测未复现。"
+  ],
+  "mainStatus": 200,
+  "consoleErrorDetails": [],
+  "freshContextErrorProbe": {
+    "responses": [],
+    "console": []
+  },
+  "staticByteChecks": [
+    {
+      "path": "data/CHENGDU_GREEN_DATA_SOURCES.md",
+      "status": 200,
+      "localBytes": 1339,
+      "remoteBytes": 1339,
+      "localSha256": "34584f6d52e2922765a2ba2a46d2748d72ea2275f8c6f252f4f69697bcae4da9",
+      "remoteSha256": "34584f6d52e2922765a2ba2a46d2748d72ea2275f8c6f252f4f69697bcae4da9",
+      "passed": true
+    },
+    {
+      "path": "data/REGIONAL_DATA_SOURCES.md",
+      "status": 200,
+      "localBytes": 909,
+      "remoteBytes": 909,
+      "localSha256": "43c8ae236028e54db2a3cb6888fe3ec19de1d370b972326a0d8392f22e6d7ab6",
+      "remoteSha256": "43c8ae236028e54db2a3cb6888fe3ec19de1d370b972326a0d8392f22e6d7ab6",
+      "passed": true
+    },
+    {
+      "path": "data/building_parts.geojson",
+      "status": 200,
+      "localBytes": 257206,
+      "remoteBytes": 257206,
+      "localSha256": "468a7ebb4b42b8eb2aa5634aaa4fe54699034694978e7f10167a34a1d96bef44",
+      "remoteSha256": "468a7ebb4b42b8eb2aa5634aaa4fe54699034694978e7f10167a34a1d96bef44",
+      "passed": true
+    },
+    {
+      "path": "data/capabilities.json",
+      "status": 200,
+      "localBytes": 4371,
+      "remoteBytes": 4371,
+      "localSha256": "80212e8ef474e9a597c7773e8826d959970d1dcd536bb92e30bb6d9d93226ca1",
+      "remoteSha256": "80212e8ef474e9a597c7773e8826d959970d1dcd536bb92e30bb6d9d93226ca1",
+      "passed": true
+    },
+    {
+      "path": "data/chengdu_city_effects.geojson",
+      "status": 200,
+      "localBytes": 359059,
+      "remoteBytes": 359059,
+      "localSha256": "b95944e9563f9f11135f3154f7337970bc4e958215cfb187fd2848a9ce03e9f2",
+      "remoteSha256": "b95944e9563f9f11135f3154f7337970bc4e958215cfb187fd2848a9ce03e9f2",
+      "passed": true
+    },
+    {
+      "path": "data/chengdu_city_green_points.geojson",
+      "status": 200,
+      "localBytes": 1879256,
+      "remoteBytes": 1879256,
+      "localSha256": "0fee2c30a14a05d87f3ed8e47a30a7f31349b5914bbd6d1325cf705da81ee325",
+      "remoteSha256": "0fee2c30a14a05d87f3ed8e47a30a7f31349b5914bbd6d1325cf705da81ee325",
+      "passed": true
+    },
+    {
+      "path": "data/chengdu_green_context.json",
+      "status": 200,
+      "localBytes": 5873,
+      "remoteBytes": 5873,
+      "localSha256": "48e171324aed773fc86bf443ea12eec932366cfee59547d7c56c1344c9276574",
+      "remoteSha256": "48e171324aed773fc86bf443ea12eec932366cfee59547d7c56c1344c9276574",
+      "passed": true
+    },
+    {
+      "path": "data/chengdu_navigation_boundary.geojson",
+      "status": 200,
+      "localBytes": 171464,
+      "remoteBytes": 171464,
+      "localSha256": "9e347fd0249c22fac185040f0f88fa8202fec5c440b2e16fe09adf171c3fbb15",
+      "remoteSha256": "9e347fd0249c22fac185040f0f88fa8202fec5c440b2e16fe09adf171c3fbb15",
+      "passed": true
+    },
+    {
+      "path": "data/chengdu_urban_green_points.geojson",
+      "status": 200,
+      "localBytes": 1076102,
+      "remoteBytes": 1076102,
+      "localSha256": "752583ed0c37ad2a122a249fd5afaf77415957f0c94af558a7b6dba34a10aef8",
+      "remoteSha256": "752583ed0c37ad2a122a249fd5afaf77415957f0c94af558a7b6dba34a10aef8",
+      "passed": true
+    },
+    {
+      "path": "data/conditional-source-state.json",
+      "status": 200,
+      "localBytes": 511869,
+      "remoteBytes": 511869,
+      "localSha256": "bfadb0c205a49091612da2401e009ec643ff91287c1dcf47484982a84bdcbadc",
+      "remoteSha256": "bfadb0c205a49091612da2401e009ec643ff91287c1dcf47484982a84bdcbadc",
+      "passed": true
+    },
+    {
+      "path": "data/macro_neighborhood_300.geojson",
+      "status": 200,
+      "localBytes": 1264,
+      "remoteBytes": 1264,
+      "localSha256": "f56673c091fde9295248524205d63498d1175668db7b0f1153c3127d992028ca",
+      "remoteSha256": "f56673c091fde9295248524205d63498d1175668db7b0f1153c3127d992028ca",
+      "passed": true
+    },
+    {
+      "path": "data/macro_neighborhood_nodes.geojson",
+      "status": 200,
+      "localBytes": 10598,
+      "remoteBytes": 10598,
+      "localSha256": "e298bd8801ab4ac2236fcc57777e5e54c7d5a01b46b16eafde1df7b7fbfacf47",
+      "remoteSha256": "e298bd8801ab4ac2236fcc57777e5e54c7d5a01b46b16eafde1df7b7fbfacf47",
+      "passed": true
+    },
+    {
+      "path": "data/macro_nodes.geojson",
+      "status": 200,
+      "localBytes": 7334779,
+      "remoteBytes": 7334779,
+      "localSha256": "cf2e7722453f7b59ae9c8e3a54dae88df93da76997b6d9fe0a46afb9f805a1c4",
+      "remoteSha256": "cf2e7722453f7b59ae9c8e3a54dae88df93da76997b6d9fe0a46afb9f805a1c4",
+      "passed": true
+    },
+    {
+      "path": "data/manifest.json",
+      "status": 200,
+      "localBytes": 66797,
+      "remoteBytes": 66797,
+      "localSha256": "f35ba68a8d3afaf7c4704d968f1e95bb298cda9d678ca2b26da83bbb009bb552",
+      "remoteSha256": "f35ba68a8d3afaf7c4704d968f1e95bb298cda9d678ca2b26da83bbb009bb552",
+      "passed": true
+    },
+    {
+      "path": "data/micro_roads_roads_2020.geojson",
+      "status": 200,
+      "localBytes": 36978,
+      "remoteBytes": 36978,
+      "localSha256": "428ef36126a2127db1501d331941b16739a0cc5948a74db0ef8fa6a18bf6381a",
+      "remoteSha256": "428ef36126a2127db1501d331941b16739a0cc5948a74db0ef8fa6a18bf6381a",
+      "passed": true
+    },
+    {
+      "path": "data/micro_roads_roads_2021.geojson",
+      "status": 200,
+      "localBytes": 38047,
+      "remoteBytes": 38047,
+      "localSha256": "919c0451c0905281d39515d23e5888adce7cb262d53a5162dabd055b29c621cb",
+      "remoteSha256": "919c0451c0905281d39515d23e5888adce7cb262d53a5162dabd055b29c621cb",
+      "passed": true
+    },
+    {
+      "path": "data/micro_scene_buildings_uncut.geojson",
+      "status": 200,
+      "localBytes": 245064,
+      "remoteBytes": 245064,
+      "localSha256": "bc8e60c4437e62b415ac3529f91dce8aa408b2d573abc7907087679a90233646",
+      "remoteSha256": "bc8e60c4437e62b415ac3529f91dce8aa408b2d573abc7907087679a90233646",
+      "passed": true
+    },
+    {
+      "path": "data/micro_scene_context.geojson",
+      "status": 200,
+      "localBytes": 1070,
+      "remoteBytes": 1070,
+      "localSha256": "2b928d265bc815abb356e45b40c896fe05c94b5f7e4201fa55533de9e2cf0d09",
+      "remoteSha256": "2b928d265bc815abb356e45b40c896fe05c94b5f7e4201fa55533de9e2cf0d09",
+      "passed": true
+    },
+    {
+      "path": "data/micro_scene_core.geojson",
+      "status": 200,
+      "localBytes": 1664,
+      "remoteBytes": 1664,
+      "localSha256": "cc08259b0f075cf3eaac00ef558525b7c142781442b766a73391805f491e4e5a",
+      "remoteSha256": "cc08259b0f075cf3eaac00ef558525b7c142781442b766a73391805f491e4e5a",
+      "passed": true
+    },
+    {
+      "path": "data/micro_scene_overlap_review_core.geojson",
+      "status": 200,
+      "localBytes": 2989,
+      "remoteBytes": 2989,
+      "localSha256": "77537ab0f383b80107c752e6fc32d2b6f43d09504098b54f7323c6bc770cdb1b",
+      "remoteSha256": "77537ab0f383b80107c752e6fc32d2b6f43d09504098b54f7323c6bc770cdb1b",
+      "passed": true
+    },
+    {
+      "path": "data/micro_scene_receptor_candidates.geojson",
+      "status": 200,
+      "localBytes": 4060,
+      "remoteBytes": 4060,
+      "localSha256": "a983a59b26dd39affa656b69d39b92325eb6753e989e5fc5aef9cbd013dab009",
+      "remoteSha256": "a983a59b26dd39affa656b69d39b92325eb6753e989e5fc5aef9cbd013dab009",
+      "passed": true
+    },
+    {
+      "path": "data/micro_scene_source_classes_context.geojson",
+      "status": 200,
+      "localBytes": 104197,
+      "remoteBytes": 104197,
+      "localSha256": "afd6a3a48101288ff00692e8ea2134728d0a434ce90773b9267840b0b7293c76",
+      "remoteSha256": "afd6a3a48101288ff00692e8ea2134728d0a434ce90773b9267840b0b7293c76",
+      "passed": true
+    },
+    {
+      "path": "data/micro_scene_surface_review_core.geojson",
+      "status": 200,
+      "localBytes": 16063,
+      "remoteBytes": 16063,
+      "localSha256": "4d139b1a5b8994101e211488b6a9c10bc503fe85f50bcc6a9fa184491c3204dd",
+      "remoteSha256": "4d139b1a5b8994101e211488b6a9c10bc503fe85f50bcc6a9fa184491c3204dd",
+      "passed": true
+    },
+    {
+      "path": "data/micro_scene_vegetation_core.geojson",
+      "status": 200,
+      "localBytes": 3777,
+      "remoteBytes": 3777,
+      "localSha256": "bfce8ab40aed2643a0095f36f9e76f8816e348297bfa69ed69832df7ec30bd08",
+      "remoteSha256": "bfce8ab40aed2643a0095f36f9e76f8816e348297bfa69ed69832df7ec30bd08",
+      "passed": true
+    },
+    {
+      "path": "data/preparation-state.json",
+      "status": 200,
+      "localBytes": 138541,
+      "remoteBytes": 138541,
+      "localSha256": "1c7174ca51ecd0adaf44bbb4b2d0962b913bfc0c9be7abdeb56b2d4debed412b",
+      "remoteSha256": "1c7174ca51ecd0adaf44bbb4b2d0962b913bfc0c9be7abdeb56b2d4debed412b",
+      "passed": true
+    },
+    {
+      "path": "data/preparation_snapshots/7d66553a704f56bb247003cdb163f5234a7c90abeaca8eb06816db297f764892.json",
+      "status": 200,
+      "localBytes": 138541,
+      "remoteBytes": 138541,
+      "localSha256": "1c7174ca51ecd0adaf44bbb4b2d0962b913bfc0c9be7abdeb56b2d4debed412b",
+      "remoteSha256": "1c7174ca51ecd0adaf44bbb4b2d0962b913bfc0c9be7abdeb56b2d4debed412b",
+      "passed": true
+    },
+    {
+      "path": "data/readback_verification.json",
+      "status": 200,
+      "localBytes": 11434,
+      "remoteBytes": 11434,
+      "localSha256": "5af412afb85b684bc5c169b541c334fdd1f2b7e902f2c5fb7f5028ca536befc1",
+      "remoteSha256": "5af412afb85b684bc5c169b541c334fdd1f2b7e902f2c5fb7f5028ca536befc1",
+      "passed": true
+    },
+    {
+      "path": "data/regional_green_points.geojson",
+      "status": 200,
+      "localBytes": 5965792,
+      "remoteBytes": 5965792,
+      "localSha256": "62bf4f9c85aedbb51b4dc3accaf9fa92f001e917b985a84b29af42f5a4dfa400",
+      "remoteSha256": "62bf4f9c85aedbb51b4dc3accaf9fa92f001e917b985a84b29af42f5a4dfa400",
+      "passed": true
+    },
+    {
+      "path": "data/regional_map_context.json",
+      "status": 200,
+      "localBytes": 4254,
+      "remoteBytes": 4254,
+      "localSha256": "04e3a3c11f0cb5b6644632d52c90846719163bcff4cd17292349bbbdfa415e0d",
+      "remoteSha256": "04e3a3c11f0cb5b6644632d52c90846719163bcff4cd17292349bbbdfa415e0d",
+      "passed": true
+    },
+    {
+      "path": "data/regional_roads_2021.geojson",
+      "status": 200,
+      "localBytes": 4515166,
+      "remoteBytes": 4515166,
+      "localSha256": "56f276ba8b8c69e52a0f70ceb7312d7900394da1dff41b5d1598b6fc163b18fb",
+      "remoteSha256": "56f276ba8b8c69e52a0f70ceb7312d7900394da1dff41b5d1598b6fc163b18fb",
+      "passed": true
+    },
+    {
+      "path": "data/research-state.json",
+      "status": 200,
+      "localBytes": 23017,
+      "remoteBytes": 23017,
+      "localSha256": "e9d30ca04de0b7afb8e409515fb8d342923e0e3e938a6decb02615cf5bc32646",
+      "remoteSha256": "e9d30ca04de0b7afb8e409515fb8d342923e0e3e938a6decb02615cf5bc32646",
+      "passed": true
+    },
+    {
+      "path": "data/research_snapshots/6b56102f564361fe2755efbea9b613b2a71e67af3d5fcd247ea157cc2af659f9.json",
+      "status": 200,
+      "localBytes": 23017,
+      "remoteBytes": 23017,
+      "localSha256": "e9d30ca04de0b7afb8e409515fb8d342923e0e3e938a6decb02615cf5bc32646",
+      "remoteSha256": "e9d30ca04de0b7afb8e409515fb8d342923e0e3e938a6decb02615cf5bc32646",
+      "passed": true
+    },
+    {
+      "path": "data/research_snapshots/efa0962c4a6ea46d47d9339330e350120f7d923d80008aeb214da5b95f144fd2.json",
+      "status": 200,
+      "localBytes": 23017,
+      "remoteBytes": 23017,
+      "localSha256": "fcfff706435f60e959244cced8ce6fa8b58e38bc2d6538c3dd6e4770eb64e60b",
+      "remoteSha256": "fcfff706435f60e959244cced8ce6fa8b58e38bc2d6538c3dd6e4770eb64e60b",
+      "passed": true
+    },
+    {
+      "path": "data/roads.geojson",
+      "status": 200,
+      "localBytes": 74173,
+      "remoteBytes": 74173,
+      "localSha256": "11f9e3520944cbc266e21de134655bddaf43e13c311ac56328acfb2629b69a21",
+      "remoteSha256": "11f9e3520944cbc266e21de134655bddaf43e13c311ac56328acfb2629b69a21",
+      "passed": true
+    },
+    {
+      "path": "data/scene.json",
+      "status": 200,
+      "localBytes": 898056,
+      "remoteBytes": 898056,
+      "localSha256": "ab2c7bcdc210ebe674688da9fe3abf3c7702ce66b92946367a75669afad03d2d",
+      "remoteSha256": "ab2c7bcdc210ebe674688da9fe3abf3c7702ce66b92946367a75669afad03d2d",
+      "passed": true
+    },
+    {
+      "path": "data/sichuan_boundary.geojson",
+      "status": 200,
+      "localBytes": 92159,
+      "remoteBytes": 92159,
+      "localSha256": "c15f65f685b8fedd97a2f72efeec4eb8622a74a8c929fd3434660f8afa8f3b4f",
+      "remoteSha256": "c15f65f685b8fedd97a2f72efeec4eb8622a74a8c929fd3434660f8afa8f3b4f",
+      "passed": true
+    },
+    {
+      "path": "data/sichuan_places.geojson",
+      "status": 200,
+      "localBytes": 4107,
+      "remoteBytes": 4107,
+      "localSha256": "ba003aa8f36bd8e1fe9f0310f10824e0bb4e7cf205744c5c5e0d2c7de6773bb6",
+      "remoteSha256": "ba003aa8f36bd8e1fe9f0310f10824e0bb4e7cf205744c5c5e0d2c7de6773bb6",
+      "passed": true
+    },
+    {
+      "path": "data/sichuan_rivers.geojson",
+      "status": 200,
+      "localBytes": 70841,
+      "remoteBytes": 70841,
+      "localSha256": "1460d171980babba8ad8aed02bcf5f0b5201500160027c469f3b41eb8e358c06",
+      "remoteSha256": "1460d171980babba8ad8aed02bcf5f0b5201500160027c469f3b41eb8e358c06",
+      "passed": true
+    },
+    {
+      "path": "data/source-geometry-state.json",
+      "status": 200,
+      "localBytes": 5438549,
+      "remoteBytes": 5438549,
+      "localSha256": "1c8b5764194ca26a08bd52a7452a0f0beb600c49561e9e90829c66b8e9eacb5c",
+      "remoteSha256": "1c8b5764194ca26a08bd52a7452a0f0beb600c49561e9e90829c66b8e9eacb5c",
+      "passed": true
+    },
+    {
+      "path": "data/source-preparation-state.json",
+      "status": 200,
+      "localBytes": 1827086,
+      "remoteBytes": 1827086,
+      "localSha256": "1d2799ff0d41e81fe461400b71e9cca7fb147ddabb8f622fc5d38d3035115f36",
+      "remoteSha256": "1d2799ff0d41e81fe461400b71e9cca7fb147ddabb8f622fc5d38d3035115f36",
+      "passed": true
+    },
+    {
+      "path": "data/source_metadata.json",
+      "status": 200,
+      "localBytes": 46928,
+      "remoteBytes": 46928,
+      "localSha256": "27ca04a59e7deb9757dbb486332be7419a06f4e322519ed10b69632295a780c7",
+      "remoteSha256": "27ca04a59e7deb9757dbb486332be7419a06f4e322519ed10b69632295a780c7",
+      "passed": true
+    },
+    {
+      "path": "data/study_selection_boundary.geojson",
+      "status": 200,
+      "localBytes": 19472,
+      "remoteBytes": 19472,
+      "localSha256": "c8d041d7a2a73af3e785127d67069019215376fd62a7e951826a779b5f5d0afc",
+      "remoteSha256": "c8d041d7a2a73af3e785127d67069019215376fd62a7e951826a779b5f5d0afc",
+      "passed": true
+    },
+    {
+      "path": "data/supplement-state.json",
+      "status": 200,
+      "localBytes": 3692678,
+      "remoteBytes": 3692678,
+      "localSha256": "6a8a7a733d8323cd4770eb88b3987bf085d79b2d100adb52d1df140532b38fdd",
+      "remoteSha256": "6a8a7a733d8323cd4770eb88b3987bf085d79b2d100adb52d1df140532b38fdd",
+      "passed": true
+    },
+    {
+      "path": "data/tables.json",
+      "status": 200,
+      "localBytes": 30761,
+      "remoteBytes": 30761,
+      "localSha256": "fa6d3d862968f50d162c9a4b156ff30c4abd959632081895ef8b37fbee505422",
+      "remoteSha256": "fa6d3d862968f50d162c9a4b156ff30c4abd959632081895ef8b37fbee505422",
+      "passed": true
+    },
+    {
+      "path": "data/version_differences.json",
+      "status": 200,
+      "localBytes": 5347,
+      "remoteBytes": 5347,
+      "localSha256": "9f3aee64e3f937207c72f108b7cd2ce9b267b60912104407a274f7aa8d242521",
+      "remoteSha256": "9f3aee64e3f937207c72f108b7cd2ce9b267b60912104407a274f7aa8d242521",
+      "passed": true
+    },
+    {
+      "path": "maplibre/6.12.0/LICENSE.txt",
+      "status": 200,
+      "localBytes": 5984,
+      "remoteBytes": 5984,
+      "localSha256": "ee5fc05a0677eaf69601d2c7db0d9ecd6cc27c3abc1d0733bc9ed34707cf8ef2",
+      "remoteSha256": "ee5fc05a0677eaf69601d2c7db0d9ecd6cc27c3abc1d0733bc9ed34707cf8ef2",
+      "passed": true
+    },
+    {
+      "path": "maplibre/6.12.0/maplibre-gl-shared.mjs",
+      "status": 200,
+      "localBytes": 516951,
+      "remoteBytes": 516951,
+      "localSha256": "df3d0b4ba965ebafd2deae3c568500308be2982d87dadd771ba82dc5a49a4631",
+      "remoteSha256": "df3d0b4ba965ebafd2deae3c568500308be2982d87dadd771ba82dc5a49a4631",
+      "passed": true
+    },
+    {
+      "path": "maplibre/6.12.0/maplibre-gl-worker.mjs",
+      "status": 200,
+      "localBytes": 19130,
+      "remoteBytes": 19130,
+      "localSha256": "1ecca7178f0a496b7980dc7a3c6a8c3575eda673cf3e9fa3324dcce7ef3890c2",
+      "remoteSha256": "1ecca7178f0a496b7980dc7a3c6a8c3575eda673cf3e9fa3324dcce7ef3890c2",
+      "passed": true
+    }
+  ],
+  "generatedResources": [
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/",
+      "status": 200,
+      "bytes": 430,
+      "sha256": "7ad149493ae4cc0b3d6bb76d13dbe948546afea9fef355782961c2637404f5b3",
+      "passed": true
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/assets/index-VARwF94G.js",
+      "status": 200,
+      "bytes": 2072272,
+      "sha256": "f5bc0f762c77263ae19ee620cb63a33ac5ded9673c7f99328975cd309520b127",
+      "passed": true
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/assets/index-ByFs1Hb_.css",
+      "status": 200,
+      "bytes": 186417,
+      "sha256": "fa8b6d4c6997e079fb1be9290ee10d06b0b3423b52763902a0eb12adc480b931",
+      "passed": true
+    }
+  ],
+  "workerResponses": [
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/maplibre/6.12.0/maplibre-gl-worker.mjs",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/maplibre/6.12.0/maplibre-gl-shared.mjs",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/maplibre/6.12.0/maplibre-gl-worker.mjs",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/maplibre/6.12.0/maplibre-gl-shared.mjs",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/maplibre/6.12.0/maplibre-gl-worker.mjs",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/maplibre/6.12.0/maplibre-gl-shared.mjs",
+      "status": 200
+    }
+  ],
+  "evidenceStateResponses": [
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/research-state.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/preparation-state.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/supplement-state.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/source-preparation-state.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/source-geometry-state.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/conditional-source-state.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/research-state.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/preparation-state.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/supplement-state.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/source-preparation-state.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/source-geometry-state.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/conditional-source-state.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/research-state.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/preparation-state.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/supplement-state.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/source-preparation-state.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/source-geometry-state.json",
+      "status": 200
+    },
+    {
+      "url": "https://xiaoman-0vo.github.io/urban-cooling-platform-demo/data/conditional-source-state.json",
+      "status": 200
+    }
+  ],
+  "pass": true,
+  "status": "passed_with_nonblocking_observations",
+  "screenshotReview": {
+    "reviewed": [
+      "线上工程样例.png",
+      "线上证据_来源几何与对象审阅.png"
+    ],
+    "findings": "地图、建筑与道路几何及100/300/500m范围图例可见；证据抽屉文字和按钮可读，未出现空白画布或错误覆盖。"
+  }
+}
