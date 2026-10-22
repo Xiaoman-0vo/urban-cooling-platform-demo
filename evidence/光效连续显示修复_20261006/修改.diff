@@ -1,0 +1,395 @@
+--- MapCanvas.before.jsx
++++ src/MapCanvas.jsx
+@@ -34,6 +34,28 @@
+   return ['interpolate', ['linear'], ['zoom'], 4, ['*', radius, 0.85],
+     12, ['*', radius, 1.15], 14, ['*', radius, 1.25], 18, ['*', radius, 0.7]];
+ }
++
++/** Animate original point halos without changing geometry or stable light cores. */
++export function greenPointHaloRadius(suffix, phase = 0.5) {
++  const ratio = ['max', 0, ['min', 1, ['to-number', ['get', 'G02'], 0]]];
++  const scale = 0.75 + phase * 0.5;
++  let radius;
++  if (suffix === 'point-halo') {
++    radius = ['interpolate', ['linear'], ['zoom'], 4, 1.5, 9, ['+', 1.8, ['*', ratio, 1.2]],
++      10, ['+', ['*', ratio, 1.8], 2.4], 12, ['+', ['*', ratio, 1.8], 2.8],
++      14, ['+', ['*', ratio, 1.8], 3.2], 18, ['+', ['*', ratio, 2], 6]];
++  } else if (suffix === 'halo-strong') {
++    radius = ['interpolate', ['linear'], ['zoom'],
++      12, ['interpolate', ['linear'], ratio, 0.5, 3.5, 1, 5.2],
++      16, ['interpolate', ['linear'], ratio, 0.5, 5.5, 1, 9],
++      18, ['interpolate', ['linear'], ratio, 0.5, 6, 1, 10]];
++  } else {
++    radius = greenRadius(['interpolate', ['linear'], ratio, 0.3, 1.7, 0.5, 2.5, 1, 3.5]);
++  }
++  // Zoom expressions must remain top-level, so scale each stop instead of
++  // wrapping the whole expression in multiplication.
++  return radius.map((value, index) => index >= 4 && index % 2 === 0 ? ['*', value, scale] : value);
++}
+ const GREEN_CLUSTER_RADIUS = ['interpolate', ['linear'], ['to-number', ['get', 'point_count'], 2],
+   2, 3, 25, 5, 200, 7, 1000, 9, 5868, 11];
+ 
+@@ -168,35 +190,33 @@
+     },
+   }, {
+     id: 'point-halo', type: 'circle', filter: rawPoint,
+-    metadata: { displayOnly: { purpose: 'middle_and_near_scale_source_point_reference', animation: 'opacity_only' } },
++    metadata: { displayOnly: { purpose: 'middle_and_near_scale_source_point_reference', animation: 'screen_radius_and_opacity', radiusUnit: 'screen_pixels_not_geographic_buffer' } },
+     paint: {
+       // Thin individual halos begin as clusters expand, without filling the city.
+-      'circle-radius': ['interpolate', ['linear'], ['zoom'], 4, 1.5, 9, ['+', 1.8, ['*', ratio, 1.2]],
+-        10, ['+', ['*', ratio, 1.8], 2.4], 12, ['+', ['*', ratio, 1.8], 2.8],
+-        14, ['+', ['*', ratio, 1.8], 3.2], 18, ['+', ['*', ratio, 2], 6]],
++      'circle-radius': greenPointHaloRadius('point-halo'),
+       'circle-color': '#36efa3', 'circle-opacity': greenHaloOpacity('point-halo'), 'circle-blur': 0.65,
+       'circle-opacity-transition': { duration: 0, delay: 0 },
++      'circle-radius-transition': { duration: 0, delay: 0 },
+     },
+   }, {
+     id: 'halo-strong', type: 'circle',
+     filter: ['all', rawPoint, ['>=', ratio, GREEN_DISPLAY_RULES.strongHaloMinG02]],
+-    metadata: { displayOnly: { minG02: GREEN_DISPLAY_RULES.strongHaloMinG02, purpose: 'visual_emphasis', animation: 'opacity_only' } },
++    metadata: { displayOnly: { minG02: GREEN_DISPLAY_RULES.strongHaloMinG02, purpose: 'visual_emphasis', animation: 'screen_radius_and_opacity', radiusUnit: 'screen_pixels_not_geographic_buffer' } },
+     paint: {
+-      'circle-radius': ['interpolate', ['linear'], ['zoom'],
+-        12, ['interpolate', ['linear'], ratio, 0.5, 3.5, 1, 5.2],
+-        16, ['interpolate', ['linear'], ratio, 0.5, 5.5, 1, 9],
+-        18, ['interpolate', ['linear'], ratio, 0.5, 6, 1, 10]],
++      'circle-radius': greenPointHaloRadius('halo-strong'),
+       'circle-color': '#5cf9b3', 'circle-opacity': greenHaloOpacity('halo-strong'), 'circle-blur': 0.8,
+       'circle-opacity-transition': { duration: 0, delay: 0 },
++      'circle-radius-transition': { duration: 0, delay: 0 },
+     },
+   }, {
+     id: 'halo', type: 'circle',
+     filter: ['all', rawPoint, ['>=', ratio, GREEN_DISPLAY_RULES.mediumHaloMinG02]],
+-    metadata: { displayOnly: { minG02: GREEN_DISPLAY_RULES.mediumHaloMinG02, purpose: 'visual_emphasis', animation: 'opacity_only' } },
++    metadata: { displayOnly: { minG02: GREEN_DISPLAY_RULES.mediumHaloMinG02, purpose: 'visual_emphasis', animation: 'screen_radius_and_opacity', radiusUnit: 'screen_pixels_not_geographic_buffer' } },
+     paint: {
+-      'circle-radius': greenRadius(['interpolate', ['linear'], ratio, 0.3, 1.7, 0.5, 2.5, 1, 3.5]),
++      'circle-radius': greenPointHaloRadius('halo'),
+       'circle-color': '#2bea9b', 'circle-opacity': greenHaloOpacity('halo'), 'circle-blur': 0.65,
+       'circle-opacity-transition': { duration: 0, delay: 0 },
++      'circle-radius-transition': { duration: 0, delay: 0 },
+     },
+   }, {
+     id: 'point', type: 'circle', filter: rawPoint, paint: {
+@@ -213,7 +233,14 @@
+       'circle-blur': 0.12,
+     },
+   }], 'greenFx');
+-  items.find((item) => item.key === 'regional_green_points').sourceOptions = {
++  const greenItem = items.find((item) => item.key === 'regional_green_points');
++  for (const layer of greenItem.layers) {
++    // Screen pixels should remain screen pixels when the user tilts the view.
++    // The default map pitch scaling makes distant points shrink away.
++    layer.paint['circle-pitch-scale'] = 'viewport';
++    layer.paint['circle-pitch-alignment'] = 'viewport';
++  }
++  greenItem.sourceOptions = {
+     cluster: true, clusterMaxZoom: GREEN_DISPLAY_RULES.clusterMaxZoom,
+     clusterRadius: GREEN_DISPLAY_RULES.clusterRadiusPx,
+     clusterProperties: { __display_g02_sum: ['+', ['to-number', ['get', 'G02'], 0]] },
+@@ -426,12 +453,17 @@
+               if (pendingSources.current.get(sourceId) === revision) pendingSources.current.delete(sourceId);
+             });
+             map.triggerRepaint();
+-          }).catch((error) => report(error, sourceId, sourceId));
++          }).catch((error) => {
++            // Keep stale tiles unselectable, but retry the rejected update on
++            // the next sync instead of leaving this source locked forever.
++            if (pendingSources.current.get(sourceId) === revision) revision.failed = true;
++            report(error, sourceId, sourceId);
++          });
+         };
+         if (!source) {
+           map.addSource(sourceId, { type: 'geojson', data: item.data, generateId: true, ...item.sourceOptions });
+           sourceData.current.set(sourceId, item.data);
+-        } else if (sourceData.current.get(sourceId) !== item.data) {
++        } else if (sourceData.current.get(sourceId) !== item.data || pendingSources.current.get(sourceId)?.failed) {
+           sourceData.current.set(sourceId, item.data);
+           renderedUpdate(source.setData(item.data));
+         }
+@@ -457,6 +489,16 @@
+         }
+       } catch (error) { report(error, sourceId, sourceId); }
+     }
++    // Keep the light coating above filled site geometry, including after style
++    // reloads and legacy source upgrades. Roads, receptors, range boundaries
++    // and the explicit source-review overlays remain above the light display.
++    const boundaryId = `${PREFIX}roads-line`;
++    if (map.getLayer(boundaryId)) {
++      const lights = next.items.find((item) => item.key === 'regional_green_points');
++      for (const layer of lights.layers) {
++        if (map.getLayer(layer.id)) map.moveLayer(layer.id, boundaryId);
++      }
++    }
+   };
+ 
+   const swapStyle = (style, online = false) => {
+@@ -525,6 +567,7 @@
+       return feature.toJSON?.() ?? feature;
+     };
+     const clicked = (event) => {
++      if (!styleReady.current) return;
+       // Inspect real objects before any candidate-location action, including in
+       // region-stage sample previews. Bounds, grids and display aggregates are
+       // deliberately absent from this priority.
+@@ -532,6 +575,22 @@
+       for (const key of PICK_PRIORITY) {
+         const feature = hits.find((hit) => hit.source === `${PREFIX}${key}`);
+         if (feature) { current.current.onSelect?.({ layerKey: key, feature: original(feature) }); return; }
++      }
++      // A temporarily unqueryable object is not a blank location. Ignore the
++      // click while its replacement tiles render instead of clearing the scene.
++      if (descriptors.current.some((item) => PICK_PRIORITY.includes(item.key)
++        && item.data.features.length && pendingSources.current.has(`${PREFIX}${item.key}`))) return;
++      // Green lights navigate the display; they must not turn a loaded scene
++      // into a new empty site. A cluster centroid is not a research location.
++      const x = event.point.x ?? event.point[0];
++      const y = event.point.y ?? event.point[1];
++      const light = query([[x - 8, y - 8], [x + 8, y + 8]], ['regional_green_points'])[0];
++      if (light) {
++        if (current.current.stage !== 'site') {
++          const focus = coordinate(light.geometry?.coordinates) ?? [event.lngLat.lng, event.lngLat.lat];
++          map.easeTo({ center: focus, zoom: Math.min(18, map.getZoom() + (light.properties?.point_count ? 2 : 1)), duration: 650 });
++        }
++        return;
+       }
+       // Site inspection must never replace the loaded scene with a new location.
+       // Only the region stage interprets a map click as a location/grid pick.
+@@ -587,6 +646,9 @@
+       for (const suffix of GREEN_HALOS) {
+         const id = `${PREFIX}regional_green_points-${suffix}`;
+         if (map.getLayer(id)) map.setPaintProperty(id, 'circle-opacity', greenHaloOpacity(suffix, phase));
++        if (suffix !== 'cluster-halo' && map.getLayer(id)) {
++          map.setPaintProperty(id, 'circle-radius', greenPointHaloRadius(suffix, phase));
++        }
+       }
+       const clusterHalo = `${PREFIX}regional_green_points-cluster-halo`;
+       if (map.getLayer(clusterHalo)) map.setPaintProperty(clusterHalo, 'circle-radius', greenClusterHaloRadius(phase));
+@@ -603,7 +665,7 @@
+     const tick = (time) => {
+       if (!alive.current || media?.matches) { stop(); return; }
+       started ??= time;
+-      // Ten paint updates per second animate opacity and far-scale screen halos.
++      // Ten paint updates per second animate opacity and screen halos at every scale.
+       // Source geometry, G02, stable light cores and camera stay fixed.
+       if (lastPaint === null || time - lastPaint >= 100) {
+         const phase = (1 + Math.sin((time - started) / GREEN_DISPLAY_RULES.breathingPeriodMs * Math.PI * 2)) / 2;
+
+--- App.before.jsx
++++ src/App.jsx
+@@ -590,7 +590,7 @@
+ 
+   const changeDrawer=next=>{setDrawer(next);if(!['source-preparations','geometry-sources'].includes(next) && !['source-preparations','geometry-sources'].includes(drawer))setDirty(true);};
+   const toggleLayer=key=>{setVisible(v=>({...v,[key]:!(v[key] ?? DEFAULT_VISIBLE[key])}));setDirty(true);};
+-  const pick=(lonlat,feature)=>{if(stage!=='region')return;try{setLocation(feature?.properties?.grid_id || `${lonlat[0].toFixed(6)}, ${lonlat[1].toFixed(6)}`);locateAt(lonlat,feature);}catch(error){notify(error.message,true);}};
++  const pick=(lonlat,feature)=>{if(stage!=='region' || preview)return;try{setLocation(feature?.properties?.grid_id || `${lonlat[0].toFixed(6)}, ${lonlat[1].toFixed(6)}`);locateAt(lonlat,feature);}catch(error){notify(error.message,true);}};
+ 
+   if(bootError) return <main className="boot"><WarningCircle size={40}/><h1>资料展示包尚未载入</h1><p>{bootError}</p><button onClick={()=>window.location.reload()}>重新载入</button></main>;
+   if(!data) return <main className="boot"><Stack size={40}/><h1>正在读取本地研究资料</h1><p>核对来源、范围与场地图层</p></main>;
+
+--- map-canvas.before.test.mjs
++++ tests/map-canvas.test.mjs
+@@ -160,8 +160,8 @@
+     constructor(options) {
+       this.options = options; this.sources = new Map(); this.layers = new Map();
+       this.events = new Map(); this.bearing = options.bearing; this.jumps = []; this.paintChanges = [];
+-      this.clusterChanges = []; this.removedSources = []; this.removedLayers = [];
+-      this.camera = { center: options.center, zoom: options.zoom, pitch: options.pitch, bearing: options.bearing };
++      this.clusterChanges = []; this.removedSources = []; this.removedLayers = []; this.layerMoves = [];
++      this.camera = { center: options.center, zoom: options.zoom, pitch: options.pitch, bearing: options.bearing }; this.eases=[];
+       this.canvas = { style: {} }; this.hits = []; this.removed = false;
+       instances.push(this); this.setStyle(options.style);
+     }
+@@ -192,7 +192,21 @@
+     getSource(id) { return this.sources.get(id); }
+     removeSource(id) { this.sources.delete(id); this.removedSources.push(id); }
+     getStyle() { return { ...this.style, layers: [...this.layers.values()] }; }
+-    addLayer(layer) { this.layers.set(layer.id, structuredClone(layer)); }
++    addLayer(layer, beforeId) {
++      this.layers.set(layer.id, structuredClone(layer));
++      if (beforeId) this.moveLayer(layer.id, beforeId);
++    }
++    moveLayer(id, beforeId) {
++      const layer = this.layers.get(id);
++      if (!layer || beforeId && !this.layers.has(beforeId)) throw new Error('Unknown layer in moveLayer');
++      if (id === beforeId) return;
++      this.layers.delete(id);
++      const entries = [...this.layers];
++      const position = beforeId ? entries.findIndex(([key]) => key === beforeId) : entries.length;
++      entries.splice(position, 0, [id, layer]);
++      this.layers = new Map(entries);
++      this.layerMoves.push({ id, beforeId });
++    }
+     getLayer(id) { return this.layers.get(id); }
+     removeLayer(id) { this.layers.delete(id); this.removedLayers.push(id); }
+     setLayoutProperty(id, key, value) { this.layers.get(id).layout ??= {}; this.layers.get(id).layout[key] = value; }
+@@ -203,8 +217,10 @@
+       return this.hits.filter((hit) => layers.includes(hit.layer.id) && this.getLayer(hit.layer.id)?.layout?.visibility !== 'none');
+     }
+     getBearing() { return this.bearing; }
++    getZoom() { return this.camera.zoom; }
+     isEasing() { return false; }
+     jumpTo(options) { this.bearing = options.bearing; this.camera = { ...this.camera, ...options }; this.jumps.push(options); }
++    easeTo(options) { this.eases.push(options); this.jumpTo(options); }
+     triggerRepaint() { queueMicrotask(() => { if (!this.removed) this.emit('render'); }); }
+     remove() { this.removed = true; }
+   }
+@@ -402,7 +418,8 @@
+     assert.deepEqual(validateStyleMin(plain(map.style)).map((error) => error.message), []);
+     map.hits = [{ id: 0, source: 'research-regional_green_points', layer: { id: circles.id } }];
+     map.emit('click', { point: [10, 20], lngLat: { lng: 104.08, lat: 30.63 } });
+-    assert.equal(selected.length, 0); assert.equal(picks.length, 1); assert.equal(picks[0][1], null);
++    assert.equal(selected.length, 0); assert.equal(picks.length, 0); assert.equal(map.eases.length,1);
++    assert.equal(map.eases[0].zoom,12.6);
+     h.render({ ...props, stage: 'site' }); await flush();
+     assert.equal(map.getLayer(circles.id).layout.visibility, 'visible');
+     assert.equal(map.getLayer('research-regional_roads-line').layout.visibility, 'visible');
+@@ -457,7 +474,7 @@
+     h.frame(2250); assert.ok(Math.abs(evaluatePaint(opacity(), 'circle-opacity', 11) - 0.2) < 1e-9);
+     assert.ok(map.paintChanges.every((change) =>
+       (change.key === 'circle-opacity' && /-halo(?:-strong)?$/.test(change.id)) ||
+-      (change.key === 'circle-radius' && /-cluster-(?:halo|ring)$/.test(change.id)) ||
++      (change.key === 'circle-radius' && /-(?:cluster-halo|cluster-ring|point-halo|halo|halo-strong)$/.test(change.id)) ||
+       (change.key === 'circle-stroke-opacity' && /-cluster-ring$/.test(change.id))));
+     for (const change of map.paintChanges) assert.deepEqual(plain(change.value.slice(0, 3)), ['interpolate', ['linear'], ['zoom']]);
+     const clusterHalo = () => map.getLayer('research-regional_green_points-cluster-halo').paint['circle-radius'];
+@@ -469,6 +486,9 @@
+     h.reducedMotion(true); assert.equal(h.frames.size, 0);
+     assert.deepEqual(plain(opacity()), plain(h.api.greenHaloOpacity('halo-strong', 0.5)));
+     assert.deepEqual(plain(clusterHalo()), plain(h.api.greenClusterHaloRadius(0.5)));
++    for (const suffix of ['point-halo', 'halo', 'halo-strong']) {
++      assert.deepEqual(plain(map.getLayer(`research-regional_green_points-${suffix}`).paint['circle-radius']), plain(h.api.greenPointHaloRadius(suffix, 0.5)));
++    }
+     h.reducedMotion(false); assert.equal(h.frames.size, 1);
+     h.render({ ...props, stage: 'site' }); assert.equal(h.frames.size, 1);
+     h.render({ ...props, stage: 'site', visible: { greenFx: false } }); assert.equal(h.frames.size, 0);
+@@ -477,6 +497,126 @@
+   const reduced = harness();
+   try { reduced.media.matches = true; reduced.render(props); await flush(); assert.equal(reduced.frames.size, 0); }
+   finally { reduced.dispose(); }
++});
++
++test('all seven green circles remain viewport-aligned and point halos breathe in legal zoom expressions without changing stable cores', async () => {
++  const h=harness();
++  const data=fc([{type:'Feature',properties:{G02:'0.8',source_status:'candidate'},geometry:{type:'Point',coordinates:[104.08,30.63]}}]);
++  const before=JSON.stringify(data),props={offline:true,stage:'site',regionalGreenPoints:data};
++  try {
++    const item=h.api.researchDescriptors(props).items.find(i=>i.key==='regional_green_points');
++    assert.equal(item.layers.length,7);
++    for(const layer of item.layers){assert.equal(layer.type,'circle');assert.equal(layer.paint['circle-pitch-scale'],'viewport');assert.equal(layer.paint['circle-pitch-alignment'],'viewport');}
++    for(const suffix of ['point-halo','halo','halo-strong'])for(const zoom of [6.2,10,11.6,14,18]){
++      const average=h.api.greenPointHaloRadius(suffix,0.5),minimum=h.api.greenPointHaloRadius(suffix,0),maximum=h.api.greenPointHaloRadius(suffix,1);
++      for(const value of [average,minimum,maximum])assert.deepEqual(plain(value.slice(0,3)),['interpolate',['linear'],['zoom']]);
++      const averagePx=evaluatePaint(average,'circle-radius',zoom,{G02:'0.8'}),minPx=evaluatePaint(minimum,'circle-radius',zoom,{G02:'0.8'}),maxPx=evaluatePaint(maximum,'circle-radius',zoom,{G02:'0.8'});
++      assert.ok(Math.abs(minPx-averagePx*0.75)<1e-9);assert.ok(Math.abs(maxPx-averagePx*1.25)<1e-9);
++      assert.ok(maxPx>minPx*1.6,'point halo has visible screen-radius breathing');
++      assert.deepEqual(plain(item.layers.find(layer=>layer.id==='research-regional_green_points-'+suffix).paint['circle-radius']),plain(average));
++    }
++    h.render(props);await flush();const map=h.instances[0];map.jumpTo({pitch:65,zoom:16});
++    const camera=structuredClone(map.camera),jumps=map.jumps.length;
++    const cores=['cluster','point'].map(suffix=>plain(map.getLayer(`research-regional_green_points-${suffix}`).paint));
++    h.frame(0);h.frame(750);
++    const maximum=Object.fromEntries(['point-halo','halo','halo-strong'].map(suffix=>[suffix,evaluatePaint(map.getLayer(`research-regional_green_points-${suffix}`).paint['circle-radius'],'circle-radius',16,{G02:'0.8'})]));
++    h.frame(2250);
++    for(const suffix of ['point-halo','halo','halo-strong']){
++      const current=map.getLayer(`research-regional_green_points-${suffix}`);
++      const minimum=evaluatePaint(current.paint['circle-radius'],'circle-radius',16,{G02:'0.8'});
++      assert.ok(maximum[suffix]>minimum*1.6);assert.equal(current.paint['circle-pitch-scale'],'viewport');assert.equal(current.paint['circle-pitch-alignment'],'viewport');
++    }
++    assert.deepEqual(['cluster','point'].map(suffix=>plain(map.getLayer(`research-regional_green_points-${suffix}`).paint)),cores);
++    assert.equal(map.jumps.length,jumps);assert.deepEqual(plain(map.camera),plain(camera));assert.equal(JSON.stringify(data),before);
++    h.reducedMotion(true);assert.equal(h.frames.size,0);
++    for(const suffix of ['point-halo','halo','halo-strong'])assert.deepEqual(plain(map.getLayer(`research-regional_green_points-${suffix}`).paint['circle-radius']),plain(h.api.greenPointHaloRadius(suffix,0.5)));
++  } finally {h.dispose();}
++});
++
++test('green coating stays above site fills and below all range lines on first load, legacy upgrade and style reload', async () => {
++  const h=harness();
++  const points=fc([{type:'Feature',properties:{G02:'0.75'},geometry:{type:'Point',coordinates:[104.08,30.63]}}]);
++  const sceneLayers={class_surface:fc([polygon({source_class:2})]),hard_review:fc([polygon()]),overlap_review:fc([polygon()]),buildings:fc([polygon({merged_id:'original'})]),building_parts:fc([polygon({__display_working_height_m:12})]),vegetation:fc([polygon({source_component_ids:'17696'})]),core:fc([polygon()]),context:fc([polygon()]),macro_context300:fc([polygon()])};
++  const before=JSON.stringify({points,sceneLayers}),props={offline:true,stage:'site',sceneLayers,regionalGreenPoints:points};
++  const assertOrder=map=>{
++    const order=[...map.layers.keys()],ids=h.api.researchDescriptors(props).items.find(i=>i.key==='regional_green_points').layers.map(layer=>layer.id);
++    const positions=ids.map(id=>order.indexOf(id));assert.equal(new Set(ids).size,7);assert.ok(positions.every(position=>position>=0));
++    assert.deepEqual(order.slice(positions[0],positions[0]+7),plain(ids));
++    for(const id of ['research-class_surface-fill','research-hard_review-fill','research-overlap_review-fill','research-buildings-fill','research-building_parts-extrusion','research-vegetation-fill'])assert.ok(order.indexOf(id)<positions[0],id+' remains below green coating');
++    for(const id of ['research-roads-line','research-receptors-point','research-context-line','research-macro_context300-line','research-core-line','research-source_cells-fill','research-geometry_buildings-fill'])assert.ok(order.indexOf(id)>positions.at(-1),id+' remains above green coating');
++    for(const id of ids){assert.equal(map.getLayer(id).paint['circle-pitch-scale'],'viewport');assert.equal(map.getLayer(id).paint['circle-pitch-alignment'],'viewport');}
++    assert.equal(map.getSource('research-regional_green_points').data,points);for(const [key,data] of Object.entries(sceneLayers))assert.equal(map.getSource('research-'+key).data,data);
++  };
++  try {
++    h.media.matches=true;h.render(props);await flush();const map=h.instances[0];assertOrder(map);
++    const camera=structuredClone(map.camera),jumps=map.jumps.length;
++    const source=map.getSource('research-regional_green_points');source.cluster=false;source.clusterProperties=undefined;
++    for(const layer of [...map.layers.values()].filter(layer=>layer.source==='research-regional_green_points')){map.moveLayer(layer.id);layer.paint['circle-pitch-scale']='map';layer.paint['circle-pitch-alignment']='map';}
++    h.render({...props,visible:{greenFx:true}});await flush();assertOrder(map);assert.notEqual(map.getSource('research-regional_green_points'),source);
++    h.render({...props,offline:false});await flush();assert.ok(map.getSource('osm'));assertOrder(map);
++    h.render({...props,offline:true});await flush();assert.equal(map.getSource('osm'),undefined);assertOrder(map);
++    assert.equal(h.instances.length,1);assert.equal(map.jumps.length,jumps);assert.deepEqual(plain(map.camera),plain(camera));assert.equal(JSON.stringify({points,sceneLayers}),before);
++  } finally {h.dispose();}
++});
++
++test('unready styles and nonempty pending objects block destructive region picks while stable objects and genuine blank clicks still work', async () => {
++  const h=harness(),selected=[],picks=[];
++  const first=fc([polygon({merged_id:'first'})]),next=fc([polygon({merged_id:'next'})]),vegetation=fc([polygon({source_component_ids:'17696'})]);
++  const props={offline:true,stage:'region',sceneLayers:{buildings:first,vegetation},onSelect:item=>selected.push(item),onPick:(...args)=>picks.push(args)};
++  const click={point:[10,20],lngLat:{lng:104.08,lat:30.63}};
++  try {
++    h.render(props);await flush();const map=h.instances[0];
++    h.render({...props,offline:false});map.hits=[];map.emit('click',click);assert.equal(picks.length,0,'style rebuild is not a new blank location');
++    await flush();
++    const source=map.getSource('research-buildings');let resolve;
++    source.setData=data=>{source.data=data;return new Promise(done=>{resolve=done;});};
++    h.render({...props,offline:false,sceneLayers:{buildings:next,vegetation}});
++    map.hits=[{id:0,source:'research-buildings',layer:{id:'research-buildings-fill'}}];
++    map.emit('click',click);assert.equal(selected.length,0);assert.equal(picks.length,0);
++    map.hits=[];map.emit('click',click);assert.equal(picks.length,0,'pending real objects must not clear the sample');
++    map.hits=[{id:0,source:'research-vegetation',layer:{id:'research-vegetation-fill'}}];map.emit('click',click);
++    assert.equal(selected.at(-1).feature,vegetation.features[0]);assert.equal(picks.length,0,'a stable object remains selectable');
++    resolve();await flush();map.hits=[{id:0,source:'research-buildings',layer:{id:'research-buildings-fill'}}];map.emit('click',click);assert.equal(selected.at(-1).feature,next.features[0]);assert.equal(picks.length,0);
++    h.render({...props,offline:false,sceneLayers:{buildings:fc(),vegetation}});
++    map.hits=[];map.emit('click',click);assert.equal(picks.length,1,'empty pending collections do not disable valid blank-location picking');
++    resolve();await flush();map.emit('click',click);assert.equal(picks.length,2);
++    assert.equal(map.jumps.length,0);assert.equal(map.getSource('research-vegetation').data,vegetation);
++  } finally {h.dispose();}
++});
++
++test('green point and cluster clicks expand the display without selecting or replacing a scene; real objects retain priority',async()=>{
++  const h=harness(),picks=[],selected=[],point={type:'Feature',properties:{G02:'0.7',grid_id:'source-only-candidate'},geometry:{type:'Point',coordinates:[104.08,30.63]}},building=polygon({merged_id:'keep-scene'});
++  const green=fc([point]),sceneLayers={buildings:fc([building]),vegetation:fc([polygon({source_component_ids:'17696'})])},before=JSON.stringify({green,sceneLayers});
++  const props={offline:true,stage:'region',regionalGreenPoints:green,sceneLayers,onPick:(...args)=>picks.push(args),onSelect:item=>selected.push(item)},click={point:[10,20],lngLat:{lng:104.09,lat:30.64}};
++  try {
++    h.render(props);await flush();const map=h.instances[0];
++    const lightHit={id:0,source:'research-regional_green_points',properties:point.properties,geometry:point.geometry,layer:{id:'research-regional_green_points-point'}};
++    map.hits=[lightHit];const firstZoom=map.getZoom();map.emit('click',click);
++    assert.equal(map.getZoom(),firstZoom+1);assert.deepEqual(plain(map.eases.at(-1).center),point.geometry.coordinates);assert.equal(map.eases.at(-1).duration,650);assert.equal(picks.length,0);assert.equal(selected.length,0);
++    map.hits=[{id:987,source:'research-regional_green_points',properties:{point_count:23},geometry:{type:'Point',coordinates:[104.082,30.632]},layer:{id:'research-regional_green_points-cluster'}}];
++    const nextZoom=map.getZoom();map.emit('click',click);assert.equal(map.getZoom(),nextZoom+2);assert.deepEqual(plain(map.eases.at(-1).center),[104.082,30.632]);assert.equal(picks.length,0);assert.equal(selected.length,0);
++    map.jumpTo({zoom:17.5});map.emit('click',click);assert.equal(map.getZoom(),18,'display navigation is capped at zoom18');
++    map.hits=[lightHit,{id:0,source:'research-buildings',layer:{id:'research-buildings-fill'}}];const easeCount=map.eases.length;map.emit('click',click);
++    assert.equal(selected.at(-1).feature,building);assert.equal(map.eases.length,easeCount);assert.equal(picks.length,0);
++    h.render({...props,stage:'site'});await flush();map.hits=[lightHit];const siteCamera=structuredClone(map.camera);map.emit('click',click);
++    assert.equal(map.eases.length,easeCount);assert.deepEqual(map.camera,siteCamera);assert.equal(picks.length,0);assert.equal(selected.length,1);
++    assert.equal(map.getSource('research-regional_green_points').data,green);for(const [key,value] of Object.entries(sceneLayers))assert.equal(map.getSource('research-'+key).data,value);assert.equal(JSON.stringify({green,sceneLayers}),before);
++  } finally {h.dispose();}
++});
++
++test('a rejected object data update keeps stale tiles unqueryable and retries the same data on the next sync before selecting',async()=>{
++  const h=harness(),picks=[],selected=[],errors=[],first=fc([polygon({merged_id:'first'})]),next=fc([polygon({merged_id:'next'})]);
++  const props={offline:true,stage:'region',sceneLayers:{buildings:first},onPick:(...args)=>picks.push(args),onSelect:item=>selected.push(item),onMapError:error=>errors.push(error)},click={point:[10,20],lngLat:{lng:104.08,lat:30.63}};
++  try {
++    h.render(props);await flush();const map=h.instances[0],source=map.getSource('research-buildings');let attempts=0;
++    source.setData=data=>{attempts++;if(attempts===1)return Promise.reject(new Error('Worker rejected object update'));source.data=data;return Promise.resolve();};
++    const updated={...props,sceneLayers:{buildings:next}};h.render(updated);await flush();
++    map.hits=[{id:0,source:'research-buildings',layer:{id:'research-buildings-fill'}}];map.emit('click',click);
++    assert.equal(attempts,1);assert.equal(selected.length,0);assert.equal(picks.length,0);assert.equal(source.data,first);assert.equal(errors.length,1);assert.equal(errors[0].context,'research-buildings');
++    h.render({...updated,visible:{bounds:false}});assert.equal(attempts,2);map.emit('click',click);assert.equal(selected.length,0);assert.equal(picks.length,0);
++    await flush();map.emit('click',click);assert.equal(selected.at(-1).feature,next.features[0]);assert.equal(picks.length,0);assert.equal(source.data,next);
++    h.render({...updated,visible:{bounds:true}});await flush();assert.equal(attempts,2);assert.equal(errors.length,1);assert.equal(map.jumps.length,0);assert.equal(h.instances.length,1);
++  } finally {h.dispose();}
+ });
+ 
+ test('region sample objects inspect first and never invoke destructive candidate-location callbacks', async () => {

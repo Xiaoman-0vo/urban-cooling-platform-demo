@@ -1,0 +1,214 @@
+{
+  "completed_at": "2026-10-07T00:29:04.817738+08:00",
+  "preview_url": "http://127.0.0.1:4173/",
+  "user_correction": "扩大视野和缩远时保留密集细星点，不聚成几个大光团",
+  "behavior": {
+    "source_clustering": false,
+    "retained_points": {
+      "regional_G02": 5868,
+      "CLCD_city_display": 4392,
+      "UBGG_display": 2492
+    },
+    "far_zoom": "Original point coordinates and source fields remain; individual core and halo screen radii become smaller continuously.",
+    "near_zoom": "Original breathing radius and brightness continue into the loaded site.",
+    "selection_scope": "Existing Chengdu study boundary remains unchanged."
+  },
+  "checks": {
+    "regression_tests_passed": 65,
+    "sites_structure_tests_passed": 4,
+    "build": "passed",
+    "native_tile_engine": "All 12752 distinct source points retained without point_count properties at zooms 4, 6, 8, 9, 10.",
+    "browser": "Default Chengdu, zoom out, Sichuan view, study view, restored site, original draft versions 10 and 6 read back.",
+    "console_errors": [],
+    "saved_project_overwritten": false
+  },
+  "unchanged_public_assets": [
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/public/data/chengdu_green_context.json",
+      "bytes": 5873,
+      "sha256": "48e171324aed773fc86bf443ea12eec932366cfee59547d7c56c1344c9276574",
+      "matches_prior_receipt": true
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/public/data/regional_map_context.json",
+      "bytes": 4254,
+      "sha256": "04e3a3c11f0cb5b6644632d52c90846719163bcff4cd17292349bbbdfa415e0d",
+      "matches_prior_receipt": true
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/public/data/CHENGDU_GREEN_DATA_SOURCES.md",
+      "bytes": 1339,
+      "sha256": "34584f6d52e2922765a2ba2a46d2748d72ea2275f8c6f252f4f69697bcae4da9",
+      "matches_prior_receipt": true
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/public/data/REGIONAL_DATA_SOURCES.md",
+      "bytes": 909,
+      "sha256": "43c8ae236028e54db2a3cb6888fe3ec19de1d370b972326a0d8392f22e6d7ab6",
+      "matches_prior_receipt": true
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/public/data/chengdu_navigation_boundary.geojson",
+      "bytes": 171464,
+      "sha256": "9e347fd0249c22fac185040f0f88fa8202fec5c440b2e16fe09adf171c3fbb15",
+      "matches_prior_receipt": true
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/public/data/chengdu_city_green_points.geojson",
+      "bytes": 1879256,
+      "sha256": "0fee2c30a14a05d87f3ed8e47a30a7f31349b5914bbd6d1325cf705da81ee325",
+      "matches_prior_receipt": true
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/public/data/chengdu_urban_green_points.geojson",
+      "bytes": 1076102,
+      "sha256": "752583ed0c37ad2a122a249fd5afaf77415957f0c94af558a7b6dba34a10aef8",
+      "matches_prior_receipt": true
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/public/data/chengdu_city_effects.geojson",
+      "bytes": 359059,
+      "sha256": "b95944e9563f9f11135f3154f7337970bc4e958215cfb187fd2848a9ce03e9f2",
+      "matches_prior_receipt": true
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/public/data/sichuan_boundary.geojson",
+      "bytes": 92159,
+      "sha256": "c15f65f685b8fedd97a2f72efeec4eb8622a74a8c929fd3434660f8afa8f3b4f",
+      "matches_prior_receipt": true
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/public/data/sichuan_rivers.geojson",
+      "bytes": 70841,
+      "sha256": "1460d171980babba8ad8aed02bcf5f0b5201500160027c469f3b41eb8e358c06",
+      "matches_prior_receipt": true
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/public/data/sichuan_places.geojson",
+      "bytes": 4107,
+      "sha256": "ba003aa8f36bd8e1fe9f0310f10824e0bb4e7cf205744c5c5e0d2c7de6773bb6",
+      "matches_prior_receipt": true
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/public/data/study_selection_boundary.geojson",
+      "bytes": 19472,
+      "sha256": "c8d041d7a2a73af3e785127d67069019215376fd62a7e951826a779b5f5d0afc",
+      "matches_prior_receipt": true
+    }
+  ],
+  "unchanged_prior_implementation": [
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/App.jsx",
+      "bytes": 76282,
+      "sha256": "a8bdbba8077f14dbe27329980b6f6b727a4905b77bfc5041c8e021148a53684a",
+      "matches_prior_receipt": true
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/styles.css",
+      "bytes": 30058,
+      "sha256": "878ca62fb841a5a2e72bb84e3dee626828cc2cef92d4686d9a749883faee1275",
+      "matches_prior_receipt": true
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/regional-navigation.js",
+      "bytes": 3251,
+      "sha256": "97a09a2bd7deb4d8ad865d668375ccd59189e2c9223fcefd10bb305c05a31b90",
+      "matches_prior_receipt": true
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/scripts/prepare-regional-navigation.py",
+      "bytes": 8884,
+      "sha256": "a9579e36b7583a2e48fb039fe19e7b668dcc7c8411d3c11dc9a4123ccbb3f23f",
+      "matches_prior_receipt": true
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/scripts/prepare-chengdu-green-lights.py",
+      "bytes": 16077,
+      "sha256": "c3e9e12d006c9d0f7afe0ce7574d82cac04b2ed803b7507be0f515f8e15a6d1d",
+      "matches_prior_receipt": true
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/tests/regional-navigation.test.mjs",
+      "bytes": 8559,
+      "sha256": "3a7b44867cb6f00aaf2505e651083047759f3a83151bb7df2bffda9a35cd049a",
+      "matches_prior_receipt": true
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/package.json",
+      "bytes": 1084,
+      "sha256": "b36565dee5d922cf9dd8b9ae32b242baede7591d6dacf47b820b6440629c0505",
+      "matches_prior_receipt": true
+    }
+  ],
+  "changed_files": [
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/AGENTS.md",
+      "bytes": 5395,
+      "sha256": "6f317c220fbd02a4ade8b4164e5bbf472f874a57757d387861b1b76eae502072"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/MapCanvas.jsx",
+      "bytes": 51741,
+      "sha256": "1e4448b236e404b57c799bf1feceffcb2712089c0f5bedbfedad9eed2bf101ef"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/tests/map-canvas.test.mjs",
+      "bytes": 73398,
+      "sha256": "6793ea963f51b28cf51df6ceef3cf1d0083799816e9767ea1e7e66be67d2248e"
+    }
+  ],
+  "prior_backups": [
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/远景密集星点修正_20261007/修改前_AGENTS.md",
+      "bytes": 5292,
+      "sha256": "59628a2858cb19519451b94405312146156d52538de4bfaab08a31aa4c3e4944"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/远景密集星点修正_20261007/修改前_MapCanvas.jsx",
+      "bytes": 51726,
+      "sha256": "ae868cbb64bf428330976590c13412ba730584962f9266ff35452bb23da8fcbd"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/远景密集星点修正_20261007/修改前_map-canvas.test.mjs",
+      "bytes": 73323,
+      "sha256": "c9f6048054a995e1bf4ed0974c1d9e792e2458da2e33d658ba1c7ea48d286fbd"
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/远景密集星点修正_20261007/修正前_缩远聚合.png",
+      "bytes": 135774,
+      "sha256": "51d17d64ff42f61d3b8023f2dc1052e883bb46aa32704842a391b1e29f0ef042"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/远景密集星点修正_20261007/修正后_四川远景.png",
+      "bytes": 108507,
+      "sha256": "e05b0ffceb3ee8ba07d1542c0832d73e6b9f488107ba523bf4db79fd34c6c197"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/远景密集星点修正_20261007/修正后_完成预览.png",
+      "bytes": 130264,
+      "sha256": "dd2b2cccb45aff108d5aee7675f36504cd5c6a660e59ec1794d576988a537e51"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/远景密集星点修正_20261007/修正后_成都全域默认.png",
+      "bytes": 133032,
+      "sha256": "f2136b543fb8b862bf9615ab0e2a66581b8556c0b62ef0dac6c01000310e1a11"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/远景密集星点修正_20261007/修正后_成都缩远.png",
+      "bytes": 108989,
+      "sha256": "b24d8c527dfe1c55475c2929c5e4aff9f275be8fb112a4285a83f50327044bc1"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/远景密集星点修正_20261007/修正后_研究区近景.png",
+      "bytes": 175520,
+      "sha256": "c67b49c947cd41385276672ed5075e5bb71fc1a66ea7b194b3f49783d0f374e1"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/远景密集星点修正_20261007/修正后_进入原场地.png",
+      "bytes": 173611,
+      "sha256": "d19beed61ab48ec011c5a7a283cfd138f70efa5dc21973f7d6cdc9fa2337f36f"
+    }
+  ]
+}

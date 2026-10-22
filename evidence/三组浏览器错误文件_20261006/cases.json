@@ -1,0 +1,76 @@
+{
+  "input_path": "/Users/wangyanbo/Downloads/街区交接_E4125_N33891_2026-10-05T22-39-34-670Z.json",
+  "input_sha256": "10b91f07544d013f3badb8e1dab7ca60c4db2908db1e27368d738ee5e8f06fec",
+  "cases": [
+    {
+      "name": "01_错误来源哈希",
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/三组浏览器错误文件_20261006/01_错误来源哈希.json",
+      "bytes": 10410899,
+      "sha256": "9eb90089e393e485f029db6c49252ebe9c8daab59b8899dd6fbcb2fc39471fba",
+      "expected_detection": "closed registration identity"
+    },
+    {
+      "name": "02_原清单损坏",
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/三组浏览器错误文件_20261006/02_原清单损坏.json",
+      "bytes": 10410899,
+      "sha256": "d4ca6a8f72776f1b89e7c737b0c8649cf52c7659c8f67c482371dc562f2c6712",
+      "expected_detection": "original manifest SHA256"
+    },
+    {
+      "name": "03_重复组身份",
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/三组浏览器错误文件_20261006/03_重复组身份.json",
+      "bytes": 11933260,
+      "sha256": "c092f316dd7055b483a41a83a880c9d83a1c598f48577c3f404fb7650cc518c3",
+      "expected_detection": "duplicate namespace"
+    },
+    {
+      "name": "04_布尔字符串与准入升级",
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/三组浏览器错误文件_20261006/04_布尔字符串与准入升级.json",
+      "bytes": 10410901,
+      "sha256": "c3b37b8beebff1587089f8fa21738d645199da2d3a2ecb7e70fb8a2e742f1d9e",
+      "expected_detection": "strict false plus frozen metadata"
+    },
+    {
+      "name": "05_未采用状态升级",
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/三组浏览器错误文件_20261006/05_未采用状态升级.json",
+      "bytes": 10410895,
+      "sha256": "64694e5c7eb97d65e376e4509613c2842741e0cf1872a04cf31c929a46c5fed2",
+      "expected_detection": "frozen scientific state"
+    },
+    {
+      "name": "06_重复JSON字段",
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/三组浏览器错误文件_20261006/06_重复JSON字段.json",
+      "bytes": 10410948,
+      "sha256": "99926b3920525110a567dc799d64ed398b6db180c6a740eef80f7af250b8404c",
+      "expected_detection": "strict duplicate-key parser"
+    },
+    {
+      "name": "07_新登记null错误",
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/三组浏览器错误文件_20261006/07_新登记null错误.json",
+      "bytes": 8574809,
+      "sha256": "937d33a8be2cb4447612bdf9990e7c2e4ac497664d869dced45296d2f7d1d427",
+      "expected_detection": "optional-field type"
+    },
+    {
+      "name": "08_天气漏行",
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/三组浏览器错误文件_20261006/08_天气漏行.json",
+      "bytes": 10410855,
+      "sha256": "a60c1844034475e313d0c7d87cf6916325f7900724e5e91707172ccb1872929a",
+      "expected_detection": "changed source version rejected by frozen identity before semantic parsing"
+    },
+    {
+      "name": "09_来源CRS单位空值篡改",
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/三组浏览器错误文件_20261006/09_来源CRS单位空值篡改.json",
+      "bytes": 10410811,
+      "sha256": "959d61377f4893f815a5d65f47c5097a244b331c5638462e8230f44e9cdbc55e",
+      "expected_detection": "changed source version rejected by frozen identity before semantic parsing"
+    },
+    {
+      "name": "10_源段外键断开",
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/三组浏览器错误文件_20261006/10_源段外键断开.json",
+      "bytes": 10410927,
+      "sha256": "5661525f883be684cd5edaec48a498f81893e0b3379dce5043982ab103c0d549",
+      "expected_detection": "changed source version rejected by frozen identity before semantic parsing"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+name: 功能与业务建议
+description: 讨论使用任务、页面交互、数据接入或后续开发范围。
+title: '[建议] '
+body:
+  - type: markdown
+    attributes:
+      value: |
+        提出建议不等于需求已经确认。请先说明使用者和要完成的工作，再讨论页面、接口或 AI 功能。
+  - type: dropdown
+    id: status
+    attributes:
+      label: 这项需求目前是什么状态？
+      options:
+        - 待团队讨论
+        - 已有团队确认记录（请在下方链接）
+    validations:
+      required: true
+  - type: textarea
+    id: task
+    attributes:
+      label: 谁在什么情况下，需要完成什么判断？
+      description: 例如城市更新人员比较两个街区的增绿需求；可以写出不同意见或尚不确定的部分。
+    validations:
+      required: true
+  - type: textarea
+    id: flow
+    attributes:
+      label: 期望的输入、操作和输出
+      description: 尽量给一个具体案例，说明用户提供什么、如何操作、最后获得什么。
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 现有依据、数据或计算条件
+      description: 列出可复用的数据/代码/研究资料；尚无来源、模型接口或场景定义时请明确注明。
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 怎样判断首版已经完成？
+      description: 描述可以实际核对的表现，另列本次暂不包含的部分；不要把模型情景自动等同于物理降温或施工方案。
+    validations:
+      required: true
+  - type: textarea
+    id: links
+    attributes:
+      label: 相关讨论或确认记录
+      description: 可附已有 Issue、文档段落或示意图。

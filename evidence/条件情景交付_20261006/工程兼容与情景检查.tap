@@ -1,0 +1,47 @@
+✔ 26 originals authenticate with 119 literal CSV strings, 39 blanks, 7 historical files, 8 web identities and 11 preview rows (24.57025ms)
+✔ source identity, original bytes, BOM, false adoption and exact metadata cannot be forged (9.114709ms)
+✔ two independent draft identities and edits preserve the other mode and every unknown scientific slot (1.734167ms)
+✔ full source references record purpose only; wrong object/gate bindings and science adoption are rejected (2.312041ms)
+✔ evaluation mismatch, day precision and unknown ends never apply events or create indefinite validity (0.488958ms)
+✔ legacy absence and explicit empty fields remain distinct; drafts roundtrip JSON and closed ZIP with all26 originals (3283.275375ms)
+✔ building review copies original features, maps six saved SVF values and every selected contribution without changing source fields (25.988042ms)
+✔ saved window scope and full-key locators retain two/one/eight source components and distinguish cuts from original nodes (4.331667ms)
+✔ park line and polygon share one original object; no geometry is generated for six alias-only candidate relations (0.624417ms)
+✔ all sixteen main tables expose counts/full fields while direction DOM is capped at 100 rows; failures and histories remain readable (341.109ms)
+✔ P01 真数据保存副本保留源身份、空值、四轴及相互独立的研究目标 (45.351958ms)
+✔ P02 真数据全部图层ZIP往返一致，缺失或损坏图层不能冒充成功重开 (1868.690375ms)
+✔ P03 100/300米范围以UTM48N米制构造，几何大小与角色可独立回验 (2.987083ms)
+✔ P04 重复源ID和破损几何被拒绝，合法缺失属性及无源ID资料仍可浏览 (0.621541ms)
+✔ P05 显式错误CRS即使数值像经纬度仍被拒绝，WGS84/CRS84声明可用 (0.21175ms)
+✔ P06 外来schema、缺失方案身份、重复来源/能力/范围ID被拒绝 (154.413375ms)
+✔ P07 重开位置/相机/图层声明与文件名校验，同时允许真实用户位置的空场景 (966.752458ms)
+✔ P08 缺失四轴、哈希或能力结构在接入前被拒绝，不通过默认值补齐 (199.973459ms)
+✔ P09 旧JSON与ZIP无科研登记字段合法，回读不自动补当前登记 (811.007917ms)
+✔ P10 新科研登记独立保存，JSON/ZIP往返保留历史24源件、原场景与全部原属性 (738.100792ms)
+✔ P11 新ZIP科研sidecar必需且与项目一致，重排JSON不会伪重算原SHA (1897.337083ms)
+✔ P12 科学软件门控严格false且不能以技术通过替代，非法登记保存前拒绝 (223.505916ms)
+✔ P13 真实准备ZIP与清单原字节随独立登记保存，JSON/ZIP往返不覆盖科研状态或历史场景 (845.701416ms)
+✔ P14 准备sidecar与项目必需一致，缺失/孤立/不一致被拒绝但JSON键重排合法 (2585.6745ms)
+✔ P15 即使project与sidecar同步篡改原ZIP，异步字节哈希核验也拒绝导出和重开 (541.435ms)
+✔ P16 准备登记未知schema、重复或不一致身份与错误scene在保存前拒绝，旧包不回填 (707.133291ms)
+✔ P17 原研究输入准备ZIP及清单不能误作平台project，错误明确且不自动接纳 (9.321083ms)
+✔ P18 同ID但试点中心/核心/范围错位或带用户导入不能复用准备登记，布局图层不受限 (985.109625ms)
+✔ GSP01 第10参数独立追加，旧31/32/14与研究场景保持；旧字段缺省不补新包 (2255.185292ms)
+✔ GSP02 完整JSON/ZIP回读72原件与BOM/4历史不变，已知失败保留，闭合成员逐SHA一致 (16606.209292ms)
+✔ GSP03 72新包旁表/历史原件缺失及合法改写原件均拒绝，不靠回执或最后值覆盖 (8137.268ms)
+✔ SRP01 实际旧五组JSON/ZIP仍合法，新三组缺省字段不自动填充 (5135.362708ms)
+✔ SRP02 第9参数显式附新三组，JSON/ZIP全字段往返保存旧源件/科学状态和四类历史登记 (8268.989084ms)
+✔ SRP03 三原ZIP、完整原清单、31显式源件副本逐字节相等且成员回执SHA/bytes闭合 (1056.888167ms)
+✔ SRP04 hasOwn空数组仅有旁表；单组子集保留完整清单但只携该组9原件 (1681.545959ms)
+✔ SRP05 schema/重复身份/源哈希/原字段/门控升级在保存前拒绝，且不突变工程 (3051.659208ms)
+✔ SRP06 新旁表必需、canonical对应；孤立新成员不能偷偷接入旧工程 (7501.516ms)
+✔ SRP07 即使重签成员回执，原组ZIP/manifest/31源件中的篡改或缺失仍拒绝 (9894.718917ms)
+✔ SRP08 归档成员闭集拒绝额外文件/缺回执/重复回执，保存门控与原空值不升级 (4179.150459ms)
+ℹ tests 39
+ℹ suites 0
+ℹ pass 39
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 41386.226542

@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-08",
+  "url": "http://127.0.0.1:4173/",
+  "initialListenerPresent": false,
+  "historicalExitCauseKnown": false,
+  "managedByCurrentMacOSLoginSession": true,
+  "survivesLauncherExitVerified": true,
+  "duplicateStartReusesProcessVerified": true,
+  "automaticRecoveryVerified": true,
+  "manualStopAndRestartVerified": true,
+  "startupTestsPassed": 4,
+  "preservedFileHashesMatched": 38,
+  "finalPid": 68547,
+  "finalReady": true,
+  "savedProjectRestoredInUI": "E4125_N33891",
+  "consoleErrorsObserved": 0,
+  "previewMarkedDeliverableForCurrentTurn": true,
+  "bootOrLoginAutoStartInstalled": false,
+  "bindAddress": "127.0.0.1",
+  "requiresRestartAfterLogoutOrReboot": true,
+  "screenshots": ["已恢复保存场地.png", "网站恢复预览.png"]
+}

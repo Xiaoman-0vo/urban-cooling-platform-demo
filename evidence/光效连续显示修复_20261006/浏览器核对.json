@@ -1,0 +1,41 @@
+{
+  "checked_at": "2026-10-06T05:19:57.568Z",
+  "browser_url": "http://127.0.0.1:4173/",
+  "source": "actual_native_browser_UI_and_screenshots",
+  "checks": [
+    {
+      "step": "sample_preview_before_click",
+      "location": "E4125_N33891",
+      "screen": "Browser tab: 4, Title: \"街区绿色空间研究 · 本地首版\", URL: \"http://127.0.0.1:4173/\".\nThe following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.\nRemoved element IDs: 80-83\nThe focused UI element is 76 button 浏览真实工程样例"
+    },
+    {
+      "step": "incidental_click_keeps_loaded_site",
+      "screen": "Browser tab: 4, Title: \"街区绿色空间研究 · 本地首版\", URL: \"http://127.0.0.1:4173/\".\nThere has been no change in the accessibility tree.\nThe focused UI element is 4 container Map",
+      "location": "E4125_N33891"
+    },
+    {
+      "step": "far_zoom_lights_visible",
+      "screen": "Browser tab: 4, Title: \"街区绿色空间研究 · 本地首版\", URL: \"http://127.0.0.1:4173/\".\nThere has been no change in the accessibility tree.\nThe focused UI element is 4 container Map",
+      "location": "E4125_N33891"
+    },
+    {
+      "step": "aggregate_click_keeps_loaded_site",
+      "screen": "Browser tab: 4, Title: \"街区绿色空间研究 · 本地首版\", URL: \"http://127.0.0.1:4173/\".\nThere has been no change in the accessibility tree.\nThe focused UI element is 4 container Map",
+      "location": "E4125_N33891"
+    },
+    {
+      "step": "entered_site_original_counts_preserved",
+      "screen": "Browser tab: 4, Title: \"街区绿色空间研究 · 本地首版\", URL: \"http://127.0.0.1:4173/\".\nThere has been no change in the accessibility tree.\nThe focused UI element is 1 AXWebArea 街区绿色空间研究 · 本地首版, URL: 127.0.0.1:4173/"
+    },
+    {
+      "step": "building_selected_original_object",
+      "screen": "Browser tab: 4, Title: \"街区绿色空间研究 · 本地首版\", URL: \"http://127.0.0.1:4173/\".\nThere has been no change in the accessibility tree.\nThe focused UI element is 4 container Map"
+    },
+    {
+      "step": "return_to_city_keeps_preview",
+      "screen": "Browser tab: 4, Title: \"街区绿色空间研究 · 本地首版\", URL: \"http://127.0.0.1:4173/\".\nThere has been no change in the accessibility tree.\nThe focused UI element is 10 button 回到成都区域地图",
+      "location": "E4125_N33891"
+    }
+  ],
+  "console_errors": []
+}

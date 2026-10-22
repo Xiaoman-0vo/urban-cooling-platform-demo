@@ -1,0 +1,52 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-06T15:25:06Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "relation",
+  "id": 2110264,
+  "bounds": {
+    "minlat": 30.0916339,
+    "minlon": 102.9896230,
+    "maxlat": 31.4370968,
+    "maxlon": 104.8948475
+  },
+  "tags": {
+    "admin_level": "5",
+    "alt_name": "成都",
+    "alt_name:cs": "Čengdu",
+    "alt_name:en": "Chengdu",
+    "alt_name:zh": "成都",
+    "boundary": "administrative",
+    "division_code": "510100",
+    "name": "成都市",
+    "name:cs": "Čcheng-tu",
+    "name:en": "Chengdu",
+    "name:hr": "Chengdu",
+    "name:ja": "成都市",
+    "name:ko": "청두시",
+    "name:ne": "चेङ्दु",
+    "name:ru": "Чэнду",
+    "name:sr": "Ченгду",
+    "name:uk": "Ченду",
+    "name:vi": "Thành Đô",
+    "name:zh": "成都市",
+    "name:zh-Hans": "成都市",
+    "name:zh-Hant": "成都市",
+    "name:zh-Latn-pinyin": "Chéngdū Shì",
+    "old_name:en": "Chengtu",
+    "population": "20937757",
+    "population:date": "2020-11-01",
+    "source:population": "wikipedia",
+    "type": "boundary",
+    "wikidata": "Q30002"
+  }
+}
+
+  ]
+}

@@ -1,0 +1,1779 @@
+{
+  "checked_at": "2026-10-05T20:12:23.176519+00:00",
+  "scope": [
+    "平台产品设计/README.md",
+    "平台产品设计/产品参考比较.md",
+    "平台产品设计/产品定位与用户任务.md",
+    "平台产品设计/使用流程与页面规格.md",
+    "平台产品设计/动态地图入口与场地流程.md",
+    "平台产品设计/参考研究/地图浏览与实际界面核查.md",
+    "平台产品设计/参考研究/热环境与植被工具.md",
+    "平台产品设计/参考研究/空间决策与可达性工具.md",
+    "平台产品设计/界面方向/设计记录.md",
+    "平台产品设计/研究接口与能力准入.md",
+    "平台产品设计/首版范围与验收.md",
+    "README.md",
+    "平台本地首版/README.md",
+    "平台本地首版/DATA_SOURCES.md",
+    "平台本地首版/design-qa.md",
+    "平台本地首版/科研状态接入_20261006.md",
+    "平台本地首版/共同试点准备接入_20261006.md"
+  ],
+  "markdown_files": 17,
+  "checked": 292,
+  "missing": [],
+  "links": [
+    {
+      "document": "平台产品设计/README.md",
+      "line": 5,
+      "target": "../平台本地首版/README.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/README.md",
+      "line": 7,
+      "target": "../平台本地首版/验收记录.json",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/README.md",
+      "line": 7,
+      "target": "../平台本地首版/design-qa.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/README.md",
+      "line": 7,
+      "target": "../平台本地首版/tests/独立复核.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/README.md",
+      "line": 13,
+      "target": "产品参考比较.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/README.md",
+      "line": 14,
+      "target": "产品定位与用户任务.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/README.md",
+      "line": 15,
+      "target": "使用流程与页面规格.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/README.md",
+      "line": 16,
+      "target": "动态地图入口与场地流程.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/README.md",
+      "line": 17,
+      "target": "研究接口与能力准入.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/README.md",
+      "line": 18,
+      "target": "首版范围与验收.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/README.md",
+      "line": 19,
+      "target": "界面方向/设计记录.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/README.md",
+      "line": 20,
+      "target": "../平台本地首版/README.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/README.md",
+      "line": 21,
+      "target": "../平台本地首版/DATA_SOURCES.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/README.md",
+      "line": 22,
+      "target": "../平台本地首版/共同试点准备接入_20261006.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/README.md",
+      "line": 38,
+      "target": "../平台产品研究与设计任务书.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/README.md",
+      "line": 39,
+      "target": "../平台总体方案.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/README.md",
+      "line": 40,
+      "target": "../项目统筹台账.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/README.md",
+      "line": 48,
+      "target": "交付核查.json",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/README.md",
+      "line": 48,
+      "target": "界面方向/地图入口/生成记录.json",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/README.md",
+      "line": 48,
+      "target": "../平台本地首版/验收记录.json",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/README.md",
+      "line": 48,
+      "target": "../平台本地首版/科研状态接入_20261006.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/产品参考比较.md",
+      "line": 41,
+      "target": "研究接口与能力准入.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/产品参考比较.md",
+      "line": 45,
+      "target": "参考研究/热环境与植被工具.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/产品参考比较.md",
+      "line": 46,
+      "target": "参考研究/空间决策与可达性工具.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/产品参考比较.md",
+      "line": 47,
+      "target": "参考研究/地图浏览与实际界面核查.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/产品定位与用户任务.md",
+      "line": 3,
+      "target": "动态地图入口与场地流程.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/产品定位与用户任务.md",
+      "line": 66,
+      "target": "../平台产品研究与设计任务书.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/产品定位与用户任务.md",
+      "line": 67,
+      "target": "../平台总体方案.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/产品定位与用户任务.md",
+      "line": 68,
+      "target": "../项目统筹台账.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/产品定位与用户任务.md",
+      "line": 69,
+      "target": "产品参考比较.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/使用流程与页面规格.md",
+      "line": 3,
+      "target": "研究接口与能力准入.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/使用流程与页面规格.md",
+      "line": 3,
+      "target": "动态地图入口与场地流程.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/使用流程与页面规格.md",
+      "line": 68,
+      "target": "动态地图入口与场地流程.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/动态地图入口与场地流程.md",
+      "line": 11,
+      "target": "界面方向/设计记录.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/动态地图入口与场地流程.md",
+      "line": 11,
+      "target": "../共享接口/README.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/动态地图入口与场地流程.md",
+      "line": 11,
+      "target": "../共享接口/当前验收场景.json",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/动态地图入口与场地流程.md",
+      "line": 40,
+      "target": "../02_不同绿色空间的相互作用/宏观研究/研究计划.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/动态地图入口与场地流程.md",
+      "line": 40,
+      "target": "../02_不同绿色空间的相互作用/共享资料/研究分工.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/动态地图入口与场地流程.md",
+      "line": 40,
+      "target": "../02_不同绿色空间的相互作用/微观研究/实施/试点准备/数据说明.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/动态地图入口与场地流程.md",
+      "line": 54,
+      "target": "研究接口与能力准入.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/动态地图入口与场地流程.md",
+      "line": 86,
+      "target": "研究接口与能力准入.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/动态地图入口与场地流程.md",
+      "line": 101,
+      "target": "../共享接口/综合结果接入约定.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/动态地图入口与场地流程.md",
+      "line": 105,
+      "target": "../02_不同绿色空间的相互作用/宏观研究/实施/第一步_数据与变量核查/网格与结构图/候选节点_UTM48N.gpkg",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/动态地图入口与场地流程.md",
+      "line": 106,
+      "target": "../02_不同绿色空间的相互作用/微观研究/实施/试点准备/场地输入_UTM48N.gpkg",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/动态地图入口与场地流程.md",
+      "line": 107,
+      "target": "../02_不同绿色空间的相互作用/微观研究/实施/试点准备/建筑体块_工作高度_非求解网格.obj",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/动态地图入口与场地流程.md",
+      "line": 108,
+      "target": "../02_不同绿色空间的相互作用/微观研究/实施/试点准备/UBGG_原生3米_准备窗.tif",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/动态地图入口与场地流程.md",
+      "line": 109,
+      "target": "../02_不同绿色空间的相互作用/微观研究/实施/试点准备/精细输入核对/道路位置核对_UTM48N.gpkg",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/动态地图入口与场地流程.md",
+      "line": 110,
+      "target": "../02_不同绿色空间的相互作用/微观研究/实施/试点准备/精细输入核对/建筑连续指标.csv",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/动态地图入口与场地流程.md",
+      "line": 114,
+      "target": "参考研究/成都OSM区域参考.png",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/动态地图入口与场地流程.md",
+      "line": 120,
+      "target": "首版范围与验收.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/参考研究/地图浏览与实际界面核查.md",
+      "line": 13,
+      "target": "kepler资料入口.jpg",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/参考研究/地图浏览与实际界面核查.md",
+      "line": 24,
+      "target": "空间决策与可达性工具.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/参考研究/热环境与植被工具.md",
+      "line": 5,
+      "target": "../../平台产品研究与设计任务书.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/参考研究/空间决策与可达性工具.md",
+      "line": 7,
+      "target": "../../平台产品研究与设计任务书.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/界面方向/设计记录.md",
+      "line": 3,
+      "target": "../../平台本地首版/design-qa.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/界面方向/设计记录.md",
+      "line": 3,
+      "target": "../../平台本地首版/验收记录.json",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/界面方向/设计记录.md",
+      "line": 9,
+      "target": "../动态地图入口与场地流程.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/界面方向/设计记录.md",
+      "line": 13,
+      "target": "地图入口/城市星图入口.png",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/界面方向/设计记录.md",
+      "line": 14,
+      "target": "地图入口/场地定位面板.png",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/界面方向/设计记录.md",
+      "line": 15,
+      "target": "地图入口/锚定场地的地图门户.png",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/界面方向/设计记录.md",
+      "line": 17,
+      "target": "地图入口/生成记录.json",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/界面方向/设计记录.md",
+      "line": 17,
+      "target": "../参考研究/成都OSM区域参考.png",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/界面方向/设计记录.md",
+      "line": 25,
+      "target": "科幻修订/深空空间工作台.png",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/界面方向/设计记录.md",
+      "line": 25,
+      "target": "科幻修订/极光全息任务界面.png",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/界面方向/设计记录.md",
+      "line": 25,
+      "target": "科幻修订/星云方案审阅台.png",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/界面方向/设计记录.md",
+      "line": 25,
+      "target": "科幻修订/生成记录.json",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/界面方向/设计记录.md",
+      "line": 39,
+      "target": "../参考研究/kepler资料入口.jpg",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/界面方向/设计记录.md",
+      "line": 40,
+      "target": "../../02_不同绿色空间的相互作用/微观研究/实施/试点准备/试点场地预览.png",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/界面方向/设计记录.md",
+      "line": 42,
+      "target": "../产品参考比较.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/界面方向/设计记录.md",
+      "line": 70,
+      "target": "生成记录.json",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/界面方向/设计记录.md",
+      "line": 74,
+      "target": "空间与证据.png",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/界面方向/设计记录.md",
+      "line": 75,
+      "target": "逐步资料核查.png",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/界面方向/设计记录.md",
+      "line": 76,
+      "target": "现状与候选审阅.png",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/界面方向/设计记录.md",
+      "line": 78,
+      "target": "../首版范围与验收.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/研究接口与能力准入.md",
+      "line": 5,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品研究与设计任务书.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/研究接口与能力准入.md",
+      "line": 5,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台总体方案.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/研究接口与能力准入.md",
+      "line": 5,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/项目统筹台账.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/研究接口与能力准入.md",
+      "line": 7,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/README.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/研究接口与能力准入.md",
+      "line": 7,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/当前验收场景.json",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/研究接口与能力准入.md",
+      "line": 7,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/综合结果接入约定.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/研究接口与能力准入.md",
+      "line": 195,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/首版范围与验收.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/研究接口与能力准入.md",
+      "line": 228,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台总体方案.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/研究接口与能力准入.md",
+      "line": 228,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/项目统筹台账.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/研究接口与能力准入.md",
+      "line": 229,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/02_不同绿色空间的相互作用/宏观研究/实施/第一步_数据与变量核查/数据与变量核查结果.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/研究接口与能力准入.md",
+      "line": 230,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/02_不同绿色空间的相互作用/宏观研究/实施/第一步_数据与变量核查/网格与结构图/manifest.json",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/研究接口与能力准入.md",
+      "line": 230,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/02_不同绿色空间的相互作用/宏观研究/实施/第一步_数据与变量核查/网格与结构图/候选节点_UTM48N.gpkg",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/研究接口与能力准入.md",
+      "line": 230,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/02_不同绿色空间的相互作用/宏观研究/实施/第一步_数据与变量核查/网格与结构图/有向边_八邻接与自环.csv",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/研究接口与能力准入.md",
+      "line": 231,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/02_不同绿色空间的相互作用/宏观研究/实施/第一步_数据与变量核查/候选数据联结表_非训练输入.csv",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/研究接口与能力准入.md",
+      "line": 231,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/02_不同绿色空间的相互作用/宏观研究/实施/第一步_数据与变量核查/联结与字段角色manifest.json",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/研究接口与能力准入.md",
+      "line": 231,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/02_不同绿色空间的相互作用/宏观研究/实施/第一步_数据与变量核查/建筑/全域上下文扩展_6567/建筑候选变量与支持.csv",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/研究接口与能力准入.md",
+      "line": 232,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/02_不同绿色空间的相互作用/微观研究/实施/试点准备/数据说明.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/研究接口与能力准入.md",
+      "line": 232,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/02_不同绿色空间的相互作用/微观研究/实施/试点准备/输入包manifest.json",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/研究接口与能力准入.md",
+      "line": 232,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/02_不同绿色空间的相互作用/微观研究/实施/试点准备/保存后独立复核.json",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/研究接口与能力准入.md",
+      "line": 233,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/02_不同绿色空间的相互作用/微观研究/实施/试点准备/场地输入_UTM48N.gpkg",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/研究接口与能力准入.md",
+      "line": 233,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/02_不同绿色空间的相互作用/微观研究/实施/试点准备/建筑体块_工作高度_非求解网格.obj",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/研究接口与能力准入.md",
+      "line": 233,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/02_不同绿色空间的相互作用/微观研究/实施/试点准备/待补输入与参数.csv",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/研究接口与能力准入.md",
+      "line": 234,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/03_热舒适公平性/研究方案.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/研究接口与能力准入.md",
+      "line": 234,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/04_物理降温与真实可获取的热舒适的错位/方法资料/研究方法与数据条件.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/首版范围与验收.md",
+      "line": 3,
+      "target": "动态地图入口与场地流程.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/首版范围与验收.md",
+      "line": 27,
+      "target": "../02_不同绿色空间的相互作用/宏观研究/实施/第一步_数据与变量核查/",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/首版范围与验收.md",
+      "line": 28,
+      "target": "../02_不同绿色空间的相互作用/微观研究/实施/试点准备/",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/首版范围与验收.md",
+      "line": 30,
+      "target": "../共享接口/README.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/首版范围与验收.md",
+      "line": 30,
+      "target": "../共享接口/当前验收场景.json",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/首版范围与验收.md",
+      "line": 30,
+      "target": "../共享接口/综合结果接入约定.md",
+      "exists": true
+    },
+    {
+      "document": "平台产品设计/首版范围与验收.md",
+      "line": 93,
+      "target": "../共享接口/综合结果接入约定.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 13,
+      "target": "平台本地首版/共同试点准备接入_20261006.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 14,
+      "target": "成果预期与创新路线.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 15,
+      "target": "成果预期/02宏观_规划论文定位与结果解释.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 16,
+      "target": "成果预期/02宏观_规划结果与证据对应表.csv",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 17,
+      "target": "共享接口/规划描述底稿/README.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 18,
+      "target": "成果预期/已有研究对比与创新取舍.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 19,
+      "target": "统筹推进清单.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 20,
+      "target": "共享接口/科研状态更新/README.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 20,
+      "target": "成果预期/开发结果后的成果取舍_20261006.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 21,
+      "target": "共享接口/微观试验准备/同投入与指标匹配试验准备_草案.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 21,
+      "target": "共享接口/公平性输入准备/人口来源与支持试核.json",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 22,
+      "target": "共享接口/微观试验准备/典型情景天气候选_说明.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 22,
+      "target": "共享接口/微观试验准备/原生地形小窗候选_说明.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 23,
+      "target": "共享接口/服务链准备/共同试点步行来源核查说明.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 24,
+      "target": "共享接口/公平性输入准备/共同试点接纳边界.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 25,
+      "target": "共享接口/统一方案比较合同_草案.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 25,
+      "target": "共享接口/研究结果检查/README.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 26,
+      "target": "05_降温公平与热舒适综合评价/联合方案比较协议_研究草案.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 27,
+      "target": "共享接口/README.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 28,
+      "target": "平台本地首版/README.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 28,
+      "target": "平台本地首版/验收记录.json",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 28,
+      "target": "平台本地首版/科研状态接入_20261006.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 29,
+      "target": "平台产品设计/README.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 30,
+      "target": "平台总体方案.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 31,
+      "target": "项目统筹台账.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 32,
+      "target": "子agent跟进配置.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 33,
+      "target": "平台产品研究与设计任务书.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 34,
+      "target": "公园城市高密度街区小微绿色空间降温网络构建与服务水平机制研究.pdf",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 40,
+      "target": "01_单体绿色空间形态研究与阈值发现/",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 41,
+      "target": "02_不同绿色空间的相互作用/宏观研究/研究计划.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 41,
+      "target": "02_不同绿色空间的相互作用/微观研究/研究计划.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 41,
+      "target": "02_不同绿色空间的相互作用/共享资料/研究分工.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 42,
+      "target": "03_热舒适公平性/研究方案.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 43,
+      "target": "04_物理降温与真实可获取的热舒适的错位/方法资料/研究方法与数据条件.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 44,
+      "target": "05_降温公平与热舒适综合评价/联合方案比较协议_研究草案.md",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/README.md",
+      "line": 5,
+      "target": "共同试点准备接入_20261006.md",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/README.md",
+      "line": 7,
+      "target": "科研状态接入_20261006.md",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/README.md",
+      "line": 7,
+      "target": "DATA_SOURCES.md",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/README.md",
+      "line": 9,
+      "target": "验收记录.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/README.md",
+      "line": 9,
+      "target": "design-qa.md",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/README.md",
+      "line": 9,
+      "target": "tests/独立复核.md",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/README.md",
+      "line": 51,
+      "target": "public/data/research-state.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/README.md",
+      "line": 51,
+      "target": "DATA_SOURCES.md",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/README.md",
+      "line": 61,
+      "target": "共同试点准备接入_20261006.md",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/README.md",
+      "line": 79,
+      "target": "共同试点准备接入_20261006.md",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/README.md",
+      "line": 93,
+      "target": "DATA_SOURCES.md",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/README.md",
+      "line": 99,
+      "target": "DATA_SOURCES.md",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/README.md",
+      "line": 100,
+      "target": "public/data/manifest.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/README.md",
+      "line": 101,
+      "target": "public/data/scene.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/README.md",
+      "line": 102,
+      "target": "public/data/version_differences.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/README.md",
+      "line": 103,
+      "target": "tools/prepare_data.py",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/README.md",
+      "line": 103,
+      "target": "tools/requirements-display.txt",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/README.md",
+      "line": 104,
+      "target": "tests/handoff_contract.md",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/README.md",
+      "line": 105,
+      "target": "验收记录.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/README.md",
+      "line": 105,
+      "target": "design-qa.md",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/README.md",
+      "line": 106,
+      "target": "tests/独立复核.md",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/README.md",
+      "line": 107,
+      "target": "科研状态接入_20261006.md",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/README.md",
+      "line": 108,
+      "target": "public/data/research-state.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/README.md",
+      "line": 109,
+      "target": "共同试点准备接入_20261006.md",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/README.md",
+      "line": 110,
+      "target": "public/data/preparation-state.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/DATA_SOURCES.md",
+      "line": 3,
+      "target": "../共享接口/成果能力清单.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/DATA_SOURCES.md",
+      "line": 3,
+      "target": "../共享接口/当前验收场景.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/DATA_SOURCES.md",
+      "line": 9,
+      "target": "public/data/manifest.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/DATA_SOURCES.md",
+      "line": 24,
+      "target": "public/data/readback_verification.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/DATA_SOURCES.md",
+      "line": 36,
+      "target": "public/data/version_differences.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/DATA_SOURCES.md",
+      "line": 46,
+      "target": "public/data/tables.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/DATA_SOURCES.md",
+      "line": 46,
+      "target": "public/data/source_metadata.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/DATA_SOURCES.md",
+      "line": 52,
+      "target": "../共享接口/当前成果状态索引.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/DATA_SOURCES.md",
+      "line": 68,
+      "target": "科研状态接入_20261006.md",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/DATA_SOURCES.md",
+      "line": 70,
+      "target": "public/data/research-state.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/DATA_SOURCES.md",
+      "line": 71,
+      "target": "public/data/research_snapshots/6b56102f564361fe2755efbea9b613b2a71e67af3d5fcd247ea157cc2af659f9.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/DATA_SOURCES.md",
+      "line": 72,
+      "target": "public/data/research_snapshots/efa0962c4a6ea46d47d9339330e350120f7d923d80008aeb214da5b95f144fd2.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/DATA_SOURCES.md",
+      "line": 73,
+      "target": "scripts/register-research-state.mjs",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/DATA_SOURCES.md",
+      "line": 73,
+      "target": "scripts/research-state-registration-receipt.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/DATA_SOURCES.md",
+      "line": 74,
+      "target": "scripts/research-state-registration-receipt_efa0962c4a6ea46d47d9339330e350120f7d923d80008aeb214da5b95f144fd2.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/DATA_SOURCES.md",
+      "line": 82,
+      "target": "../共享接口/公平性输入准备/共同试点住宅源对象_展示准备.geojson",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/DATA_SOURCES.md",
+      "line": 88,
+      "target": "public/data/preparation-state.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/DATA_SOURCES.md",
+      "line": 88,
+      "target": "public/data/preparation_snapshots/7d66553a704f56bb247003cdb163f5234a7c90abeaca8eb06816db297f764892.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/DATA_SOURCES.md",
+      "line": 89,
+      "target": "scripts/register-preparation-state.mjs",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/DATA_SOURCES.md",
+      "line": 89,
+      "target": "scripts/preparation-state-registration-receipt.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/DATA_SOURCES.md",
+      "line": 90,
+      "target": "../平台产品设计/共同试点准备资料接入任务书_20261006.md",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/DATA_SOURCES.md",
+      "line": 90,
+      "target": "共同试点准备接入_20261006.md",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/DATA_SOURCES.md",
+      "line": 96,
+      "target": "public/data/regional_green_points.geojson",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/DATA_SOURCES.md",
+      "line": 112,
+      "target": "public/data/regional_roads_2021.geojson",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/DATA_SOURCES.md",
+      "line": 130,
+      "target": "共同试点准备接入_20261006.md",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/DATA_SOURCES.md",
+      "line": 139,
+      "target": "科研状态接入_20261006.md",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/DATA_SOURCES.md",
+      "line": 139,
+      "target": "验收记录.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/DATA_SOURCES.md",
+      "line": 139,
+      "target": "design-qa.md",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/DATA_SOURCES.md",
+      "line": 139,
+      "target": "tests/独立复核.md",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 7,
+      "target": "../平台产品设计/界面方向/地图入口/城市星图入口.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 7,
+      "target": "evidence/源图_1440x1024.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 9,
+      "target": "evidence/成都星图入口.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 11,
+      "target": "evidence/入口对比_终轮.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 11,
+      "target": "evidence/绿色星簇对比.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 11,
+      "target": "evidence/入口控件对比.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 13,
+      "target": "evidence/真实场地.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 13,
+      "target": "evidence/手机入口_终轮.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 13,
+      "target": "evidence/手机场地_终轮.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 13,
+      "target": "evidence/手机资料抽屉_终轮.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 20,
+      "target": "evidence/连续光效_点选后仍保留.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 21,
+      "target": "evidence/入口_首轮.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 21,
+      "target": "evidence/入口对比_首轮.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 22,
+      "target": "evidence/连续光效_现有页面同步.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 22,
+      "target": "evidence/连续光效_四川远景.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 22,
+      "target": "evidence/拉远光效实录.gif",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 27,
+      "target": "验收记录.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 65,
+      "target": "evidence/科研登记_最终恢复.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 65,
+      "target": "evidence/科研登记_最新双版本ZIP重开.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 65,
+      "target": "evidence/科研登记_最新双版本JSON磁盘核对.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 65,
+      "target": "evidence/科研登记_最新双版本ZIP磁盘核对.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 67,
+      "target": "evidence/科研登记_手机分析条件.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 67,
+      "target": "evidence/科研登记_手机开发误差.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 69,
+      "target": "evidence/连续光效_收尾远景.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 69,
+      "target": "evidence/拉远光效实录.gif",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 69,
+      "target": "科研状态接入_20261006.md",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 73,
+      "target": "evidence/连续光效_中间尺度补强.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 75,
+      "target": "evidence/中间尺度呼吸光效实录.gif",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 75,
+      "target": "evidence/中间尺度光效记录.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 79,
+      "target": "evidence/准备资料_显式接纳.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 79,
+      "target": "evidence/准备资料_六类输入缺项.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 81,
+      "target": "evidence/准备资料_住宅候选点选.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 81,
+      "target": "evidence/准备资料_住宅独立关闭.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 81,
+      "target": "evidence/准备资料_重载恢复.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 83,
+      "target": "evidence/准备资料_JSON实际重开.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 83,
+      "target": "evidence/准备资料_ZIP实际重开.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 85,
+      "target": "evidence/准备资料_错误包类型保留工程.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 85,
+      "target": "evidence/准备资料_旧工程不自动回填.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 85,
+      "target": "evidence/准备资料_失败定位后仍保留.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 85,
+      "target": "evidence/准备资料_其他位置不继承.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 85,
+      "target": "evidence/准备资料_用户导入不继承.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 87,
+      "target": "evidence/准备资料_移动端详情.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/design-qa.md",
+      "line": 87,
+      "target": "共同试点准备接入_20261006.md",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/科研状态接入_20261006.md",
+      "line": 16,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/当前成果状态索引.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/科研状态接入_20261006.md",
+      "line": 18,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/public/data/research-state.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/科研状态接入_20261006.md",
+      "line": 18,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/public/data/research_snapshots/efa0962c4a6ea46d47d9339330e350120f7d923d80008aeb214da5b95f144fd2.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/科研状态接入_20261006.md",
+      "line": 18,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/public/data/research_snapshots/6b56102f564361fe2755efbea9b613b2a71e67af3d5fcd247ea157cc2af659f9.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/科研状态接入_20261006.md",
+      "line": 60,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/scripts/register-research-state.mjs",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/科研状态接入_20261006.md",
+      "line": 60,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/scripts/research-state-registration-receipt.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/科研状态接入_20261006.md",
+      "line": 60,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/scripts/research-state-registration-receipt_efa0962c4a6ea46d47d9339330e350120f7d923d80008aeb214da5b95f144fd2.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/科研状态接入_20261006.md",
+      "line": 72,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/research-state.js",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/科研状态接入_20261006.md",
+      "line": 82,
+      "target": "/Users/wangyanbo/Downloads/街区交接_E4125_N33891_2026-10-05T19-09-47-608Z.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/科研状态接入_20261006.md",
+      "line": 82,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/科研登记_最新双版本JSON磁盘核对.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/科研状态接入_20261006.md",
+      "line": 82,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/科研登记_最终恢复.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/科研状态接入_20261006.md",
+      "line": 83,
+      "target": "/Users/wangyanbo/Downloads/街区交接_E4125_N33891_2026-10-05T19-11-03-041Z.zip",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/科研状态接入_20261006.md",
+      "line": 83,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/科研登记_最新双版本ZIP磁盘核对.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/科研状态接入_20261006.md",
+      "line": 83,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/科研登记_最新双版本ZIP重开.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/科研状态接入_20261006.md",
+      "line": 89,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/科研登记_JSON磁盘核对.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/科研状态接入_20261006.md",
+      "line": 89,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/科研登记_ZIP磁盘核对.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/科研状态接入_20261006.md",
+      "line": 89,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/科研登记_JSON实际重开.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/科研状态接入_20261006.md",
+      "line": 89,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/科研登记_ZIP实际重开.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/科研状态接入_20261006.md",
+      "line": 93,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/验收记录.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/科研状态接入_20261006.md",
+      "line": 93,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/design-qa.md",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/科研状态接入_20261006.md",
+      "line": 97,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/tests/map-canvas.test.mjs",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/科研状态接入_20261006.md",
+      "line": 98,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/tests/project.test.mjs",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/科研状态接入_20261006.md",
+      "line": 99,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/tests/research-state.test.mjs",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/科研状态接入_20261006.md",
+      "line": 100,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/tests/sites-worker.test.mjs",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/科研状态接入_20261006.md",
+      "line": 103,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/连续光效_中间尺度补强.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/科研状态接入_20261006.md",
+      "line": 105,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/科研登记_保存后.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/科研状态接入_20261006.md",
+      "line": 105,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/科研登记_重载恢复.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/科研状态接入_20261006.md",
+      "line": 105,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/科研登记_旧包保持原版本.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/科研状态接入_20261006.md",
+      "line": 105,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/科研登记_手机分析条件.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/科研状态接入_20261006.md",
+      "line": 105,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/科研登记_手机开发误差.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/科研状态接入_20261006.md",
+      "line": 105,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/科研登记_最终恢复.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/科研状态接入_20261006.md",
+      "line": 107,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/科研状态接入_20261006.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/科研状态接入_20261006.md",
+      "line": 107,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/验收记录.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/科研状态接入_20261006.md",
+      "line": 107,
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/design-qa.md",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/共同试点准备接入_20261006.md",
+      "line": 5,
+      "target": "../平台产品设计/共同试点准备资料接入任务书_20261006.md",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/共同试点准备接入_20261006.md",
+      "line": 5,
+      "target": "public/data/preparation-state.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/共同试点准备接入_20261006.md",
+      "line": 5,
+      "target": "scripts/preparation-state-registration-receipt.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/共同试点准备接入_20261006.md",
+      "line": 5,
+      "target": "共同试点准备接入_20261006.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/共同试点准备接入_20261006.md",
+      "line": 15,
+      "target": "../共享接口/共同试点输入对照/交接准备包/7d66553a704f56bb/E4125_N33891_研究输入准备.zip",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/共同试点准备接入_20261006.md",
+      "line": 17,
+      "target": "../共享接口/共同试点输入对照/交接准备包/7d66553a704f56bb/准备清单.json",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/共同试点准备接入_20261006.md",
+      "line": 52,
+      "target": "evidence/准备资料_显式接纳.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/共同试点准备接入_20261006.md",
+      "line": 53,
+      "target": "evidence/准备资料_六类输入缺项.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/共同试点准备接入_20261006.md",
+      "line": 54,
+      "target": "evidence/准备资料_住宅候选点选.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/共同试点准备接入_20261006.md",
+      "line": 55,
+      "target": "evidence/准备资料_住宅独立关闭.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/共同试点准备接入_20261006.md",
+      "line": 56,
+      "target": "evidence/准备资料_重载恢复.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/共同试点准备接入_20261006.md",
+      "line": 57,
+      "target": "evidence/准备资料_JSON实际重开.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/共同试点准备接入_20261006.md",
+      "line": 58,
+      "target": "evidence/准备资料_ZIP实际重开.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/共同试点准备接入_20261006.md",
+      "line": 59,
+      "target": "evidence/准备资料_错误包类型保留工程.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/共同试点准备接入_20261006.md",
+      "line": 60,
+      "target": "evidence/准备资料_旧工程不自动回填.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/共同试点准备接入_20261006.md",
+      "line": 61,
+      "target": "evidence/准备资料_失败定位后仍保留.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/共同试点准备接入_20261006.md",
+      "line": 62,
+      "target": "evidence/准备资料_其他位置不继承.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/共同试点准备接入_20261006.md",
+      "line": 63,
+      "target": "evidence/准备资料_用户导入不继承.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/共同试点准备接入_20261006.md",
+      "line": 64,
+      "target": "evidence/准备资料_移动端详情.png",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/共同试点准备接入_20261006.md",
+      "line": 83,
+      "target": "科研状态接入_20261006.md",
+      "exists": true
+    },
+    {
+      "document": "平台本地首版/共同试点准备接入_20261006.md",
+      "line": 89,
+      "target": "../平台产品设计/共同试点增补资料说明_20261006.md",
+      "exists": true
+    }
+  ]
+}

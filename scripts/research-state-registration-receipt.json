@@ -1,0 +1,226 @@
+{
+  "schema_version": "0.1.read-only-research-registration-receipt",
+  "adapter_version": "0.1",
+  "registration_id": "coordination-index:6b56102f564361fe2755efbea9b613b2a71e67af3d5fcd247ea157cc2af659f9",
+  "operation": "verify_direct_metadata_and_register_read_only_index_snapshot",
+  "started_at": "2026-10-05T19:07:32.194Z",
+  "completed_at": "2026-10-05T19:07:32.228Z",
+  "source_index": {
+    "path": "共享接口/当前成果状态索引.json",
+    "sha256": "6b56102f564361fe2755efbea9b613b2a71e67af3d5fcd247ea157cc2af659f9",
+    "bytes": 20572
+  },
+  "index_measurements": {
+    "before": {
+      "sha256": "6b56102f564361fe2755efbea9b613b2a71e67af3d5fcd247ea157cc2af659f9",
+      "bytes": 20572
+    },
+    "after": {
+      "sha256": "6b56102f564361fe2755efbea9b613b2a71e67af3d5fcd247ea157cc2af659f9",
+      "bytes": 20572
+    },
+    "unchanged": true
+  },
+  "source_measurements": [
+    {
+      "source_id": "source_01",
+      "role": "one_hop_development_manifest",
+      "path": "02_不同绿色空间的相互作用/宏观研究/实施/第二步_代理参照与空间划分/图模型开发/图模型开发manifest.json",
+      "resolved_project_relative_path": "02_不同绿色空间的相互作用/宏观研究/实施/第二步_代理参照与空间划分/图模型开发/图模型开发manifest.json",
+      "declared": {
+        "sha256": "2ca7242e1d38ae397f1c1892d5c66f742b6e577116c2c352cb2d289dd529f33a",
+        "bytes": 286825
+      },
+      "before": {
+        "sha256": "2ca7242e1d38ae397f1c1892d5c66f742b6e577116c2c352cb2d289dd529f33a",
+        "bytes": 286825
+      },
+      "after": {
+        "sha256": "2ca7242e1d38ae397f1c1892d5c66f742b6e577116c2c352cb2d289dd529f33a",
+        "bytes": 286825
+      },
+      "all_declared_hashes_and_sizes_match": true,
+      "unchanged": true
+    },
+    {
+      "source_id": "source_02",
+      "role": "one_hop_development_independent_technical_receipt",
+      "path": "02_不同绿色空间的相互作用/宏观研究/实施/第二步_代理参照与空间划分/图模型开发/独立训练复核/独立图模型训练核验.json",
+      "resolved_project_relative_path": "02_不同绿色空间的相互作用/宏观研究/实施/第二步_代理参照与空间划分/图模型开发/独立训练复核/独立图模型训练核验.json",
+      "declared": {
+        "sha256": "436a7bc4976d35db476d19f523380e422acd3fc7eeb2d7a815ef5ca471ca1902",
+        "bytes": 488572
+      },
+      "before": {
+        "sha256": "436a7bc4976d35db476d19f523380e422acd3fc7eeb2d7a815ef5ca471ca1902",
+        "bytes": 488572
+      },
+      "after": {
+        "sha256": "436a7bc4976d35db476d19f523380e422acd3fc7eeb2d7a815ef5ca471ca1902",
+        "bytes": 488572
+      },
+      "all_declared_hashes_and_sizes_match": true,
+      "unchanged": true
+    },
+    {
+      "source_id": "source_03",
+      "role": "configuration_sources_manifest",
+      "path": "02_不同绿色空间的相互作用/宏观研究/实施/第三步_消融与配置来源/配置来源四版本/配置来源开发manifest.json",
+      "resolved_project_relative_path": "02_不同绿色空间的相互作用/宏观研究/实施/第三步_消融与配置来源/配置来源四版本/配置来源开发manifest.json",
+      "declared": {
+        "sha256": "2bed350c810e93d2e125ed45d4d7d5ab94e5c03d9ad22626635ba9d90d868b1f",
+        "bytes": 401002
+      },
+      "before": {
+        "sha256": "2bed350c810e93d2e125ed45d4d7d5ab94e5c03d9ad22626635ba9d90d868b1f",
+        "bytes": 401002
+      },
+      "after": {
+        "sha256": "2bed350c810e93d2e125ed45d4d7d5ab94e5c03d9ad22626635ba9d90d868b1f",
+        "bytes": 401002
+      },
+      "all_declared_hashes_and_sizes_match": true,
+      "unchanged": true
+    },
+    {
+      "source_id": "source_04",
+      "role": "configuration_sources_independent_technical_receipt",
+      "path": "02_不同绿色空间的相互作用/宏观研究/实施/第三步_消融与配置来源/配置来源四版本/独立训练复核/配置来源训练独立核验.json",
+      "resolved_project_relative_path": "02_不同绿色空间的相互作用/宏观研究/实施/第三步_消融与配置来源/配置来源四版本/独立训练复核/配置来源训练独立核验.json",
+      "declared": {
+        "sha256": "12df8892511c04b78d47f297af8ee1219489a4f846076c56ce69ddb151c93ad6",
+        "bytes": 706189
+      },
+      "before": {
+        "sha256": "12df8892511c04b78d47f297af8ee1219489a4f846076c56ce69ddb151c93ad6",
+        "bytes": 706189
+      },
+      "after": {
+        "sha256": "12df8892511c04b78d47f297af8ee1219489a4f846076c56ce69ddb151c93ad6",
+        "bytes": 706189
+      },
+      "all_declared_hashes_and_sizes_match": true,
+      "unchanged": true
+    },
+    {
+      "source_id": "source_05",
+      "role": "full_group_ablations_manifest",
+      "path": "02_不同绿色空间的相互作用/宏观研究/实施/第三步_消融与配置来源/完整参照组别消融/组别消融开发manifest.json",
+      "resolved_project_relative_path": "02_不同绿色空间的相互作用/宏观研究/实施/第三步_消融与配置来源/完整参照组别消融/组别消融开发manifest.json",
+      "declared": {
+        "sha256": "378fd868e40b049834dc72202b33b82fd1152bab9f3cfc9918f7e4aa8773da94",
+        "bytes": 893192
+      },
+      "before": {
+        "sha256": "378fd868e40b049834dc72202b33b82fd1152bab9f3cfc9918f7e4aa8773da94",
+        "bytes": 893192
+      },
+      "after": {
+        "sha256": "378fd868e40b049834dc72202b33b82fd1152bab9f3cfc9918f7e4aa8773da94",
+        "bytes": 893192
+      },
+      "all_declared_hashes_and_sizes_match": true,
+      "unchanged": true
+    },
+    {
+      "source_id": "source_06",
+      "role": "full_group_ablations_independent_technical_receipt",
+      "path": "02_不同绿色空间的相互作用/宏观研究/实施/第三步_消融与配置来源/完整参照组别消融/独立训练复核/完整参照组别训练独立核验.json",
+      "resolved_project_relative_path": "02_不同绿色空间的相互作用/宏观研究/实施/第三步_消融与配置来源/完整参照组别消融/独立训练复核/完整参照组别训练独立核验.json",
+      "declared": {
+        "sha256": "fb94e0b8c6885ae55b222a4d69297186a21fd51e9326b8e649e5e4999eb12814",
+        "bytes": 2460881
+      },
+      "before": {
+        "sha256": "fb94e0b8c6885ae55b222a4d69297186a21fd51e9326b8e649e5e4999eb12814",
+        "bytes": 2460881
+      },
+      "after": {
+        "sha256": "fb94e0b8c6885ae55b222a4d69297186a21fd51e9326b8e649e5e4999eb12814",
+        "bytes": 2460881
+      },
+      "all_declared_hashes_and_sizes_match": true,
+      "unchanged": true
+    },
+    {
+      "source_id": "source_07",
+      "role": "configuration_sources_development_MAE_summary",
+      "path": "02_不同绿色空间的相互作用/宏观研究/实施/第三步_消融与配置来源/配置来源四版本/配置来源开发误差汇总.csv",
+      "resolved_project_relative_path": "02_不同绿色空间的相互作用/宏观研究/实施/第三步_消融与配置来源/配置来源四版本/配置来源开发误差汇总.csv",
+      "declared": {
+        "sha256": "7218c61eb9d3a120ba45c9f4dded868a79841b5336c0d94c0d6e3dde8d788b59",
+        "bytes": 298
+      },
+      "before": {
+        "sha256": "7218c61eb9d3a120ba45c9f4dded868a79841b5336c0d94c0d6e3dde8d788b59",
+        "bytes": 298
+      },
+      "after": {
+        "sha256": "7218c61eb9d3a120ba45c9f4dded868a79841b5336c0d94c0d6e3dde8d788b59",
+        "bytes": 298
+      },
+      "all_declared_hashes_and_sizes_match": true,
+      "unchanged": true
+    },
+    {
+      "source_id": "source_08",
+      "role": "full_group_ablations_development_MAE_summary",
+      "path": "02_不同绿色空间的相互作用/宏观研究/实施/第三步_消融与配置来源/完整参照组别消融/组别消融开发误差汇总.csv",
+      "resolved_project_relative_path": "02_不同绿色空间的相互作用/宏观研究/实施/第三步_消融与配置来源/完整参照组别消融/组别消融开发误差汇总.csv",
+      "declared": {
+        "sha256": "4e2eee578a73166b2225fce4ca279ac312790e35b91e38f3b9b490055976bfb1",
+        "bytes": 761
+      },
+      "before": {
+        "sha256": "4e2eee578a73166b2225fce4ca279ac312790e35b91e38f3b9b490055976bfb1",
+        "bytes": 761
+      },
+      "after": {
+        "sha256": "4e2eee578a73166b2225fce4ca279ac312790e35b91e38f3b9b490055976bfb1",
+        "bytes": 761
+      },
+      "all_declared_hashes_and_sizes_match": true,
+      "unchanged": true
+    }
+  ],
+  "source_verification": {
+    "verified_source_count": 8,
+    "all_source_hashes_match": true,
+    "source_hashes_unchanged": true,
+    "index_hash_unchanged": true,
+    "scope": "index_and_selected_metadata_bytes_not_all_weights_or_inference"
+  },
+  "operation_gates": {
+    "validated_new_site_prediction": false,
+    "physical_cooling": false,
+    "comfort_accessibility": false,
+    "actual_use": false,
+    "equity_results": false,
+    "minimum_area_search": false,
+    "optimal_recommendation": false
+  },
+  "snapshot_identity": "original_index_sha256_not_envelope_digest",
+  "outputs": {
+    "current": {
+      "path": "public/data/research-state.json",
+      "sha256": "e9d30ca04de0b7afb8e409515fb8d342923e0e3e938a6decb02615cf5bc32646",
+      "bytes": 23017
+    },
+    "snapshot": {
+      "path": "public/data/research_snapshots/6b56102f564361fe2755efbea9b613b2a71e67af3d5fcd247ea157cc2af659f9.json",
+      "sha256": "e9d30ca04de0b7afb8e409515fb8d342923e0e3e938a6decb02615cf5bc32646",
+      "bytes": 23017,
+      "reused_existing_snapshot": false
+    },
+    "receipt": {
+      "path": "scripts/research-state-registration-receipt.json"
+    }
+  },
+  "validation": {
+    "validator": "src/research-state.js:validateResearchRegistration",
+    "envelope_valid": true,
+    "current_and_snapshot_bytes_equal": true,
+    "original_index_object_preserved": true
+  },
+  "scope": "index_and_selected_metadata_bytes_not_all_weights_or_inference"
+}

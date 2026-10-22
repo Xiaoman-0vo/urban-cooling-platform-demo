@@ -1,0 +1,3425 @@
+{
+  "notice": "Relative source-file inventory, excluding this inventory itself. No node_modules, dist, runtime, credentials or symlinks. README may be updated by the root task after this snapshot.",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 161,
+      "sha256": "78617099f9e8e795adda7fc2190d575d1c1b2217b78463e8c65ef132835e89e6"
+    },
+    {
+      "path": ".npmrc",
+      "bytes": 23,
+      "sha256": "f7dbda001b627b3a792fb6929303b517f047f03916f2c55227e81216d38a2008"
+    },
+    {
+      "path": ".nvmrc",
+      "bytes": 8,
+      "sha256": "ccb4022e91abb8575a29d306d7aff041f578bb86eb1180d69475bb86a5c4512c"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 3150,
+      "sha256": "e5455cef7e7d05c248cbc6cbaafc59012405cde1229125500a3cad7c7ae148ed"
+    },
+    {
+      "path": "DATA_SOURCES.md",
+      "bytes": 21540,
+      "sha256": "ed8572bd14d010ce7681f924d5be4f20970e0fa422bff79e6adde8a5b8278e80"
+    },
+    {
+      "path": "README.md",
+      "bytes": 20564,
+      "sha256": "c0e916ef39f4aa422b5834c07ee8c4a73507163d786cf025d980edbbf928d6d2"
+    },
+    {
+      "path": "config/sites-hosting.json",
+      "bytes": 31,
+      "sha256": "d532abb65cf9ae20634b464d954cb4a08a0de9f3cd3cdf7f9c3ec8948826d947"
+    },
+    {
+      "path": "datasets/.gitignore",
+      "bytes": 61,
+      "sha256": "ac7d2cf8d0dfd1b876f30f1ababd315170f14af6aee8aa231fc0112bfe45fc74"
+    },
+    {
+      "path": "datasets/README_数据交接说明.md",
+      "bytes": 3101,
+      "sha256": "ac8859afd177a9226cb74dfc912d05d22c4ac18810489556b7e47b2837b6dc68"
+    },
+    {
+      "path": "datasets/SHA256SUMS.files.txt",
+      "bytes": 14496,
+      "sha256": "fb201152fcbd51b555812378447212692c74a0bf2db95c42d8399ff12cfdfb1a"
+    },
+    {
+      "path": "datasets/SHA256SUMS.packages.txt",
+      "bytes": 375,
+      "sha256": "fa9795b86b694493394f99893d731bda3b4d10f10208604eddbc33fa21866abe"
+    },
+    {
+      "path": "datasets/data_products.json",
+      "bytes": 11603,
+      "sha256": "992d435149f2d8ab8ce39c60ce5df50dda9896ea047d51fa9d3c41b93063e603"
+    },
+    {
+      "path": "datasets/license_verification.json",
+      "bytes": 2419,
+      "sha256": "cd40f8dd0ae922bee50434a10e83127c0845084bb5b236c7c5c09b717c73b2fe"
+    },
+    {
+      "path": "datasets/manifest.csv",
+      "bytes": 43543,
+      "sha256": "620685794f5555ef6674ad476035bdd130edd8c5285a6671f451820e65747352"
+    },
+    {
+      "path": "datasets/manifest.json",
+      "bytes": 72675,
+      "sha256": "2574487fff9c7fde6bb6794e607f1179813f8f4519cf2ab6fab5a1a7e2cd6d64"
+    },
+    {
+      "path": "datasets/release_assets.json",
+      "bytes": 2001,
+      "sha256": "c1ec0a7ad6aa7ebd8bc5171d546fe25b6115ae0de80a9b6c8034f4b84e9dc998"
+    },
+    {
+      "path": "datasets/verification_report.json",
+      "bytes": 51963,
+      "sha256": "1d312071a65161ab0576d57166544f7637691314fb1200bfa6446b90bffdd603"
+    },
+    {
+      "path": "design-qa.md",
+      "bytes": 13206,
+      "sha256": "35dce8386fcf8e3fd58e73912a0281f4fd90fa5ecffc46859ba6054d7d796f32"
+    },
+    {
+      "path": "documentation/原平台交付记录.md",
+      "bytes": 18157,
+      "sha256": "6a8dce38f863b0be6c8cbda4c58ff6c18ff7dbe7a97207cfe3ad2f2f7a58a33b"
+    },
+    {
+      "path": "documentation/原平台协作约定.md",
+      "bytes": 7116,
+      "sha256": "fcb1ba7d8e929400e5dca7e9d7ef2ee9a6c437c5086ac4dc0c0be8ded9904194"
+    },
+    {
+      "path": "evidence/BOM摘要更正_20261006/write-source-geometry-receipt.mjs.before-bb31740fdd396c11.raw",
+      "bytes": 13111,
+      "sha256": "bb31740fdd396c11cd4a0c4b2226840687e4e43355bc27f71125dece75bca1d0"
+    },
+    {
+      "path": "evidence/BOM摘要更正_20261006/更正前原字节登记.json",
+      "bytes": 1612,
+      "sha256": "2d8ecfa256e4edbafdba7565079f8531f65be34d04e79c20a0d929cf57e98d09"
+    },
+    {
+      "path": "evidence/BOM摘要更正_20261006/更正记录.json",
+      "bytes": 7366,
+      "sha256": "e814987d6d976520853e25108bf1566ef793420ef24620c4478b50abb76ca13d"
+    },
+    {
+      "path": "evidence/BOM摘要更正_20261006/来源几何与对象三组接入_20261006.json.before-a0148bef3a11d16a.raw",
+      "bytes": 890263,
+      "sha256": "a0148bef3a11d16a9bb6bd7c067ef58ee8f957e476a4fb09d2292fcc667b7ac7"
+    },
+    {
+      "path": "evidence/BOM摘要更正_20261006/来源几何与对象三组接入_20261006.md.before-df0b42a7a625f7fe.raw",
+      "bytes": 5097,
+      "sha256": "df0b42a7a625f7fe8c674970812b21506a3d45cd2dab8a7de8fb45656f6c1798"
+    },
+    {
+      "path": "evidence/三组JSON实际重开_20261006.png",
+      "bytes": 122871,
+      "sha256": "48611a5d5d2f4adeaaf81296bb03fc68cd4c3c9af657db4397657db78613e5e0"
+    },
+    {
+      "path": "evidence/三组ZIP实际重开_20261006.png",
+      "bytes": 122916,
+      "sha256": "b9de8a70017ead84fa91bd16029c5bd81a132ab38e58f2fcd15a08b3a5aff5a5"
+    },
+    {
+      "path": "evidence/三组保存刷新恢复_20261006.png",
+      "bytes": 122900,
+      "sha256": "092be190d4ca7cde7ef88f84ef39c009a679f9743b6e772203ce4901f3acbf2b"
+    },
+    {
+      "path": "evidence/三组原段定位_20261006.png",
+      "bytes": 109258,
+      "sha256": "f7bef2ed754a3ace1bf3762e7ba9391c5f8b60f683fb9ad5059a595994aac29d"
+    },
+    {
+      "path": "evidence/三组原节点定位_20261006.png",
+      "bytes": 86625,
+      "sha256": "4e769c0b29452d9d54557c5f53c9d0f256f94f0bc83c199325e59f71c4920c44"
+    },
+    {
+      "path": "evidence/三组受体来源定位_20261006.png",
+      "bytes": 108584,
+      "sha256": "e2488d2c10fbf888c6aa04d048cc31e45f0bbe69fff9a4b1efc5ffe3d6c6b595"
+    },
+    {
+      "path": "evidence/三组天气完整审阅_20261006.png",
+      "bytes": 107559,
+      "sha256": "1fe26913c262b0b5deb8aba41589bf2005ef396eae55aefd785c7850d587ba02"
+    },
+    {
+      "path": "evidence/三组完整软件检查_20261006.log",
+      "bytes": 12284,
+      "sha256": "d9d4ae2a6771816cd706c0581153f39ddd76021302b7bf6b7133b78ea5d66d4b"
+    },
+    {
+      "path": "evidence/三组实际保存_20261006.png",
+      "bytes": 121424,
+      "sha256": "55d30e2f9878908fe5a23cd617e8fcec00ff5f55da76365ac4285225bb4f542b"
+    },
+    {
+      "path": "evidence/三组接入前保护记录_20261006.json",
+      "bytes": 1785,
+      "sha256": "1a9fbb82977a124e3fd36006db49ec2769838e32487ae0d4068d7b09aa6fbf3d"
+    },
+    {
+      "path": "evidence/三组接入前平台代码_20261006.zip",
+      "bytes": 115817,
+      "sha256": "359b38b1dbb33b6f4b44354feab3a6f52a16c6b35b995b6448203a69cbbbba19"
+    },
+    {
+      "path": "evidence/三组收据读回_20261006.json",
+      "bytes": 8691,
+      "sha256": "1abff0a5e524c86afa01a7fa94b3f2f09d6957a74f1aa1289099938926790b50"
+    },
+    {
+      "path": "evidence/三组旧工程无回填_20261006.png",
+      "bytes": 148344,
+      "sha256": "60d4e16533079749ed17021906ea5a7928456c3a84a478d0aea010334b93f412"
+    },
+    {
+      "path": "evidence/三组来源分区点击_20261006.png",
+      "bytes": 117112,
+      "sha256": "83d94ad38e78c4dd2455517038fb11df401183741ba3c4cfd416e429a79c8d27"
+    },
+    {
+      "path": "evidence/三组来源原字节登记_20261006.json",
+      "bytes": 14030,
+      "sha256": "4dc77e51473e6443cda71b8d3594ac495e89eabdb6d33708689909a54453a1ae"
+    },
+    {
+      "path": "evidence/三组来源地图检查_20261006.log",
+      "bytes": 2658,
+      "sha256": "eaed5c0e6b1a517a9a7b45463e8566a07ad3ce1cbf5e844551db5d80b8193c96"
+    },
+    {
+      "path": "evidence/三组来源最终界面_20261006.png",
+      "bytes": 146511,
+      "sha256": "efc1d5c61244f6c85c6651dbb8dfae2b0c15968e093c65808bf92d528e94d206"
+    },
+    {
+      "path": "evidence/三组来源配色_红色弱模拟_20261006.png",
+      "bytes": 115892,
+      "sha256": "ffe31b5a5b56c4c7a6fbf124a568948aab33ba9647738fe44e54c8737b233082"
+    },
+    {
+      "path": "evidence/三组来源配色_绿色弱模拟_20261006.png",
+      "bytes": 115620,
+      "sha256": "0fb6465a50b73489d48b401709b5df568f0a32518ec2b03012282469b119bb52"
+    },
+    {
+      "path": "evidence/三组构建_20261006.log",
+      "bytes": 862,
+      "sha256": "626b5f2ed99cedc620d6c576ae4f1f1fecb5a49f7a5223234be51c3d68ed743f"
+    },
+    {
+      "path": "evidence/三组浏览器完整审阅_20261006.json",
+      "bytes": 857702,
+      "sha256": "36b74894d1aad73076936d585a5a95c7fa83eefee819352b2f31d969264bc915"
+    },
+    {
+      "path": "evidence/三组浏览器错误文件_20261006/01_错误来源哈希.json",
+      "bytes": 10410899,
+      "sha256": "9eb90089e393e485f029db6c49252ebe9c8daab59b8899dd6fbcb2fc39471fba"
+    },
+    {
+      "path": "evidence/三组浏览器错误文件_20261006/02_原清单损坏.json",
+      "bytes": 10410899,
+      "sha256": "d4ca6a8f72776f1b89e7c737b0c8649cf52c7659c8f67c482371dc562f2c6712"
+    },
+    {
+      "path": "evidence/三组浏览器错误文件_20261006/03_重复组身份.json",
+      "bytes": 11933260,
+      "sha256": "c092f316dd7055b483a41a83a880c9d83a1c598f48577c3f404fb7650cc518c3"
+    },
+    {
+      "path": "evidence/三组浏览器错误文件_20261006/04_布尔字符串与准入升级.json",
+      "bytes": 10410901,
+      "sha256": "c3b37b8beebff1587089f8fa21738d645199da2d3a2ecb7e70fb8a2e742f1d9e"
+    },
+    {
+      "path": "evidence/三组浏览器错误文件_20261006/05_未采用状态升级.json",
+      "bytes": 10410895,
+      "sha256": "64694e5c7eb97d65e376e4509613c2842741e0cf1872a04cf31c929a46c5fed2"
+    },
+    {
+      "path": "evidence/三组浏览器错误文件_20261006/06_重复JSON字段.json",
+      "bytes": 10410948,
+      "sha256": "99926b3920525110a567dc799d64ed398b6db180c6a740eef80f7af250b8404c"
+    },
+    {
+      "path": "evidence/三组浏览器错误文件_20261006/07_新登记null错误.json",
+      "bytes": 8574809,
+      "sha256": "937d33a8be2cb4447612bdf9990e7c2e4ac497664d869dced45296d2f7d1d427"
+    },
+    {
+      "path": "evidence/三组浏览器错误文件_20261006/08_天气漏行.json",
+      "bytes": 10410855,
+      "sha256": "a60c1844034475e313d0c7d87cf6916325f7900724e5e91707172ccb1872929a"
+    },
+    {
+      "path": "evidence/三组浏览器错误文件_20261006/09_来源CRS单位空值篡改.json",
+      "bytes": 10410811,
+      "sha256": "959d61377f4893f815a5d65f47c5097a244b331c5638462e8230f44e9cdbc55e"
+    },
+    {
+      "path": "evidence/三组浏览器错误文件_20261006/10_源段外键断开.json",
+      "bytes": 10410927,
+      "sha256": "5661525f883be684cd5edaec48a498f81893e0b3379dce5043982ab103c0d549"
+    },
+    {
+      "path": "evidence/三组浏览器错误文件_20261006/cases.json",
+      "bytes": 4243,
+      "sha256": "370e52c9e8d99eb5e7929bb7808fb0473cea420538c10535d0a22c3d85e5aa41"
+    },
+    {
+      "path": "evidence/三组真实磁盘独立回读_20261006.json",
+      "bytes": 1185346,
+      "sha256": "b748a83b81896dfeec5cd6e293be88968e5c68d51ab5cd4f369e2e4e16dff87d"
+    },
+    {
+      "path": "evidence/三组道路来源全域审阅_20261006.png",
+      "bytes": 176830,
+      "sha256": "2a666409e28e62415d5b46060f9c1bdbae86cffae612790001f265d9f999180e"
+    },
+    {
+      "path": "evidence/三组错误文件实际拒绝_20261006.png",
+      "bytes": 119207,
+      "sha256": "b24e2da0407ac12aee5849484a8c135a3553d5ef5a9cc4ee76e13261787cd7ed"
+    },
+    {
+      "path": "evidence/中间尺度光效记录.json",
+      "bytes": 373,
+      "sha256": "89016be5278deee2f33f03e654b977d5b9d4f1dcd413ad84fcf0b15ec6e44a91"
+    },
+    {
+      "path": "evidence/中间尺度呼吸光效实录.gif",
+      "bytes": 13584283,
+      "sha256": "e154062c65fac604e3bdefcc58f3897e4403d1cfb8eaebd1d21fc544fdea6536"
+    },
+    {
+      "path": "evidence/五组JSON磁盘重开_20261006.png",
+      "bytes": 146684,
+      "sha256": "0e9f283d28a90293f37a3b50225338be4dad851e49777466e0200d3bcae2f916"
+    },
+    {
+      "path": "evidence/五组ZIP实际下载回执_20261006.png",
+      "bytes": 146178,
+      "sha256": "fa8dfc83fb7587918c89e9c4a482d1935c49ea479f405da201b3a9734d049498"
+    },
+    {
+      "path": "evidence/五组ZIP磁盘重开_20261006.png",
+      "bytes": 148034,
+      "sha256": "3ca3fd53345888d5784f0b703098752e4a29128b0b66acda686ca88779eebb11"
+    },
+    {
+      "path": "evidence/五组交付文档回读_20261006.json",
+      "bytes": 10718,
+      "sha256": "dcdd2252455092cf267b4989a12ea9dcf9508e7dcf87dc11ca5e851ff28bf9c6"
+    },
+    {
+      "path": "evidence/五组共同案例逐格表_20261006.png",
+      "bytes": 152789,
+      "sha256": "f801bb8cc2fcd4b8bede5b4baf2b5e92626549bea9a7ae4fd954739146bd36c1"
+    },
+    {
+      "path": "evidence/五组周边描述界面_20261006.png",
+      "bytes": 156358,
+      "sha256": "63e09ba210068d2e1d7d78a2762d7ec2464ceda2ecc20d5c0c084b3fc653fc56"
+    },
+    {
+      "path": "evidence/五组完整软件检查_20261006.log",
+      "bytes": 9502,
+      "sha256": "f71f1d580d2565cf33f667a96ab343466f2c2c008d77fe335f4c96999eb735fd"
+    },
+    {
+      "path": "evidence/五组成果最终界面_20261006.png",
+      "bytes": 149275,
+      "sha256": "cedf4c53db5b536025d90308cbfd3d17425e65dc0f32fad442f64fdab9a4fd12"
+    },
+    {
+      "path": "evidence/五组拒绝重开样例/duplicate.json",
+      "bytes": 7213586,
+      "sha256": "de026f5591cfc3d6de88eb14bd8b83fd75a73305681dfdddd8bd33a7a2b60bd1"
+    },
+    {
+      "path": "evidence/五组拒绝重开样例/duplicate_json_key.json",
+      "bytes": 89,
+      "sha256": "cae8ccfd356f14adf41f3698c2419a11928222a1d118a051202832cb6f478da3"
+    },
+    {
+      "path": "evidence/五组拒绝重开样例/missing_dependency.zip",
+      "bytes": 7768938,
+      "sha256": "e9d0a5b762420f52415fd64f24101abd51d5fcf0c3846b6e0adc5084bfc1f26a"
+    },
+    {
+      "path": "evidence/五组拒绝重开样例/schema.json",
+      "bytes": 5665344,
+      "sha256": "d6f067aee4a6ad0772f1d1af22bebfb59b1a2391b1a94ed4e22c252fedaf0087"
+    },
+    {
+      "path": "evidence/五组拒绝重开样例/sidecar_mismatch.zip",
+      "bytes": 8060792,
+      "sha256": "f1127734c57e452fa254a613863abcd6449e4dbe3f8f86205793064f113cca47"
+    },
+    {
+      "path": "evidence/五组拒绝重开样例/source_hash.json",
+      "bytes": 5665371,
+      "sha256": "19cb08a0584d69f2e353cd27560d1da8f0cfbeae4e4f162dff06b9126428abd4"
+    },
+    {
+      "path": "evidence/五组拒绝重开样例/unit_mismatch.json",
+      "bytes": 5665392,
+      "sha256": "1fab6684bf6c891100b6ab3067e0921559794e718d0c78329c72a4446efb9ff0"
+    },
+    {
+      "path": "evidence/五组拒绝重开样例/unknown_field.json",
+      "bytes": 5665403,
+      "sha256": "aec70267080dc82c5c111a2c2fbda680e5698998f06eae3c67956763bfd4f62a"
+    },
+    {
+      "path": "evidence/五组接纳界面_20261006.png",
+      "bytes": 149893,
+      "sha256": "7fb98560bd7502b48f413f03131ee47b57ef063fb625094db51ef1617b08cde0"
+    },
+    {
+      "path": "evidence/五组旧工程未回填_20261006.png",
+      "bytes": 146322,
+      "sha256": "920fb0a43f32601b379e3a2826cadfdb5b3abaa07f04dc860e9d54436ba45833"
+    },
+    {
+      "path": "evidence/五组本地保存恢复_20261006.png",
+      "bytes": 150109,
+      "sha256": "585b2231a3c60cb3144491a68e8e69d2334a8eb24bfabd63bf8f5f073d0ae0da"
+    },
+    {
+      "path": "evidence/五组来源模块检查_20261006.tap",
+      "bytes": 1372,
+      "sha256": "88ca0c976f8040ffad8282aae277a8a3287f08c899e17c32e333d9bdb472b292"
+    },
+    {
+      "path": "evidence/五组来源读取与登记_20261006.json",
+      "bytes": 23894,
+      "sha256": "60986852ac6ac995774ba3b51587fd74f40b1f48e61be4cf5bf041facb3e7abc"
+    },
+    {
+      "path": "evidence/五组构建_20261006.log",
+      "bytes": 530,
+      "sha256": "8ad9228821c390b8d1c03139135a52a2543ad89602c6dfd054e489363ae12af2"
+    },
+    {
+      "path": "evidence/五组浏览器拒绝核查_20261006.json",
+      "bytes": 9565,
+      "sha256": "77d546bc9cda7e885f81a895941b5b71db8b14aeed82727d776dfde48ce12f1c"
+    },
+    {
+      "path": "evidence/五组登记重建不重基核查_20261006.json",
+      "bytes": 618,
+      "sha256": "379c30b6d63e23c7142d2eabbfdae59105641d2e62aa8235a540d658643d3be8"
+    },
+    {
+      "path": "evidence/五组磁盘文件独立回读_20261006.json",
+      "bytes": 597833,
+      "sha256": "3323ae1e1fc9e29152cbc13882e5bcb546edec91aef678eef0069fe0d1f7fa4d"
+    },
+    {
+      "path": "evidence/交付文档链接核查_20261006.json",
+      "bytes": 976,
+      "sha256": "6ac3fc98236287e12666c1e323eadb32cc2624d686a23175c232f8b0ec2a08e4"
+    },
+    {
+      "path": "evidence/交付文档链接核查_20261006_准备接入.json",
+      "bytes": 56891,
+      "sha256": "af23be72150eba83dfe1438fdbf06351670416c18670558f5f7456f16d534895"
+    },
+    {
+      "path": "evidence/光效_最终四川远景.png",
+      "bytes": 109996,
+      "sha256": "529a73d0cc32b027deb131b935df8fdce177067861f495cd365ceba8e2443bc6"
+    },
+    {
+      "path": "evidence/光效_用户原页面最终状态.png",
+      "bytes": 150824,
+      "sha256": "e63afc8350e0dbf72b93bddb9e228a8572851640c56ff54318e2670ea6f11d3b"
+    },
+    {
+      "path": "evidence/光效动态帧/00.jpg",
+      "bytes": 103060,
+      "sha256": "bb5534f0110cae97e432e3e6818b1cc935625c4c43811f3ca3972b22eaedc462"
+    },
+    {
+      "path": "evidence/光效动态帧/01.jpg",
+      "bytes": 77265,
+      "sha256": "98db8862a7255b2658a000dc56f6be9b0d59fb61d448f58d400e492e782e9883"
+    },
+    {
+      "path": "evidence/光效动态帧/02.jpg",
+      "bytes": 84789,
+      "sha256": "37ae3878d09a4cdeabc4b049df8e3df6713d33cfa2acda228a23697fdbf0f984"
+    },
+    {
+      "path": "evidence/光效动态帧/03.jpg",
+      "bytes": 65221,
+      "sha256": "0d1e473491cb76794eabf50ab55ddf68612cf283a799e04ef03e2110aa53f181"
+    },
+    {
+      "path": "evidence/光效动态帧/04.jpg",
+      "bytes": 58175,
+      "sha256": "4b2fd5e6aae8f01f8af0bb433123c00643cb6b9e2913dfd63bbdf365faa99e8c"
+    },
+    {
+      "path": "evidence/光效动态帧/05.jpg",
+      "bytes": 59633,
+      "sha256": "e098174761e1b72234a98b4791da88ef895dff5228b028111531681f1c083674"
+    },
+    {
+      "path": "evidence/光效动态帧/06.jpg",
+      "bytes": 74312,
+      "sha256": "b4752dfbeb2a11e2c32efbc0ffcf174a50c100a68aa882ce0a4588cafa3c980d"
+    },
+    {
+      "path": "evidence/光效动态帧/07.jpg",
+      "bytes": 75228,
+      "sha256": "9db415818c7af7caa63a9364d90fe38694e843f41ab64e782d7c4a3b2934380e"
+    },
+    {
+      "path": "evidence/光效动态帧/08.jpg",
+      "bytes": 75616,
+      "sha256": "08a7aeb3566d90492f62bd3e51d60ccdfd98c7696b3f79bfca0d0a54453a2460"
+    },
+    {
+      "path": "evidence/光效动态帧/09.jpg",
+      "bytes": 75604,
+      "sha256": "bb1e03d80694760aea9452433baa86a218425966e0ebd46ad1ca58297309463d"
+    },
+    {
+      "path": "evidence/光效动态帧/10.jpg",
+      "bytes": 75626,
+      "sha256": "3fa5dcd0b14ffd4791f1bf16c41603317ab2014b1097caf780be1f68c85436f9"
+    },
+    {
+      "path": "evidence/光效动态帧/11.jpg",
+      "bytes": 75616,
+      "sha256": "7c21dcae42cc52d38469145245aa2dcb8fa896ab5e0e65cc5fa34a226b6d8bfe"
+    },
+    {
+      "path": "evidence/光效动态帧/timing.json",
+      "bytes": 55,
+      "sha256": "9ce2afad031e434918ccd56f152c9c0c3203b158daa67412e9963a8a3844b376"
+    },
+    {
+      "path": "evidence/光效动态帧_中间尺度/00.png",
+      "bytes": 173582,
+      "sha256": "9250a0298fc20f6248a75209da3ab77d7d74289861be6336c05b753e98bb9eb4"
+    },
+    {
+      "path": "evidence/光效动态帧_中间尺度/01.png",
+      "bytes": 173599,
+      "sha256": "5ffac6385d49ebda25fecdfa0aa0730265590d859bcccfa52a69278f4ed31564"
+    },
+    {
+      "path": "evidence/光效动态帧_中间尺度/02.png",
+      "bytes": 173616,
+      "sha256": "2cee0c7e063b346200ac1966c698da670da3921a87ba2303db8f66a3510be538"
+    },
+    {
+      "path": "evidence/光效动态帧_中间尺度/03.png",
+      "bytes": 173627,
+      "sha256": "eab7473260c015d25ac79c485382c6343a99781a5b65853c737f72cca6c2d1d9"
+    },
+    {
+      "path": "evidence/光效动态帧_中间尺度/04.png",
+      "bytes": 173660,
+      "sha256": "cd7b39d748b70a99b435085e5b845e813c5844fde2892c0682401c25a6fe5d11"
+    },
+    {
+      "path": "evidence/光效动态帧_中间尺度/05.png",
+      "bytes": 173616,
+      "sha256": "2662f9b01792d50b3aaf7a32cca397ef4122c6ba38994fa0e785510d98625f27"
+    },
+    {
+      "path": "evidence/光效动态帧_中间尺度/06.png",
+      "bytes": 173614,
+      "sha256": "d95c373306b651c5badab3e2cab55b02fb5deb41a1804965533929803e1b2772"
+    },
+    {
+      "path": "evidence/光效动态帧_中间尺度/07.png",
+      "bytes": 173564,
+      "sha256": "4eab122ca098a63f52e2de399f78618b475f41e322d4a973c957901def5292ea"
+    },
+    {
+      "path": "evidence/光效动态帧_中间尺度/08.png",
+      "bytes": 173615,
+      "sha256": "7d6f2d7285323898d8acc1acf1578f797715da4e226e1943c73c15e12c18431e"
+    },
+    {
+      "path": "evidence/光效动态帧_中间尺度/09.png",
+      "bytes": 173550,
+      "sha256": "762f05e8d2ea3b54a5bc2c15faaf0986c43869f90671c8f68b95f0026df70820"
+    },
+    {
+      "path": "evidence/光效动态帧_中间尺度/10.png",
+      "bytes": 173642,
+      "sha256": "28fa3c336b526b998cef1a45a6434f74cf8f61144f9ddcb2c3d9d23ba6ecee3d"
+    },
+    {
+      "path": "evidence/光效动态帧_中间尺度/11.png",
+      "bytes": 173617,
+      "sha256": "6de4cb8e2978e2383efdd5e27066abd3acfdea867bdaf86981c127ef9c8397cd"
+    },
+    {
+      "path": "evidence/光效动态帧_中间尺度/12.png",
+      "bytes": 173559,
+      "sha256": "5250cb646ebd194fc195c2adad69b8ccac0f92214351d7f4efa746b6be535697"
+    },
+    {
+      "path": "evidence/光效动态帧_中间尺度/13.png",
+      "bytes": 173606,
+      "sha256": "7de792c9d63537da13f51976fa9ba033dbca5d9aa8072c8e2c8590a3423e39e2"
+    },
+    {
+      "path": "evidence/光效动态帧_中间尺度/14.png",
+      "bytes": 173652,
+      "sha256": "59c12759d940a77f0f5206a4983ad58deea4d1a8f7dfa69a6fc0a45ab1da9397"
+    },
+    {
+      "path": "evidence/光效动态帧_中间尺度/15.png",
+      "bytes": 173644,
+      "sha256": "a88adf68b021d078c011063568b213103a74eab129400d2f5e3588c18839c43b"
+    },
+    {
+      "path": "evidence/光效动态帧_中间尺度/16.png",
+      "bytes": 173637,
+      "sha256": "6c12fd1b23189a7306ac85826e4ecab00fe2b8ee60213934e302863972f6d21f"
+    },
+    {
+      "path": "evidence/光效动态帧_中间尺度/17.png",
+      "bytes": 173590,
+      "sha256": "1c75f45f77d149196cfc5e4dda2afa1faf5844ac5856f70c23e1e7a01b8c959f"
+    },
+    {
+      "path": "evidence/光效动态帧_中间尺度/18.png",
+      "bytes": 173584,
+      "sha256": "ebda4fcc2acf771f247f0cbc044f7a9f9f8b2ef3eba78118335c098c27ecf00c"
+    },
+    {
+      "path": "evidence/光效动态帧_中间尺度/19.png",
+      "bytes": 173576,
+      "sha256": "04b7261680ff39ee594823e21f59f37282a9ea8bf77efe217e91a6359fc49785"
+    },
+    {
+      "path": "evidence/光效动态帧_中间尺度/timing.json",
+      "bytes": 1078,
+      "sha256": "65d545f890bcfe01e126564e4b2c4c175364cffe9ac920d6443a6687cbf5408c"
+    },
+    {
+      "path": "evidence/光效动态帧_修复后/00.jpg",
+      "bytes": 104594,
+      "sha256": "d117b6e1a4d903aa0744aaaebcf0df3e0d02e35b55a447ae12fd5b005a8394e5"
+    },
+    {
+      "path": "evidence/光效动态帧_修复后/01.jpg",
+      "bytes": 121085,
+      "sha256": "1c7ce32745777169115dd631d568c3786142be57fb498406a8aa7ff48a68c0a3"
+    },
+    {
+      "path": "evidence/光效动态帧_修复后/02.jpg",
+      "bytes": 125618,
+      "sha256": "fed02e86f422911f8fc84a9bf4ef746f1a7c6f6603ed184aa46081dc591270a3"
+    },
+    {
+      "path": "evidence/光效动态帧_修复后/03.jpg",
+      "bytes": 126831,
+      "sha256": "a098fc43fc9adabe09c3794e556fa91ca6716dae2afd3e816d5062b1f58411c7"
+    },
+    {
+      "path": "evidence/光效动态帧_修复后/04.jpg",
+      "bytes": 112734,
+      "sha256": "ce16402866e0d44b33facd4739d2619baefaa4e044325e3041f3a626c151d21d"
+    },
+    {
+      "path": "evidence/光效动态帧_修复后/05.jpg",
+      "bytes": 111558,
+      "sha256": "abb3414f58aff0a79bef0b539cf180ce952503cbb33bdbb8db77339bf8bfa4cc"
+    },
+    {
+      "path": "evidence/光效动态帧_修复后/06.jpg",
+      "bytes": 111519,
+      "sha256": "4f1409b13305b9b69c6b808bad1df6b7a6a11b618fe9275b90f9893a1d647021"
+    },
+    {
+      "path": "evidence/光效动态帧_修复后/07.jpg",
+      "bytes": 111663,
+      "sha256": "33a71339dfaaeff8f15994c65cd595dcfaed3fe89d2506b51de137d67f80c3e2"
+    },
+    {
+      "path": "evidence/光效动态帧_修复后/08.jpg",
+      "bytes": 111780,
+      "sha256": "bd546af463d3444fe9d2f2810da0ffd172e3ce654dee6736ab1dc7e9064edaf6"
+    },
+    {
+      "path": "evidence/光效动态帧_修复后/09.jpg",
+      "bytes": 112026,
+      "sha256": "6364c3d1396611bb4640a6add95a641e370277c95356e8f955242e1c71c852d5"
+    },
+    {
+      "path": "evidence/光效动态帧_修复后/10.jpg",
+      "bytes": 112199,
+      "sha256": "2e05e5384ffe9ecf714ac37ccffa6577cc6585d3ea8d4151e45a40604f08c089"
+    },
+    {
+      "path": "evidence/光效动态帧_修复后/11.jpg",
+      "bytes": 112266,
+      "sha256": "28c39656205fe13c02d1afcdd1b46390c4f2c64fdf34f9cfdf44c66c7c208a53"
+    },
+    {
+      "path": "evidence/光效动态帧_修复后/12.jpg",
+      "bytes": 112161,
+      "sha256": "f5fbd3d347477a561ee3bb06c5417b06009833c5fc78e0d4218e9458984a55da"
+    },
+    {
+      "path": "evidence/光效动态帧_修复后/13.jpg",
+      "bytes": 111978,
+      "sha256": "bef03032a24796a7edf8f85fee5c9d0f8610f8e9f6c138acc1c9834ff7bbc143"
+    },
+    {
+      "path": "evidence/光效动态帧_修复后/14.jpg",
+      "bytes": 111736,
+      "sha256": "847964b78cbb769e99659f8a110f3ec820c8642e534685b659a6b34c6e9cb312"
+    },
+    {
+      "path": "evidence/光效动态帧_修复后/timing.json",
+      "bytes": 807,
+      "sha256": "ac8140f1b361c1cebaeffbabc451842606aca5a0e41f373bdd2f13003b895e0f"
+    },
+    {
+      "path": "evidence/光效动态帧_远景/00.jpg",
+      "bytes": 127134,
+      "sha256": "64c16343ac98e395d998e20f93ece791cc46406f7cb8267b392038baa86d3dfc"
+    },
+    {
+      "path": "evidence/光效动态帧_远景/01.jpg",
+      "bytes": 73737,
+      "sha256": "f0795b7c1d6645dd1513e672105fb239d183e0dd855a5cb0f850fd8b416d1bd1"
+    },
+    {
+      "path": "evidence/光效动态帧_远景/02.jpg",
+      "bytes": 99251,
+      "sha256": "3fb457c060eb8883790b59144b6e27a844fa1f13b82b7a23285106cf534e574a"
+    },
+    {
+      "path": "evidence/光效动态帧_远景/03.jpg",
+      "bytes": 71165,
+      "sha256": "d7de767367d09d188a7b4c6c46150baea9c7ba8a918edd82d1cbb0c6170ecb17"
+    },
+    {
+      "path": "evidence/光效动态帧_远景/04.jpg",
+      "bytes": 92593,
+      "sha256": "ba99d9f061f8b0c3b90cdb62e9f371c2198243b6c1884ce721804c9ce162f051"
+    },
+    {
+      "path": "evidence/光效动态帧_远景/05.jpg",
+      "bytes": 92079,
+      "sha256": "cdb58c67a61ccf6d6e4d0da9cc091ebab6bf3642409ef677b3c802255ee0453b"
+    },
+    {
+      "path": "evidence/光效动态帧_远景/06.jpg",
+      "bytes": 92078,
+      "sha256": "cccf45c577da8486080c91fa4b89164fe607752ffe6b0fed9ba4082c684b0258"
+    },
+    {
+      "path": "evidence/光效动态帧_远景/07.jpg",
+      "bytes": 92070,
+      "sha256": "a6036f496c2bf3640d487cfaff3a6a601907f6d2a1a7793ba3e431f7811f0957"
+    },
+    {
+      "path": "evidence/光效动态帧_远景/08.jpg",
+      "bytes": 92075,
+      "sha256": "fa24717b209ba7414da7b75a5d98236eecfaa945ed671ae70d9235fbdcbbbc82"
+    },
+    {
+      "path": "evidence/光效动态帧_远景/09.jpg",
+      "bytes": 92074,
+      "sha256": "d2b50579cad528831a12497a7b9d8f930dd8e59c97d7941a95ee06355be386fc"
+    },
+    {
+      "path": "evidence/光效动态帧_远景/10.jpg",
+      "bytes": 92073,
+      "sha256": "73c733d78e38a678825cb6cc21507524d7235451d0be870048a377d7c25e6e88"
+    },
+    {
+      "path": "evidence/光效动态帧_远景/11.jpg",
+      "bytes": 92074,
+      "sha256": "d2b50579cad528831a12497a7b9d8f930dd8e59c97d7941a95ee06355be386fc"
+    },
+    {
+      "path": "evidence/光效动态帧_远景/12.jpg",
+      "bytes": 92066,
+      "sha256": "e299d947e5e9a159d2f256a473bc1edbd0a9e87e1d7413a12875b047f1a8e0ea"
+    },
+    {
+      "path": "evidence/光效动态帧_远景/13.jpg",
+      "bytes": 92074,
+      "sha256": "f347c506198fbf5ef9709fce5ffe5c187e000239527a0c8b17a1b7cebd6147d6"
+    },
+    {
+      "path": "evidence/光效动态帧_远景/timing.json",
+      "bytes": 752,
+      "sha256": "6ec0dbca2f0727b8003e436e4e085139ceb19e8ab36bab32e38a6d0c6e506fbd"
+    },
+    {
+      "path": "evidence/光效连续显示修复_20261006/App.before.jsx",
+      "bytes": 67334,
+      "sha256": "13bb47d42fc2ed62f7cd3addcae0453e23fe5bc853d2eb7f099e33c846faeca7"
+    },
+    {
+      "path": "evidence/光效连续显示修复_20261006/MapCanvas.before.jsx",
+      "bytes": 38594,
+      "sha256": "759d4c0ef7379524755ef1783a75752d3048c68fc95f4cf2ea9acc73ea325843"
+    },
+    {
+      "path": "evidence/光效连续显示修复_20261006/build.log",
+      "bytes": 862,
+      "sha256": "abdd8f0ecb781c58e8ea55d575fa1c49637ec10d9a594fe541d2ce492e0d5ecc"
+    },
+    {
+      "path": "evidence/光效连续显示修复_20261006/map-canvas.before.test.mjs",
+      "bytes": 48890,
+      "sha256": "62087fe40e31b7ce334872015def47dcbfd162ed26591a2fad2dc43fc6d42416"
+    },
+    {
+      "path": "evidence/光效连续显示修复_20261006/修复核对.json",
+      "bytes": 4945,
+      "sha256": "367fb449ea4b7b96d08cad7164e6974366efb947b2a14dbda9b21431d4fde32e"
+    },
+    {
+      "path": "evidence/光效连续显示修复_20261006/修复说明.md",
+      "bytes": 1454,
+      "sha256": "94c1bd3b65499d34957bfadbbdf6df5f77fa588e7310bb9e6b528f145c3dc72e"
+    },
+    {
+      "path": "evidence/光效连续显示修复_20261006/修改.diff",
+      "bytes": 29879,
+      "sha256": "47fb1ee71ccf25802fae7a1f4460d2051374ffff721dca3eaf37a3f7f11486cc"
+    },
+    {
+      "path": "evidence/光效连续显示修复_20261006/四川远景光效.png",
+      "bytes": 123153,
+      "sha256": "a7a5ffd9bfac49ee48a3593a7758bf1cd1c18b4b57d52b9da498a43545128412"
+    },
+    {
+      "path": "evidence/光效连续显示修复_20261006/成都入口完成.png",
+      "bytes": 203117,
+      "sha256": "1f2d7065b83c92b6c1a15401ebae5cc5c950d2013ef0e0cc3e1f4438c3f1ab81"
+    },
+    {
+      "path": "evidence/光效连续显示修复_20261006/浏览器核对.json",
+      "bytes": 2550,
+      "sha256": "2b86e39928ba242c829c93187177c4a999bd89f9ba3b81a7bf12d50a4b29b6f3"
+    },
+    {
+      "path": "evidence/光效连续显示修复_20261006/点选建筑后仍有光效.png",
+      "bytes": 154601,
+      "sha256": "ec56ace17a9f1584cb3a513900e9ec39ecd83867951d6dfdee0d08929119ebed"
+    },
+    {
+      "path": "evidence/光效连续显示修复_20261006/聚焦检查.tap",
+      "bytes": 6139,
+      "sha256": "08d887287df4f91f6c7b1184a719f59c36fd3026e05e7e711b0428eb841287bc"
+    },
+    {
+      "path": "evidence/光效连续显示修复_20261006/进入场地光效A.png",
+      "bytes": 174132,
+      "sha256": "81fb5fa39c62359f92704e413552dd10d1febdc71505f5085a2bd673cf901126"
+    },
+    {
+      "path": "evidence/光效连续显示修复_20261006/进入场地光效B.png",
+      "bytes": 173422,
+      "sha256": "04b6b12d797902fce14dc750b47e8b729a81ec6d96f96f004c132c27cd5909ce"
+    },
+    {
+      "path": "evidence/光效连续显示修复_20261006/预览后点击保留场地.png",
+      "bytes": 174941,
+      "sha256": "3d9af29447b48d220264058782f6b00b7eacab51b6837f96c47cff8c9593b6f6"
+    },
+    {
+      "path": "evidence/入口_首轮.png",
+      "bytes": 183258,
+      "sha256": "ad8dba9d73a531655c79804cd021d564e67cef24be45971855e5aad4924d1a78"
+    },
+    {
+      "path": "evidence/入口对比_终轮.png",
+      "bytes": 4616997,
+      "sha256": "439eea25b296ab4ba1c34127a40ed604fdf9b9f0669b216b94581e6b7ecdc1a1"
+    },
+    {
+      "path": "evidence/入口对比_首轮.png",
+      "bytes": 4497860,
+      "sha256": "5e481c22214cfecf1b10cf0fcbfa2fa63a19f42010fb39a6a5bedee071223bc5"
+    },
+    {
+      "path": "evidence/入口控件对比.png",
+      "bytes": 926572,
+      "sha256": "4dd178c62acbb953ee420bd24a4a664a24e33602f6eb428660a38af5c3834c49"
+    },
+    {
+      "path": "evidence/准备资料_JSON实际重开.png",
+      "bytes": 143248,
+      "sha256": "8d039f267d8f54ede9bde8b423dcb4a3b06aeccfbc759cd4b7e4c388d955d898"
+    },
+    {
+      "path": "evidence/准备资料_JSON磁盘核对.json",
+      "bytes": 1752,
+      "sha256": "6c00ff900e15ce4b3732834d37f9c8ea9eb2e9cb9d3c024ece9cf1857bc39ea7"
+    },
+    {
+      "path": "evidence/准备资料_ZIP实际重开.png",
+      "bytes": 142993,
+      "sha256": "d7bc2724c13219861a00d8e90c1b2a45c323846c31bc1f4f90c6a2ba0b0ba39a"
+    },
+    {
+      "path": "evidence/准备资料_ZIP磁盘核对.json",
+      "bytes": 2393,
+      "sha256": "f822907c83e16e88d0a8c000c8482e51962a8348f87563a3719f2472d35b40c4"
+    },
+    {
+      "path": "evidence/准备资料_住宅候选点选.png",
+      "bytes": 146874,
+      "sha256": "c5c120b83c3c093e4bce0b7d24de20335ee903003f0b77c606a12b114d3b8608"
+    },
+    {
+      "path": "evidence/准备资料_住宅独立关闭.png",
+      "bytes": 146254,
+      "sha256": "2d436a000f7d53fe587690e36037bcb34436e7acc625c47128ebec904466b3d7"
+    },
+    {
+      "path": "evidence/准备资料_六类输入缺项.png",
+      "bytes": 148520,
+      "sha256": "96c654a9fd15ffed045723ec44d3bd5c3f3feb320e42858ddcc99f763a9766e2"
+    },
+    {
+      "path": "evidence/准备资料_其他位置不继承.png",
+      "bytes": 147249,
+      "sha256": "a01f87f28a35dc56b4dc9cee11db1b93f81ee111c3dc209c099560e4211cc9f0"
+    },
+    {
+      "path": "evidence/准备资料_失败定位后仍保留.png",
+      "bytes": 185146,
+      "sha256": "049d68165fafac487a9bc74d175bb8504c00501d8837419035c9d40861c6ec8d"
+    },
+    {
+      "path": "evidence/准备资料_旧工程不自动回填.png",
+      "bytes": 147135,
+      "sha256": "030ab2192a3fbbf8f1a4951af76ae7d0dbbf0e22bafa7b8e0d60e57c8ea17425"
+    },
+    {
+      "path": "evidence/准备资料_显式接纳.png",
+      "bytes": 147397,
+      "sha256": "e123d822bac2a6944094a0bd33f2259f0bfdb59b0c91d6d016dce6dc4be2557d"
+    },
+    {
+      "path": "evidence/准备资料_最终恢复.png",
+      "bytes": 147708,
+      "sha256": "14876bde5d7847ad3bf121099cca913fd8e18da2534816b85a6469de4f8568bf"
+    },
+    {
+      "path": "evidence/准备资料_来源版本页面.txt",
+      "bytes": 251,
+      "sha256": "d05b09df18b8f4a070cf64f63eba804462bce2a3020349f31aa8c8f3e5aa2c9a"
+    },
+    {
+      "path": "evidence/准备资料_用户导入不继承.png",
+      "bytes": 105155,
+      "sha256": "0b7c1a7065b32988902bf8366700d2b6e1a2125335cd3601c14687fd28db4039"
+    },
+    {
+      "path": "evidence/准备资料_移动端详情.png",
+      "bytes": 59772,
+      "sha256": "02db5418050dc1625e088a3617ef2cd69f476f6ed0d555f16b01c57382149f7b"
+    },
+    {
+      "path": "evidence/准备资料_空值与门控页面.txt",
+      "bytes": 270,
+      "sha256": "3e9ff1a7b2c2f7ce72f30084cdd5294be7b1dec13b2c138bfc9b9ce2e8ceefaa"
+    },
+    {
+      "path": "evidence/准备资料_缺建筑邻格页面.txt",
+      "bytes": 274,
+      "sha256": "4fabe17b5a4737b0a7c8ba162298ca1473fb278d3ee9abac57cf90d7b5e4f66d"
+    },
+    {
+      "path": "evidence/准备资料_重载恢复.png",
+      "bytes": 147798,
+      "sha256": "5dfd451a4994ea950367b7d177acfbf26cd7d6851859a2c392350faaaa74f462"
+    },
+    {
+      "path": "evidence/准备资料_错误包类型保留工程.png",
+      "bytes": 143932,
+      "sha256": "e820c3548df89c4cec7e1b97b60db65b2fcc873a89dcff2917a112dff0043152"
+    },
+    {
+      "path": "evidence/几何对象72原字节登记_20261006.json",
+      "bytes": 36878,
+      "sha256": "fbcef009488efe9f85239ebd62e160547bf5cdbe7f2e588d3c06b1ecc84247d5"
+    },
+    {
+      "path": "evidence/几何对象72真实磁盘独立回读_20261006.json",
+      "bytes": 1269423,
+      "sha256": "2329b74cccb96eb3e94a92fd78e210330080e22e8dd75ca06ee9f096de6b2678"
+    },
+    {
+      "path": "evidence/几何对象全套检查_20261006.tap",
+      "bytes": 16777,
+      "sha256": "1312b775c4d54fffd286513ed20aa1c29f0366928601a6515886984d2ce11913"
+    },
+    {
+      "path": "evidence/几何对象接入前保护记录_20261006.json",
+      "bytes": 2909,
+      "sha256": "48a3d4a1cce51d7a4ccf7b37052e1998c3d5d6ade8178eef38bef1234ca492cf"
+    },
+    {
+      "path": "evidence/几何对象接入前平台代码_20261006.zip",
+      "bytes": 164878,
+      "sha256": "70fc2d294466ab30cb23794f3f4cb2c2235a30b88fbc5d7d35499d639d04eebe"
+    },
+    {
+      "path": "evidence/几何对象最终收据读回_20261006.json",
+      "bytes": 446,
+      "sha256": "6bf0530f0539f28a6054009f29fd3481e43f73954cf712d4f6a02cc718825099"
+    },
+    {
+      "path": "evidence/几何对象最终构建_20261006.log",
+      "bytes": 862,
+      "sha256": "52c29ed19478a98fb9e3759158efd3c7b4450c94e4143760f4577561840c1d10"
+    },
+    {
+      "path": "evidence/几何对象浏览器完整审阅_20261006.json",
+      "bytes": 27484025,
+      "sha256": "03db32fd8281a067f8e27ea0a608b60b24c62bf3e9686b4faf08215923d98fa7"
+    },
+    {
+      "path": "evidence/几何对象浏览器错误文件_20261006/01_wrong_geometry_identity.json",
+      "bytes": 12931043,
+      "sha256": "e87129edf3cbb17d9fec8c6c076fe10f6af33d0d89346b54317d2af9d6243743"
+    },
+    {
+      "path": "evidence/几何对象浏览器错误文件_20261006/02_direction_building_foreign_key.json",
+      "bytes": 12931063,
+      "sha256": "17284fcde23126ac45170320f61debdf242ae83326331693cdf1cffa2d4bb188"
+    },
+    {
+      "path": "evidence/几何对象浏览器错误文件_20261006/03_strict_failure_upgraded.json",
+      "bytes": 12931003,
+      "sha256": "fa1daa63b82409d3a9330285edab00ce8af0ed8780de276530e983df3eaee406"
+    },
+    {
+      "path": "evidence/几何对象浏览器错误文件_20261006/04_history_promoted.json",
+      "bytes": 12930967,
+      "sha256": "6d640f4535f388026277314ef3b9dcc635f4fda7255415de100e39ee28bde21d"
+    },
+    {
+      "path": "evidence/几何对象浏览器错误文件_20261006/05_bare_receiver_alias.json",
+      "bytes": 12930939,
+      "sha256": "23de92f645b2af9cdb15e2afe44edfe9bba12901f408ddb823cf8587e7e17ba8"
+    },
+    {
+      "path": "evidence/几何对象浏览器错误文件_20261006/cases.json",
+      "bytes": 3160,
+      "sha256": "36635057f5ffa2789efb4625a36a74ee1cba973462792f6c0d15cd1830ed95d0"
+    },
+    {
+      "path": "evidence/几何接入_完整来源窗口地图_20261006.png",
+      "bytes": 180563,
+      "sha256": "73c9c1d04a8d784113b34bc42deb24e7fd278ad3a480ced6e507e6389ceaa3a0"
+    },
+    {
+      "path": "evidence/几何接入_建筑与受体地图_20261006.png",
+      "bytes": 150647,
+      "sha256": "7f856f75a2816646fd1eea808e2138d7a8c805f957f3ffc68d2af98c9fb535da"
+    },
+    {
+      "path": "evidence/几何接入_拉远光效_20261006.png",
+      "bytes": 125801,
+      "sha256": "41c7045ca61b3948eb43184f2176a669710710d18bc24906fc3eaf077d601c0f"
+    },
+    {
+      "path": "evidence/几何接入_来源标记与公园地图_20261006.png",
+      "bytes": 156672,
+      "sha256": "51bb31d5a5a8ea1db68d6d14b26be05cbe6866379908765b52d45f63689fcc1a"
+    },
+    {
+      "path": "evidence/几何接入_远景光效_20261006.png",
+      "bytes": 173377,
+      "sha256": "7bbf7718ae39d3a8a437d74099326a58216c19033a95373d7f75a64528c0db9b"
+    },
+    {
+      "path": "evidence/四川全域与研究区选址_20261006/修改前_App.jsx",
+      "bytes": 72565,
+      "sha256": "299550d8bc6df690919c45a7d16255185e402247538226fbaf9914e29148c6fb"
+    },
+    {
+      "path": "evidence/四川全域与研究区选址_20261006/修改前_MapCanvas.jsx",
+      "bytes": 42110,
+      "sha256": "d3cd62ee46002c0f25cffbeaff0b731737f97b36801fbe49b8a24278c13b8eff"
+    },
+    {
+      "path": "evidence/四川全域与研究区选址_20261006/修改前_styles.css",
+      "bytes": 29560,
+      "sha256": "d15f50d2e550afedd04a26e34ecd179e72d9eee1c501bfff7ea43678de8e5d38"
+    },
+    {
+      "path": "evidence/四川全域与研究区选址_20261006/全市光效制作.log",
+      "bytes": 1130,
+      "sha256": "6d3b30385397ff128650a9f5ce2b423a6d3453aa80de1c3a697179f76ee62bc7"
+    },
+    {
+      "path": "evidence/四川全域与研究区选址_20261006/全市光点制作.log",
+      "bytes": 976,
+      "sha256": "2d245edd0685e35b83080a560e23cd78f83b71937b212659692d618bf60a6176"
+    },
+    {
+      "path": "evidence/四川全域与研究区选址_20261006/原件与旧工程保护核对.json",
+      "bytes": 11479,
+      "sha256": "85adf77066bba1fb292473c2fc9bc4786b845fd8d50f5db3d8b73a62a631e7b9"
+    },
+    {
+      "path": "evidence/四川全域与研究区选址_20261006/发布结构回归检查.log",
+      "bytes": 478,
+      "sha256": "40808966409317112f053c6887cd14daadfdf6de92d9ff825dfabdd77d05d26f"
+    },
+    {
+      "path": "evidence/四川全域与研究区选址_20261006/四川切换视野_成都光效.png",
+      "bytes": 107962,
+      "sha256": "28de5650fb9ec75d732e647d97097361e33338c632ec7dcaf8a2e4f332236cb5"
+    },
+    {
+      "path": "evidence/四川全域与研究区选址_20261006/四川默认入口.png",
+      "bytes": 186310,
+      "sha256": "525e9757d633cdb10caa5e67d6b15a1cd59b440a6e899c84633d4fff2870ca55"
+    },
+    {
+      "path": "evidence/四川全域与研究区选址_20261006/地图光效关闭对照.png",
+      "bytes": 59717,
+      "sha256": "695dd156dbf6674beb221c94924a65152a8c44d80c2dd47d873b8a3a72d11fde"
+    },
+    {
+      "path": "evidence/四川全域与研究区选址_20261006/地图署名最终检查.log",
+      "bytes": 4096,
+      "sha256": "75ed1e1fd680ccdb19ce16d64b7f1cc06194728de0c4d7982b8ca9568b897717"
+    },
+    {
+      "path": "evidence/四川全域与研究区选址_20261006/导航制作幂等核对.json",
+      "bytes": 662,
+      "sha256": "5ba534734ab437bc2118a52550cbf8a9b49b6b1b4203481aa3427fd78de47594"
+    },
+    {
+      "path": "evidence/四川全域与研究区选址_20261006/导航数据制作.json",
+      "bytes": 798,
+      "sha256": "5b10daca37df1e26434be9d6d2c8741dc098c40cc10e45e12ebc4cbad5a397df"
+    },
+    {
+      "path": "evidence/四川全域与研究区选址_20261006/建筑点击后_光效与场地保留.png",
+      "bytes": 73145,
+      "sha256": "34c702c74da751f7272e9646eb30eb747c8cc853cc41e5ce521d3f1a9ad204ed"
+    },
+    {
+      "path": "evidence/四川全域与研究区选址_20261006/成都全域_完成预览.png",
+      "bytes": 124400,
+      "sha256": "12efb208fa7c0d5fa2b97d944d1b661ea2e9df0125b896fe305adbf03bc29ead"
+    },
+    {
+      "path": "evidence/四川全域与研究区选址_20261006/成都全域_本地图层光效.png",
+      "bytes": 79437,
+      "sha256": "c27264da891b2c43d78d2d1bd7aaf77a5aeb8f6097af6461df591688c3dc89d5"
+    },
+    {
+      "path": "evidence/四川全域与研究区选址_20261006/成都全域光效最终检查.log",
+      "bytes": 7585,
+      "sha256": "a6fb25fdecc53d097d3358c4ea2df3655c30019709c3718615c11e3e67df563d"
+    },
+    {
+      "path": "evidence/四川全域与研究区选址_20261006/成都全域制作幂等与范围核对.json",
+      "bytes": 1749,
+      "sha256": "0cbf8648cb388ca61f6fff293fb58234bda9fdcdfcf98205e056ea7088823bbe"
+    },
+    {
+      "path": "evidence/四川全域与研究区选址_20261006/成都全域最终构建.log",
+      "bytes": 862,
+      "sha256": "1e39b116f07dd274965c1e0252502caea574ef24bac4968e686e82a62e9dd4a5"
+    },
+    {
+      "path": "evidence/四川全域与研究区选址_20261006/成都全域默认入口.png",
+      "bytes": 236304,
+      "sha256": "0e5bfefdd48045c0ff3415b118541f85f8ca652b81ae2c884876043e4f80965f"
+    },
+    {
+      "path": "evidence/四川全域与研究区选址_20261006/成都导航_OSM原始边界.json",
+      "bytes": 1314,
+      "sha256": "1fb707ad84809d9a421dad44caf8b17396acf942ff78b70aef8f767dcdac860b"
+    },
+    {
+      "path": "evidence/四川全域与研究区选址_20261006/成都导航_OSM完整原始边界.json",
+      "bytes": 1346685,
+      "sha256": "64201c81b84faa9b376c708dbfd3241dc9d58aca5302988130c7f79d7e90fe7b"
+    },
+    {
+      "path": "evidence/四川全域与研究区选址_20261006/成都导航_OSM获取记录.json",
+      "bytes": 202,
+      "sha256": "ebe2555de868e902e54475bfd181378f3b2f57b446b12cfba97ff84da9ba3da5"
+    },
+    {
+      "path": "evidence/四川全域与研究区选址_20261006/成都研究区光效.png",
+      "bytes": 317018,
+      "sha256": "f33fe837bc70b4c05933d96ec453f1a5ac53dc659aa320a552e0cdd072ab514b"
+    },
+    {
+      "path": "evidence/四川全域与研究区选址_20261006/成都范围外点击_场地保留.png",
+      "bytes": 134468,
+      "sha256": "0c414ebd303a119a8555225b1d5dedb959599598bf22a8136225104a443a9bc7"
+    },
+    {
+      "path": "evidence/四川全域与研究区选址_20261006/构建.log",
+      "bytes": 862,
+      "sha256": "79d80dd6239f53c18cd641816f6115ffb90ab0e6534b26b5f873c9a04a7af64b"
+    },
+    {
+      "path": "evidence/四川全域与研究区选址_20261006/浏览器核对记录.json",
+      "bytes": 82607,
+      "sha256": "4df2b5923c5987472789a0310f25b93f853ee9b5a1378268da8462ad0fa09253"
+    },
+    {
+      "path": "evidence/四川全域与研究区选址_20261006/点选后进入场地_光效保留.png",
+      "bytes": 143105,
+      "sha256": "9aa0e5c68878aac389335032269bd0a2c840443804a25d9757722250221b4bcb"
+    },
+    {
+      "path": "evidence/四川全域与研究区选址_20261006/真实工程近景_全市光效保留.png",
+      "bytes": 111786,
+      "sha256": "747a715bf6a31c2ff4b12e81525ffc9e309cd8000d2647fd2f597630ce3c9b50"
+    },
+    {
+      "path": "evidence/四川全域与研究区选址_20261006/范围与地图回归检查.log",
+      "bytes": 7205,
+      "sha256": "5cd1eb70a90f85a81ac6105f86f37aeccf9673e4170581fedbce1cc619f2cd2b"
+    },
+    {
+      "path": "evidence/四川全域与研究区选址_20261006/范围外拒绝_当前场地保留.png",
+      "bytes": 132276,
+      "sha256": "dfdb61296a224d5b2f63f51e17252252b78f127504a519d5fe0e1b80c02a18db"
+    },
+    {
+      "path": "evidence/四川全域与研究区选址_20261006/范围外点击.png",
+      "bytes": 188587,
+      "sha256": "3a9dc6a8f22cc7ef01cb034d07a5f6a8d8adf93ce0ca82448c1337f0a0191990"
+    },
+    {
+      "path": "evidence/四川全域与研究区选址_20261006/首次检查_旧相机断言.log",
+      "bytes": 8694,
+      "sha256": "3b21ee737530952206c8f0942803996d2cbe9699f85162cb2d54634b9e9effcd"
+    },
+    {
+      "path": "evidence/尺度光效_city_20261006.png",
+      "bytes": 1129860,
+      "sha256": "ddb6f77728ed9ab7676c00560b47eb64340abbe4aafddc2a210822aab9ea3776"
+    },
+    {
+      "path": "evidence/尺度光效_city_实录_20261006.gif",
+      "bytes": 1888038,
+      "sha256": "081c80411bad7d785dfde291cbe5bf14ad1fb087ac0ed9b0a5a2444171816fcf"
+    },
+    {
+      "path": "evidence/尺度光效_far_20261006.png",
+      "bytes": 639037,
+      "sha256": "0d855baad8a4f9ddb1a8d4ce6503deb1b776778fc7295f25013b44101226b1ab"
+    },
+    {
+      "path": "evidence/尺度光效_far_实录_20261006.gif",
+      "bytes": 456514,
+      "sha256": "43ecb94898b3b274a8ae3f594437cb43bce02b4819a02bd23f726042fe826471"
+    },
+    {
+      "path": "evidence/尺度光效_site_20261006.png",
+      "bytes": 905830,
+      "sha256": "38188af666df34deb1366ae49239faa8eed06adf26ea0089882880c6b476e96c"
+    },
+    {
+      "path": "evidence/尺度光效_site_实录_20261006.gif",
+      "bytes": 1748944,
+      "sha256": "3f0b6aeb8c5f80921617aaa55a21c05a57dd1ec724b7e19d46230b3aebb12188"
+    },
+    {
+      "path": "evidence/尺度光效_建筑点选后_20261006.png",
+      "bytes": 137871,
+      "sha256": "7faed1d29a0674cf3062ef4792b1951e68c6285a1eb010d3bd5695681d976c14"
+    },
+    {
+      "path": "evidence/尺度光效_点选后涂层保留_20261006.png",
+      "bytes": 139496,
+      "sha256": "097f412e199014f4aabf6f7ce40543bf59baa317513117c8c06beb46e6b36406"
+    },
+    {
+      "path": "evidence/尺度光效_用户原页面_20261006.png",
+      "bytes": 151289,
+      "sha256": "bef3f15115705ac6b6de6b1df809c9be27819662999ae2b68f7fe443e3d72dc1"
+    },
+    {
+      "path": "evidence/尺度光效_远景与城市实录_20261006.gif",
+      "bytes": 2328861,
+      "sha256": "c40650756d8c210912a0e39498ecacb21456b9dc8ea473b6532b44963b6e9cb4"
+    },
+    {
+      "path": "evidence/尺度光效修改前_20261006.json",
+      "bytes": 849,
+      "sha256": "a7c0d3932ce3ea5c408357d408eeec4b1c78b73ecbcfd17548e38c362e7c547a"
+    },
+    {
+      "path": "evidence/尺度光效实录核查_20261006.json",
+      "bytes": 1111,
+      "sha256": "fa131e1e26d87b0b84553c95d4016b5b90b5c67e90ca15aa59b9cdcb3e725fa8"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-000.png",
+      "bytes": 173568,
+      "sha256": "07b71d3cc90723771af0b2bf24cf30c484997035ff47585932ecc68df7a31e43"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-001.png",
+      "bytes": 173680,
+      "sha256": "5d4fc883401e569acaf759a12e2ec67c6bf38c5b7ba0f454876b5d8afa80f7d5"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-002.png",
+      "bytes": 173737,
+      "sha256": "039599c51931b809f402d2ff12ee8e18f1bd385c31e5440e6fd4925f0f09303e"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-003.png",
+      "bytes": 173737,
+      "sha256": "039599c51931b809f402d2ff12ee8e18f1bd385c31e5440e6fd4925f0f09303e"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-004.png",
+      "bytes": 173839,
+      "sha256": "f4ebb08fb0f83bc094b9f11e962d9b412daf3f5b18491a57be0cb05079d72bb2"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-005.png",
+      "bytes": 173849,
+      "sha256": "8fdc90bbcdd095455bbb94e0fb36a7303d08702be4937aea01cb78f3ff86120f"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-006.png",
+      "bytes": 173864,
+      "sha256": "b85e6d094280b46da3ae0caad6aade4b2c2287c49851faca0f70251d25e339d5"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-007.png",
+      "bytes": 173842,
+      "sha256": "5ce406eb810b8e8014c6d7b335bc1d90af33051a62ebe551318a036a455108ca"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-008.png",
+      "bytes": 173780,
+      "sha256": "e78185de9bb20ffa1ba4e9a0b2cf961eaad3e55589f386f787e50f0bcf16d118"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-009.png",
+      "bytes": 173780,
+      "sha256": "e78185de9bb20ffa1ba4e9a0b2cf961eaad3e55589f386f787e50f0bcf16d118"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-010.png",
+      "bytes": 173737,
+      "sha256": "1d88a9a4d3a80a9c044e363fbc3f7af72721a2f74eeba7dc6a090904884a6bf4"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-011.png",
+      "bytes": 173737,
+      "sha256": "1d88a9a4d3a80a9c044e363fbc3f7af72721a2f74eeba7dc6a090904884a6bf4"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-012.png",
+      "bytes": 173664,
+      "sha256": "2502d892a9e723565e1e44ca451530deddc7d83b0546ed513716047fa6e5c84f"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-013.png",
+      "bytes": 173574,
+      "sha256": "4a7fdda301b9ac2e60ee98226403ba1684a8104ec74f1e3a94fcf828fc2f4074"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-014.png",
+      "bytes": 173468,
+      "sha256": "d907e68a6816dd07d932fa8e67553f8dc99f577c5d971113b105ab906207f52f"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-015.png",
+      "bytes": 173338,
+      "sha256": "4765f70f9f55aedbc26bfe2d31b822b3657b25b3d8d55b086a407fa910bf1842"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-016.png",
+      "bytes": 173247,
+      "sha256": "ff13f64b856e5ba0c8e7f6161d9143c92e8e006f7685be12b7e31d5027892629"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-017.png",
+      "bytes": 173129,
+      "sha256": "5e81ed8997bd1a02ac7560e6a6867f033d7066808a400f4830273075bad812e1"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-018.png",
+      "bytes": 173041,
+      "sha256": "7cc4f3c5069801192fb9fd6add8934b33e48759bb38bc98f928cc873af8a2114"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-019.png",
+      "bytes": 172925,
+      "sha256": "db1f7a7430f980e877dbf9d994e64669d43e70b30c255c4859f5287b5e0c03b3"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-020.png",
+      "bytes": 172895,
+      "sha256": "f85fa296a383dcc8ca09785f79c14dae11c7e1c5343b98afba48014ee5689971"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-021.png",
+      "bytes": 172837,
+      "sha256": "950b19374c47c49cb63fb7aa425594199d89c71b5302317281ab08a649942620"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-022.png",
+      "bytes": 172837,
+      "sha256": "950b19374c47c49cb63fb7aa425594199d89c71b5302317281ab08a649942620"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-023.png",
+      "bytes": 172792,
+      "sha256": "e47b5911eb76920c45a7e5d2f9361b742516cf68bf1a0b3e281f88159e6cb67f"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-024.png",
+      "bytes": 172824,
+      "sha256": "b6030fe16510511f7689b03755b81e172a49abff7c8efd30ed6e0271371d30e5"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-025.png",
+      "bytes": 172842,
+      "sha256": "51ca73f05aaef1fff932d7431b050c7060eba319ce688140ff3f12d8524bf4c0"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-026.png",
+      "bytes": 172850,
+      "sha256": "4c87225b2417e18c0c866a88d9d047c051c1e987ed409b0cfe2fe78beb4aa11d"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-027.png",
+      "bytes": 172885,
+      "sha256": "a668d5bc55da962167048c201dc929e8ebbb4f7652edd3b7c737da43ec624e98"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-028.png",
+      "bytes": 172885,
+      "sha256": "a668d5bc55da962167048c201dc929e8ebbb4f7652edd3b7c737da43ec624e98"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-029.png",
+      "bytes": 173025,
+      "sha256": "05c02c39f60634e06200dc2ad5eb7e06501444897f965e4224f470fa59b4f442"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-030.png",
+      "bytes": 173242,
+      "sha256": "efda9450d0b78e0e42bdc9ee721818e257cd76be4802c775c90ce9eb0b7ee95b"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-031.png",
+      "bytes": 173345,
+      "sha256": "c3f611d891569ce05b155eb54a9963357d446b3eef6f23ccb233efe9600339ff"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-032.png",
+      "bytes": 173345,
+      "sha256": "c3f611d891569ce05b155eb54a9963357d446b3eef6f23ccb233efe9600339ff"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-033.png",
+      "bytes": 173471,
+      "sha256": "45ec620957e075fd124cb0868acbb99db7028851811ee61bb270205106c864a7"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-034.png",
+      "bytes": 173471,
+      "sha256": "45ec620957e075fd124cb0868acbb99db7028851811ee61bb270205106c864a7"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-035.png",
+      "bytes": 173471,
+      "sha256": "45ec620957e075fd124cb0868acbb99db7028851811ee61bb270205106c864a7"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-036.png",
+      "bytes": 173610,
+      "sha256": "818d86f98b4269c5ffbbe573ea365ebabef75051042603e5584405c9b0c01047"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-037.png",
+      "bytes": 173680,
+      "sha256": "5d4fc883401e569acaf759a12e2ec67c6bf38c5b7ba0f454876b5d8afa80f7d5"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-038.png",
+      "bytes": 173680,
+      "sha256": "5d4fc883401e569acaf759a12e2ec67c6bf38c5b7ba0f454876b5d8afa80f7d5"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/city-039.png",
+      "bytes": 173730,
+      "sha256": "0fc675c3d912ee497206b1f1f62761732c0357bd63a7c52f472695608c01b04f"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-000.png",
+      "bytes": 111161,
+      "sha256": "4cbfe62f757cbe6ee489ba136646610b9ae1d81c0f09408d4374daf2d7a0b484"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-001.png",
+      "bytes": 111161,
+      "sha256": "4cbfe62f757cbe6ee489ba136646610b9ae1d81c0f09408d4374daf2d7a0b484"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-002.png",
+      "bytes": 111161,
+      "sha256": "4cbfe62f757cbe6ee489ba136646610b9ae1d81c0f09408d4374daf2d7a0b484"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-003.png",
+      "bytes": 111137,
+      "sha256": "d11308955529c21d8baab1b3c84b458fa294fc3a42d2eede5349f1e545fcb3d1"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-004.png",
+      "bytes": 111178,
+      "sha256": "e66a99a9b151bc6c3bf08bc8c18b9cbd35a46ce8f361f27601ec30dcd419f634"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-005.png",
+      "bytes": 111137,
+      "sha256": "a9c182a7d9bbe9a584f81d6d56e66b8e3171e3ab90466412b56a73356a9dfdb7"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-006.png",
+      "bytes": 111137,
+      "sha256": "a9c182a7d9bbe9a584f81d6d56e66b8e3171e3ab90466412b56a73356a9dfdb7"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-007.png",
+      "bytes": 111158,
+      "sha256": "99970ba8b2c39431dee80406b0fd796f1ecefab63ff2e199aeb7315cd96aaa59"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-008.png",
+      "bytes": 111167,
+      "sha256": "8fcd44644739fe65c4ebce2b55d0a1df68e4981f0e08aae57ca532e39ba50258"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-009.png",
+      "bytes": 111158,
+      "sha256": "d1832963419aa43ed124d8577556a018daff9277ebc76b7634d8b26f32dd7224"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-010.png",
+      "bytes": 111174,
+      "sha256": "e8ac2ca544da12672e55d8735c9bcbe657d9765e878e61478963404c58b1eed2"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-011.png",
+      "bytes": 111153,
+      "sha256": "d25a469e21bd2490cff6bd4c46846901a3e8de1646271ade7c3df858c0f6d089"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-012.png",
+      "bytes": 111164,
+      "sha256": "b7429761f20f01a026cdb3a30ff0c072741891e203e188c83b18ef977d59502e"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-013.png",
+      "bytes": 111149,
+      "sha256": "fde9b65459e40b4fae10639dc2754e3812a16ea07c5e44ba3d9ba1c085fd4c9d"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-014.png",
+      "bytes": 111150,
+      "sha256": "005b8337398a7cf1b048b6b14e0166b0b0fc49bfe975931b451fd1cafdc8fe3b"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-015.png",
+      "bytes": 111163,
+      "sha256": "1db93c755212b8a1362389de12c2d726f3000cf4d72173803eb2f1738c6d8153"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-016.png",
+      "bytes": 111159,
+      "sha256": "f0d9e631291642a92194d9242cfa69dc5c2e8b813ff29a72a65bb9d2bf8a3e9a"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-017.png",
+      "bytes": 111161,
+      "sha256": "e4e3bf45ca197ffb5f4ee27419bd17fa24b1ab159519fc13eedd83d4b5a66890"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-018.png",
+      "bytes": 111195,
+      "sha256": "425741e58767b33b41e37313a2b41f5a673a2047898d1cc378217e2442087437"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-019.png",
+      "bytes": 111183,
+      "sha256": "6bfca00b67c000ea45c6a21f39f87a8aa56d98adb7a628578a79c7366e22cab0"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-020.png",
+      "bytes": 111167,
+      "sha256": "87ef3651998af77fd3009f73c28bb9a14809ac5da05d944154edfca1378df5c9"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-021.png",
+      "bytes": 111161,
+      "sha256": "60799e8790a28b38779282dded5185598f10d56e4efd76441f97a53498f2d2f3"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-022.png",
+      "bytes": 111172,
+      "sha256": "dd9fb0363a0dc3e90ff068770e0911bf2a11354cf50df9f66e26920386439aaf"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-023.png",
+      "bytes": 111149,
+      "sha256": "186627d89ab942f1388815f2832cd245be2d3a8b41a32f932dac94e771d61efe"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-024.png",
+      "bytes": 111151,
+      "sha256": "fff55ebfca5a810bbf6f40c58c1f69328f42f0fb2183491e475d4ac28a700ba1"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-025.png",
+      "bytes": 111198,
+      "sha256": "afea084b698ecb7915d8807512556a31c7de7a5e423386e52f216274bc85aa66"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-026.png",
+      "bytes": 111198,
+      "sha256": "afea084b698ecb7915d8807512556a31c7de7a5e423386e52f216274bc85aa66"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-027.png",
+      "bytes": 111204,
+      "sha256": "153668393b94ff03ba9760565275ed8a966bfb15676a3d7c91d70d2463a75e3e"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-028.png",
+      "bytes": 111169,
+      "sha256": "0f71b0b91e3b5f3b893524562bc300837d4d2f680f067851ea2c45ce67e19bb3"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-029.png",
+      "bytes": 111180,
+      "sha256": "f0357ff18837337952c0d4ae71f99672f945b9b1c87056736d48b0aa41303fbf"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-030.png",
+      "bytes": 111179,
+      "sha256": "118af960728773cf4e34fe3b99528965af1e814b6f198480be1d8844a5ec2170"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-031.png",
+      "bytes": 111171,
+      "sha256": "c09defb26de1fd452997589a8be3dc6441272900e3ff9a3563dbf8b4b442503f"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-032.png",
+      "bytes": 111174,
+      "sha256": "b7385d95f7df04e4086a453e757a8dd5780254a755c73224829b3717b90a7c2f"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-033.png",
+      "bytes": 111154,
+      "sha256": "6b36bb123c40de43aab169d56af4bd5bb22fd524c84a700c8c7beeb153bb46c1"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-034.png",
+      "bytes": 111157,
+      "sha256": "141882184cd04ee4b06bdee1ed80e109c7f94069e105897e515c916a0c6d02d9"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-035.png",
+      "bytes": 111157,
+      "sha256": "141882184cd04ee4b06bdee1ed80e109c7f94069e105897e515c916a0c6d02d9"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-036.png",
+      "bytes": 111145,
+      "sha256": "895965f08fac72dae2b6b7324d0bdaa902f8bbe3d2de10025e9b8fb3a48d2989"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-037.png",
+      "bytes": 111145,
+      "sha256": "895965f08fac72dae2b6b7324d0bdaa902f8bbe3d2de10025e9b8fb3a48d2989"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-038.png",
+      "bytes": 111145,
+      "sha256": "895965f08fac72dae2b6b7324d0bdaa902f8bbe3d2de10025e9b8fb3a48d2989"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/far-039.png",
+      "bytes": 111145,
+      "sha256": "895965f08fac72dae2b6b7324d0bdaa902f8bbe3d2de10025e9b8fb3a48d2989"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-000.png",
+      "bytes": 138073,
+      "sha256": "c3df192d198f9d8c532d3540fc772d0b582c109ecc76438b14190719a6e4f911"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-001.png",
+      "bytes": 138073,
+      "sha256": "c3df192d198f9d8c532d3540fc772d0b582c109ecc76438b14190719a6e4f911"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-002.png",
+      "bytes": 138206,
+      "sha256": "a36ca72db1b892d1618a8a54f2eea398d839f3589d34d4a0b5a3ad4f9b2eea51"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-003.png",
+      "bytes": 138221,
+      "sha256": "297b9c0e58044df11972e3cc6cb7f0529663a030daedc68318a20bbd79e41b01"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-004.png",
+      "bytes": 138255,
+      "sha256": "e0e30948733d5d7e550e6fb92b75b08cef3b9efa785a32d86ef2069294aeb8b5"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-005.png",
+      "bytes": 138221,
+      "sha256": "34f6da652524d26a8c21d1fbcbe2ad7ae33edfbf5fad185bb7c4ed788ade5c34"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-006.png",
+      "bytes": 138165,
+      "sha256": "24e808fb96e73e8099b16cb7ba1bf25f9426e3bb11be85266a8377990af4ab77"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-007.png",
+      "bytes": 138106,
+      "sha256": "d463410ddb9bc5cc14d9c20ced4cddf7b5cc8fde12961158de49f2fa9688d5d1"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-008.png",
+      "bytes": 138088,
+      "sha256": "a616ec836fe7a72a6c24ac6e318f83405c9981b7ea487304ba1ce2a30971343c"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-009.png",
+      "bytes": 138051,
+      "sha256": "2ed28f3e93c5f6254335e81d0906e2d68b92f3b883d1c04bcae9b4aba57cc584"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-010.png",
+      "bytes": 137907,
+      "sha256": "fc8212531a5ce53a1bc8b6ea327c0ed8119b1a3c70eb848f1729580636956287"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-011.png",
+      "bytes": 137816,
+      "sha256": "cdbf97fac7b7ae60ec592a0bea57058a7834b45f190dc3055ff4e25bfab9cd3b"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-012.png",
+      "bytes": 137686,
+      "sha256": "380b84e5218ebe0e4bfa47cdcdd6c4c2cb030512e08f2d4cab2b1775955d3f8a"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-013.png",
+      "bytes": 137625,
+      "sha256": "5af70e637f67dc368656230577499570e9b943f7c498ece8728f1eafc61579cf"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-014.png",
+      "bytes": 137519,
+      "sha256": "fa959e88744912bcd4335e3d3160e13d15f07f75cbf9ebd49e39d21bf1140205"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-015.png",
+      "bytes": 137519,
+      "sha256": "fa959e88744912bcd4335e3d3160e13d15f07f75cbf9ebd49e39d21bf1140205"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-016.png",
+      "bytes": 137467,
+      "sha256": "3aba52df1ab84c01e300c22155ef93a95cbe2281f880a65b1898dd1a8a7cd19d"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-017.png",
+      "bytes": 137453,
+      "sha256": "76d7b0e4450f1ad51af27f6670add0b0a73d44399f3b8604b1c3e76be559e5eb"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-018.png",
+      "bytes": 137336,
+      "sha256": "c5cf8cb7e11c01a4b2e3cfdaae86a54a8edac78ddefe7f818643c9be4749cbae"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-019.png",
+      "bytes": 137336,
+      "sha256": "c5cf8cb7e11c01a4b2e3cfdaae86a54a8edac78ddefe7f818643c9be4749cbae"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-020.png",
+      "bytes": 137309,
+      "sha256": "587188b6abb641c0e58de97b2ee158f3088ff26fd6081c81282618866577ded9"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-021.png",
+      "bytes": 137309,
+      "sha256": "4018fec1eeea594b15f0e4efb723216a434d4faf4744b57840f70164ba4eff58"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-022.png",
+      "bytes": 137311,
+      "sha256": "a0444cc85db61c0acd347d2a027e2695185fee1d529aadb9f41cb1efe95ee7bf"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-023.png",
+      "bytes": 137404,
+      "sha256": "e7587c49497dea4e447f2ad5e4791b35a26f051df080f95c861847b3c272af3c"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-024.png",
+      "bytes": 137381,
+      "sha256": "4a645343bebd665836af9b41bb4195848909e4f915af80deebfd1d5edd82b601"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-025.png",
+      "bytes": 137381,
+      "sha256": "4a645343bebd665836af9b41bb4195848909e4f915af80deebfd1d5edd82b601"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-026.png",
+      "bytes": 137486,
+      "sha256": "de6d253b388cbaac4527779906a74bcbd951cd921188060a7c7829afc5797267"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-027.png",
+      "bytes": 137619,
+      "sha256": "f3cdb877539a09592d82a168d444f58845889d5660b7ffbbdfc9e8a4941c2351"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-028.png",
+      "bytes": 137667,
+      "sha256": "f4ab8925eeac53713fb411ce510e31918c12c505aa4d577cfa52db9f948875d5"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-029.png",
+      "bytes": 137768,
+      "sha256": "e2de7d00c3991e6658cc436a17d98b33775cc7be3e72ed17aa7b6fc57443418c"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-030.png",
+      "bytes": 137896,
+      "sha256": "85236aa8a678b0d63ad6a9414bb0a48a3b92f9da88628c6791ccc44105a40a86"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-031.png",
+      "bytes": 137985,
+      "sha256": "606a3f55a48bf49d361771c6d92cbf001576346805ca56c780dbfac27f92f704"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-032.png",
+      "bytes": 138040,
+      "sha256": "000eaccc73e189f17d5ed0631a32dbe109806a92b97b8d0b805f38471ff25a2c"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-033.png",
+      "bytes": 138086,
+      "sha256": "cd495956f670a4eca728473c38bec7ad9508c1cc93e125cd76855fdfd8763734"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-034.png",
+      "bytes": 138206,
+      "sha256": "a36ca72db1b892d1618a8a54f2eea398d839f3589d34d4a0b5a3ad4f9b2eea51"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-035.png",
+      "bytes": 138206,
+      "sha256": "a36ca72db1b892d1618a8a54f2eea398d839f3589d34d4a0b5a3ad4f9b2eea51"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-036.png",
+      "bytes": 138221,
+      "sha256": "297b9c0e58044df11972e3cc6cb7f0529663a030daedc68318a20bbd79e41b01"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-037.png",
+      "bytes": 138248,
+      "sha256": "8ad54ad566504ab2857eb76f09733b60eb7c494f35b9bc7c7a219d229aa8364e"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-038.png",
+      "bytes": 138225,
+      "sha256": "64b57aa1727d998623b2df249248798302ffc38d879f1fa61e84a1851461715a"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/site-039.png",
+      "bytes": 138211,
+      "sha256": "e0876a21198f196e2c121be5f407118e78a28f26a8ecc7b34ede658a96341942"
+    },
+    {
+      "path": "evidence/尺度光效帧_20261006/实际捕获时间.json",
+      "bytes": 2329,
+      "sha256": "50bf05aa7ec996578ebe0aa10abea5ae321ac983df54fb7a978c9f856a78aa96"
+    },
+    {
+      "path": "evidence/尺度光效文档链接核查_20261006.json",
+      "bytes": 639,
+      "sha256": "8fde26cbadae55d317ac1dd5e1a8b4e187aad97e184992343e58ed1e33206882"
+    },
+    {
+      "path": "evidence/平台完成入口_20261006.png",
+      "bytes": 172889,
+      "sha256": "5ee248d00a16940de8d1a34d3e873759544c5a5b87ab1d4564ea81a23db1c1e6"
+    },
+    {
+      "path": "evidence/成都星图入口.png",
+      "bytes": 223503,
+      "sha256": "24ebdd369b3e1c32b447ee6dd14a6117c83038a4fa813b8b982d504392457fc8"
+    },
+    {
+      "path": "evidence/手机入口.png",
+      "bytes": 61989,
+      "sha256": "c7b77c1aa1fde9a500907bf1f50dcc5a36903e3cdca28b6ee6e2d0b0360d6984"
+    },
+    {
+      "path": "evidence/手机入口_终轮.png",
+      "bytes": 63653,
+      "sha256": "14f6e8a5dde678d9134fd5b2104ed407eb8dfedbcf3bedbd80ff3dd8f22bf27a"
+    },
+    {
+      "path": "evidence/手机场地.png",
+      "bytes": 53517,
+      "sha256": "9271a5b3beca64ea60439d3a0c3edf03e8e01f9c5e4826787690f08b801c556b"
+    },
+    {
+      "path": "evidence/手机场地_终轮.png",
+      "bytes": 58993,
+      "sha256": "35b768d212a3d57e070c11bd0ed4fef093bcfc06f54b1f245db297c12b890f1d"
+    },
+    {
+      "path": "evidence/手机资料抽屉.png",
+      "bytes": 51929,
+      "sha256": "96c0c6130328a53db2e2ac987d6629a11fa7a9341a14c2515e4871eca2e55a76"
+    },
+    {
+      "path": "evidence/手机资料抽屉_终轮.png",
+      "bytes": 54306,
+      "sha256": "29afee7cba893aae497263eb609b4a62074ba9932917883cd8374ca85b67babf"
+    },
+    {
+      "path": "evidence/拉远光效实录.gif",
+      "bytes": 9956632,
+      "sha256": "dbd46071d580b5523bf1b27433b544022e486b5ef2c733256e4189d213383b14"
+    },
+    {
+      "path": "evidence/本地服务常驻修复_20261008/交付核对.json",
+      "bytes": 767,
+      "sha256": "307831964e6c2d7b8e29d3ac187d3d13f878dba272b9e7bf594368081c1f4d09"
+    },
+    {
+      "path": "evidence/本地服务常驻修复_20261008/交付核对.md",
+      "bytes": 1911,
+      "sha256": "ae8adcb31002613958041d08a2d81d2d83ccee5b02f2932ea526be3efd0ca4cf"
+    },
+    {
+      "path": "evidence/本地服务常驻修复_20261008/修改前_AGENTS.md",
+      "bytes": 6283,
+      "sha256": "368c39c578ee4267835477d8aa8a95a45393e85fbe4e3dcbae80e7dff71580ee"
+    },
+    {
+      "path": "evidence/本地服务常驻修复_20261008/修改前_README.md",
+      "bytes": 17155,
+      "sha256": "63d5f4f20849a5ee25c807a39af8ddca0fdaafa6fc8c85faa26324308bd82e7a"
+    },
+    {
+      "path": "evidence/本地服务常驻修复_20261008/修改前_package.json",
+      "bytes": 1084,
+      "sha256": "b36565dee5d922cf9dd8b9ae32b242baede7591d6dacf47b820b6440629c0505"
+    },
+    {
+      "path": "evidence/本地服务常驻修复_20261008/修改前_保留文件哈希.json",
+      "bytes": 3750,
+      "sha256": "73f714d8ddcbdd5cf944caed82dce2fc540332882598ede8e68022211d6854aa"
+    },
+    {
+      "path": "evidence/本地服务常驻修复_20261008/修改前_启动本地平台.command",
+      "bytes": 3191,
+      "sha256": "222ad0bc3b989f2e2ac808630eb69e2fc23f784c4b808f760d06fdafead1ee3d"
+    },
+    {
+      "path": "evidence/本地服务常驻修复_20261008/启动专项检查.log",
+      "bytes": 644,
+      "sha256": "68d7c6ffa7776d5cad678173234dbf8a23ab1611a17f23e2e026417e04552519"
+    },
+    {
+      "path": "evidence/本地服务常驻修复_20261008/实际运行恢复核对.json",
+      "bytes": 1503,
+      "sha256": "684097218293e73d9f85efd069aaf1890c7ec4ab9759ecae920912d753b79201"
+    },
+    {
+      "path": "evidence/本地服务常驻修复_20261008/已恢复保存场地.png",
+      "bytes": 280313,
+      "sha256": "51ac2010ecd16afae2eb1781229abc6055aacc57dbeb2d601cde79f46397f4b9"
+    },
+    {
+      "path": "evidence/本地服务常驻修复_20261008/网站恢复预览.png",
+      "bytes": 180056,
+      "sha256": "a3c5062d8b6792125207f9cf7a3413b0cd01283e58e9fd8c3bfe3a4edfe58152"
+    },
+    {
+      "path": "evidence/本地服务常驻修复_20261008/页面数据与发布结构保留核对.json",
+      "bytes": 3891,
+      "sha256": "ffa80a55dc69ed0a9ebb217880a36310355f1f1ee70c4927f6cabc9fc6054ad6"
+    },
+    {
+      "path": "evidence/条件情景交付_20261006/App.before.jsx",
+      "bytes": 67345,
+      "sha256": "92bf3c87d96c3c64831309c480e65e17fc821a04678add58a477493768ed8f8d"
+    },
+    {
+      "path": "evidence/条件情景交付_20261006/project.before.js",
+      "bytes": 35634,
+      "sha256": "636ce337a27c5877a819f37d0b43dc44fd0edf6cd0098a7d3824f502e116cdbd"
+    },
+    {
+      "path": "evidence/条件情景交付_20261006/styles.before.css",
+      "bytes": 27554,
+      "sha256": "dca313d9906ff83e18f698a7262d78f35a35f7464a673b18f4df3b552851d8a5"
+    },
+    {
+      "path": "evidence/条件情景交付_20261006/公告日与事件日分开.png",
+      "bytes": 112689,
+      "sha256": "d85727e1f8e47e225707a19ed005a566b00c28cd209a0973cc25bfe2b2fce080"
+    },
+    {
+      "path": "evidence/条件情景交付_20261006/工程兼容与情景检查.tap",
+      "bytes": 4695,
+      "sha256": "9ba0baca857151f8a1aa2ac3de924154fb08be54fb3bc6778dbbedade8134eb2"
+    },
+    {
+      "path": "evidence/条件情景交付_20261006/拒绝导入样例/导入样例身份.json",
+      "bytes": 1284,
+      "sha256": "b572b156ff9a9856a50b38a538750c95171833a04bb8dfd82a7754480d1c878c"
+    },
+    {
+      "path": "evidence/条件情景交付_20261006/拒绝导入样例/情景来源空值.json",
+      "bytes": 12936977,
+      "sha256": "66dbe9b230e9bf33bc83685c73cf0fc43d1d495767781768d98a4af31e867bf7"
+    },
+    {
+      "path": "evidence/条件情景交付_20261006/拒绝导入样例/目录升级栅格.json",
+      "bytes": 13445213,
+      "sha256": "476f63172d3c863a982b561c5475c9113f9fd9fb630ceb1d94bd6895f55f666b"
+    },
+    {
+      "path": "evidence/条件情景交付_20261006/拒绝导入样例/错误对象短键.json",
+      "bytes": 13445184,
+      "sha256": "84ed8aac01486b034506c3f5ba531b063234400a965c5b0e0011243c2f069e6d"
+    },
+    {
+      "path": "evidence/条件情景交付_20261006/拒绝导入样例/错误门绑定.json",
+      "bytes": 13445194,
+      "sha256": "bd05a919fcb1f768c2ab228cafa6ab990ec60f9da3439e9377307054798ed70d"
+    },
+    {
+      "path": "evidence/条件情景交付_20261006/新情景最终检查.tap",
+      "bytes": 855,
+      "sha256": "8915753a360a9a0bb9fa122a7c85ba2d06527398a8065b076d770e745d63a5ca"
+    },
+    {
+      "path": "evidence/条件情景交付_20261006/新情景检查.tap",
+      "bytes": 857,
+      "sha256": "bc7be42e5f6112e85f1a09f1a34eeaf8b08a839a7f2f58081245e4a32d16b27d"
+    },
+    {
+      "path": "evidence/条件情景交付_20261006/新情景检查_准备登记读取失败.tap",
+      "bytes": 2049,
+      "sha256": "6719c0c000b371ce7946d66de21141209e74f678b1fafb8af1d57325b15ce082"
+    },
+    {
+      "path": "evidence/条件情景交付_20261006/新情景检查_首次语法失败.tap",
+      "bytes": 1691,
+      "sha256": "449f9f9807e403db679a97ca1a1da1ce5a0a91e7a8dfead4222f579f432b79d5"
+    },
+    {
+      "path": "evidence/条件情景交付_20261006/最终两情景界面.png",
+      "bytes": 194016,
+      "sha256": "32f07c6bd949a2998afb1c2556042c71b301cc644a8556d442e47cbb26c23f56"
+    },
+    {
+      "path": "evidence/条件情景交付_20261006/最终情景与旧界面检查.tap",
+      "bytes": 1427,
+      "sha256": "3ecd3420930940dc31263df572ce5cabf8ab7106d478aa519a8ff03ea464b263"
+    },
+    {
+      "path": "evidence/条件情景交付_20261006/最终构建.log",
+      "bytes": 862,
+      "sha256": "addd28d6b92d19f16170a82a1acbc24cd1b1279b30b154cb133f0dbc030f5ee3"
+    },
+    {
+      "path": "evidence/条件情景交付_20261006/本轮实现差异.diff",
+      "bytes": 46231,
+      "sha256": "cb8bf07245299fc0562a61f04d4526dad258e740793bb0c8f2d33b22501c7581"
+    },
+    {
+      "path": "evidence/条件情景交付_20261006/构建.log",
+      "bytes": 862,
+      "sha256": "5c986c3a98a59f3f23d60d503510771bbeffd695d9a8bbcd8070ffb164ce8f05"
+    },
+    {
+      "path": "evidence/条件情景交付_20261006/浏览器实际回读.json",
+      "bytes": 1708533,
+      "sha256": "84be366ec7b1c7c1c286a262c2b9ec42f6b0fec1dbc116b97c37189b2aaa8c28"
+    },
+    {
+      "path": "evidence/条件情景交付_20261006/独立磁盘回读.log",
+      "bytes": 577,
+      "sha256": "8de7460e62b557a7a52cc7f95a339b6ab7c8a43cf3d8d84bb2f434d8f6ed561e"
+    },
+    {
+      "path": "evidence/条件情景交付_20261006/现实条件编辑已保存.png",
+      "bytes": 100299,
+      "sha256": "f71cda00b47de08bb4ae9484dced0c90e9c8a1a679dfaacc9df8ba2222ae1b90"
+    },
+    {
+      "path": "evidence/条件情景交付_20261006/现实条件重开完成.png",
+      "bytes": 191110,
+      "sha256": "dfeb0a2bea3dd28469f6c80332f712ab3f5808a7f7e882b7ad077edc333e7f4d"
+    },
+    {
+      "path": "evidence/条件情景交付_20261006/统一开放重开完成.png",
+      "bytes": 195307,
+      "sha256": "cdb623945c44214463abfa268cbd9a538219c9281ea3dd1449b6a3952b8d855d"
+    },
+    {
+      "path": "evidence/来源准备工程聚焦检查_20261006.tap",
+      "bytes": 1027,
+      "sha256": "bdd68e472cf037eb651bc42c617fcf341f2578435979cbb609ed661b0893cf26"
+    },
+    {
+      "path": "evidence/来源准备状态聚焦检查_20261006.tap",
+      "bytes": 3912,
+      "sha256": "ca242c3c0e1c0213144728dfc2fceda5b56f07b19b9a06757f3aeee10c838476"
+    },
+    {
+      "path": "evidence/来源几何内存修复聚焦检查_20261006.tap",
+      "bytes": 10008,
+      "sha256": "b284018fbb3ba890744cd0678ace49594145545470d2300a5f62dc8134045bd4"
+    },
+    {
+      "path": "evidence/来源几何工程聚焦_20261006.tap",
+      "bytes": 479,
+      "sha256": "f19800904086186f612f22dba74c3e4988674c3d6c5ab5e7cd45a71f865fc93c"
+    },
+    {
+      "path": "evidence/来源几何状态聚焦检查_20261006.tap",
+      "bytes": 3304,
+      "sha256": "8d770e14507a0228e38ff702367bb13d6268a3faa6af28c7fcb519a289d51e7c"
+    },
+    {
+      "path": "evidence/来源几何窗口与标记聚焦_20261006.tap",
+      "bytes": 1898,
+      "sha256": "3e704c9480c0f5c17cd7b0a55a259e00e3ae6653e2b9550d50fdba8cf4dc7f6d"
+    },
+    {
+      "path": "evidence/源图_1440x1024.png",
+      "bytes": 2937275,
+      "sha256": "a885ead95476ba31b8fa517cbbf0e7541f491fd16f2e35db70e78d62c2ad13c3"
+    },
+    {
+      "path": "evidence/真实场地.png",
+      "bytes": 181163,
+      "sha256": "5a354a1bc9a351c19f26d376e8318bda1ac0fdc9ea4dfab6114f2783c33ff03c"
+    },
+    {
+      "path": "evidence/科研登记_JSON实际重开.png",
+      "bytes": 144756,
+      "sha256": "3835ac8c143f018f3448a4dbd762015ad5b104bee266344ef2560f090ba22fca"
+    },
+    {
+      "path": "evidence/科研登记_JSON磁盘核对.json",
+      "bytes": 1094,
+      "sha256": "012a64bd8b4896b384fc831c567354478edd16bb2d0ca617f65856b47f2efbb3"
+    },
+    {
+      "path": "evidence/科研登记_ZIP实际重开.png",
+      "bytes": 146430,
+      "sha256": "18df1c2dde89d3f1fcc16251cae6ceac58b1d52989c22d24667d022bbbf992e1"
+    },
+    {
+      "path": "evidence/科研登记_ZIP磁盘核对.json",
+      "bytes": 811,
+      "sha256": "b8333ca479e613ed5c822443c4897ff3bb4a08a67c0446c1a93ba74d1e8c1c19"
+    },
+    {
+      "path": "evidence/科研登记_保存后.png",
+      "bytes": 144744,
+      "sha256": "c4b86f3988c28bb9296212de788c2d6d3272c9a8cff7c0458b39a4d64c5fabd0"
+    },
+    {
+      "path": "evidence/科研登记_全部开发误差.png",
+      "bytes": 136807,
+      "sha256": "cbc9ff8e6f4e7eb7f992c857f6f8d528f0b5476e1d9beaaab1191d958fbaef43"
+    },
+    {
+      "path": "evidence/科研登记_手机分析条件.png",
+      "bytes": 58020,
+      "sha256": "5f6d9c57d323d38fbd29f80dfcd75f4a173adfab173c3510d6cfc11b35e10c16"
+    },
+    {
+      "path": "evidence/科研登记_手机开发误差.png",
+      "bytes": 56446,
+      "sha256": "2183210c0c0bf9ad1c0ddba0a34b1fcf62c85f858111afbac3748399e20b9d04"
+    },
+    {
+      "path": "evidence/科研登记_旧包保持原版本.png",
+      "bytes": 136176,
+      "sha256": "6d96947bea798810a90f6d8c384582fdb9940e6ef573bb70e0da6c9f3e11a6e4"
+    },
+    {
+      "path": "evidence/科研登记_最新双版本JSON磁盘核对.json",
+      "bytes": 674,
+      "sha256": "8ec1057502d2e7ca3254d8369fea99800eb8eda14c5f359a346b2dd67a4291b1"
+    },
+    {
+      "path": "evidence/科研登记_最新双版本ZIP磁盘核对.json",
+      "bytes": 797,
+      "sha256": "dad8bd26a0b76b1f8226463273a5c3b1bfb9ba6e947ff26e257cb84547db9bbb"
+    },
+    {
+      "path": "evidence/科研登记_最新双版本ZIP重开.png",
+      "bytes": 147379,
+      "sha256": "ece0c9997ec79a45559f8f5cc53aba7226727758db5924960de938e31339d594"
+    },
+    {
+      "path": "evidence/科研登记_最终恢复.png",
+      "bytes": 145929,
+      "sha256": "14b306b217a43467ad496c1fbae064d6b9852e33d08d35697799801b9b9ce118"
+    },
+    {
+      "path": "evidence/科研登记_重载恢复.png",
+      "bytes": 145046,
+      "sha256": "c61b2cb7303b778b11edda9cd9015b2a4b3df4ff010ff3a3cbadda02a432a705"
+    },
+    {
+      "path": "evidence/绿色星簇对比.png",
+      "bytes": 1612730,
+      "sha256": "fe9bd57b23688aaa6630d963f36b61132d8cc8da01da02a611f54e215edf930d"
+    },
+    {
+      "path": "evidence/规划定位增补_只读文件指纹_20261006.json",
+      "bytes": 10020,
+      "sha256": "972ec1f391b551cadde5a70db9e71194d62d0c9210e8d359515848c62d379df7"
+    },
+    {
+      "path": "evidence/远景光效最终用户页面_20261006.png",
+      "bytes": 151042,
+      "sha256": "5a54d1502d1dd1340f64377d0313351da66defb90117f873feb83ed4d78ed4b0"
+    },
+    {
+      "path": "evidence/远景光晕像素变化核查_20261006.json",
+      "bytes": 713,
+      "sha256": "38a36e917a04b82aa950066d391edde60341ab85dc819bdceae6f65607bca70b"
+    },
+    {
+      "path": "evidence/远景增强光效变化核对_20261006.json",
+      "bytes": 725,
+      "sha256": "861c4076ac186782716f19e2cdf5b8380c6f603595d693e03940a6242b8e27c4"
+    },
+    {
+      "path": "evidence/远景增强光效实录_20261006.gif",
+      "bytes": 190538,
+      "sha256": "76b817c069078c5718c265e49651be1d7523b549f1eceae25a786001db7498eb"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/000.png",
+      "bytes": 92409,
+      "sha256": "b2e0534f2d9b1f8222d22e7716d8cfd32d77c23d7f25be723ec9b3e4bfe39297"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/001.png",
+      "bytes": 92389,
+      "sha256": "e03a3d7ebe9469119c9d337d6cb96fe4c5bab743e9ad201725876c0379596308"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/002.png",
+      "bytes": 92416,
+      "sha256": "25e35ba6e6bfbacea20b835c25ffa29b8c0daaaeb544d6b66c1386969faff952"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/003.png",
+      "bytes": 92427,
+      "sha256": "d765cee89781177781a7704ddc7fdde2d92696dab50b071f2f45e04558f0d8bf"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/004.png",
+      "bytes": 92427,
+      "sha256": "d617aa43a114dd77f49746f863deacdf7e27326f94252fe25c117f490f37fc10"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/005.png",
+      "bytes": 92435,
+      "sha256": "af1ec028ac1a7ea63ddf1739072f6d1aa5819ef3cd65c83365d34689dfeb4cd8"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/006.png",
+      "bytes": 92441,
+      "sha256": "6b493f5a8133102769e05d0d543931ad8e255b7c1d4eda585a797a8b2dc91b12"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/007.png",
+      "bytes": 92431,
+      "sha256": "4b5f6b955d7a33f4d742946b3b19beeb6643516ae3d4675fe5e8f1f29dbdbb28"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/008.png",
+      "bytes": 92427,
+      "sha256": "16919517b616674c857cca4c21edb0454dc669aac30dc8d66138ff8a1e9c8de1"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/009.png",
+      "bytes": 92436,
+      "sha256": "1d6b8e55d46479cb3998d1ee26c5e6d2189458f81a36c0a318e99f57c3310c69"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/010.png",
+      "bytes": 92404,
+      "sha256": "87ea0531b42c0c7510a3ba3380dabe38acb3d4848d8a02b4ad9cd7e5f2a460d3"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/011.png",
+      "bytes": 92460,
+      "sha256": "8af27ab2816090a28338c709ccf9ec65227a4fc50bf956eba05730c3420fcc29"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/012.png",
+      "bytes": 92415,
+      "sha256": "595ed12a176eb1dfa2e47a7c5e989d5af06ef26175c2e4b4dc018e52192e4bac"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/013.png",
+      "bytes": 92379,
+      "sha256": "a5144e2a8af1b7aad1733829ba443858e27ebcf4ad07536ac93efd342711b684"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/014.png",
+      "bytes": 92399,
+      "sha256": "5ce7e1f144567d8e63db08970bef70b520773dc6b2dc2a07c399bdcbf8e363d1"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/015.png",
+      "bytes": 92402,
+      "sha256": "5a5a89c9b435cf9a5198c3685e50baaa876be4490c0efdf09744a74a89947177"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/016.png",
+      "bytes": 92403,
+      "sha256": "597d74b3ed468cb50ecf65b50458590a590095c7789f094cbdf01a61eab179e2"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/017.png",
+      "bytes": 92397,
+      "sha256": "a5206cb2ab9b76e48330deb2fb62c10bc163e5062a26b12c9b1c6543b68a927d"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/018.png",
+      "bytes": 92391,
+      "sha256": "fa69ab44955f62128785d0575018ad14d523084b5e0f814829ad175373b2a7df"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/019.png",
+      "bytes": 92416,
+      "sha256": "c82d5537d042b289479016647e7b3801dd11a8699483290abaf69e33ccf3dfd5"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/020.png",
+      "bytes": 92427,
+      "sha256": "d765cee89781177781a7704ddc7fdde2d92696dab50b071f2f45e04558f0d8bf"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/021.png",
+      "bytes": 92420,
+      "sha256": "d0181be83177b4ea208115adc281ed88d8243dc43e1577d4d2c99ad86c607c19"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/022.png",
+      "bytes": 92432,
+      "sha256": "f373393777b08b06e8bef8bdb9ccb4b0fa52e6e0fcc6769de31456950752d6ce"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/023.png",
+      "bytes": 92417,
+      "sha256": "54bcce1a468b7d167c72d57b3a2e7c6b48d4928ebcce25b4830ef7d957808a14"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/024.png",
+      "bytes": 92413,
+      "sha256": "99215bfef6a466b1786ab81a66d248b02079d3222026781482409dae9163cfda"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/025.png",
+      "bytes": 92424,
+      "sha256": "230187ce11f32227c291d0d19f3138e6dc0c62abf9af7fed3c9304380dea03af"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/026.png",
+      "bytes": 92436,
+      "sha256": "656a3f591227e570b8ad3fc6cd490a63746624345d4c2f242e7c2f2e9c1b9bdd"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/027.png",
+      "bytes": 92434,
+      "sha256": "694e2e1940185de373819e69d913cf019bf96a51b1da5f8a80039f8c60833ef2"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/028.png",
+      "bytes": 92452,
+      "sha256": "a47d1348403e4373b0eb854b3b4d23eb2360cee63d4f53fd737c38dad24df021"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/029.png",
+      "bytes": 92427,
+      "sha256": "dac99040fa617d5955bb2ae063a4de8859d22583f56b376ecf9bf0645f29c6a0"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/030.png",
+      "bytes": 92408,
+      "sha256": "b10f6e5cfcbdcdf8f0bd0891afbb2d6d76b309a7f654f72f936d4f3368dff628"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/031.png",
+      "bytes": 92383,
+      "sha256": "6534c13b84c9d02fea44f0d0aa08f2269dbedc3536f4a046cd50fd86e4887a7d"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/032.png",
+      "bytes": 92409,
+      "sha256": "5cc9c24bcf6e1fc155a13e6906f5f4aa9852b12423b1173ee7143204b07705ef"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/033.png",
+      "bytes": 92397,
+      "sha256": "1a8fa00db077dee3d83567e8142339da585698e48553c1dc076ce9b4ea134b0e"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/034.png",
+      "bytes": 92407,
+      "sha256": "0d75321e26b0cfefb58f94080a4521179e3d0c8aa43e7c46e67ab0d837e404d8"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/035.png",
+      "bytes": 92403,
+      "sha256": "d0a0ad4b55fdca98646e11a0a172a598d73c6ff53cb1a55c8650a679dfdb9996"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/036.png",
+      "bytes": 92393,
+      "sha256": "6ca1aa23b17d6643eac5f46790cc714b8a6c711ef525c24a94ef9ea6dfb03964"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/037.png",
+      "bytes": 92415,
+      "sha256": "04c177a510b025e4468bfb6bd72c36a074298799bdf964b790fcff1281da7b4d"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/038.png",
+      "bytes": 92455,
+      "sha256": "379085463000e7f28b7e8ff8d307ee52d21dc707b4f0dcc2ce342cbcf5ba7d09"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/039.png",
+      "bytes": 92405,
+      "sha256": "bd3bc7cce1c7aaec2a97436afd4b28e46a411167ec99b12343e24fc7ff1224f7"
+    },
+    {
+      "path": "evidence/远景增强光效帧_20261006/sampling.json",
+      "bytes": 883,
+      "sha256": "cef94153ccbf9184d4a493b03964e4b77b3b4dc7afdf800c87e0b8c508d66945"
+    },
+    {
+      "path": "evidence/远景密集星点修正_20261007/修改前_AGENTS.md",
+      "bytes": 5292,
+      "sha256": "59628a2858cb19519451b94405312146156d52538de4bfaab08a31aa4c3e4944"
+    },
+    {
+      "path": "evidence/远景密集星点修正_20261007/修改前_MapCanvas.jsx",
+      "bytes": 51726,
+      "sha256": "ae868cbb64bf428330976590c13412ba730584962f9266ff35452bb23da8fcbd"
+    },
+    {
+      "path": "evidence/远景密集星点修正_20261007/修改前_map-canvas.test.mjs",
+      "bytes": 73323,
+      "sha256": "c9f6048054a995e1bf4ed0974c1d9e792e2458da2e33d658ba1c7ea48d286fbd"
+    },
+    {
+      "path": "evidence/远景密集星点修正_20261007/修正前_缩远聚合.png",
+      "bytes": 135774,
+      "sha256": "51d17d64ff42f61d3b8023f2dc1052e883bb46aa32704842a391b1e29f0ef042"
+    },
+    {
+      "path": "evidence/远景密集星点修正_20261007/修正后_四川远景.png",
+      "bytes": 108507,
+      "sha256": "e05b0ffceb3ee8ba07d1542c0832d73e6b9f488107ba523bf4db79fd34c6c197"
+    },
+    {
+      "path": "evidence/远景密集星点修正_20261007/修正后_完成预览.png",
+      "bytes": 130264,
+      "sha256": "dd2b2cccb45aff108d5aee7675f36504cd5c6a660e59ec1794d576988a537e51"
+    },
+    {
+      "path": "evidence/远景密集星点修正_20261007/修正后_成都全域默认.png",
+      "bytes": 133032,
+      "sha256": "f2136b543fb8b862bf9615ab0e2a66581b8556c0b62ef0dac6c01000310e1a11"
+    },
+    {
+      "path": "evidence/远景密集星点修正_20261007/修正后_成都缩远.png",
+      "bytes": 108989,
+      "sha256": "b24d8c527dfe1c55475c2929c5e4aff9f275be8fb112a4285a83f50327044bc1"
+    },
+    {
+      "path": "evidence/远景密集星点修正_20261007/修正后_研究区近景.png",
+      "bytes": 175520,
+      "sha256": "c67b49c947cd41385276672ed5075e5bb71fc1a66ea7b194b3f49783d0f374e1"
+    },
+    {
+      "path": "evidence/远景密集星点修正_20261007/修正后_进入原场地.png",
+      "bytes": 173611,
+      "sha256": "d19beed61ab48ec011c5a7a283cfd138f70efa5dc21973f7d6cdc9fa2337f36f"
+    },
+    {
+      "path": "evidence/远景密集星点修正_20261007/发布结构检查.log",
+      "bytes": 477,
+      "sha256": "b4d6a7b62102c5d3981b641f515596f79313f7403c06aa1f842aa3021b71ba69"
+    },
+    {
+      "path": "evidence/远景密集星点修正_20261007/回归检查.log",
+      "bytes": 7549,
+      "sha256": "5f5d64d087ee826846acdd8f2bf2568cf0aed67acaeeaef309c5715279df103a"
+    },
+    {
+      "path": "evidence/远景密集星点修正_20261007/地图检查.log",
+      "bytes": 4056,
+      "sha256": "66f35ab7df782d7e43d3cb554aa985aa3d961a7d3c0cf0e750a2d3a2c53eefbb"
+    },
+    {
+      "path": "evidence/远景密集星点修正_20261007/最终页面状态.txt",
+      "bytes": 2974,
+      "sha256": "6bd98f5b00e182290a6598129358c7328cb1e0d5d00fde5d218e49410850cdc0"
+    },
+    {
+      "path": "evidence/远景密集星点修正_20261007/构建.log",
+      "bytes": 862,
+      "sha256": "6618f697fa2ccc06d8fc217a9be9dd76b5d536c01e30f47e1df5725ccbd06e12"
+    },
+    {
+      "path": "evidence/远景密集星点修正_20261007/浏览器错误记录.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "evidence/远景密集星点修正_20261007/现实条件情景回读.txt",
+      "bytes": 6156,
+      "sha256": "0aed5a4309e76fe76ea16cb2eaba0bf5f083a86a1d5b58270208464d3b195a4d"
+    },
+    {
+      "path": "evidence/远景密集星点修正_20261007/统一开放情景回读.txt",
+      "bytes": 6883,
+      "sha256": "6b01bcb0d3c8c6ef0586abae4d7e9b3a431a096675e7e69a343b361e84ad4d72"
+    },
+    {
+      "path": "evidence/连续光效_中间尺度补强.png",
+      "bytes": 173597,
+      "sha256": "4abf6ec2e0d5fa56c3b1ae31d8c3824ef30e04818807ba1435604831d4694a7e"
+    },
+    {
+      "path": "evidence/连续光效_四川远景.png",
+      "bytes": 155025,
+      "sha256": "6b4da55397ace9d4da5f7340217a5b0eacd91ae05c85ffd15bc3c27394cca75f"
+    },
+    {
+      "path": "evidence/连续光效_场地近景.png",
+      "bytes": 181163,
+      "sha256": "5a354a1bc9a351c19f26d376e8318bda1ac0fdc9ea4dfab6114f2783c33ff03c"
+    },
+    {
+      "path": "evidence/连续光效_成都城市.png",
+      "bytes": 223503,
+      "sha256": "24ebdd369b3e1c32b447ee6dd14a6117c83038a4fa813b8b982d504392457fc8"
+    },
+    {
+      "path": "evidence/连续光效_收尾点选.png",
+      "bytes": 138549,
+      "sha256": "27c7820e48b62f4f4a9874297bd1ac972e0a4c5acf9633956e7a756f5058aad0"
+    },
+    {
+      "path": "evidence/连续光效_收尾远景.png",
+      "bytes": 109988,
+      "sha256": "dd6cd48e73323f32ccacea161f4d97d2193887ba774670b3d4d1c89b4a3a54f7"
+    },
+    {
+      "path": "evidence/连续光效_点选后仍保留.png",
+      "bytes": 168376,
+      "sha256": "e4770bcb332f31455124861cc872dcac13a60d4450c3211b9c87246432ec2736"
+    },
+    {
+      "path": "evidence/连续光效_现有页面同步.png",
+      "bytes": 82798,
+      "sha256": "1524d8b262b60159e552e42226eb35883b8417da0022a14b59f53d0bb8f5a601"
+    },
+    {
+      "path": "evidence/问题复现_近景稀薄光效.png",
+      "bytes": 84240,
+      "sha256": "a2143aa69822f4e3c888e8dcfca7d767b84cb35dd07895cbeb059d3a4d0051b4"
+    },
+    {
+      "path": "index.html",
+      "bytes": 330,
+      "sha256": "c64be1ead52e89c7380f1d6f95138804e4d576c0ae45c0a15bc23d104649e71d"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 73066,
+      "sha256": "ab18cc0b0a0a5bdccd29c405e498b9a846ceb11bd22b678493e6d286f6154ea4"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1660,
+      "sha256": "284946e7b8e7aebe88c07d26cbf910859accb7deda7d0077847f6eff1b562591"
+    },
+    {
+      "path": "public/data/CHENGDU_GREEN_DATA_SOURCES.md",
+      "bytes": 1339,
+      "sha256": "34584f6d52e2922765a2ba2a46d2748d72ea2275f8c6f252f4f69697bcae4da9"
+    },
+    {
+      "path": "public/data/REGIONAL_DATA_SOURCES.md",
+      "bytes": 909,
+      "sha256": "43c8ae236028e54db2a3cb6888fe3ec19de1d370b972326a0d8392f22e6d7ab6"
+    },
+    {
+      "path": "public/data/building_parts.geojson",
+      "bytes": 257206,
+      "sha256": "468a7ebb4b42b8eb2aa5634aaa4fe54699034694978e7f10167a34a1d96bef44"
+    },
+    {
+      "path": "public/data/capabilities.json",
+      "bytes": 4371,
+      "sha256": "80212e8ef474e9a597c7773e8826d959970d1dcd536bb92e30bb6d9d93226ca1"
+    },
+    {
+      "path": "public/data/chengdu_city_effects.geojson",
+      "bytes": 359059,
+      "sha256": "b95944e9563f9f11135f3154f7337970bc4e958215cfb187fd2848a9ce03e9f2"
+    },
+    {
+      "path": "public/data/chengdu_city_green_points.geojson",
+      "bytes": 1879256,
+      "sha256": "0fee2c30a14a05d87f3ed8e47a30a7f31349b5914bbd6d1325cf705da81ee325"
+    },
+    {
+      "path": "public/data/chengdu_green_context.json",
+      "bytes": 5873,
+      "sha256": "48e171324aed773fc86bf443ea12eec932366cfee59547d7c56c1344c9276574"
+    },
+    {
+      "path": "public/data/chengdu_navigation_boundary.geojson",
+      "bytes": 171464,
+      "sha256": "9e347fd0249c22fac185040f0f88fa8202fec5c440b2e16fe09adf171c3fbb15"
+    },
+    {
+      "path": "public/data/chengdu_urban_green_points.geojson",
+      "bytes": 1076102,
+      "sha256": "752583ed0c37ad2a122a249fd5afaf77415957f0c94af558a7b6dba34a10aef8"
+    },
+    {
+      "path": "public/data/conditional-source-state.json",
+      "bytes": 511869,
+      "sha256": "bfadb0c205a49091612da2401e009ec643ff91287c1dcf47484982a84bdcbadc"
+    },
+    {
+      "path": "public/data/macro_neighborhood_300.geojson",
+      "bytes": 1264,
+      "sha256": "f56673c091fde9295248524205d63498d1175668db7b0f1153c3127d992028ca"
+    },
+    {
+      "path": "public/data/macro_neighborhood_nodes.geojson",
+      "bytes": 10598,
+      "sha256": "e298bd8801ab4ac2236fcc57777e5e54c7d5a01b46b16eafde1df7b7fbfacf47"
+    },
+    {
+      "path": "public/data/macro_nodes.geojson",
+      "bytes": 7334779,
+      "sha256": "cf2e7722453f7b59ae9c8e3a54dae88df93da76997b6d9fe0a46afb9f805a1c4"
+    },
+    {
+      "path": "public/data/manifest.json",
+      "bytes": 66797,
+      "sha256": "f35ba68a8d3afaf7c4704d968f1e95bb298cda9d678ca2b26da83bbb009bb552"
+    },
+    {
+      "path": "public/data/micro_roads_roads_2020.geojson",
+      "bytes": 36978,
+      "sha256": "428ef36126a2127db1501d331941b16739a0cc5948a74db0ef8fa6a18bf6381a"
+    },
+    {
+      "path": "public/data/micro_roads_roads_2021.geojson",
+      "bytes": 38047,
+      "sha256": "919c0451c0905281d39515d23e5888adce7cb262d53a5162dabd055b29c621cb"
+    },
+    {
+      "path": "public/data/micro_scene_buildings_uncut.geojson",
+      "bytes": 245064,
+      "sha256": "bc8e60c4437e62b415ac3529f91dce8aa408b2d573abc7907087679a90233646"
+    },
+    {
+      "path": "public/data/micro_scene_context.geojson",
+      "bytes": 1070,
+      "sha256": "2b928d265bc815abb356e45b40c896fe05c94b5f7e4201fa55533de9e2cf0d09"
+    },
+    {
+      "path": "public/data/micro_scene_core.geojson",
+      "bytes": 1664,
+      "sha256": "cc08259b0f075cf3eaac00ef558525b7c142781442b766a73391805f491e4e5a"
+    },
+    {
+      "path": "public/data/micro_scene_overlap_review_core.geojson",
+      "bytes": 2989,
+      "sha256": "77537ab0f383b80107c752e6fc32d2b6f43d09504098b54f7323c6bc770cdb1b"
+    },
+    {
+      "path": "public/data/micro_scene_receptor_candidates.geojson",
+      "bytes": 4060,
+      "sha256": "a983a59b26dd39affa656b69d39b92325eb6753e989e5fc5aef9cbd013dab009"
+    },
+    {
+      "path": "public/data/micro_scene_source_classes_context.geojson",
+      "bytes": 104197,
+      "sha256": "afd6a3a48101288ff00692e8ea2134728d0a434ce90773b9267840b0b7293c76"
+    },
+    {
+      "path": "public/data/micro_scene_surface_review_core.geojson",
+      "bytes": 16063,
+      "sha256": "4d139b1a5b8994101e211488b6a9c10bc503fe85f50bcc6a9fa184491c3204dd"
+    },
+    {
+      "path": "public/data/micro_scene_vegetation_core.geojson",
+      "bytes": 3777,
+      "sha256": "bfce8ab40aed2643a0095f36f9e76f8816e348297bfa69ed69832df7ec30bd08"
+    },
+    {
+      "path": "public/data/preparation-state.json",
+      "bytes": 138541,
+      "sha256": "1c7174ca51ecd0adaf44bbb4b2d0962b913bfc0c9be7abdeb56b2d4debed412b"
+    },
+    {
+      "path": "public/data/preparation_snapshots/7d66553a704f56bb247003cdb163f5234a7c90abeaca8eb06816db297f764892.json",
+      "bytes": 138541,
+      "sha256": "1c7174ca51ecd0adaf44bbb4b2d0962b913bfc0c9be7abdeb56b2d4debed412b"
+    },
+    {
+      "path": "public/data/readback_verification.json",
+      "bytes": 11434,
+      "sha256": "5af412afb85b684bc5c169b541c334fdd1f2b7e902f2c5fb7f5028ca536befc1"
+    },
+    {
+      "path": "public/data/regional_green_points.geojson",
+      "bytes": 5965792,
+      "sha256": "62bf4f9c85aedbb51b4dc3accaf9fa92f001e917b985a84b29af42f5a4dfa400"
+    },
+    {
+      "path": "public/data/regional_map_context.json",
+      "bytes": 4254,
+      "sha256": "04e3a3c11f0cb5b6644632d52c90846719163bcff4cd17292349bbbdfa415e0d"
+    },
+    {
+      "path": "public/data/regional_roads_2021.geojson",
+      "bytes": 4515166,
+      "sha256": "56f276ba8b8c69e52a0f70ceb7312d7900394da1dff41b5d1598b6fc163b18fb"
+    },
+    {
+      "path": "public/data/research-state.json",
+      "bytes": 23017,
+      "sha256": "e9d30ca04de0b7afb8e409515fb8d342923e0e3e938a6decb02615cf5bc32646"
+    },
+    {
+      "path": "public/data/research_snapshots/6b56102f564361fe2755efbea9b613b2a71e67af3d5fcd247ea157cc2af659f9.json",
+      "bytes": 23017,
+      "sha256": "e9d30ca04de0b7afb8e409515fb8d342923e0e3e938a6decb02615cf5bc32646"
+    },
+    {
+      "path": "public/data/research_snapshots/efa0962c4a6ea46d47d9339330e350120f7d923d80008aeb214da5b95f144fd2.json",
+      "bytes": 23017,
+      "sha256": "fcfff706435f60e959244cced8ce6fa8b58e38bc2d6538c3dd6e4770eb64e60b"
+    },
+    {
+      "path": "public/data/roads.geojson",
+      "bytes": 74173,
+      "sha256": "11f9e3520944cbc266e21de134655bddaf43e13c311ac56328acfb2629b69a21"
+    },
+    {
+      "path": "public/data/scene.json",
+      "bytes": 898056,
+      "sha256": "ab2c7bcdc210ebe674688da9fe3abf3c7702ce66b92946367a75669afad03d2d"
+    },
+    {
+      "path": "public/data/sichuan_boundary.geojson",
+      "bytes": 92159,
+      "sha256": "c15f65f685b8fedd97a2f72efeec4eb8622a74a8c929fd3434660f8afa8f3b4f"
+    },
+    {
+      "path": "public/data/sichuan_places.geojson",
+      "bytes": 4107,
+      "sha256": "ba003aa8f36bd8e1fe9f0310f10824e0bb4e7cf205744c5c5e0d2c7de6773bb6"
+    },
+    {
+      "path": "public/data/sichuan_rivers.geojson",
+      "bytes": 70841,
+      "sha256": "1460d171980babba8ad8aed02bcf5f0b5201500160027c469f3b41eb8e358c06"
+    },
+    {
+      "path": "public/data/source-geometry-state.json",
+      "bytes": 5438549,
+      "sha256": "1c8b5764194ca26a08bd52a7452a0f0beb600c49561e9e90829c66b8e9eacb5c"
+    },
+    {
+      "path": "public/data/source-preparation-state.json",
+      "bytes": 1827086,
+      "sha256": "1d2799ff0d41e81fe461400b71e9cca7fb147ddabb8f622fc5d38d3035115f36"
+    },
+    {
+      "path": "public/data/source_metadata.json",
+      "bytes": 46928,
+      "sha256": "27ca04a59e7deb9757dbb486332be7419a06f4e322519ed10b69632295a780c7"
+    },
+    {
+      "path": "public/data/study_selection_boundary.geojson",
+      "bytes": 19472,
+      "sha256": "c8d041d7a2a73af3e785127d67069019215376fd62a7e951826a779b5f5d0afc"
+    },
+    {
+      "path": "public/data/supplement-state.json",
+      "bytes": 3692678,
+      "sha256": "6a8a7a733d8323cd4770eb88b3987bf085d79b2d100adb52d1df140532b38fdd"
+    },
+    {
+      "path": "public/data/tables.json",
+      "bytes": 30761,
+      "sha256": "fa6d3d862968f50d162c9a4b156ff30c4abd959632081895ef8b37fbee505422"
+    },
+    {
+      "path": "public/data/version_differences.json",
+      "bytes": 5347,
+      "sha256": "9f3aee64e3f937207c72f108b7cd2ce9b267b60912104407a274f7aa8d242521"
+    },
+    {
+      "path": "public/maplibre/6.12.0/LICENSE.txt",
+      "bytes": 5984,
+      "sha256": "ee5fc05a0677eaf69601d2c7db0d9ecd6cc27c3abc1d0733bc9ed34707cf8ef2"
+    },
+    {
+      "path": "public/maplibre/6.12.0/maplibre-gl-shared.mjs",
+      "bytes": 516951,
+      "sha256": "df3d0b4ba965ebafd2deae3c568500308be2982d87dadd771ba82dc5a49a4631"
+    },
+    {
+      "path": "public/maplibre/6.12.0/maplibre-gl-worker.mjs",
+      "bytes": 19130,
+      "sha256": "1ecca7178f0a496b7980dc7a3c6a8c3575eda673cf3e9fa3324dcce7ef3890c2"
+    },
+    {
+      "path": "scripts/audit-conditional-delivery.py",
+      "bytes": 20099,
+      "sha256": "4eacc88464e62106e8e51bf2643914f0524b7e195527a3401ac54d4b4e7c1bfc"
+    },
+    {
+      "path": "scripts/audit-source-geometry-downloads.mjs",
+      "bytes": 29319,
+      "sha256": "1c468618590140506e518fee5113ffc20178c04e257a7a617ac3530194698209"
+    },
+    {
+      "path": "scripts/audit-source-preparation-downloads.mjs",
+      "bytes": 32926,
+      "sha256": "1220ac2e773b57a33424b7c41b9d47f75defdda5496dc9f3267ef54c50bacd36"
+    },
+    {
+      "path": "scripts/local-platform-service.mjs",
+      "bytes": 7746,
+      "sha256": "d185531e590bc7f972d91fe3a85c8ed5cac50af4ebb4f46ad412bf618bdbfcc3"
+    },
+    {
+      "path": "scripts/make-supplement-reopen-fixtures.mjs",
+      "bytes": 1602,
+      "sha256": "7b85963c52becf5354ce08bce274011065da407e5714735dd1678311e1e22918"
+    },
+    {
+      "path": "scripts/preparation-state-registration-receipt.json",
+      "bytes": 10589,
+      "sha256": "44abe66eb84d5f53ba94834fef851c3fec5a2f8a7cda5ccc3fd6c6e8f433a47d"
+    },
+    {
+      "path": "scripts/preparation-state-registration-receipt_7d66553a704f56bb247003cdb163f5234a7c90abeaca8eb06816db297f764892.json",
+      "bytes": 10589,
+      "sha256": "44abe66eb84d5f53ba94834fef851c3fec5a2f8a7cda5ccc3fd6c6e8f433a47d"
+    },
+    {
+      "path": "scripts/prepare-chengdu-green-lights.py",
+      "bytes": 16077,
+      "sha256": "c3e9e12d006c9d0f7afe0ce7574d82cac04b2ed803b7507be0f515f8e15a6d1d"
+    },
+    {
+      "path": "scripts/prepare-conditional-sources.py",
+      "bytes": 2692,
+      "sha256": "e9f32c4c9f52319f4f9f58a8492e9bf96006e64f30870841ea83921e77eb12fb"
+    },
+    {
+      "path": "scripts/prepare-regional-navigation.py",
+      "bytes": 8884,
+      "sha256": "a9579e36b7583a2e48fb039fe19e7b668dcc7c8411d3c11dc9a4123ccbb3f23f"
+    },
+    {
+      "path": "scripts/prepare-sites-build.mjs",
+      "bytes": 994,
+      "sha256": "12ae63f9b744423f4e1c9ac7a371b73eba79a3c9d5fb3d321e096a7ba74b7266"
+    },
+    {
+      "path": "scripts/qa-source-geometry-cases.mjs",
+      "bytes": 4155,
+      "sha256": "c9da5854c6ec976026ba285c307077f2eb3e40cc5d8ed2cb8693387d6c1ac1f1"
+    },
+    {
+      "path": "scripts/qa-source-preparation-cases.mjs",
+      "bytes": 4373,
+      "sha256": "04a2810c0f5d1e9c4ec9718e44359ec06913aeb2aadb02890189115184ff9709"
+    },
+    {
+      "path": "scripts/register-preparation-state.mjs",
+      "bytes": 9335,
+      "sha256": "11cbac8af2ad843157df70402eedc7df1db58fe5c3643a5aec993290cc5edb7e"
+    },
+    {
+      "path": "scripts/register-research-state.mjs",
+      "bytes": 13734,
+      "sha256": "ee00456c8d452a0dc23ef59cde0d2d6fe8d91f352a50d4912b47b1f8fb5d9c08"
+    },
+    {
+      "path": "scripts/register-source-geometry.mjs",
+      "bytes": 7011,
+      "sha256": "99f52a923c4795e61a171bd9e2140ef1a66007bad86e02587a527e326b19c8a0"
+    },
+    {
+      "path": "scripts/register-source-preparations.mjs",
+      "bytes": 4005,
+      "sha256": "5b7d4dc70d1b22130824072a25a9e5ac82f7f60909367bb6ce40d306b6334085"
+    },
+    {
+      "path": "scripts/register-supplements.mjs",
+      "bytes": 5282,
+      "sha256": "742db95c10029eb5c139e5a57ec3a2de118ecd73eb4d09ada709475d0727dd25"
+    },
+    {
+      "path": "scripts/research-state-registration-receipt.json",
+      "bytes": 9990,
+      "sha256": "60eb0206dde60820829671de06257ea115d8d69ab05885fb1e6fb047c53715ac"
+    },
+    {
+      "path": "scripts/research-state-registration-receipt_efa0962c4a6ea46d47d9339330e350120f7d923d80008aeb214da5b95f144fd2.json",
+      "bytes": 9989,
+      "sha256": "c5de4bc366319e2e5c07ffb48b01bd2b5b5f1132afdb143750107933d4d4c2d9"
+    },
+    {
+      "path": "scripts/write-source-geometry-receipt.mjs",
+      "bytes": 13113,
+      "sha256": "41800fbe6416740e489a5e7036d0f96645891121521927cded7213bc30a86da6"
+    },
+    {
+      "path": "src/App.jsx",
+      "bytes": 76365,
+      "sha256": "870d55a18cd82f7c241c915e120c01bb85caed4be9fdd675cbf5db6a656d6ece"
+    },
+    {
+      "path": "src/ConditionalScenarios.jsx",
+      "bytes": 13276,
+      "sha256": "41560571a4d75387ff72650f1061eae9975132273edb492d0cf7097583c94a90"
+    },
+    {
+      "path": "src/GeometrySourceEvidence.jsx",
+      "bytes": 35746,
+      "sha256": "013f229764a10adb61c950a3acf4bc9d279daa23ecfe3688b666a6c45efe6db8"
+    },
+    {
+      "path": "src/MapCanvas.jsx",
+      "bytes": 51741,
+      "sha256": "1e4448b236e404b57c799bf1feceffcb2712089c0f5bedbfedad9eed2bf101ef"
+    },
+    {
+      "path": "src/PreparationEvidence.jsx",
+      "bytes": 16183,
+      "sha256": "453b84bfaf4530335d0210db5bead03c340e9f2ab869443330ee57bd37a4e04f"
+    },
+    {
+      "path": "src/ResearchEvidence.jsx",
+      "bytes": 6743,
+      "sha256": "a2e0e94a8331e99ba0609b5e78483bb4a43dd1f5c5bd19d8d888344de1c09dd2"
+    },
+    {
+      "path": "src/SourcePreparationEvidence.jsx",
+      "bytes": 17887,
+      "sha256": "66fedef35404b21a6f7c22a34a2d25ce6a0f0d15adbe55eff2c0183303e1921d"
+    },
+    {
+      "path": "src/SupplementEvidence.jsx",
+      "bytes": 6811,
+      "sha256": "6b75d22129969fba5d15d7a1046935ee13fa55e198028ae59b0fd50df12b0263"
+    },
+    {
+      "path": "src/conditional-drafts.js",
+      "bytes": 6635,
+      "sha256": "8361811c0dd66e091183e8a09b037096dee7f11a295b9f6d417587ad38f3a43e"
+    },
+    {
+      "path": "src/conditional-source-catalog.js",
+      "bytes": 15637,
+      "sha256": "e7971490671e73b549503650c3087c6d4623aa5d9a1e4ba7becb3d52864f350f"
+    },
+    {
+      "path": "src/conditional-source-state.js",
+      "bytes": 4803,
+      "sha256": "57e309f99e91baee9c25c99acacdf6102dc253724eb1970e2e36524ed6c300c1"
+    },
+    {
+      "path": "src/main.jsx",
+      "bytes": 242,
+      "sha256": "832f752c6b6a454a26dbc4f2654f5bd633f2b103516c8c0abac648308c133a7e"
+    },
+    {
+      "path": "src/preparation-state.js",
+      "bytes": 29866,
+      "sha256": "869bbfbf30dd32e8e26d3857a5789bc05fa18f0a818c675ae3a75caa6d9137c3"
+    },
+    {
+      "path": "src/project-storage.js",
+      "bytes": 1468,
+      "sha256": "ff1c5f29f85d5ede4ecc446a2ab47b047a939618b0b19d8e2581cde0e056f144"
+    },
+    {
+      "path": "src/project.js",
+      "bytes": 41328,
+      "sha256": "152166195a690b2e495fb59bbcc7b090d78da7a8c46713772022f99af550becf"
+    },
+    {
+      "path": "src/regional-navigation.js",
+      "bytes": 3251,
+      "sha256": "97a09a2bd7deb4d8ad865d668375ccd59189e2c9223fcefd10bb305c05a31b90"
+    },
+    {
+      "path": "src/research-state.js",
+      "bytes": 12629,
+      "sha256": "512bc573d16cd17f71a64d470a97e016904bc36c1ac584f1f82a8ba6cacecf04"
+    },
+    {
+      "path": "src/source-geometry-building.js",
+      "bytes": 29318,
+      "sha256": "f5ab8bfc3e7e1079bd147e055ceb48841047be81df00b3ebe64cf533c0b42050"
+    },
+    {
+      "path": "src/source-geometry-catalog.js",
+      "bytes": 61591,
+      "sha256": "da3695c1e84e10dde85fbe128f49e8825bb6804be8b5972f57f33a3c9b929b40"
+    },
+    {
+      "path": "src/source-geometry-marks.js",
+      "bytes": 15624,
+      "sha256": "1eb82b8373a3e3a8afad5bb8ebedae5227840c173f2a95782ce4ecf541891f67"
+    },
+    {
+      "path": "src/source-geometry-state.js",
+      "bytes": 13934,
+      "sha256": "d5e5444f3bb0910620c125673c714c62bd11dc918316c80140fe25a6b8d0ae83"
+    },
+    {
+      "path": "src/source-geometry-window.js",
+      "bytes": 23893,
+      "sha256": "8052064caf225400ca9f09d845dcab1c94ac1c76e40e2d3568f38f3e9895e67d"
+    },
+    {
+      "path": "src/source-overlay.js",
+      "bytes": 42032,
+      "sha256": "73521f139415745268e608239b030aec2add68d00fefcccdb9c360c3594ebedc"
+    },
+    {
+      "path": "src/source-preparation-catalog.js",
+      "bytes": 27545,
+      "sha256": "a0db8edd1f2e2b7b54a91b518dc7865d8c95f6ab004d0ec06165a00dc2645239"
+    },
+    {
+      "path": "src/source-preparation-state.js",
+      "bytes": 12904,
+      "sha256": "dbbef928c87582173a0de1f7564c37e27854113cbb3b8a521a71f673499f6727"
+    },
+    {
+      "path": "src/source-roads.js",
+      "bytes": 32561,
+      "sha256": "430ef685019426d84ddbf83051168dc9bfbf8ccc2795e25b64a8f901b6d3c225"
+    },
+    {
+      "path": "src/source-weather.js",
+      "bytes": 24436,
+      "sha256": "b66fbf2b7d9ac865ba699a225dced148049bb691c9a60cec2695f14fae59af9b"
+    },
+    {
+      "path": "src/styles.css",
+      "bytes": 30058,
+      "sha256": "878ca62fb841a5a2e72bb84e3dee626828cc2cef92d4686d9a749883faee1275"
+    },
+    {
+      "path": "src/supplement-candidates.js",
+      "bytes": 41291,
+      "sha256": "96aca00ebf3906d29005eeb9d627e1123f3cdc4cd8f032ef2cd09c44971cc09a"
+    },
+    {
+      "path": "src/supplement-catalog.js",
+      "bytes": 15173,
+      "sha256": "34599e71e973526af3c770a98fba731858c7e6518453f709522a63dee96b570c"
+    },
+    {
+      "path": "src/supplement-neighbor.js",
+      "bytes": 32767,
+      "sha256": "3ef553561da18f5ab89c233ed953363c434ee9a928e55b5c39e6aacdbe81c2e7"
+    },
+    {
+      "path": "src/supplement-planning.js",
+      "bytes": 35080,
+      "sha256": "4f51a621242a16c58008d395f5bd9515c8ae2807d1bc137147641bd34cf5f9c2"
+    },
+    {
+      "path": "src/supplement-state.js",
+      "bytes": 8255,
+      "sha256": "9a6a321b7d9f029b271cd3a702cbbbb1f1acd5f4243c23d1bc137172e71a5c51"
+    },
+    {
+      "path": "tests/conditional-scenarios.test.mjs",
+      "bytes": 8601,
+      "sha256": "dd25e71d48a930390d1011fc278c30795c021b1c1c6cfec026070b8202874f85"
+    },
+    {
+      "path": "tests/embedded-evidence.test.mjs",
+      "bytes": 8875,
+      "sha256": "b0f8d219bb4c7b20fea7759c2e1d75f88064a7ea8d3cddacfd0fb27b07eff73d"
+    },
+    {
+      "path": "tests/fixtures/geometry-valid-test-only.geojson",
+      "bytes": 400,
+      "sha256": "f57d605def61fe9f0849a5f64ffc01b68277d621b0dcafae167daae20fc75bf1"
+    },
+    {
+      "path": "tests/fixtures/geometry-wrong-crs.geojson",
+      "bytes": 462,
+      "sha256": "9ebc6a8acf562a72b3ce3c31a7bd3f5776368371abc0105d2fac2faef4a08056"
+    },
+    {
+      "path": "tests/geometry-source-ui.test.mjs",
+      "bytes": 9553,
+      "sha256": "d5df9a7bdaaee1b76b0e3984c02715c5895b01bb1248522b1f1cc4d3bb63e706"
+    },
+    {
+      "path": "tests/handoff_contract.md",
+      "bytes": 11596,
+      "sha256": "a4e03941a8eaf552b11782df7e8d17cf5ba9769949ba1b80d6be8875a8e2e6f8"
+    },
+    {
+      "path": "tests/local-platform-service.test.mjs",
+      "bytes": 3752,
+      "sha256": "e8e9fff66fb14394170f9a21f8c188a6022497483b2d0472adebd3c63f4c6589"
+    },
+    {
+      "path": "tests/map-canvas.test.mjs",
+      "bytes": 73398,
+      "sha256": "6793ea963f51b28cf51df6ceef3cf1d0083799816e9767ea1e7e66be67d2248e"
+    },
+    {
+      "path": "tests/preparation-state.test.mjs",
+      "bytes": 13676,
+      "sha256": "8f1b0d9e3b59dfd5ef3ef77f7ce01ba8584c3948e35b94eaf7b51b6e34f4a734"
+    },
+    {
+      "path": "tests/project.test.mjs",
+      "bytes": 26698,
+      "sha256": "bb18b82fb654e89df646192771b07785c81252da185147345c1e1c44c79649c5"
+    },
+    {
+      "path": "tests/regional-navigation.test.mjs",
+      "bytes": 8559,
+      "sha256": "3a7b44867cb6f00aaf2505e651083047759f3a83151bb7df2bffda9a35cd049a"
+    },
+    {
+      "path": "tests/research-state.test.mjs",
+      "bytes": 11186,
+      "sha256": "7979f473b258c1be7ac8937b8dadb3b914d214f75f675ad634ac8031f998dae4"
+    },
+    {
+      "path": "tests/sites-worker.test.mjs",
+      "bytes": 2219,
+      "sha256": "96af7b48906c6460c793356d7b6952f7d5026dbf5a502bec0d9297ff04201c26"
+    },
+    {
+      "path": "tests/source-geometry-context.test.mjs",
+      "bytes": 13474,
+      "sha256": "d50849b728c7c925cc1aa0103a6a9cab80e48a2fd259228c53c3e97c50870dbf"
+    },
+    {
+      "path": "tests/source-geometry-project.test.mjs",
+      "bytes": 6788,
+      "sha256": "bb81003d221d61c73a31cc4a04182bb16867252463cc0619af5afaafd2d9936e"
+    },
+    {
+      "path": "tests/source-geometry-state.test.mjs",
+      "bytes": 20770,
+      "sha256": "46dd3b436aa105b02cf345f3ee9d329d664596a2f6b7d245a0e151684855ad2d"
+    },
+    {
+      "path": "tests/source-preparation-project.test.mjs",
+      "bytes": 14991,
+      "sha256": "dc4cd0c6919632dffeb7c8f185674634dc16c0a1d6a7abca58eca79753955097"
+    },
+    {
+      "path": "tests/source-preparation-state.test.mjs",
+      "bytes": 21611,
+      "sha256": "8320a7bcd40ba386e7703de5616a30714ceafc377d52452a3d1aacad90faa40a"
+    },
+    {
+      "path": "tests/supplement-project.test.mjs",
+      "bytes": 14197,
+      "sha256": "a41a7f3ab0e3a6a9475ab2379ef29af0e99674686eed980817f72573d87260e9"
+    },
+    {
+      "path": "tests/supplement-state.test.mjs",
+      "bytes": 14831,
+      "sha256": "073f827940db83d7ec8881c0e376955fd1d6296f23d42e4e8268102a89a715b3"
+    },
+    {
+      "path": "tests/test_handoff.py",
+      "bytes": 21363,
+      "sha256": "32d2cdf6f340890885db2d0b62365134092bea3564d48fff0ef58393a8c07a09"
+    },
+    {
+      "path": "tests/独立复核.md",
+      "bytes": 2926,
+      "sha256": "d77e74021ad46bf5f361ff85c87891563b429c0b41ff18ba85f8b4efb6bde4c9"
+    },
+    {
+      "path": "tools/prepare_data.py",
+      "bytes": 45571,
+      "sha256": "34220b3bd7f9f160fe314c787af5f3636638b7da58803a1398707b5048294020"
+    },
+    {
+      "path": "tools/requirements-display.txt",
+      "bytes": 218,
+      "sha256": "11b6584a39d336e25f4883dc8d29e39e6aabb7454c28f236ba0efc68c1d0928d"
+    },
+    {
+      "path": "verification/browser-check.log",
+      "bytes": 15801,
+      "sha256": "8eccc0ca711840ebf2d30ab85c1ddc72d79d6c498cd0e789cd7c25acb47f8faf"
+    },
+    {
+      "path": "verification/build-artifacts.json",
+      "bytes": 9112,
+      "sha256": "2cebcc5eecf0e6befde90b290adb2476dd2d63f30aea6ec2cab7f893be1dd534"
+    },
+    {
+      "path": "verification/delivery-summary.json",
+      "bytes": 1946,
+      "sha256": "685cddef9bd318f64cf34194254d88e3e2291f9a28ab014f3a286f9148a3ac4a"
+    },
+    {
+      "path": "verification/security-and-path-audit.json",
+      "bytes": 2829,
+      "sha256": "1d0523ea87dfee4abf8c4352a6a677665e67ea75713c4458febc5d39cafd135b"
+    },
+    {
+      "path": "verification/software-tests.log",
+      "bytes": 8996,
+      "sha256": "aec0cd31ff10aebdb5b29a2e64f767d0bc5aba2f3d5e46de97944d0006858001"
+    },
+    {
+      "path": "verification/source-copy-manifest.json",
+      "bytes": 121380,
+      "sha256": "39a1a17b0b04456b0186a13deac51c7d377ab76ca0ab7ef94751b437fc51bff4"
+    },
+    {
+      "path": "verification/前缀资源与浏览器验收.json",
+      "bytes": 15800,
+      "sha256": "60433b657ad98917002dd718851e173a30ef475466c431248b60b95acb3a469e"
+    },
+    {
+      "path": "verification/前缀页面.png",
+      "bytes": 1368284,
+      "sha256": "f2709e5975c1ebc23c7acd584da68534126211a7a45d76850f7ab19b5ae853de"
+    },
+    {
+      "path": "verification/证据面板.png",
+      "bytes": 986430,
+      "sha256": "fbe0d0e54b63fe4beb6554c0282bb8d7148a2f2c3a231f01e97483ea0ce3e1cc"
+    },
+    {
+      "path": "vite.config.mjs",
+      "bytes": 360,
+      "sha256": "fb1fb062f29ceb19a13413f6f01689f461d0c3207f31e00c4c9ff1ed82a36cd8"
+    },
+    {
+      "path": "worker/index.js",
+      "bytes": 483,
+      "sha256": "2dd0615a445143933d88d4271f54f5d63ee951421fcd08c5a7617bb09c564389"
+    },
+    {
+      "path": "三组来源准备接入_20261006.json",
+      "bytes": 74935,
+      "sha256": "8ca4844d064d59daf78c4969ac74b84a5539afce61394f38fd8427937dfcda09"
+    },
+    {
+      "path": "三组来源准备接入_20261006.md",
+      "bytes": 7536,
+      "sha256": "1eef8142f3275bcaf9598a215871a1bbe45b6cfb1bc1f5fd9ac5ba5abf954c62"
+    },
+    {
+      "path": "五组成果资料接入_20261006.json",
+      "bytes": 37668,
+      "sha256": "de1b3ab775b60687dd26e9b8a70dc69a8270cb89a492b91e783d7ad0fe92d4b2"
+    },
+    {
+      "path": "五组成果资料接入_20261006.md",
+      "bytes": 5790,
+      "sha256": "4b3246a0db98d46f55aba118212e7856915621750deed0b23625e077598c4c70"
+    },
+    {
+      "path": "停止本地平台.command",
+      "bytes": 364,
+      "sha256": "d246eafc42b68298e22e083ccd4c6a89005a5718a31f701828403e3d6d2ccc51"
+    },
+    {
+      "path": "共同试点准备接入_20261006.json",
+      "bytes": 11311,
+      "sha256": "7887a63470ed1f9648015a1f057953d249045fbc2c3ec8fa025a9a0da110e093"
+    },
+    {
+      "path": "共同试点准备接入_20261006.md",
+      "bytes": 12246,
+      "sha256": "28b1436aeb78074642353dd9e0988e381e9bd1ac992b51a3986f4932cf966cd9"
+    },
+    {
+      "path": "启动本地平台.command",
+      "bytes": 2476,
+      "sha256": "866356d26732341cfdff29609edd8d67c2559677f2041416db043e87fa99db3a"
+    },
+    {
+      "path": "尺度光效核查_20261006.json",
+      "bytes": 5952,
+      "sha256": "a913a8f79f47468be7e4d29fba6a860c9fd5835bc62f353444a36ad8a5a8ddee"
+    },
+    {
+      "path": "尺度光效核查_20261006.md",
+      "bytes": 3359,
+      "sha256": "a4fa586013fe1f0f5256ebe2322e1eac22fd9fabbcc0e06a6742f83400907a27"
+    },
+    {
+      "path": "成都全域光效交付_20261007.json",
+      "bytes": 118965,
+      "sha256": "44a839985db9ed647ba3bf5fbe77cc63549d28cf075db306e4ce5715e09380c0"
+    },
+    {
+      "path": "成都全域光效交付_20261007.md",
+      "bytes": 4323,
+      "sha256": "1e64df6136e981c5ae424aa1cdc5758e78638c4c086465f66e9bc9c16f35aeb8"
+    },
+    {
+      "path": "条件获取与两类情景交付_20261006.json",
+      "bytes": 34886,
+      "sha256": "5f29eb2e630f653bf7052ed7487265f3edf3b5acc40e530d4c6226bc02be589d"
+    },
+    {
+      "path": "条件获取与两类情景交付_20261006.md",
+      "bytes": 5255,
+      "sha256": "adec762d95e18ca7a8d853ad5f8373dfae12d19fea176117fd8c54ff40bfddff"
+    },
+    {
+      "path": "来源几何与对象三组接入_20261006.json",
+      "bytes": 897893,
+      "sha256": "289d808ea46fbb0354d9cc569fe91009b739e4572e41f5862a14c7d94bd88fc9"
+    },
+    {
+      "path": "来源几何与对象三组接入_20261006.md",
+      "bytes": 6041,
+      "sha256": "161eef666ee69e04c363638e546f982a097881b74b335e37086b538ec4d117a3"
+    },
+    {
+      "path": "科研状态接入_20261006.json",
+      "bytes": 25175,
+      "sha256": "a18c2acf42641b4a7030fd9fd29063ff4eb129a62a571ee092a14f3e9b869022"
+    },
+    {
+      "path": "科研状态接入_20261006.md",
+      "bytes": 14393,
+      "sha256": "fabb90076bbc6ce0a1ad6f7a1776e6256549bef6b0ce274b3bc462138dab1bca"
+    },
+    {
+      "path": "远景光效修复_20261006.json",
+      "bytes": 4128,
+      "sha256": "db6573b627d08e33795611294be32494bb98b8f8a1b7d87f12188933b2da1a2d"
+    },
+    {
+      "path": "远景光效修复_20261006.md",
+      "bytes": 1470,
+      "sha256": "77dd94d078a8f07a73da5c17fb7c6010eb8604a8f7ef05b5b8f0d78f805d5d1c"
+    },
+    {
+      "path": "远景密集星点修正_20261007.json",
+      "bytes": 10279,
+      "sha256": "b5599ea9e5c0944a301315149a1c3f33c9699cc92a9db546443953ca8c37777e"
+    },
+    {
+      "path": "远景密集星点修正_20261007.md",
+      "bytes": 1233,
+      "sha256": "54ae1fd758b9d2aed4d6f9c7f6132f6ec2452f978136aec0fc63ff9b1152ce20"
+    },
+    {
+      "path": "验收记录.json",
+      "bytes": 15219,
+      "sha256": "d74f2876b4d92a31be12863d93e84a55f209da0a72affd945c588902df7e0ddd"
+    }
+  ]
+}

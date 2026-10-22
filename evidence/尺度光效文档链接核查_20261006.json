@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-06",
+  "scope": "this_turn_app_readme_and_light_review_local_links",
+  "document_count": 2,
+  "checked": 37,
+  "missing": [],
+  "documents": [
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/README.md",
+      "bytes": 15950,
+      "sha256": "f8da5832b5445d33e6c1cc858bf6699bebad3d627ba78b36a8b704af2241fec9"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/尺度光效核查_20261006.md",
+      "bytes": 3359,
+      "sha256": "a4fa586013fe1f0f5256ebe2322e1eac22fd9fabbcc0e06a6742f83400907a27"
+    }
+  ]
+}

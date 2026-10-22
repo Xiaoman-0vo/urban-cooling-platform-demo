@@ -1,0 +1,16 @@
+{
+  "structured_receipt_readback": true,
+  "markdown_readback": true,
+  "fingerprints_rechecked": 43,
+  "links_reopened": 8,
+  "final_audit_sha256": "2329b74cccb96eb3e94a92fd78e210330080e22e8dd75ca06ee9f096de6b2678",
+  "full_tests": {
+    "tests": 144,
+    "passed": 144,
+    "failed": 0,
+    "skipped": 0,
+    "build": "pass local production build and original handoff packaging, no publish"
+  },
+  "browser_rows": 32834,
+  "source_files": 72
+}

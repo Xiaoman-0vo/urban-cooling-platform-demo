@@ -1,0 +1,233 @@
+{
+  "checked_at": "2026-10-05T22:11:05.777Z",
+  "manifest_source": {
+    "path": "平台产品设计/来源准备三组接入清单_20261006.json",
+    "bytes": 35509,
+    "sha256": "4fbe5e23e47436869fbd78fc74741e5bbeb60a4017c73001b1b7583d7a1c8860"
+  },
+  "group_count": 3,
+  "source_count": 31,
+  "source_checks": [
+    {
+      "path": "共享接口/微观试验准备/研究范围来源叠合_20261006/README.md",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/研究范围来源叠合_20261006/README.md",
+      "bytes": 6713,
+      "sha256": "f4316011f9bb37234b1c758b12daf10c41e34b3f6c1b2d318968f75e2f760951",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/研究范围来源叠合_20261006/build_source_scope_overlay.py",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/研究范围来源叠合_20261006/build_source_scope_overlay.py",
+      "bytes": 40613,
+      "sha256": "e024ca6cd28301a7de2d6c4153076427c785968a85a240a835a5b2a5bd2d3381",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/研究范围来源叠合_20261006/分区与源对象正面积关系.csv",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/研究范围来源叠合_20261006/分区与源对象正面积关系.csv",
+      "bytes": 8360,
+      "sha256": "52478e3b638004efd4af1a9e18fac0b95db2621642ce958c3528eb75c9a11783",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/研究范围来源叠合_20261006/分区闭合与来源.csv",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/研究范围来源叠合_20261006/分区闭合与来源.csv",
+      "bytes": 8486,
+      "sha256": "d968ffbe4138c9d7cbb3d964197dfc7fdebb1b13c0170e5f0b1150f2c235ba5e",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/研究范围来源叠合_20261006/来源叠合分区_UTM48N.gpkg",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/研究范围来源叠合_20261006/来源叠合分区_UTM48N.gpkg",
+      "bytes": 151552,
+      "sha256": "aaf47c47ed9518c9ee1efbef3417439dc60ae1cc76631915abca9b157ed55846",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/研究范围来源叠合_20261006/来源叠合分区_WGS84.geojson",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/研究范围来源叠合_20261006/来源叠合分区_WGS84.geojson",
+      "bytes": 46162,
+      "sha256": "2daeab7a514e09d9e3114b32116a587abceb53e8f5532181ff7cd0754cf3a43d",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/研究范围来源叠合_20261006/核心来源闭合与线性支持.png",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/研究范围来源叠合_20261006/核心来源闭合与线性支持.png",
+      "bytes": 689842,
+      "sha256": "83eaf73639f488a3a0d5ac7d78733bbebfeca774dd349eb66987c9fd62a257ad",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/研究范围来源叠合_20261006/核心来源闭合与线性支持.svg",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/研究范围来源叠合_20261006/核心来源闭合与线性支持.svg",
+      "bytes": 504071,
+      "sha256": "432f68f2370711865cf3616558fef5d2585132e95d3ad5e14c959912af82cb62",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/研究范围来源叠合_20261006/核心来源闭合与线性支持_灰度审阅.png",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/研究范围来源叠合_20261006/核心来源闭合与线性支持_灰度审阅.png",
+      "bytes": 336085,
+      "sha256": "bf68cadf12707a493c4f5580e097d6da20aaecc5dec95aef5b44cda7c4535e2a",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/研究范围来源叠合_20261006/核查记录.json",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/研究范围来源叠合_20261006/核查记录.json",
+      "bytes": 34806,
+      "sha256": "d32f3d031dca48f60510af640bcd143cd437e4080af391b23a0f1226cb644eab",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/研究范围来源叠合_20261006/根独立几何回读核查.json",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/研究范围来源叠合_20261006/根独立几何回读核查.json",
+      "bytes": 11087,
+      "sha256": "7219d18ec86f2ec921b26e6423b159bc878b249f4200b16f79bd545ba5c4be83",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/研究范围来源叠合_20261006/源对象几何审阅.csv",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/研究范围来源叠合_20261006/源对象几何审阅.csv",
+      "bytes": 31720,
+      "sha256": "5181a72c25d4481ebecc3a28258ac8d530fcf59c2b231c7e1e1038f501730eb0",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/研究范围来源叠合_20261006/研究动作提案_未采用.json",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/研究范围来源叠合_20261006/研究动作提案_未采用.json",
+      "bytes": 1249,
+      "sha256": "9c1952f9c117b2bf5717c2ffe8a52f2d7b9b608ec9a03a1dd5e2cc6682e53b66",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/研究范围来源叠合_20261006/跨层正面积交叠关系.csv",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/研究范围来源叠合_20261006/跨层正面积交叠关系.csv",
+      "bytes": 671,
+      "sha256": "fa4d8ed44ac9924b018237fe587797c2dd5aa26bdf61cf672a2acdba9f9fb10b",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/研究范围来源叠合_20261006/道路分区线支持.csv",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/研究范围来源叠合_20261006/道路分区线支持.csv",
+      "bytes": 2679,
+      "sha256": "84a30ccc85038a6e983651e43928117beefdf88b1a0f8716289a47ab07b0a38e",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/研究范围来源叠合_20261006/道路分区线支持_WGS84.geojson",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/研究范围来源叠合_20261006/道路分区线支持_WGS84.geojson",
+      "bytes": 8647,
+      "sha256": "dec3c006f38d577b9b42208713c47b111b676de4d0869b445c9f5e43e3be666d",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/天气跨格式试核_20261006/07月19日跨格式逐小时对照.csv",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/天气跨格式试核_20261006/07月19日跨格式逐小时对照.csv",
+      "bytes": 9207,
+      "sha256": "1529aedc5baa034b2cf0ffc140a88e2fac2abaecb4dea8e73d3673fd91de2dcc",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/天气跨格式试核_20261006/README.md",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/天气跨格式试核_20261006/README.md",
+      "bytes": 5041,
+      "sha256": "42134d453f8abf69614de87c38711857d0dd28662c355b0aaa97980c7fc0e7f5",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/天气跨格式试核_20261006/核对跨格式天气.py",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/天气跨格式试核_20261006/核对跨格式天气.py",
+      "bytes": 13203,
+      "sha256": "4a4b7b70c6c0ce638046463fd19e045640aaeb3dc5d488df04ba85abb0ebc80b",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/天气跨格式试核_20261006/独立天气跨格式核查.json",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/天气跨格式试核_20261006/独立天气跨格式核查.json",
+      "bytes": 10610,
+      "sha256": "f6e1027c26e35c85d2968085405045820836fae2d1423fcb76259281dd3b5aaf",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/天气跨格式试核_20261006/独立核查天气跨格式.py",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/天气跨格式试核_20261006/独立核查天气跨格式.py",
+      "bytes": 18920,
+      "sha256": "3a74b837c2fbb09160407d1cc1425048e8d439c886c28f6c1d2bd0ef69185052",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/天气跨格式试核_20261006/跨格式来源与实际核查.json",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/天气跨格式试核_20261006/跨格式来源与实际核查.json",
+      "bytes": 11253,
+      "sha256": "881a766158b67fe45a110d9653b76543b4c6142e930d0e603cace3acddcb5493",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/源线连通诊断_20261006/README.md",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/源线连通诊断_20261006/README.md",
+      "bytes": 6217,
+      "sha256": "cc0a573f8cd9098aa753826c1ce7ff8c85465f2cf9be6dfb75491cb0079d5cb9",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/源线连通诊断_20261006/原相邻段.csv",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/源线连通诊断_20261006/原相邻段.csv",
+      "bytes": 64637,
+      "sha256": "5c9316d83182e385ff8fe5306b1fb0717cacd6f87daf998ec03207e914f85cf9",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/源线连通诊断_20261006/原节点.csv",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/源线连通诊断_20261006/原节点.csv",
+      "bytes": 46209,
+      "sha256": "9175755c72fb21432c974c747c19ef7814778fc012adb5b8e2bb29dd7558d17b",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/源线连通诊断_20261006/受体与道路线平面关系.csv",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/源线连通诊断_20261006/受体与道路线平面关系.csv",
+      "bytes": 87491,
+      "sha256": "acea430e5dae9d35cd053753abf29c00da1c0d8adff6c2f2be2668a62dca517b",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/源线连通诊断_20261006/源几何连通核查.json",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/源线连通诊断_20261006/源几何连通核查.json",
+      "bytes": 9568,
+      "sha256": "3981d5962470dd2c6339fea9586b351bacf5278c5fd4921aa9a5857f93581da5",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/源线连通诊断_20261006/独立回读核查.json",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/源线连通诊断_20261006/独立回读核查.json",
+      "bytes": 1409,
+      "sha256": "cadc3fc54ef5ccb14786a82275bc968df26843ec01183b44a632551d14c63778",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/源线连通诊断_20261006/独立回读核查.py",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/源线连通诊断_20261006/独立回读核查.py",
+      "bytes": 9286,
+      "sha256": "443f7f40417942fa1783004af440605732fc5cb232ca9496158b1ce9d5a96fed",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/源线连通诊断_20261006/生成源几何诊断.py",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/源线连通诊断_20261006/生成源几何诊断.py",
+      "bytes": 21556,
+      "sha256": "072f48459de5c3d53dd0fee0a74030dc0b0eb5c7a8a9b1c2b5f3ef09154df067",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/源线连通诊断_20261006/道路线关系.csv",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/源线连通诊断_20261006/道路线关系.csv",
+      "bytes": 86382,
+      "sha256": "75325abb729a1914442029e4cd384f5e51d267c9d1417e5dcec2d2cc506e4866",
+      "before_after_equal": true
+    }
+  ],
+  "external_raw_assets_read_or_delivered": false,
+  "source_producers_run": false,
+  "source_bytes_unchanged": true,
+  "old_snapshots_preserved": true
+}

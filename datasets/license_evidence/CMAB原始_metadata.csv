@@ -1,0 +1,192 @@
+﻿Name,Description,Value meaning
+Shape_id,ID of the building,—
+Rect_Area,Minimum Bounding Rectangle Area,m2
+Aspect_Rat,Building Length-to-Width Ratio,—
+Length,Building Length,m
+Width,Building Width,m
+Area_Ratio,Ratio of Contour Area to Ideal Shape Area,—
+Shape_A,Building Base Area,m2
+Shape_L,Building Perimeter,m
+NPI,Building Compactness,—
+MinCircle,Minimum Enclosing Circle Area,m2
+XzCity_id,Administrative City Level,—
+XzCity_Nme,Administrative Province,—
+XzCity_Nm,Administrative City,—
+XzCity_Nmx,Administrative County/District,—
+Sum_spbu,Total Building Base Area,m2
+Num_bu,Number of Buildings,—
+Den_bu,Building Density,—
+Dis_Road,Distance to Nearest Secondary Road,m
+IfNearRoad,Is Roadside Building or not,0: not near road；1: near road
+CityFun,Distance to Urban Functional Center,m
+QHCITY_id,Natural Climatic Subdivision,—
+pred_h_r,Building Height,m
+Floor,Building Floor,—
+Bu_Area,Building Area,m2
+Block_id,ID of the block on which the building is located,—
+Block_area,Block Area,m2
+Block_leng,Block Perimeter,m
+StCity_id,ID of the spatial city on which the building is located,—
+ISWATER,Contain Water Bodies or not,0: contains no water bodies ；1:contains water bodies
+NBL1,Number of beauty salon types poi,—
+DBL1,Density of beauty salon types poi,Per m2
+NBL2,Number of transportation facility types poi,—
+DBL2,Density of transportation facility types poi,Per m2
+NBL3,Number of leisure and entertainment types poi,—
+DBL3,Density of leisure and entertainment types poi,Per m2
+NBL4,Number of company enterprise types poi,—
+DBL4,Density of company enterprise types poi,Per m2
+NBL5,Number of inlet and outlet types poi,—
+DBL5,Density of inlet and outlet types poi,Per m2
+NBL6,Number of medical treatment types poi,—
+DBL6,Density of medical treatment types poi,Per m2
+NBL7,Number of real estate types poi,—
+DBL7,Density of real estate types poi,Per m2
+NBL8,Number of governmental agencies types poi,—
+DBL8,Density of governmental agencies types poi,Per m2
+NBL9,Number of educational training types poi,—
+DBL9,Density of educational training types poi,Per m2
+NBL10,Number of cultural media types poi,—
+DBL10,Density of cultural media types poi,Per m2
+NBL11,Number of cultural media types poi,—
+DBL11,Density of cultural media types poi,Per m2
+NBL12,Number of car service types poi,—
+DBL12,Density of car service types poi,Per m2
+NBL13,Number of life service types poi,—
+DBL13,Density of life service types poi,Per m2
+NBL14,Number of restaurant types poi,—
+DBL14,Density of restaurant types poi,Per m2
+NBL15,Number of administrative landmark poi,—
+DBL15,Density of administrative landmark poi,Per m2
+NBL16,Number of shopping poi,—
+DBL16,Density of shopping poi,Per m2
+NBL17,Number of sports poi,—
+DBL17,Density of sports poi,Per m2
+NBL18,Number of hotel poi,—
+DBL18,Density of hotel poi,Per m2
+NBL19,Number of finance poi,—
+DBL19,Density of finance poi,Per m2
+DBL,Total POI density,Per m2
+RBL1,Proportion of  beauty salon types poi,—
+RBL2,Proportion of  transportation facility types poi,—
+RBL3,Proportion of  leisure and entertainment types poi,—
+RBL4,Proportion of  company enterprise types poi,—
+RBL5,Proportion of  inlet and outlet types poi,—
+RBL6,Proportion of  medical treatment types poi,—
+RBL7,Proportion of real estate types poi,—
+RBL8,Proportion of governmental agencies types poi,—
+RBL9,Proportion of educational training types poi,—
+RBL10,Proportion of cultural media types poi,—
+RBL11,Proportion of cultural media types poi,—
+RBL12,Proportion of car service types poi,—
+RBL13,Proportion of life service types poi,—
+RBL14,Proportion of restaurant types poi,—
+RBL15,Proportion of administrative landmark poi,—
+RBL16,Proportion of shopping poi,—
+RBL17,Proportion of sports poi,—
+RBL18,Proportion of hotel poi,—
+RBL19,Proportion of finance poi,—
+M_Block,POI diversity index,—
+Sum_Bu,Total building area,m2
+Plot_rat,Plot ratio,—
+Mean_H,Average Height of Buildings,m
+Mean_F,Average Floor of Buildings,—
+type_2023,Building functions identified by AOI data,—
+predict,Predicted building function,—
+Age_IS,Number of pixel identified by GAIA data,—
+Age,Building age,—
+StrVi_100,name of existing street view observation points in the buffer,—
+mFa_13_100,The disorder score of Buildings with damaged facades in 2013,"N: There were no street view images at the site during that year.
+M: There are no observation points in the buffer.
+0-1:1 means the disorder type exist, 0 means none. There are severl street views in a point, contributing the value in 0-1."
+mFa_14_100,The disorder score of Buildings with damaged facades in 2014,
+mFa_15_100,The disorder score of Buildings with damaged facades in 2015,
+mFa_16_100,The disorder score of Buildings with damaged facades in 2016,
+mFa_17_100,The disorder score of Buildings with damaged facades in 2017,
+mFa_18_100,The disorder score of Buildings with damaged facades in 2018,
+mFa_19_100,The disorder score of Buildings with damaged facades in 2019,
+mFa_20_100,The disorder score of Buildings with damaged facades in 2020,
+mFa_21_100,The disorder score of Buildings with damaged facades in 2021,
+mFa_22_100,The disorder score of Buildings with damaged facades in 2022,
+lBu_13_100,The disorder score of Illegal/temporary buildings in 2013,
+lBu_14_100,The disorder score of Illegal/temporary buildings in 2014,
+lBu_15_100,The disorder score of Illegal/temporary buildings in 2015,
+lBu_16_100,The disorder score of Illegal/temporary buildings in 2016,
+lBu_17_100,The disorder score of Illegal/temporary buildings in 2017,
+lBu_18_100,The disorder score of Illegal/temporary buildings in 2018,
+lBu_19_100,The disorder score of Illegal/temporary buildings in 2019,
+lBu_20_100,The disorder score of Illegal/temporary buildings in 2020,
+lBu_21_100,The disorder score of Illegal/temporary buildings in 2021,
+lBu_22_100,The disorder score of Illegal/temporary buildings in 2022,
+lAd_13_100,The disorder score of Graffiti/illegal advertisement in 2013,
+lAd_14_100,The disorder score of Graffiti/illegal advertisement in 2014,
+lAd_15_100,The disorder score of Graffiti/illegal advertisement in 2015,
+lAd_16_100,The disorder score of Graffiti/illegal advertisement in 2016,
+lAd_17_100,The disorder score of Graffiti/illegal advertisement in 2017,
+lAd_18_100,The disorder score of Graffiti/illegal advertisement in 2018,
+lAd_19_100,The disorder score of Graffiti/illegal advertisement in 2019,
+lAd_20_100,The disorder score of Graffiti/illegal advertisement in 2020,
+lAd_21_100,The disorder score of Graffiti/illegal advertisement in 2021,
+lAd_22_100,The disorder score of Graffiti/illegal advertisement in 2022,
+kSt_13_100,The disorder score of Stores with poor facades in 2013,
+kSt_14_100,The disorder score of Stores with poor facades in 2014,
+kSt_15_100,The disorder score of Stores with poor facades in 2015,
+kSt_16_100,The disorder score of Stores with poor facades in 2016,
+kSt_17_100,The disorder score of Stores with poor facades in 2017,
+kSt_18_100,The disorder score of Stores with poor facades in 2018,
+kSt_19_100,The disorder score of Stores with poor facades in 2019,
+kSt_20_100,The disorder score of Stores with poor facades in 2020,
+kSt_21_100,The disorder score of Stores with poor facades in 2021,
+kSt_22_100,The disorder score of Stores with poor facades in 2022,
+kFa_13_100,The disorder score of Buildings with unkempt facades in 2013,
+kFa_14_100,The disorder score of Buildings with unkempt facades in 2014,
+kFa_15_100,The disorder score of Buildings with unkempt facades in 2015,
+kFa_16_100,The disorder score of Buildings with unkempt facades in 2016,
+kFa_17_100,The disorder score of Buildings with unkempt facades in 2017,
+kFa_18_100,The disorder score of Buildings with unkempt facades in 2018,
+kFa_19_100,The disorder score of Buildings with unkempt facades in 2019,
+kFa_20_100,The disorder score of Buildings with unkempt facades in 2020,
+kFa_21_100,The disorder score of Buildings with unkempt facades in 2021,
+kFa_22_100,The disorder score of Buildings with unkempt facades in 2022,
+oSi_13_100,The disorder score of Stores with poor signboards in 2013,
+oSi_14_100,The disorder score of Stores with poor signboards in 2014,
+oSi_15_100,The disorder score of Stores with poor signboards in 2015,
+oSi_16_100,The disorder score of Stores with poor signboards in 2016,
+oSi_17_100,The disorder score of Stores with poor signboards in 2017,
+oSi_18_100,The disorder score of Stores with poor signboards in 2018,
+oSi_19_100,The disorder score of Stores with poor signboards in 2019,
+oSi_20_100,The disorder score of Stores with poor signboards in 2020,
+oSi_21_100,The disorder score of Stores with poor signboards in 2021,
+oSi_22_100,The disorder score of Stores with poor signboards in 2022,
+aBu_13_100,The disorder score of abandoned building in 2013,
+aBu_14_100,The disorder score of abandoned building in 2014,
+aBu_15_100,The disorder score of abandoned building in 2015,
+aBu_16_100,The disorder score of abandoned building in 2016,
+aBu_17_100,The disorder score of abandoned building in 2017,
+aBu_18_100,The disorder score of abandoned building in 2018,
+aBu_19_100,The disorder score of abandoned building in 2019,
+aBu_20_100,The disorder score of abandoned building in 2020,
+aBu_21_100,The disorder score of abandoned building in 2021,
+aBu_22_100,The disorder score of abandoned building in 2022,
+cSt_13_100,The disorder score of abandoned building in 2013,
+cSt_14_100,The disorder score of abandoned building in 2014,
+cSt_15_100,The disorder score of abandoned building in 2015,
+cSt_16_100,The disorder score of abandoned building in 2016,
+cSt_17_100,The disorder score of abandoned building in 2017,
+cSt_18_100,The disorder score of abandoned building in 2018,
+cSt_19_100,The disorder score of abandoned building in 2019,
+cSt_20_100,The disorder score of abandoned building in 2020,
+cSt_21_100,The disorder score of abandoned building in 2021,
+cSt_22_100,The disorder score of abandoned building in 2022,
+BQ_13_100,The disorder score of building quality in 2013,
+BQ_14_100,The disorder score of building quality in 2014,
+BQ_15_100,The disorder score of building quality in 2015,
+BQ_16_100,The disorder score of building quality in 2016,
+BQ_17_100,The disorder score of building quality in 2017,
+BQ_18_100,The disorder score of building quality in 2018,
+BQ_19_100,The disorder score of building quality in 2019,
+BQ_20_100,The disorder score of building quality in 2020,
+BQ_21_100,The disorder score of building quality in 2021,
+BQ_22_100,The disorder score of building quality in 2022,
+BQ_lst_100,Building quality problem index in latest year ,
+BQ_lsy_100,The latest year of street view iamge,

@@ -1,0 +1,70 @@
+{
+  "checked_at": "2026-10-05T20:01:58.635Z",
+  "file": {
+    "path": "/Users/wangyanbo/Downloads/街区交接_E4125_N33891_2026-10-05T20-00-32-765Z.zip",
+    "bytes": 1014437,
+    "sha256": "f13e1ecccd34a79a605cc8689d39de56a42295ee65f2b8a10956b5d225803178"
+  },
+  "source_package_equals_original": true,
+  "scene_equals_original": true,
+  "layers_equal_original": true,
+  "scene_layer_count": 15,
+  "research_registrations": [
+    "coordination-index:efa0962c4a6ea46d47d9339330e350120f7d923d80008aeb214da5b95f144fd2",
+    "coordination-index:6b56102f564361fe2755efbea9b613b2a71e67af3d5fcd247ea157cc2af659f9"
+  ],
+  "preparation_registration": "pilot-preparation:7d66553a704f56bb247003cdb163f5234a7c90abeaca8eb06816db297f764892",
+  "original_preparation_zip": {
+    "bytes": 93456,
+    "sha256": "08c7156289efc7a383b096fca81a8442cc0915ed265c6986dfe4a6d6eaafd543",
+    "original_bytes_equal": true
+  },
+  "explicit_sources_verified": 14,
+  "complete_residence_candidates": 6,
+  "population_not_allocated": true,
+  "scientific_action_gates": {
+    "prediction": false,
+    "physical_simulation": false,
+    "service_evaluation": false,
+    "fairness_evaluation": false,
+    "candidate_generation": false,
+    "ranking": false
+  },
+  "status_axes": {
+    "artifact": "checked",
+    "science": "not_assessed",
+    "integration": "not_adapted",
+    "execution": "not_run"
+  },
+  "selected_reference": {
+    "layerKey": "residence_candidates",
+    "id": "cmab_v7_chengdu_source_row_146756"
+  },
+  "green_fx": true,
+  "residence_candidates_visible": true,
+  "zip_sidecar_consistent": true,
+  "zip_file_members": [
+    "project.json",
+    "research/registrations.json",
+    "preparation/registrations.json",
+    "交接说明.md",
+    "layers/core.geojson",
+    "layers/context.geojson",
+    "layers/buildings.geojson",
+    "layers/vegetation.geojson",
+    "layers/source_classes_context.geojson",
+    "layers/overlap_review_core.geojson",
+    "layers/surface_review_core.geojson",
+    "layers/receptors.geojson",
+    "layers/macro_context300.geojson",
+    "layers/context500.geojson",
+    "layers/class_surface.geojson",
+    "layers/overlap_review.geojson",
+    "layers/hard_review.geojson",
+    "layers/building_parts.geojson",
+    "layers/roads.geojson"
+  ],
+  "disk_reopened_in_ui": true,
+  "historical_source_count": 24,
+  "browser_reopen_evidence": "evidence/准备资料_ZIP实际重开.png"
+}

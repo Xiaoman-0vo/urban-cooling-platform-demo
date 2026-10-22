@@ -1,0 +1,842 @@
+{
+  "schema_version": "chengdu-map-display-delivery.v1",
+  "completed_at": "2026-10-07T00:10:38.461388+08:00",
+  "preview_url": "http://127.0.0.1:4173/",
+  "behavior": {
+    "default_view": "成都全域",
+    "optional_view": "四川",
+    "city_effects": [
+      "vegetation stars and breathing halos",
+      "breathing boundary and coating",
+      "moving scan and phased lattice"
+    ],
+    "selectable_centres": "exact existing Chengdu 2021 counterclockwise Second Ring operational polygon"
+  },
+  "city_display_sources": {
+    "version": "chengdu_display_lights_v1_20261006",
+    "default_region": "成都",
+    "chengdu_bounds": [
+      102.989623,
+      30.0916339,
+      104.8948475,
+      31.4370968
+    ],
+    "assets": [
+      {
+        "file": "chengdu_navigation_boundary.geojson",
+        "features": 1,
+        "bytes": 171464,
+        "sha256": "9e347fd0249c22fac185040f0f88fa8202fec5c440b2e16fe09adf171c3fbb15"
+      },
+      {
+        "file": "chengdu_city_green_points.geojson",
+        "features": 4392,
+        "bytes": 1879256,
+        "sha256": "0fee2c30a14a05d87f3ed8e47a30a7f31349b5914bbd6d1325cf705da81ee325"
+      },
+      {
+        "file": "chengdu_urban_green_points.geojson",
+        "features": 2492,
+        "bytes": 1076102,
+        "sha256": "752583ed0c37ad2a122a249fd5afaf77415957f0c94af558a7b6dba34a10aef8"
+      },
+      {
+        "file": "chengdu_city_effects.geojson",
+        "features": 395,
+        "bytes": 359059,
+        "sha256": "b95944e9563f9f11135f3154f7337970bc4e958215cfb187fd2848a9ce03e9f2"
+      }
+    ],
+    "city_effects": {
+      "role": "decorative_city_lattice_and_scan_not_observations",
+      "clipped_to_navigation_city": true,
+      "scan_covers_entire_city": true,
+      "lattice_display_spacing_m": 1000,
+      "major_lattice_display_spacing_m": 4000,
+      "scan_bands": 64,
+      "features": 395,
+      "clip_endpoint_roundoff_limit_degrees": 1e-09,
+      "mask_or_study_buffer_added": false,
+      "not_research_grid": true,
+      "not_roads_or_terrain": true
+    },
+    "sources": {
+      "city_boundary": {
+        "url": "https://api.openstreetmap.org/api/0.6/relation/2110264/full.json",
+        "date_header": "Tue, 06 Oct 2026 15:31:57 GMT",
+        "relation_id": 2110264,
+        "crs": "EPSG:4326",
+        "license": "ODbL 1.0",
+        "raw_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/四川全域与研究区选址_20261006/成都导航_OSM完整原始边界.json",
+        "raw_sha256": "64201c81b84faa9b376c708dbfd3241dc9d58aca5302988130c7f79d7e90fe7b",
+        "outer_way_count": 64,
+        "inner_way_count": 1,
+        "no_gap_bridging": true,
+        "no_boundary_simplification": true
+      },
+      "CLCD_2020": {
+        "source_path": "/Users/wangyanbo/科研/城市数据/数据/06_土地利用与建成环境/论文开放数据/CLCD中国30米年度土地覆盖/Zenodo_18180184/中国/1985_1990-2025/CLCD_v01_2020_albert.tif",
+        "sha256": "2d4f05bac50ac25ca2c8bd214f02ec0974348550c0a94fa3825cdc49f22f23e1",
+        "source_crs": "PROJCS[\"unknown\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",0],PARAMETER[\"longitude_of_center\",105],PARAMETER[\"standard_parallel_1\",25],PARAMETER[\"standard_parallel_2\",47],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "native_transform": [
+          30.0,
+          0.0,
+          -2629624.7830456714,
+          0.0,
+          -30.0,
+          5924251.5596752735
+        ],
+        "native_resolution_m": 30,
+        "green_class_codes": [
+          2,
+          3,
+          4
+        ],
+        "known_class_codes": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "display_block_width_m": 1500,
+        "source_window": [
+          81300,
+          86300,
+          6050,
+          5150
+        ],
+        "native_pixels_resampled": false,
+        "point_position": "nearest_real_green_pixel_to_block_centre",
+        "totals": {
+          "pixels_inside_navigation_city": 15925294,
+          "known_pixels": 15925294,
+          "unknown_or_nodata_pixels": 0,
+          "green_pixels": 3731909,
+          "blocks_with_known_pixels": 6701,
+          "blocks_with_green_pixels": 4392
+        },
+        "raw_class_counts_inside_city": {
+          "2": 3601588,
+          "3": 5918,
+          "4": 124403,
+          "5": 145043,
+          "7": 7372,
+          "1": 10385449,
+          "6": 361,
+          "8": 1655160
+        },
+        "single_pixel_readbacks": [
+          {
+            "id": "CLCD_2020/86350/83750",
+            "source_pixel_class": 4,
+            "point_inside_city": true
+          },
+          {
+            "id": "CLCD_2020/89450/86350",
+            "source_pixel_class": 4,
+            "point_inside_city": true
+          },
+          {
+            "id": "CLCD_2020/91400/85800",
+            "source_pixel_class": 2,
+            "point_inside_city": true
+          }
+        ],
+        "source_url": "https://zenodo.org/records/18180184",
+        "published_version": "1.0.5",
+        "license": "CC BY 4.0",
+        "published_md5_verified": "1274285bb18f9b1d443a3cc906b1310c",
+        "legend_path": "/Users/wangyanbo/科研/城市数据/数据/06_土地利用与建成环境/论文开放数据/CLCD中国30米年度土地覆盖/Zenodo_18180184/中国/1985_1990-2025/CLCD_classificationsystem.xlsx",
+        "legend_sha256": "77072c4f35a0b43f6aeed119ad1c04956eca7d0982b61241910563f720b63e56"
+      },
+      "UBGG_3m": {
+        "source_path": "/Users/wangyanbo/科研/城市数据/数据/06_土地利用与建成环境/论文开放数据/中国36城蓝绿灰景观/Zenodo_8352777/中国36城/v1.0发布包/chengdu_UBGG_3m.tif",
+        "sha256": "1799ed4a381549bb13dd3f591448165daa729ab0d89fc14fb17d37e8efcab8cb",
+        "source_crs": "EPSG:32648",
+        "native_transform": [
+          3.0,
+          0.0,
+          393918.0,
+          0.0,
+          -3.0,
+          3409023.0
+        ],
+        "native_resolution_m": 3,
+        "green_class_codes": [
+          2,
+          3
+        ],
+        "known_class_codes": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "display_block_width_m": 450,
+        "source_window": [
+          0,
+          0,
+          10964,
+          10470
+        ],
+        "native_pixels_resampled": false,
+        "point_position": "nearest_real_green_pixel_to_block_centre",
+        "totals": {
+          "pixels_inside_navigation_city": 114793080,
+          "known_pixels": 51621678,
+          "unknown_or_nodata_pixels": 63171402,
+          "green_pixels": 16732801,
+          "blocks_with_known_pixels": 2525,
+          "blocks_with_green_pixels": 2492
+        },
+        "raw_class_counts_inside_city": {
+          "1": 33748935,
+          "2": 14791205,
+          "15": 63171402,
+          "4": 588498,
+          "0": 551444,
+          "3": 1941596
+        },
+        "single_pixel_readbacks": [
+          {
+            "id": "UBGG_3m/0/6000",
+            "source_pixel_class": 2,
+            "point_inside_city": true
+          },
+          {
+            "id": "UBGG_3m/4950/7500",
+            "source_pixel_class": 3,
+            "point_inside_city": true
+          },
+          {
+            "id": "UBGG_3m/10350/4650",
+            "source_pixel_class": 2,
+            "point_inside_city": true
+          }
+        ],
+        "source_url": "https://zenodo.org/records/8352777",
+        "authors": [
+          "Zhiyu Xu",
+          "Shuqing Zhao"
+        ],
+        "published_version": "v1.0",
+        "time_alignment_validated": false,
+        "class_names": {
+          "2": "tree_shrub_projection",
+          "3": "grass_class"
+        }
+      }
+    },
+    "research_admission_changed": false,
+    "existing_G02_changed": false,
+    "display_share_is_G02": false,
+    "selectable_boundary_changed": false,
+    "limitations": [
+      "These lights are a display derivative of supplied classifications, not cooling or service results.",
+      "City-wide CLCD 2020 and the finer UBGG extent retain separate sources and meanings.",
+      "NoData or unknown pixels are excluded, never interpreted as no vegetation.",
+      "OSM current city boundary is navigation only; 2021 study selection remains unchanged."
+    ]
+  },
+  "study_and_province_sources": {
+    "version": "regional_navigation_v1_20261006",
+    "crs": "EPSG:4326",
+    "province_bounds": [
+      97.36096194863501,
+      26.034845282483786,
+      108.52348473493254,
+      34.29971548138434
+    ],
+    "study_bounds": [
+      104.0190099,
+      30.6222578,
+      104.1125159,
+      30.6971484
+    ],
+    "study_reference_center": [
+      104.06592821339186,
+      30.659608300000002
+    ],
+    "sources": {
+      "province": {
+        "path": "/Users/wangyanbo/科研/城市数据/数据/01_行政区划与城市边界/NaturalEarth/全球基础地理矢量/全球/当前版本_2026-08-22获取/ne_10m_admin_1_states_provinces.zip",
+        "sha256": "efc59726337323058f9446210adc96673179cd344e053666ee3d28cb58ba2b05",
+        "version": "5.1.1",
+        "license": "Public domain",
+        "crs": "EPSG:4326",
+        "source_url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/"
+      },
+      "rivers": {
+        "path": "/Users/wangyanbo/科研/城市数据/数据/01_行政区划与城市边界/NaturalEarth/全球基础地理矢量/全球/当前版本_2026-08-22获取/ne_10m_rivers_lake_centerlines.zip",
+        "sha256": "ded71b01870855ccfe19b51f2ec14c9bb48fae23c0e9f3c11974d426433b5c38",
+        "version": "5.0.0",
+        "license": "Public domain",
+        "crs": "EPSG:4326",
+        "source_url": "https://www.naturalearthdata.com/downloads/10m-physical-vectors/"
+      },
+      "places": {
+        "path": "/Users/wangyanbo/科研/城市数据/数据/01_行政区划与城市边界/NaturalEarth/全球基础地理矢量/全球/当前版本_2026-08-22获取/ne_10m_populated_places.zip",
+        "sha256": "cd149186f03d2603e0410da399b980a4357d0ac32d3a2305a49ed3dffcc41d7b",
+        "version": "5.1.2",
+        "license": "Public domain",
+        "crs": "EPSG:4326",
+        "source_url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/"
+      },
+      "study": {
+        "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/02_不同绿色空间的相互作用/宏观研究/数据核查/二环边界核对_2026-10-02/成都二环候选边界_OSM2021年初_高架单向主线中心线_WGS84.geojson",
+        "sha256": "c8d041d7a2a73af3e785127d67069019215376fd62a7e951826a779b5f5d0afc",
+        "protocol_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/02_不同绿色空间的相互作用/宏观研究/实施/第一步_数据与变量核查/研究区口径/研究区口径.json",
+        "protocol_sha256": "ba88063a751f39a9f51b8b64706ef777f6e560e02aa635495dcaed2739ca04b7",
+        "protocol_version": "domain_v1_20261005",
+        "primary_boundary": "2021_counterclockwise",
+        "snapshot_timestamp": "2021-01-01T21:42:03Z",
+        "license": "ODbL 1.0; © OpenStreetMap contributors"
+      }
+    },
+    "assets": [
+      {
+        "file": "sichuan_boundary.geojson",
+        "features": 1,
+        "bytes": 92159,
+        "sha256": "c15f65f685b8fedd97a2f72efeec4eb8622a74a8c929fd3434660f8afa8f3b4f"
+      },
+      {
+        "file": "sichuan_rivers.geojson",
+        "features": 9,
+        "bytes": 70841,
+        "sha256": "1460d171980babba8ad8aed02bcf5f0b5201500160027c469f3b41eb8e358c06"
+      },
+      {
+        "file": "sichuan_places.geojson",
+        "features": 17,
+        "bytes": 4107,
+        "sha256": "ba003aa8f36bd8e1fe9f0310f10824e0bb4e7cf205744c5c5e0d2c7de6773bb6"
+      },
+      {
+        "file": "study_selection_boundary.geojson",
+        "features": 1,
+        "bytes": 19472,
+        "sha256": "c8d041d7a2a73af3e785127d67069019215376fd62a7e951826a779b5f5d0afc"
+      }
+    ],
+    "accounting": {
+      "province_source_features": 4596,
+      "province_selected": 1,
+      "river_bbox_features": 17,
+      "rivers_intersecting_province": 9,
+      "place_bbox_features": 27,
+      "places_inside_province": 17
+    },
+    "selection_policy": "New map/coordinate/grid locations must have their centre covered by the fixed study polygon. This is a UI gate, not research admission.",
+    "province_data_admitted": false,
+    "research_admission_changed": false,
+    "limitations": [
+      "Natural Earth is a generalized navigation reference, not the study boundary.",
+      "Province-wide navigation points are not green measurements or eligible sites.",
+      "Existing green G02 points remain Chengdu macro source candidates.",
+      "The 300m surrounding display can extend beyond the selected centre boundary."
+    ]
+  },
+  "research_boundaries": {
+    "existing_G02_preserved": true,
+    "research_admission_changed": false,
+    "cooling_or_service_computed": false,
+    "core_width_m": 100,
+    "surrounding_display_width_m": 300,
+    "existing_preparation_window_m": 500,
+    "physical_solver_domain_defined": false
+  },
+  "checks": [
+    {
+      "evidence": {
+        "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/四川全域与研究区选址_20261006/成都全域光效最终检查.log",
+        "bytes": 7585,
+        "sha256": "a6fb25fdecc53d097d3358c4ea2df3655c30019709c3718615c11e3e67df563d"
+      },
+      "passed": 65,
+      "failed": 0
+    },
+    {
+      "evidence": {
+        "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/四川全域与研究区选址_20261006/地图署名最终检查.log",
+        "bytes": 4096,
+        "sha256": "75ed1e1fd680ccdb19ce16d64b7f1cc06194728de0c4d7982b8ca9568b897717"
+      },
+      "passed": 34,
+      "failed": 0
+    },
+    {
+      "evidence": {
+        "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/四川全域与研究区选址_20261006/发布结构回归检查.log",
+        "bytes": 478,
+        "sha256": "40808966409317112f053c6887cd14daadfdf6de92d9ff825dfabdd77d05d26f"
+      },
+      "passed": 4,
+      "failed": 0
+    }
+  ],
+  "build": {
+    "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/四川全域与研究区选址_20261006/成都全域最终构建.log",
+    "bytes": 862,
+    "sha256": "1e39b116f07dd274965c1e0252502caea574ef24bac4968e686e82a62e9dd4a5"
+  },
+  "idempotence": {
+    "repeat_byte_identical": true,
+    "before": {
+      "chengdu_navigation_boundary.geojson": "9e347fd0249c22fac185040f0f88fa8202fec5c440b2e16fe09adf171c3fbb15",
+      "chengdu_city_green_points.geojson": "0fee2c30a14a05d87f3ed8e47a30a7f31349b5914bbd6d1325cf705da81ee325",
+      "chengdu_urban_green_points.geojson": "752583ed0c37ad2a122a249fd5afaf77415957f0c94af558a7b6dba34a10aef8",
+      "chengdu_city_effects.geojson": "b95944e9563f9f11135f3154f7337970bc4e958215cfb187fd2848a9ce03e9f2",
+      "chengdu_green_context.json": "48e171324aed773fc86bf443ea12eec932366cfee59547d7c56c1344c9276574",
+      "CHENGDU_GREEN_DATA_SOURCES.md": "34584f6d52e2922765a2ba2a46d2748d72ea2275f8c6f252f4f69697bcae4da9"
+    },
+    "after": {
+      "chengdu_navigation_boundary.geojson": "9e347fd0249c22fac185040f0f88fa8202fec5c440b2e16fe09adf171c3fbb15",
+      "chengdu_city_green_points.geojson": "0fee2c30a14a05d87f3ed8e47a30a7f31349b5914bbd6d1325cf705da81ee325",
+      "chengdu_urban_green_points.geojson": "752583ed0c37ad2a122a249fd5afaf77415957f0c94af558a7b6dba34a10aef8",
+      "chengdu_city_effects.geojson": "b95944e9563f9f11135f3154f7337970bc4e958215cfb187fd2848a9ce03e9f2",
+      "chengdu_green_context.json": "48e171324aed773fc86bf443ea12eec932366cfee59547d7c56c1344c9276574",
+      "CHENGDU_GREEN_DATA_SOURCES.md": "34584f6d52e2922765a2ba2a46d2748d72ea2275f8c6f252f4f69697bcae4da9"
+    },
+    "effects_geometry_types": {
+      "MultiLineString": 130,
+      "LineString": 201,
+      "Polygon": 41,
+      "MultiPolygon": 23
+    },
+    "effect_kinds": {
+      "grid_major": 83,
+      "grid_minor": 248,
+      "scan_band": 64
+    },
+    "sweep_city_difference_area_degrees2": 1.6907420911522804e-16,
+    "maximum_clip_residual_length_degrees": 2.842170943040401e-14,
+    "research_or_nodata_sources_modified": false
+  },
+  "browser": {
+    "default_city": true,
+    "default_location_empty": "",
+    "observations": [
+      {
+        "name": "成都全域默认入口",
+        "text": "- main:\n  - region \"成都全域植被光效与研究场地地图；仅高亮研究区可定位场地\":\n    - region \"Map\"\n    - text: ©\n    - link \"OpenStreetMap\":\n      - /url: https://www.openstreetmap.org/copyright\n    - text: contributors | 植被分类：\n    - link \"CLCD · Yang & Huang\":\n      - /url: https://zenodo.org/records/18180184\n    - text: /\n    - link \"UBGG · Xu & Zhao\":\n      - /url: https://zenodo.org/records/8352777\n    - text: ；空间预览，非热模拟\n  - button \"回到成都全域地图\":\n    - text: 街区绿色空间研究\n    - generic: 城市尺度 · 精细场地 · 科学分析\n  - navigation \"研究路径\":\n    - button \"1 定位场地\":\n      - generic: \"1\"\n      - text: 定位场地\n    - button \"2 检查资料\":\n      - generic: \"2\"\n      - text: 检查资料\n    - button \"3 分析条件\":\n      - generic: \"3\"\n      - text: 分析条件\n  - combobox \"区域视野\":\n    - option \"成都\" [selected]\n    - option \"四川\"\n  - button \"恢复本地保存\":\n  - button \"重开交接包\":\n  - button \"保存场地\":\n  - button \"两种评价情景\": 情景\n  - generic: 本地首版\n  - complementary \"地图控制\":\n    - button \"地图放大\":\n    - button \"地图缩小\":\n    - button \"回到北向\":\n    - button \"切换俯视与倾斜\":\n    - button \"开始环视\":\n    - button \"地图光效\" [pressed]:\n    - button \"只用本地图层\":\n    - button \"来源准备审阅\":\n    - button \"来源几何与对象审阅\":\n  - text: 成都全域 · 植被星图\n  - heading \"从成都，进入你的场地\" [level=1]\n  - paragraph: 全市动态光效 · 自由拖动与缩放 · 仅高亮研究区可选址\n  - button \"前往成都研究区\":\n    - text: 前往成都研究区\n  - region \"场地定位\":\n    - heading \"定位你的研究场地\" [level=2]\n    - paragraph: 在成都研究区点选，或输入区内坐标 / 网格编号\n    - textbox \"场地位置\":\n      - /placeholder: 经纬度或网格编号，例如 E4125_N33891\n    - button \"导入场地资料\":\n      - text: 导入场地资料\n    - text: 核心\n    - strong: 100 × 100 m\n    - text: 周边视图\n    - strong: 300 × 300 m\n    - button \"定位并预览\":\n      - text: 定位并预览\n    - generic: 可选范围：当前成都二环研究区 · 范围外仅浏览\n    - button \"浏览真实工程样例\":\n      - text: 浏览真实工程样例\n  - generic: 高亮边界 · 可选研究区\n  - generic: 全市地图光效\n  - generic: 建筑来源几何\n  - generic: 100米核心\n  - generic: 500米准备窗\n  - generic: 青蓝源线 · 2021参考\n  - generic: 在线底图仅供导航 · DEM未接入 · 尚未仿真\n  - generic: 拖动移动 · 滚轮缩放 · 右键拖动旋转"
+      },
+      {
+        "name": "研究区内点选",
+        "text": "- main:\n  - region \"成都全域植被光效与研究场地地图；仅高亮研究区可定位场地\":\n    - region \"Map\" [active]\n    - text: ©\n    - link \"OpenStreetMap\":\n      - /url: https://www.openstreetmap.org/copyright\n    - text: contributors | 植被分类：\n    - link \"CLCD · Yang & Huang\":\n      - /url: https://zenodo.org/records/18180184\n    - text: /\n    - link \"UBGG · Xu & Zhao\":\n      - /url: https://zenodo.org/records/8352777\n    - text: ；空间预览，非热模拟\n  - button \"回到成都全域地图\":\n    - text: 街区绿色空间研究\n    - generic: 城市尺度 · 精细场地 · 科学分析\n  - navigation \"研究路径\":\n    - button \"1 定位场地\":\n      - generic: \"1\"\n      - text: 定位场地\n    - button \"2 检查资料\":\n      - generic: \"2\"\n      - text: 检查资料\n    - button \"3 分析条件\":\n      - generic: \"3\"\n      - text: 分析条件\n  - combobox \"区域视野\":\n    - option \"成都\" [selected]\n    - option \"四川\"\n  - button \"恢复本地保存\":\n  - button \"重开交接包\":\n  - button \"保存场地\":\n  - button \"两种评价情景\": 情景\n  - generic: 有未保存设置\n  - complementary \"地图控制\":\n    - button \"地图放大\":\n    - button \"地图缩小\":\n    - button \"回到北向\":\n    - button \"切换俯视与倾斜\":\n    - button \"开始环视\":\n    - button \"地图光效\" [pressed]:\n    - button \"只用本地图层\":\n    - button \"来源准备审阅\":\n    - button \"来源几何与对象审阅\":\n  - text: 成都全域 · 植被星图\n  - heading \"从成都，进入你的场地\" [level=1]\n  - paragraph: 全市动态光效 · 自由拖动与缩放 · 仅高亮研究区可选址\n  - button \"前往成都研究区\":\n    - text: 前往成都研究区\n  - region \"场地定位\":\n    - heading \"确认位置与范围\" [level=2]\n    - paragraph: 用户位置预览 · 104.061786°E, 30.660615°N\n    - textbox \"场地位置\":\n      - /placeholder: 经纬度或网格编号，例如 E4125_N33891\n      - text: 104.061786, 30.660615\n    - button \"导入场地资料\":\n      - text: 导入场地资料\n    - text: 核心\n    - strong: 100 × 100 m\n    - text: 周边视图\n    - strong: 300 × 300 m\n    - button \"进入场地\":\n      - text: 进入场地\n    - generic: 此位置的建筑/植被按实际导入资料显示\n    - button \"浏览真实工程样例\":\n      - text: 浏览真实工程样例\n  - generic: 高亮边界 · 可选研究区\n  - generic: 全市地图光效\n  - generic: 建筑来源几何\n  - generic: 100米核心\n  - generic: 青蓝源线 · 2021参考\n  - generic: 在线底图仅供导航 · DEM未接入 · 尚未仿真\n  - generic: 拖动移动 · 滚轮缩放 · 右键拖动旋转\n  - status:\n    - generic: 位置已预览，此处尚未载入建筑与植被包；可以导入自己的资料。\n    - button \"关闭提示\":"
+      },
+      {
+        "name": "区内新位置进入场地",
+        "text": "- main:\n  - region \"成都全域植被光效与研究场地地图；仅高亮研究区可定位场地\":\n    - region \"Map\"\n    - text: ©\n    - link \"OpenStreetMap\":\n      - /url: https://www.openstreetmap.org/copyright\n    - text: contributors | 植被分类：\n    - link \"CLCD · Yang & Huang\":\n      - /url: https://zenodo.org/records/18180184\n    - text: /\n    - link \"UBGG · Xu & Zhao\":\n      - /url: https://zenodo.org/records/8352777\n    - text: ；空间预览，非热模拟\n  - button \"回到成都全域地图\":\n    - text: 街区绿色空间研究\n    - generic: 城市尺度 · 精细场地 · 科学分析\n  - navigation \"研究路径\":\n    - button \"1 定位场地\":\n      - generic: \"1\"\n      - text: 定位场地\n    - button \"2 检查资料\":\n      - generic: \"2\"\n      - text: 检查资料\n    - button \"3 分析条件\":\n      - generic: \"3\"\n      - text: 分析条件\n  - combobox \"区域视野\":\n    - option \"成都\" [selected]\n    - option \"四川\"\n  - button \"恢复本地保存\":\n  - button \"重开交接包\":\n  - button \"保存场地\":\n  - button \"两种评价情景\": 情景\n  - generic: 有未保存设置\n  - complementary \"地图控制\":\n    - button \"地图放大\":\n    - button \"地图缩小\":\n    - button \"回到北向\":\n    - button \"切换俯视与倾斜\":\n    - button \"开始环视\":\n    - button \"地图光效\" [pressed]:\n    - button \"只用本地图层\":\n    - button \"来源准备审阅\":\n    - button \"来源几何与对象审阅\":\n  - button \"区域\":\n    - text: 区域\n  - strong: 用户位置预览\n  - generic: 104.061786°E, 30.660615°N · 用户资料 / 位置预览\n  - generic: 资料待核\n  - complementary \"场地图层\":\n    - paragraph: 空间图层\n    - button \"范围\" [pressed]:\n      - generic: 范围\n    - button \"建筑\" [pressed]:\n      - generic: 建筑\n    - button \"植被\" [pressed]:\n      - generic: 植被\n    - button \"道路线\" [pressed]:\n      - generic: 道路线\n    - button \"候选点\":\n      - generic: 候选点\n    - button \"宏观格网\":\n      - generic: 宏观格网\n  - button \"资料概况\"\n  - button \"待补输入\"\n  - button \"来源与版本\"\n  - button \"成果资料\"\n  - button \"来源准备\"\n  - button \"来源几何\"\n  - button \"已有指标\"\n  - button \"分析条件\"\n  - generic: 高亮边界 · 可选研究区\n  - generic: 全市地图光效\n  - generic: 建筑来源几何\n  - generic: 100米核心\n  - generic: 植被 / 分类投影\n  - generic: 青蓝源线 · 2021参考\n  - generic: 在线底图仅供导航 · DEM未接入 · 尚未仿真\n  - generic: 拖动移动 · 滚轮缩放 · 右键拖动旋转"
+      },
+      {
+        "name": "恢复统一开放草稿第10版",
+        "text": "- main:\n  - region \"成都全域植被光效与研究场地地图；仅高亮研究区可定位场地\":\n    - region \"Map\"\n    - text: ©\n    - link \"OpenStreetMap\":\n      - /url: https://www.openstreetmap.org/copyright\n    - text: contributors | 植被分类：\n    - link \"CLCD · Yang & Huang\":\n      - /url: https://zenodo.org/records/18180184\n    - text: /\n    - link \"UBGG · Xu & Zhao\":\n      - /url: https://zenodo.org/records/8352777\n    - text: ；空间预览，非热模拟\n  - button \"回到成都全域地图\":\n    - text: 街区绿色空间研究\n    - generic: 城市尺度 · 精细场地 · 科学分析\n  - navigation \"研究路径\":\n    - button \"1 定位场地\":\n      - generic: \"1\"\n      - text: 定位场地\n    - button \"2 检查资料\":\n      - generic: \"2\"\n      - text: 检查资料\n    - button \"3 分析条件\":\n      - generic: \"3\"\n      - text: 分析条件\n  - combobox \"区域视野\":\n    - option \"成都\" [selected]\n    - option \"四川\"\n  - button \"恢复本地保存\":\n  - button \"重开交接包\":\n  - button \"保存场地\":\n  - button \"两种评价情景\" [active]: 情景\n  - generic: 有未保存设置\n  - complementary \"地图控制\":\n    - button \"地图放大\":\n    - button \"地图缩小\":\n    - button \"回到北向\":\n    - button \"切换俯视与倾斜\":\n    - button \"开始环视\":\n    - button \"地图光效\" [pressed]:\n    - button \"只用本地图层\":\n    - button \"来源准备审阅\":\n    - button \"来源几何与对象审阅\":\n  - button \"区域\":\n    - text: 区域\n  - strong: 工程样例 E4125_N33891\n  - generic: 104.087474°E, 30.631781°N · 可替换准备样例，非正式研究样本\n  - generic: 工作高度待核\n  - complementary \"场地图层\":\n    - paragraph: 空间图层\n    - button \"范围\" [pressed]:\n      - generic: 范围\n    - button \"建筑\" [pressed]:\n      - generic: 建筑\n    - button \"植被\" [pressed]:\n      - generic: 植被\n    - button \"道路线\" [pressed]:\n      - generic: 道路线\n    - button \"候选点\":\n      - generic: 候选点\n    - button \"住宅候选\" [pressed]:\n      - generic: 住宅候选\n    - button \"宏观格网\":\n      - generic: 宏观格网\n  - button \"资料概况\"\n  - button \"待补输入\"\n  - button \"来源与版本\"\n  - button \"成果资料\"\n  - button \"来源准备\"\n  - button \"来源几何\"\n  - button \"已有指标\"\n  - button \"分析条件\"\n  - complementary \"资料详情\":\n    - generic: 场地资料与证据\n    - button \"关闭资料详情\":\n    - heading \"分别保存评价假设\" [level=2]\n    - paragraph: 统一开放用于宏观P02A候选情景；现实条件是来源核对，后续实际服务主张由04研究接入。两种草稿各自保存。\n    - button \"统一开放假设\" [pressed]\n    - button \"现实条件核对\"\n    - paragraph: 已接纳 3 / 3 组独立来源；研究输入仍未采用。\n    - paragraph:\n      - text: 已有支持：统一开放情景定义；温度公开目录候选。\n      - text: 待补：起点落位、可步行表面、过街与连通、同期温度及面积协议。\n    - paragraph: 统一开放假设 · 第10版 · E4125_N33891\n    - paragraph: 建筑轮廓与机动车车道外的可步行地表统一开放，保留人行道和其他可步行部分；另排除水面和已知不可步行表面。过街与连通需要明确说明，道路中心线不能当车道面。现实入口、所有权与开放时段不是该假设的统一前提。\n    - text: 评价时间（北京时间）\n    - textbox \"评价时间（北京时间）\": 2020-07-22T10:00\n    - text: 起点说明\n    - textbox \"起点说明\":\n      - /placeholder: 未填写；保持未知\n      - text: 工程样例E4125_N33891；起点落位待核，当前填写仅用于草稿保存回读检查。\n    - text: 评价单元说明\n    - textbox \"评价单元说明\":\n      - /placeholder: 未填写；保持未知\n      - text: 拟核对100米核心与300米周边的资料支持；评价单元协议尚未采用。\n    - text: 温度变量\n    - combobox \"温度变量\":\n      - option \"未选择\"\n      - option \"观测地表温度 LST\" [selected]\n      - option \"行人高度气温（缺同期支持）\"\n      - option \"人体热舒适（缺指标与输入）\"\n    - paragraph: LST、行人气温和人体舒适分别记录。草稿规则不生成子网格独立温度、凉处或结果。\n    - text: 目的地温度规则说明\n    - textbox \"目的地温度规则说明\":\n      - /placeholder: 未填写；保持未知\n      - text: 拟比较有同期支持的较低观测LST环境；温度门槛与目的地规则待研究确认。\n    - text: 目的地温度支持说明\n    - textbox \"目的地温度支持说明\":\n      - /placeholder: 未填写；保持未知\n      - text: NCDC公开目录仅为候选，未取得成都2020栅格；不生成目的地温度。\n    - text: 目的地面积资格说明\n    - textbox \"目的地面积资格说明\":\n      - /placeholder: 未填写；保持未知\n    - text: 过街与连通说明\n    - textbox \"过街与连通说明\":\n      - /placeholder: 未填写；保持未知\n      - text: 保留可步行人行部分；建筑、机动车车道、水面和已知不可步行地表排除，过街与连接尚待明确。\n    - text: 可选宽度假设说明\n    - textbox \"可选宽度假设说明\":\n      - /placeholder: 未填写；保持未知\n    - text: 可选宽度假设（米）\n    - spinbutton \"可选宽度假设（米）\"\n    - paragraph: 无预填宽度；须说明来源或假设，不据此计算路径或可达面积。\n    - generic \"记录来源引用与用途\"\n    - option \"请选择已登记来源\" [selected]\n    - option \"park_access_evidence · 共享接口/服务链准备/望江楼开放制度公开来源_20261006/O08索引来源取得.json\"\n    - option \"park_access_evidence · 共享接口/服务链准备/望江楼开放制度公开来源_20261006/README.md\"\n    - option \"park_access_evidence · 共享接口/服务链准备/望江楼开放制度公开来源_20261006/原网页/O01.html\"\n    - option \"park_access_evidence · 共享接口/服务链准备/望江楼开放制度公开来源_20261006/原网页/O02.html\"\n    - option \"park_access_evidence · 共享接口/服务链准备/望江楼开放制度公开来源_20261006/原网页/O03.html\"\n    - option \"park_access_evidence · 共享接口/服务链准备/望江楼开放制度公开来源_20261006/原网页/O04.html\"\n    - option \"park_access_evidence · 共享接口/服务链准备/望江楼开放制度公开来源_20261006/原网页/O05.html\"\n    - option \"park_access_evidence · 共享接口/服务链准备/望江楼开放制度公开来源_20261006/原网页/O06.html\"\n    - option \"park_access_evidence · 共享接口/服务链准备/望江楼开放制度公开来源_20261006/原网页/O07.html\"\n    - option \"park_access_evidence · 共享接口/服务链准备/望江楼开放制度公开来源_20261006/原网页/O08.html\"\n    - option \"park_access_evidence · 共享接口/服务链准备/望江楼开放制度公开来源_20261006/官方分区与开放事件证据.json\"\n    - option \"park_access_evidence · 共享接口/服务链准备/望江楼开放制度公开来源_20261006/官方证据索引.csv\"\n    - option \"park_access_evidence · 共享接口/服务链准备/望江楼开放制度公开来源_20261006/来源取得及回读.json\"\n    - option \"temperature_catalogue_preview · 共享接口/温度来源准备/NCDC公开目录核查_20261006/README.md\"\n    - option \"temperature_catalogue_preview · 共享接口/温度来源准备/NCDC公开目录核查_20261006/公开年度目录行.json\"\n    - option \"temperature_catalogue_preview · 共享接口/温度来源准备/NCDC公开目录核查_20261006/公开目录取得记录.json\"\n    - option \"temperature_catalogue_preview · 共享接口/温度来源准备/NCDC公开目录核查_20261006/公开页面.html\"\n    - option \"temperature_catalogue_preview · 共享接口/温度来源准备/NCDC公开目录核查_20261006/公开预览回读.json\"\n    - option \"conditional_walk_scenario_definition · 共享接口/条件获取情景准备/统一开放与现实条件_产品情景定义_20261006.json\"\n    - option \"preparation · 共享接口/共同试点输入对照/宏观九格现有输入.csv\"\n    - option \"preparation · 共享接口/共同试点输入对照/宏观九格输入核查.json\"\n    - option \"preparation · 共享接口/共同试点输入对照/README.md\"\n    - option \"preparation · 共享接口/公平性输入准备/共同试点住宅候选.csv\"\n    - option \"preparation · 共享接口/公平性输入准备/共同试点对象与人口支持核查.json\"\n    - option \"preparation · 共享接口/公平性输入准备/共同试点住宅源对象_展示准备.geojson\"\n    - option \"preparation · 共享接口/公平性输入准备/共同试点住宅几何展示核查.json\"\n    - option \"preparation · 共享接口/公平性输入准备/共同试点接纳边界.md\"\n    - option \"preparation · 共享接口/微观试验准备/实际输入与缺项.json\"\n    - option \"preparation · 共享接口/微观试验准备/同投入与指标匹配试验准备_草案.md\"\n    - option \"preparation · 共享接口/微观试验准备/持有气象与地形候选核查.json\"\n    - option \"preparation · 共享接口/微观试验准备/持有输入能补哪些缺项.md\"\n    - option \"preparation · 共享接口/服务链准备/双路径受益与获取接口_草案.json\"\n    - option \"preparation · 共享接口/服务链准备/README.md\"\n    - option \"micro-source-overlay · 共享接口/微观试验准备/研究范围来源叠合_20261006/README.md\"\n    - option \"micro-source-overlay · 共享接口/微观试验准备/研究范围来源叠合_20261006/build_source_scope_overlay.py\"\n    - option \"micro-source-overlay · 共享接口/微观试验准备/研究范围来源叠合_20261006/分区与源对象正面积关系.csv\"\n    - option \"micro-source-overlay · 共享接口/微观试验准备/研究范围来源叠合_20261006/分区闭合与来源.csv\"\n    - option \"micro-source-overlay · 共享接口/微观试验准备/研究范围来源叠合_20261006/来源叠合分区_UTM48N.gpkg\"\n    - option \"micro-source-overlay · 共享接口/微观试验准备/研究范围来源叠合_20261006/来源叠合分区_WGS84.geojson\"\n    - option \"micro-source-overlay · 共享接口/微观试验准备/研究范围来源叠合_20261006/核心来源闭合与线性支持.png\"\n    - option \"micro-source-overlay · 共享接口/微观试验准备/研究范围来源叠合_20261006/核心来源闭合与线性支持.svg\"\n    - option \"micro-source-overlay · 共享接口/微观试验准备/研究范围来源叠合_20261006/核心来源闭合与线性支持_灰度审阅.png\"\n    - option \"micro-source-overlay · 共享接口/微观试验准备/研究范围来源叠合_20261006/核查记录.json\"\n    - option \"micro-source-overlay · 共享接口/微观试验准备/研究范围来源叠合_20261006/根独立几何回读核查.json\"\n    - option \"micro-source-overlay · 共享接口/微观试验准备/研究范围来源叠合_20261006/源对象几何审阅.csv\"\n    - option \"micro-source-overlay · 共享接口/微观试验准备/研究范围来源叠合_20261006/研究动作提案_未采用.json\"\n    - option \"micro-source-overlay · 共享接口/微观试验准备/研究范围来源叠合_20261006/跨层正面积交叠关系.csv\"\n    - option \"micro-source-overlay · 共享接口/微观试验准备/研究范围来源叠合_20261006/道路分区线支持.csv\"\n    - option \"micro-source-overlay · 共享接口/微观试验准备/研究范围来源叠合_20261006/道路分区线支持_WGS84.geojson\"\n    - option \"weather-cross-format · 共享接口/微观试验准备/天气跨格式试核_20261006/07月19日跨格式逐小时对照.csv\"\n    - option \"weather-cross-format · 共享接口/微观试验准备/天气跨格式试核_20261006/README.md\"\n    - option \"weather-cross-format · 共享接口/微观试验准备/天气跨格式试核_20261006/核对跨格式天气.py\"\n    - option \"weather-cross-format · 共享接口/微观试验准备/天气跨格式试核_20261006/独立天气跨格式核查.json\"\n    - option \"weather-cross-format · 共享接口/微观试验准备/天气跨格式试核_20261006/独立核查天气跨格式.py\"\n    - option \"weather-cross-format · 共享接口/微观试验准备/天气跨格式试核_20261006/跨格式来源与实际核查.json\"\n    - option \"road-source-connectivity · 共享接口/服务链准备/源线连通诊断_20261006/README.md\"\n    - option \"road-source-connectivity · 共享接口/服务链准备/源线连通诊断_20261006/原相邻段.csv\"\n    - option \"road-source-connectivity · 共享接口/服务链准备/源线连通诊断_20261006/原节点.csv\"\n    - option \"road-source-connectivity · 共享接口/服务链准备/源线连通诊断_20261006/受体与道路线平面关系.csv\"\n    - option \"road-source-connectivity · 共享接口/服务链准备/源线连通诊断_20261006/源几何连通核查.json\"\n    - option \"road-source-connectivity · 共享接口/服务链准备/源线连通诊断_20261006/独立回读核查.json\"\n    - option \"road-source-connectivity · 共享接口/服务链准备/源线连通诊断_20261006/独立回读核查.py\"\n    - option \"road-source-connectivity · 共享接口/服务链准备/源线连通诊断_20261006/生成源几何诊断.py\"\n    - option \"road-source-connectivity · 共享接口/服务链准备/源线连通诊断_20261006/道路线关系.csv\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/OBJ与来源对象部件关联.csv\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/README.md\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/requirements_已运行版本.txt\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/交付schema.json\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/交付文件清单.json\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/六候选受体_几何SVF.geojson\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/六候选受体坐标关联.csv\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/六点建筑几何SVF_四级采样.csv\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/六点逐方位建筑地平线.png\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/六点逐方位建筑地平线.svg\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/六点逐方位遮挡与来源.csv\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/图件实际审阅.json\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/坐标与水平面SVF契约.json\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/建筑源与候选受体_几何核查.gpkg\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/方向加密差异.csv\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/方向加密核查.png\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/方向加密核查.svg\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/本组重复数值一致核查.json\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/本组重执行前数值指纹.json\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/来源与生产核查.json\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/来源字段与单位核查.json\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/来源建筑与六点_几何SVF.png\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/来源建筑与六点_几何SVF.svg\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/独立回读核查.json\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/独立回读核查.py\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/生产建筑几何天空可视.py\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/解析与边界小例结果.json\"\n    - option \"building_geometry_svf · 共享接口/来源几何与对象三组交接/建筑显示准备/完整来源建筑_WGS84.geojson\"\n    - option \"building_geometry_svf · 共享接口/来源几何与对象三组交接/建筑显示准备/建筑显示准备及回读.json\"\n    - option \"window_source_connectivity · 共享接口/服务链准备/窗口与源连通范围诊断_20261006/README.md\"\n    - option \"window_source_connectivity · 共享接口/服务链准备/窗口与源连通范围诊断_20261006/交付回读.json\"\n    - option \"window_source_connectivity · 共享接口/服务链准备/窗口与源连通范围诊断_20261006/来源图样式与身份.json\"\n    - option \"window_source_connectivity · 共享接口/服务链准备/窗口与源连通范围诊断_20261006/派生节点与原身份.csv\"\n    - option \"window_source_connectivity · 共享接口/服务链准备/窗口与源连通范围诊断_20261006/独立范围回读.py\"\n    - option \"window_source_connectivity · 共享接口/服务链准备/窗口与源连通范围诊断_20261006/独立范围核查.json\"\n    - option \"window_source_connectivity · 共享接口/服务链准备/窗口与源连通范围诊断_20261006/独立范围核查_首次精确等价失败.json\"\n    - option \"window_source_connectivity · 共享接口/服务链准备/窗口与源连通范围诊断_20261006/生成窗口来源诊断.py\"\n    - option \"window_source_connectivity · 共享接口/服务链准备/窗口与源连通范围诊断_20261006/窗内派生原段.csv\"\n    - option \"window_source_connectivity · 共享接口/服务链准备/窗口与源连通范围诊断_20261006/窗口与源连通范围核查.json\"\n    - option \"window_source_connectivity · 共享接口/服务链准备/窗口与源连通范围诊断_20261006/窗口与窗外源支撑核对.png\"\n    - option \"window_source_connectivity · 共享接口/服务链准备/窗口与源连通范围诊断_20261006/窗外分量连接支撑.csv\"\n    - option \"window_source_connectivity · 共享接口/服务链准备/窗口与源连通范围诊断_20261006/窗外来源支撑段.csv\"\n    - option \"window_source_connectivity · 共享接口/服务链准备/窗口与源连通范围诊断_20261006/窗界位置与分量关系.csv\"\n    - option \"window_source_connectivity · 共享接口/服务链准备/窗口与源连通范围诊断_20261006/绘制来源范围图.py\"\n    - option \"window_source_connectivity · 共享接口/服务链准备/窗口与源连通范围诊断_20261006/跨窗分量共同源节点证据.csv\"\n    - option \"window_source_connectivity · 共享接口/服务链准备/窗口与源连通范围诊断_20261006/逐way保存几何长度核对.csv\"\n    - option \"window_source_connectivity · 共享接口/服务链准备/窗口与源连通范围诊断_20261006/逐原段裁切记录.csv\"\n    - option \"window_source_connectivity · 共享接口/来源几何与对象三组交接/窗内外显示准备/原节点及裁切点_WGS84.geojson\"\n    - option \"window_source_connectivity · 共享接口/来源几何与对象三组交接/窗内外显示准备/显示准备及回读.json\"\n    - option \"window_source_connectivity · 共享接口/来源几何与对象三组交接/窗内外显示准备/窗内来源片段_WGS84.geojson\"\n    - option \"window_source_connectivity · 共享接口/来源几何与对象三组交接/窗内外显示准备/窗外来源片段_WGS84.geojson\"\n    - option \"OSM_source_marks · 共享接口/服务链准备/入口与开放空间来源标记_20261006/01_空间提取.json\"\n    - option \"OSM_source_marks · 共享接口/服务链准备/入口与开放空间来源标记_20261006/02_原标签筛选.json\"\n    - option \"OSM_source_marks · 共享接口/服务链准备/入口与开放空间来源标记_20261006/03_几何导出.json\"\n    - option \"OSM_source_marks · 共享接口/服务链准备/入口与开放空间来源标记_20261006/04_原件头信息.json\"\n    - option \"OSM_source_marks · 共享接口/服务链准备/入口与开放空间来源标记_20261006/README.md\"\n    - option \"OSM_source_marks · 共享接口/服务链准备/入口与开放空间来源标记_20261006/入口与开放空间来源标记.csv\"\n    - option \"OSM_source_marks · 共享接口/服务链准备/入口与开放空间来源标记_20261006/准备窗内来源标记_WGS84.geojson\"\n    - option \"OSM_source_marks · 共享接口/服务链准备/入口与开放空间来源标记_20261006/准备窗包络_完整way与multipolygon.osm.pbf\"\n    - option \"OSM_source_marks · 共享接口/服务链准备/入口与开放空间来源标记_20261006/原始对象独立核查.py\"\n    - option \"OSM_source_marks · 共享接口/服务链准备/入口与开放空间来源标记_20261006/唯一源对象及导出表示.csv\"\n    - option \"OSM_source_marks · 共享接口/服务链准备/入口与开放空间来源标记_20261006/提取来源标记.py\"\n    - option \"OSM_source_marks · 共享接口/服务链准备/入口与开放空间来源标记_20261006/提取范围与表达式.json\"\n    - option \"OSM_source_marks · 共享接口/服务链准备/入口与开放空间来源标记_20261006/来源提取与回读.json\"\n    - option \"OSM_source_marks · 共享接口/服务链准备/入口与开放空间来源标记_20261006/来源标记_原始导出.geojson\"\n    - option \"OSM_source_marks · 共享接口/服务链准备/入口与开放空间来源标记_20261006/来源标记与引用原件.osm.pbf\"\n    - option \"OSM_source_marks · 共享接口/服务链准备/入口与开放空间来源标记_20261006/源标记及候选受体与开放空间投影关系.csv\"\n    - option \"OSM_source_marks · 共享接口/服务链准备/入口与开放空间来源标记_20261006/独立来源标记核查.json\"\n    - generic \"草稿身份、版本与未采用值\"\n    - button \"保存两种情景草稿\"\n    - button \"审阅制度、温度与26件原件\"\n    - button \"导出情景工程JSON\"\n    - button \"导出情景交接ZIP\"\n    - button \"保存\":\n      - text: 保存\n    - button \"导出交接\":\n      - text: 导出交接\n  - generic: 高亮边界 · 可选研究区\n  - generic: 全市地图光效\n  - generic: 建筑来源几何\n  - generic: 住宅标签候选\n  - generic: 100米核心\n  - generic: 500米准备窗\n  - generic: 植被 / 分类投影\n  - generic: 青蓝源线 · 2021参考\n  - generic: 在线底图仅供导航 · DEM未接入 · 尚未仿真\n  - generic: 拖动移动 · 滚轮缩放 · 右键拖动旋转"
+      },
+      {
+        "name": "恢复现实条件草稿第6版",
+        "text": "- main:\n  - region \"成都全域植被光效与研究场地地图；仅高亮研究区可定位场地\":\n    - region \"Map\"\n    - text: ©\n    - link \"OpenStreetMap\":\n      - /url: https://www.openstreetmap.org/copyright\n    - text: contributors | 植被分类：\n    - link \"CLCD · Yang & Huang\":\n      - /url: https://zenodo.org/records/18180184\n    - text: /\n    - link \"UBGG · Xu & Zhao\":\n      - /url: https://zenodo.org/records/8352777\n    - text: ；空间预览，非热模拟\n  - button \"回到成都全域地图\":\n    - text: 街区绿色空间研究\n    - generic: 城市尺度 · 精细场地 · 科学分析\n  - navigation \"研究路径\":\n    - button \"1 定位场地\":\n      - generic: \"1\"\n      - text: 定位场地\n    - button \"2 检查资料\":\n      - generic: \"2\"\n      - text: 检查资料\n    - button \"3 分析条件\":\n      - generic: \"3\"\n      - text: 分析条件\n  - combobox \"区域视野\":\n    - option \"成都\" [selected]\n    - option \"四川\"\n  - button \"恢复本地保存\":\n  - button \"重开交接包\":\n  - button \"保存场地\":\n  - button \"两种评价情景\": 情景\n  - generic: 有未保存设置\n  - complementary \"地图控制\":\n    - button \"地图放大\":\n    - button \"地图缩小\":\n    - button \"回到北向\":\n    - button \"切换俯视与倾斜\":\n    - button \"开始环视\":\n    - button \"地图光效\" [pressed]:\n    - button \"只用本地图层\":\n    - button \"来源准备审阅\":\n    - button \"来源几何与对象审阅\":\n  - button \"区域\":\n    - text: 区域\n  - strong: 工程样例 E4125_N33891\n  - generic: 104.087474°E, 30.631781°N · 可替换准备样例，非正式研究样本\n  - generic: 工作高度待核\n  - complementary \"场地图层\":\n    - paragraph: 空间图层\n    - button \"范围\" [pressed]:\n      - generic: 范围\n    - button \"建筑\" [pressed]:\n      - generic: 建筑\n    - button \"植被\" [pressed]:\n      - generic: 植被\n    - button \"道路线\" [pressed]:\n      - generic: 道路线\n    - button \"候选点\":\n      - generic: 候选点\n    - button \"住宅候选\" [pressed]:\n      - generic: 住宅候选\n    - button \"宏观格网\":\n      - generic: 宏观格网\n  - button \"资料概况\"\n  - button \"待补输入\"\n  - button \"来源与版本\"\n  - button \"成果资料\"\n  - button \"来源准备\"\n  - button \"来源几何\"\n  - button \"已有指标\"\n  - button \"分析条件\"\n  - complementary \"资料详情\":\n    - generic: 场地资料与证据\n    - button \"关闭资料详情\":\n    - heading \"分别保存评价假设\" [level=2]\n    - paragraph: 统一开放用于宏观P02A候选情景；现实条件是来源核对，后续实际服务主张由04研究接入。两种草稿各自保存。\n    - button \"统一开放假设\"\n    - button \"现实条件核对\" [active] [pressed]\n    - paragraph: 已接纳 3 / 3 组独立来源；研究输入仍未采用。\n    - paragraph:\n      - text: 已有支持：7条分区与开放事实、8份网页出处；温度公开目录候选。\n      - text: 待补：分区几何、入口对应、评价时段适用、同期温度与通行链。\n    - paragraph: 现实条件核对 · 第6版 · E4125_N33891\n    - paragraph: 按分区、来源和评价时段核对开放事件。未知结束不表示永久有效；入口名称、既有标签点和受体尚未对应。这里只记录证据与待补条件。\n    - text: 评价时间（北京时间）\n    - textbox \"评价时间（北京时间）\": 2022-09-18T10:00\n    - text: 起点说明\n    - textbox \"起点说明\":\n      - /placeholder: 未填写；保持未知\n      - text: 现实条件核对草稿的独立起点说明；北大门名称尚未绑定既有门点或六个受体。\n    - text: 评价单元说明\n    - textbox \"评价单元说明\":\n      - /placeholder: 未填写；保持未知\n    - text: 温度变量\n    - combobox \"温度变量\":\n      - option \"未选择\" [selected]\n      - option \"观测地表温度 LST\"\n      - option \"行人高度气温（缺同期支持）\"\n      - option \"人体热舒适（缺指标与输入）\"\n    - paragraph: LST、行人气温和人体舒适分别记录。草稿规则不生成子网格独立温度、凉处或结果。\n    - text: 目的地温度规则说明\n    - textbox \"目的地温度规则说明\":\n      - /placeholder: 未填写；保持未知\n      - text: 按公开来源逐分区核对；这份草稿不自动套用统一开放假设。\n    - text: 目的地温度支持说明\n    - textbox \"目的地温度支持说明\":\n      - /placeholder: 未填写；保持未知\n      - text: 温度栅格未取得，现实开放事件与人体舒适均未采用。\n    - text: 目的地面积资格说明\n    - textbox \"目的地面积资格说明\":\n      - /placeholder: 未填写；保持未知\n    - text: 过街与连通说明\n    - textbox \"过街与连通说明\":\n      - /placeholder: 未填写；保持未知\n    - generic \"记录来源引用与用途\"\n    - option \"请选择已登记来源\" [selected]\n    - option \"park_access_evidence · 共享接口/服务链准备/望江楼开放制度公开来源_20261006/O08索引来源取得.json\"\n    - option \"park_access_evidence · 共享接口/服务链准备/望江楼开放制度公开来源_20261006/README.md\"\n    - option \"park_access_evidence · 共享接口/服务链准备/望江楼开放制度公开来源_20261006/原网页/O01.html\"\n    - option \"park_access_evidence · 共享接口/服务链准备/望江楼开放制度公开来源_20261006/原网页/O02.html\"\n    - option \"park_access_evidence · 共享接口/服务链准备/望江楼开放制度公开来源_20261006/原网页/O03.html\"\n    - option \"park_access_evidence · 共享接口/服务链准备/望江楼开放制度公开来源_20261006/原网页/O04.html\"\n    - option \"park_access_evidence · 共享接口/服务链准备/望江楼开放制度公开来源_20261006/原网页/O05.html\"\n    - option \"park_access_evidence · 共享接口/服务链准备/望江楼开放制度公开来源_20261006/原网页/O06.html\"\n    - option \"park_access_evidence · 共享接口/服务链准备/望江楼开放制度公开来源_20261006/原网页/O07.html\"\n    - option \"park_access_evidence · 共享接口/服务链准备/望江楼开放制度公开来源_20261006/原网页/O08.html\"\n    - option \"park_access_evidence · 共享接口/服务链准备/望江楼开放制度公开来源_20261006/官方分区与开放事件证据.json\"\n    - option \"park_access_evidence · 共享接口/服务链准备/望江楼开放制度公开来源_20261006/官方证据索引.csv\"\n    - option \"park_access_evidence · 共享接口/服务链准备/望江楼开放制度公开来源_20261006/来源取得及回读.json\"\n    - option \"temperature_catalogue_preview · 共享接口/温度来源准备/NCDC公开目录核查_20261006/README.md\"\n    - option \"temperature_catalogue_preview · 共享接口/温度来源准备/NCDC公开目录核查_20261006/公开年度目录行.json\"\n    - option \"temperature_catalogue_preview · 共享接口/温度来源准备/NCDC公开目录核查_20261006/公开目录取得记录.json\"\n    - option \"temperature_catalogue_preview · 共享接口/温度来源准备/NCDC公开目录核查_20261006/公开页面.html\"\n    - option \"temperature_catalogue_preview · 共享接口/温度来源准备/NCDC公开目录核查_20261006/公开预览回读.json\"\n    - option \"conditional_walk_scenario_definition · 共享接口/条件获取情景准备/统一开放与现实条件_产品情景定义_20261006.json\"\n    - option \"preparation · 共享接口/共同试点输入对照/宏观九格现有输入.csv\"\n    - option \"preparation · 共享接口/共同试点输入对照/宏观九格输入核查.json\"\n    - option \"preparation · 共享接口/共同试点输入对照/README.md\"\n    - option \"preparation · 共享接口/公平性输入准备/共同试点住宅候选.csv\"\n    - option \"preparation · 共享接口/公平性输入准备/共同试点对象与人口支持核查.json\"\n    - option \"preparation · 共享接口/公平性输入准备/共同试点住宅源对象_展示准备.geojson\"\n    - option \"preparation · 共享接口/公平性输入准备/共同试点住宅几何展示核查.json\"\n    - option \"preparation · 共享接口/公平性输入准备/共同试点接纳边界.md\"\n    - option \"preparation · 共享接口/微观试验准备/实际输入与缺项.json\"\n    - option \"preparation · 共享接口/微观试验准备/同投入与指标匹配试验准备_草案.md\"\n    - option \"preparation · 共享接口/微观试验准备/持有气象与地形候选核查.json\"\n    - option \"preparation · 共享接口/微观试验准备/持有输入能补哪些缺项.md\"\n    - option \"preparation · 共享接口/服务链准备/双路径受益与获取接口_草案.json\"\n    - option \"preparation · 共享接口/服务链准备/README.md\"\n    - option \"micro-source-overlay · 共享接口/微观试验准备/研究范围来源叠合_20261006/README.md\"\n    - option \"micro-source-overlay · 共享接口/微观试验准备/研究范围来源叠合_20261006/build_source_scope_overlay.py\"\n    - option \"micro-source-overlay · 共享接口/微观试验准备/研究范围来源叠合_20261006/分区与源对象正面积关系.csv\"\n    - option \"micro-source-overlay · 共享接口/微观试验准备/研究范围来源叠合_20261006/分区闭合与来源.csv\"\n    - option \"micro-source-overlay · 共享接口/微观试验准备/研究范围来源叠合_20261006/来源叠合分区_UTM48N.gpkg\"\n    - option \"micro-source-overlay · 共享接口/微观试验准备/研究范围来源叠合_20261006/来源叠合分区_WGS84.geojson\"\n    - option \"micro-source-overlay · 共享接口/微观试验准备/研究范围来源叠合_20261006/核心来源闭合与线性支持.png\"\n    - option \"micro-source-overlay · 共享接口/微观试验准备/研究范围来源叠合_20261006/核心来源闭合与线性支持.svg\"\n    - option \"micro-source-overlay · 共享接口/微观试验准备/研究范围来源叠合_20261006/核心来源闭合与线性支持_灰度审阅.png\"\n    - option \"micro-source-overlay · 共享接口/微观试验准备/研究范围来源叠合_20261006/核查记录.json\"\n    - option \"micro-source-overlay · 共享接口/微观试验准备/研究范围来源叠合_20261006/根独立几何回读核查.json\"\n    - option \"micro-source-overlay · 共享接口/微观试验准备/研究范围来源叠合_20261006/源对象几何审阅.csv\"\n    - option \"micro-source-overlay · 共享接口/微观试验准备/研究范围来源叠合_20261006/研究动作提案_未采用.json\"\n    - option \"micro-source-overlay · 共享接口/微观试验准备/研究范围来源叠合_20261006/跨层正面积交叠关系.csv\"\n    - option \"micro-source-overlay · 共享接口/微观试验准备/研究范围来源叠合_20261006/道路分区线支持.csv\"\n    - option \"micro-source-overlay · 共享接口/微观试验准备/研究范围来源叠合_20261006/道路分区线支持_WGS84.geojson\"\n    - option \"weather-cross-format · 共享接口/微观试验准备/天气跨格式试核_20261006/07月19日跨格式逐小时对照.csv\"\n    - option \"weather-cross-format · 共享接口/微观试验准备/天气跨格式试核_20261006/README.md\"\n    - option \"weather-cross-format · 共享接口/微观试验准备/天气跨格式试核_20261006/核对跨格式天气.py\"\n    - option \"weather-cross-format · 共享接口/微观试验准备/天气跨格式试核_20261006/独立天气跨格式核查.json\"\n    - option \"weather-cross-format · 共享接口/微观试验准备/天气跨格式试核_20261006/独立核查天气跨格式.py\"\n    - option \"weather-cross-format · 共享接口/微观试验准备/天气跨格式试核_20261006/跨格式来源与实际核查.json\"\n    - option \"road-source-connectivity · 共享接口/服务链准备/源线连通诊断_20261006/README.md\"\n    - option \"road-source-connectivity · 共享接口/服务链准备/源线连通诊断_20261006/原相邻段.csv\"\n    - option \"road-source-connectivity · 共享接口/服务链准备/源线连通诊断_20261006/原节点.csv\"\n    - option \"road-source-connectivity · 共享接口/服务链准备/源线连通诊断_20261006/受体与道路线平面关系.csv\"\n    - option \"road-source-connectivity · 共享接口/服务链准备/源线连通诊断_20261006/源几何连通核查.json\"\n    - option \"road-source-connectivity · 共享接口/服务链准备/源线连通诊断_20261006/独立回读核查.json\"\n    - option \"road-source-connectivity · 共享接口/服务链准备/源线连通诊断_20261006/独立回读核查.py\"\n    - option \"road-source-connectivity · 共享接口/服务链准备/源线连通诊断_20261006/生成源几何诊断.py\"\n    - option \"road-source-connectivity · 共享接口/服务链准备/源线连通诊断_20261006/道路线关系.csv\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/OBJ与来源对象部件关联.csv\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/README.md\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/requirements_已运行版本.txt\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/交付schema.json\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/交付文件清单.json\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/六候选受体_几何SVF.geojson\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/六候选受体坐标关联.csv\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/六点建筑几何SVF_四级采样.csv\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/六点逐方位建筑地平线.png\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/六点逐方位建筑地平线.svg\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/六点逐方位遮挡与来源.csv\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/图件实际审阅.json\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/坐标与水平面SVF契约.json\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/建筑源与候选受体_几何核查.gpkg\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/方向加密差异.csv\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/方向加密核查.png\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/方向加密核查.svg\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/本组重复数值一致核查.json\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/本组重执行前数值指纹.json\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/来源与生产核查.json\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/来源字段与单位核查.json\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/来源建筑与六点_几何SVF.png\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/来源建筑与六点_几何SVF.svg\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/独立回读核查.json\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/独立回读核查.py\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/生产建筑几何天空可视.py\"\n    - option \"building_geometry_svf · 共享接口/微观试验准备/建筑几何天空可视核查_20261006/解析与边界小例结果.json\"\n    - option \"building_geometry_svf · 共享接口/来源几何与对象三组交接/建筑显示准备/完整来源建筑_WGS84.geojson\"\n    - option \"building_geometry_svf · 共享接口/来源几何与对象三组交接/建筑显示准备/建筑显示准备及回读.json\"\n    - option \"window_source_connectivity · 共享接口/服务链准备/窗口与源连通范围诊断_20261006/README.md\"\n    - option \"window_source_connectivity · 共享接口/服务链准备/窗口与源连通范围诊断_20261006/交付回读.json\"\n    - option \"window_source_connectivity · 共享接口/服务链准备/窗口与源连通范围诊断_20261006/来源图样式与身份.json\"\n    - option \"window_source_connectivity · 共享接口/服务链准备/窗口与源连通范围诊断_20261006/派生节点与原身份.csv\"\n    - option \"window_source_connectivity · 共享接口/服务链准备/窗口与源连通范围诊断_20261006/独立范围回读.py\"\n    - option \"window_source_connectivity · 共享接口/服务链准备/窗口与源连通范围诊断_20261006/独立范围核查.json\"\n    - option \"window_source_connectivity · 共享接口/服务链准备/窗口与源连通范围诊断_20261006/独立范围核查_首次精确等价失败.json\"\n    - option \"window_source_connectivity · 共享接口/服务链准备/窗口与源连通范围诊断_20261006/生成窗口来源诊断.py\"\n    - option \"window_source_connectivity · 共享接口/服务链准备/窗口与源连通范围诊断_20261006/窗内派生原段.csv\"\n    - option \"window_source_connectivity · 共享接口/服务链准备/窗口与源连通范围诊断_20261006/窗口与源连通范围核查.json\"\n    - option \"window_source_connectivity · 共享接口/服务链准备/窗口与源连通范围诊断_20261006/窗口与窗外源支撑核对.png\"\n    - option \"window_source_connectivity · 共享接口/服务链准备/窗口与源连通范围诊断_20261006/窗外分量连接支撑.csv\"\n    - option \"window_source_connectivity · 共享接口/服务链准备/窗口与源连通范围诊断_20261006/窗外来源支撑段.csv\"\n    - option \"window_source_connectivity · 共享接口/服务链准备/窗口与源连通范围诊断_20261006/窗界位置与分量关系.csv\"\n    - option \"window_source_connectivity · 共享接口/服务链准备/窗口与源连通范围诊断_20261006/绘制来源范围图.py\"\n    - option \"window_source_connectivity · 共享接口/服务链准备/窗口与源连通范围诊断_20261006/跨窗分量共同源节点证据.csv\"\n    - option \"window_source_connectivity · 共享接口/服务链准备/窗口与源连通范围诊断_20261006/逐way保存几何长度核对.csv\"\n    - option \"window_source_connectivity · 共享接口/服务链准备/窗口与源连通范围诊断_20261006/逐原段裁切记录.csv\"\n    - option \"window_source_connectivity · 共享接口/来源几何与对象三组交接/窗内外显示准备/原节点及裁切点_WGS84.geojson\"\n    - option \"window_source_connectivity · 共享接口/来源几何与对象三组交接/窗内外显示准备/显示准备及回读.json\"\n    - option \"window_source_connectivity · 共享接口/来源几何与对象三组交接/窗内外显示准备/窗内来源片段_WGS84.geojson\"\n    - option \"window_source_connectivity · 共享接口/来源几何与对象三组交接/窗内外显示准备/窗外来源片段_WGS84.geojson\"\n    - option \"OSM_source_marks · 共享接口/服务链准备/入口与开放空间来源标记_20261006/01_空间提取.json\"\n    - option \"OSM_source_marks · 共享接口/服务链准备/入口与开放空间来源标记_20261006/02_原标签筛选.json\"\n    - option \"OSM_source_marks · 共享接口/服务链准备/入口与开放空间来源标记_20261006/03_几何导出.json\"\n    - option \"OSM_source_marks · 共享接口/服务链准备/入口与开放空间来源标记_20261006/04_原件头信息.json\"\n    - option \"OSM_source_marks · 共享接口/服务链准备/入口与开放空间来源标记_20261006/README.md\"\n    - option \"OSM_source_marks · 共享接口/服务链准备/入口与开放空间来源标记_20261006/入口与开放空间来源标记.csv\"\n    - option \"OSM_source_marks · 共享接口/服务链准备/入口与开放空间来源标记_20261006/准备窗内来源标记_WGS84.geojson\"\n    - option \"OSM_source_marks · 共享接口/服务链准备/入口与开放空间来源标记_20261006/准备窗包络_完整way与multipolygon.osm.pbf\"\n    - option \"OSM_source_marks · 共享接口/服务链准备/入口与开放空间来源标记_20261006/原始对象独立核查.py\"\n    - option \"OSM_source_marks · 共享接口/服务链准备/入口与开放空间来源标记_20261006/唯一源对象及导出表示.csv\"\n    - option \"OSM_source_marks · 共享接口/服务链准备/入口与开放空间来源标记_20261006/提取来源标记.py\"\n    - option \"OSM_source_marks · 共享接口/服务链准备/入口与开放空间来源标记_20261006/提取范围与表达式.json\"\n    - option \"OSM_source_marks · 共享接口/服务链准备/入口与开放空间来源标记_20261006/来源提取与回读.json\"\n    - option \"OSM_source_marks · 共享接口/服务链准备/入口与开放空间来源标记_20261006/来源标记_原始导出.geojson\"\n    - option \"OSM_source_marks · 共享接口/服务链准备/入口与开放空间来源标记_20261006/来源标记与引用原件.osm.pbf\"\n    - option \"OSM_source_marks · 共享接口/服务链准备/入口与开放空间来源标记_20261006/源标记及候选受体与开放空间投影关系.csv\"\n    - option \"OSM_source_marks · 共享接口/服务链准备/入口与开放空间来源标记_20261006/独立来源标记核查.json\"\n    - generic \"草稿身份、版本与未采用值\"\n    - button \"保存两种情景草稿\"\n    - button \"审阅制度、温度与26件原件\"\n    - button \"导出情景工程JSON\"\n    - button \"导出情景交接ZIP\"\n    - button \"保存\":\n      - text: 保存\n    - button \"导出交接\":\n      - text: 导出交接\n  - generic: 高亮边界 · 可选研究区\n  - generic: 全市地图光效\n  - generic: 建筑来源几何\n  - generic: 住宅标签候选\n  - generic: 100米核心\n  - generic: 500米准备窗\n  - generic: 植被 / 分类投影\n  - generic: 青蓝源线 · 2021参考\n  - generic: 在线底图仅供导航 · DEM未接入 · 尚未仿真\n  - generic: 拖动移动 · 滚轮缩放 · 右键拖动旋转"
+      },
+      {
+        "name": "范围外坐标输入拒绝",
+        "text": "- main:\n  - region \"成都全域植被光效与研究场地地图；仅高亮研究区可定位场地\":\n    - region \"Map\"\n    - text: ©\n    - link \"OpenStreetMap\":\n      - /url: https://www.openstreetmap.org/copyright\n    - text: contributors | 植被分类：\n    - link \"CLCD · Yang & Huang\":\n      - /url: https://zenodo.org/records/18180184\n    - text: /\n    - link \"UBGG · Xu & Zhao\":\n      - /url: https://zenodo.org/records/8352777\n    - text: ；空间预览，非热模拟\n  - button \"回到成都全域地图\":\n    - generic: 街区绿色空间研究\n  - combobox \"区域视野\":\n    - option \"成都\" [selected]\n    - option \"四川\"\n  - button \"恢复本地保存\":\n  - button \"重开交接包\":\n  - button \"保存场地\":\n  - button \"两种评价情景\": 情景\n  - complementary \"地图控制\":\n    - button \"地图放大\":\n    - button \"地图缩小\":\n    - button \"回到北向\":\n    - button \"切换俯视与倾斜\":\n    - button \"开始环视\":\n    - button \"地图光效\" [pressed]:\n    - button \"只用本地图层\":\n    - button \"来源准备审阅\":\n    - button \"来源几何与对象审阅\":\n  - text: 成都全域 · 植被星图\n  - heading \"从成都，进入你的场地\" [level=1]\n  - paragraph: 全市动态光效 · 自由拖动与缩放 · 仅高亮研究区可选址\n  - button \"前往成都研究区\":\n    - text: 前往成都研究区\n  - region \"场地定位\":\n    - heading \"定位你的研究场地\" [level=2]\n    - paragraph: 在成都研究区点选，或输入区内坐标 / 网格编号\n    - textbox \"场地位置\":\n      - /placeholder: 经纬度或网格编号，例如 E4125_N33891\n      - text: 104.25, 30.68\n    - button \"导入场地资料\":\n      - text: 导入场地资料\n    - text: 核心\n    - strong: 100 × 100 m\n    - text: 周边视图\n    - strong: 300 × 300 m\n    - button \"定位并预览\" [active]:\n      - text: 定位并预览\n    - generic: 可选范围：当前成都二环研究区 · 范围外仅浏览\n    - button \"浏览真实工程样例\":\n      - text: 浏览真实工程样例\n  - generic: 高亮边界 · 可选研究区\n  - generic: 全市地图光效\n  - generic: 建筑来源几何\n  - generic: 100米核心\n  - generic: 500米准备窗\n  - generic: 青蓝源线 · 2021参考\n  - generic: 在线底图仅供导航 · DEM未接入 · 尚未仿真"
+      },
+      {
+        "name": "范围外原网格拒绝",
+        "text": "- main:\n  - region \"成都全域植被光效与研究场地地图；仅高亮研究区可定位场地\":\n    - region \"Map\"\n    - text: ©\n    - link \"OpenStreetMap\":\n      - /url: https://www.openstreetmap.org/copyright\n    - text: contributors | 植被分类：\n    - link \"CLCD · Yang & Huang\":\n      - /url: https://zenodo.org/records/18180184\n    - text: /\n    - link \"UBGG · Xu & Zhao\":\n      - /url: https://zenodo.org/records/8352777\n    - text: ；空间预览，非热模拟\n  - button \"回到成都全域地图\":\n    - generic: 街区绿色空间研究\n  - combobox \"区域视野\":\n    - option \"成都\" [selected]\n    - option \"四川\"\n  - button \"恢复本地保存\":\n  - button \"重开交接包\":\n  - button \"保存场地\":\n  - button \"两种评价情景\": 情景\n  - complementary \"地图控制\":\n    - button \"地图放大\":\n    - button \"地图缩小\":\n    - button \"回到北向\":\n    - button \"切换俯视与倾斜\":\n    - button \"开始环视\":\n    - button \"地图光效\" [pressed]:\n    - button \"只用本地图层\":\n    - button \"来源准备审阅\":\n    - button \"来源几何与对象审阅\":\n  - text: 成都全域 · 植被星图\n  - heading \"从成都，进入你的场地\" [level=1]\n  - paragraph: 全市动态光效 · 自由拖动与缩放 · 仅高亮研究区可选址\n  - button \"前往成都研究区\":\n    - text: 前往成都研究区\n  - region \"场地定位\":\n    - heading \"定位你的研究场地\" [level=2]\n    - paragraph: 在成都研究区点选，或输入区内坐标 / 网格编号\n    - textbox \"场地位置\":\n      - /placeholder: 经纬度或网格编号，例如 E4125_N33891\n      - text: E4091_N33880\n    - button \"导入场地资料\":\n      - text: 导入场地资料\n    - text: 核心\n    - strong: 100 × 100 m\n    - text: 周边视图\n    - strong: 300 × 300 m\n    - button \"定位并预览\" [active]:\n      - text: 定位并预览\n    - generic: 可选范围：当前成都二环研究区 · 范围外仅浏览\n    - button \"浏览真实工程样例\":\n      - text: 浏览真实工程样例\n  - generic: 高亮边界 · 可选研究区\n  - generic: 全市地图光效\n  - generic: 建筑来源几何\n  - generic: 100米核心\n  - generic: 500米准备窗\n  - generic: 青蓝源线 · 2021参考\n  - generic: 在线底图仅供导航 · DEM未接入 · 尚未仿真\n  - alert:\n    - generic: 此处仅供区域浏览。请在高亮的成都研究区内选择场地。\n    - button \"关闭提示\":"
+      },
+      {
+        "name": "四川切换视野",
+        "text": "- main:\n  - region \"成都全域植被光效与研究场地地图；仅高亮研究区可定位场地\":\n    - region \"Map\"\n    - text: ©\n    - link \"OpenStreetMap\":\n      - /url: https://www.openstreetmap.org/copyright\n    - text: contributors | 植被分类：\n    - link \"CLCD · Yang & Huang\":\n      - /url: https://zenodo.org/records/18180184\n    - text: /\n    - link \"UBGG · Xu & Zhao\":\n      - /url: https://zenodo.org/records/8352777\n    - text: ；空间预览，非热模拟\n  - button \"回到成都全域地图\":\n    - generic: 街区绿色空间研究\n  - combobox \"区域视野\":\n    - option \"成都\"\n    - option \"四川\" [selected]\n  - button \"恢复本地保存\":\n  - button \"重开交接包\":\n  - button \"保存场地\":\n  - button \"两种评价情景\": 情景\n  - complementary \"地图控制\":\n    - button \"地图放大\":\n    - button \"地图缩小\":\n    - button \"回到北向\":\n    - button \"切换俯视与倾斜\":\n    - button \"开始环视\":\n    - button \"地图光效\" [pressed]:\n    - button \"只用本地图层\":\n    - button \"来源准备审阅\":\n    - button \"来源几何与对象审阅\":\n  - text: 四川全域 · 区域浏览\n  - heading \"从成都，进入你的场地\" [level=1]\n  - paragraph: 全省自由浏览 · 仅高亮研究区可选址\n  - button \"前往成都研究区\":\n    - text: 前往成都研究区\n  - region \"场地定位\":\n    - heading \"定位你的研究场地\" [level=2]\n    - paragraph: 在成都研究区点选，或输入区内坐标 / 网格编号\n    - textbox \"场地位置\":\n      - /placeholder: 经纬度或网格编号，例如 E4125_N33891\n    - button \"导入场地资料\":\n      - text: 导入场地资料\n    - text: 核心\n    - strong: 100 × 100 m\n    - text: 周边视图\n    - strong: 300 × 300 m\n    - button \"定位并预览\":\n      - text: 定位并预览\n    - generic: 可选范围：当前成都二环研究区 · 范围外仅浏览\n    - button \"浏览真实工程样例\":\n      - text: 浏览真实工程样例\n  - generic: 高亮边界 · 可选研究区\n  - generic: 蓝色城市点 · 导航参考\n  - generic: 全市地图光效\n  - generic: 建筑来源几何\n  - generic: 100米核心\n  - generic: 500米准备窗\n  - generic: 青蓝源线 · 2021参考\n  - generic: 在线底图仅供导航 · DEM未接入 · 尚未仿真"
+      },
+      {
+        "name": "本地图层全市光效保留",
+        "text": "- main:\n  - region \"成都全域植被光效与研究场地地图；仅高亮研究区可定位场地\":\n    - region \"Map\"\n    - text: ©\n    - link \"OpenStreetMap\":\n      - /url: https://www.openstreetmap.org/copyright\n    - text: contributors | 植被分类：\n    - link \"CLCD · Yang & Huang\":\n      - /url: https://zenodo.org/records/18180184\n    - text: /\n    - link \"UBGG · Xu & Zhao\":\n      - /url: https://zenodo.org/records/8352777\n    - text: ；空间预览，非热模拟\n  - button \"回到成都全域地图\":\n    - generic: 街区绿色空间研究\n  - combobox \"区域视野\":\n    - option \"成都\" [selected]\n    - option \"四川\"\n  - button \"恢复本地保存\":\n  - button \"重开交接包\":\n  - button \"保存场地\":\n  - button \"两种评价情景\": 情景\n  - complementary \"地图控制\":\n    - button \"地图放大\":\n    - button \"地图缩小\":\n    - button \"回到北向\":\n    - button \"切换俯视与倾斜\":\n    - button \"开始环视\":\n    - button \"地图光效\" [pressed]:\n    - button \"启用在线导航底图\" [active]:\n    - button \"来源准备审阅\":\n    - button \"来源几何与对象审阅\":\n  - text: 成都全域 · 植被星图\n  - heading \"从成都，进入你的场地\" [level=1]\n  - paragraph: 全市动态光效 · 自由拖动与缩放 · 仅高亮研究区可选址\n  - button \"前往成都研究区\":\n    - text: 前往成都研究区\n  - region \"场地定位\":\n    - heading \"定位你的研究场地\" [level=2]\n    - paragraph: 在成都研究区点选，或输入区内坐标 / 网格编号\n    - textbox \"场地位置\":\n      - /placeholder: 经纬度或网格编号，例如 E4125_N33891\n    - button \"导入场地资料\":\n      - text: 导入场地资料\n    - text: 核心\n    - strong: 100 × 100 m\n    - text: 周边视图\n    - strong: 300 × 300 m\n    - button \"定位并预览\":\n      - text: 定位并预览\n    - generic: 可选范围：当前成都二环研究区 · 范围外仅浏览\n    - button \"浏览真实工程样例\":\n      - text: 浏览真实工程样例\n  - generic: 高亮边界 · 可选研究区\n  - generic: 全市地图光效\n  - generic: 建筑来源几何\n  - generic: 100米核心\n  - generic: 500米准备窗\n  - generic: 青蓝源线 · 2021参考\n  - generic: 本地图层与区域轮廓 · DEM未接入 · 尚未仿真"
+      },
+      {
+        "name": "全市地图光效统一关闭",
+        "text": "- main:\n  - region \"成都全域植被光效与研究场地地图；仅高亮研究区可定位场地\":\n    - region \"Map\"\n    - text: ©\n    - link \"OpenStreetMap\":\n      - /url: https://www.openstreetmap.org/copyright\n    - text: contributors | 植被分类：\n    - link \"CLCD · Yang & Huang\":\n      - /url: https://zenodo.org/records/18180184\n    - text: /\n    - link \"UBGG · Xu & Zhao\":\n      - /url: https://zenodo.org/records/8352777\n    - text: ；空间预览，非热模拟\n  - button \"回到成都全域地图\":\n    - generic: 街区绿色空间研究\n  - combobox \"区域视野\":\n    - option \"成都\" [selected]\n    - option \"四川\"\n  - button \"恢复本地保存\":\n  - button \"重开交接包\":\n  - button \"保存场地\":\n  - button \"两种评价情景\": 情景\n  - complementary \"地图控制\":\n    - button \"地图放大\":\n    - button \"地图缩小\":\n    - button \"回到北向\":\n    - button \"切换俯视与倾斜\":\n    - button \"开始环视\":\n    - button \"地图光效\" [active]:\n    - button \"启用在线导航底图\":\n    - button \"来源准备审阅\":\n    - button \"来源几何与对象审阅\":\n  - text: 成都全域 · 植被星图\n  - heading \"从成都，进入你的场地\" [level=1]\n  - paragraph: 全市动态光效 · 自由拖动与缩放 · 仅高亮研究区可选址\n  - button \"前往成都研究区\":\n    - text: 前往成都研究区\n  - region \"场地定位\":\n    - heading \"定位你的研究场地\" [level=2]\n    - paragraph: 在成都研究区点选，或输入区内坐标 / 网格编号\n    - textbox \"场地位置\":\n      - /placeholder: 经纬度或网格编号，例如 E4125_N33891\n    - button \"导入场地资料\":\n      - text: 导入场地资料\n    - text: 核心\n    - strong: 100 × 100 m\n    - text: 周边视图\n    - strong: 300 × 300 m\n    - button \"定位并预览\":\n      - text: 定位并预览\n    - generic: 可选范围：当前成都二环研究区 · 范围外仅浏览\n    - button \"浏览真实工程样例\":\n      - text: 浏览真实工程样例\n  - generic: 高亮边界 · 可选研究区\n  - generic: 地图光效已关闭\n  - generic: 建筑来源几何\n  - generic: 100米核心\n  - generic: 500米准备窗\n  - generic: 青蓝源线 · 2021参考\n  - generic: 本地图层与区域轮廓 · DEM未接入 · 尚未仿真"
+      },
+      {
+        "name": "光效重开及在线底图恢复",
+        "text": "- main:\n  - region \"成都全域植被光效与研究场地地图；仅高亮研究区可定位场地\":\n    - region \"Map\"\n    - text: ©\n    - link \"OpenStreetMap\":\n      - /url: https://www.openstreetmap.org/copyright\n    - text: contributors | 植被分类：\n    - link \"CLCD · Yang & Huang\":\n      - /url: https://zenodo.org/records/18180184\n    - text: /\n    - link \"UBGG · Xu & Zhao\":\n      - /url: https://zenodo.org/records/8352777\n    - text: ；空间预览，非热模拟\n  - button \"回到成都全域地图\":\n    - generic: 街区绿色空间研究\n  - combobox \"区域视野\":\n    - option \"成都\" [selected]\n    - option \"四川\"\n  - button \"恢复本地保存\":\n  - button \"重开交接包\":\n  - button \"保存场地\":\n  - button \"两种评价情景\": 情景\n  - complementary \"地图控制\":\n    - button \"地图放大\":\n    - button \"地图缩小\":\n    - button \"回到北向\":\n    - button \"切换俯视与倾斜\":\n    - button \"开始环视\":\n    - button \"地图光效\" [pressed]:\n    - button \"只用本地图层\" [active]:\n    - button \"来源准备审阅\":\n    - button \"来源几何与对象审阅\":\n  - text: 成都全域 · 植被星图\n  - heading \"从成都，进入你的场地\" [level=1]\n  - paragraph: 全市动态光效 · 自由拖动与缩放 · 仅高亮研究区可选址\n  - button \"前往成都研究区\":\n    - text: 前往成都研究区\n  - region \"场地定位\":\n    - heading \"定位你的研究场地\" [level=2]\n    - paragraph: 在成都研究区点选，或输入区内坐标 / 网格编号\n    - textbox \"场地位置\":\n      - /placeholder: 经纬度或网格编号，例如 E4125_N33891\n    - button \"导入场地资料\":\n      - text: 导入场地资料\n    - text: 核心\n    - strong: 100 × 100 m\n    - text: 周边视图\n    - strong: 300 × 300 m\n    - button \"定位并预览\":\n      - text: 定位并预览\n    - generic: 可选范围：当前成都二环研究区 · 范围外仅浏览\n    - button \"浏览真实工程样例\":\n      - text: 浏览真实工程样例\n  - generic: 高亮边界 · 可选研究区\n  - generic: 全市地图光效\n  - generic: 建筑来源几何\n  - generic: 100米核心\n  - generic: 500米准备窗\n  - generic: 青蓝源线 · 2021参考\n  - generic: 在线底图仅供导航 · DEM未接入 · 尚未仿真"
+      },
+      {
+        "name": "真实建筑点击后保留场地与全市光效",
+        "text": "- main:\n  - region \"成都全域植被光效与研究场地地图；仅高亮研究区可定位场地\":\n    - region \"Map\" [active]\n    - text: ©\n    - link \"OpenStreetMap\":\n      - /url: https://www.openstreetmap.org/copyright\n    - text: contributors | 植被分类：\n    - link \"CLCD · Yang & Huang\":\n      - /url: https://zenodo.org/records/18180184\n    - text: /\n    - link \"UBGG · Xu & Zhao\":\n      - /url: https://zenodo.org/records/8352777\n    - text: ；空间预览，非热模拟\n  - button \"回到成都全域地图\":\n    - generic: 街区绿色空间研究\n  - combobox \"区域视野\":\n    - option \"成都\" [selected]\n    - option \"四川\"\n  - button \"恢复本地保存\":\n  - button \"重开交接包\":\n  - button \"保存场地\":\n  - button \"两种评价情景\": 情景\n  - complementary \"地图控制\":\n    - button \"地图放大\":\n    - button \"地图缩小\":\n    - button \"回到北向\":\n    - button \"切换俯视与倾斜\":\n    - button \"开始环视\":\n    - button \"地图光效\" [pressed]:\n    - button \"只用本地图层\":\n    - button \"来源准备审阅\":\n    - button \"来源几何与对象审阅\":\n  - button \"区域\":\n    - text: 区域\n  - strong: 工程样例 E4125_N33891\n  - generic: 104.087474°E, 30.631781°N · 可替换准备样例，非正式研究样本\n  - complementary \"场地图层\":\n    - paragraph: 空间图层\n    - button \"范围\" [pressed]:\n      - generic: 范围\n    - button \"建筑\" [pressed]:\n      - generic: 建筑\n    - button \"植被\" [pressed]:\n      - generic: 植被\n    - button \"道路线\" [pressed]:\n      - generic: 道路线\n    - button \"候选点\":\n      - generic: 候选点\n    - button \"住宅候选\" [pressed]:\n      - generic: 住宅候选\n    - button \"宏观格网\":\n      - generic: 宏观格网\n  - button \"资料概况\"\n  - button \"待补输入\"\n  - button \"来源与版本\"\n  - button \"成果资料\"\n  - button \"来源准备\"\n  - button \"来源几何\"\n  - button \"已有指标\"\n  - button \"分析条件\"\n  - complementary \"资料详情\":\n    - generic: 场地资料与证据\n    - button \"关闭资料详情\":\n    - heading \"工作体块\" [level=2]\n    - paragraph: 原属性与源身份；未知高度、类别和时点保持原说明。\n    - term: merged_id\n    - definition: \"154322\"\n    - term: Height\n    - definition: \"16.28475800302131\"\n    - term: Function\n    - definition: Public service\n    - term: Age\n    - definition: \"1985\"\n    - term: Quality\n    - definition: \"0\"\n    - term: Structure\n    - definition: M\n    - term: Style\n    - definition: M\n    - term: Height_effective_working_m\n    - definition: \"16.28475800302131\"\n    - term: height_valid_positive\n    - definition: \"true\"\n    - term: height_attribute_conflict\n    - definition: \"false\"\n    - term: source_record_count\n    - definition: \"1\"\n    - term: source_feature_ids\n    - definition: \"[147923]\"\n    - term: source_nonfinite_height_count\n    - definition: \"0\"\n    - term: source_nonpositive_height_count\n    - definition: \"0\"\n    - term: status\n    - definition: candidate_diagnostic_not_accepted_features_or_training_labels\n    - term: __parent_source_fid\n    - definition: \"35\"\n    - term: __part_index\n    - definition: \"1\"\n    - term: __source_building_id\n    - definition: \"154322\"\n    - term: __display_working_height_m\n    - definition: \"16.28475800302131\"\n    - term: __height_accuracy_verified\n    - definition: \"false\"\n    - term: __identity_role\n    - definition: geometry_part_not_independent_building\n    - term: __source_fid\n    - definition: \"35\"\n    - term: __source_layer\n    - definition: buildings_uncut\n    - term: __artifact_id\n    - definition: micro_scene\n    - button \"保存\":\n      - text: 保存\n    - button \"导出交接\":\n      - text: 导出交接\n  - generic: 高亮边界 · 可选研究区\n  - generic: 全市地图光效\n  - generic: 建筑来源几何\n  - generic: 住宅标签候选\n  - generic: 100米核心\n  - generic: 500米准备窗\n  - generic: 植被 / 分类投影\n  - generic: 青蓝源线 · 2021参考\n  - generic: 在线底图仅供导航 · DEM未接入 · 尚未仿真"
+      }
+    ],
+    "outsideClick": {
+      "before": "E4125_N33891",
+      "after": "E4125_N33891",
+      "text": "- main:\n  - region \"成都全域植被光效与研究场地地图；仅高亮研究区可定位场地\":\n    - region \"Map\" [active]\n    - text: ©\n    - link \"OpenStreetMap\":\n      - /url: https://www.openstreetmap.org/copyright\n    - text: contributors | 植被分类：\n    - link \"CLCD · Yang & Huang\":\n      - /url: https://zenodo.org/records/18180184\n    - text: /\n    - link \"UBGG · Xu & Zhao\":\n      - /url: https://zenodo.org/records/8352777\n    - text: ；空间预览，非热模拟\n  - button \"回到成都全域地图\":\n    - generic: 街区绿色空间研究\n  - combobox \"区域视野\":\n    - option \"成都\" [selected]\n    - option \"四川\"\n  - button \"恢复本地保存\":\n  - button \"重开交接包\":\n  - button \"保存场地\":\n  - button \"两种评价情景\": 情景\n  - complementary \"地图控制\":\n    - button \"地图放大\":\n    - button \"地图缩小\":\n    - button \"回到北向\":\n    - button \"切换俯视与倾斜\":\n    - button \"开始环视\":\n    - button \"地图光效\" [pressed]:\n    - button \"只用本地图层\":\n    - button \"来源准备审阅\":\n    - button \"来源几何与对象审阅\":\n  - text: 成都全域 · 植被星图\n  - heading \"从成都，进入你的场地\" [level=1]\n  - paragraph: 全市动态光效 · 自由拖动与缩放 · 仅高亮研究区可选址\n  - button \"前往成都研究区\":\n    - text: 前往成都研究区\n  - region \"场地定位\":\n    - heading \"确认位置与范围\" [level=2]\n    - paragraph: 工程样例 E4125_N33891 · 104.087474°E, 30.631781°N\n    - textbox \"场地位置\":\n      - /placeholder: 经纬度或网格编号，例如 E4125_N33891\n      - text: E4125_N33891\n    - button \"导入场地资料\":\n      - text: 导入场地资料\n    - text: 核心\n    - strong: 100 × 100 m\n    - text: 周边视图\n    - strong: 300 × 300 m\n    - button \"进入场地\":\n      - text: 进入场地\n    - generic: 当前原包仍保留500米准备窗；物理求解域待定义\n    - button \"浏览真实工程样例\":\n      - text: 浏览真实工程样例\n  - generic: 高亮边界 · 可选研究区\n  - generic: 全市地图光效\n  - generic: 建筑来源几何\n  - generic: 100米核心\n  - generic: 500米准备窗\n  - generic: 青蓝源线 · 2021参考\n  - generic: 在线底图仅供导航 · DEM未接入 · 尚未仿真"
+    },
+    "outsideBlankClick": {
+      "before": "E4125_N33891",
+      "after": "E4125_N33891",
+      "text": "- main:\n  - region \"成都全域植被光效与研究场地地图；仅高亮研究区可定位场地\":\n    - region \"Map\" [active]\n    - text: ©\n    - link \"OpenStreetMap\":\n      - /url: https://www.openstreetmap.org/copyright\n    - text: contributors | 植被分类：\n    - link \"CLCD · Yang & Huang\":\n      - /url: https://zenodo.org/records/18180184\n    - text: /\n    - link \"UBGG · Xu & Zhao\":\n      - /url: https://zenodo.org/records/8352777\n    - text: ；空间预览，非热模拟\n  - button \"回到成都全域地图\":\n    - generic: 街区绿色空间研究\n  - combobox \"区域视野\":\n    - option \"成都\" [selected]\n    - option \"四川\"\n  - button \"恢复本地保存\":\n  - button \"重开交接包\":\n  - button \"保存场地\":\n  - button \"两种评价情景\": 情景\n  - complementary \"地图控制\":\n    - button \"地图放大\":\n    - button \"地图缩小\":\n    - button \"回到北向\":\n    - button \"切换俯视与倾斜\":\n    - button \"开始环视\":\n    - button \"地图光效\" [pressed]:\n    - button \"只用本地图层\":\n    - button \"来源准备审阅\":\n    - button \"来源几何与对象审阅\":\n  - text: 成都全域 · 植被星图\n  - heading \"从成都，进入你的场地\" [level=1]\n  - paragraph: 全市动态光效 · 自由拖动与缩放 · 仅高亮研究区可选址\n  - button \"前往成都研究区\":\n    - text: 前往成都研究区\n  - region \"场地定位\":\n    - heading \"确认位置与范围\" [level=2]\n    - paragraph: 工程样例 E4125_N33891 · 104.087474°E, 30.631781°N\n    - textbox \"场地位置\":\n      - /placeholder: 经纬度或网格编号，例如 E4125_N33891\n      - text: E4125_N33891\n    - button \"导入场地资料\":\n      - text: 导入场地资料\n    - text: 核心\n    - strong: 100 × 100 m\n    - text: 周边视图\n    - strong: 300 × 300 m\n    - button \"进入场地\":\n      - text: 进入场地\n    - generic: 当前原包仍保留500米准备窗；物理求解域待定义\n    - button \"浏览真实工程样例\":\n      - text: 浏览真实工程样例\n  - generic: 高亮边界 · 可选研究区\n  - generic: 全市地图光效\n  - generic: 建筑来源几何\n  - generic: 100米核心\n  - generic: 500米准备窗\n  - generic: 青蓝源线 · 2021参考\n  - generic: 在线底图仅供导航 · DEM未接入 · 尚未仿真\n  - alert:\n    - generic: 此处仅供区域浏览。请在高亮的成都研究区内选择场地。\n    - button \"关闭提示\":"
+    },
+    "finalRetainedProjectId": "E4125_N33891",
+    "completedAt": "2026-10-06T16:07:21.480Z",
+    "testSavedProjectWasNotOverwritten": true
+  },
+  "originals_and_saved_exports": {
+    "original_sources_and_saved_exports_unchanged": true,
+    "verified_originals_and_artifacts": [
+      {
+        "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/望江楼开放制度公开来源_20261006/O08索引来源取得.json",
+        "bytes": 737,
+        "sha256": "1fa308d8003802808d52d7ea3a02883e186c2e7da5d4b6dfd757bc42e87e83a3"
+      },
+      {
+        "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/望江楼开放制度公开来源_20261006/README.md",
+        "bytes": 5320,
+        "sha256": "81812466d8880439cf423e215d1c4a121ed77d3817ae1144295ebd223043e381"
+      },
+      {
+        "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/望江楼开放制度公开来源_20261006/历史版本/七页初版/README.md",
+        "bytes": 4354,
+        "sha256": "179395255934dac7820a241fd0bf3ba73d000cc16a4005ee25c937dcda342271"
+      },
+      {
+        "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/望江楼开放制度公开来源_20261006/历史版本/七页初版/官方分区与开放事件证据.json",
+        "bytes": 23711,
+        "sha256": "53bf22ec6406cf3f5d7d1ea29c4a6d7d37c613e6ee2b0b892a7bb76a4808af35"
+      },
+      {
+        "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/望江楼开放制度公开来源_20261006/历史版本/七页初版/官方证据索引.csv",
+        "bytes": 2237,
+        "sha256": "ff8c635a6f2d43c6676111c2e44a1646d8128cf9b4fbcaee45533dd74056f7f8"
+      },
+      {
+        "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/望江楼开放制度公开来源_20261006/历史版本/七页初版/来源取得及回读.json",
+        "bytes": 2550,
+        "sha256": "81bcd641cb316009d5acf90966319b0fa373906add2506c0e823f155f5adac3c"
+      },
+      {
+        "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/望江楼开放制度公开来源_20261006/历史版本/日期出处已补_定位口径澄清前/README.md",
+        "bytes": 4709,
+        "sha256": "e7d2050346c18f869ac831a2876652060a45293e545a33113aa68c207748c689"
+      },
+      {
+        "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/望江楼开放制度公开来源_20261006/历史版本/日期出处已补_定位口径澄清前/官方分区与开放事件证据.json",
+        "bytes": 26582,
+        "sha256": "a4dbebed041fc9b1dab0dc915ab770c14daadf600ec2d40c7a9cb63efa4219f0"
+      },
+      {
+        "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/望江楼开放制度公开来源_20261006/历史版本/日期出处已补_定位口径澄清前/来源取得及回读.json",
+        "bytes": 5205,
+        "sha256": "44bed05f04d0b93df74760a0e0767c3bf486c987d6079fdf3e73e92776b6b7b1"
+      },
+      {
+        "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/望江楼开放制度公开来源_20261006/原网页/O01.html",
+        "bytes": 23286,
+        "sha256": "e736d72a33cc0bfd7d6497b20152eb0ba36e3e818cbd686e0485b6206ba27e01"
+      },
+      {
+        "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/望江楼开放制度公开来源_20261006/原网页/O02.html",
+        "bytes": 21052,
+        "sha256": "a802367ad3747ed3e64399371c2569f1877469f5a76cf2fcdebd1ef5587ce2f5"
+      },
+      {
+        "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/望江楼开放制度公开来源_20261006/原网页/O03.html",
+        "bytes": 20210,
+        "sha256": "b552f78166047be2aeb6a987f5ea25f3ae481914ba9ac5a47b4393d564e8d7e5"
+      },
+      {
+        "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/望江楼开放制度公开来源_20261006/原网页/O04.html",
+        "bytes": 24919,
+        "sha256": "5dfe30d4bcae88dacbe4dda68e50f80305c212aa31f2c1288544e7d3f4f5b857"
+      },
+      {
+        "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/望江楼开放制度公开来源_20261006/原网页/O05.html",
+        "bytes": 26330,
+        "sha256": "b56d523cb5b393b284018bb3d0beb236561803b112ff7d4850d784e086801ab9"
+      },
+      {
+        "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/望江楼开放制度公开来源_20261006/原网页/O06.html",
+        "bytes": 21005,
+        "sha256": "c9152007c46f0c66c343c22532896cc71976133aee5491ffab065a115cb9cbf7"
+      },
+      {
+        "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/望江楼开放制度公开来源_20261006/原网页/O07.html",
+        "bytes": 25565,
+        "sha256": "96135567b185abbe9719f21b14bb7df805458c56cf12369a8dec3812c22eb67c"
+      },
+      {
+        "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/望江楼开放制度公开来源_20261006/原网页/O08.html",
+        "bytes": 30147,
+        "sha256": "12a8ff2b0f40a7ecef47b316ed6b81d196b1536846b6a99e985512c388ac3dd9"
+      },
+      {
+        "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/望江楼开放制度公开来源_20261006/官方分区与开放事件证据.json",
+        "bytes": 27639,
+        "sha256": "627246ed25ff70ad249e32bd551ace9a6f8050726933021463bf8ddc47051a84"
+      },
+      {
+        "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/望江楼开放制度公开来源_20261006/官方证据索引.csv",
+        "bytes": 2921,
+        "sha256": "5ce241ba963c4a9bf9c713b44ca3c83ee70f881de747af7f3406499efeb74480"
+      },
+      {
+        "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/望江楼开放制度公开来源_20261006/来源取得及回读.json",
+        "bytes": 6880,
+        "sha256": "8285eaac01f884360acaf1898650e3d8e30d41aa903298d53fcb0c5134dc1f44"
+      },
+      {
+        "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/温度来源准备/NCDC公开目录核查_20261006/README.md",
+        "bytes": 1724,
+        "sha256": "336e49b1e741f726157693f1194c1ad3b18b2f7c5ce1a4c8e7595280f86cb943"
+      },
+      {
+        "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/温度来源准备/NCDC公开目录核查_20261006/公开年度目录行.json",
+        "bytes": 1577,
+        "sha256": "c61c930398d2f728cc8ece580a4e4c2990828af5765b6105e07ab1839e4d7dc7"
+      },
+      {
+        "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/温度来源准备/NCDC公开目录核查_20261006/公开目录取得记录.json",
+        "bytes": 2720,
+        "sha256": "adc820326941c6d0924c63fa57d41cdecbb02f0966ad4dfea8c08725ebf2b6ac"
+      },
+      {
+        "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/温度来源准备/NCDC公开目录核查_20261006/公开页面.html",
+        "bytes": 152746,
+        "sha256": "4bcf046a95a4eaffaf7b807354cefbff60aa40d29736e257a353a3729785786c"
+      },
+      {
+        "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/温度来源准备/NCDC公开目录核查_20261006/公开预览回读.json",
+        "bytes": 645,
+        "sha256": "120250afbbafbb7bfffe5f900e49cf282679fafe52eeec2eeb421f07b11d6b84"
+      },
+      {
+        "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/条件获取情景准备/统一开放与现实条件_产品情景定义_20261006.json",
+        "bytes": 4463,
+        "sha256": "780d15a4c88509988ea538a6d597008cc78a5e559cd3ceeeabd0abdcb5725330"
+      },
+      {
+        "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/条件获取与来源交接/237500352dce3223/条件获取与来源原件_20261006.zip",
+        "bytes": 108781,
+        "sha256": "6b9a12ec4b8bfb03491b68fd02202a674ad61d1616daf166c310310fdbcca3d1"
+      },
+      {
+        "path": "/Users/wangyanbo/Downloads/街区交接_E4125_N33891_2026-10-06T14-13-01-445Z.json",
+        "bytes": 16386933,
+        "sha256": "09963da37ed38704facc7f9bc99e3e195653b324aea0138848f557a216f5d8da"
+      },
+      {
+        "path": "/Users/wangyanbo/Downloads/街区交接_E4125_N33891_2026-10-06T14-13-47-177Z.zip",
+        "bytes": 30910205,
+        "sha256": "81d5656e186421ddc1db2053414ab537bdaf4dbc1ad043411b7decdadc4c0031"
+      },
+      {
+        "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/dist/server/index.js",
+        "bytes": 483,
+        "sha256": "2dd0615a445143933d88d4271f54f5d63ee951421fcd08c5a7617bb09c564389"
+      },
+      {
+        "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/dist/.openai/hosting.json",
+        "bytes": 31,
+        "sha256": "d532abb65cf9ae20634b464d954cb4a08a0de9f3cd3cdf7f9c3ec8948826d947"
+      },
+      {
+        "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/dist/client/maplibre/6.12.0/maplibre-gl-worker.mjs",
+        "bytes": 19130,
+        "sha256": "1ecca7178f0a496b7980dc7a3c6a8c3575eda673cf3e9fa3324dcce7ef3890c2"
+      },
+      {
+        "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/dist/client/maplibre/6.12.0/maplibre-gl-shared.mjs",
+        "bytes": 516951,
+        "sha256": "df3d0b4ba965ebafd2deae3c568500308be2982d87dadd771ba82dc5a49a4631"
+      }
+    ],
+    "unchanged_legacy_implementation": [
+      "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/project.js",
+      "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/ConditionalScenarios.jsx",
+      "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/conditional-drafts.js",
+      "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/conditional-source-state.js",
+      "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/conditional-source-catalog.js",
+      "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/public/data/conditional-source-state.json",
+      "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/scripts/prepare-conditional-sources.py",
+      "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/scripts/audit-conditional-delivery.py",
+      "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/tests/conditional-scenarios.test.mjs"
+    ],
+    "authorized_updated_ui_files": [
+      "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/App.jsx",
+      "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/styles.css",
+      "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/MapCanvas.jsx",
+      "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/package.json",
+      "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/AGENTS.md"
+    ],
+    "legacy_drafts": [
+      {
+        "draft_id": "d92ebe18-23f8-40b2-a3ba-3975320a8ce4",
+        "version": 10
+      },
+      {
+        "draft_id": "946f12f7-ef1d-4d2a-bb56-1ac7edc5cf07",
+        "version": 6
+      }
+    ]
+  },
+  "implementation": [
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/App.jsx",
+      "bytes": 76282,
+      "sha256": "a8bdbba8077f14dbe27329980b6f6b727a4905b77bfc5041c8e021148a53684a"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/MapCanvas.jsx",
+      "bytes": 51726,
+      "sha256": "ae868cbb64bf428330976590c13412ba730584962f9266ff35452bb23da8fcbd"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/styles.css",
+      "bytes": 30058,
+      "sha256": "878ca62fb841a5a2e72bb84e3dee626828cc2cef92d4686d9a749883faee1275"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/regional-navigation.js",
+      "bytes": 3251,
+      "sha256": "97a09a2bd7deb4d8ad865d668375ccd59189e2c9223fcefd10bb305c05a31b90"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/scripts/prepare-regional-navigation.py",
+      "bytes": 8884,
+      "sha256": "a9579e36b7583a2e48fb039fe19e7b668dcc7c8411d3c11dc9a4123ccbb3f23f"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/scripts/prepare-chengdu-green-lights.py",
+      "bytes": 16077,
+      "sha256": "c3e9e12d006c9d0f7afe0ce7574d82cac04b2ed803b7507be0f515f8e15a6d1d"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/tests/regional-navigation.test.mjs",
+      "bytes": 8559,
+      "sha256": "3a7b44867cb6f00aaf2505e651083047759f3a83151bb7df2bffda9a35cd049a"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/tests/map-canvas.test.mjs",
+      "bytes": 73323,
+      "sha256": "c9f6048054a995e1bf4ed0974c1d9e792e2458da2e33d658ba1c7ea48d286fbd"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/AGENTS.md",
+      "bytes": 5292,
+      "sha256": "59628a2858cb19519451b94405312146156d52538de4bfaab08a31aa4c3e4944"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/package.json",
+      "bytes": 1084,
+      "sha256": "b36565dee5d922cf9dd8b9ae32b242baede7591d6dacf47b820b6440629c0505"
+    }
+  ],
+  "public_assets": [
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/public/data/chengdu_green_context.json",
+      "bytes": 5873,
+      "sha256": "48e171324aed773fc86bf443ea12eec932366cfee59547d7c56c1344c9276574"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/public/data/regional_map_context.json",
+      "bytes": 4254,
+      "sha256": "04e3a3c11f0cb5b6644632d52c90846719163bcff4cd17292349bbbdfa415e0d"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/public/data/CHENGDU_GREEN_DATA_SOURCES.md",
+      "bytes": 1339,
+      "sha256": "34584f6d52e2922765a2ba2a46d2748d72ea2275f8c6f252f4f69697bcae4da9"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/public/data/REGIONAL_DATA_SOURCES.md",
+      "bytes": 909,
+      "sha256": "43c8ae236028e54db2a3cb6888fe3ec19de1d370b972326a0d8392f22e6d7ab6"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/public/data/chengdu_navigation_boundary.geojson",
+      "bytes": 171464,
+      "sha256": "9e347fd0249c22fac185040f0f88fa8202fec5c440b2e16fe09adf171c3fbb15"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/public/data/chengdu_city_green_points.geojson",
+      "bytes": 1879256,
+      "sha256": "0fee2c30a14a05d87f3ed8e47a30a7f31349b5914bbd6d1325cf705da81ee325"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/public/data/chengdu_urban_green_points.geojson",
+      "bytes": 1076102,
+      "sha256": "752583ed0c37ad2a122a249fd5afaf77415957f0c94af558a7b6dba34a10aef8"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/public/data/chengdu_city_effects.geojson",
+      "bytes": 359059,
+      "sha256": "b95944e9563f9f11135f3154f7337970bc4e958215cfb187fd2848a9ce03e9f2"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/public/data/sichuan_boundary.geojson",
+      "bytes": 92159,
+      "sha256": "c15f65f685b8fedd97a2f72efeec4eb8622a74a8c929fd3434660f8afa8f3b4f"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/public/data/sichuan_rivers.geojson",
+      "bytes": 70841,
+      "sha256": "1460d171980babba8ad8aed02bcf5f0b5201500160027c469f3b41eb8e358c06"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/public/data/sichuan_places.geojson",
+      "bytes": 4107,
+      "sha256": "ba003aa8f36bd8e1fe9f0310f10824e0bb4e7cf205744c5c5e0d2c7de6773bb6"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/public/data/study_selection_boundary.geojson",
+      "bytes": 19472,
+      "sha256": "c8d041d7a2a73af3e785127d67069019215376fd62a7e951826a779b5f5d0afc"
+    }
+  ],
+  "built_artifacts": [
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/dist/client/index.html",
+      "bytes": 428,
+      "sha256": "949f0bbaa7da8fe8679a383f5fada15d3792fce5437154554e04a80b2acc588c"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/dist/server/index.js",
+      "bytes": 483,
+      "sha256": "2dd0615a445143933d88d4271f54f5d63ee951421fcd08c5a7617bb09c564389"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/dist/.openai/hosting.json",
+      "bytes": 31,
+      "sha256": "d532abb65cf9ae20634b464d954cb4a08a0de9f3cd3cdf7f9c3ec8948826d947"
+    }
+  ],
+  "limits": [
+    "The scan and lattice are decorative, not terrain, roads or a research grid.",
+    "Classified lights keep separate years, resolutions and coverage; NoData is not zero vegetation.",
+    "The centre-location UI gate is not scientific eligibility.",
+    "Building geometry follows loaded scene/imports; no new citywide building or terrain admission."
+  ],
+  "screenshots": [
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/四川全域与研究区选址_20261006/成都全域默认入口.png",
+      "bytes": 236304,
+      "sha256": "0e5bfefdd48045c0ff3415b118541f85f8ca652b81ae2c884876043e4f80965f"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/四川全域与研究区选址_20261006/成都全域_完成预览.png",
+      "bytes": 124400,
+      "sha256": "12efb208fa7c0d5fa2b97d944d1b661ea2e9df0125b896fe305adbf03bc29ead"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/四川全域与研究区选址_20261006/建筑点击后_光效与场地保留.png",
+      "bytes": 73145,
+      "sha256": "34c702c74da751f7272e9646eb30eb747c8cc853cc41e5ce521d3f1a9ad204ed"
+    }
+  ],
+  "final_console_errors_observed": []
+}

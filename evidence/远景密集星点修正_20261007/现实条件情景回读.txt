@@ -1,0 +1,140 @@
+Browser tab: 4, Title: "街区绿色空间研究 · 本地首版", URL: "http://127.0.0.1:4173/".
+1 AXWebArea 街区绿色空间研究 · 本地首版, URL: 127.0.0.1:4173/
+	2 container
+		3 container 成都全域植被光效与研究场地地图；仅高亮研究区可定位场地
+			4 container Map
+			5 container
+				6 container
+					7 text © 
+					8 link Description: OpenStreetMap, Value: openstreetmap.org/copyright
+					9 text  contributors | 植被分类：
+					10 link Description: CLCD · Yang & Huang, Value: zenodo.org/records/18180184
+					11 text  / 
+					12 link Description: UBGG · Xu & Zhao, Value: zenodo.org/records/8352777
+					13 text ；空间预览，非热模拟
+		14 button 回到成都全域地图
+			15 image
+			16 text 街区绿色空间研究
+		17 pop up button (collapsed, settable) Description: 区域视野, Value: 成都, Secondary Actions: Expand
+			18 menu
+				19 (selected) 成都
+				20 四川
+		21 button 恢复本地保存
+			22 image
+		23 button 重开交接包
+			24 image
+		25 button 保存场地
+			26 image
+		27 button Description: 两种评价情景, Help: 分别编辑与保存评价情景
+		28 container 地图控制
+			29 button 地图放大
+				30 image
+			31 button 地图缩小
+				32 image
+			33 button 回到北向
+				34 image
+			35 button 切换俯视与倾斜
+				36 image
+			37 button 开始环视
+				38 image
+			39 checkbox Description: 地图光效, Help: 全市光效随缩放变化, Value: 1
+				40 image
+			41 button 只用本地图层
+				42 image
+			43 button Description: 来源准备审阅, Help: 审阅三组来源准备
+				44 image
+			45 button Description: 来源几何与对象审阅, Help: 审阅三组来源几何与对象
+				46 image
+		77 button 区域
+			78 image
+			79 text 区域
+		80 text 工程样例 E4125_N33891
+		81 container
+			82 text 104.087474°E, 30.631781°N  ·  可替换准备样例，非正式研究样本
+		83 container 场地图层
+			84 text 空间图层
+			85 checkbox 范围, Value: 1
+				86 image
+				87 text 范围
+			88 checkbox 建筑, Value: 1
+				89 image
+				90 text 建筑
+			91 checkbox 植被, Value: 1
+				92 image
+				93 text 植被
+			94 checkbox 道路线, Value: 1
+				95 image
+				96 text 道路线
+			97 checkbox 候选点, Value: 0
+				98 image
+				99 text 候选点
+			100 checkbox Description: 住宅候选, Value: 1
+				101 image
+				102 text 住宅候选
+			103 checkbox 宏观格网, Value: 0
+				104 image
+				105 text 宏观格网
+		106 button 资料概况
+		107 button 待补输入
+		108 button 来源与版本
+		109 button 成果资料
+		110 button 来源准备
+		111 button 来源几何
+		112 button 已有指标
+		113 button 分析条件
+		114 container 资料详情
+			115 text 场地资料与证据
+			116 button 关闭资料详情
+				117 image
+			118 container
+				119 heading 分别保存评价假设, Value: 2
+					120 text 分别保存评价假设
+				121 text 统一开放用于宏观P02A候选情景；现实条件是来源核对，后续实际服务主张由04研究接入。两种草稿各自保存。
+				122 checkbox 统一开放假设, Value: 0
+				123 checkbox 现实条件核对, Value: 1
+				124 text 已接纳  3  / 3 组独立来源；研究输入仍未采用。 已有支持： 7条分区与开放事实、8份网页出处 ； 温度公开目录候选 。
+				125 text 待补： 分区几何、入口对应、评价时段适用、同期温度与通行链 。 现实条件核对  · 第 6 版 ·  E4125_N33891 按分区、来源和评价时段核对开放事件。未知结束不表示永久有效；入口名称、既有标签点和受体尚未对应。这里只记录证据与待补条件。 评价时间（北京时间）
+				126 date field (settable) Description: 评价时间（北京时间）, Value: 2022-09-18T10:00
+					127 container
+						172 stepper
+						173 stepper
+						174 stepper
+						175 stepper
+						176 stepper
+					133 pop up button 显示当地日期和时间选择器 显示当地日期和时间选择器
+				134 text 起点说明
+				135 text entry area (settable) Description: 起点说明, Value: 现实条件核对草稿的独立起点说明；北大门名称尚未绑定既有门点或六个受体。
+				136 text 评价单元说明
+				137 text entry area (settable) 评价单元说明
+				138 text 温度变量
+				139 pop up button (collapsed, settable) Description: 温度变量, Value: 未选择, Secondary Actions: Expand
+					140 menu
+						141 (selected) 未选择
+						142 观测地表温度 LST
+						143 行人高度气温（缺同期支持）
+						144 人体热舒适（缺指标与输入）
+				145 text LST、行人气温和人体舒适分别记录。草稿规则不生成子网格独立温度、凉处或结果。 目的地温度规则说明
+				146 text entry area (settable) Description: 目的地温度规则说明, Value: 按公开来源逐分区核对；这份草稿不自动套用统一开放假设。
+				147 text 目的地温度支持说明
+				148 text entry area (settable) Description: 目的地温度支持说明, Value: 温度栅格未取得，现实开放事件与人体舒适均未采用。
+				149 text 目的地面积资格说明
+				150 text entry area (settable) 目的地面积资格说明
+				151 text 过街与连通说明
+				152 text entry area (settable) 过街与连通说明
+				158 button (collapsed) 记录来源引用与用途, Secondary Actions: Expand
+					159 text 记录来源引用与用途
+				160 button (collapsed) 草稿身份、版本与未采用值, Secondary Actions: Expand
+					161 text 草稿身份、版本与未采用值
+				162 button 保存两种情景草稿
+				163 button 审阅制度、温度与26件原件
+				164 button 导出情景工程JSON
+				165 button 导出情景交接ZIP
+			166 button 保存
+				167 image
+				168 text 保存
+			169 button 导出交接
+				170 image
+				171 text 导出交接
+		76 text 高亮边界 · 可选研究区 全市地图光效 建筑来源几何 住宅标签候选 100米核心 500米准备窗 植被 / 分类投影 青蓝源线 · 2021参考 在线底图仅供导航  · DEM未接入 · 尚未仿真
+
+The focused UI element is 123 checkbox 现实条件核对, Value: 1

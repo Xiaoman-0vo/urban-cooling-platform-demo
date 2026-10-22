@@ -1,0 +1,26 @@
+{
+  "kind": "actual_browser_json_download",
+  "file": "/Users/wangyanbo/Downloads/街区交接_E4125_N33891_2026-10-05T18-58-10-169Z.json",
+  "sha256": "27faab1cd9682954665240e07a53f365b3720939cd7082e8988da500f2116256",
+  "bytes": 4712676,
+  "expected_ui_sha256": "27faab1cd9682954665240e07a53f365b3720939cd7082e8988da500f2116256",
+  "source_artifacts": 24,
+  "research_registrations": 1,
+  "index_sha256": "efa0962c4a6ea46d47d9339330e350120f7d923d80008aeb214da5b95f144fd2",
+  "metric_rows": 26,
+  "old_source_and_scene_deep_equal": true,
+  "scene_temperature_improvement_C": null,
+  "software_receipt": {
+    "operation": "save_or_export_display_project",
+    "file_acceptance": "readable_display_data",
+    "science_validation": "not_upgraded",
+    "integration": "local_browser_workflow",
+    "research_execution": "not_requested",
+    "prediction_enabled": false,
+    "physics_enabled": false,
+    "optimal_recommendation_enabled": false
+  },
+  "browser_reopen_verified": true,
+  "download_event_received": false,
+  "browser_reopen_evidence": "evidence/科研登记_JSON实际重开.png"
+}

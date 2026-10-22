@@ -1,0 +1,32 @@
+file:///Users/wangyanbo/%E7%A7%91%E7%A0%94/%E5%9B%BD%E8%87%AA%E7%84%B6%E2%80%94%E2%80%94%E9%AB%98%E5%AF%86%E5%BA%A6%E8%A1%97%E5%8C%BA%E9%99%8D%E6%B8%A9/%E5%B9%B3%E5%8F%B0%E6%9C%AC%E5%9C%B0%E9%A6%96%E7%89%88/tests/conditional-scenarios.test.mjs:65
+  const changed=await JSZip.loadAsync(bytes);changed.file('conditional-scenarios/drafts.json','[]');await assert.rejects(()=>parseArchive(await changed.generateAsync({type:'uint8array'})),/草稿旁表/);
+                                                                                                                                          ^^^^^
+
+SyntaxError: Unexpected reserved word
+    at compileSourceTextModule (node:internal/modules/esm/utils:354:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:91:18)
+    at #translate (node:internal/modules/esm/loader:451:20)
+    at afterLoad (node:internal/modules/esm/loader:507:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:512:12)
+    at #getOrCreateModuleJobAfterResolve (node:internal/modules/esm/loader:555:36)
+    at afterResolve (node:internal/modules/esm/loader:603:52)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:609:12)
+    at onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:628:32)
+    at TracingChannel.tracePromise (node:diagnostics_channel:362:14)
+
+Node.js v25.8.0
+✖ tests/conditional-scenarios.test.mjs (53.755917ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 58.439375
+
+✖ failing tests:
+
+test at tests/conditional-scenarios.test.mjs:1:1
+✖ tests/conditional-scenarios.test.mjs (53.755917ms)
+  'test failed'

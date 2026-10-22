@@ -1,0 +1,514 @@
+{
+  "url_public_html": "https://figshare.com/articles/dataset/CMAB-The_World_s_First_National-Scale_Multi-Attribute_Building_Dataset/27992417/7",
+  "files": [
+    {
+      "id": 51059459,
+      "name": "description.txt",
+      "size": 469,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/51059459",
+      "supplied_md5": "54d659f591355b9a989120f69dae4f67",
+      "computed_md5": "54d659f591355b9a989120f69dae4f67",
+      "mimetype": "undefined"
+    },
+    {
+      "id": 51059453,
+      "name": "metadata.csv",
+      "size": 10868,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/51059453",
+      "supplied_md5": "855996710c96c924c87db37ca30190b2",
+      "computed_md5": "855996710c96c924c87db37ca30190b2",
+      "mimetype": "text/csv"
+    },
+    {
+      "id": 51059462,
+      "name": "README.txt",
+      "size": 1108,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/51059462",
+      "supplied_md5": "54f6ce6b795ae451ec1edaf992a5975d",
+      "computed_md5": "54f6ce6b795ae451ec1edaf992a5975d",
+      "mimetype": "text/plain"
+    },
+    {
+      "id": 53143028,
+      "name": "code.rar",
+      "size": 129700,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/53143028",
+      "supplied_md5": "398bcf559c13817347f2dd12d5f47186",
+      "computed_md5": "398bcf559c13817347f2dd12d5f47186",
+      "mimetype": "application/x-rar"
+    },
+    {
+      "id": 53388887,
+      "name": "Zhang et al 2025 ScientificData_GlobalBuildings.pdf",
+      "size": 12800853,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/53388887",
+      "supplied_md5": "a48642a4ba6840063806546aeaa6cb96",
+      "computed_md5": "a48642a4ba6840063806546aeaa6cb96",
+      "mimetype": "application/pdf"
+    },
+    {
+      "id": 52518749,
+      "name": "model.rar",
+      "size": 627677231,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/52518749",
+      "supplied_md5": "644326980d2249f59e27611c009ace00",
+      "computed_md5": "644326980d2249f59e27611c009ace00",
+      "mimetype": "application/x-rar"
+    },
+    {
+      "id": 53666774,
+      "name": "anhui.zip",
+      "size": 542412149,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/53666774",
+      "supplied_md5": "c8d5f977ffb136a4c914e9e2e96352c6",
+      "computed_md5": "c8d5f977ffb136a4c914e9e2e96352c6",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 53666768,
+      "name": "beijing.zip",
+      "size": 248944715,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/53666768",
+      "supplied_md5": "35b084756364639871773be84cd00f1b",
+      "computed_md5": "35b084756364639871773be84cd00f1b",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 53666762,
+      "name": "chongqing.zip",
+      "size": 164916519,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/53666762",
+      "supplied_md5": "4b86d2bd0791ce633841430846e888de",
+      "computed_md5": "4b86d2bd0791ce633841430846e888de",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 53666771,
+      "name": "fujian.zip",
+      "size": 509253695,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/53666771",
+      "supplied_md5": "e47bc4b6e731c8aee751aab04a8d9398",
+      "computed_md5": "e47bc4b6e731c8aee751aab04a8d9398",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 53666765,
+      "name": "gansu.zip",
+      "size": 224538195,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/53666765",
+      "supplied_md5": "0f161eb05d1522103c2e24543f61e25c",
+      "computed_md5": "0f161eb05d1522103c2e24543f61e25c",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 53667560,
+      "name": "guizhou.zip",
+      "size": 207378030,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/53667560",
+      "supplied_md5": "a396a48d84e98e31d42d60d46f185821",
+      "computed_md5": "a396a48d84e98e31d42d60d46f185821",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 53667557,
+      "name": "hainan.zip",
+      "size": 138608403,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/53667557",
+      "supplied_md5": "56c6f553760bbcee663420e69cf91014",
+      "computed_md5": "56c6f553760bbcee663420e69cf91014",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 53667563,
+      "name": "guangxi.zip",
+      "size": 365069785,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/53667563",
+      "supplied_md5": "6c21afdf35170be79d9a2bf7ed1f5af5",
+      "computed_md5": "6c21afdf35170be79d9a2bf7ed1f5af5",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 53667566,
+      "name": "heilongjiang.zip",
+      "size": 414319581,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/53667566",
+      "supplied_md5": "1f21f2de9813547fef849bb26c13176b",
+      "computed_md5": "1f21f2de9813547fef849bb26c13176b",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 53667569,
+      "name": "hebei.zip",
+      "size": 1072237873,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/53667569",
+      "supplied_md5": "9b0bdef35a9be1155886f2ed042b68b4",
+      "computed_md5": "9b0bdef35a9be1155886f2ed042b68b4",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 53670575,
+      "name": "guangdong.zip",
+      "size": 2037563309,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/53670575",
+      "supplied_md5": "749451948dcadc24f60527f924659738",
+      "computed_md5": "749451948dcadc24f60527f924659738",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 53699507,
+      "name": "hunan.zip",
+      "size": 400905586,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/53699507",
+      "supplied_md5": "9b6c529533a4a3f74bd5474985914765",
+      "computed_md5": "9b6c529533a4a3f74bd5474985914765",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 53699510,
+      "name": "hubei.zip",
+      "size": 521298885,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/53699510",
+      "supplied_md5": "8c8cb93f2701df1cda0d0266b26ec79d",
+      "computed_md5": "8c8cb93f2701df1cda0d0266b26ec79d",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 53778023,
+      "name": "jiangsu.zip",
+      "size": 1404545685,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/53778023",
+      "supplied_md5": "41b6bb75708eba48aa40abc61d2df42e",
+      "computed_md5": "41b6bb75708eba48aa40abc61d2df42e",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 53787233,
+      "name": "henan.zip",
+      "size": 1162130559,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/53787233",
+      "supplied_md5": "be2391b79eacc64b56deaba209a67d97",
+      "computed_md5": "be2391b79eacc64b56deaba209a67d97",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 53795063,
+      "name": "jilin.zip",
+      "size": 317745263,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/53795063",
+      "supplied_md5": "6542412be30465fcb8007b35b5b859f5",
+      "computed_md5": "6542412be30465fcb8007b35b5b859f5",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 53795066,
+      "name": "jiangxi.zip",
+      "size": 374007632,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/53795066",
+      "supplied_md5": "2503d6c4ca71b6a4f33608fad28639af",
+      "computed_md5": "2503d6c4ca71b6a4f33608fad28639af",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 53795069,
+      "name": "neimenggu.zip",
+      "size": 467324988,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/53795069",
+      "supplied_md5": "d4b2cbcdb83af28dae90013ea8f58394",
+      "computed_md5": "d4b2cbcdb83af28dae90013ea8f58394",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 53795072,
+      "name": "liaoning.zip",
+      "size": 532451295,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/53795072",
+      "supplied_md5": "c18462ebaa5f5eca1068e2b061cbd24f",
+      "computed_md5": "c18462ebaa5f5eca1068e2b061cbd24f",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 53799284,
+      "name": "ningxia.zip",
+      "size": 90932197,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/53799284",
+      "supplied_md5": "144d6697175c7330514db2c378c353f0",
+      "computed_md5": "144d6697175c7330514db2c378c353f0",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 53799287,
+      "name": "qinghai.zip",
+      "size": 114440511,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/53799287",
+      "supplied_md5": "37dd1eeed8a5b5cf0c97daa7dc7711b6",
+      "computed_md5": "37dd1eeed8a5b5cf0c97daa7dc7711b6",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 53799290,
+      "name": "shanghai.zip",
+      "size": 337102437,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/53799290",
+      "supplied_md5": "41c6a0014287fc2101f69c497018ea5c",
+      "computed_md5": "41c6a0014287fc2101f69c497018ea5c",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 53799293,
+      "name": "shandong.zip",
+      "size": 1504153044,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/53799293",
+      "supplied_md5": "cb26031e6f18e0510e96b4db93892094",
+      "computed_md5": "cb26031e6f18e0510e96b4db93892094",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 53801852,
+      "name": "shanxi.zip",
+      "size": 534123844,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/53801852",
+      "supplied_md5": "1c3eb30f5ae10573b9489ef982740a85",
+      "computed_md5": "1c3eb30f5ae10573b9489ef982740a85",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 53801849,
+      "name": "shanxisheng.zip",
+      "size": 296899672,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/53801849",
+      "supplied_md5": "30a5be3859090435d46fcc15247bf6e4",
+      "computed_md5": "30a5be3859090435d46fcc15247bf6e4",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 53804027,
+      "name": "sichuan.zip",
+      "size": 529366213,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/53804027",
+      "supplied_md5": "a91c30dfd1c2f179ebc4e05f84b1a84f",
+      "computed_md5": "a91c30dfd1c2f179ebc4e05f84b1a84f",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 53804018,
+      "name": "tianjin.zip",
+      "size": 181162347,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/53804018",
+      "supplied_md5": "f6fffe643be86275692979b67a218154",
+      "computed_md5": "f6fffe643be86275692979b67a218154",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 53804021,
+      "name": "xinjiang.zip",
+      "size": 366679459,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/53804021",
+      "supplied_md5": "5dff8236c86f0673e3000e35643dd30e",
+      "computed_md5": "5dff8236c86f0673e3000e35643dd30e",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 53804015,
+      "name": "xizang.zip",
+      "size": 46529374,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/53804015",
+      "supplied_md5": "f38032ed43773d936dfd2d3422248e70",
+      "computed_md5": "f38032ed43773d936dfd2d3422248e70",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 53804024,
+      "name": "yunnan.zip",
+      "size": 412797714,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/53804024",
+      "supplied_md5": "6450358d91861d6adc916647157645fd",
+      "computed_md5": "6450358d91861d6adc916647157645fd",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 53804030,
+      "name": "zhejiang.zip",
+      "size": 812755155,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/53804030",
+      "supplied_md5": "3947a62727508662f34b5deb021f87d3",
+      "computed_md5": "3947a62727508662f34b5deb021f87d3",
+      "mimetype": "application/zip"
+    }
+  ],
+  "folder_structure": {},
+  "authors": [
+    {
+      "id": 20402873,
+      "full_name": "Yecheng Zhang",
+      "first_name": "Yecheng",
+      "last_name": "Zhang",
+      "is_active": true,
+      "url_name": "Yecheng_Zhang",
+      "orcid_id": "0000-0002-4151-2737"
+    },
+    {
+      "id": 9433532,
+      "full_name": "Huimin  Zhao",
+      "first_name": "Huimin",
+      "last_name": "Zhao",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 568995,
+      "full_name": "Ying Long",
+      "first_name": "Ying",
+      "last_name": "Long",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    }
+  ],
+  "custom_fields": [],
+  "figshare_url": "https://figshare.com/articles/dataset/CMAB-The_World_s_First_National-Scale_Multi-Attribute_Building_Dataset/27992417",
+  "download_disabled": false,
+  "description": "<p dir=\"ltr\">Rapidly acquiring three-dimensional (3D) building data, including geometric attributes like rooftop, height and orientations, as well as indicative attributes like function, quality, and age, is essential for accurate urban analysis, simulations, and policy updates. Current building datasets suffer from incomplete coverage of building multi-attributes. This paper presents the first national-scale Multi-Attribute Building dataset (CMAB) with artificial intelligence, covering 3,667 spatial cities, 31 million buildings, and 23.6 billion m² of rooftops with an F1-Score of 89.93% in OCRNet-based extraction, totaling 363 billion m³ of building stock. We trained bootstrap aggregated XGBoost models with city administrative classifications, incorporating morphology, location, and function features. Using multi-source data, including billions of remote sensing images and 60 million street view images (SVIs), we generated rooftop, height, structure, function, style, age, and quality attributes for each building with machine learning and large multimodal models. Accuracy was validated through model benchmarks, existing similar products, and manual SVI validation, mostly above 80%. Our dataset and results are crucial for global SDGs and urban planning.</p><p dir=\"ltr\">Data records: A building dataset with a total rooftop area of 23.6 billion square meters in 3,667 natural cities in China, including the attribute of building rooftop, height, structure, function, age, style and quality, as well as the code files used to calculate these data. The deep learning models used are OCRNet, XGBoost, fine-tuned CLIP and Yolo-v8.</p><p dir=\"ltr\">Supplementary note: The architectural structure, style, and quality are affected by the temporal and spatial distribution of street views in China. Regarding the recognition of building colors, we found that the existing CLIP series model can not accurately judge the composition and proportion of building colors, and then it will be accurately calculated and supplemented by semantic segmentation and image processing. Please contact zhangyec23@mails.tsinghua.edu.cn or ylong@tsinghua.edu.cn if you have any technical problems.</p><p dir=\"ltr\">Reference Format: Zhang, Y., Zhao, H. & Long, Y. CMAB: A Multi-Attribute Building Dataset of China. Sci Data 12, 430 (2025). https://doi.org/10.1038/s41597-025-04730-5.</p>",
+  "funding": "62394331 | National Natural Science Foundation of China",
+  "funding_list": [
+    {
+      "id": 27150485,
+      "title": "62394331 | National Natural Science Foundation of China",
+      "grant_code": "",
+      "funder_name": null,
+      "is_user_defined": 1
+    },
+    {
+      "id": 27150488,
+      "title": "62394335 | National Natural Science Foundation of China",
+      "grant_code": "",
+      "funder_name": null,
+      "is_user_defined": 1
+    },
+    {
+      "id": 27150491,
+      "title": "52178044 | National Natural Science Foundation of China",
+      "grant_code": "",
+      "funder_name": null,
+      "is_user_defined": 1
+    },
+    {
+      "id": 27150494,
+      "title": "G-2306-34815 | Energy Foundation",
+      "grant_code": "",
+      "funder_name": null,
+      "is_user_defined": 1
+    }
+  ],
+  "version": 7,
+  "status": "public",
+  "size": 16973214343,
+  "created_date": "2025-04-20T01:20:50Z",
+  "modified_date": "2025-04-20T01:20:50Z",
+  "is_public": true,
+  "is_confidential": false,
+  "is_metadata_record": false,
+  "confidential_reason": "",
+  "metadata_reason": "",
+  "license": {
+    "value": 1,
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "tags": [
+    "remote sensing database",
+    "Machine leanring",
+    "computer vision field",
+    "Multimodal Large Language Models (MLLMs)"
+  ],
+  "keywords": [
+    "remote sensing database",
+    "Machine leanring",
+    "computer vision field",
+    "Multimodal Large Language Models (MLLMs)"
+  ],
+  "categories": [
+    {
+      "id": 26629,
+      "title": "Geospatial information systems and geospatial data modelling",
+      "parent_id": 26623,
+      "path": "/26212/26623/26629",
+      "source_id": "401302",
+      "taxonomy_id": 100
+    },
+    {
+      "id": 25051,
+      "title": "Urban informatics",
+      "parent_id": 25015,
+      "path": "/24895/25015/25051",
+      "source_id": "330412",
+      "taxonomy_id": 100
+    }
+  ],
+  "references": [],
+  "has_linked_file": false,
+  "citation": "Zhang, Yecheng; Zhao, Huimin; Long, Ying (2024). CMAB-The World's First National-Scale Multi-Attribute Building Dataset. figshare. Dataset. https://doi.org/10.6084/m9.figshare.27992417.v7",
+  "related_materials": [],
+  "is_embargoed": false,
+  "embargo_date": null,
+  "embargo_type": null,
+  "embargo_title": "",
+  "embargo_reason": "",
+  "embargo_options": [],
+  "id": 27992417,
+  "title": "CMAB-The World's First National-Scale Multi-Attribute Building Dataset",
+  "doi": "10.6084/m9.figshare.27992417.v7",
+  "handle": "",
+  "url": "https://api.figshare.com/v2/articles/27992417",
+  "published_date": "2025-04-20T01:20:50Z",
+  "thumb": "https://s3-eu-west-1.amazonaws.com/pfigshare-u-previews/53388887/thumb.png",
+  "defined_type": 3,
+  "defined_type_name": "dataset",
+  "group_id": null,
+  "url_private_api": "https://api.figshare.com/v2/account/articles/27992417",
+  "url_public_api": "https://api.figshare.com/v2/articles/27992417",
+  "url_private_html": "https://figshare.com/account/articles/27992417",
+  "timeline": {
+    "posted": "2025-04-20T01:20:50",
+    "firstOnline": "2024-12-26"
+  },
+  "resource_title": null,
+  "resource_doi": null
+}

@@ -1,0 +1,1200 @@
+{
+  "status": "passed",
+  "verified_at_utc": "2026-10-22T09:53:59.226533+00:00",
+  "total_package_bytes": 1934710524,
+  "total_manifested_source_bytes": 2356992143,
+  "source_file_count": 118,
+  "source_archive_sha256": {
+    "/Users/wangyanbo/科研/城市数据/.管理档案/临时下载/CMAB_v7_20261002/files/sichuan.zip": "dc6ca7af61c6023c9532dfd197e3ed3d0aed0ccefd7a090b0c8080925e08263d",
+    "/Users/wangyanbo/科研/城市数据/数据/10_环境气候与生态/论文开放数据/SGVI中国城市季节绿视率/Zenodo_15258817/中国多城市/2023/SGVI-2023.zip": "7a335b53bd26e42bfbe4948129d5c7db2cb3c64e077d618cace71da271cd4068"
+  },
+  "no_value_or_crs_modification": true,
+  "no_new_downloads": true,
+  "qq_or_private_runtime_files_included": false,
+  "packages": [
+    {
+      "filename": "01_WorldPop2020_China.zip",
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/ICT创新赛/2026-2027/GitHub数据发布包_20261022/01_WorldPop2020_China.zip",
+      "bytes": 855466230,
+      "sha256": "a44bc1c37ce51cc02c9554b22eaf8d7f6ffdebb34ff57da637630cd9b041a9b8",
+      "member_count": 7,
+      "source_file_count": 1,
+      "all_member_hashes_match": true,
+      "all_crc_readbacks_passed": true,
+      "members": [
+        {
+          "member": "urban-cooling-data-20261022/data/WorldPop2020/chn_pop_2020_CN_100m_R2025A_v1.tif",
+          "bytes": 919833659,
+          "sha256": "7300057b5e4b7eccd45b8ef2b83c771c5e128dc1784201404676375efca0ab65",
+          "crc32": "d4cbbef9",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/manifest.json",
+          "bytes": 72675,
+          "sha256": "2574487fff9c7fde6bb6794e607f1179813f8f4519cf2ab6fab5a1a7e2cd6d64",
+          "crc32": "8b6700b2",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/manifest.csv",
+          "bytes": 43543,
+          "sha256": "620685794f5555ef6674ad476035bdd130edd8c5285a6671f451820e65747352",
+          "crc32": "fceae068",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data_products.json",
+          "bytes": 11603,
+          "sha256": "992d435149f2d8ab8ce39c60ce5df50dda9896ea047d51fa9d3c41b93063e603",
+          "crc32": "25319d8e",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/SHA256SUMS.files.txt",
+          "bytes": 14496,
+          "sha256": "fb201152fcbd51b555812378447212692c74a0bf2db95c42d8399ff12cfdfb1a",
+          "crc32": "317a3b0c",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/README_数据交接说明.md",
+          "bytes": 3101,
+          "sha256": "ac8859afd177a9226cb74dfc912d05d22c4ac18810489556b7e47b2837b6dc68",
+          "crc32": "12df0dd2",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/license_verification.json",
+          "bytes": 2419,
+          "sha256": "cd40f8dd0ae922bee50434a10e83127c0845084bb5b236c7c5c09b717c73b2fe",
+          "crc32": "95c68ca8",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        }
+      ]
+    },
+    {
+      "filename": "02_CLCD2020_China.zip",
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/ICT创新赛/2026-2027/GitHub数据发布包_20261022/02_CLCD2020_China.zip",
+      "bytes": 756021034,
+      "sha256": "21c33c1b1b79ab6456e4ea784ab5700172d1330c7c37f7ae965ae8db899a55c2",
+      "member_count": 8,
+      "source_file_count": 2,
+      "all_member_hashes_match": true,
+      "all_crc_readbacks_passed": true,
+      "members": [
+        {
+          "member": "urban-cooling-data-20261022/data/CLCD2020/CLCD_v01_2020_albert.tif",
+          "bytes": 810739687,
+          "sha256": "2d4f05bac50ac25ca2c8bd214f02ec0974348550c0a94fa3825cdc49f22f23e1",
+          "crc32": "16568a4e",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/CLCD2020/CLCD_classificationsystem.xlsx",
+          "bytes": 9440,
+          "sha256": "77072c4f35a0b43f6aeed119ad1c04956eca7d0982b61241910563f720b63e56",
+          "crc32": "219c60a5",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/manifest.json",
+          "bytes": 72675,
+          "sha256": "2574487fff9c7fde6bb6794e607f1179813f8f4519cf2ab6fab5a1a7e2cd6d64",
+          "crc32": "8b6700b2",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/manifest.csv",
+          "bytes": 43543,
+          "sha256": "620685794f5555ef6674ad476035bdd130edd8c5285a6671f451820e65747352",
+          "crc32": "fceae068",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data_products.json",
+          "bytes": 11603,
+          "sha256": "992d435149f2d8ab8ce39c60ce5df50dda9896ea047d51fa9d3c41b93063e603",
+          "crc32": "25319d8e",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/SHA256SUMS.files.txt",
+          "bytes": 14496,
+          "sha256": "fb201152fcbd51b555812378447212692c74a0bf2db95c42d8399ff12cfdfb1a",
+          "crc32": "317a3b0c",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/README_数据交接说明.md",
+          "bytes": 3101,
+          "sha256": "ac8859afd177a9226cb74dfc912d05d22c4ac18810489556b7e47b2837b6dc68",
+          "crc32": "12df0dd2",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/license_verification.json",
+          "bytes": 2419,
+          "sha256": "cd40f8dd0ae922bee50434a10e83127c0845084bb5b236c7c5c09b717c73b2fe",
+          "crc32": "95c68ca8",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        }
+      ]
+    },
+    {
+      "filename": "03_Chengdu_Buildings_Greenness.zip",
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/ICT创新赛/2026-2027/GitHub数据发布包_20261022/03_Chengdu_Buildings_Greenness.zip",
+      "bytes": 296274587,
+      "sha256": "0e31f03a16dd5e17ebff86ab28f44050332cb2bfc875614e52b62dcdc5caac07",
+      "member_count": 61,
+      "source_file_count": 55,
+      "all_member_hashes_match": true,
+      "all_crc_readbacks_passed": true,
+      "members": [
+        {
+          "member": "urban-cooling-data-20261022/data/CMAB_v7_Chengdu/processed_chengdu20230308_all.cpg",
+          "bytes": 5,
+          "sha256": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824",
+          "crc32": "0e813c50",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/CMAB_v7_Chengdu/processed_chengdu20230308_all.dbf",
+          "bytes": 94381851,
+          "sha256": "4adfd5d0b527b614e29e2f7e5f7c5fe9e2c5167aa9e688bf715d3b71b0b6a281",
+          "crc32": "f4591942",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/CMAB_v7_Chengdu/processed_chengdu20230308_all.prj",
+          "bytes": 425,
+          "sha256": "f2e7fb14d55bdd8d6a3bc2c272a48729d8f9d0ad72936e20eae6a9a81c2fccd0",
+          "crc32": "25b1f528",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/CMAB_v7_Chengdu/processed_chengdu20230308_all.shp",
+          "bytes": 264575652,
+          "sha256": "f516a5dd65d4c2109638fa02b0e3e47c17090b91c6862708ce58d32636adda69",
+          "crc32": "c2008433",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/CMAB_v7_Chengdu/processed_chengdu20230308_all.shx",
+          "bytes": 1704508,
+          "sha256": "158a1fb7fea76d5a6ab5c8cc5b53f16efcf78f163c872481f7785168cc54194e",
+          "crc32": "abaef261",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/cd_point.cpg",
+          "bytes": 10,
+          "sha256": "09fc313075748ce8ead962229ed89c919d5a9ff71974ee725a0b48bb87d975a2",
+          "crc32": "70ee4b6c",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/cd_point.dbf",
+          "bytes": 72014636,
+          "sha256": "3e6f550bd98a073f9e91ecf5ba43a66b2535c839d9b783f16eaa2fde886a9777",
+          "crc32": "87e03c9b",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/cd_point.prj",
+          "bytes": 145,
+          "sha256": "a02a27b1d1982c8516d83398e85a3c8b1aef1713c13ef4d84d7bde17430c07c4",
+          "crc32": "af437f55",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/cd_point.shp",
+          "bytes": 12370668,
+          "sha256": "8b77da0ffedee332525c0a633751b7dfc6479b7d817f485c7a8266c1450dcdea",
+          "crc32": "24df868c",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/cd_point.shx",
+          "bytes": 3534548,
+          "sha256": "7dbd018dcbffada9e05fbc5ee4b90af7569cb9a2088da794b5195b3f289ef8b8",
+          "crc32": "e3425d69",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/cd_road1.cpg",
+          "bytes": 10,
+          "sha256": "09fc313075748ce8ead962229ed89c919d5a9ff71974ee725a0b48bb87d975a2",
+          "crc32": "70ee4b6c",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/cd_road1.dbf",
+          "bytes": 6427539,
+          "sha256": "c0ae9f2d67f4c3db30556b75b18e689a19f19ef113ae3910eb366b33159d3ba7",
+          "crc32": "eae664bc",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/cd_road1.prj",
+          "bytes": 145,
+          "sha256": "a02a27b1d1982c8516d83398e85a3c8b1aef1713c13ef4d84d7bde17430c07c4",
+          "crc32": "af437f55",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/cd_road1.shp",
+          "bytes": 8558936,
+          "sha256": "b79ec75d3e4633d4681a53184fc3133bfe5ad239894f5cd9443025ce4824c8f9",
+          "crc32": "e84bef03",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/cd_road1.shx",
+          "bytes": 246124,
+          "sha256": "76f5e8148d6dc51a88579a659223751c8b06d83a2cf421af90d2f767936f7790",
+          "crc32": "2ab397e3",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/cd_road2.cpg",
+          "bytes": 10,
+          "sha256": "09fc313075748ce8ead962229ed89c919d5a9ff71974ee725a0b48bb87d975a2",
+          "crc32": "70ee4b6c",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/cd_road2.dbf",
+          "bytes": 6111531,
+          "sha256": "16518438da78dd17a20626a7025f296023fed319f3e9236ab284ff8ed59e4f56",
+          "crc32": "467eccb0",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/cd_road2.prj",
+          "bytes": 145,
+          "sha256": "a02a27b1d1982c8516d83398e85a3c8b1aef1713c13ef4d84d7bde17430c07c4",
+          "crc32": "af437f55",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/cd_road2.shp",
+          "bytes": 7936348,
+          "sha256": "e3363752776d11728c33b113df25485faf030aed5e077141a8be713e6e339e57",
+          "crc32": "13c790e4",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/cd_road2.shx",
+          "bytes": 234028,
+          "sha256": "69effab4a4684cf635a3fb19edfb64b9a34ee4878e57c4836eee48531939ba3d",
+          "crc32": "3054f4d9",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/cd_road3.cpg",
+          "bytes": 10,
+          "sha256": "09fc313075748ce8ead962229ed89c919d5a9ff71974ee725a0b48bb87d975a2",
+          "crc32": "70ee4b6c",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/cd_road3.dbf",
+          "bytes": 6427539,
+          "sha256": "360ebe987c717cbb49e22698928c4105cad453c7a43b1d742f9ad9b7bcab1e0b",
+          "crc32": "8ed732ff",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/cd_road3.prj",
+          "bytes": 145,
+          "sha256": "a02a27b1d1982c8516d83398e85a3c8b1aef1713c13ef4d84d7bde17430c07c4",
+          "crc32": "af437f55",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/cd_road3.shp",
+          "bytes": 8558936,
+          "sha256": "b79ec75d3e4633d4681a53184fc3133bfe5ad239894f5cd9443025ce4824c8f9",
+          "crc32": "e84bef03",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/cd_road3.shx",
+          "bytes": 246124,
+          "sha256": "76f5e8148d6dc51a88579a659223751c8b06d83a2cf421af90d2f767936f7790",
+          "crc32": "2ab397e3",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/cd_road4.cpg",
+          "bytes": 10,
+          "sha256": "09fc313075748ce8ead962229ed89c919d5a9ff71974ee725a0b48bb87d975a2",
+          "crc32": "70ee4b6c",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/cd_road4.dbf",
+          "bytes": 6427539,
+          "sha256": "04b1a326a2b1099292ed1a3653f8e6962963a0ce2edbece85647dfb721d89a25",
+          "crc32": "d5f31fe1",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/cd_road4.prj",
+          "bytes": 145,
+          "sha256": "a02a27b1d1982c8516d83398e85a3c8b1aef1713c13ef4d84d7bde17430c07c4",
+          "crc32": "af437f55",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/cd_road4.shp",
+          "bytes": 8558936,
+          "sha256": "b79ec75d3e4633d4681a53184fc3133bfe5ad239894f5cd9443025ce4824c8f9",
+          "crc32": "e84bef03",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/cd_road4.shx",
+          "bytes": 246124,
+          "sha256": "76f5e8148d6dc51a88579a659223751c8b06d83a2cf421af90d2f767936f7790",
+          "crc32": "2ab397e3",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/nodata_road1.cpg",
+          "bytes": 10,
+          "sha256": "09fc313075748ce8ead962229ed89c919d5a9ff71974ee725a0b48bb87d975a2",
+          "crc32": "70ee4b6c",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/nodata_road1.dbf",
+          "bytes": 315,
+          "sha256": "aa63d080f1f7312025e34a1a8974ec5694cb2901b7b17e78b85469b9587925bf",
+          "crc32": "44c63326",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/nodata_road1.prj",
+          "bytes": 145,
+          "sha256": "a02a27b1d1982c8516d83398e85a3c8b1aef1713c13ef4d84d7bde17430c07c4",
+          "crc32": "af437f55",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/nodata_road1.shp",
+          "bytes": 236,
+          "sha256": "26ccaff06cea4fa17c3b98995430614222f732958f42dffea3f2ceb239185c4b",
+          "crc32": "ea1574a0",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/nodata_road1.shx",
+          "bytes": 108,
+          "sha256": "294387a4797fd01b0724442078b52513965edef98ea75d7919795a44c420ab43",
+          "crc32": "1dfe5377",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/nodata_road2.cpg",
+          "bytes": 10,
+          "sha256": "09fc313075748ce8ead962229ed89c919d5a9ff71974ee725a0b48bb87d975a2",
+          "crc32": "70ee4b6c",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/nodata_road2.dbf",
+          "bytes": 252285,
+          "sha256": "218d540cd7959cdbf47a0246af002f45f388b8c1a81bb6f8904381daf98ca5c7",
+          "crc32": "250c9019",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/nodata_road2.prj",
+          "bytes": 145,
+          "sha256": "a02a27b1d1982c8516d83398e85a3c8b1aef1713c13ef4d84d7bde17430c07c4",
+          "crc32": "af437f55",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/nodata_road2.shp",
+          "bytes": 597800,
+          "sha256": "b8b46b02202aea83e09daa4dc93d3258fec203d4b36764d34cd169606583ea7b",
+          "crc32": "e5348bb2",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/nodata_road2.shx",
+          "bytes": 11004,
+          "sha256": "5a3714cb36f56f46642360dc018a9a9069efe2d79260244ca80c718f14d894e1",
+          "crc32": "79f5e5af",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/nodata_road3.cpg",
+          "bytes": 10,
+          "sha256": "09fc313075748ce8ead962229ed89c919d5a9ff71974ee725a0b48bb87d975a2",
+          "crc32": "70ee4b6c",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/nodata_road3.dbf",
+          "bytes": 315,
+          "sha256": "aa63d080f1f7312025e34a1a8974ec5694cb2901b7b17e78b85469b9587925bf",
+          "crc32": "44c63326",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/nodata_road3.prj",
+          "bytes": 145,
+          "sha256": "a02a27b1d1982c8516d83398e85a3c8b1aef1713c13ef4d84d7bde17430c07c4",
+          "crc32": "af437f55",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/nodata_road3.shp",
+          "bytes": 236,
+          "sha256": "26ccaff06cea4fa17c3b98995430614222f732958f42dffea3f2ceb239185c4b",
+          "crc32": "ea1574a0",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/nodata_road3.shx",
+          "bytes": 108,
+          "sha256": "294387a4797fd01b0724442078b52513965edef98ea75d7919795a44c420ab43",
+          "crc32": "1dfe5377",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/nodata_road4.cpg",
+          "bytes": 10,
+          "sha256": "09fc313075748ce8ead962229ed89c919d5a9ff71974ee725a0b48bb87d975a2",
+          "crc32": "70ee4b6c",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/nodata_road4.dbf",
+          "bytes": 315,
+          "sha256": "aa63d080f1f7312025e34a1a8974ec5694cb2901b7b17e78b85469b9587925bf",
+          "crc32": "44c63326",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/nodata_road4.prj",
+          "bytes": 145,
+          "sha256": "a02a27b1d1982c8516d83398e85a3c8b1aef1713c13ef4d84d7bde17430c07c4",
+          "crc32": "af437f55",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/nodata_road4.shp",
+          "bytes": 236,
+          "sha256": "26ccaff06cea4fa17c3b98995430614222f732958f42dffea3f2ceb239185c4b",
+          "crc32": "ea1574a0",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/SGVI2023/cd/nodata_road4.shx",
+          "bytes": 108,
+          "sha256": "294387a4797fd01b0724442078b52513965edef98ea75d7919795a44c420ab43",
+          "crc32": "1dfe5377",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/CNBH2020/CNBH10m_X105Y31.tif",
+          "bytes": 84597971,
+          "sha256": "b3c94c4139fad665047520bdfb144ace7f84d98ab81b4d10943e10085a833dc9",
+          "crc32": "6ca4ea69",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/UBGG_Chengdu/chengdu_UBGG_3m.tif",
+          "bytes": 3673504,
+          "sha256": "1799ed4a381549bb13dd3f591448165daa729ab0d89fc14fb17d37e8efcab8cb",
+          "crc32": "e4245231",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/provenance/CMAB_v7/description.txt",
+          "bytes": 469,
+          "sha256": "12bae08973d023331462ffe387a2e1ca0d30c9633a5df9a2a21b0788685a6439",
+          "crc32": "af897c83",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/provenance/CMAB_v7/README.txt",
+          "bytes": 1108,
+          "sha256": "0c20a90f0c07fd4a5c118cab74bced2e67b1c4fc4f873b6e5e875932c1645b99",
+          "crc32": "98583b09",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/provenance/CMAB_v7/metadata.csv",
+          "bytes": 10868,
+          "sha256": "f3fd74831152999d39e2c0d1714f1b364631ea76f9e26400b3888815e599ba31",
+          "crc32": "1b760300",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/manifest.json",
+          "bytes": 72675,
+          "sha256": "2574487fff9c7fde6bb6794e607f1179813f8f4519cf2ab6fab5a1a7e2cd6d64",
+          "crc32": "8b6700b2",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/manifest.csv",
+          "bytes": 43543,
+          "sha256": "620685794f5555ef6674ad476035bdd130edd8c5285a6671f451820e65747352",
+          "crc32": "fceae068",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data_products.json",
+          "bytes": 11603,
+          "sha256": "992d435149f2d8ab8ce39c60ce5df50dda9896ea047d51fa9d3c41b93063e603",
+          "crc32": "25319d8e",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/SHA256SUMS.files.txt",
+          "bytes": 14496,
+          "sha256": "fb201152fcbd51b555812378447212692c74a0bf2db95c42d8399ff12cfdfb1a",
+          "crc32": "317a3b0c",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/README_数据交接说明.md",
+          "bytes": 3101,
+          "sha256": "ac8859afd177a9226cb74dfc912d05d22c4ac18810489556b7e47b2837b6dc68",
+          "crc32": "12df0dd2",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/license_verification.json",
+          "bytes": 2419,
+          "sha256": "cd40f8dd0ae922bee50434a10e83127c0845084bb5b236c7c5c09b717c73b2fe",
+          "crc32": "95c68ca8",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        }
+      ]
+    },
+    {
+      "filename": "04_Landsat_OSM_Basemaps.zip",
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/ICT创新赛/2026-2027/GitHub数据发布包_20261022/04_Landsat_OSM_Basemaps.zip",
+      "bytes": 26948673,
+      "sha256": "755d16c3381203059e4c9822a88575766ad6d2810608ebed2203e71a0f218533",
+      "member_count": 66,
+      "source_file_count": 60,
+      "all_member_hashes_match": true,
+      "all_crc_readbacks_passed": true,
+      "members": [
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_LST/LC08_L2SP_129039_20200728_02_T1/ST_B10原始DN_完整初筛窗口.tif",
+          "bytes": 308413,
+          "sha256": "c445a2bb89d099816a7ab634220130027b93017cf7efcf69476edca50b892a07",
+          "crc32": "56d290ff",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_LST/LC08_L2SP_129039_20200728_02_T1/QA_PIXEL原始位字段_完整初筛窗口.tif",
+          "bytes": 7427,
+          "sha256": "4923cc0240ecbcbec342554fde793be1de6a37e96d407dcba5943b49da64f34f",
+          "crc32": "12dfdcb4",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_LST/LC08_L2SP_129039_20200728_02_T1/ST_EMIS原始DN_缺口核查.tif",
+          "bytes": 32755,
+          "sha256": "463ece8f83dbbce7c6dcd9a97a7d9301a59e4e50a81fc66160c1559ca7c29a72",
+          "crc32": "de75309e",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_LST/LC08_L2SP_129039_20200728_02_T1/source_manifest.json",
+          "bytes": 13412,
+          "sha256": "d28d56eee7e89ae5d7d5cecfad05d7bd6bd7f141090fcdde0a54449bbebffcda",
+          "crc32": "eeecb897",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_LST/LC08_L2SP_129039_20210629_02_T1/ST_B10原始DN_完整初筛窗口.tif",
+          "bytes": 330987,
+          "sha256": "5a65856883724dc6fa6c177b33fb79278e30344e49ea958b4adc731e5bbd797d",
+          "crc32": "cf506907",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_LST/LC08_L2SP_129039_20210629_02_T1/QA_PIXEL原始位字段_完整初筛窗口.tif",
+          "bytes": 24354,
+          "sha256": "a4b4ed5513fef10284adb8cd73c3ca2311f5fdf9dbf1b92e03b48a187bf19cd7",
+          "crc32": "7c30621b",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_LST/LC08_L2SP_129039_20210629_02_T1/source_manifest.json",
+          "bytes": 12685,
+          "sha256": "c3c5acc8290d0b04f3838d649518825d537793ea0c1e285731c7d2b4c1b2c4d5",
+          "crc32": "2e71e320",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_LST/LC08_L2SP_129039_20210731_02_T1/ST_B10原始DN_完整初筛窗口.tif",
+          "bytes": 318932,
+          "sha256": "8bcdce3f96243de096317db71f529aa06e24b883846c5ea317bbac0454f16f61",
+          "crc32": "9f522c37",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_LST/LC08_L2SP_129039_20210731_02_T1/QA_PIXEL原始位字段_完整初筛窗口.tif",
+          "bytes": 19530,
+          "sha256": "1296548ec6e4fc47783fab009f071d4a6926510e7d201cb2b5c4a4eec5812c31",
+          "crc32": "b83ca5c3",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_LST/LC08_L2SP_129039_20210731_02_T1/source_manifest.json",
+          "bytes": 12719,
+          "sha256": "26c01af680de96303e0062a51affe486f631b28333218a0b07b97829915e9597",
+          "crc32": "6914768d",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_LST/LC08_L2SP_130038_20200719_02_T1/ST_B10原始DN_完整初筛窗口.tif",
+          "bytes": 80415,
+          "sha256": "4ade8cec3f568c205fe241706c286197d3fdc4322417c8c73231071197817b6a",
+          "crc32": "d894537c",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_LST/LC08_L2SP_130038_20200719_02_T1/QA_PIXEL原始位字段_完整初筛窗口.tif",
+          "bytes": 3007,
+          "sha256": "72f2a7a7742c33ea2ae75b8df9f445ddc64252ce1293cdc8287c31809bb2e6cd",
+          "crc32": "595f0f6f",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_LST/LC08_L2SP_130038_20200719_02_T1/source_manifest.json",
+          "bytes": 12722,
+          "sha256": "e6abd6ba795fd8abba2425dea1f50664621b7fe8e7917e90b29c50a15525ad72",
+          "crc32": "e7eed482",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_LST/LC08_L2SP_130038_20210823_02_T1/ST_B10原始DN_完整初筛窗口.tif",
+          "bytes": 79025,
+          "sha256": "f5ee8c4baba5ad117fdf1e2475b5d9e95c0388012a916b0a2914b6f7e05a2304",
+          "crc32": "b5591462",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_LST/LC08_L2SP_130038_20210823_02_T1/QA_PIXEL原始位字段_完整初筛窗口.tif",
+          "bytes": 3354,
+          "sha256": "22df01bf48dd707596894c7636a91c97cf88128749539467d573c14201834e21",
+          "crc32": "a8490481",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_LST/LC08_L2SP_130038_20210823_02_T1/source_manifest.json",
+          "bytes": 12720,
+          "sha256": "cabee44bc29319dc234591111d9ff24df862dd3fbe0b684a9e779d83aaa764b1",
+          "crc32": "e21a9fa6",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_LST/LC08_L2SP_130039_20200719_02_T1/ST_B10原始DN_完整初筛窗口.tif",
+          "bytes": 283042,
+          "sha256": "612f9fe4696e5fdef204df0d5bfe3aaec21ce0db8eb3678177fd29a13696dfb4",
+          "crc32": "8e1faf13",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_LST/LC08_L2SP_130039_20200719_02_T1/QA_PIXEL原始位字段_完整初筛窗口.tif",
+          "bytes": 5677,
+          "sha256": "719499ac00ba85696612c40db365e3e71e18ea45a1d73d3e8beb2886ef4d4644",
+          "crc32": "0e543025",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_LST/LC08_L2SP_130039_20200719_02_T1/source_manifest.json",
+          "bytes": 12733,
+          "sha256": "c3ed76820159ce79be43c999c2271f5762f19482100562ae16212f6faef94251",
+          "crc32": "071aedf7",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_LST/LC08_L2SP_130039_20200804_02_T1/ST_B10原始DN_完整初筛窗口.tif",
+          "bytes": 332788,
+          "sha256": "8b1b40f4521602697748931f06d21f01a8ca2268f1b674fe0acdce0a7e3981cb",
+          "crc32": "c3776d3f",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_LST/LC08_L2SP_130039_20200804_02_T1/QA_PIXEL原始位字段_完整初筛窗口.tif",
+          "bytes": 15857,
+          "sha256": "a2221c78ea671e364c591781c182d0f4d0ea7c3320eb371ff0d566554e3fe689",
+          "crc32": "6f0c8105",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_LST/LC08_L2SP_130039_20200804_02_T1/source_manifest.json",
+          "bytes": 12690,
+          "sha256": "455a3fc02f3de8145bb4e1f4c22df2b820d46c3812f72ad02dc42b7d649895a2",
+          "crc32": "db5183a8",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_LST/LC08_L2SP_130039_20200820_02_T1/ST_B10原始DN_完整初筛窗口.tif",
+          "bytes": 316038,
+          "sha256": "0a3855b9fd25c24c2b5139275a724c0a4dad39c3f42b73d13261740c4698dec8",
+          "crc32": "34335cf4",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_LST/LC08_L2SP_130039_20200820_02_T1/QA_PIXEL原始位字段_完整初筛窗口.tif",
+          "bytes": 17863,
+          "sha256": "8d939c1b955f0fc3a695c3774bc844787fafa6dfaee2d608d5b76487b1de766b",
+          "crc32": "3a012cd5",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_LST/LC08_L2SP_130039_20200820_02_T1/source_manifest.json",
+          "bytes": 12690,
+          "sha256": "b5194555c09247fd64f3247e0dcd47e1d6030b524953093ce6e7d8b0506184d9",
+          "crc32": "f5d2dad1",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_LST/LC08_L2SP_130039_20210604_02_T1/ST_B10原始DN_完整初筛窗口.tif",
+          "bytes": 205667,
+          "sha256": "6c7c72a6777a4e6814cfcefc359e4f7606eafc37f1de9b353957ecdbdc8c7487",
+          "crc32": "f676f953",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_LST/LC08_L2SP_130039_20210604_02_T1/QA_PIXEL原始位字段_完整初筛窗口.tif",
+          "bytes": 4789,
+          "sha256": "0c10d8cafeea7c0107610235842025ed61568d3e8b6c32095c80642b6038b6c7",
+          "crc32": "1010697e",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_LST/LC08_L2SP_130039_20210604_02_T1/source_manifest.json",
+          "bytes": 12732,
+          "sha256": "420b9dfaa010a41df055f50f618c6252dd2a6a82ec376e67d2bb5c45d2bb5709",
+          "crc32": "f8d065bd",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_LST/LC08_L2SP_130039_20210823_02_T1/ST_B10原始DN_完整初筛窗口.tif",
+          "bytes": 281662,
+          "sha256": "5c3b8d19bb6562c051af4d3eae7bbccf8e99b5de50714e8f381535840d10c32a",
+          "crc32": "599408f5",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_LST/LC08_L2SP_130039_20210823_02_T1/QA_PIXEL原始位字段_完整初筛窗口.tif",
+          "bytes": 7520,
+          "sha256": "efe4f701c54e32463616749903390ba6e831a01be8bd39d68dd912739ad3e687",
+          "crc32": "167ad1d4",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_LST/LC08_L2SP_130039_20210823_02_T1/source_manifest.json",
+          "bytes": 12733,
+          "sha256": "ac2d8af456a6062d122c84e0a0843e1874e687f759526099765a709baefbdf5f",
+          "crc32": "8063828a",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_Optical/LC08_L2SP_129039_20200728_02_T1/SR_B4红光_原始DN_30m.tif",
+          "bytes": 377363,
+          "sha256": "7f500dcbc6b65335190f700fb91c200c0831945ae0984a469432bb13d15242bf",
+          "crc32": "7185ca4f",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_Optical/LC08_L2SP_129039_20200728_02_T1/SR_B5近红外_原始DN_30m.tif",
+          "bytes": 393357,
+          "sha256": "728a549dbc803ba4b6ed9f3b0e5f5c57072856cc62fa53acdde40e31b94d1fae",
+          "crc32": "0bb90293",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_Optical/LC08_L2SP_129039_20200728_02_T1/QA_PIXEL原始位字段_30m.tif",
+          "bytes": 7891,
+          "sha256": "56248b88119f886da849cbc1f6fd9c5611aedf084e10531e5d2889590096cf8a",
+          "crc32": "0eb531fc",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_Optical/LC08_L2SP_129039_20200728_02_T1/QA_RADSAT原始位字段_30m.tif",
+          "bytes": 1787,
+          "sha256": "93b0f267ed7e9d41b76ec88a9152102b78efad779d6685defffca7507b282a7f",
+          "crc32": "f7d79200",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_Optical/LC08_L2SP_129039_20200728_02_T1/SR_QA_AEROSOL原始位字段_30m.tif",
+          "bytes": 35615,
+          "sha256": "7d16371dc3e3f9e9474e080ecae4b9c6532c8c8cf8b9f48402bafd449f11fc7c",
+          "crc32": "288b08b4",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_Optical/LC08_L2SP_129039_20200728_02_T1/source_manifest.json",
+          "bytes": 28520,
+          "sha256": "6dcbd15e83f38186a0dbe0d96b848dbbbc4ee05a66990c0215a6a7c85d67106a",
+          "crc32": "7a88ec49",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_Optical/LC08_L2SP_130039_20200719_02_T1/SR_B4红光_原始DN_30m.tif",
+          "bytes": 292007,
+          "sha256": "82b919767d38d81ad887b2b3578ee21bf077f9a0a7395be8c114954a90bccc82",
+          "crc32": "9f5ccae8",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_Optical/LC08_L2SP_130039_20200719_02_T1/SR_B5近红外_原始DN_30m.tif",
+          "bytes": 303347,
+          "sha256": "c0b0716c138da6cd25cbe3b42c11c3a4c50e5518b33e1996ee912d80aff8de8f",
+          "crc32": "145619df",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_Optical/LC08_L2SP_130039_20200719_02_T1/QA_PIXEL原始位字段_30m.tif",
+          "bytes": 6141,
+          "sha256": "47d0c3588e3ffe7d2f3c71894afc70a9ac510dd0f1261852287d4871436d790a",
+          "crc32": "4ed4b6a2",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_Optical/LC08_L2SP_130039_20200719_02_T1/QA_RADSAT原始位字段_30m.tif",
+          "bytes": 1867,
+          "sha256": "eab688f88d57454a1e42aeedf93445ff0fdb2dbb73f5e81c9efa9921b62e02b1",
+          "crc32": "f217e773",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_Optical/LC08_L2SP_130039_20200719_02_T1/SR_QA_AEROSOL原始位字段_30m.tif",
+          "bytes": 16829,
+          "sha256": "b0d762addf5a7ad2672842d9ac98e1d5c1bc44fb932a364b5a52c894ee9e08f6",
+          "crc32": "1a81f451",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/Landsat_Optical/LC08_L2SP_130039_20200719_02_T1/source_manifest.json",
+          "bytes": 28522,
+          "sha256": "368d4e2cf58842f564f3d7365462b7939b8e12cac87ba45469af9e07864aadad",
+          "crc32": "b8e98dcc",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/provenance/Landsat_original_metadata/LC08_L2SP_129039_20200728_02_T1_MTL.json",
+          "bytes": 16634,
+          "sha256": "ec0830487ef63f1127224fd8f620a186abe6bc486621ef5cfc7a56b1b33cc2b5",
+          "crc32": "8e3d192e",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/provenance/Landsat_original_metadata/LC08_L2SP_129039_20200728_02_T1_PC.json",
+          "bytes": 34637,
+          "sha256": "97dc846aacbf49b37c53bcf054f005bc4cf1008c11f0e204ba5a523a362a80dd",
+          "crc32": "bd3436b5",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/provenance/Landsat_original_metadata/LC08_L2SP_129039_20200728_02_T1_USGS_SR.json",
+          "bytes": 36124,
+          "sha256": "c27e07fcff67cb54844d5ebac90741777023347eb4bf63b0eedd26f76ecdd6d2",
+          "crc32": "7420efdb",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/provenance/Landsat_original_metadata/LC08_L2SP_129039_20200728_02_T1_USGS_ST.json",
+          "bytes": 32867,
+          "sha256": "594c53807caca514aed911dec83fa4a532da367577e22d36ff37cc02330b9afb",
+          "crc32": "28b36cd5",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/provenance/Landsat_original_metadata/LC08_L2SP_130039_20200719_02_T1_MTL.json",
+          "bytes": 16652,
+          "sha256": "18a9a293832abc92262dd9ec89896e97281aaae5c7d28f138ace7c7b34446626",
+          "crc32": "af8123bb",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/provenance/Landsat_original_metadata/LC08_L2SP_130039_20200719_02_T1_PC.json",
+          "bytes": 34644,
+          "sha256": "185e8ee1bcfc00b7edaade1a782da1020a080d52ccf9611385ca3eb60ec25854",
+          "crc32": "4a04b4c0",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/provenance/Landsat_original_metadata/LC08_L2SP_130039_20200719_02_T1_USGS_SR.json",
+          "bytes": 36129,
+          "sha256": "f8402babce629a112e1fce4c894e6208543bd9ccb32f7a0edcf8a8dc96d7e637",
+          "crc32": "7bf035e4",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/provenance/Landsat_original_metadata/LC08_L2SP_130039_20200719_02_T1_USGS_ST.json",
+          "bytes": 32872,
+          "sha256": "36ea7b95eb0ed35395671616a032536557f71ecbbf31ab097775188b706ecb0d",
+          "crc32": "3d1c0983",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/OSM_Chengdu/chengdu_central_200101.osm.pbf",
+          "bytes": 1361163,
+          "sha256": "88a5a11f00788a83377e3be6c3050f6cf5a45b4be8d488aef907b4bb0aa7a675",
+          "crc32": "baa3a60c",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/OSM_Chengdu/chengdu_central_210101.osm.pbf",
+          "bytes": 1636105,
+          "sha256": "3dc9aa67730c5797144c7afbbc7076e51462e62bd553fc91820adf9e17b0981d",
+          "crc32": "b0d5a690",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/provenance/OSM_Chengdu/DATA_SOURCES.md",
+          "bytes": 6558,
+          "sha256": "1bbca3e90347761578d29c1aff6c46212af51cd77bcccb51bb9cdc3169d6dccf",
+          "crc32": "0e4932ec",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/provenance/OSM_Chengdu/提取命令记录.json",
+          "bytes": 3136,
+          "sha256": "a06cb6a3ebdf803c39ffcdba6cb1096a3713df2cf20fff2b94c692265e42fd97",
+          "crc32": "2d8b2712",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/provenance/OSM_Chengdu/boundary_manifest.json",
+          "bytes": 4359,
+          "sha256": "08239238d87e25a6b68dadab2399fc762c58a668d2e789dd2ecc62474e10fe0e",
+          "crc32": "ce9a2fa3",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/NaturalEarth/ne_10m_admin_1_states_provinces.zip",
+          "bytes": 14909524,
+          "sha256": "efc59726337323058f9446210adc96673179cd344e053666ee3d28cb58ba2b05",
+          "crc32": "c42d2672",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/NaturalEarth/ne_10m_rivers_lake_centerlines.zip",
+          "bytes": 2079507,
+          "sha256": "ded71b01870855ccfe19b51f2ec14c9bb48fae23c0e9f3c11974d426433b5c38",
+          "crc32": "07018f51",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/NaturalEarth/ne_10m_populated_places.zip",
+          "bytes": 2811199,
+          "sha256": "cd149186f03d2603e0410da399b980a4357d0ac32d3a2305a49ed3dffcc41d7b",
+          "crc32": "9d473eb4",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data/OSM_CityBoundary/成都导航_OSM完整原始边界.json",
+          "bytes": 1346685,
+          "sha256": "64201c81b84faa9b376c708dbfd3241dc9d58aca5302988130c7f79d7e90fe7b",
+          "crc32": "91dee2cf",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/manifest.json",
+          "bytes": 72675,
+          "sha256": "2574487fff9c7fde6bb6794e607f1179813f8f4519cf2ab6fab5a1a7e2cd6d64",
+          "crc32": "8b6700b2",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/manifest.csv",
+          "bytes": 43543,
+          "sha256": "620685794f5555ef6674ad476035bdd130edd8c5285a6671f451820e65747352",
+          "crc32": "fceae068",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/data_products.json",
+          "bytes": 11603,
+          "sha256": "992d435149f2d8ab8ce39c60ce5df50dda9896ea047d51fa9d3c41b93063e603",
+          "crc32": "25319d8e",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/SHA256SUMS.files.txt",
+          "bytes": 14496,
+          "sha256": "fb201152fcbd51b555812378447212692c74a0bf2db95c42d8399ff12cfdfb1a",
+          "crc32": "317a3b0c",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/README_数据交接说明.md",
+          "bytes": 3101,
+          "sha256": "ac8859afd177a9226cb74dfc912d05d22c4ac18810489556b7e47b2837b6dc68",
+          "crc32": "12df0dd2",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        },
+        {
+          "member": "urban-cooling-data-20261022/license_verification.json",
+          "bytes": 2419,
+          "sha256": "cd40f8dd0ae922bee50434a10e83127c0845084bb5b236c7c5c09b717c73b2fe",
+          "crc32": "95c68ca8",
+          "sha256_matches_source": true,
+          "crc_readback_passed": true
+        }
+      ]
+    }
+  ]
+}

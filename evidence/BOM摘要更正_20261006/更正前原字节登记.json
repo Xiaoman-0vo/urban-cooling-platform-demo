@@ -1,0 +1,26 @@
+{
+  "status": "old_original_bytes_frozen_before_correction",
+  "files": [
+    {
+      "original_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/来源几何与对象三组接入_20261006.json",
+      "snapshot_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/BOM摘要更正_20261006/来源几何与对象三组接入_20261006.json.before-a0148bef3a11d16a.raw",
+      "bytes": 890263,
+      "sha256": "a0148bef3a11d16a9bb6bd7c067ef58ee8f957e476a4fb09d2292fcc667b7ac7",
+      "raw_bytes_equal": true
+    },
+    {
+      "original_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/来源几何与对象三组接入_20261006.md",
+      "snapshot_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/BOM摘要更正_20261006/来源几何与对象三组接入_20261006.md.before-df0b42a7a625f7fe.raw",
+      "bytes": 5097,
+      "sha256": "df0b42a7a625f7fe8c674970812b21506a3d45cd2dab8a7de8fb45656f6c1798",
+      "raw_bytes_equal": true
+    },
+    {
+      "original_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/scripts/write-source-geometry-receipt.mjs",
+      "snapshot_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/BOM摘要更正_20261006/write-source-geometry-receipt.mjs.before-bb31740fdd396c11.raw",
+      "bytes": 13111,
+      "sha256": "bb31740fdd396c11cd4a0c4b2226840687e4e43355bc27f71125dece75bca1d0",
+      "raw_bytes_equal": true
+    }
+  ]
+}

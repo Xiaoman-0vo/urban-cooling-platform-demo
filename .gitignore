@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.runtime/
+.openai/
+.test-fixtures/
+.DS_Store
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+id_rsa
+id_ed25519

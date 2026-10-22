@@ -1,0 +1,83 @@
+{
+  "checked_date": "2026-10-22",
+  "method": "Publisher metadata GET and existing source registry; no data download",
+  "products": {
+    "SGVI2023": {
+      "publisher_api": "https://zenodo.org/api/records/15258817",
+      "publisher_license": "cc-by-4.0",
+      "publisher_title": "SGVI-2023: The First Seasonal Green View Index Mapping Dataset across Chinese cities powered by deep learning",
+      "status": "verified_from_publisher_api"
+    },
+    "CNBH2020": {
+      "publisher_api": "https://zenodo.org/api/records/7827315",
+      "publisher_license": "cc-by-4.0",
+      "publisher_title": "CNBH-10 m: A first Chinese building height at 10 m resolution",
+      "status": "verified_from_publisher_api"
+    },
+    "UBGG_Chengdu": {
+      "publisher_api": "https://zenodo.org/api/records/8352777",
+      "publisher_license": "cc-by-4.0",
+      "publisher_title": "UBGG-3m: Fine-grained urban blue-green-gray landscape dataset for 36 Chinese cities based on deep learning network",
+      "status": "verified_from_publisher_api"
+    },
+    "CMAB_v7": {
+      "publisher_api": "https://api.figshare.com/v2/articles/27992417/versions/7",
+      "publisher_license": "CC BY 4.0",
+      "publisher_license_id": 1,
+      "publisher_license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "status": "verified_from_two_preserved_official_v7_API_responses_and_original_archive_identity",
+      "version": 7,
+      "doi": "10.6084/m9.figshare.27992417.v7",
+      "api_retrieved_utc": "2026-10-05T13:05:38.870604+00:00",
+      "api_recorded_http_status": 200,
+      "api_response_sha256": "485780c0725d5b0a2b07d4e9ec76632ecba27a4ee9d7d5b2b3dca4b139a494f7",
+      "api_response_hash_matches_original_retrieval_record": true,
+      "independent_20261002_API_response_agrees": true,
+      "sichuan_archive": {
+        "file_id": 53804027,
+        "bytes": 529366213,
+        "md5": "a91c30dfd1c2f179ebc4e05f84b1a84f",
+        "publisher_and_local_identity_match": true
+      },
+      "evidence_report": "license_evidence/CMAB_v7_许可核实结果.json",
+      "evidence_explanation": "license_evidence/CMAB_v7_许可核实说明.md",
+      "data_license_not_inferred_from_article_license": true,
+      "unchanged_03_package_sha256": "0e31f03a16dd5e17ebff86ab28f44050332cb2bfc875614e52b62dcdc5caac07",
+      "attribution": "Zhang, Yecheng; Zhao, Huimin; Long, Ying. CMAB, Figshare v7. https://doi.org/10.6084/m9.figshare.27992417.v7 . CC BY 4.0. Chengdu 5 components selected from Sichuan ZIP and repackaged; member bytes unchanged.",
+      "packaging_time_snapshot": {
+        "publisher_api": "https://api.figshare.com/v2/articles/27992417/versions/7",
+        "publisher_license": null,
+        "status": "not_confirmed_API_returned_403",
+        "notes": "Preserve local source documentation and version DOI. Do not infer the dataset license from the paper license. Local packaging is complete; confirm source license before public redistribution."
+      },
+      "notes": "The four previously verified ZIP files were not modified. Their embedded license metadata is the earlier packaging snapshot. This follow-up establishes the CMAB dataset license from the preserved v7 publisher records and matching source archive."
+    },
+    "WorldPop2020": {
+      "publisher_page": "https://hub.worldpop.org/geodata/listing?id=135",
+      "publisher_license": "CC BY 4.0",
+      "status": "verified_official_page_and_local_raster_tag"
+    },
+    "CLCD2020": {
+      "publisher_page": "https://zenodo.org/records/18180184",
+      "publisher_license": "CC BY 4.0",
+      "status": "existing_local_source_registry"
+    },
+    "OSM": {
+      "publisher_page": "https://www.openstreetmap.org/copyright",
+      "publisher_license": "ODbL 1.0",
+      "attribution": "© OpenStreetMap contributors"
+    },
+    "NaturalEarth": {
+      "publisher_page": "https://www.naturalearthdata.com/about/terms-of-use/",
+      "publisher_license": "Public domain",
+      "status": "existing_source_archive_metadata"
+    },
+    "Landsat": {
+      "publisher_page": "https://www.usgs.gov/landsat-missions/landsat-data-access",
+      "publisher_license": "USGS public domain",
+      "status": "existing_official_source_metadata"
+    }
+  },
+  "license_followup_date": "2026-10-22",
+  "followup_notes": "CMAB license confirmed from version-locked original publisher API records. No data ZIP or SHA256 changed."
+}

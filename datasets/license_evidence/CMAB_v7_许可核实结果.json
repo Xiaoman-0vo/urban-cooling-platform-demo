@@ -1,0 +1,68 @@
+{
+  "checked_at_utc": "2026-10-22T10:10:49.677848+00:00",
+  "status": "data_license_confirmed_from_two_existing_publisher_API_responses",
+  "resource_type": "dataset",
+  "resource_id": 27992417,
+  "version": 7,
+  "doi": "10.6084/m9.figshare.27992417.v7",
+  "license": {
+    "value": 1,
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "authors": [
+    "Yecheng Zhang",
+    "Huimin  Zhao",
+    "Ying Long"
+  ],
+  "publisher_citation": "Zhang, Yecheng; Zhao, Huimin; Long, Ying (2024). CMAB-The World's First National-Scale Multi-Attribute Building Dataset. figshare. Dataset. https://doi.org/10.6084/m9.figshare.27992417.v7",
+  "publisher_api_source": "https://api.figshare.com/v2/articles/27992417/versions/7",
+  "publisher_api_retrieval_utc": "2026-10-05T13:05:38.870604+00:00",
+  "publisher_api_recorded_http_status": 200,
+  "preserved_api_response_sha256": "485780c0725d5b0a2b07d4e9ec76632ecba27a4ee9d7d5b2b3dca4b139a494f7",
+  "preserved_api_hash_matches_retrieval_record": true,
+  "earlier_20261002_response_agrees": true,
+  "sichuan_file_in_publisher_response": {
+    "id": 53804027,
+    "name": "sichuan.zip",
+    "size": 529366213,
+    "is_link_only": false,
+    "download_url": "https://ndownloader.figshare.com/files/53804027",
+    "supplied_md5": "a91c30dfd1c2f179ebc4e05f84b1a84f",
+    "computed_md5": "a91c30dfd1c2f179ebc4e05f84b1a84f",
+    "mimetype": "application/zip"
+  },
+  "local_sichuan_path": "/Users/wangyanbo/科研/城市数据/.管理档案/临时下载/CMAB_v7_20261002/files/sichuan.zip",
+  "local_sichuan_bytes": 529366213,
+  "local_sichuan_md5": "a91c30dfd1c2f179ebc4e05f84b1a84f",
+  "local_sichuan_sha256": "dc6ca7af61c6023c9532dfd197e3ed3d0aed0ccefd7a090b0c8080925e08263d",
+  "local_archive_matches_publisher_v7_size_and_md5": true,
+  "dataset_license_not_inferred_from_article_license": true,
+  "dataset_license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "redistribution_condition": "Retain appropriate attribution, source DOI, license link and indicate selection/repackaging. The source Shapefile member bytes were not modified.",
+  "live_20261022_figshare_attempt": "Previous live API requests 403; current browser fetches inaccessible. Version-locked original response and original archive identity establish the data license.",
+  "author_github_readme": "https://raw.githubusercontent.com/24kchengYe/RS-image-api/main/README.md",
+  "author_github_readme_scope": "Remote-sensing API code; does not establish CMAB dataset license.",
+  "unchanged_package": {
+    "name": "03_Chengdu_Buildings_Greenness.zip",
+    "bytes": 296274587,
+    "sha256": "0e31f03a16dd5e17ebff86ab28f44050332cb2bfc875614e52b62dcdc5caac07",
+    "matches_prior_verification": true
+  },
+  "author_lab_url": "https://www.beijingcitylab.org/data/data-049/index.html",
+  "author_lab_live_20261022_check": "Official DATA049 page opened successfully; links principal Figshare DOI 10.6084/m9.figshare.27992417; no separate license assertion needed.",
+  "additional_original_evidence": [
+    {
+      "id": "author_image_readme",
+      "url": "https://raw.githubusercontent.com/24kchengYe/RS-image-api/main/README.md",
+      "sha256_matches_original_record": true,
+      "notes": "Author source/cross-link; not the dataset license authority."
+    },
+    {
+      "id": "lab_dataset_page",
+      "url": "https://www.beijingcitylab.org/data/data-049/index.html",
+      "sha256_matches_original_record": true,
+      "notes": "Author source/cross-link; not the dataset license authority."
+    }
+  ]
+}

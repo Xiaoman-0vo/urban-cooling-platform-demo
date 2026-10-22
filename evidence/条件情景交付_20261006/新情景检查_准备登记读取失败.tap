@@ -1,0 +1,28 @@
+✔ 26 originals authenticate with 119 literal CSV strings, 39 blanks, 7 historical files, 8 web identities and 11 preview rows (17.810708ms)
+✔ source identity, original bytes, BOM, false adoption and exact metadata cannot be forged (7.875916ms)
+✔ two independent draft identities and edits preserve the other mode and every unknown scientific slot (1.675125ms)
+✖ full source references record purpose only; wrong object/gate bindings and science adoption are rejected (1.1145ms)
+✔ evaluation mismatch, day precision and unknown ends never apply events or create indefinite validity (0.34625ms)
+✔ legacy absence and explicit empty fields remain distinct; drafts roundtrip JSON and closed ZIP with all26 originals (2319.464167ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 5
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2597.910333
+
+✖ failing tests:
+
+test at tests/conditional-scenarios.test.mjs:38:1
+✖ full source references record purpose only; wrong object/gate bindings and science adoption are rejected (1.1145ms)
+  TypeError: registrations.flatMap is not a function
+      at draftSourceChoices (file:///Users/wangyanbo/%E7%A7%91%E7%A0%94/%E5%9B%BD%E8%87%AA%E7%84%B6%E2%80%94%E2%80%94%E9%AB%98%E5%AF%86%E5%BA%A6%E8%A1%97%E5%8C%BA%E9%99%8D%E6%B8%A9/%E5%B9%B3%E5%8F%B0%E6%9C%AC%E5%9C%B0%E9%A6%96%E7%89%88/src/conditional-drafts.js:21:24)
+      at TestContext.<anonymous> (file:///Users/wangyanbo/%E7%A7%91%E7%A0%94/%E5%9B%BD%E8%87%AA%E7%84%B6%E2%80%94%E2%80%94%E9%AB%98%E5%AF%86%E5%BA%A6%E8%A1%97%E5%8C%BA%E9%99%8D%E6%B8%A9/%E5%B9%B3%E5%8F%B0%E6%9C%AC%E5%9C%B0%E9%A6%96%E7%89%88/tests/conditional-scenarios.test.mjs:47:28)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)

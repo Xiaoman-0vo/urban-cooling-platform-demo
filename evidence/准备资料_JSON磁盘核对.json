@@ -1,0 +1,50 @@
+{
+  "checked_at": "2026-10-05T20:01:58.494Z",
+  "file": {
+    "path": "/Users/wangyanbo/Downloads/街区交接_E4125_N33891_2026-10-05T20-00-22-941Z.json",
+    "bytes": 4878019,
+    "sha256": "78932744a1ebeca82ba67a9faef1c03d7c711f3265dfcd5e5da4c1051388d1ed"
+  },
+  "source_package_equals_original": true,
+  "scene_equals_original": true,
+  "layers_equal_original": true,
+  "scene_layer_count": 15,
+  "research_registrations": [
+    "coordination-index:efa0962c4a6ea46d47d9339330e350120f7d923d80008aeb214da5b95f144fd2",
+    "coordination-index:6b56102f564361fe2755efbea9b613b2a71e67af3d5fcd247ea157cc2af659f9"
+  ],
+  "preparation_registration": "pilot-preparation:7d66553a704f56bb247003cdb163f5234a7c90abeaca8eb06816db297f764892",
+  "original_preparation_zip": {
+    "bytes": 93456,
+    "sha256": "08c7156289efc7a383b096fca81a8442cc0915ed265c6986dfe4a6d6eaafd543",
+    "original_bytes_equal": true
+  },
+  "explicit_sources_verified": 14,
+  "complete_residence_candidates": 6,
+  "population_not_allocated": true,
+  "scientific_action_gates": {
+    "prediction": false,
+    "physical_simulation": false,
+    "service_evaluation": false,
+    "fairness_evaluation": false,
+    "candidate_generation": false,
+    "ranking": false
+  },
+  "status_axes": {
+    "artifact": "checked",
+    "science": "not_assessed",
+    "integration": "not_adapted",
+    "execution": "not_run"
+  },
+  "selected_reference": {
+    "layerKey": "residence_candidates",
+    "id": "cmab_v7_chengdu_source_row_146756"
+  },
+  "green_fx": true,
+  "residence_candidates_visible": true,
+  "zip_sidecar_consistent": null,
+  "zip_file_members": null,
+  "disk_reopened_in_ui": true,
+  "historical_source_count": 24,
+  "browser_reopen_evidence": "evidence/准备资料_JSON实际重开.png"
+}

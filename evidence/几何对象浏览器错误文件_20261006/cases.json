@@ -1,0 +1,55 @@
+{
+  "actual_downloaded_baseline": {
+    "path": "/Users/wangyanbo/Downloads/街区交接_E4125_N33891_2026-10-06T03-14-14-141Z.json",
+    "bytes": 15867052,
+    "sha256": "b08a6a127a5709598b16f668fc4b0cfe2dee7e43aecd855c1c4338c3b6ed7628"
+  },
+  "scope": "five new geometry/source-identity/state counterexamples; whole-batch persistence checked separately",
+  "cases": [
+    {
+      "id": "01_wrong_geometry_identity",
+      "label": "新增来源包身份指纹错误",
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/几何对象浏览器错误文件_20261006/01_wrong_geometry_identity.json",
+      "bytes": 12931043,
+      "sha256": "e87129edf3cbb17d9fec8c6c076fe10f6af33d0d89346b54317d2af9d6243743",
+      "expected": "reject_before_engineering_state_commit",
+      "rejection_scope": "closed source registration identity"
+    },
+    {
+      "id": "02_direction_building_foreign_key",
+      "label": "方向贡献建筑外键改写",
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/几何对象浏览器错误文件_20261006/02_direction_building_foreign_key.json",
+      "bytes": 12931063,
+      "sha256": "17284fcde23126ac45170320f61debdf242ae83326331693cdf1cffa2d4bb188",
+      "expected": "reject_before_engineering_state_commit",
+      "rejection_scope": "changed frozen source identity rejected before inner foreign-key semantics; pure validators separately exercise foreign-key failure"
+    },
+    {
+      "id": "03_strict_failure_upgraded",
+      "label": "严格等价失败错误升级为全部通过",
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/几何对象浏览器错误文件_20261006/03_strict_failure_upgraded.json",
+      "bytes": 12931003,
+      "sha256": "fa1daa63b82409d3a9330285edab00ce8af0ed8780de276530e983df3eaee406",
+      "expected": "reject_before_engineering_state_commit",
+      "rejection_scope": "known failed source review state must remain legal read-only evidence, without upgrade"
+    },
+    {
+      "id": "04_history_promoted",
+      "label": "未接受字段历史误放为当前资料",
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/几何对象浏览器错误文件_20261006/04_history_promoted.json",
+      "bytes": 12930967,
+      "sha256": "6d640f4535f388026277314ef3b9dcc635f4fda7255415de100e39ee28bde21d",
+      "expected": "reject_before_engineering_state_commit",
+      "rejection_scope": "historical role/count and current source group identity"
+    },
+    {
+      "id": "05_bare_receiver_alias",
+      "label": "六受体别名被裸ID替代",
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/几何对象浏览器错误文件_20261006/05_bare_receiver_alias.json",
+      "bytes": 12930939,
+      "sha256": "23de92f645b2af9cdb15e2afe44edfe9bba12901f408ddb823cf8587e7e17ba8",
+      "expected": "reject_before_engineering_state_commit",
+      "rejection_scope": "full asset SHA/layer/original-ID alias evidence"
+    }
+  ]
+}

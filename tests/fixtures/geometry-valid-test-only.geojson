@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "id": "qa-building-001", "properties": {"source_id": "qa-building-001", "height_m": null, "science_validation": "not_assessed", "note": "界面导入验收用几何，不是研究样本"}, "geometry": {"type": "Polygon", "coordinates": [[[104.06, 30.68], [104.0602, 30.68], [104.0602, 30.68015], [104.06, 30.68015], [104.06, 30.68]]]}}]}

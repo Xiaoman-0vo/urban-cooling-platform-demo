@@ -1,0 +1,33 @@
+{
+  "repeat_byte_identical": true,
+  "before": {
+    "chengdu_navigation_boundary.geojson": "9e347fd0249c22fac185040f0f88fa8202fec5c440b2e16fe09adf171c3fbb15",
+    "chengdu_city_green_points.geojson": "0fee2c30a14a05d87f3ed8e47a30a7f31349b5914bbd6d1325cf705da81ee325",
+    "chengdu_urban_green_points.geojson": "752583ed0c37ad2a122a249fd5afaf77415957f0c94af558a7b6dba34a10aef8",
+    "chengdu_city_effects.geojson": "b95944e9563f9f11135f3154f7337970bc4e958215cfb187fd2848a9ce03e9f2",
+    "chengdu_green_context.json": "48e171324aed773fc86bf443ea12eec932366cfee59547d7c56c1344c9276574",
+    "CHENGDU_GREEN_DATA_SOURCES.md": "34584f6d52e2922765a2ba2a46d2748d72ea2275f8c6f252f4f69697bcae4da9"
+  },
+  "after": {
+    "chengdu_navigation_boundary.geojson": "9e347fd0249c22fac185040f0f88fa8202fec5c440b2e16fe09adf171c3fbb15",
+    "chengdu_city_green_points.geojson": "0fee2c30a14a05d87f3ed8e47a30a7f31349b5914bbd6d1325cf705da81ee325",
+    "chengdu_urban_green_points.geojson": "752583ed0c37ad2a122a249fd5afaf77415957f0c94af558a7b6dba34a10aef8",
+    "chengdu_city_effects.geojson": "b95944e9563f9f11135f3154f7337970bc4e958215cfb187fd2848a9ce03e9f2",
+    "chengdu_green_context.json": "48e171324aed773fc86bf443ea12eec932366cfee59547d7c56c1344c9276574",
+    "CHENGDU_GREEN_DATA_SOURCES.md": "34584f6d52e2922765a2ba2a46d2748d72ea2275f8c6f252f4f69697bcae4da9"
+  },
+  "effects_geometry_types": {
+    "MultiLineString": 130,
+    "LineString": 201,
+    "Polygon": 41,
+    "MultiPolygon": 23
+  },
+  "effect_kinds": {
+    "grid_major": 83,
+    "grid_minor": 248,
+    "scan_band": 64
+  },
+  "sweep_city_difference_area_degrees2": 1.6907420911522804e-16,
+  "maximum_clip_residual_length_degrees": 2.842170943040401e-14,
+  "research_or_nodata_sources_modified": false
+}

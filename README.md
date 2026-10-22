@@ -155,7 +155,7 @@ DATA_SOURCES.md              原有展示来源说明
 
 四包合计 **1,934,710,524 字节（1.9347 GB，约 1.802 GiB）**；118 项源文件/成员合计 2,356,992,143 字节。全国人口和 CLCD 未裁剪，Landsat 为既有窗口而非完整卫星场景，OSM 路网也不是成都全市全覆盖。此包未增加新裁剪、重投影或模型计算。
 
-四包可解压到同一目录，公共清单相同；Shapefile 的 `.shp/.shx/.dbf/.prj/.cpg` 必须同目录保留。实际发布后先核对 `SHA256SUMS.packages.txt`，再按 `manifest.csv/json` 和 `SHA256SUMS.files.txt` 检查文件；`data_products.json` 记录版本、坐标、年份及限制，`license_verification.json` 保留逐产品许可核验，`verification_report.json` 记录四包读回结果。原数据中含发布者加工或估计产品，不全部是第一手实测记录。
+四包先按包分目录解压，避免公共清单互相覆盖；再按 manifest 按需合并数据，保留各包元数据。Shapefile 的 `.shp/.shx/.dbf/.prj/.cpg` 必须同目录保留。实际发布后先核对 `SHA256SUMS.packages.txt`，再按 `manifest.csv/json` 和 `SHA256SUMS.files.txt` 检查文件；`data_products.json` 记录版本、坐标、年份及限制，`license_verification.json` 保留逐产品许可核验，`verification_report.json` 记录四包读回结果。原数据中含发布者加工或估计产品，不全部是第一手实测记录。
 
 取得数据后建议放在自己的独立数据目录，按清单校验哈希，不覆盖本仓库 `public/data/`。已有展示资料不要求你复刻作者的 Mac 目录。若要重新生成展示数据或复核当前研究原件，需要另行取得相应源文件并显式配置自己的路径。
 

@@ -1,0 +1,19 @@
+
+> dense-block-green-workspace@0.1.0 build
+> vite build && node scripts/prepare-sites-build.mjs
+
+vite v6.4.2 building for production...
+transforming...
+✓ 4710 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/client/index.html                     0.43 kB │ gzip:   0.33 kB
+dist/client/assets/index-ByFs1Hb_.css    186.42 kB │ gzip:  25.41 kB
+dist/client/assets/index-ZDkKQoCV.js   2,072.36 kB │ gzip: 609.56 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 3.16s
+Prepared Sites build: dist/server/index.js and dist/.openai/hosting.json

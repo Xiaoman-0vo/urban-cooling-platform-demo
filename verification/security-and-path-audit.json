@@ -1,0 +1,81 @@
+{
+  "scope": "All collaboration source/public/evidence; embedded ZIP and base64 members scanned in memory, no extraction or execution. High-confidence credential patterns only; source paths are retained provenance.",
+  "files": 666,
+  "counts": {
+    "unique_payloads": 861,
+    "bytes_scanned": 508691233,
+    "zip_payloads": 21,
+    "zip_members": 339,
+    "base64_fields": 365
+  },
+  "credential_findings": [],
+  "payloads_with_local_path_by_top_group": {
+    "远景光效修复_20261006.md": 1,
+    "验收记录.json": 1,
+    "五组成果资料接入_20261006.json": 1,
+    "成都全域光效交付_20261007.json": 1,
+    "DATA_SOURCES.md": 1,
+    "远景密集星点修正_20261007.json": 1,
+    "条件获取与两类情景交付_20261006.json": 1,
+    "科研状态接入_20261006.md": 1,
+    "远景密集星点修正_20261007.md": 1,
+    "三组来源准备接入_20261006.json": 1,
+    "共同试点准备接入_20261006.md": 1,
+    "共同试点准备接入_20261006.json": 1,
+    "三组来源准备接入_20261006.md": 1,
+    "来源几何与对象三组接入_20261006.json": 1,
+    "成都全域光效交付_20261007.md": 1,
+    "尺度光效核查_20261006.json": 1,
+    "条件获取与两类情景交付_20261006.md": 1,
+    "五组成果资料接入_20261006.md": 1,
+    "远景光效修复_20261006.json": 1,
+    "科研状态接入_20261006.json": 1,
+    "来源几何与对象三组接入_20261006.md": 1,
+    "evidence": 109,
+    "tests": 1,
+    "scripts": 4,
+    "public": 10
+  },
+  "largest_files": [
+    {
+      "path": "evidence/几何对象浏览器完整审阅_20261006.json",
+      "bytes": 27484025
+    },
+    {
+      "path": "evidence/中间尺度呼吸光效实录.gif",
+      "bytes": 13584283
+    },
+    {
+      "path": "evidence/条件情景交付_20261006/拒绝导入样例/目录升级栅格.json",
+      "bytes": 13445213
+    },
+    {
+      "path": "evidence/条件情景交付_20261006/拒绝导入样例/错误门绑定.json",
+      "bytes": 13445194
+    },
+    {
+      "path": "evidence/条件情景交付_20261006/拒绝导入样例/错误对象短键.json",
+      "bytes": 13445184
+    },
+    {
+      "path": "evidence/条件情景交付_20261006/拒绝导入样例/情景来源空值.json",
+      "bytes": 12936977
+    },
+    {
+      "path": "evidence/几何对象浏览器错误文件_20261006/02_direction_building_foreign_key.json",
+      "bytes": 12931063
+    },
+    {
+      "path": "evidence/几何对象浏览器错误文件_20261006/01_wrong_geometry_identity.json",
+      "bytes": 12931043
+    },
+    {
+      "path": "evidence/几何对象浏览器错误文件_20261006/03_strict_failure_upgraded.json",
+      "bytes": 12931003
+    },
+    {
+      "path": "evidence/几何对象浏览器错误文件_20261006/04_history_promoted.json",
+      "bytes": 12930967
+    }
+  ]
+}

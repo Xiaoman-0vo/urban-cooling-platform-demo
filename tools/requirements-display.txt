@@ -1,0 +1,8 @@
+# Existing verified GIS runtime; no installation was performed.
+# Python 3.13. Source readback / local display preparation only.
+geopandas==1.1.3
+shapely==2.1.2
+pyproj==3.7.2
+pyogrio==0.12.1
+pandas==2.3.3
+numpy==2.4.3

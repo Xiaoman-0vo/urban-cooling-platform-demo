@@ -1,0 +1,94 @@
+TAP version 13
+# Subtest: SP01 三组真实fixture核验31原件SHA/CRC/清单和语义，返回按group_id及完整原字节
+ok 1 - SP01 三组真实fixture核验31原件SHA/CRC/清单和语义，返回按group_id及完整原字节
+  ---
+  duration_ms: 659.90775
+  type: 'test'
+  ...
+# Subtest: SP02 旧缺字段默认空列表合法；任一无重复子集独立核验，不要求假造31件完整性
+ok 2 - SP02 旧缺字段默认空列表合法；任一无重复子集独立核验，不要求假造31件完整性
+  ---
+  duration_ms: 77.786833
+  type: 'test'
+  ...
+# Subtest: SP03 闭集拒绝重复组、unknown schema/keys、替换身份与缺base64，不自动升级登记
+ok 3 - SP03 闭集拒绝重复组、unknown schema/keys、替换身份与缺base64，不自动升级登记
+  ---
+  duration_ms: 54.381916
+  type: 'test'
+  ...
+# Subtest: SP04 全部catalog元数据闭合，SHA/bytes/字段/PK/CRS单位/四轴及九门控改写均拒绝
+ok 4 - SP04 全部catalog元数据闭合，SHA/bytes/字段/PK/CRS单位/四轴及九门控改写均拒绝
+  ---
+  duration_ms: 5.804
+  type: 'test'
+  ...
+# Subtest: SP05 原ZIP及独立原manifest字节改写被SHA拒绝，更新声明SHA也不能伪造catalog
+ok 5 - SP05 原ZIP及独立原manifest字节改写被SHA拒绝，更新声明SHA也不能伪造catalog
+  ---
+  duration_ms: 38.330667
+  type: 'test'
+  ...
+# Subtest: SP06 即使重打有效CRC的ZIP并更新源件/manifest/archive哈希，登记仍拒绝重签元数据
+ok 6 - SP06 即使重打有效CRC的ZIP并更新源件/manifest/archive哈希，登记仍拒绝重签元数据
+  ---
+  duration_ms: 17.055584
+  type: 'test'
+  ...
+# Subtest: SP07 真实ZIP的CRC破坏会被重用CRC阶段拒绝，中央目录重复先于同名覆盖被拒绝
+ok 7 - SP07 真实ZIP的CRC破坏会被重用CRC阶段拒绝，中央目录重复先于同名覆盖被拒绝
+  ---
+  duration_ms: 5.921834
+  type: 'test'
+  ...
+# Subtest: SP08 ZIP精确本组文件+source-manifest，漏成员、额外成员、成员大小变化拒绝
+ok 8 - SP08 ZIP精确本组文件+source-manifest，漏成员、额外成员、成员大小变化拒绝
+  ---
+  duration_ms: 5.719125
+  type: 'test'
+  ...
+# Subtest: SP09 严格JSON重复键与非有限数值拒绝，CSV重复field/坏引号/行宽拒绝，原空串/负号保留
+ok 9 - SP09 严格JSON重复键与非有限数值拒绝，CSV重复field/坏引号/行宽拒绝，原空串/负号保留
+  ---
+  duration_ms: 0.386041
+  type: 'test'
+  ...
+# Subtest: SP10 叠合视图拒绝漏行/重复复合键/外键替换及False/null误写，不把空接受值填零
+ok 10 - SP10 叠合视图拒绝漏行/重复复合键/外键替换及False/null误写，不把空接受值填零
+  ---
+  duration_ms: 7.735
+  type: 'test'
+  ...
+# Subtest: SP11 叠合GeoJSON拒绝CRS/几何类型/投影测量单位及道路空宽度升级
+ok 11 - SP11 叠合GeoJSON拒绝CRS/几何类型/投影测量单位及道路空宽度升级
+  ---
+  duration_ms: 6.994958
+  type: 'test'
+  ...
+# Subtest: SP12 天气完整24×35拒绝行键/四文本行号、空时间补值、单位和时长forcing升级
+ok 12 - SP12 天气完整24×35拒绝行键/四文本行号、空时间补值、单位和时长forcing升级
+  ---
+  duration_ms: 4.367792
+  type: 'test'
+  ...
+# Subtest: SP13 道路完整表拒绝漏行/重复PK/节点外键、False/null和直线距离替代通行结果
+ok 13 - SP13 道路完整表拒绝漏行/重复PK/节点外键、False/null和直线距离替代通行结果
+  ---
+  duration_ms: 31.339875
+  type: 'test'
+  ...
+# Subtest: SP14 异步验证读取独立登记快照，调用中外部改写不污染已验证来源与门控
+ok 14 - SP14 异步验证读取独立登记快照，调用中外部改写不污染已验证来源与门控
+  ---
+  duration_ms: 24.212
+  type: 'test'
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 14
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1083.200125

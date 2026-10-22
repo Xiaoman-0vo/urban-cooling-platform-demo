@@ -1,0 +1,55 @@
+{
+  "protected_existing_files": [
+    {
+      "path": "public/data/manifest.json",
+      "bytes": 66797,
+      "sha256": "f35ba68a8d3afaf7c4704d968f1e95bb298cda9d678ca2b26da83bbb009bb552"
+    },
+    {
+      "path": "public/data/scene.json",
+      "bytes": 898056,
+      "sha256": "ab2c7bcdc210ebe674688da9fe3abf3c7702ce66b92946367a75669afad03d2d"
+    },
+    {
+      "path": "public/data/macro_nodes.geojson",
+      "bytes": 7334779,
+      "sha256": "cf2e7722453f7b59ae9c8e3a54dae88df93da76997b6d9fe0a46afb9f805a1c4"
+    },
+    {
+      "path": "public/data/regional_green_points.geojson",
+      "bytes": 5965792,
+      "sha256": "62bf4f9c85aedbb51b4dc3accaf9fa92f001e917b985a84b29af42f5a4dfa400"
+    },
+    {
+      "path": "public/data/regional_roads_2021.geojson",
+      "bytes": 4515166,
+      "sha256": "56f276ba8b8c69e52a0f70ceb7312d7900394da1dff41b5d1598b6fc163b18fb"
+    },
+    {
+      "path": "public/data/research-state.json",
+      "bytes": 23017,
+      "sha256": "e9d30ca04de0b7afb8e409515fb8d342923e0e3e938a6decb02615cf5bc32646"
+    },
+    {
+      "path": "public/data/preparation-state.json",
+      "bytes": 138541,
+      "sha256": "1c7174ca51ecd0adaf44bbb4b2d0962b913bfc0c9be7abdeb56b2d4debed412b"
+    },
+    {
+      "path": "public/data/supplement-state.json",
+      "bytes": 3692678,
+      "sha256": "6a8a7a733d8323cd4770eb88b3987bf085d79b2d100adb52d1df140532b38fdd"
+    },
+    {
+      "path": "src/supplement-catalog.js",
+      "bytes": 15173,
+      "sha256": "34599e71e973526af3c770a98fba731858c7e6518453f709522a63dee96b570c"
+    },
+    {
+      "path": "五组成果资料接入_20261006.json",
+      "bytes": 37668,
+      "sha256": "de1b3ab775b60687dd26e9b8a70dc69a8270cb89a492b91e783d7ad0fe92d4b2"
+    }
+  ],
+  "new_source_fields_absent_in_previous_download": true
+}

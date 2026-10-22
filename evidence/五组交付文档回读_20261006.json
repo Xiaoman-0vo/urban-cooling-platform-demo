@@ -1,0 +1,166 @@
+{
+  "report": {
+    "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/五组成果资料接入_20261006.json",
+    "bytes": 37668,
+    "sha256": "de1b3ab775b60687dd26e9b8a70dc69a8270cb89a492b91e783d7ad0fe92d4b2"
+  },
+  "status": "pass",
+  "local_links": [
+    {
+      "doc": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/五组成果资料接入_20261006.md",
+      "target": "/Users/wangyanbo/Downloads/街区交接_E4125_N33891_2026-10-05T21-38-32-234Z.json",
+      "exists": true
+    },
+    {
+      "doc": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/五组成果资料接入_20261006.md",
+      "target": "/Users/wangyanbo/Downloads/街区交接_E4125_N33891_2026-10-05T21-39-09-879Z.zip",
+      "exists": true
+    },
+    {
+      "doc": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/五组成果资料接入_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/五组磁盘文件独立回读_20261006.json",
+      "exists": true
+    },
+    {
+      "doc": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/五组成果资料接入_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/五组来源读取与登记_20261006.json",
+      "exists": true
+    },
+    {
+      "doc": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/五组成果资料接入_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/五组登记重建不重基核查_20261006.json",
+      "exists": true
+    },
+    {
+      "doc": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/五组成果资料接入_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/五组浏览器拒绝核查_20261006.json",
+      "exists": true
+    },
+    {
+      "doc": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/五组成果资料接入_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/五组完整软件检查_20261006.log",
+      "exists": true
+    },
+    {
+      "doc": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/五组成果资料接入_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/五组构建_20261006.log",
+      "exists": true
+    },
+    {
+      "doc": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/五组成果资料接入_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/五组JSON磁盘重开_20261006.png",
+      "exists": true
+    },
+    {
+      "doc": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/五组成果资料接入_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/五组ZIP磁盘重开_20261006.png",
+      "exists": true
+    },
+    {
+      "doc": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/五组成果资料接入_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/五组本地保存恢复_20261006.png",
+      "exists": true
+    },
+    {
+      "doc": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/五组成果资料接入_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/五组成果最终界面_20261006.png",
+      "exists": true
+    },
+    {
+      "doc": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/规划成果定位与后续资料接入计划_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/../平台本地首版/五组成果资料接入_20261006.md",
+      "exists": true
+    },
+    {
+      "doc": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/规划成果定位与后续资料接入计划_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/../平台本地首版/evidence/五组磁盘文件独立回读_20261006.json",
+      "exists": true
+    },
+    {
+      "doc": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/规划成果定位与后续资料接入计划_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/历史记录/规划成果定位与后续资料接入计划_20261006_接入前.md",
+      "exists": true
+    },
+    {
+      "doc": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/规划成果定位与后续资料接入计划_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/../共享接口/公平性输入准备/资源支持试核/候选窗口重叠.csv",
+      "exists": true
+    },
+    {
+      "doc": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/规划成果定位与后续资料接入计划_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/../共享接口/公平性输入准备/资源支持试核/资源支持核查.json",
+      "exists": true
+    },
+    {
+      "doc": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/规划成果定位与后续资料接入计划_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/../共享接口/公平性输入准备/窗口敏感性试核/候选份额顺序变化.csv",
+      "exists": true
+    },
+    {
+      "doc": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/规划成果定位与后续资料接入计划_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/../共享接口/公平性输入准备/窗口敏感性试核/窗口敏感性核查.json",
+      "exists": true
+    },
+    {
+      "doc": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/规划成果定位与后续资料接入计划_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/../成果预期/02宏观_规划论文定位与结果解释.md",
+      "exists": true
+    },
+    {
+      "doc": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/规划成果定位与后续资料接入计划_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/../统筹推进清单.md",
+      "exists": true
+    },
+    {
+      "doc": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/规划成果定位与后续资料接入计划_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/共同试点增补资料说明_20261006.md",
+      "exists": true
+    },
+    {
+      "doc": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/规划成果定位与后续资料接入计划_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/../共享接口/规划开发增补/说明与边界.md",
+      "exists": true
+    },
+    {
+      "doc": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/规划成果定位与后续资料接入计划_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/../共享接口/规划开发增补/开发增补来源绑定.json",
+      "exists": true
+    },
+    {
+      "doc": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/规划成果定位与后续资料接入计划_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/../共享接口/公平性输入准备/资源支持试核/资源支持说明.md",
+      "exists": true
+    },
+    {
+      "doc": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/规划成果定位与后续资料接入计划_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/../共享接口/公平性输入准备/窗口敏感性试核/窗口敏感性说明.md",
+      "exists": true
+    },
+    {
+      "doc": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/规划成果定位与后续资料接入计划_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/../共享接口/规划描述底稿/README.md",
+      "exists": true
+    },
+    {
+      "doc": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/规划成果定位与后续资料接入计划_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/../共享接口/规划描述底稿/现状指标描述统计.csv",
+      "exists": true
+    },
+    {
+      "doc": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/规划成果定位与后续资料接入计划_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/../共享接口/微观试验准备/可改空间接纳证据表_20261006.md",
+      "exists": true
+    },
+    {
+      "doc": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/规划成果定位与后续资料接入计划_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/../平台本地首版/科研状态接入_20261006.md",
+      "exists": true
+    },
+    {
+      "doc": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/规划成果定位与后续资料接入计划_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/../平台本地首版/共同试点准备接入_20261006.md",
+      "exists": true
+    }
+  ],
+  "source_final_count": 32
+}

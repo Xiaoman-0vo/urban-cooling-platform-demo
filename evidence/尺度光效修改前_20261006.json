@@ -1,0 +1,26 @@
+{
+  "src/MapCanvas.jsx": {
+    "bytes": 29339,
+    "sha256": "1d153dc014db912bcef5874f5800c1284ba539b70eb6669fe9f6317529bfaf16"
+  },
+  "src/App.jsx": {
+    "bytes": 43306,
+    "sha256": "d3d81314d7b200461c9acf9455b5253a4cf05d8d135c248407783d351748757a"
+  },
+  "tests/map-canvas.test.mjs": {
+    "bytes": 40167,
+    "sha256": "77634c6c76c85bb342d6e0c1c21784ccc5118d43699d5a299e0f129ed157d28a"
+  },
+  "public/data/regional_green_points.geojson": {
+    "bytes": 5965792,
+    "sha256": "62bf4f9c85aedbb51b4dc3accaf9fa92f001e917b985a84b29af42f5a4dfa400"
+  },
+  "public/data/preparation-state.json": {
+    "bytes": 138541,
+    "sha256": "1c7174ca51ecd0adaf44bbb4b2d0962b913bfc0c9be7abdeb56b2d4debed412b"
+  },
+  "public/data/research-state.json": {
+    "bytes": 23017,
+    "sha256": "e9d30ca04de0b7afb8e409515fb8d342923e0e3e938a6decb02615cf5bc32646"
+  }
+}

@@ -1,0 +1,592 @@
+{
+  "schema_version": "0.1.local-research-intake-acceptance-record",
+  "record_date": "2026-10-06",
+  "record_kind": "research_metadata_registration_and_software_acceptance",
+  "evidence_root": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版",
+  "software_acceptance_scope": {
+    "status": "passed",
+    "included": [
+      "只读科研索引接入与原来源追溯",
+      "已有开发误差与阶段浏览",
+      "手动追加登记及历史快照共存",
+      "本地保存和页面重载恢复",
+      "实际JSON/ZIP下载与重开",
+      "科研登记ZIP侧录一致性",
+      "手机科研抽屉可读性",
+      "既有地图、项目和Sites worker软件回归"
+    ],
+    "scientific_application_validation_completed": false,
+    "research_execution_in_this_platform_intake": false,
+    "published_or_deployed_by_this_acceptance": false,
+    "acceptance_results_basis": "现有来源快照、独立适配回执、实际下载磁盘核对与恢复截图，以及本轮总控最新完成并确认的46项软件检查与构建通过；本记录整理不重新测试、操作UI或执行研究。",
+    "upstream_training_records_not_platform_execution": true,
+    "evidence_records": [
+      "验收记录.json",
+      "design-qa.md"
+    ]
+  },
+  "current_registration_id": "coordination-index:6b56102f564361fe2755efbea9b613b2a71e67af3d5fcd247ea157cc2af659f9",
+  "current_source_index": {
+    "path": "共享接口/当前成果状态索引.json",
+    "sha256": "6b56102f564361fe2755efbea9b613b2a71e67af3d5fcd247ea157cc2af659f9",
+    "bytes": 20572
+  },
+  "current_index_checked_at": "2026-10-06T03:03:37+08:00",
+  "preserved_versions": [
+    {
+      "registration_id": "coordination-index:efa0962c4a6ea46d47d9339330e350120f7d923d80008aeb214da5b95f144fd2",
+      "is_current": false,
+      "source_index": {
+        "path": "共享接口/当前成果状态索引.json",
+        "sha256": "efa0962c4a6ea46d47d9339330e350120f7d923d80008aeb214da5b95f144fd2",
+        "bytes": 20572
+      },
+      "index_checked_at": "2026-10-06T02:54:09+08:00",
+      "original_platform_adapter_status": "not_adapted_by_this_index_builder",
+      "snapshot_path": "public/data/research_snapshots/efa0962c4a6ea46d47d9339330e350120f7d923d80008aeb214da5b95f144fd2.json",
+      "snapshot_envelope_sha256": "fcfff706435f60e959244cced8ce6fa8b58e38bc2d6538c3dd6e4770eb64e60b",
+      "snapshot_envelope_bytes": 23017,
+      "adapter_receipt": {
+        "adapter_version": "0.1",
+        "registered_at": "2026-10-05T18:54:16.901Z",
+        "file_acceptance": {
+          "state": "readable_verified_index"
+        },
+        "science_validation": {
+          "state": "development_evidence_not_application_validated"
+        },
+        "integration": {
+          "state": "local_read_only_registration"
+        },
+        "execution": {
+          "state": "metadata_registered_no_model_execution"
+        },
+        "source_verification": {
+          "verified_source_count": 8,
+          "all_source_hashes_match": true,
+          "source_hashes_unchanged": true,
+          "index_hash_unchanged": true,
+          "scope": "index_and_selected_metadata_bytes_not_all_weights_or_inference"
+        },
+        "operation_gates": {
+          "validated_new_site_prediction": false,
+          "physical_cooling": false,
+          "comfort_accessibility": false,
+          "actual_use": false,
+          "equity_results": false,
+          "minimum_area_search": false,
+          "optimal_recommendation": false
+        }
+      },
+      "independent_receipt_path": "scripts/research-state-registration-receipt_efa0962c4a6ea46d47d9339330e350120f7d923d80008aeb214da5b95f144fd2.json",
+      "upstream_source_count": 8,
+      "development_metric_record_count": 26,
+      "historical_snapshot_preserved": true
+    },
+    {
+      "registration_id": "coordination-index:6b56102f564361fe2755efbea9b613b2a71e67af3d5fcd247ea157cc2af659f9",
+      "is_current": true,
+      "source_index": {
+        "path": "共享接口/当前成果状态索引.json",
+        "sha256": "6b56102f564361fe2755efbea9b613b2a71e67af3d5fcd247ea157cc2af659f9",
+        "bytes": 20572
+      },
+      "index_checked_at": "2026-10-06T03:03:37+08:00",
+      "original_platform_adapter_status": "not_adapted_by_this_index_builder",
+      "snapshot_path": "public/data/research_snapshots/6b56102f564361fe2755efbea9b613b2a71e67af3d5fcd247ea157cc2af659f9.json",
+      "snapshot_envelope_sha256": "e9d30ca04de0b7afb8e409515fb8d342923e0e3e938a6decb02615cf5bc32646",
+      "snapshot_envelope_bytes": 23017,
+      "adapter_receipt": {
+        "adapter_version": "0.1",
+        "registered_at": "2026-10-05T19:07:32.224Z",
+        "file_acceptance": {
+          "state": "readable_verified_index"
+        },
+        "science_validation": {
+          "state": "development_evidence_not_application_validated"
+        },
+        "integration": {
+          "state": "local_read_only_registration"
+        },
+        "execution": {
+          "state": "metadata_registered_no_model_execution"
+        },
+        "source_verification": {
+          "verified_source_count": 8,
+          "all_source_hashes_match": true,
+          "source_hashes_unchanged": true,
+          "index_hash_unchanged": true,
+          "scope": "index_and_selected_metadata_bytes_not_all_weights_or_inference"
+        },
+        "operation_gates": {
+          "validated_new_site_prediction": false,
+          "physical_cooling": false,
+          "comfort_accessibility": false,
+          "actual_use": false,
+          "equity_results": false,
+          "minimum_area_search": false,
+          "optimal_recommendation": false
+        }
+      },
+      "independent_receipt_path": "scripts/research-state-registration-receipt.json",
+      "upstream_source_count": 8,
+      "development_metric_record_count": 26,
+      "historical_snapshot_preserved": true
+    }
+  ],
+  "two_index_object_difference": {
+    "changed_top_level_fields": [
+      "checked_at"
+    ],
+    "upstream_sources_equal": true,
+    "stages_equal": true,
+    "development_metric_records_equal": true,
+    "not_two_independent_sets_of_research_results": true,
+    "comparison_basis": "本次只读整理直接回读两个已保存索引对象；仅checked_at不同。"
+  },
+  "source_summary": {
+    "distinct_upstream_sources": 8,
+    "development_manifests": 3,
+    "independent_technical_receipts": 3,
+    "development_MAE_summaries": 2,
+    "historical_scene_source_artifacts": 24,
+    "new_research_sources_not_merged_into_historical_scene_manifest": true
+  },
+  "stages": [
+    {
+      "stage_id": "one_hop_development",
+      "display_name": "一跳邻域开发",
+      "upstream_version": "one_hop_graph_development_v1",
+      "upstream_status": "one_hop_graph_development_complete_final_test_locked",
+      "assembly_or_training_completed_utc": "2026-10-05T16:22:47.104324+00:00",
+      "counts_as_indexed": {
+        "runs": 72,
+        "metrics": 72,
+        "predictions": 34938,
+        "folds": 4,
+        "development_targets": 1941,
+        "final_test_locked_targets": 596,
+        "semantic_channels": 26
+      },
+      "development_MAE_rows_in_this_index": 0,
+      "scientific_scope": "development_validation_used_for_stopping_and_comparison",
+      "technical_receipt_passed": true,
+      "receipt_binding_matches_indexed_manifest": true,
+      "manifest_source_id": "source_01",
+      "technical_receipt_source_id": "source_02",
+      "final_test_evaluated": false,
+      "usable_for_deployment_inference": false
+    },
+    {
+      "stage_id": "configuration_sources",
+      "display_name": "配置来源四版本",
+      "upstream_version": "configuration_source_roles_development_v1",
+      "upstream_status": "configuration_source_roles_development_complete_final_test_locked",
+      "assembly_or_training_completed_utc": "2026-10-05T17:08:17.887166+00:00",
+      "counts_as_indexed": {
+        "runs": 96,
+        "metrics": 96,
+        "predictions": 46584,
+        "folds": 4,
+        "development_targets": 1941,
+        "final_test_locked_targets": 596,
+        "semantic_channels": 26,
+        "seed_average_rows": 32,
+        "paired_MAE_seed_rows": 24,
+        "paired_MAE_fold_rows": 8
+      },
+      "development_MAE_rows_in_this_index": 8,
+      "scientific_scope": "development_validation_used_for_stopping_and_comparison",
+      "technical_receipt_passed": true,
+      "receipt_binding_matches_indexed_manifest": true,
+      "manifest_source_id": "source_03",
+      "technical_receipt_source_id": "source_04",
+      "final_test_evaluated": false,
+      "usable_for_deployment_inference": false
+    },
+    {
+      "stage_id": "full_group_ablations",
+      "display_name": "完整参照组别消融",
+      "upstream_version": "E01_full_available_reference_group_ablation_proxy_v1",
+      "upstream_status": "full_reference_group_ablations_development_complete_final_test_locked",
+      "assembly_or_training_completed_utc": "2026-10-05T18:30:28.217943+00:00",
+      "counts_as_indexed": {
+        "runs": 216,
+        "metrics": 216,
+        "predictions": 104814,
+        "folds": 4,
+        "development_targets": 1941,
+        "final_test_locked_targets": 596,
+        "semantic_channels": 26,
+        "seed_average_rows": 72,
+        "paired_metric_counts": {
+          "MAE_C": {
+            "seed_rows": 24,
+            "fold_rows": 8,
+            "contrasts": 8
+          },
+          "RMSE_C": {
+            "seed_rows": 24,
+            "fold_rows": 8,
+            "contrasts": 8
+          },
+          "R2": {
+            "seed_rows": 24,
+            "fold_rows": 8,
+            "contrasts": 8
+          }
+        }
+      },
+      "development_MAE_rows_in_this_index": 18,
+      "scientific_scope": "development_validation_used_for_stopping_and_comparison",
+      "technical_receipt_passed": true,
+      "receipt_binding_matches_indexed_manifest": true,
+      "manifest_source_id": "source_05",
+      "technical_receipt_source_id": "source_06",
+      "final_test_evaluated": false,
+      "usable_for_deployment_inference": false
+    }
+  ],
+  "latest_development_metric_summary": {
+    "record_count": 26,
+    "metric": "development_MAE",
+    "unit_as_indexed": "degC",
+    "display_unit": "℃",
+    "construct": "model_prediction_error",
+    "evaluation_split": "development_validation",
+    "compatible_with_scene_temperature_results": false,
+    "model_width_values": [
+      32
+    ],
+    "model_width_is_not_meter_scale": true,
+    "saved_numeric_precision": "原JSON数值保留；不按界面六位小数显示值覆盖保存。"
+  },
+  "field_mapping": [
+    {
+      "source_field": "source_index",
+      "project_field": "researchRegistrations[].source_index",
+      "display": "原索引路径、原字节SHA256与字节数",
+      "contract": "登记身份绑定原文件字节；不从序列化对象伪重算原SHA。"
+    },
+    {
+      "source_field": "index",
+      "project_field": "researchRegistrations[].index",
+      "display": "完整原索引对象",
+      "contract": "原字段、来源、阶段、记录、解释与门控完整保留，不合并改写旧sourcePackage或scene。"
+    },
+    {
+      "source_field": "index.stages",
+      "project_field": "researchRegistrations[].index.stages",
+      "display": "三阶段开发进度",
+      "contract": "开发验证用于早停与比较；技术回执通过不等于最终测试或应用验证。"
+    },
+    {
+      "source_field": "index.development_metric_records[].value",
+      "project_field": "researchRegistrations[].index.development_metric_records[].value",
+      "display": "开发MAE · ℃",
+      "contract": "模型预测误差，有限且非负；界面可显示六位小数，保存保留原数值精度，不写入场地温度结果。"
+    },
+    {
+      "source_field": "index.development_metric_records[].width",
+      "project_field": "researchRegistrations[].index.development_metric_records[].width",
+      "display": "模型宽度32",
+      "contract": "模型配置，不能解释为32米或场地范围。"
+    },
+    {
+      "source_field": "index.platform_adapter_status",
+      "project_field": "researchRegistrations[].index.platform_adapter_status",
+      "display": "原索引适配声明",
+      "contract": "保留not_adapted_by_this_index_builder；本平台接入写在独立adapter_receipt中。"
+    },
+    {
+      "source_field": "adapter_receipt",
+      "project_field": "researchRegistrations[].adapter_receipt",
+      "display": "平台只读适配四轴与来源核验",
+      "contract": "文件、科学验证、软件接入和运行状态分别登记，不升级源科学结论。"
+    },
+    {
+      "source_field": "readOnlyResearchActionGates()",
+      "project_field": "独立应用门控",
+      "display": "七项应用条件待补",
+      "contract": "恒返回false，不依赖metadata_index_valid或technical_receipt_passed启用应用。"
+    }
+  ],
+  "original_index_platform_adapter_status": "not_adapted_by_this_index_builder",
+  "independent_adapter_receipt": {
+    "adapter_version": "0.1",
+    "registered_at": "2026-10-05T19:07:32.224Z",
+    "file_acceptance": {
+      "state": "readable_verified_index"
+    },
+    "science_validation": {
+      "state": "development_evidence_not_application_validated"
+    },
+    "integration": {
+      "state": "local_read_only_registration"
+    },
+    "execution": {
+      "state": "metadata_registered_no_model_execution"
+    },
+    "source_verification": {
+      "verified_source_count": 8,
+      "all_source_hashes_match": true,
+      "source_hashes_unchanged": true,
+      "index_hash_unchanged": true,
+      "scope": "index_and_selected_metadata_bytes_not_all_weights_or_inference"
+    },
+    "operation_gates": {
+      "validated_new_site_prediction": false,
+      "physical_cooling": false,
+      "comfort_accessibility": false,
+      "actual_use": false,
+      "equity_results": false,
+      "minimum_area_search": false,
+      "optimal_recommendation": false
+    }
+  },
+  "interpretation_limits_as_indexed": [
+    "development_MAE_is_model_error_not_site_temperature_or_cooling",
+    "technical_receipt_pass_is_not_final_test_or_application_validation",
+    "finite_unstable_or_negative_C_increment_does_not_prove_no_physical_role"
+  ],
+  "operation_gates": {
+    "validated_new_site_prediction": false,
+    "physical_cooling": false,
+    "comfort_accessibility": false,
+    "actual_use": false,
+    "equity_results": false,
+    "minimum_area_search": false,
+    "optimal_recommendation": false
+  },
+  "operation_gate_authority": "src/research-state.js:readOnlyResearchActionGates()恒false，独立于任何索引或技术pass。",
+  "platform_nonexecution": {
+    "model_weights_loaded": false,
+    "locked_test_labels_read": false,
+    "new_training_or_prediction_performed": false,
+    "scientific_deployment_validated": false,
+    "research_runs_executed": false,
+    "all_weights_reverified": false,
+    "scope": "index_and_selected_metadata_bytes_not_all_weights_or_inference"
+  },
+  "save_and_handoff_contract": {
+    "project_schema": "0.1.local-view-handoff",
+    "registration_schema": "0.1.read-only-research-registration",
+    "project_field": "researchRegistrations",
+    "legacy_field_absence_accepted": true,
+    "legacy_project_auto_backfilled_with_current_registration": false,
+    "manual_append_new_registration": true,
+    "duplicate_registration_id_rejected": true,
+    "local_storage_preserves_registration_array": true,
+    "json_preserves_complete_index_and_original_numeric_values": true,
+    "zip_project_path": "project.json",
+    "zip_registration_sidecar_path": "research/registrations.json",
+    "new_zip_sidecar_required_when_project_field_present": true,
+    "zip_sidecar_must_match_project_registration_array": true,
+    "original_byte_hash_not_recomputed_from_serialized_object": true,
+    "old_sourcePackage_and_scene_preserved": true
+  },
+  "actual_downloads": [
+    {
+      "format": "JSON",
+      "actual_download_file": "/Users/wangyanbo/Downloads/街区交接_E4125_N33891_2026-10-05T19-09-47-608Z.json",
+      "sha256": "cce6ea23287a869cc21ee0c2ffb83ebb589e4737a06102a67c0851bd16d74ee8",
+      "bytes": 4738062,
+      "disk_evidence_record_path": "evidence/科研登记_最新双版本JSON磁盘核对.json",
+      "disk_evidence_record_as_read": {
+        "kind": "latest_actual_browser_json_download",
+        "file": "/Users/wangyanbo/Downloads/街区交接_E4125_N33891_2026-10-05T19-09-47-608Z.json",
+        "sha256": "cce6ea23287a869cc21ee0c2ffb83ebb589e4737a06102a67c0851bd16d74ee8",
+        "bytes": 4738062,
+        "registrations": 2,
+        "index_sha256_values": [
+          "efa0962c4a6ea46d47d9339330e350120f7d923d80008aeb214da5b95f144fd2",
+          "6b56102f564361fe2755efbea9b613b2a71e67af3d5fcd247ea157cc2af659f9"
+        ],
+        "latest_metric_rows": 26,
+        "source_artifact_count": 24,
+        "old_source_and_scene_deep_equal": true,
+        "each_registration_original_snapshot_deep_equal": true,
+        "disk_download_verified": true,
+        "browser_reopen_verified": true
+      },
+      "browser_reopen_verified": true,
+      "browser_reopen_confirmation_basis": "本轮总控已完成实际浏览器重开并明确确认；既有截图与磁盘核对记录引用如下。",
+      "browser_evidence_path": "evidence/科研登记_最终恢复.png",
+      "restored_registration_count": 2,
+      "restored_index_sha256_values": [
+        "efa0962c4a6ea46d47d9339330e350120f7d923d80008aeb214da5b95f144fd2",
+        "6b56102f564361fe2755efbea9b613b2a71e67af3d5fcd247ea157cc2af659f9"
+      ],
+      "source_artifact_count": 24,
+      "old_source_and_scene_deep_equal": true,
+      "each_registration_original_snapshot_deep_equal": true,
+      "registration_sidecar_consistent": null,
+      "record_flag_discrepancy_at_document_assembly": false,
+      "discrepancy_resolution": "磁盘核对标记与本轮实际重开结果一致。"
+    },
+    {
+      "format": "ZIP",
+      "actual_download_file": "/Users/wangyanbo/Downloads/街区交接_E4125_N33891_2026-10-05T19-11-03-041Z.zip",
+      "sha256": "ed14b2ee14efb33bb8a0360189917e1c6e49e706fdd56fa3a4858e71efff97bf",
+      "bytes": 818162,
+      "disk_evidence_record_path": "evidence/科研登记_最新双版本ZIP磁盘核对.json",
+      "disk_evidence_record_as_read": {
+        "kind": "latest_actual_browser_zip_download",
+        "file": "/Users/wangyanbo/Downloads/街区交接_E4125_N33891_2026-10-05T19-11-03-041Z.zip",
+        "sha256": "ed14b2ee14efb33bb8a0360189917e1c6e49e706fdd56fa3a4858e71efff97bf",
+        "bytes": 818162,
+        "registrations": 2,
+        "index_sha256_values": [
+          "efa0962c4a6ea46d47d9339330e350120f7d923d80008aeb214da5b95f144fd2",
+          "6b56102f564361fe2755efbea9b613b2a71e67af3d5fcd247ea157cc2af659f9"
+        ],
+        "latest_metric_rows": 26,
+        "source_artifact_count": 24,
+        "old_source_and_scene_deep_equal": true,
+        "each_registration_original_snapshot_deep_equal": true,
+        "registration_sidecar_consistent": true,
+        "disk_download_verified": true,
+        "browser_reopen_verified": true,
+        "browser_reopen_evidence": "evidence/科研登记_最新双版本ZIP重开.png"
+      },
+      "browser_reopen_verified": true,
+      "browser_reopen_confirmation_basis": "本轮总控已完成实际浏览器重开并明确确认；既有截图与磁盘核对记录引用如下。",
+      "browser_evidence_path": "evidence/科研登记_最新双版本ZIP重开.png",
+      "restored_registration_count": 2,
+      "restored_index_sha256_values": [
+        "efa0962c4a6ea46d47d9339330e350120f7d923d80008aeb214da5b95f144fd2",
+        "6b56102f564361fe2755efbea9b613b2a71e67af3d5fcd247ea157cc2af659f9"
+      ],
+      "source_artifact_count": 24,
+      "old_source_and_scene_deep_equal": true,
+      "each_registration_original_snapshot_deep_equal": true,
+      "registration_sidecar_consistent": true,
+      "record_flag_discrepancy_at_document_assembly": false,
+      "discrepancy_resolution": "磁盘核对标记与本轮实际重开结果一致。"
+    }
+  ],
+  "browser_acceptance": {
+    "reporting_basis": "本轮总控已完成并明确确认的实际UI验收；本记录只引用现有证据。",
+    "local_save_registration_count": 2,
+    "page_reload_restored_registration_count": 2,
+    "latest_json_reopened_registration_count": 2,
+    "latest_zip_reopened_registration_count": 2,
+    "legacy_project_not_auto_backfilled": true,
+    "manual_append_preserves_existing_registration": true,
+    "mobile_viewport_css_px": [
+      390,
+      844
+    ],
+    "mobile_research_drawer_client_width_px": 292,
+    "mobile_research_drawer_scroll_width_px": 292,
+    "mobile_horizontal_overflow": false,
+    "final_restoration_evidence": "evidence/科研登记_最终恢复.png",
+    "evidence_record_path": "验收记录.json:research_browser_verified"
+  },
+  "automated_software_checks": {
+    "passed": 46,
+    "failed": 0,
+    "breakdown": [
+      {
+        "name": "地图组件",
+        "file": "tests/map-canvas.test.mjs",
+        "passed": 21,
+        "failed": 0
+      },
+      {
+        "name": "项目与JSON/ZIP合同",
+        "file": "tests/project.test.mjs",
+        "passed": 12,
+        "failed": 0
+      },
+      {
+        "name": "科研只读登记合同",
+        "file": "tests/research-state.test.mjs",
+        "passed": 9,
+        "failed": 0
+      },
+      {
+        "name": "Sites worker交付结构",
+        "file": "tests/sites-worker.test.mjs",
+        "passed": 4,
+        "failed": 0
+      }
+    ],
+    "production_build": "passed",
+    "results_basis": "本轮总控最新确认的46项软件检查与构建通过，结果同步引用验收记录.json和design-qa.md；不是科研最终测试、应用验证或发布验收。",
+    "rerun_during_this_document_assembly": false,
+    "evidence_record_path": "验收记录.json"
+  },
+  "preserved_scene_contract": {
+    "source_artifact_count": 24,
+    "sourcePackage_deep_equal_in_latest_actual_json_and_zip": true,
+    "scene_deep_equal_in_latest_actual_json_and_zip": true,
+    "scene_temperature_improvement_C": null,
+    "scene_temperature_value_state": "not_calculated",
+    "scope_width_m": {
+      "core": 100,
+      "macro_context_and_display": 300,
+      "micro_preparation_window": 500,
+      "physical_solver_domain": null
+    },
+    "scientific_status_not_upgraded_by_save_or_export": true
+  },
+  "existing_evidence_paths": [
+    "public/data/research-state.json",
+    "public/data/research_snapshots/efa0962c4a6ea46d47d9339330e350120f7d923d80008aeb214da5b95f144fd2.json",
+    "public/data/research_snapshots/6b56102f564361fe2755efbea9b613b2a71e67af3d5fcd247ea157cc2af659f9.json",
+    "scripts/register-research-state.mjs",
+    "scripts/research-state-registration-receipt_efa0962c4a6ea46d47d9339330e350120f7d923d80008aeb214da5b95f144fd2.json",
+    "scripts/research-state-registration-receipt.json",
+    "evidence/科研登记_JSON磁盘核对.json",
+    "evidence/科研登记_ZIP磁盘核对.json",
+    "evidence/科研登记_JSON实际重开.png",
+    "evidence/科研登记_ZIP实际重开.png",
+    "evidence/科研登记_最新双版本JSON磁盘核对.json",
+    "evidence/科研登记_最新双版本ZIP磁盘核对.json",
+    "evidence/科研登记_最新双版本ZIP重开.png",
+    "evidence/科研登记_保存后.png",
+    "evidence/科研登记_重载恢复.png",
+    "evidence/科研登记_旧包保持原版本.png",
+    "evidence/科研登记_手机分析条件.png",
+    "evidence/科研登记_手机开发误差.png",
+    "evidence/科研登记_最终恢复.png",
+    "src/research-state.js",
+    "src/project.js",
+    "src/App.jsx",
+    "src/ResearchEvidence.jsx",
+    "验收记录.json",
+    "design-qa.md",
+    "evidence/连续光效_中间尺度补强.png",
+    "evidence/中间尺度呼吸光效实录.gif",
+    "evidence/连续光效_收尾点选.png"
+  ],
+  "documentation_assembly": {
+    "edited_only": [
+      "科研状态接入_20261006.md",
+      "科研状态接入_20261006.json"
+    ],
+    "existing_evidence_modified": false,
+    "research_executed": false,
+    "tests_rerun": false,
+    "browser_operated": false
+  },
+  "source_index_absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/当前成果状态索引.json",
+  "latest_map_follow_up": {
+    "state": "verified_in_latest_full_software_regression",
+    "description": "城市中间尺度zoom10–12补齐真实低比例来源点的可见光效；新增1项地图检查，地图21项、全套46项及构建通过。",
+    "included_in_latest_completed_check_count": true,
+    "latest_completed_check_count": 46,
+    "visual_emphasis_only": true,
+    "research_registration_and_archive_contract_changed": false,
+    "scientific_status_changed": false,
+    "evidence_path": "evidence/连续光效_中间尺度补强.png",
+    "result_confirmation_basis": "本轮总控最新验收确认。",
+    "actual_middle_scale_animation": {
+      "path": "evidence/中间尺度呼吸光效实录.gif",
+      "actual_browser_frames": 20,
+      "elapsed_ms": 5366,
+      "synthetic_frames": false
+    }
+  }
+}

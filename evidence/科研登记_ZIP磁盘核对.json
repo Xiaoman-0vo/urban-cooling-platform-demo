@@ -1,0 +1,18 @@
+{
+  "kind": "actual_browser_zip_download",
+  "file": "/Users/wangyanbo/Downloads/街区交接_E4125_N33891_2026-10-05T19-00-11-915Z.zip",
+  "bytes": 817380,
+  "sha256": "2b568596bd950378c3897046600719a55104550e1800e96248c481c9acb9cd74",
+  "expected_ui_sha256": "2b568596bd950378c3897046600719a55104550e1800e96248c481c9acb9cd74",
+  "source_artifacts": 24,
+  "research_registrations": 1,
+  "research_metric_rows": 26,
+  "old_source_and_scene_deep_equal": true,
+  "index_sha256": "efa0962c4a6ea46d47d9339330e350120f7d923d80008aeb214da5b95f144fd2",
+  "registration_sidecar_consistent": true,
+  "scene_temperature_improvement_C": null,
+  "download_event_received": false,
+  "disk_readback_verified": true,
+  "browser_reopen_verified": true,
+  "browser_reopen_evidence": "evidence/科研登记_ZIP实际重开.png"
+}

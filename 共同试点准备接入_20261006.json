@@ -1,0 +1,300 @@
+{
+  "schema_version": "0.1.pilot-preparation-platform-delivery-receipt",
+  "checked_at": "2026-10-05T20:09:46.732Z",
+  "local_url": "http://127.0.0.1:4173/",
+  "delivery_scope": "read_only_adoption_browse_save_handoff_without_scientific_execution",
+  "preparation_registration_id": "pilot-preparation:7d66553a704f56bb247003cdb163f5234a7c90abeaca8eb06816db297f764892",
+  "site_id": "E4125_N33891",
+  "archive": {
+    "path": "共享接口/共同试点输入对照/交接准备包/7d66553a704f56bb/E4125_N33891_研究输入准备.zip",
+    "sha256": "08c7156289efc7a383b096fca81a8442cc0915ed265c6986dfe4a6d6eaafd543",
+    "bytes": 93456
+  },
+  "manifest_source": {
+    "path": "共享接口/共同试点输入对照/交接准备包/7d66553a704f56bb/准备清单.json",
+    "sha256": "d858b018fc206d561202f0d0d6b0c31ea0cf2a05c87256f349fe35ed50c7f0d6",
+    "bytes": 11511
+  },
+  "registration_file": {
+    "path": "public/data/preparation-state.json",
+    "bytes": 138541,
+    "sha256": "1c7174ca51ecd0adaf44bbb4b2d0962b913bfc0c9be7abdeb56b2d4debed412b"
+  },
+  "original_status_axes": {
+    "artifact": "checked",
+    "science": "not_assessed",
+    "integration": "not_adapted",
+    "execution": "not_run"
+  },
+  "independent_adapter_receipt": {
+    "adapter_version": "0.1",
+    "registered_at": "2026-10-05T19:48:32.344Z",
+    "file_acceptance": {
+      "state": "verified_preparation_archive_and_14_source_bytes"
+    },
+    "science_validation": {
+      "state": "preparation_only_not_application_validated"
+    },
+    "integration": {
+      "state": "local_read_only_preparation_registration"
+    },
+    "execution": {
+      "state": "metadata_verified_no_research_execution"
+    },
+    "source_verification": {
+      "verified_source_count": 14,
+      "archive_member_count": 15,
+      "archive_hash_matches": true,
+      "archive_crc_verified": true,
+      "manifest_hash_matches": true,
+      "all_member_hashes_match": true,
+      "current_source_hashes_match": true,
+      "source_hashes_unchanged": true,
+      "archive_hash_unchanged": true,
+      "manifest_hash_unchanged": true,
+      "scope": "original_preparation_zip_manifest_and_explicit_14_metadata_source_bytes_only"
+    },
+    "operation_gates": {
+      "prediction": false,
+      "physical_simulation": false,
+      "service_evaluation": false,
+      "fairness_evaluation": false,
+      "candidate_generation": false,
+      "ranking": false
+    }
+  },
+  "explicit_source_count": 14,
+  "original_zip_member_count": 15,
+  "source_artifacts_preserved": 24,
+  "scene_layer_collections_preserved": 15,
+  "saved_research_registrations": 2,
+  "saved_preparation_registrations": 1,
+  "residence_source_candidates": 6,
+  "residence_geometry": "complete_source_polygons_not_clipped_not_simplified",
+  "residence_layer": "independent_display_only_not_occupancy_population_service_or_equity",
+  "native_population_unit": "persons_per_native_pixel",
+  "building_population_allocated": false,
+  "residence_receptor_od_created": false,
+  "accepted_macro_input_grids": 8,
+  "macro_grids": 9,
+  "missing_building_grid": "E4126_N33890",
+  "micro_accepted_unknown_values_null": 33,
+  "shared_receptor_candidates": 6,
+  "uncomputed_service_branches": 12,
+  "scientific_action_gates": {
+    "prediction": false,
+    "physical_simulation": false,
+    "service_evaluation": false,
+    "fairness_evaluation": false,
+    "candidate_generation": false,
+    "ranking": false
+  },
+  "research_runs_executed": false,
+  "model_weights_loaded": false,
+  "final_labels_read": false,
+  "scientific_inference_executed": false,
+  "original_sources_or_snapshots_modified": false,
+  "source_registration_receipt": "scripts/preparation-state-registration-receipt.json",
+  "automated_checks": {
+    "node_tests": {
+      "passed": 62,
+      "failed": 0,
+      "includes": {
+        "map_canvas": 22,
+        "project": 18,
+        "research_state": 9,
+        "preparation_state": 9,
+        "sites_worker": 4
+      }
+    },
+    "final_app_jsx_syntax": "passed",
+    "production_build": "passed",
+    "production_build_note": "Existing large initial JS chunk warning; no build error."
+  },
+  "browser_verified": [
+    "explicit_site_bound_adoption_without_duplicate",
+    "independent_full_residence_source_layer_pick_and_toggle",
+    "local_save_readback_then_reload_restore",
+    "actual_json_disk_download_readback_and_ui_reopen",
+    "actual_zip_disk_download_crc_sidecar_and_ui_reopen",
+    "original_preparation_zip_wrong_type_rejected_without_scene_replacement",
+    "old_project_without_preparation_not_backfilled",
+    "failed_location_does_not_clear_existing_registration",
+    "other_location_clears_registration_and_disables_adoption",
+    "user_import_does_not_inherit_trial_preparation",
+    "mobile_390_844_table_and_layer_toggle"
+  ],
+  "stale_async_operation_guard": {
+    "implemented": true,
+    "ordinary_save_restore_reopen_import_verified": true,
+    "forced_concurrent_race_tested_in_browser": false
+  },
+  "mobile_table": {
+    "viewport": [
+      390,
+      844
+    ],
+    "client_width_px": 260,
+    "scroll_width_px": 260,
+    "viewport_reset": true
+  },
+  "actual_downloads": {
+    "json": {
+      "checked_at": "2026-10-05T20:01:58.494Z",
+      "file": {
+        "path": "/Users/wangyanbo/Downloads/街区交接_E4125_N33891_2026-10-05T20-00-22-941Z.json",
+        "bytes": 4878019,
+        "sha256": "78932744a1ebeca82ba67a9faef1c03d7c711f3265dfcd5e5da4c1051388d1ed"
+      },
+      "source_package_equals_original": true,
+      "scene_equals_original": true,
+      "layers_equal_original": true,
+      "scene_layer_count": 15,
+      "research_registrations": [
+        "coordination-index:efa0962c4a6ea46d47d9339330e350120f7d923d80008aeb214da5b95f144fd2",
+        "coordination-index:6b56102f564361fe2755efbea9b613b2a71e67af3d5fcd247ea157cc2af659f9"
+      ],
+      "preparation_registration": "pilot-preparation:7d66553a704f56bb247003cdb163f5234a7c90abeaca8eb06816db297f764892",
+      "original_preparation_zip": {
+        "bytes": 93456,
+        "sha256": "08c7156289efc7a383b096fca81a8442cc0915ed265c6986dfe4a6d6eaafd543",
+        "original_bytes_equal": true
+      },
+      "explicit_sources_verified": 14,
+      "complete_residence_candidates": 6,
+      "population_not_allocated": true,
+      "scientific_action_gates": {
+        "prediction": false,
+        "physical_simulation": false,
+        "service_evaluation": false,
+        "fairness_evaluation": false,
+        "candidate_generation": false,
+        "ranking": false
+      },
+      "status_axes": {
+        "artifact": "checked",
+        "science": "not_assessed",
+        "integration": "not_adapted",
+        "execution": "not_run"
+      },
+      "selected_reference": {
+        "layerKey": "residence_candidates",
+        "id": "cmab_v7_chengdu_source_row_146756"
+      },
+      "green_fx": true,
+      "residence_candidates_visible": true,
+      "zip_sidecar_consistent": null,
+      "zip_file_members": null,
+      "disk_reopened_in_ui": true,
+      "historical_source_count": 24,
+      "browser_reopen_evidence": "evidence/准备资料_JSON实际重开.png"
+    },
+    "zip": {
+      "checked_at": "2026-10-05T20:01:58.635Z",
+      "file": {
+        "path": "/Users/wangyanbo/Downloads/街区交接_E4125_N33891_2026-10-05T20-00-32-765Z.zip",
+        "bytes": 1014437,
+        "sha256": "f13e1ecccd34a79a605cc8689d39de56a42295ee65f2b8a10956b5d225803178"
+      },
+      "source_package_equals_original": true,
+      "scene_equals_original": true,
+      "layers_equal_original": true,
+      "scene_layer_count": 15,
+      "research_registrations": [
+        "coordination-index:efa0962c4a6ea46d47d9339330e350120f7d923d80008aeb214da5b95f144fd2",
+        "coordination-index:6b56102f564361fe2755efbea9b613b2a71e67af3d5fcd247ea157cc2af659f9"
+      ],
+      "preparation_registration": "pilot-preparation:7d66553a704f56bb247003cdb163f5234a7c90abeaca8eb06816db297f764892",
+      "original_preparation_zip": {
+        "bytes": 93456,
+        "sha256": "08c7156289efc7a383b096fca81a8442cc0915ed265c6986dfe4a6d6eaafd543",
+        "original_bytes_equal": true
+      },
+      "explicit_sources_verified": 14,
+      "complete_residence_candidates": 6,
+      "population_not_allocated": true,
+      "scientific_action_gates": {
+        "prediction": false,
+        "physical_simulation": false,
+        "service_evaluation": false,
+        "fairness_evaluation": false,
+        "candidate_generation": false,
+        "ranking": false
+      },
+      "status_axes": {
+        "artifact": "checked",
+        "science": "not_assessed",
+        "integration": "not_adapted",
+        "execution": "not_run"
+      },
+      "selected_reference": {
+        "layerKey": "residence_candidates",
+        "id": "cmab_v7_chengdu_source_row_146756"
+      },
+      "green_fx": true,
+      "residence_candidates_visible": true,
+      "zip_sidecar_consistent": true,
+      "zip_file_members": [
+        "project.json",
+        "research/registrations.json",
+        "preparation/registrations.json",
+        "交接说明.md",
+        "layers/core.geojson",
+        "layers/context.geojson",
+        "layers/buildings.geojson",
+        "layers/vegetation.geojson",
+        "layers/source_classes_context.geojson",
+        "layers/overlap_review_core.geojson",
+        "layers/surface_review_core.geojson",
+        "layers/receptors.geojson",
+        "layers/macro_context300.geojson",
+        "layers/context500.geojson",
+        "layers/class_surface.geojson",
+        "layers/overlap_review.geojson",
+        "layers/hard_review.geojson",
+        "layers/building_parts.geojson",
+        "layers/roads.geojson"
+      ],
+      "disk_reopened_in_ui": true,
+      "historical_source_count": 24,
+      "browser_reopen_evidence": "evidence/准备资料_ZIP实际重开.png"
+    }
+  },
+  "evidence": [
+    "evidence/准备资料_显式接纳.png",
+    "evidence/准备资料_住宅候选点选.png",
+    "evidence/准备资料_住宅独立关闭.png",
+    "evidence/准备资料_重载恢复.png",
+    "evidence/准备资料_六类输入缺项.png",
+    "evidence/准备资料_JSON实际重开.png",
+    "evidence/准备资料_ZIP实际重开.png",
+    "evidence/准备资料_错误包类型保留工程.png",
+    "evidence/准备资料_旧工程不自动回填.png",
+    "evidence/准备资料_失败定位后仍保留.png",
+    "evidence/准备资料_其他位置不继承.png",
+    "evidence/准备资料_用户导入不继承.png",
+    "evidence/准备资料_移动端详情.png",
+    "evidence/光效_用户原页面最终状态.png",
+    "evidence/准备资料_最终恢复.png",
+    "evidence/光效_最终四川远景.png"
+  ],
+  "additional_evidence_outside_frozen_package": {
+    "record": "../平台产品设计/共同试点增补资料说明_20261006.md",
+    "read_for_source_explanation": true,
+    "integrated_in_this_registration": false,
+    "scientific_admission_changed": false
+  },
+  "published": false,
+  "local_document_link_check": {
+    "checked": 292,
+    "missing": 0,
+    "scope_record": "evidence/交付文档链接核查_20261006_准备接入.json"
+  },
+  "final_browser_project_saved": {
+    "research_registrations": 2,
+    "preparation_registrations": 1,
+    "source_reference": "cmab_v7_chengdu_source_row_146756",
+    "green_fx": true,
+    "residence_candidates_visible": true
+  }
+}

@@ -1,0 +1,31 @@
+✔ source review selects original multi-part support and cells without moving or adopting the research scene (10.479875ms)
+✔ adopted residence source polygons are isolated, selectable and hide without replacing the core scene (3.116834ms)
+✔ local style has no network assets, and research layers pass the installed style validator (2.270208ms)
+✔ stage and visibility cannot expose region extrusions; no geometry or field mutation (0.789416ms)
+✔ snapshot selection filters one real period, with unknown selection retaining both (0.662833ms)
+✔ site clicks inspect full features; neither blank clicks nor dragging replace the scene (1.149542ms)
+✔ region clicks pick locations and return the original grid feature (1.363875ms)
+✔ updated props change data and toggles, without moving the user camera (0.926542ms)
+✔ queries do not select a different input row while an updated GeoJSON source is rendering (0.862917ms)
+✔ default online navigation uses valid OSM raster with visible attribution; offline removes external assets (1.192667ms)
+✔ remote tile failure keeps local layers, reports once, and ignores late failures after offline (1.678417ms)
+✔ scope styles stay distinct, and an empty road snapshot retains both periods without a warning (0.835542ms)
+✔ regional green circles and historical roads persist across stage; greenFx toggles visibility without clearing sources (1.48225ms)
+✔ green display thresholds emphasize higher ratios without dropping any source point (0.784041ms)
+✔ green breathing preserves zoom expressions, continues into site, and stops for greenFx, reduced motion and cleanup (2.564209ms)
+✔ region sample objects inspect first and never invoke destructive candidate-location callbacks (0.83225ms)
+✔ cluster and original-point filters are exclusive; legal zoom expressions keep near points visible (1.3805ms)
+✔ low-ratio points retain breathing halos through cluster expansion and middle scales without mutating actual source data (34.873167ms)
+✔ the installed native cluster engine aggregates actual 5868 points through zoom9 and expands unchanged points from zoom10 (38.857834ms)
+✔ sync upgrades an existing zoom12 cluster source and stale paint in the same map without changing data or camera (2.059625ms)
+✔ sync rebuilds only a legacy green source when aggregation properties are absent or incompatible (2.062125ms)
+✔ rejected cluster updates report once while preserving the source data and map (0.975333ms)
+✔ orbit is interruptible and honors reduced motion (0.8485ms)
+ℹ tests 23
+ℹ suites 0
+ℹ pass 23
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 252.186791

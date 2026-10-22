@@ -1,0 +1,62 @@
+[
+  {
+    "file": "00.jpg",
+    "elapsed_ms": 10
+  },
+  {
+    "file": "01.jpg",
+    "elapsed_ms": 246
+  },
+  {
+    "file": "02.jpg",
+    "elapsed_ms": 494
+  },
+  {
+    "file": "03.jpg",
+    "elapsed_ms": 797
+  },
+  {
+    "file": "04.jpg",
+    "elapsed_ms": 1103
+  },
+  {
+    "file": "05.jpg",
+    "elapsed_ms": 1406
+  },
+  {
+    "file": "06.jpg",
+    "elapsed_ms": 1711
+  },
+  {
+    "file": "07.jpg",
+    "elapsed_ms": 2017
+  },
+  {
+    "file": "08.jpg",
+    "elapsed_ms": 2324
+  },
+  {
+    "file": "09.jpg",
+    "elapsed_ms": 2700
+  },
+  {
+    "file": "10.jpg",
+    "elapsed_ms": 2938
+  },
+  {
+    "file": "11.jpg",
+    "elapsed_ms": 3240
+  },
+  {
+    "file": "12.jpg",
+    "elapsed_ms": 3544
+  },
+  {
+    "file": "13.jpg",
+    "elapsed_ms": 3850
+  },
+  {
+    "file": "14.jpg",
+    "elapsed_ms": 4155
+  }
+]

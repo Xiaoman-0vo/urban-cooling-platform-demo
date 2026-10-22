@@ -1,0 +1,247 @@
+{
+  "WorldPop2020": {
+    "target_year": 2020,
+    "version": "Global2_R2025A_v1_CN_constrained",
+    "scope": "China national source raster",
+    "url": "https://hub.worldpop.org/geodata/listing?id=135",
+    "license": "CC BY 4.0",
+    "unit": "estimated persons per native pixel",
+    "notes": "3 arcseconds; nominal 100 m at equator. Target year differs from 2025 release. Not observed building residents.",
+    "raster_header": {
+      "crs": "EPSG:4326",
+      "crs_wkt": "GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AXIS[\"Latitude\",NORTH],AXIS[\"Longitude\",EAST],AUTHORITY[\"EPSG\",\"4326\"]]",
+      "width": 73530,
+      "height": 45337,
+      "bands": 1,
+      "dtype": [
+        "float32"
+      ],
+      "nodata": -99999.0,
+      "transform": [
+        0.00083333333,
+        0.0,
+        73.49999898600001,
+        0.0,
+        -0.00083333333,
+        53.560833455090005
+      ],
+      "bounds_source_crs": [
+        73.49999898600001,
+        15.780000272880002,
+        134.7749987409,
+        53.560833455090005
+      ],
+      "resolution_source_units": [
+        0.00083333333,
+        0.00083333333
+      ],
+      "tags": {
+        "TIFFTAG_DOCUMENTNAME": "chn_pop_2020_CN_100m_R2025A_v1",
+        "TIFFTAG_IMAGEDESCRIPTION": "CHN population 2020 [WorldPop R2025A v1]",
+        "TIFFTAG_DATETIME": "2025-07-16 00:51:51",
+        "TIFFTAG_COPYRIGHT": "CC-BY-4.0",
+        "Description": "CHN population 2020 [WorldPop R2025A v1]",
+        "AREA_OR_POINT": "Area"
+      }
+    }
+  },
+  "CLCD2020": {
+    "target_year": 2020,
+    "version": "Zenodo 18180184, published version 1.0.5",
+    "scope": "China national source raster",
+    "url": "https://zenodo.org/records/18180184",
+    "license": "CC BY 4.0",
+    "notes": "30 m categorical land cover; source Albers CRS retained; publisher class legend included.",
+    "raster_header": {
+      "crs": "PROJCS[\"unknown\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",0],PARAMETER[\"longitude_of_center\",105],PARAMETER[\"standard_parallel_1\",25],PARAMETER[\"standard_parallel_2\",47],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+      "crs_wkt": "PROJCS[\"unknown\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",0],PARAMETER[\"longitude_of_center\",105],PARAMETER[\"standard_parallel_1\",25],PARAMETER[\"standard_parallel_2\",47],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+      "width": 161378,
+      "height": 135079,
+      "bands": 1,
+      "dtype": [
+        "uint8"
+      ],
+      "nodata": 0.0,
+      "transform": [
+        30.0,
+        0.0,
+        -2629624.7830456714,
+        0.0,
+        -30.0,
+        5924251.5596752735
+      ],
+      "bounds_source_crs": [
+        -2629624.7830456714,
+        1871881.5596752735,
+        2211715.2169543286,
+        5924251.5596752735
+      ],
+      "resolution_source_units": [
+        30.0,
+        30.0
+      ],
+      "tags": {
+        "AREA_OR_POINT": "Area"
+      }
+    }
+  },
+  "CMAB_v7": {
+    "target_year": "Chengdu object acquisition dates unverified; national imagery 2021-2024",
+    "version": "10.6084/m9.figshare.27992417.v7",
+    "scope": "Chengdu city source Shapefile, 213051 records",
+    "url": "https://doi.org/10.6084/m9.figshare.27992417.v7",
+    "paper": "https://www.nature.com/articles/s41597-025-04730-5",
+    "license": "See license_verification.json; do not infer dataset license from paper license",
+    "crs": "EPSG:3857",
+    "notes": "Five source components preserved. 2D rooftop polygons and estimated attributes; filename 20230308 is not a proven observation date. Original fields merged_id, Height, Function, Age, Quality, Structure, Style."
+  },
+  "SGVI2023": {
+    "target_year": "2023 product; inputs described as 2019-2023 by publisher",
+    "version": "Zenodo 15258817 v1",
+    "scope": "All 45 Chengdu cd/ members: point and road layers including nodata layers",
+    "url": "https://zenodo.org/records/15258817",
+    "license": "CC BY 4.0 in local registry; see license_verification.json for current publisher metadata check",
+    "crs": "EPSG:4326",
+    "notes": "441806 Chengdu points. Derived green-view product, not street-view photographs. gvi1-gvi4 season mapping not verified; do not label directions or seasons by guessing."
+  },
+  "CNBH2020": {
+    "target_year": 2020,
+    "version": "Zenodo 7827315",
+    "scope": "Original publisher tile CNBH10m_X105Y31",
+    "url": "https://zenodo.org/records/7827315",
+    "license": "CC BY 4.0 in local registry",
+    "notes": "10 m building-height estimate. Authors use WSF2019 mask and 2018 reference floors. Nonfinite background is not uniformly a missing building or zero height.",
+    "raster_header": {
+      "crs": "EPSG:32648",
+      "crs_wkt": "PROJCS[\"WGS 84 / UTM zone 48N\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",105],PARAMETER[\"scale_factor\",0.9996],PARAMETER[\"false_easting\",500000],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH],AUTHORITY[\"EPSG\",\"32648\"]]",
+      "width": 19290,
+      "height": 22210,
+      "bands": 1,
+      "dtype": [
+        "float32"
+      ],
+      "nodata": null,
+      "transform": [
+        10.0,
+        0.0,
+        403550.0,
+        0.0,
+        -10.0,
+        3540880.0
+      ],
+      "bounds_source_crs": [
+        403550.0,
+        3318780.0,
+        596450.0,
+        3540880.0
+      ],
+      "resolution_source_units": [
+        10.0,
+        10.0
+      ],
+      "tags": {
+        "AREA_OR_POINT": "Area"
+      }
+    }
+  },
+  "UBGG_Chengdu": {
+    "target_year": "2020-07-27 and 2020-07-28 source imagery",
+    "version": "Zenodo 8352777 v1.0",
+    "scope": "Original Chengdu source raster",
+    "url": "https://zenodo.org/records/8352777",
+    "license": "CC BY 4.0 in local registry",
+    "notes": "3 m classified blue-green-gray product; tree and shrub combined. Not original Planet imagery; original nodata 15 preserved.",
+    "raster_header": {
+      "crs": "EPSG:32648",
+      "crs_wkt": "PROJCS[\"UTM_Zone_48N\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",105],PARAMETER[\"scale_factor\",0.9996],PARAMETER[\"false_easting\",500000],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH],AUTHORITY[\"EPSG\",\"32648\"]]",
+      "width": 10964,
+      "height": 10470,
+      "bands": 1,
+      "dtype": [
+        "uint8"
+      ],
+      "nodata": 15.0,
+      "transform": [
+        3.0,
+        0.0,
+        393918.0,
+        0.0,
+        -3.0,
+        3409023.0
+      ],
+      "bounds_source_crs": [
+        393918.0,
+        3377613.0,
+        426810.0,
+        3409023.0
+      ],
+      "resolution_source_units": [
+        3.0,
+        3.0
+      ],
+      "tags": {
+        "DataType": "Generic",
+        "AREA_OR_POINT": "Area"
+      }
+    }
+  },
+  "Landsat_LST": {
+    "target_year": "2020/2021 summer scenes",
+    "version": "Landsat 8 Collection 2 Level 2",
+    "scope": "Existing saved source-DN/QA windows from 10 scene IDs; not full scenes",
+    "url": "https://www.usgs.gov/landsat-missions/landsat-collection-2-surface-temperature",
+    "license": "USGS Landsat data, public domain",
+    "scene_ids": [
+      "LC08_L2SP_129039_20200728_02_T1",
+      "LC08_L2SP_129039_20210629_02_T1",
+      "LC08_L2SP_129039_20210731_02_T1",
+      "LC08_L2SP_130038_20200719_02_T1",
+      "LC08_L2SP_130038_20210823_02_T1",
+      "LC08_L2SP_130039_20200719_02_T1",
+      "LC08_L2SP_130039_20200804_02_T1",
+      "LC08_L2SP_130039_20200820_02_T1",
+      "LC08_L2SP_130039_20210604_02_T1",
+      "LC08_L2SP_130039_20210823_02_T1"
+    ],
+    "notes": "ST_B10 original DN to Kelvin: DN*0.00341802+149; Celsius subtracts 273.15. Delivered grid 30 m with about 100 m native thermal support. LST is surface temperature, not air temperature or comfort. No Celsius, trial mask, or other derived layers included."
+  },
+  "Landsat_Optical": {
+    "target_year": "2020-07-19 and 2020-07-28",
+    "version": "Landsat 8 Collection 2 Level 2",
+    "scope": "Existing red SR_B4, near-infrared SR_B5 and original QA windows, two scene IDs",
+    "url": "https://www.usgs.gov/landsat-missions/landsat-collection-2-surface-reflectance",
+    "license": "USGS Landsat data, public domain",
+    "notes": "Original DN to surface reflectance: DN*0.0000275-0.2. No NDVI or recalculated reflectance layers included."
+  },
+  "OSM_Roads": {
+    "target_year": "2020/2021 beginning-of-year database snapshots",
+    "version": "china-200101 / china-210101 local complete-way extracts",
+    "scope": "Extraction box [103.97,30.59,104.16,30.76], preserving complete ways, not all Chengdu",
+    "url": "https://download.geofabrik.de/asia/china.html",
+    "license": "ODbL 1.0; © OpenStreetMap contributors",
+    "crs": "EPSG:4326",
+    "notes": "2021 source header timestamp 2021-01-01T21:42:03Z; exact 2020 header time unverified. Snapshot state does not prove road construction date, width, entrances or pedestrian access."
+  },
+  "NaturalEarth": {
+    "target_year": "Versions of local source archives acquired 2026-08-22",
+    "version": {
+      "province": "5.1.1",
+      "rivers": "5.0.0",
+      "places": "5.1.2"
+    },
+    "scope": "Original global admin1, rivers and populated-places ZIP archives",
+    "url": "https://www.naturalearthdata.com/downloads/",
+    "license": "Public domain",
+    "crs": "EPSG:4326",
+    "notes": "10m means cartographic scale 1:10 million, not a 10 m raster resolution. Navigation context only."
+  },
+  "OSM_CityBoundary": {
+    "target_year": "API response retrieved 2026-10-06",
+    "version": "OSM relation 2110264 full response",
+    "scope": "Complete Chengdu navigation boundary response with nodes, ways and relation",
+    "url": "https://api.openstreetmap.org/api/0.6/relation/2110264/full.json",
+    "license": "ODbL 1.0; © OpenStreetMap contributors",
+    "crs": "EPSG:4326",
+    "notes": "Navigation city boundary, distinct from second-ring study boundary; no simplification performed."
+  }
+}

@@ -1,0 +1,18 @@
+✔ 26 originals authenticate with 119 literal CSV strings, 39 blanks, 7 historical files, 8 web identities and 11 preview rows (18.272875ms)
+✔ source identity, original bytes, BOM, false adoption and exact metadata cannot be forged (8.486625ms)
+✔ two independent draft identities and edits preserve the other mode and every unknown scientific slot (1.711625ms)
+✔ full source references record purpose only; wrong object/gate bindings and science adoption are rejected (0.903417ms)
+✔ evaluation mismatch, day precision and unknown ends never apply events or create indefinite validity (0.422666ms)
+✔ legacy absence and explicit empty fields remain distinct; drafts roundtrip JSON and closed ZIP with all26 originals (2401.33575ms)
+✔ building review copies original features, maps six saved SVF values and every selected contribution without changing source fields (14.509875ms)
+✔ saved window scope and full-key locators retain two/one/eight source components and distinguish cuts from original nodes (4.055541ms)
+✔ park line and polygon share one original object; no geometry is generated for six alias-only candidate relations (0.770708ms)
+✔ all sixteen main tables expose counts/full fields while direction DOM is capped at 100 rows; failures and histories remain readable (226.948167ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2645.909375

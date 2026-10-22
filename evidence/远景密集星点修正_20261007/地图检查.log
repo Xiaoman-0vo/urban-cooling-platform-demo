@@ -1,0 +1,42 @@
+✔ whole-city sources keep display shares separate from G02, with valid multi-scale styles and persistent breathing (50.332833ms)
+✔ city light navigation and decorative sweeps preserve the loaded original scene and inspection priority (3.72575ms)
+✔ Sichuan navigation and the fixed study polygon remain independent of scene, green values and source picking (16.315958ms)
+✔ fresh Chengdu picks use the clicked location over lights; existing previews and real objects keep inspection priority (3.238542ms)
+✔ geometry review uses an independent namespace, fixed SVF range and original full-key features (11.26625ms)
+✔ window cut and park representations remain source symbols with explicit unknown application roles (1.222417ms)
+✔ source review selects original multi-part support and cells without moving or adopting the research scene (12.695542ms)
+✔ adopted residence source polygons are isolated, selectable and hide without replacing the core scene (5.809833ms)
+✔ local style has no network assets, and research layers pass the installed style validator (4.181541ms)
+✔ stage and visibility cannot expose region extrusions; no geometry or field mutation (1.892417ms)
+✔ snapshot selection filters one real period, with unknown selection retaining both (1.584708ms)
+✔ site clicks inspect full features; neither blank clicks nor dragging replace the scene (2.51675ms)
+✔ region clicks pick locations and return the original grid feature (3.616917ms)
+✔ updated props change data and toggles, without moving the user camera (3.425875ms)
+✔ queries do not select a different input row while an updated GeoJSON source is rendering (3.276125ms)
+✔ default online navigation uses valid OSM raster with visible attribution; offline removes external assets (3.806334ms)
+✔ remote tile failure keeps local layers, reports once, and ignores late failures after offline (7.334542ms)
+✔ scope styles stay distinct, and an empty road snapshot retains both periods without a warning (3.02775ms)
+✔ regional green circles and historical roads persist across stage; greenFx toggles visibility without clearing sources (4.517666ms)
+✔ green display thresholds emphasize higher ratios without dropping any source point (1.461041ms)
+✔ green breathing preserves zoom expressions, continues into site, and stops for greenFx, reduced motion and cleanup (7.773ms)
+✔ all seven green circles remain viewport-aligned and point halos breathe in legal zoom expressions without changing stable cores (10.339916ms)
+✔ green coating stays above site fills and below all range lines on first load, legacy upgrade and style reload (7.6945ms)
+✔ unready styles and nonempty pending objects block destructive region picks while stable objects and genuine blank clicks still work (5.920792ms)
+✔ green point and cluster clicks expand the display without selecting or replacing a scene; real objects retain priority (4.137583ms)
+✔ a rejected object data update keeps stale tiles unqueryable and retries the same data on the next sync before selecting (5.916042ms)
+✔ region sample objects inspect first and never invoke destructive candidate-location callbacks (3.19475ms)
+✔ unclustered original points use fine far cores and legal breathing halos while retaining near visibility (17.268334ms)
+✔ low-ratio points retain breathing halos across middle scales without mutating actual source data (38.059209ms)
+✔ the installed native tile engine retains all 12752 real source points at far and intermediate zooms without aggregates (115.841916ms)
+✔ sync disables legacy clustering and updates stale paint in the same map without changing data or camera (5.610208ms)
+✔ sync removes legacy aggregation expressions once without disturbing any scene or camera (13.98275ms)
+✔ rejected cluster updates report once while preserving the source data and map (4.289583ms)
+✔ orbit is interruptible and honors reduced motion (2.804042ms)
+ℹ tests 34
+ℹ suites 0
+ℹ pass 34
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 546.467333

@@ -1,0 +1,802 @@
+{
+  "schema_version": "0.1.conditional-source-draft-software-delivery",
+  "created_at": "2026-10-06T22:53:52.151229+08:00",
+  "scope": "26件冻结来源与两独立可保存草稿；独立原字节和浏览器实际回读；不重跑研究生产",
+  "status_axes": {
+    "source_intake": "completed_verified_original_bytes",
+    "editable_saved_drafts": "completed_actual_browser_and_disk_reopen",
+    "research_input_adoption": "not_completed_no_new_adoption",
+    "scientific_results": "not_completed_no_new_results"
+  },
+  "manifest": {
+    "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/条件获取与制度温度来源接入清单_20261006.json",
+    "bytes": 15246,
+    "sha256": "237500352dce32232a011dada8cf93049b097510a955f0085194f6e89b001253"
+  },
+  "original_source_zip": {
+    "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/条件获取与来源交接/237500352dce3223/条件获取与来源原件_20261006.zip",
+    "bytes": 108781,
+    "sha256": "6b9a12ec4b8bfb03491b68fd02202a674ad61d1616daf166c310310fdbcca3d1"
+  },
+  "source_group_count": 3,
+  "original_file_count": 26,
+  "original_bytes": 469234,
+  "originals": [
+    {
+      "path": "共享接口/服务链准备/望江楼开放制度公开来源_20261006/O08索引来源取得.json",
+      "bytes": 737,
+      "sha256": "1fa308d8003802808d52d7ea3a02883e186c2e7da5d4b6dfd757bc42e87e83a3",
+      "file_kind": "json",
+      "role": "source_evidence_read_only",
+      "raw_UTF8_BOM": false,
+      "disk_json_zip_browser_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/望江楼开放制度公开来源_20261006/README.md",
+      "bytes": 5320,
+      "sha256": "81812466d8880439cf423e215d1c4a121ed77d3817ae1144295ebd223043e381",
+      "file_kind": "md",
+      "role": "source_evidence_read_only",
+      "raw_UTF8_BOM": false,
+      "disk_json_zip_browser_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/望江楼开放制度公开来源_20261006/历史版本/七页初版/README.md",
+      "bytes": 4354,
+      "sha256": "179395255934dac7820a241fd0bf3ba73d000cc16a4005ee25c937dcda342271",
+      "file_kind": "md",
+      "role": "retained_superseded_history",
+      "raw_UTF8_BOM": false,
+      "disk_json_zip_browser_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/望江楼开放制度公开来源_20261006/历史版本/七页初版/官方分区与开放事件证据.json",
+      "bytes": 23711,
+      "sha256": "53bf22ec6406cf3f5d7d1ea29c4a6d7d37c613e6ee2b0b892a7bb76a4808af35",
+      "file_kind": "json",
+      "role": "retained_superseded_history",
+      "raw_UTF8_BOM": false,
+      "disk_json_zip_browser_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/望江楼开放制度公开来源_20261006/历史版本/七页初版/官方证据索引.csv",
+      "bytes": 2237,
+      "sha256": "ff8c635a6f2d43c6676111c2e44a1646d8128cf9b4fbcaee45533dd74056f7f8",
+      "file_kind": "csv",
+      "role": "retained_superseded_history",
+      "raw_UTF8_BOM": true,
+      "csv": {
+        "header": [
+          "evidence_id",
+          "source_id",
+          "construct",
+          "claim",
+          "source_url",
+          "publication_date",
+          "event_start_local",
+          "event_end_local",
+          "candidate_park_source_object_key",
+          "accepted_gate_keys_json",
+          "accepted_for_2020_research_date",
+          "accepted_zone_geometry",
+          "accepted_opening_hours",
+          "accepted_service_value"
+        ],
+        "row_count": 7,
+        "original_string_cell_count": 98,
+        "empty_string_count": 33
+      },
+      "primary_table": false,
+      "disk_json_zip_browser_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/望江楼开放制度公开来源_20261006/历史版本/七页初版/来源取得及回读.json",
+      "bytes": 2550,
+      "sha256": "81bcd641cb316009d5acf90966319b0fa373906add2506c0e823f155f5adac3c",
+      "file_kind": "json",
+      "role": "retained_superseded_history",
+      "raw_UTF8_BOM": false,
+      "disk_json_zip_browser_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/望江楼开放制度公开来源_20261006/历史版本/日期出处已补_定位口径澄清前/README.md",
+      "bytes": 4709,
+      "sha256": "e7d2050346c18f869ac831a2876652060a45293e545a33113aa68c207748c689",
+      "file_kind": "md",
+      "role": "retained_superseded_history",
+      "raw_UTF8_BOM": false,
+      "disk_json_zip_browser_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/望江楼开放制度公开来源_20261006/历史版本/日期出处已补_定位口径澄清前/官方分区与开放事件证据.json",
+      "bytes": 26582,
+      "sha256": "a4dbebed041fc9b1dab0dc915ab770c14daadf600ec2d40c7a9cb63efa4219f0",
+      "file_kind": "json",
+      "role": "retained_superseded_history",
+      "raw_UTF8_BOM": false,
+      "disk_json_zip_browser_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/望江楼开放制度公开来源_20261006/历史版本/日期出处已补_定位口径澄清前/来源取得及回读.json",
+      "bytes": 5205,
+      "sha256": "44bed05f04d0b93df74760a0e0767c3bf486c987d6079fdf3e73e92776b6b7b1",
+      "file_kind": "json",
+      "role": "retained_superseded_history",
+      "raw_UTF8_BOM": false,
+      "disk_json_zip_browser_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/望江楼开放制度公开来源_20261006/原网页/O01.html",
+      "bytes": 23286,
+      "sha256": "e736d72a33cc0bfd7d6497b20152eb0ba36e3e818cbd686e0485b6206ba27e01",
+      "file_kind": "html",
+      "role": "raw_public_source_document",
+      "raw_UTF8_BOM": false,
+      "disk_json_zip_browser_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/望江楼开放制度公开来源_20261006/原网页/O02.html",
+      "bytes": 21052,
+      "sha256": "a802367ad3747ed3e64399371c2569f1877469f5a76cf2fcdebd1ef5587ce2f5",
+      "file_kind": "html",
+      "role": "raw_public_source_document",
+      "raw_UTF8_BOM": false,
+      "disk_json_zip_browser_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/望江楼开放制度公开来源_20261006/原网页/O03.html",
+      "bytes": 20210,
+      "sha256": "b552f78166047be2aeb6a987f5ea25f3ae481914ba9ac5a47b4393d564e8d7e5",
+      "file_kind": "html",
+      "role": "raw_public_source_document",
+      "raw_UTF8_BOM": false,
+      "disk_json_zip_browser_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/望江楼开放制度公开来源_20261006/原网页/O04.html",
+      "bytes": 24919,
+      "sha256": "5dfe30d4bcae88dacbe4dda68e50f80305c212aa31f2c1288544e7d3f4f5b857",
+      "file_kind": "html",
+      "role": "raw_public_source_document",
+      "raw_UTF8_BOM": false,
+      "disk_json_zip_browser_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/望江楼开放制度公开来源_20261006/原网页/O05.html",
+      "bytes": 26330,
+      "sha256": "b56d523cb5b393b284018bb3d0beb236561803b112ff7d4850d784e086801ab9",
+      "file_kind": "html",
+      "role": "raw_public_source_document",
+      "raw_UTF8_BOM": false,
+      "disk_json_zip_browser_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/望江楼开放制度公开来源_20261006/原网页/O06.html",
+      "bytes": 21005,
+      "sha256": "c9152007c46f0c66c343c22532896cc71976133aee5491ffab065a115cb9cbf7",
+      "file_kind": "html",
+      "role": "raw_public_source_document",
+      "raw_UTF8_BOM": false,
+      "disk_json_zip_browser_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/望江楼开放制度公开来源_20261006/原网页/O07.html",
+      "bytes": 25565,
+      "sha256": "96135567b185abbe9719f21b14bb7df805458c56cf12369a8dec3812c22eb67c",
+      "file_kind": "html",
+      "role": "raw_public_source_document",
+      "raw_UTF8_BOM": false,
+      "disk_json_zip_browser_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/望江楼开放制度公开来源_20261006/原网页/O08.html",
+      "bytes": 30147,
+      "sha256": "12a8ff2b0f40a7ecef47b316ed6b81d196b1536846b6a99e985512c388ac3dd9",
+      "file_kind": "html",
+      "role": "raw_public_source_document",
+      "raw_UTF8_BOM": false,
+      "disk_json_zip_browser_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/望江楼开放制度公开来源_20261006/官方分区与开放事件证据.json",
+      "bytes": 27639,
+      "sha256": "627246ed25ff70ad249e32bd551ace9a6f8050726933021463bf8ddc47051a84",
+      "file_kind": "json",
+      "role": "source_evidence_read_only",
+      "raw_UTF8_BOM": false,
+      "disk_json_zip_browser_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/望江楼开放制度公开来源_20261006/官方证据索引.csv",
+      "bytes": 2921,
+      "sha256": "5ce241ba963c4a9bf9c713b44ca3c83ee70f881de747af7f3406499efeb74480",
+      "file_kind": "csv",
+      "role": "source_evidence_read_only",
+      "raw_UTF8_BOM": true,
+      "csv": {
+        "header": [
+          "evidence_id",
+          "source_id",
+          "construct",
+          "claim",
+          "source_url",
+          "publication_date",
+          "event_start_local",
+          "event_end_local",
+          "candidate_park_source_object_key",
+          "accepted_gate_keys_json",
+          "accepted_for_2020_research_date",
+          "accepted_zone_geometry",
+          "accepted_opening_hours",
+          "accepted_service_value",
+          "publication_date_source_id",
+          "publication_date_source_url",
+          "publication_date_raw_sha256"
+        ],
+        "row_count": 7,
+        "original_string_cell_count": 119,
+        "empty_string_count": 39
+      },
+      "primary_table": true,
+      "disk_json_zip_browser_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/望江楼开放制度公开来源_20261006/来源取得及回读.json",
+      "bytes": 6880,
+      "sha256": "8285eaac01f884360acaf1898650e3d8e30d41aa903298d53fcb0c5134dc1f44",
+      "file_kind": "json",
+      "role": "source_evidence_read_only",
+      "raw_UTF8_BOM": false,
+      "disk_json_zip_browser_equal": true
+    },
+    {
+      "path": "共享接口/温度来源准备/NCDC公开目录核查_20261006/README.md",
+      "bytes": 1724,
+      "sha256": "336e49b1e741f726157693f1194c1ad3b18b2f7c5ce1a4c8e7595280f86cb943",
+      "file_kind": "md",
+      "role": "source_evidence_read_only",
+      "raw_UTF8_BOM": false,
+      "disk_json_zip_browser_equal": true
+    },
+    {
+      "path": "共享接口/温度来源准备/NCDC公开目录核查_20261006/公开年度目录行.json",
+      "bytes": 1577,
+      "sha256": "c61c930398d2f728cc8ece580a4e4c2990828af5765b6105e07ab1839e4d7dc7",
+      "file_kind": "json",
+      "role": "source_evidence_read_only",
+      "raw_UTF8_BOM": false,
+      "disk_json_zip_browser_equal": true
+    },
+    {
+      "path": "共享接口/温度来源准备/NCDC公开目录核查_20261006/公开目录取得记录.json",
+      "bytes": 2720,
+      "sha256": "adc820326941c6d0924c63fa57d41cdecbb02f0966ad4dfea8c08725ebf2b6ac",
+      "file_kind": "json",
+      "role": "source_evidence_read_only",
+      "raw_UTF8_BOM": false,
+      "disk_json_zip_browser_equal": true
+    },
+    {
+      "path": "共享接口/温度来源准备/NCDC公开目录核查_20261006/公开页面.html",
+      "bytes": 152746,
+      "sha256": "4bcf046a95a4eaffaf7b807354cefbff60aa40d29736e257a353a3729785786c",
+      "file_kind": "html",
+      "role": "raw_public_source_document",
+      "raw_UTF8_BOM": false,
+      "disk_json_zip_browser_equal": true
+    },
+    {
+      "path": "共享接口/温度来源准备/NCDC公开目录核查_20261006/公开预览回读.json",
+      "bytes": 645,
+      "sha256": "120250afbbafbb7bfffe5f900e49cf282679fafe52eeec2eeb421f07b11d6b84",
+      "file_kind": "json",
+      "role": "source_evidence_read_only",
+      "raw_UTF8_BOM": false,
+      "disk_json_zip_browser_equal": true
+    },
+    {
+      "path": "共享接口/条件获取情景准备/统一开放与现实条件_产品情景定义_20261006.json",
+      "bytes": 4463,
+      "sha256": "780d15a4c88509988ea538a6d597008cc78a5e559cd3ceeeabd0abdcb5725330",
+      "file_kind": "json",
+      "role": "product_scenario_definition",
+      "raw_UTF8_BOM": false,
+      "disk_json_zip_browser_equal": true
+    }
+  ],
+  "downloaded_json": {
+    "path": "/Users/wangyanbo/Downloads/街区交接_E4125_N33891_2026-10-06T14-13-01-445Z.json",
+    "bytes": 16386933,
+    "sha256": "09963da37ed38704facc7f9bc99e3e195653b324aea0138848f557a216f5d8da"
+  },
+  "downloaded_zip": {
+    "path": "/Users/wangyanbo/Downloads/街区交接_E4125_N33891_2026-10-06T14-13-47-177Z.zip",
+    "bytes": 30910205,
+    "sha256": "81d5656e186421ddc1db2053414ab537bdaf4dbc1ad043411b7decdadc4c0031"
+  },
+  "json_and_zip_project_exact_bytes_equal": true,
+  "outer_zip_counts": {
+    "payload_files": 168,
+    "extra_member_receipts": 1,
+    "file_members_including_receipt": 169,
+    "directory_entries": 4,
+    "all_entries": 173,
+    "new_conditional_payload_files": 30
+  },
+  "nested_original_zip_counts": {
+    "raw_original_files": 26,
+    "manifest_files": 1,
+    "file_members": 27,
+    "directory_entries": 0
+  },
+  "current_park_table": {
+    "rows": 7,
+    "columns": 17,
+    "original_string_cells": 119,
+    "empty_string_cells": 39,
+    "utf8_bom_retained": true,
+    "all_cells_browser_json_zip_equal": true
+  },
+  "park_fact_count": 7,
+  "webpage_identity_count": 8,
+  "historical_raw_files": 7,
+  "ncdc_preview": {
+    "rows_including_header": 11,
+    "annual_titles": 10,
+    "raster_files_obtained": 0,
+    "all_browser_cells_original_equal": true
+  },
+  "candidate_identity_and_time_boundaries": {
+    "source_csv": "共享接口/服务链准备/入口与开放空间来源标记_20261006/入口与开放空间来源标记.csv",
+    "source_csv_sha256": "872ae0276407a0ed6eb474796580d4300fe56476694bada7457165e5fcd1827c",
+    "source_object_key": "OSM2021@sha256:d83436cd414db196d164fc35990910d6369347c6c47192ed6d79ffcfb2335f78/way/116486191",
+    "geometry_representations": [
+      "LineString",
+      "MultiPolygon"
+    ],
+    "object_last_edit_utc": "2020-11-08T10:41:47+00:00",
+    "source_snapshot_utc": "2021-01-01T21:42:03Z",
+    "official_named_gate_OSM_mapping": null,
+    "official_zone_geometry": null
+  },
+  "drafts": [
+    {
+      "schema_version": "0.1.conditional-draft",
+      "draft_id": "d92ebe18-23f8-40b2-a3ba-3975320a8ce4",
+      "mode_id": "uniform_open_walkable_surface",
+      "version": 10,
+      "created_at": "2026-10-06T14:06:49.356Z",
+      "updated_at": "2026-10-06T14:08:42.862Z",
+      "site_id": "E4125_N33891",
+      "definition_registration_id": "conditional-source:conditional_walk_scenario_definition:2d6298953da21fb207c2b77b93ae83caaeb5d09045936228554c97d804f37202",
+      "evaluation_timezone": "Asia/Shanghai",
+      "evaluation_time": "2020-07-22T10:00",
+      "origin_definition": "工程样例E4125_N33891；起点落位待核，当前填写仅用于草稿保存回读检查。",
+      "analysis_unit": "拟核对100米核心与300米周边的资料支持；评价单元协议尚未采用。",
+      "destination_temperature_rule": "拟比较有同期支持的较低观测LST环境；温度门槛与目的地规则待研究确认。",
+      "destination_support": "NCDC公开目录仅为候选，未取得成都2020栅格；不生成目的地温度。",
+      "temperature_variable": "LST",
+      "area_eligibility_rule": null,
+      "crossing_policy_description": "保留可步行人行部分；建筑、机动车车道、水面和已知不可步行地表排除，过街与连接尚待明确。",
+      "width_assumption_explanation": null,
+      "width_assumption_m": null,
+      "source_references": [
+        {
+          "registration_id": "conditional-source:temperature_catalogue_preview:744a7e8cb0e6ad918c7302b6b2414bf5945e7ce6158e8a99ab3d28880dbd9b0e",
+          "group_id": "temperature_catalogue_preview",
+          "path": "共享接口/温度来源准备/NCDC公开目录核查_20261006/公开年度目录行.json",
+          "sha256": "c61c930398d2f728cc8ece580a4e4c2990828af5765b6105e07ab1839e4d7dc7",
+          "purpose": "温度目录候选，记录查找线索；没有取得或采用温度栅格。",
+          "object_key": null
+        },
+        {
+          "registration_id": "source-geometry:building_geometry_svf:065259814b0207775bed815faec04b59c42f89338d560d8a6445ea3f20f6fa2b",
+          "group_id": "building_geometry_svf",
+          "path": "共享接口/来源几何与对象三组交接/建筑显示准备/完整来源建筑_WGS84.geojson",
+          "sha256": "7986cbd02ade35b688373f822ca6f9eed866d8f32c0c5383e88f7a037628a9ae",
+          "purpose": "建筑外可步行表面排除规则的几何候选；尚未采用或生成可步行地表。",
+          "object_key": null
+        }
+      ],
+      "mode_definition": {
+        "mode_id": "uniform_open_walkable_surface",
+        "display_name": "统一开放假设",
+        "description": "在明确的可步行地表和连通条件下，假设相关空间统一开放。",
+        "scope": "P02A_candidate_scenario",
+        "ownership_and_opening_policy": "uniform_open_assumption",
+        "real_permission_evidence_is_uniform_prerequisite": false,
+        "assumption_is_actual_public_permission": false,
+        "exclude": [
+          "building_footprints",
+          "motor_vehicle_carriageways",
+          "water_and_identified_nonwalkable_surfaces"
+        ],
+        "retain_if_walkable": [
+          "sidewalks",
+          "other_walkable_nonbuilding_noncarriageway_surfaces"
+        ],
+        "crossing_policy": "must_be_explicit_not_automatic_connectivity",
+        "road_centerlines_are_carriageway_polygons": false,
+        "declared_width_scenario_permitted": true,
+        "declared_width_m": null,
+        "adopted_walkable_geometry": null,
+        "adopted_graph_or_surface_connectivity": null
+      },
+      "scientific_outputs": {
+        "routes_or_OD": null,
+        "destination_temperature_values": null,
+        "accessibility_value": null,
+        "actual_public_service_value": null,
+        "thermal_comfort": null,
+        "fairness": null,
+        "ranked_retrofit_plan": null
+      },
+      "adopted": {
+        "walkable_geometry": null,
+        "connectivity": null,
+        "zone_geometry": null,
+        "gate_bindings": null,
+        "opening_schedule": null,
+        "temperature_raster": null,
+        "service_area": null
+      }
+    },
+    {
+      "schema_version": "0.1.conditional-draft",
+      "draft_id": "946f12f7-ef1d-4d2a-bb56-1ac7edc5cf07",
+      "mode_id": "documented_access_conditions",
+      "version": 6,
+      "created_at": "2026-10-06T14:07:57.508Z",
+      "updated_at": "2026-10-06T14:08:42.074Z",
+      "site_id": "E4125_N33891",
+      "definition_registration_id": "conditional-source:conditional_walk_scenario_definition:2d6298953da21fb207c2b77b93ae83caaeb5d09045936228554c97d804f37202",
+      "evaluation_timezone": "Asia/Shanghai",
+      "evaluation_time": "2022-09-18T10:00",
+      "origin_definition": "现实条件核对草稿的独立起点说明；北大门名称尚未绑定既有门点或六个受体。",
+      "analysis_unit": null,
+      "destination_temperature_rule": "按公开来源逐分区核对；这份草稿不自动套用统一开放假设。",
+      "destination_support": "温度栅格未取得，现实开放事件与人体舒适均未采用。",
+      "temperature_variable": null,
+      "area_eligibility_rule": null,
+      "crossing_policy_description": null,
+      "width_assumption_explanation": null,
+      "width_assumption_m": null,
+      "source_references": [
+        {
+          "registration_id": "conditional-source:park_access_evidence:2e150eb77738cf8df5e6d63160da94b5511f84e5038f50ea95a9ca12c6d13ff2",
+          "group_id": "park_access_evidence",
+          "path": "共享接口/服务链准备/望江楼开放制度公开来源_20261006/官方分区与开放事件证据.json",
+          "sha256": "627246ed25ff70ad249e32bd551ace9a6f8050726933021463bf8ddc47051a84",
+          "purpose": "逐条核对文物区、园林开放区和北大门名称的公开来源；事件、门绑定和服务范围均未采用。",
+          "object_key": null
+        }
+      ],
+      "mode_definition": {
+        "mode_id": "documented_access_conditions",
+        "display_name": "现实条件核对",
+        "description": "查看有出处的分区、入口名称及开放事件；实际服务需核实评价时段和通行链。",
+        "scope": "evidence_review_only_until_research_adoption",
+        "ownership_and_opening_policy": "unverified",
+        "automatic_permission_from_unknown": false,
+        "adopted_zone_geometry": null,
+        "adopted_gate_bindings": null,
+        "adopted_public_walk_edges": null,
+        "adopted_opening_schedule": null,
+        "unknown_event_end_is_indefinite_validity": false,
+        "reported_administrative_area_is_service_area": false
+      },
+      "scientific_outputs": {
+        "routes_or_OD": null,
+        "destination_temperature_values": null,
+        "accessibility_value": null,
+        "actual_public_service_value": null,
+        "thermal_comfort": null,
+        "fairness": null,
+        "ranked_retrofit_plan": null
+      },
+      "adopted": {
+        "walkable_geometry": null,
+        "connectivity": null,
+        "zone_geometry": null,
+        "gate_bindings": null,
+        "opening_schedule": null,
+        "temperature_raster": null,
+        "service_area": null
+      }
+    }
+  ],
+  "software_source_statement_preserved": {
+    "original_definition_actual_software_implementation_verified": false,
+    "new_software_acceptance_is_only_in_this_receipt": true
+  },
+  "legacy_protection": {
+    "baseline_json": {
+      "path": "/Users/wangyanbo/Downloads/街区交接_E4125_N33891_2026-10-06T03-14-14-141Z.json",
+      "bytes": 15867052,
+      "sha256": "b08a6a127a5709598b16f668fc4b0cfe2dee7e43aecd855c1c4338c3b6ed7628"
+    },
+    "baseline_zip": {
+      "path": "/Users/wangyanbo/Downloads/街区交接_E4125_N33891_2026-10-06T03-14-28-879Z.zip",
+      "bytes": 30004405,
+      "sha256": "9b2a14d5ce03c27d44418976b183e5aaf24bc33ad546a7cf923f5803cc6a45d2"
+    },
+    "field_presence_preserved_in_legacy_parser_test": true,
+    "keys_exactly_equal": [
+      "sourcePackage",
+      "scene",
+      "layers",
+      "imports",
+      "researchRegistrations",
+      "preparationRegistrations",
+      "supplementRegistrations",
+      "sourcePreparationRegistrations",
+      "geometrySourceRegistrations",
+      "software_receipt"
+    ],
+    "research_registers": 2,
+    "preparation_registers": 1,
+    "preparation_original_files": 14,
+    "supplement_registers": 5,
+    "source_preparation_original_files": 31,
+    "source_geometry_original_files": 72,
+    "old_outer_payload_members_exact_bytes_retained": 136
+  },
+  "browser_proof": {
+    "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/条件情景交付_20261006/浏览器实际回读.json",
+    "bytes": 1708533,
+    "sha256": "84be366ec7b1c7c1c286a262c2b9ec42f6b0fec1dbc116b97c37189b2aaa8c28"
+  },
+  "rejected_imports": [
+    {
+      "at": "2026-10-06T14:30:37.489Z",
+      "step": "rejected_import",
+      "name": "错误对象短键",
+      "message": "无法重开：情景草稿：公园候选仅支持原完整对象键，不能绑定门、受体或别的对象。",
+      "identity_unchanged": true
+    },
+    {
+      "at": "2026-10-06T14:30:38.201Z",
+      "step": "rejected_import",
+      "name": "错误门绑定",
+      "message": "无法重开：情景草稿：草稿不能产生路线、温度、面积、门绑定或科学结果。",
+      "identity_unchanged": true
+    },
+    {
+      "at": "2026-10-06T14:30:38.894Z",
+      "step": "rejected_import",
+      "name": "目录升级栅格",
+      "message": "无法重开：情景草稿：草稿不能产生路线、温度、面积、门绑定或科学结果。",
+      "identity_unchanged": true
+    },
+    {
+      "at": "2026-10-06T14:30:39.591Z",
+      "step": "rejected_import",
+      "name": "情景来源空值",
+      "message": "无法重开：条件来源核对：登记必须是最多三组的列表。",
+      "identity_unchanged": true
+    }
+  ],
+  "after_rejections_drafts_local_saved_restored_exactly_equal": true,
+  "additional_post_rejection_disk_comparison": {
+    "verified": false,
+    "browser_event": {
+      "cursor": 388,
+      "events": [
+        {
+          "sequence": 387,
+          "source": {
+            "tabId": 4
+          },
+          "method": "Page.downloadWillBegin",
+          "params": {
+            "frameId": "273091B6600AA7485671893C18EB0938",
+            "guid": "ce6c2141-c484-424d-bdf5-a605e2e40fb6",
+            "suggestedFilename": "街区交接_E4125_N33891_2026-10-06T14-40-16-524Z.json",
+            "url": "blob:http://127.0.0.1:4173/0876c8ba-5264-453c-b246-66c64a07886d"
+          }
+        },
+        {
+          "sequence": 388,
+          "source": {
+            "tabId": 4
+          },
+          "method": "Page.downloadProgress",
+          "params": {
+            "guid": "ce6c2141-c484-424d-bdf5-a605e2e40fb6",
+            "receivedBytes": 0,
+            "state": "canceled",
+            "totalBytes": 16386931
+          }
+        }
+      ],
+      "hasMore": false,
+      "truncated": false
+    },
+    "note": "额外第三件校验下载收到浏览器canceled事件，未计作磁盘文件；主JSON与ZIP均已实际落盘并重开通过"
+  },
+  "explicit_prepared_download_link": {
+    "implemented": true,
+    "extra_download_verified": false,
+    "persistent_blob_url_cleaned_up_when_replaced": true
+  },
+  "verification": {
+    "compatible_project_checks_passed": 39,
+    "final_conditional_checks_passed": 6,
+    "final_conditional_and_legacy_ui_checks_passed": 10,
+    "overlapping_checks_not_summed": true,
+    "build_passed": true,
+    "final_browser_error_or_warn_logs": [],
+    "initial_failed_checks_retained": [
+      "测试语法中await位置修复；保留首次失败日志",
+      "准备登记单对象测试读取改为单元素列表；保留失败日志"
+    ],
+    "development_ui_recheck": "开发组件更新后页面回到入口，按最终版本重新重开；原下载与本地保存保留"
+  },
+  "implementation": [
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/App.jsx",
+      "bytes": 72565,
+      "sha256": "299550d8bc6df690919c45a7d16255185e402247538226fbaf9914e29148c6fb"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/project.js",
+      "bytes": 41328,
+      "sha256": "152166195a690b2e495fb59bbcc7b090d78da7a8c46713772022f99af550becf"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/ConditionalScenarios.jsx",
+      "bytes": 13276,
+      "sha256": "41560571a4d75387ff72650f1061eae9975132273edb492d0cf7097583c94a90"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/conditional-drafts.js",
+      "bytes": 6635,
+      "sha256": "8361811c0dd66e091183e8a09b037096dee7f11a295b9f6d417587ad38f3a43e"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/conditional-source-state.js",
+      "bytes": 4803,
+      "sha256": "57e309f99e91baee9c25c99acacdf6102dc253724eb1970e2e36524ed6c300c1"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/conditional-source-catalog.js",
+      "bytes": 15637,
+      "sha256": "e7971490671e73b549503650c3087c6d4623aa5d9a1e4ba7becb3d52864f350f"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/styles.css",
+      "bytes": 29560,
+      "sha256": "d15f50d2e550afedd04a26e34ecd179e72d9eee1c501bfff7ea43678de8e5d38"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/MapCanvas.jsx",
+      "bytes": 42110,
+      "sha256": "d3cd62ee46002c0f25cffbeaff0b731737f97b36801fbe49b8a24278c13b8eff"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/public/data/conditional-source-state.json",
+      "bytes": 511869,
+      "sha256": "bfadb0c205a49091612da2401e009ec643ff91287c1dcf47484982a84bdcbadc"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/scripts/prepare-conditional-sources.py",
+      "bytes": 2692,
+      "sha256": "e9f32c4c9f52319f4f9f58a8492e9bf96006e64f30870841ea83921e77eb12fb"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/scripts/audit-conditional-delivery.py",
+      "bytes": 20099,
+      "sha256": "4eacc88464e62106e8e51bf2643914f0524b7e195527a3401ac54d4b4e7c1bfc"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/tests/conditional-scenarios.test.mjs",
+      "bytes": 8601,
+      "sha256": "dd25e71d48a930390d1011fc278c30795c021b1c1c6cfec026070b8202874f85"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/package.json",
+      "bytes": 1049,
+      "sha256": "6a6b1023f053b871174508454e42d3b29c9f7520526f39231fb413b266cff04e"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/AGENTS.md",
+      "bytes": 2959,
+      "sha256": "ccac6bbf64c1b17b6772a6c3665796846bfd24b382566d959347a1da316de6e5"
+    }
+  ],
+  "built_artifacts": [
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/dist/server/index.js",
+      "bytes": 483,
+      "sha256": "2dd0615a445143933d88d4271f54f5d63ee951421fcd08c5a7617bb09c564389"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/dist/.openai/hosting.json",
+      "bytes": 31,
+      "sha256": "d532abb65cf9ae20634b464d954cb4a08a0de9f3cd3cdf7f9c3ec8948826d947"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/dist/client/index.html",
+      "bytes": 428,
+      "sha256": "5dad4de926839d969f7e4204b142fb0c5b76ac5aa52d469cd4c13198b2338954"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/dist/client/assets/index-BRJiUiU7.css",
+      "bytes": 185925,
+      "sha256": "38a5a5f8e0a8677fbcf1cfd14dd958d53db17bba1eedd0ad4c49dbafb55b1fc6"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/dist/client/assets/index-BbaoDDpH.js",
+      "bytes": 2061268,
+      "sha256": "7482d5e41413a50bb75a583717acdcc7b3e893c8918221b182bd59c96fbfb1c4"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/dist/client/maplibre/6.12.0/maplibre-gl-worker.mjs",
+      "bytes": 19130,
+      "sha256": "1ecca7178f0a496b7980dc7a3c6a8c3575eda673cf3e9fa3324dcce7ef3890c2"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/dist/client/maplibre/6.12.0/maplibre-gl-shared.mjs",
+      "bytes": 516951,
+      "sha256": "df3d0b4ba965ebafd2deae3c568500308be2982d87dadd771ba82dc5a49a4631"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/dist/client/maplibre/6.12.0/LICENSE.txt",
+      "bytes": 5984,
+      "sha256": "ee5fc05a0677eaf69601d2c7db0d9ecd6cc27c3abc1d0733bc9ed34707cf8ef2"
+    }
+  ],
+  "verification_evidence": [
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/条件情景交付_20261006/工程兼容与情景检查.tap",
+      "bytes": 4695,
+      "sha256": "9ba0baca857151f8a1aa2ac3de924154fb08be54fb3bc6778dbbedade8134eb2"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/条件情景交付_20261006/新情景最终检查.tap",
+      "bytes": 855,
+      "sha256": "8915753a360a9a0bb9fa122a7c85ba2d06527398a8065b076d770e745d63a5ca"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/条件情景交付_20261006/最终情景与旧界面检查.tap",
+      "bytes": 1427,
+      "sha256": "3ecd3420930940dc31263df572ce5cabf8ab7106d478aa519a8ff03ea464b263"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/条件情景交付_20261006/新情景检查_首次语法失败.tap",
+      "bytes": 1691,
+      "sha256": "449f9f9807e403db679a97ca1a1da1ce5a0a91e7a8dfead4222f579f432b79d5"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/条件情景交付_20261006/新情景检查_准备登记读取失败.tap",
+      "bytes": 2049,
+      "sha256": "6719c0c000b371ce7946d66de21141209e74f678b1fafb8af1d57325b15ce082"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/条件情景交付_20261006/最终构建.log",
+      "bytes": 862,
+      "sha256": "addd28d6b92d19f16170a82a1acbc24cd1b1279b30b154cb133f0dbc030f5ee3"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/条件情景交付_20261006/浏览器实际回读.json",
+      "bytes": 1708533,
+      "sha256": "84be366ec7b1c7c1c286a262c2b9ec42f6b0fec1dbc116b97c37189b2aaa8c28"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/条件情景交付_20261006/本轮实现差异.diff",
+      "bytes": 46231,
+      "sha256": "cb8bf07245299fc0562a61f04d4526dad258e740793bb0c8f2d33b22501c7581"
+    }
+  ],
+  "current_04_boundary": {
+    "plan_reference_only": {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/04_物理降温与真实可获取的热舒适的错位/研究计划_论文主线修订版_v1.1_2026-10-06.md",
+      "bytes": 35665,
+      "sha256": "8f1e305fd1a91f6b68760d6f96045b76c78f15aa3f24d4b8225de1d1b3b76a48"
+    },
+    "paper_focus": "绿色与冷环境累积机会、固定资源网络约束和人口热压力匹配",
+    "future_platform_applications": "优化、连接比较与推荐损失留待后续平台应用，不作为当前论文必需能力",
+    "plan_or_population_bridge_added_to_26_bundle": false,
+    "plan_parameters_auto_adopted": false
+  }
+}

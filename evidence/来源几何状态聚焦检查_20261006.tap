@@ -1,0 +1,82 @@
+TAP version 13
+# Subtest: GS01 真实三组核验72原件及原清单SHA/CRC，16主表32834原字符串行，历史与二进制保留
+ok 1 - GS01 真实三组核验72原件及原清单SHA/CRC，16主表32834原字符串行，历史与二进制保留
+  ---
+  duration_ms: 2134.614792
+  type: 'test'
+  ...
+# Subtest: GS02 旧缺字段为空合法、1/2组不自动补齐，异步验证返回提交前原快照
+ok 2 - GS02 旧缺字段为空合法、1/2组不自动补齐，异步验证返回提交前原快照
+  ---
+  duration_ms: 156.332708
+  type: 'test'
+  ...
+# Subtest: GS03 闭集拒绝未知schema/key、重复组、metadata重签、失败改通过及九false/null升级
+ok 3 - GS03 闭集拒绝未知schema/key、重复组、metadata重签、失败改通过及九false/null升级
+  ---
+  duration_ms: 135.852416
+  type: 'test'
+  ...
+# Subtest: GS04 多MB严格base64无正则溢出，字节改写SHA拒绝，更新声明SHA不能冒充catalog
+ok 4 - GS04 多MB严格base64无正则溢出，字节改写SHA拒绝，更新声明SHA不能冒充catalog
+  ---
+  duration_ms: 289.034416
+  type: 'test'
+  ...
+# Subtest: GS05 重打有效CRC原ZIP并重签源/manifest/archive也不能变更未采用材料
+ok 5 - GS05 重打有效CRC原ZIP并重签源/manifest/archive也不能变更未采用材料
+  ---
+  duration_ms: 22.23175
+  type: 'test'
+  ...
+# Subtest: GS06 实际CRC阶段拒绝破坏，中央目录重复及本组成员/size失配拒绝
+ok 6 - GS06 实际CRC阶段拒绝破坏，中央目录重复及本组成员/size失配拒绝
+  ---
+  duration_ms: 14.184291
+  type: 'test'
+  ...
+# Subtest: GS07 严格JSON重复key/非有限和CSV重复field拒绝，原BOM、负号、False与空项不重写
+ok 7 - GS07 严格JSON重复key/非有限和CSV重复field拒绝，原BOM、负号、False与空项不重写
+  ---
+  duration_ms: 0.229458
+  type: 'test'
+  ...
+# Subtest: GS08 建筑全32400采样复合键及贡献FK拒绝漏行/重复/错误SHA层ID，空贡献不生成ID0
+ok 8 - GS08 建筑全32400采样复合键及贡献FK拒绝漏行/重复/错误SHA层ID，空贡献不生成ID0
+  ---
+  duration_ms: 572.735958
+  type: 'test'
+  ...
+# Subtest: GS09 SVF与无权重/无遮挡诊断不能替换，统一0..1与signed差及null工作高度边界严格
+ok 9 - GS09 SVF与无权重/无遮挡诊断不能替换，统一0..1与signed差及null工作高度边界严格
+  ---
+  duration_ms: 1422.084625
+  type: 'test'
+  ...
+# Subtest: GS10 14/15角点失败与311回读范围分开保留，不升级物理或全32400重新计算
+ok 10 - GS10 14/15角点失败与311回读范围分开保留，不升级物理或全32400重新计算
+  ---
+  duration_ms: 718.051541
+  type: 'test'
+  ...
+# Subtest: GS11 六完整前缀别名连接同SHA/layer/ID，两组原key不改写，不按裸ID连接
+ok 11 - GS11 六完整前缀别名连接同SHA/layer/ID，两组原key不改写，不按裸ID连接
+  ---
+  duration_ms: 1.263708
+  type: 'test'
+  ...
+# Subtest: GS12 窗外来源支撑不改公共路线、原标记False/空服务与2021快照不变准入
+ok 12 - GS12 窗外来源支撑不改公共路线、原标记False/空服务与2021快照不变准入
+  ---
+  duration_ms: 15.01725
+  type: 'test'
+  ...
+1..12
+# tests 12
+# suites 0
+# pass 12
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5665.95825

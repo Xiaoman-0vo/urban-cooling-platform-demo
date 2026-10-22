@@ -1,0 +1,13 @@
+{
+  "actual_browser_frames": 20,
+  "elapsed_ms": 5366,
+  "frame_geometry": [
+    1280,
+    720
+  ],
+  "resized_or_synthetic_frames": false,
+  "operation": "observe_breathing_at_default_chengdu_zoom_11_6",
+  "green_coverage_region_changed_between_frames": true,
+  "capture_timing": "光效动态帧_中间尺度/timing.json",
+  "gif": "中间尺度呼吸光效实录.gif"
+}

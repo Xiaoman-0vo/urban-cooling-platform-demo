@@ -1,0 +1,16 @@
+
+> dense-block-green-workspace@0.1.0 test:sites
+> node --test tests/sites-worker.test.mjs
+
+✔ serves existing static assets without a fallback (37.721875ms)
+✔ falls back to index.html for an unknown app route (1.000167ms)
+✔ does not turn missing API or write requests into the app shell (0.594ms)
+✔ emits the files required by Sites packaging (3.789084ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 157.954417

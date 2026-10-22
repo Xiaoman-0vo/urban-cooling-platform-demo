@@ -1,0 +1,22 @@
+{
+  "recording": "actual browser screenshots, no synthetic frames",
+  "frames": 40,
+  "captured_elapsed_ms": 6700,
+  "green_crop_box_pixels": [
+    350,
+    425,
+    465,
+    545
+  ],
+  "green_channel_mean_min": 26.97021739130435,
+  "green_channel_mean_max": 41.33528985507246,
+  "gif_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/远景增强光效实录_20261006.gif",
+  "gif_bytes": 190538,
+  "gif_sha256": "76b817c069078c5718c265e49651be1d7523b549f1eceae25a786001db7498eb",
+  "gif_display_frame_count": 20,
+  "gif_display_resolution": [
+    535,
+    648
+  ],
+  "gif_processing": "Every second actual frame, resized with a shared palette; no synthetic animation frames"
+}

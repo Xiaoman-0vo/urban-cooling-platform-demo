@@ -1,0 +1,165 @@
+{
+  "checked_at_utc": "2026-10-22T10:06:35.125264+00:00",
+  "status": "passed",
+  "scope": "Only datasets/ created; original 2GB ZIPs not repackaged or copied into this repository. No remote mutations.",
+  "copied_documents": [
+    {
+      "file": "manifest.csv",
+      "bytes": 43543,
+      "sha256": "620685794f5555ef6674ad476035bdd130edd8c5285a6671f451820e65747352",
+      "matches_original_byte_for_byte": true
+    },
+    {
+      "file": "manifest.json",
+      "bytes": 72675,
+      "sha256": "2574487fff9c7fde6bb6794e607f1179813f8f4519cf2ab6fab5a1a7e2cd6d64",
+      "matches_original_byte_for_byte": true
+    },
+    {
+      "file": "data_products.json",
+      "bytes": 11603,
+      "sha256": "992d435149f2d8ab8ce39c60ce5df50dda9896ea047d51fa9d3c41b93063e603",
+      "matches_original_byte_for_byte": true
+    },
+    {
+      "file": "SHA256SUMS.files.txt",
+      "bytes": 14496,
+      "sha256": "fb201152fcbd51b555812378447212692c74a0bf2db95c42d8399ff12cfdfb1a",
+      "matches_original_byte_for_byte": true
+    },
+    {
+      "file": "SHA256SUMS.packages.txt",
+      "bytes": 375,
+      "sha256": "fa9795b86b694493394f99893d731bda3b4d10f10208604eddbc33fa21866abe",
+      "matches_original_byte_for_byte": true
+    },
+    {
+      "file": "license_verification.json",
+      "bytes": 2419,
+      "sha256": "cd40f8dd0ae922bee50434a10e83127c0845084bb5b236c7c5c09b717c73b2fe",
+      "matches_original_byte_for_byte": true
+    },
+    {
+      "file": "verification_report.json",
+      "bytes": 51963,
+      "sha256": "1d312071a65161ab0576d57166544f7637691314fb1200bfa6446b90bffdd603",
+      "matches_original_byte_for_byte": true
+    },
+    {
+      "file": "README_数据交接说明.md",
+      "bytes": 3101,
+      "sha256": "ac8859afd177a9226cb74dfc912d05d22c4ac18810489556b7e47b2837b6dc68",
+      "matches_original_byte_for_byte": true
+    }
+  ],
+  "offline_downloader_tests": {
+    "framework": "Python unittest",
+    "passed": 8,
+    "external_network_used": false,
+    "cases": [
+      "valid in-memory response",
+      "existing valid file skipped without network",
+      "existing invalid file retained without network",
+      "wrong SHA256 rejected and own temporary removed",
+      "oversized response rejected",
+      "network failure cleanup",
+      "known four-asset index consistency",
+      "unsafe index filename rejected"
+    ]
+  },
+  "cli_list": "passed; four pending assets printed",
+  "cli_real_local_package_verification": {
+    "asset": "04_Landsat_OSM_Basemaps.zip",
+    "bytes": 26948673,
+    "status": "passed"
+  },
+  "remote_download_or_publication_tested": false,
+  "release_index_status": "pending",
+  "license_followup": {
+    "checked_at_utc": "2026-10-22T10:13:38.986737+00:00",
+    "status": "passed",
+    "evidence_file_count": 11,
+    "files": [
+      {
+        "file": "license_evidence/BeijingCityLab_DATA049原页面_20261005.html",
+        "bytes": 10473,
+        "sha256": "219ed17897fe5da1886e42e6cbcb4a93bfe1504cfb93da0f0c5f469c1b1c0f94",
+        "matches_followup_evidence_source": true
+      },
+      {
+        "file": "license_evidence/CMAB_v7_许可核实结果.json",
+        "bytes": 3545,
+        "sha256": "d8a2dad2c682ff862676af5856a9e646e1cce82a0f9cb28860583d03fc56da35",
+        "matches_followup_evidence_source": true
+      },
+      {
+        "file": "license_evidence/CMAB_v7_许可核实说明.md",
+        "bytes": 2982,
+        "sha256": "4b55812d003c2c8e0146d7f1253e32af155dada87ee132707ff765a3890a9882",
+        "matches_followup_evidence_source": true
+      },
+      {
+        "file": "license_evidence/CMAB原始_README.txt",
+        "bytes": 1108,
+        "sha256": "0c20a90f0c07fd4a5c118cab74bced2e67b1c4fc4f873b6e5e875932c1645b99",
+        "matches_followup_evidence_source": true
+      },
+      {
+        "file": "license_evidence/CMAB原始_description.txt",
+        "bytes": 469,
+        "sha256": "12bae08973d023331462ffe387a2e1ca0d30c9633a5df9a2a21b0788685a6439",
+        "matches_followup_evidence_source": true
+      },
+      {
+        "file": "license_evidence/CMAB原始_metadata.csv",
+        "bytes": 10868,
+        "sha256": "f3fd74831152999d39e2c0d1714f1b364631ea76f9e26400b3888815e599ba31",
+        "matches_followup_evidence_source": true
+      },
+      {
+        "file": "license_evidence/Figshare_v7_API原始响应_20261005.json",
+        "bytes": 16562,
+        "sha256": "485780c0725d5b0a2b07d4e9ec76632ecba27a4ee9d7d5b2b3dca4b139a494f7",
+        "matches_followup_evidence_source": true
+      },
+      {
+        "file": "license_evidence/Figshare_v7_最初下载审计响应_20261002.json",
+        "bytes": 19294,
+        "sha256": "39271e82279232bbc51ebe9d986f359370274488ff15167225edc078283d1676",
+        "matches_followup_evidence_source": true
+      },
+      {
+        "file": "license_evidence/SHA256SUMS.txt",
+        "bytes": 1015,
+        "sha256": "a5b62e51f544242a5f7446ea1e79128209ac8e2131b5c4516188c650c6e94b71",
+        "matches_followup_evidence_source": true
+      },
+      {
+        "file": "license_evidence/作者影像API仓库_README_20261005.txt",
+        "bytes": 198,
+        "sha256": "d2f1013ce004b2d731178b1bd3816b029d2a984b77844ed6170ec4d109e6bff9",
+        "matches_followup_evidence_source": true
+      },
+      {
+        "file": "license_evidence/公开来源获取记录_20261005.json",
+        "bytes": 11221,
+        "sha256": "1d46d3e9cf18317ca4816ad8f5a9bb40517ef8998d33e787e91b8e04e7c3d012",
+        "matches_followup_evidence_source": true
+      }
+    ],
+    "publisher_v7_api_response_sha256": "485780c0725d5b0a2b07d4e9ec76632ecba27a4ee9d7d5b2b3dca4b139a494f7",
+    "publisher_v7_license": {
+      "value": 1,
+      "name": "CC BY 4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "source_sichuan_identity_matches_v7": true,
+    "datasets_license_verification_sha256": "0b6aa6d3bbc56f94df9685642e26dd27e15f7f9f15614df046d3c8bfcd3cb4ba",
+    "datasets_readme_sha256": "29e741e2488cc65049feee37cb2f8216b335c054c4699085b06e3ab421570b9e",
+    "all_four_existing_data_ZIPs_unchanged": true,
+    "large_ZIP_reverification_repeated_in_this_followup": false,
+    "unchanged_03_SHA256_from_immediate_prior_readback": "0e31f03a16dd5e17ebff86ab28f44050332cb2bfc875614e52b62dcdc5caac07",
+    "release_status_remains": "pending",
+    "notes": "copied_documents above records the earlier baseline copy. license_verification.json was intentionally updated during this follow-up; use the appended current hashes."
+  }
+}

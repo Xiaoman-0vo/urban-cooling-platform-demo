@@ -1,0 +1,6 @@
+downloads/
+extracted/
+*.zip
+*.partial
+__pycache__/
+*.py[cod]

@@ -1,0 +1,130 @@
+{
+  "checked_at": "2026-10-06T05:21:37.992977+00:00",
+  "scope": "map_display_and_click_continuity_only",
+  "preview_url": "http://127.0.0.1:4173/",
+  "changes": [
+    "Seven green circle layers explicitly use viewport pitch scale and alignment.",
+    "Three original-point halo types animate screen radius and opacity while stable cores remain.",
+    "Light layers sit above ordinary scene fills and below roads/receptors/bounds/explicit source review.",
+    "Style and source update gaps cannot trigger a location replacement; failed updates retry on the next sync.",
+    "Clicking a green aggregate or point navigates the camera and retains the site.",
+    "After preview, incidental location clicks preserve the site; editing the input allows a new location."
+  ],
+  "verification": {
+    "focused_checks": {
+      "passed": 52,
+      "failed": 0,
+      "skipped": 0,
+      "files": [
+        "tests/map-canvas.test.mjs",
+        "tests/project.test.mjs",
+        "tests/geometry-source-ui.test.mjs"
+      ]
+    },
+    "build_completed": true,
+    "browser_proof": "浏览器核对.json",
+    "all_recorded_location_checks_preserved": "E4125_N33891",
+    "building_selected": "155696",
+    "browser_console_errors": 0,
+    "two_near_screenshots": {
+      "same_dimensions": [
+        851,
+        1223
+      ],
+      "changed_map_pixels": 17904,
+      "note": "Difference is a supplementary screen observation, not a geographic or thermal measurement."
+    }
+  },
+  "source_data_rewritten": false,
+  "research_or_physical_calculations_run": false,
+  "new_dependencies": false,
+  "references_checked_on": "2026-10-06",
+  "official_display_reference": "https://maplibre.org/maplibre-style-spec/layers/#circle-pitch-scale",
+  "files": [
+    {
+      "path": "src/MapCanvas.jsx",
+      "bytes": 42110,
+      "sha256": "d3cd62ee46002c0f25cffbeaff0b731737f97b36801fbe49b8a24278c13b8eff"
+    },
+    {
+      "path": "src/App.jsx",
+      "bytes": 67345,
+      "sha256": "92bf3c87d96c3c64831309c480e65e17fc821a04678add58a477493768ed8f8d"
+    },
+    {
+      "path": "tests/map-canvas.test.mjs",
+      "bytes": 62966,
+      "sha256": "3050ca74eb0162d1ea5ef3223948139960d896cec3f6043cb2a71b6d30b0e2fc"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 2959,
+      "sha256": "ccac6bbf64c1b17b6772a6c3665796846bfd24b382566d959347a1da316de6e5"
+    },
+    {
+      "path": "evidence/光效连续显示修复_20261006/App.before.jsx",
+      "bytes": 67334,
+      "sha256": "13bb47d42fc2ed62f7cd3addcae0453e23fe5bc853d2eb7f099e33c846faeca7"
+    },
+    {
+      "path": "evidence/光效连续显示修复_20261006/MapCanvas.before.jsx",
+      "bytes": 38594,
+      "sha256": "759d4c0ef7379524755ef1783a75752d3048c68fc95f4cf2ea9acc73ea325843"
+    },
+    {
+      "path": "evidence/光效连续显示修复_20261006/build.log",
+      "bytes": 862,
+      "sha256": "abdd8f0ecb781c58e8ea55d575fa1c49637ec10d9a594fe541d2ce492e0d5ecc"
+    },
+    {
+      "path": "evidence/光效连续显示修复_20261006/map-canvas.before.test.mjs",
+      "bytes": 48890,
+      "sha256": "62087fe40e31b7ce334872015def47dcbfd162ed26591a2fad2dc43fc6d42416"
+    },
+    {
+      "path": "evidence/光效连续显示修复_20261006/修改.diff",
+      "bytes": 29879,
+      "sha256": "47fb1ee71ccf25802fae7a1f4460d2051374ffff721dca3eaf37a3f7f11486cc"
+    },
+    {
+      "path": "evidence/光效连续显示修复_20261006/四川远景光效.png",
+      "bytes": 123153,
+      "sha256": "a7a5ffd9bfac49ee48a3593a7758bf1cd1c18b4b57d52b9da498a43545128412"
+    },
+    {
+      "path": "evidence/光效连续显示修复_20261006/成都入口完成.png",
+      "bytes": 203117,
+      "sha256": "1f2d7065b83c92b6c1a15401ebae5cc5c950d2013ef0e0cc3e1f4438c3f1ab81"
+    },
+    {
+      "path": "evidence/光效连续显示修复_20261006/浏览器核对.json",
+      "bytes": 2550,
+      "sha256": "2b86e39928ba242c829c93187177c4a999bd89f9ba3b81a7bf12d50a4b29b6f3"
+    },
+    {
+      "path": "evidence/光效连续显示修复_20261006/点选建筑后仍有光效.png",
+      "bytes": 154601,
+      "sha256": "ec56ace17a9f1584cb3a513900e9ec39ecd83867951d6dfdee0d08929119ebed"
+    },
+    {
+      "path": "evidence/光效连续显示修复_20261006/聚焦检查.tap",
+      "bytes": 6139,
+      "sha256": "08d887287df4f91f6c7b1184a719f59c36fd3026e05e7e711b0428eb841287bc"
+    },
+    {
+      "path": "evidence/光效连续显示修复_20261006/进入场地光效A.png",
+      "bytes": 174132,
+      "sha256": "81fb5fa39c62359f92704e413552dd10d1febdc71505f5085a2bd673cf901126"
+    },
+    {
+      "path": "evidence/光效连续显示修复_20261006/进入场地光效B.png",
+      "bytes": 173422,
+      "sha256": "04b6b12d797902fce14dc750b47e8b729a81ec6d96f96f004c132c27cd5909ce"
+    },
+    {
+      "path": "evidence/光效连续显示修复_20261006/预览后点击保留场地.png",
+      "bytes": 174941,
+      "sha256": "3d9af29447b48d220264058782f6b00b7eacab51b6837f96c47cff8c9593b6f6"
+    }
+  ]
+}

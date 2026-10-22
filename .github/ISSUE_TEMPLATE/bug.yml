@@ -1,0 +1,45 @@
+name: 问题反馈
+description: 页面、数据加载、构建或结果显示出现了可复现的问题。
+title: '[问题] '
+body:
+  - type: markdown
+    attributes:
+      value: |
+        这是团队协作原型，业务范围仍待共同确认。请说明实际现象，避免将尚未接通的研究模块当作已完成功能。
+        不要粘贴密码、令牌、QQ 配置或未经授权的原始资料。
+  - type: textarea
+    id: observed
+    attributes:
+      label: 实际发生了什么？
+      description: 包括页面名称、错误提示或截图；说明它怎样影响查看或开发。
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 复现步骤
+      placeholder: |
+        1. 打开哪个页面或运行哪个命令
+        2. 选择哪个区域、图层或条件
+        3. 出现什么问题
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期表现及依据
+      description: 如依据来自 README、已确认需求或研究说明，请附对应链接；没有明确约定可直接注明。
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: 环境、版本和相关数据
+      description: 操作系统、浏览器、Node.js 版本、提交号、线上或本地地址、有关数据文件/版本；能提供多少写多少。
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: 补充证据
+      description: 可粘贴已脱敏的报错、检查输出或最小案例；不上传个人账号信息。

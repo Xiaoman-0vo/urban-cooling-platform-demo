@@ -1,0 +1,49 @@
+{
+  "initial": {
+    "action": "status",
+    "managed": true,
+    "pid": 68446,
+    "ready": true,
+    "url": "http://127.0.0.1:4173",
+    "logs": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/.runtime"
+  },
+  "launcherExited_serverParent": "1 /opt/homebrew/Cellar/node/25.8.0/bin/node /Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/node_modules/vite/bin/vite.js --host 127.0.0.1 --port 4173 --strictPort",
+  "duplicate": {
+    "action": "start",
+    "reused": true,
+    "managed": true,
+    "pid": 68446,
+    "url": "http://127.0.0.1:4173"
+  },
+  "afterProcessExit": {
+    "action": "status",
+    "managed": true,
+    "pid": 68539,
+    "ready": true,
+    "url": "http://127.0.0.1:4173",
+    "logs": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/.runtime"
+  },
+  "manualStop": {
+    "action": "stop",
+    "stopped": true,
+    "url": "http://127.0.0.1:4173"
+  },
+  "manualStopPortClosed": true,
+  "restarted": {
+    "action": "start",
+    "reused": false,
+    "managed": true,
+    "pid": 68547,
+    "startupMs": 353,
+    "url": "http://127.0.0.1:4173",
+    "logs": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/.runtime"
+  },
+  "final": {
+    "action": "status",
+    "managed": true,
+    "pid": 68547,
+    "ready": true,
+    "url": "http://127.0.0.1:4173",
+    "logs": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/.runtime"
+  }
+}

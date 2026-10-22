@@ -1,0 +1,267 @@
+[
+  {
+    "path": "dist/server/index.js",
+    "bytes": 483,
+    "sha256": "2dd0615a445143933d88d4271f54f5d63ee951421fcd08c5a7617bb09c564389"
+  },
+  {
+    "path": "dist/.openai/hosting.json",
+    "bytes": 31,
+    "sha256": "d532abb65cf9ae20634b464d954cb4a08a0de9f3cd3cdf7f9c3ec8948826d947"
+  },
+  {
+    "path": "dist/client/index.html",
+    "bytes": 430,
+    "sha256": "7ad149493ae4cc0b3d6bb76d13dbe948546afea9fef355782961c2637404f5b3"
+  },
+  {
+    "path": "dist/client/data/roads.geojson",
+    "bytes": 74173,
+    "sha256": "11f9e3520944cbc266e21de134655bddaf43e13c311ac56328acfb2629b69a21"
+  },
+  {
+    "path": "dist/client/data/macro_nodes.geojson",
+    "bytes": 7334779,
+    "sha256": "cf2e7722453f7b59ae9c8e3a54dae88df93da76997b6d9fe0a46afb9f805a1c4"
+  },
+  {
+    "path": "dist/client/data/regional_roads_2021.geojson",
+    "bytes": 4515166,
+    "sha256": "56f276ba8b8c69e52a0f70ceb7312d7900394da1dff41b5d1598b6fc163b18fb"
+  },
+  {
+    "path": "dist/client/data/micro_scene_receptor_candidates.geojson",
+    "bytes": 4060,
+    "sha256": "a983a59b26dd39affa656b69d39b92325eb6753e989e5fc5aef9cbd013dab009"
+  },
+  {
+    "path": "dist/client/data/micro_scene_surface_review_core.geojson",
+    "bytes": 16063,
+    "sha256": "4d139b1a5b8994101e211488b6a9c10bc503fe85f50bcc6a9fa184491c3204dd"
+  },
+  {
+    "path": "dist/client/data/version_differences.json",
+    "bytes": 5347,
+    "sha256": "9f3aee64e3f937207c72f108b7cd2ce9b267b60912104407a274f7aa8d242521"
+  },
+  {
+    "path": "dist/client/data/capabilities.json",
+    "bytes": 4371,
+    "sha256": "80212e8ef474e9a597c7773e8826d959970d1dcd536bb92e30bb6d9d93226ca1"
+  },
+  {
+    "path": "dist/client/data/research-state.json",
+    "bytes": 23017,
+    "sha256": "e9d30ca04de0b7afb8e409515fb8d342923e0e3e938a6decb02615cf5bc32646"
+  },
+  {
+    "path": "dist/client/data/micro_scene_source_classes_context.geojson",
+    "bytes": 104197,
+    "sha256": "afd6a3a48101288ff00692e8ea2134728d0a434ce90773b9267840b0b7293c76"
+  },
+  {
+    "path": "dist/client/data/conditional-source-state.json",
+    "bytes": 511869,
+    "sha256": "bfadb0c205a49091612da2401e009ec643ff91287c1dcf47484982a84bdcbadc"
+  },
+  {
+    "path": "dist/client/data/macro_neighborhood_nodes.geojson",
+    "bytes": 10598,
+    "sha256": "e298bd8801ab4ac2236fcc57777e5e54c7d5a01b46b16eafde1df7b7fbfacf47"
+  },
+  {
+    "path": "dist/client/data/REGIONAL_DATA_SOURCES.md",
+    "bytes": 909,
+    "sha256": "43c8ae236028e54db2a3cb6888fe3ec19de1d370b972326a0d8392f22e6d7ab6"
+  },
+  {
+    "path": "dist/client/data/source-preparation-state.json",
+    "bytes": 1827086,
+    "sha256": "1d2799ff0d41e81fe461400b71e9cca7fb147ddabb8f622fc5d38d3035115f36"
+  },
+  {
+    "path": "dist/client/data/sichuan_rivers.geojson",
+    "bytes": 70841,
+    "sha256": "1460d171980babba8ad8aed02bcf5f0b5201500160027c469f3b41eb8e358c06"
+  },
+  {
+    "path": "dist/client/data/preparation-state.json",
+    "bytes": 138541,
+    "sha256": "1c7174ca51ecd0adaf44bbb4b2d0962b913bfc0c9be7abdeb56b2d4debed412b"
+  },
+  {
+    "path": "dist/client/data/tables.json",
+    "bytes": 30761,
+    "sha256": "fa6d3d862968f50d162c9a4b156ff30c4abd959632081895ef8b37fbee505422"
+  },
+  {
+    "path": "dist/client/data/scene.json",
+    "bytes": 898056,
+    "sha256": "ab2c7bcdc210ebe674688da9fe3abf3c7702ce66b92946367a75669afad03d2d"
+  },
+  {
+    "path": "dist/client/data/chengdu_city_effects.geojson",
+    "bytes": 359059,
+    "sha256": "b95944e9563f9f11135f3154f7337970bc4e958215cfb187fd2848a9ce03e9f2"
+  },
+  {
+    "path": "dist/client/data/study_selection_boundary.geojson",
+    "bytes": 19472,
+    "sha256": "c8d041d7a2a73af3e785127d67069019215376fd62a7e951826a779b5f5d0afc"
+  },
+  {
+    "path": "dist/client/data/chengdu_urban_green_points.geojson",
+    "bytes": 1076102,
+    "sha256": "752583ed0c37ad2a122a249fd5afaf77415957f0c94af558a7b6dba34a10aef8"
+  },
+  {
+    "path": "dist/client/data/micro_roads_roads_2020.geojson",
+    "bytes": 36978,
+    "sha256": "428ef36126a2127db1501d331941b16739a0cc5948a74db0ef8fa6a18bf6381a"
+  },
+  {
+    "path": "dist/client/data/source-geometry-state.json",
+    "bytes": 5438549,
+    "sha256": "1c8b5764194ca26a08bd52a7452a0f0beb600c49561e9e90829c66b8e9eacb5c"
+  },
+  {
+    "path": "dist/client/data/supplement-state.json",
+    "bytes": 3692678,
+    "sha256": "6a8a7a733d8323cd4770eb88b3987bf085d79b2d100adb52d1df140532b38fdd"
+  },
+  {
+    "path": "dist/client/data/CHENGDU_GREEN_DATA_SOURCES.md",
+    "bytes": 1339,
+    "sha256": "34584f6d52e2922765a2ba2a46d2748d72ea2275f8c6f252f4f69697bcae4da9"
+  },
+  {
+    "path": "dist/client/data/building_parts.geojson",
+    "bytes": 257206,
+    "sha256": "468a7ebb4b42b8eb2aa5634aaa4fe54699034694978e7f10167a34a1d96bef44"
+  },
+  {
+    "path": "dist/client/data/readback_verification.json",
+    "bytes": 11434,
+    "sha256": "5af412afb85b684bc5c169b541c334fdd1f2b7e902f2c5fb7f5028ca536befc1"
+  },
+  {
+    "path": "dist/client/data/micro_scene_buildings_uncut.geojson",
+    "bytes": 245064,
+    "sha256": "bc8e60c4437e62b415ac3529f91dce8aa408b2d573abc7907087679a90233646"
+  },
+  {
+    "path": "dist/client/data/regional_green_points.geojson",
+    "bytes": 5965792,
+    "sha256": "62bf4f9c85aedbb51b4dc3accaf9fa92f001e917b985a84b29af42f5a4dfa400"
+  },
+  {
+    "path": "dist/client/data/regional_map_context.json",
+    "bytes": 4254,
+    "sha256": "04e3a3c11f0cb5b6644632d52c90846719163bcff4cd17292349bbbdfa415e0d"
+  },
+  {
+    "path": "dist/client/data/manifest.json",
+    "bytes": 66797,
+    "sha256": "f35ba68a8d3afaf7c4704d968f1e95bb298cda9d678ca2b26da83bbb009bb552"
+  },
+  {
+    "path": "dist/client/data/sichuan_places.geojson",
+    "bytes": 4107,
+    "sha256": "ba003aa8f36bd8e1fe9f0310f10824e0bb4e7cf205744c5c5e0d2c7de6773bb6"
+  },
+  {
+    "path": "dist/client/data/micro_roads_roads_2021.geojson",
+    "bytes": 38047,
+    "sha256": "919c0451c0905281d39515d23e5888adce7cb262d53a5162dabd055b29c621cb"
+  },
+  {
+    "path": "dist/client/data/micro_scene_context.geojson",
+    "bytes": 1070,
+    "sha256": "2b928d265bc815abb356e45b40c896fe05c94b5f7e4201fa55533de9e2cf0d09"
+  },
+  {
+    "path": "dist/client/data/micro_scene_overlap_review_core.geojson",
+    "bytes": 2989,
+    "sha256": "77537ab0f383b80107c752e6fc32d2b6f43d09504098b54f7323c6bc770cdb1b"
+  },
+  {
+    "path": "dist/client/data/chengdu_city_green_points.geojson",
+    "bytes": 1879256,
+    "sha256": "0fee2c30a14a05d87f3ed8e47a30a7f31349b5914bbd6d1325cf705da81ee325"
+  },
+  {
+    "path": "dist/client/data/sichuan_boundary.geojson",
+    "bytes": 92159,
+    "sha256": "c15f65f685b8fedd97a2f72efeec4eb8622a74a8c929fd3434660f8afa8f3b4f"
+  },
+  {
+    "path": "dist/client/data/macro_neighborhood_300.geojson",
+    "bytes": 1264,
+    "sha256": "f56673c091fde9295248524205d63498d1175668db7b0f1153c3127d992028ca"
+  },
+  {
+    "path": "dist/client/data/micro_scene_core.geojson",
+    "bytes": 1664,
+    "sha256": "cc08259b0f075cf3eaac00ef558525b7c142781442b766a73391805f491e4e5a"
+  },
+  {
+    "path": "dist/client/data/chengdu_green_context.json",
+    "bytes": 5873,
+    "sha256": "48e171324aed773fc86bf443ea12eec932366cfee59547d7c56c1344c9276574"
+  },
+  {
+    "path": "dist/client/data/source_metadata.json",
+    "bytes": 46928,
+    "sha256": "27ca04a59e7deb9757dbb486332be7419a06f4e322519ed10b69632295a780c7"
+  },
+  {
+    "path": "dist/client/data/chengdu_navigation_boundary.geojson",
+    "bytes": 171464,
+    "sha256": "9e347fd0249c22fac185040f0f88fa8202fec5c440b2e16fe09adf171c3fbb15"
+  },
+  {
+    "path": "dist/client/data/micro_scene_vegetation_core.geojson",
+    "bytes": 3777,
+    "sha256": "bfce8ab40aed2643a0095f36f9e76f8816e348297bfa69ed69832df7ec30bd08"
+  },
+  {
+    "path": "dist/client/assets/index-ByFs1Hb_.css",
+    "bytes": 186417,
+    "sha256": "fa8b6d4c6997e079fb1be9290ee10d06b0b3423b52763902a0eb12adc480b931"
+  },
+  {
+    "path": "dist/client/assets/index-VARwF94G.js",
+    "bytes": 2072272,
+    "sha256": "f5bc0f762c77263ae19ee620cb63a33ac5ded9673c7f99328975cd309520b127"
+  },
+  {
+    "path": "dist/client/maplibre/6.12.0/maplibre-gl-worker.mjs",
+    "bytes": 19130,
+    "sha256": "1ecca7178f0a496b7980dc7a3c6a8c3575eda673cf3e9fa3324dcce7ef3890c2"
+  },
+  {
+    "path": "dist/client/maplibre/6.12.0/maplibre-gl-shared.mjs",
+    "bytes": 516951,
+    "sha256": "df3d0b4ba965ebafd2deae3c568500308be2982d87dadd771ba82dc5a49a4631"
+  },
+  {
+    "path": "dist/client/maplibre/6.12.0/LICENSE.txt",
+    "bytes": 5984,
+    "sha256": "ee5fc05a0677eaf69601d2c7db0d9ecd6cc27c3abc1d0733bc9ed34707cf8ef2"
+  },
+  {
+    "path": "dist/client/data/research_snapshots/efa0962c4a6ea46d47d9339330e350120f7d923d80008aeb214da5b95f144fd2.json",
+    "bytes": 23017,
+    "sha256": "fcfff706435f60e959244cced8ce6fa8b58e38bc2d6538c3dd6e4770eb64e60b"
+  },
+  {
+    "path": "dist/client/data/research_snapshots/6b56102f564361fe2755efbea9b613b2a71e67af3d5fcd247ea157cc2af659f9.json",
+    "bytes": 23017,
+    "sha256": "e9d30ca04de0b7afb8e409515fb8d342923e0e3e938a6decb02615cf5bc32646"
+  },
+  {
+    "path": "dist/client/data/preparation_snapshots/7d66553a704f56bb247003cdb163f5234a7c90abeaca8eb06816db297f764892.json",
+    "bytes": 138541,
+    "sha256": "1c7174ca51ecd0adaf44bbb4b2d0962b913bfc0c9be7abdeb56b2d4debed412b"
+  }
+]

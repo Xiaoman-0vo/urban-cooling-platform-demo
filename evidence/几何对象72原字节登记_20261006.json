@@ -1,0 +1,568 @@
+{
+  "checked_at": "2026-10-06T02:42:39.025Z",
+  "manifest_source": {
+    "path": "平台产品设计/来源几何与对象三组接入清单_20261006.json",
+    "bytes": 47045,
+    "sha256": "55534ca2095418c3415acf6315cb24ae5cf0e9ffc29b9703595ee302b1466e56"
+  },
+  "original_frozen_zip": {
+    "path": "共享接口/来源几何与对象三组交接/55534ca2095418c3/来源几何与对象三组原件_20261006.zip",
+    "bytes": 3870205,
+    "sha256": "2749735826a63859afe907e358382dc584d966bd9f38f237e0b9e34fba7f60f6",
+    "members": 73
+  },
+  "readonly_contract_review": {
+    "path": "共享接口/来源几何与对象三组交接/55534ca2095418c3/独立接入审阅.json",
+    "bytes": 61433,
+    "sha256": "cc2e88b975a94891553b0d509709c228b03fb8ac6b3bc23d2f728f4a173a13df",
+    "check_count": 52,
+    "scope": "post_freeze_read_only_contract_review_not_one_of_72_source_files"
+  },
+  "source_checks": [
+    {
+      "path": "共享接口/微观试验准备/建筑几何天空可视核查_20261006/OBJ与来源对象部件关联.csv",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/建筑几何天空可视核查_20261006/OBJ与来源对象部件关联.csv",
+      "bytes": 20874,
+      "sha256": "21eba896a34728e8246e09f22f886d182f585129ee3da627318119bbda3b6b9d",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/建筑几何天空可视核查_20261006/README.md",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/建筑几何天空可视核查_20261006/README.md",
+      "bytes": 10108,
+      "sha256": "500471b380403171579a4b628d5b513d23ba5621802a7fcb00839d529bfce800",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/建筑几何天空可视核查_20261006/requirements_已运行版本.txt",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/建筑几何天空可视核查_20261006/requirements_已运行版本.txt",
+      "bytes": 162,
+      "sha256": "2a19aff4ac432ff16c7e2a89242b0aaffeae84e22fd520f49451fa3c534d4108",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/建筑几何天空可视核查_20261006/交付schema.json",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/建筑几何天空可视核查_20261006/交付schema.json",
+      "bytes": 21646,
+      "sha256": "2a81f68d379d90b3923df24e67b674c1d54bde9f582e8d52f9283cf482c9c6c1",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/建筑几何天空可视核查_20261006/交付文件清单.json",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/建筑几何天空可视核查_20261006/交付文件清单.json",
+      "bytes": 11320,
+      "sha256": "8c245fce9da151c2da666a7f8cf8817f8b3bc5086eaf9a3636785acf396872ff",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/建筑几何天空可视核查_20261006/六候选受体_几何SVF.geojson",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/建筑几何天空可视核查_20261006/六候选受体_几何SVF.geojson",
+      "bytes": 4517,
+      "sha256": "8a45374632b69415dd85f186f26df4e686e919ea9635dbd876e0f42484786dce",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/建筑几何天空可视核查_20261006/六候选受体坐标关联.csv",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/建筑几何天空可视核查_20261006/六候选受体坐标关联.csv",
+      "bytes": 1846,
+      "sha256": "b86410abb20c4c6dc6f5435c9a08ce5ed7010d60b2d55896f29b60896b5322a3",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/建筑几何天空可视核查_20261006/六点建筑几何SVF_四级采样.csv",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/建筑几何天空可视核查_20261006/六点建筑几何SVF_四级采样.csv",
+      "bytes": 5367,
+      "sha256": "25c6bc2c2ed799955a8b3cf85413c888fcffb6c437363a9961b6367c2c482071",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/建筑几何天空可视核查_20261006/六点逐方位建筑地平线.png",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/建筑几何天空可视核查_20261006/六点逐方位建筑地平线.png",
+      "bytes": 446578,
+      "sha256": "f7106ae2131df574080e906304ff68d0da9bbd190641377b29b2f28188c7b54e",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/建筑几何天空可视核查_20261006/六点逐方位建筑地平线.svg",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/建筑几何天空可视核查_20261006/六点逐方位建筑地平线.svg",
+      "bytes": 100286,
+      "sha256": "cc2fece45c25cc24732288fbe40f3badbb704bc555df7cb7466779cd9e5c7a6b",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/建筑几何天空可视核查_20261006/六点逐方位遮挡与来源.csv",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/建筑几何天空可视核查_20261006/六点逐方位遮挡与来源.csv",
+      "bytes": 17227027,
+      "sha256": "97b29c3842aed8f181433c4989368f647f6d35877d326b3ccb6839f229177411",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/建筑几何天空可视核查_20261006/图件实际审阅.json",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/建筑几何天空可视核查_20261006/图件实际审阅.json",
+      "bytes": 1259,
+      "sha256": "437e6b053e1655d98e25863d6fb30bf3e65002de1eb3865cfc2eaa2d4c1c0d3c",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/建筑几何天空可视核查_20261006/坐标与水平面SVF契约.json",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/建筑几何天空可视核查_20261006/坐标与水平面SVF契约.json",
+      "bytes": 2525,
+      "sha256": "0c82ac8c4fe085ab7c4972db37b0619695a29c25e5e58d2a1e28a7dc69c4ab77",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/建筑几何天空可视核查_20261006/建筑源与候选受体_几何核查.gpkg",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/建筑几何天空可视核查_20261006/建筑源与候选受体_几何核查.gpkg",
+      "bytes": 241664,
+      "sha256": "741648e3ee8ab7953ee303bacfa0de8389aa31ad8df3a3b7c01d31a89649b2f3",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/建筑几何天空可视核查_20261006/方向加密差异.csv",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/建筑几何天空可视核查_20261006/方向加密差异.csv",
+      "bytes": 2142,
+      "sha256": "e5a4586013fb258a1a19756cf8cdcdd0fa652615346770106af2e4b542918d08",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/建筑几何天空可视核查_20261006/方向加密核查.png",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/建筑几何天空可视核查_20261006/方向加密核查.png",
+      "bytes": 100488,
+      "sha256": "54844703ec750f3e6c63d2bbfa1f6ee21ae3f55d60f129c4f1d8d214bb2d4c1e",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/建筑几何天空可视核查_20261006/方向加密核查.svg",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/建筑几何天空可视核查_20261006/方向加密核查.svg",
+      "bytes": 19583,
+      "sha256": "710b3588ac325b0dbbd55b85fb1ceadb6210400e3f84cb18db605a9bead60d52",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/建筑几何天空可视核查_20261006/本组重复数值一致核查.json",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/建筑几何天空可视核查_20261006/本组重复数值一致核查.json",
+      "bytes": 1383,
+      "sha256": "35767fdd6ba6d573e03037694fc59f3702fbdae8a4e0b74c883464fd511bbb1a",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/建筑几何天空可视核查_20261006/本组重执行前数值指纹.json",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/建筑几何天空可视核查_20261006/本组重执行前数值指纹.json",
+      "bytes": 531,
+      "sha256": "6a407f1c5d17f66075c53412a2d797ea69a7321faa8a50625f720ea4fa841724",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/建筑几何天空可视核查_20261006/来源与生产核查.json",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/建筑几何天空可视核查_20261006/来源与生产核查.json",
+      "bytes": 9050,
+      "sha256": "15bf14187ae7a5a37c334c07336046b0fae80f04b51cefded703dba7a841abcf",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/建筑几何天空可视核查_20261006/来源字段与单位核查.json",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/建筑几何天空可视核查_20261006/来源字段与单位核查.json",
+      "bytes": 3988,
+      "sha256": "53fe9089e3b0ef903ffaa94aa43f768565345463868bcbd50c64524b34f09cc8",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/建筑几何天空可视核查_20261006/来源建筑与六点_几何SVF.png",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/建筑几何天空可视核查_20261006/来源建筑与六点_几何SVF.png",
+      "bytes": 584603,
+      "sha256": "e96fc55d24d10ee33f133f754f13bb4b65ca34dae19a048aed79c11e75af1047",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/建筑几何天空可视核查_20261006/来源建筑与六点_几何SVF.svg",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/建筑几何天空可视核查_20261006/来源建筑与六点_几何SVF.svg",
+      "bytes": 301819,
+      "sha256": "e427d1a9f0544c97b5cb4de9e0da0d5ec36dffaab080b58cfc687472732df97c",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/建筑几何天空可视核查_20261006/独立回读核查.json",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/建筑几何天空可视核查_20261006/独立回读核查.json",
+      "bytes": 55615,
+      "sha256": "2641e99a1241c138040c36de95b10a3e3794377941479f0e6932db31ead73172",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/建筑几何天空可视核查_20261006/独立回读核查.py",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/建筑几何天空可视核查_20261006/独立回读核查.py",
+      "bytes": 17097,
+      "sha256": "f22bf41c91f70522194c67f5dfef663b5f369b67bcfe41077c51094bcca74c0e",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/建筑几何天空可视核查_20261006/生产建筑几何天空可视.py",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/建筑几何天空可视核查_20261006/生产建筑几何天空可视.py",
+      "bytes": 33228,
+      "sha256": "cdd2d720eec4b7a5a6a107c63416e0cf038ec8f8ed178ed4921822fe5b413fbc",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/微观试验准备/建筑几何天空可视核查_20261006/解析与边界小例结果.json",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/建筑几何天空可视核查_20261006/解析与边界小例结果.json",
+      "bytes": 5256,
+      "sha256": "edc6b740eaf2c508efe412f5483b95f4fc6adef9674aeaa85b5529c45a670a0c",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/来源几何与对象三组交接/建筑显示准备/完整来源建筑_WGS84.geojson",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/来源几何与对象三组交接/建筑显示准备/完整来源建筑_WGS84.geojson",
+      "bytes": 636885,
+      "sha256": "7986cbd02ade35b688373f822ca6f9eed866d8f32c0c5383e88f7a037628a9ae",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/来源几何与对象三组交接/建筑显示准备/建筑显示准备及回读.json",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/来源几何与对象三组交接/建筑显示准备/建筑显示准备及回读.json",
+      "bytes": 865,
+      "sha256": "492c4e24e77db288c3d6c09de8500410144d2ba7b75dae62deb6b4bde0ee5bfd",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/窗口与源连通范围诊断_20261006/README.md",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/窗口与源连通范围诊断_20261006/README.md",
+      "bytes": 9527,
+      "sha256": "cfc67df501ebb36395f1f7ffb3ae7a36ab4c6ba11bf6a6383fcda4268c059041",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/窗口与源连通范围诊断_20261006/交付回读.json",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/窗口与源连通范围诊断_20261006/交付回读.json",
+      "bytes": 12176,
+      "sha256": "bd89d4f351aa41d3525b0d1f282cc5e8d9bdcd86e8dfdfdf9cce74538f667d80",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/窗口与源连通范围诊断_20261006/来源图样式与身份.json",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/窗口与源连通范围诊断_20261006/来源图样式与身份.json",
+      "bytes": 2711,
+      "sha256": "4d9b3432d943a0bbf2589841c23ae471bfaf9636c9d77447ff106273be134a2d",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/窗口与源连通范围诊断_20261006/派生节点与原身份.csv",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/窗口与源连通范围诊断_20261006/派生节点与原身份.csv",
+      "bytes": 105439,
+      "sha256": "705ba4b83a09e94a1f772b9e5944aeff648df31a00e9a3c5c566f95c08db7bb0",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/窗口与源连通范围诊断_20261006/独立范围回读.py",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/窗口与源连通范围诊断_20261006/独立范围回读.py",
+      "bytes": 14624,
+      "sha256": "8f8db8fa7270eaf75aeb6a79b193ed6120c6d061aa271623a975bb57b25fd2a6",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/窗口与源连通范围诊断_20261006/独立范围核查.json",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/窗口与源连通范围诊断_20261006/独立范围核查.json",
+      "bytes": 49606,
+      "sha256": "e5912232dcfdd39af1e6fd4b87e19ce61dad4279f36baca4e0b6b9c464ac9a96",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/窗口与源连通范围诊断_20261006/独立范围核查_首次精确等价失败.json",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/窗口与源连通范围诊断_20261006/独立范围核查_首次精确等价失败.json",
+      "bytes": 33937,
+      "sha256": "7ab93b1f2b9cd849f4b53b6ad78096fb5880e55b0a5a39babe22c27dc4f897f1",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/窗口与源连通范围诊断_20261006/生成窗口来源诊断.py",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/窗口与源连通范围诊断_20261006/生成窗口来源诊断.py",
+      "bytes": 24645,
+      "sha256": "a232c087d863dc5b2f03ea1873260f39c8cdae1e7fd258d5ebf53bf33530db38",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/窗口与源连通范围诊断_20261006/窗内派生原段.csv",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/窗口与源连通范围诊断_20261006/窗内派生原段.csv",
+      "bytes": 45269,
+      "sha256": "8955e75afd66c362545015deec30eeeabf1495e4884e6c5084278507f3b89220",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/窗口与源连通范围诊断_20261006/窗口与源连通范围核查.json",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/窗口与源连通范围诊断_20261006/窗口与源连通范围核查.json",
+      "bytes": 10352,
+      "sha256": "66e085b898eb41ff46c585ca6c470307c605999c0772172a318e905556a008ff",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/窗口与源连通范围诊断_20261006/窗口与窗外源支撑核对.png",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/窗口与源连通范围诊断_20261006/窗口与窗外源支撑核对.png",
+      "bytes": 345303,
+      "sha256": "051759ccf3ad6646e4a3e757cff53621ca6f87d5070eeb0699974bf8d8f20f43",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/窗口与源连通范围诊断_20261006/窗外分量连接支撑.csv",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/窗口与源连通范围诊断_20261006/窗外分量连接支撑.csv",
+      "bytes": 15051,
+      "sha256": "f2e38fa1c87fc6caa92c02585da9547835ad547789748fb2c5c15353c9373d60",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/窗口与源连通范围诊断_20261006/窗外来源支撑段.csv",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/窗口与源连通范围诊断_20261006/窗外来源支撑段.csv",
+      "bytes": 53278,
+      "sha256": "0ddbabec7e5f3f7562df66ff3c74c35e25d75e705e7b4069fb3ad58363e99d60",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/窗口与源连通范围诊断_20261006/窗界位置与分量关系.csv",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/窗口与源连通范围诊断_20261006/窗界位置与分量关系.csv",
+      "bytes": 6025,
+      "sha256": "4c70e6f27f1870d94c885c8e5110d3d7b3111a85d836a486e1d29d32a7595125",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/窗口与源连通范围诊断_20261006/绘制来源范围图.py",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/窗口与源连通范围诊断_20261006/绘制来源范围图.py",
+      "bytes": 9176,
+      "sha256": "17576a84e0386e0ada0793f4d83e81603f18b8990b818d9fe5b31c0270333c54",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/窗口与源连通范围诊断_20261006/跨窗分量共同源节点证据.csv",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/窗口与源连通范围诊断_20261006/跨窗分量共同源节点证据.csv",
+      "bytes": 2395,
+      "sha256": "010b21e90cfe14d9d8cff6cbfd55c7ee53b3c0cc8c2d788b25db7ec8212669e4",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/窗口与源连通范围诊断_20261006/逐way保存几何长度核对.csv",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/窗口与源连通范围诊断_20261006/逐way保存几何长度核对.csv",
+      "bytes": 4288,
+      "sha256": "3ff8e775f34578788b05cc34f6276fe00273868809861bb5903a9440e9c40f0b",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/窗口与源连通范围诊断_20261006/逐原段裁切记录.csv",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/窗口与源连通范围诊断_20261006/逐原段裁切记录.csv",
+      "bytes": 41841,
+      "sha256": "dcc8035d759d41dcfaf95df6a4ad27f93f94d1faf57a83e2f4b9d24b571d4edc",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/来源几何与对象三组交接/窗内外显示准备/原节点及裁切点_WGS84.geojson",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/来源几何与对象三组交接/窗内外显示准备/原节点及裁切点_WGS84.geojson",
+      "bytes": 285764,
+      "sha256": "5ab11939bd8acf8bef1130ae8762bc7c2953ce3d83f833318c16b22562511d81",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/来源几何与对象三组交接/窗内外显示准备/显示准备及回读.json",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/来源几何与对象三组交接/窗内外显示准备/显示准备及回读.json",
+      "bytes": 2068,
+      "sha256": "bfa7fca6660122317f094cc45ae1fd97ecbbe991989e4ececc2bae6dd1737e2b",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/来源几何与对象三组交接/窗内外显示准备/窗内来源片段_WGS84.geojson",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/来源几何与对象三组交接/窗内外显示准备/窗内来源片段_WGS84.geojson",
+      "bytes": 159865,
+      "sha256": "67075e8dad470a22f22e6d23a08a2d51889621087f2430fb52779c141bd43d0f",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/来源几何与对象三组交接/窗内外显示准备/窗外来源片段_WGS84.geojson",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/来源几何与对象三组交接/窗内外显示准备/窗外来源片段_WGS84.geojson",
+      "bytes": 188620,
+      "sha256": "fbc27dce4280705ab2c0cc8145bb2e52ffcc04074408ce8ccdee8cafe78e2d54",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/入口与开放空间来源标记_20261006/01_空间提取.json",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/入口与开放空间来源标记_20261006/01_空间提取.json",
+      "bytes": 706,
+      "sha256": "bcf4fa4a3eee695a40a120a014ba8f51b5ed5a77c317859242360dcb798b1965",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/入口与开放空间来源标记_20261006/02_原标签筛选.json",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/入口与开放空间来源标记_20261006/02_原标签筛选.json",
+      "bytes": 681,
+      "sha256": "caa30c7c0d1d0b2e0b2dc80518f044f51706aab3748a8a8d8c71f2063d5f31d9",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/入口与开放空间来源标记_20261006/03_几何导出.json",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/入口与开放空间来源标记_20261006/03_几何导出.json",
+      "bytes": 600,
+      "sha256": "4e06e51160cad3d32851e472aa686a9598ad0d450913638712ca2c4addc2f729",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/入口与开放空间来源标记_20261006/04_原件头信息.json",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/入口与开放空间来源标记_20261006/04_原件头信息.json",
+      "bytes": 1245,
+      "sha256": "8af2d23f2b35cf6b818e182fcc319e319b88b3a0f945d5df4258fda034edd660",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/入口与开放空间来源标记_20261006/README.md",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/入口与开放空间来源标记_20261006/README.md",
+      "bytes": 4240,
+      "sha256": "5ab2fceb32277b17315dbd8404eb77daa6824f09e3f150d9a7a65b2329093517",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/入口与开放空间来源标记_20261006/入口与开放空间来源标记.csv",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/入口与开放空间来源标记_20261006/入口与开放空间来源标记.csv",
+      "bytes": 6075,
+      "sha256": "872ae0276407a0ed6eb474796580d4300fe56476694bada7457165e5fcd1827c",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/入口与开放空间来源标记_20261006/准备窗内来源标记_WGS84.geojson",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/入口与开放空间来源标记_20261006/准备窗内来源标记_WGS84.geojson",
+      "bytes": 14793,
+      "sha256": "975b68d6912eae2b8744c8e1b3880b759e61dbf441786e786014f4263e1f9e61",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/入口与开放空间来源标记_20261006/准备窗包络_完整way与multipolygon.osm.pbf",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/入口与开放空间来源标记_20261006/准备窗包络_完整way与multipolygon.osm.pbf",
+      "bytes": 6416,
+      "sha256": "631873fbe40e889473e840458303380c66f81f0e5f4ce666b67009b5db1c9ca5",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/入口与开放空间来源标记_20261006/初始未接受字段版本/入口与开放空间来源标记.csv",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/入口与开放空间来源标记_20261006/初始未接受字段版本/入口与开放空间来源标记.csv",
+      "bytes": 5420,
+      "sha256": "d61e532aabd8aeb1050f8a1ad6f40d5765422e34e0b4cf6864e4d715837900d4",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/入口与开放空间来源标记_20261006/初始未接受字段版本/准备窗内来源标记_WGS84.geojson",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/入口与开放空间来源标记_20261006/初始未接受字段版本/准备窗内来源标记_WGS84.geojson",
+      "bytes": 13992,
+      "sha256": "996c0895080eff0de638e9b8a9c41b690fbef3a575a365618a1881ee5dad4235",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/入口与开放空间来源标记_20261006/初始未接受字段版本/提取范围与表达式.json",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/入口与开放空间来源标记_20261006/初始未接受字段版本/提取范围与表达式.json",
+      "bytes": 1110,
+      "sha256": "f699db853cbd77ae6aa8029096da7353636be3ae009a367c4e0e8e78ca576855",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/入口与开放空间来源标记_20261006/初始未接受字段版本/来源提取与回读.json",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/入口与开放空间来源标记_20261006/初始未接受字段版本/来源提取与回读.json",
+      "bytes": 5555,
+      "sha256": "2504673224183df2e26716da247124253c111821b6555426cc205fed00774a02",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/入口与开放空间来源标记_20261006/原始对象独立核查.py",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/入口与开放空间来源标记_20261006/原始对象独立核查.py",
+      "bytes": 8850,
+      "sha256": "8d0aa18ff88e299a4ec5dc7a898a326f09ceab62397e4214e6563e0d0163fe5f",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/入口与开放空间来源标记_20261006/唯一源对象及导出表示.csv",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/入口与开放空间来源标记_20261006/唯一源对象及导出表示.csv",
+      "bytes": 2667,
+      "sha256": "913758d2b904339931792fa50c8cd93eb6c621c63e10d84663633d7cc9a70ce6",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/入口与开放空间来源标记_20261006/提取来源标记.py",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/入口与开放空间来源标记_20261006/提取来源标记.py",
+      "bytes": 16601,
+      "sha256": "ba9dc9097e64704f1ed3d5eaf302b01d83d684a7dc9ad7b2797e6901b8e0c541",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/入口与开放空间来源标记_20261006/提取范围与表达式.json",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/入口与开放空间来源标记_20261006/提取范围与表达式.json",
+      "bytes": 1110,
+      "sha256": "f699db853cbd77ae6aa8029096da7353636be3ae009a367c4e0e8e78ca576855",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/入口与开放空间来源标记_20261006/来源提取与回读.json",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/入口与开放空间来源标记_20261006/来源提取与回读.json",
+      "bytes": 6903,
+      "sha256": "ef2568fd10b62c1ccd67d409152ffce3873b47dbe63d66482ef365a5732a9b2e",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/入口与开放空间来源标记_20261006/来源标记_原始导出.geojson",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/入口与开放空间来源标记_20261006/来源标记_原始导出.geojson",
+      "bytes": 2909,
+      "sha256": "60fbd2f44b5bb3b972496a08397f4571aec7cd043e59a71df8433f1c3dbacaa9",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/入口与开放空间来源标记_20261006/来源标记与引用原件.osm.pbf",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/入口与开放空间来源标记_20261006/来源标记与引用原件.osm.pbf",
+      "bytes": 956,
+      "sha256": "c94c0bed76de29085e4cf6311c390405e5a44780d3ba00a38b7bcf68140f06c6",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/入口与开放空间来源标记_20261006/源标记及候选受体与开放空间投影关系.csv",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/入口与开放空间来源标记_20261006/源标记及候选受体与开放空间投影关系.csv",
+      "bytes": 5285,
+      "sha256": "d3d15df176a5f42b6d4cdb021bbade0cf3812224f4607e576609086e281032d6",
+      "before_after_equal": true
+    },
+    {
+      "path": "共享接口/服务链准备/入口与开放空间来源标记_20261006/独立来源标记核查.json",
+      "absolute_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/服务链准备/入口与开放空间来源标记_20261006/独立来源标记核查.json",
+      "bytes": 7648,
+      "sha256": "71ec84a95fcfe8eb4b53db5a90835044013cb8da4233482825f38ea1a10b2bdc",
+      "before_after_equal": true
+    }
+  ],
+  "source_count": 72,
+  "source_bytes": 21403434,
+  "group_count": 3,
+  "primary_tables": 16,
+  "primary_rows": 32834,
+  "source_bytes_unchanged": true,
+  "old_versions_preserved": true,
+  "producers_or_research_run": false,
+  "original_external_assets_delivered": false,
+  "receiver_key_aliases": [
+    {
+      "source_mark_relation_subject_key": "micro_scene@sha256:6e852b128a3378dbe314b06885eec45a683387cf3c99ccda9bedc2b0a740a4f4/receptor_candidates/H1",
+      "SVF_receptor_key": "6e852b128a3378dbe314b06885eec45a683387cf3c99ccda9bedc2b0a740a4f4/receptor_candidates/H1",
+      "binding_basis": "same full SHA256, receptor_candidates layer, original ID; explicit prefix alias, not bare-ID matching"
+    },
+    {
+      "source_mark_relation_subject_key": "micro_scene@sha256:6e852b128a3378dbe314b06885eec45a683387cf3c99ccda9bedc2b0a740a4f4/receptor_candidates/H2",
+      "SVF_receptor_key": "6e852b128a3378dbe314b06885eec45a683387cf3c99ccda9bedc2b0a740a4f4/receptor_candidates/H2",
+      "binding_basis": "same full SHA256, receptor_candidates layer, original ID; explicit prefix alias, not bare-ID matching"
+    },
+    {
+      "source_mark_relation_subject_key": "micro_scene@sha256:6e852b128a3378dbe314b06885eec45a683387cf3c99ccda9bedc2b0a740a4f4/receptor_candidates/H3",
+      "SVF_receptor_key": "6e852b128a3378dbe314b06885eec45a683387cf3c99ccda9bedc2b0a740a4f4/receptor_candidates/H3",
+      "binding_basis": "same full SHA256, receptor_candidates layer, original ID; explicit prefix alias, not bare-ID matching"
+    },
+    {
+      "source_mark_relation_subject_key": "micro_scene@sha256:6e852b128a3378dbe314b06885eec45a683387cf3c99ccda9bedc2b0a740a4f4/receptor_candidates/V1",
+      "SVF_receptor_key": "6e852b128a3378dbe314b06885eec45a683387cf3c99ccda9bedc2b0a740a4f4/receptor_candidates/V1",
+      "binding_basis": "same full SHA256, receptor_candidates layer, original ID; explicit prefix alias, not bare-ID matching"
+    },
+    {
+      "source_mark_relation_subject_key": "micro_scene@sha256:6e852b128a3378dbe314b06885eec45a683387cf3c99ccda9bedc2b0a740a4f4/receptor_candidates/V2",
+      "SVF_receptor_key": "6e852b128a3378dbe314b06885eec45a683387cf3c99ccda9bedc2b0a740a4f4/receptor_candidates/V2",
+      "binding_basis": "same full SHA256, receptor_candidates layer, original ID; explicit prefix alias, not bare-ID matching"
+    },
+    {
+      "source_mark_relation_subject_key": "micro_scene@sha256:6e852b128a3378dbe314b06885eec45a683387cf3c99ccda9bedc2b0a740a4f4/receptor_candidates/V3",
+      "SVF_receptor_key": "6e852b128a3378dbe314b06885eec45a683387cf3c99ccda9bedc2b0a740a4f4/receptor_candidates/V3",
+      "binding_basis": "same full SHA256, receptor_candidates layer, original ID; explicit prefix alias, not bare-ID matching"
+    }
+  ]
+}

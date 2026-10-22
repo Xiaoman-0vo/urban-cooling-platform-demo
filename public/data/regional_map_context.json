@@ -1,0 +1,99 @@
+{
+  "version": "regional_navigation_v1_20261006",
+  "crs": "EPSG:4326",
+  "province_bounds": [
+    97.36096194863501,
+    26.034845282483786,
+    108.52348473493254,
+    34.29971548138434
+  ],
+  "study_bounds": [
+    104.0190099,
+    30.6222578,
+    104.1125159,
+    30.6971484
+  ],
+  "study_reference_center": [
+    104.06592821339186,
+    30.659608300000002
+  ],
+  "sources": {
+    "province": {
+      "path": "/Users/wangyanbo/科研/城市数据/数据/01_行政区划与城市边界/NaturalEarth/全球基础地理矢量/全球/当前版本_2026-08-22获取/ne_10m_admin_1_states_provinces.zip",
+      "sha256": "efc59726337323058f9446210adc96673179cd344e053666ee3d28cb58ba2b05",
+      "version": "5.1.1",
+      "license": "Public domain",
+      "crs": "EPSG:4326",
+      "source_url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/"
+    },
+    "rivers": {
+      "path": "/Users/wangyanbo/科研/城市数据/数据/01_行政区划与城市边界/NaturalEarth/全球基础地理矢量/全球/当前版本_2026-08-22获取/ne_10m_rivers_lake_centerlines.zip",
+      "sha256": "ded71b01870855ccfe19b51f2ec14c9bb48fae23c0e9f3c11974d426433b5c38",
+      "version": "5.0.0",
+      "license": "Public domain",
+      "crs": "EPSG:4326",
+      "source_url": "https://www.naturalearthdata.com/downloads/10m-physical-vectors/"
+    },
+    "places": {
+      "path": "/Users/wangyanbo/科研/城市数据/数据/01_行政区划与城市边界/NaturalEarth/全球基础地理矢量/全球/当前版本_2026-08-22获取/ne_10m_populated_places.zip",
+      "sha256": "cd149186f03d2603e0410da399b980a4357d0ac32d3a2305a49ed3dffcc41d7b",
+      "version": "5.1.2",
+      "license": "Public domain",
+      "crs": "EPSG:4326",
+      "source_url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/"
+    },
+    "study": {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/02_不同绿色空间的相互作用/宏观研究/数据核查/二环边界核对_2026-10-02/成都二环候选边界_OSM2021年初_高架单向主线中心线_WGS84.geojson",
+      "sha256": "c8d041d7a2a73af3e785127d67069019215376fd62a7e951826a779b5f5d0afc",
+      "protocol_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/02_不同绿色空间的相互作用/宏观研究/实施/第一步_数据与变量核查/研究区口径/研究区口径.json",
+      "protocol_sha256": "ba88063a751f39a9f51b8b64706ef777f6e560e02aa635495dcaed2739ca04b7",
+      "protocol_version": "domain_v1_20261005",
+      "primary_boundary": "2021_counterclockwise",
+      "snapshot_timestamp": "2021-01-01T21:42:03Z",
+      "license": "ODbL 1.0; © OpenStreetMap contributors"
+    }
+  },
+  "assets": [
+    {
+      "file": "sichuan_boundary.geojson",
+      "features": 1,
+      "bytes": 92159,
+      "sha256": "c15f65f685b8fedd97a2f72efeec4eb8622a74a8c929fd3434660f8afa8f3b4f"
+    },
+    {
+      "file": "sichuan_rivers.geojson",
+      "features": 9,
+      "bytes": 70841,
+      "sha256": "1460d171980babba8ad8aed02bcf5f0b5201500160027c469f3b41eb8e358c06"
+    },
+    {
+      "file": "sichuan_places.geojson",
+      "features": 17,
+      "bytes": 4107,
+      "sha256": "ba003aa8f36bd8e1fe9f0310f10824e0bb4e7cf205744c5c5e0d2c7de6773bb6"
+    },
+    {
+      "file": "study_selection_boundary.geojson",
+      "features": 1,
+      "bytes": 19472,
+      "sha256": "c8d041d7a2a73af3e785127d67069019215376fd62a7e951826a779b5f5d0afc"
+    }
+  ],
+  "accounting": {
+    "province_source_features": 4596,
+    "province_selected": 1,
+    "river_bbox_features": 17,
+    "rivers_intersecting_province": 9,
+    "place_bbox_features": 27,
+    "places_inside_province": 17
+  },
+  "selection_policy": "New map/coordinate/grid locations must have their centre covered by the fixed study polygon. This is a UI gate, not research admission.",
+  "province_data_admitted": false,
+  "research_admission_changed": false,
+  "limitations": [
+    "Natural Earth is a generalized navigation reference, not the study boundary.",
+    "Province-wide navigation points are not green measurements or eligible sites.",
+    "Existing green G02 points remain Chengdu macro source candidates.",
+    "The 300m surrounding display can extend beyond the selected centre boundary."
+  ]
+}

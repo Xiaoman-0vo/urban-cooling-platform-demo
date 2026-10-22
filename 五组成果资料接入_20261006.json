@@ -1,0 +1,852 @@
+{
+  "checked_at_Asia_Shanghai": "2026-10-06T05:50:46.196024+08:00",
+  "status": "pass_complete_five_group_read_only_software_intake",
+  "scope": "all_five_groups_actual_UI_save_restore_downloaded_JSON_and_ZIP_separate_disk_reopen_full_source_key_and_field_validation",
+  "checks": {
+    "N01": {
+      "status": "passed_software_scope_only"
+    },
+    "N02": {
+      "status": "passed_software_scope_only"
+    },
+    "N03": {
+      "status": "passed_software_scope_only"
+    },
+    "N04": {
+      "status": "passed_software_scope_only"
+    },
+    "N05": {
+      "status": "passed_software_scope_only"
+    },
+    "N06": {
+      "status": "passed_software_scope_only"
+    },
+    "N07": {
+      "status": "passed_software_scope_only"
+    },
+    "N08": {
+      "status": "passed_software_scope_only"
+    }
+  },
+  "group_count": 5,
+  "explicit_source_count": 32,
+  "groups": [
+    {
+      "group_id": "planning-description",
+      "schema_version": "0.1.read-only-planning-description",
+      "registration_id": "supplement:planning-description:468c71f9882389df5f1f517f9f28beb528e2711b8cf77a29461497461802e100",
+      "archive": {
+        "bytes": 1159754,
+        "sha256": "ff99d4abe7f3c625a84cc7abd8260c7a2106399cd19257d99ba5f794dd3ea7ab"
+      },
+      "adapter_receipt": {
+        "version": "0.1",
+        "registered_at": "2026-10-05T21:35:51.817Z",
+        "file_acceptance": "verified_explicit_original_bytes",
+        "science_validation": "source_states_preserved_no_upgrade",
+        "integration": "read_only_review",
+        "execution": "metadata_checked_no_research_execution",
+        "operation_gates": {
+          "prediction": false,
+          "physical_simulation": false,
+          "service_evaluation": false,
+          "fairness_evaluation": false,
+          "candidate_generation": false,
+          "ranking": false
+        },
+        "application_gates": {
+          "new_site_prediction": false,
+          "physical_simulation": false,
+          "pedestrian_thermal_comfort": false,
+          "actual_access_or_use_service": false,
+          "fairness_evaluation": false,
+          "minimum_new_green_area_search": false,
+          "candidate_generation": false,
+          "ranking": false,
+          "planning_response_or_cooling_effect": false
+        }
+      }
+    },
+    {
+      "group_id": "planning-development",
+      "schema_version": "0.1.read-only-planning-development",
+      "registration_id": "supplement:planning-development:aa6b6e5bb29b9d9fad46cc248502abaaa78bb2f445aa2be94c9ccbcde9530f44",
+      "archive": {
+        "bytes": 21803,
+        "sha256": "5d60d8854e2a7020e172bd885ebd5266e00329d60f202b6de5613db963bbb9c8"
+      },
+      "adapter_receipt": {
+        "version": "0.1",
+        "registered_at": "2026-10-05T21:35:51.817Z",
+        "file_acceptance": "verified_explicit_original_bytes",
+        "science_validation": "source_states_preserved_no_upgrade",
+        "integration": "read_only_review",
+        "execution": "metadata_checked_no_research_execution",
+        "operation_gates": {
+          "prediction": false,
+          "physical_simulation": false,
+          "service_evaluation": false,
+          "fairness_evaluation": false,
+          "candidate_generation": false,
+          "ranking": false
+        },
+        "application_gates": {
+          "new_site_prediction": false,
+          "physical_simulation": false,
+          "pedestrian_thermal_comfort": false,
+          "actual_access_or_use_service": false,
+          "fairness_evaluation": false,
+          "minimum_new_green_area_search": false,
+          "candidate_generation": false,
+          "ranking": false,
+          "planning_response_or_cooling_effect": false
+        }
+      }
+    },
+    {
+      "group_id": "candidate-resource",
+      "schema_version": "0.1.read-only-candidate-resource",
+      "registration_id": "supplement:candidate-resource:cd5cb7d6b47c1fbabeeb123c483bb8cafe8baa1073b0c62fbda8b89ec3287abf",
+      "archive": {
+        "bytes": 23609,
+        "sha256": "c63701ebde36cfceb1dbdba1d1cd24a8f32e4492ecebe3efbdb9c0ca3145872b"
+      },
+      "adapter_receipt": {
+        "version": "0.1",
+        "registered_at": "2026-10-05T21:35:51.817Z",
+        "file_acceptance": "verified_explicit_original_bytes",
+        "science_validation": "source_states_preserved_no_upgrade",
+        "integration": "read_only_review",
+        "execution": "metadata_checked_no_research_execution",
+        "operation_gates": {
+          "prediction": false,
+          "physical_simulation": false,
+          "service_evaluation": false,
+          "fairness_evaluation": false,
+          "candidate_generation": false,
+          "ranking": false
+        },
+        "application_gates": {
+          "new_site_prediction": false,
+          "physical_simulation": false,
+          "pedestrian_thermal_comfort": false,
+          "actual_access_or_use_service": false,
+          "fairness_evaluation": false,
+          "minimum_new_green_area_search": false,
+          "candidate_generation": false,
+          "ranking": false,
+          "planning_response_or_cooling_effect": false
+        }
+      }
+    },
+    {
+      "group_id": "modifiable-evidence",
+      "schema_version": "0.1.read-only-modifiable-evidence",
+      "registration_id": "supplement:modifiable-evidence:4d103b7f02b7e3f960b78e388d77c6aad523dc8cddfd1f602cb3b0daf4b9aaf7",
+      "archive": {
+        "bytes": 36238,
+        "sha256": "8c4e61fc8e95ccbb0a8c3cbc0019f831c50a21bb67dbf3db9692a603ac6e8188"
+      },
+      "adapter_receipt": {
+        "version": "0.1",
+        "registered_at": "2026-10-05T21:35:51.817Z",
+        "file_acceptance": "verified_explicit_original_bytes",
+        "science_validation": "source_states_preserved_no_upgrade",
+        "integration": "read_only_review",
+        "execution": "metadata_checked_no_research_execution",
+        "operation_gates": {
+          "prediction": false,
+          "physical_simulation": false,
+          "service_evaluation": false,
+          "fairness_evaluation": false,
+          "candidate_generation": false,
+          "ranking": false
+        },
+        "application_gates": {
+          "new_site_prediction": false,
+          "physical_simulation": false,
+          "pedestrian_thermal_comfort": false,
+          "actual_access_or_use_service": false,
+          "fairness_evaluation": false,
+          "minimum_new_green_area_search": false,
+          "candidate_generation": false,
+          "ranking": false,
+          "planning_response_or_cooling_effect": false
+        }
+      }
+    },
+    {
+      "group_id": "focal-neighbor",
+      "schema_version": "0.1.read-only-focal-neighbor",
+      "registration_id": "supplement:focal-neighbor:fe7435085bff0dcd4353c812a1e355550615573b2d606bada220eaa56a43f00f",
+      "archive": {
+        "bytes": 1519195,
+        "sha256": "36ce0d2095fb9ab33a5001e21c882b98306d4f0406829a722da95b9b0ee6cef4"
+      },
+      "adapter_receipt": {
+        "version": "0.1",
+        "registered_at": "2026-10-05T21:35:51.817Z",
+        "file_acceptance": "verified_explicit_original_bytes",
+        "science_validation": "source_states_preserved_no_upgrade",
+        "integration": "read_only_review",
+        "execution": "metadata_checked_no_research_execution",
+        "operation_gates": {
+          "prediction": false,
+          "physical_simulation": false,
+          "service_evaluation": false,
+          "fairness_evaluation": false,
+          "candidate_generation": false,
+          "ranking": false
+        },
+        "application_gates": {
+          "new_site_prediction": false,
+          "physical_simulation": false,
+          "pedestrian_thermal_comfort": false,
+          "actual_access_or_use_service": false,
+          "fairness_evaluation": false,
+          "minimum_new_green_area_search": false,
+          "candidate_generation": false,
+          "ranking": false,
+          "planning_response_or_cooling_effect": false
+        }
+      }
+    }
+  ],
+  "source_final_readback": [
+    {
+      "path": "共享接口/规划描述底稿/README.md",
+      "bytes": 9045,
+      "sha256": "f5085593feb2263776d905d5d50274c123e1f367fddbe9a6d9a4e2917caa0f44",
+      "mime_type": "text/markdown",
+      "absolute_path_read": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/规划描述底稿/README.md",
+      "current_bytes_equal_frozen": true
+    },
+    {
+      "path": "共享接口/规划描述底稿/现状指标描述统计.csv",
+      "bytes": 15662,
+      "sha256": "6bfcf42babc60f5ca7956d0b1a81bee285c7fde07ef02c315589e55db2bde538",
+      "mime_type": "text/csv",
+      "absolute_path_read": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/规划描述底稿/现状指标描述统计.csv",
+      "current_bytes_equal_frozen": true
+    },
+    {
+      "path": "共享接口/规划描述底稿/描述范围与适用状态核查.json",
+      "bytes": 23972,
+      "sha256": "17a687b8d8e2e0b65675a8837077d8c272c65514db73852994fb6a7d2d92b803",
+      "mime_type": "application/json",
+      "absolute_path_read": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/规划描述底稿/描述范围与适用状态核查.json",
+      "current_bytes_equal_frozen": true
+    },
+    {
+      "path": "共享接口/规划描述底稿/现状绿色组织与建成背景.png",
+      "bytes": 1257373,
+      "sha256": "87961ab48423a9f521cb3301d92e2e52a7a5ed289a154daf6bdde7ee06b629f0",
+      "mime_type": "image/png",
+      "absolute_path_read": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/规划描述底稿/现状绿色组织与建成背景.png",
+      "current_bytes_equal_frozen": true
+    },
+    {
+      "path": "共享接口/规划开发增补/说明与边界.md",
+      "bytes": 4241,
+      "sha256": "00809352247e8a29dc69d831d6f770a8ec6675b421544ca7a8654c8566c82bb8",
+      "mime_type": "text/markdown",
+      "absolute_path_read": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/规划开发增补/说明与边界.md",
+      "current_bytes_equal_frozen": true
+    },
+    {
+      "path": "共享接口/规划开发增补/开发增补来源绑定.json",
+      "bytes": 13971,
+      "sha256": "f8d5d24b64bdf21d0dbceff7b5116f0236514a243e11013bca3d2f5221d04801",
+      "mime_type": "application/json",
+      "absolute_path_read": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/规划开发增补/开发增补来源绑定.json",
+      "current_bytes_equal_frozen": true
+    },
+    {
+      "path": "共享接口/规划开发增补/配置开发误差_紧凑.csv",
+      "bytes": 21490,
+      "sha256": "9ef34a6a180e677acd14baf76d2f5ec2eef913a14392983e86556c3db387941c",
+      "mime_type": "text/csv",
+      "absolute_path_read": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/规划开发增补/配置开发误差_紧凑.csv",
+      "current_bytes_equal_frozen": true
+    },
+    {
+      "path": "共享接口/规划开发增补/配对增量_紧凑.csv",
+      "bytes": 27684,
+      "sha256": "a1b1d61fdc0a6a14c9ce4a1aaec96ef701759870e72714b9655eecd46aee08a7",
+      "mime_type": "text/csv",
+      "absolute_path_read": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/规划开发增补/配对增量_紧凑.csv",
+      "current_bytes_equal_frozen": true
+    },
+    {
+      "path": "共享接口/公平性输入准备/资源支持试核/六住宅植被资源支持候选.csv",
+      "bytes": 16717,
+      "sha256": "0d93ad325814bdabd077375cdd1795cc8576c3f5ee1efa415a17dfcadced085e",
+      "mime_type": "text/csv",
+      "absolute_path_read": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/公平性输入准备/资源支持试核/六住宅植被资源支持候选.csv",
+      "current_bytes_equal_frozen": true
+    },
+    {
+      "path": "共享接口/公平性输入准备/资源支持试核/候选窗口重叠.csv",
+      "bytes": 6805,
+      "sha256": "1aef8e7ef3e76e5f992392bc82e091ef9f63027fe6598b33fbddf2cf172e86f6",
+      "mime_type": "text/csv",
+      "absolute_path_read": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/公平性输入准备/资源支持试核/候选窗口重叠.csv",
+      "current_bytes_equal_frozen": true
+    },
+    {
+      "path": "共享接口/公平性输入准备/资源支持试核/资源支持说明.md",
+      "bytes": 9159,
+      "sha256": "e999fdfe16f9917282fdf7847fe5f5e6d3aa0715e96cbc583397195101444664",
+      "mime_type": "text/markdown",
+      "absolute_path_read": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/公平性输入准备/资源支持试核/资源支持说明.md",
+      "current_bytes_equal_frozen": true
+    },
+    {
+      "path": "共享接口/公平性输入准备/资源支持试核/资源支持核查.json",
+      "bytes": 20040,
+      "sha256": "b8e4ac75a5dc3ec980a9bfdee21566eadc04fdce967fd358082ec3d54f76b128",
+      "mime_type": "application/json",
+      "absolute_path_read": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/公平性输入准备/资源支持试核/资源支持核查.json",
+      "current_bytes_equal_frozen": true
+    },
+    {
+      "path": "共享接口/公平性输入准备/资源支持试核/保存回读核查.json",
+      "bytes": 1153,
+      "sha256": "a831aafb20d8c3c7bf93fa45141ecae5c3d70fdbf67623d16c8a20cc3ef0c4df",
+      "mime_type": "application/json",
+      "absolute_path_read": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/公平性输入准备/资源支持试核/保存回读核查.json",
+      "current_bytes_equal_frozen": true
+    },
+    {
+      "path": "共享接口/公平性输入准备/窗口敏感性试核/六对象窗口变化.csv",
+      "bytes": 1548,
+      "sha256": "f84b1181cec565cfaa95f8d390ca0d3338cb869933391ce787ef0fbde51a7dbb",
+      "mime_type": "text/csv",
+      "absolute_path_read": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/公平性输入准备/窗口敏感性试核/六对象窗口变化.csv",
+      "current_bytes_equal_frozen": true
+    },
+    {
+      "path": "共享接口/公平性输入准备/窗口敏感性试核/候选份额顺序变化.csv",
+      "bytes": 9590,
+      "sha256": "3cb5cbfa8300d6a84fb7d73c346721a3e01d990088de9118a8090b9e8e43aa17",
+      "mime_type": "text/csv",
+      "absolute_path_read": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/公平性输入准备/窗口敏感性试核/候选份额顺序变化.csv",
+      "current_bytes_equal_frozen": true
+    },
+    {
+      "path": "共享接口/公平性输入准备/窗口敏感性试核/窗口敏感性说明.md",
+      "bytes": 5459,
+      "sha256": "146610c2a4929a2c582561c5a3305017aa334e54f352a205ae9f607a6eb52a5a",
+      "mime_type": "text/markdown",
+      "absolute_path_read": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/公平性输入准备/窗口敏感性试核/窗口敏感性说明.md",
+      "current_bytes_equal_frozen": true
+    },
+    {
+      "path": "共享接口/公平性输入准备/窗口敏感性试核/窗口敏感性核查.json",
+      "bytes": 2072,
+      "sha256": "c1a33466c4e75c1ca9b95e8740a040d6675abd3bba80c5e1fb27f6dae3d4111c",
+      "mime_type": "application/json",
+      "absolute_path_read": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/公平性输入准备/窗口敏感性试核/窗口敏感性核查.json",
+      "current_bytes_equal_frozen": true
+    },
+    {
+      "path": "共享接口/微观试验准备/可改空间接纳证据表_20261006.csv",
+      "bytes": 13250,
+      "sha256": "e7053b11a3f8ae21fda6158587f168d71625f34ca88bb9779947a1d4cd5fcc33",
+      "mime_type": "text/csv",
+      "absolute_path_read": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/可改空间接纳证据表_20261006.csv",
+      "current_bytes_equal_frozen": true
+    },
+    {
+      "path": "共享接口/微观试验准备/可改空间接纳证据表_20261006.md",
+      "bytes": 5317,
+      "sha256": "4d5bf99c37061035ca85c362cc7d228aa174daaa54402237a99ba4f8405a35d4",
+      "mime_type": "text/markdown",
+      "absolute_path_read": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/可改空间接纳证据表_20261006.md",
+      "current_bytes_equal_frozen": true
+    },
+    {
+      "path": "共享接口/微观试验准备/可改空间来源存在与版本_20261006.csv",
+      "bytes": 18987,
+      "sha256": "82f583e828ba3ba34704970678e9b6dcf28e7fa3c749a0c84e47f954ea0dbe37",
+      "mime_type": "text/csv",
+      "absolute_path_read": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/可改空间来源存在与版本_20261006.csv",
+      "current_bytes_equal_frozen": true
+    },
+    {
+      "path": "共享接口/微观试验准备/可改空间来源与对象证据_20261006.json",
+      "bytes": 187416,
+      "sha256": "8cb0d39292c08de20553141daa27d4698288e664bdded4c76a349aaf538a4680",
+      "mime_type": "application/json",
+      "absolute_path_read": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/可改空间来源与对象证据_20261006.json",
+      "current_bytes_equal_frozen": true
+    },
+    {
+      "path": "共享接口/本格与周边描述/README.md",
+      "bytes": 7998,
+      "sha256": "0df7b9a59d25d6bf7a82e801804e247fdb8ef7b74b6201d76b6a49a988a1b1c7",
+      "mime_type": "text/markdown",
+      "absolute_path_read": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/本格与周边描述/README.md",
+      "current_bytes_equal_frozen": true
+    },
+    {
+      "path": "共享接口/本格与周边描述/本格与八邻格逐格对照.csv",
+      "bytes": 3609210,
+      "sha256": "bb31204d3fe05841ed110eeeab144039107607d2deb6f2986b47eacc86acc43e",
+      "mime_type": "text/csv",
+      "absolute_path_read": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/本格与周边描述/本格与八邻格逐格对照.csv",
+      "current_bytes_equal_frozen": true
+    },
+    {
+      "path": "共享接口/本格与周边描述/六指标对照支持与差异.csv",
+      "bytes": 812,
+      "sha256": "34d1f0892aea873367b07e4a86a9aa13ae58db9d7e983929dd6a04eb4bb270a9",
+      "mime_type": "text/csv",
+      "absolute_path_read": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/本格与周边描述/六指标对照支持与差异.csv",
+      "current_bytes_equal_frozen": true
+    },
+    {
+      "path": "共享接口/本格与周边描述/共同案例与极值示例.csv",
+      "bytes": 3060,
+      "sha256": "e33f6ddd4e88f4086876141f085d3707a7c0b67662dc151b360c5ca9a0258ecc",
+      "mime_type": "text/csv",
+      "absolute_path_read": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/本格与周边描述/共同案例与极值示例.csv",
+      "current_bytes_equal_frozen": true
+    },
+    {
+      "path": "共享接口/本格与周边描述/本格周边描述核查.json",
+      "bytes": 6965,
+      "sha256": "afe23bf89f9bc9cf0157b9883ffa9b938b4f73cb9c4add9447b2497cea9a3a27",
+      "mime_type": "application/json",
+      "absolute_path_read": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/本格与周边描述/本格周边描述核查.json",
+      "current_bytes_equal_frozen": true
+    },
+    {
+      "path": "共享接口/本格与周边描述/制图来源与样式核查.json",
+      "bytes": 4118,
+      "sha256": "1c601c0fddbaea6a02b3442fd8269199aafb8dfa4f5501f9293512727488d378",
+      "mime_type": "application/json",
+      "absolute_path_read": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/本格与周边描述/制图来源与样式核查.json",
+      "current_bytes_equal_frozen": true
+    },
+    {
+      "path": "共享接口/本格与周边描述/本格与周边比例差异.png",
+      "bytes": 606354,
+      "sha256": "179bb2dfac2c17baa43c0bc9c66bf8e243b2f4a02e6cb4b5b5e0a711d3eb44cc",
+      "mime_type": "image/png",
+      "absolute_path_read": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/本格与周边描述/本格与周边比例差异.png",
+      "current_bytes_equal_frozen": true
+    },
+    {
+      "path": "共享接口/本格与周边描述/本格与周边比例差异.svg",
+      "bytes": 2670986,
+      "sha256": "2e5ba6c3d4bb413a1798469cd63454d2460f18154f69d944ab5c8c9046592a6f",
+      "mime_type": "image/svg+xml",
+      "absolute_path_read": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/本格与周边描述/本格与周边比例差异.svg",
+      "current_bytes_equal_frozen": true
+    },
+    {
+      "path": "共享接口/本格与周边描述/差值色阶近似色觉检查.png",
+      "bytes": 36499,
+      "sha256": "30204df08a44567ea6ae7a40564361ee26cd02e9653961c10957ac0c8942a15a",
+      "mime_type": "image/png",
+      "absolute_path_read": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/本格与周边描述/差值色阶近似色觉检查.png",
+      "current_bytes_equal_frozen": true
+    },
+    {
+      "path": "共享接口/本格与周边描述/独立核查.json",
+      "bytes": 19174,
+      "sha256": "e9b49ec0469e5aeaa2e291133c8fbd3759c18e3f90780adb908692909023b1ef",
+      "mime_type": "application/json",
+      "absolute_path_read": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/本格与周边描述/独立核查.json",
+      "current_bytes_equal_frozen": true
+    },
+    {
+      "path": "共享接口/本格与周边描述/复现与接纳检查.json",
+      "bytes": 1269,
+      "sha256": "26bd53a1c200025f9d670f5f033c687cdfdda4ed34bf9ebe1ef81cc1805d71f0",
+      "mime_type": "application/json",
+      "absolute_path_read": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/本格与周边描述/复现与接纳检查.json",
+      "current_bytes_equal_frozen": true
+    }
+  ],
+  "original_two_research_one_frozen_preparation_and_24_sources_15_layers_preserved": {
+    "baseline_fields_deep_equal": [
+      "sourcePackage",
+      "scene",
+      "layers",
+      "researchRegistrations",
+      "preparationRegistrations"
+    ],
+    "old_research_registrations": {
+      "count": 2,
+      "identities": [
+        "coordination-index:efa0962c4a6ea46d47d9339330e350120f7d923d80008aeb214da5b95f144fd2",
+        "coordination-index:6b56102f564361fe2755efbea9b613b2a71e67af3d5fcd247ea157cc2af659f9"
+      ],
+      "all_fields_exactly_equal": true
+    },
+    "frozen_preparation": {
+      "count": 1,
+      "registration_id": "pilot-preparation:7d66553a704f56bb247003cdb163f5234a7c90abeaca8eb06816db297f764892",
+      "source_member_count": 14,
+      "archive": {
+        "path": "共享接口/共同试点输入对照/交接准备包/7d66553a704f56bb/E4125_N33891_研究输入准备.zip",
+        "sha256": "08c7156289efc7a383b096fca81a8442cc0915ed265c6986dfe4a6d6eaafd543",
+        "bytes": 93456
+      },
+      "all_fields_and_embedded_original_bytes_exactly_equal": true
+    },
+    "original_source_package": {
+      "artifact_count": 24,
+      "artifact_ids": [
+        "macro_nodes",
+        "macro_edges",
+        "macro_joined",
+        "macro_field_roles",
+        "macro_graph_manifest",
+        "macro_building_support",
+        "macro_variable_review",
+        "macro_quality_review",
+        "macro_raw_dn_readback",
+        "micro_scene",
+        "micro_obj",
+        "micro_raster",
+        "micro_manifest",
+        "micro_readback",
+        "micro_missing_inputs",
+        "micro_roads",
+        "micro_identity",
+        "micro_geometry_metrics",
+        "micro_geometry_review",
+        "micro_gf2_check",
+        "equity_candidate_design",
+        "equity_latest_review",
+        "access_methods",
+        "product_contract"
+      ],
+      "all_fields_exactly_equal": true
+    },
+    "layers": {
+      "count": 15,
+      "keys": [
+        "core",
+        "context",
+        "buildings",
+        "vegetation",
+        "source_classes_context",
+        "overlap_review_core",
+        "surface_review_core",
+        "receptors",
+        "macro_context300",
+        "context500",
+        "class_surface",
+        "overlap_review",
+        "hard_review",
+        "building_parts",
+        "roads"
+      ],
+      "all_geometry_attributes_and_source_identity_exactly_equal": true
+    },
+    "scene_all_fields_exactly_equal": true,
+    "temperature_results": {
+      "temperature_improvement_C": null,
+      "value_state": "not_calculated",
+      "prediction_enabled": false,
+      "physics_enabled": false,
+      "optimal_recommendation_enabled": false
+    },
+    "old_baseline_has_no_supplementRegistrations": true,
+    "no_automatic_fill_of_old_baseline": true
+  },
+  "disk_files": {
+    "json": {
+      "path": "/Users/wangyanbo/Downloads/街区交接_E4125_N33891_2026-10-05T21-38-32-234Z.json",
+      "bytes": 8574808,
+      "sha256": "05f7500ac479a0375087d751a47ccc05b10add25d080931dbefb122d429304e7"
+    },
+    "zip": {
+      "path": "/Users/wangyanbo/Downloads/街区交接_E4125_N33891_2026-10-05T21-39-09-879Z.zip",
+      "bytes": 9233142,
+      "sha256": "584c9ab1f7ac550ac74e8b0cf080a473d7f2230ef8931cea449848b7b3f6a39d"
+    },
+    "old_baseline": {
+      "path": "/Users/wangyanbo/Downloads/街区交接_E4125_N33891_2026-10-05T20-00-22-941Z.json",
+      "bytes": 4878019,
+      "sha256": "78932744a1ebeca82ba67a9faef1c03d7c711f3265dfcd5e5da4c1051388d1ed"
+    }
+  },
+  "downloaded_JSON_bound_to_ZIP_project_bytes": true,
+  "all_25_nonreceipt_ZIP_member_hashes_match": true,
+  "negative_UI_reopen_cases": 8,
+  "negative_before_after_project_bytes_completely_equal": true,
+  "negative_before_after_gate_paths_unchanged": 95,
+  "legacy_absent_supplement_field_not_filled": {
+    "file": {
+      "path": "/Users/wangyanbo/Downloads/街区交接_E4125_N33891_2026-10-05T21-36-03-185Z.json",
+      "bytes": 4878019,
+      "sha256": "d542faf62f266d5a54b7efc11774b8d10d1f4122617f4ed2da356dc1b4945e99"
+    },
+    "source_field_absent_verified": true
+  },
+  "browser_local_save": {
+    "storage": "IndexedDB",
+    "disk_snapshot_bytes": 8574808,
+    "reload_and_UI_restore_completed": true,
+    "legacy_localStorage_backup_preserved": true
+  },
+  "tests": {
+    "tests": 85,
+    "pass": 85,
+    "fail": 0,
+    "skipped": 0,
+    "log": {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/五组完整软件检查_20261006.log",
+      "bytes": 9502,
+      "sha256": "f71f1d580d2565cf33f667a96ab343466f2c2c008d77fe335f4c96999eb735fd"
+    }
+  },
+  "build": {
+    "passed": true,
+    "log": {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/五组构建_20261006.log",
+      "bytes": 530,
+      "sha256": "8ad9228821c390b8d1c03139135a52a2543ad89602c6dfd054e489363ae12af2"
+    },
+    "known_warning": "existing_large_main_bundle"
+  },
+  "independent_saved_source_and_disk_audit": {
+    "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/五组磁盘文件独立回读_20261006.json",
+    "bytes": 597833,
+    "sha256": "3323ae1e1fc9e29152cbc13882e5bcb546edec91aef678eef0069fe0d1f7fa4d"
+  },
+  "browser_negative_case_evidence": {
+    "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/五组浏览器拒绝核查_20261006.json",
+    "bytes": 9565,
+    "sha256": "77d546bc9cda7e885f81a895941b5b71db8b14aeed82727d776dfde48ce12f1c"
+  },
+  "module_versions": [
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/App.jsx",
+      "bytes": 47121,
+      "sha256": "f8655279fb2c133d7101346d49106fce07b63ef9872869f7078038b2226cd0cc"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/project.js",
+      "bytes": 24908,
+      "sha256": "af02e2022fd6b8ccec2f6d4d66a324ca9eb32df74b7182b7e76a6115432acf2b"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/project-storage.js",
+      "bytes": 1468,
+      "sha256": "ff1c5f29f85d5ede4ecc446a2ab47b047a939618b0b19d8e2581cde0e056f144"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/SupplementEvidence.jsx",
+      "bytes": 6811,
+      "sha256": "6b75d22129969fba5d15d7a1046935ee13fa55e198028ae59b0fd50df12b0263"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/supplement-state.js",
+      "bytes": 7755,
+      "sha256": "2f298785de06bcabc5d4c5fc1964c09fc4c9f4f9be283026dec04dca9452fac0"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/supplement-catalog.js",
+      "bytes": 15173,
+      "sha256": "34599e71e973526af3c770a98fba731858c7e6518453f709522a63dee96b570c"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/supplement-planning.js",
+      "bytes": 35080,
+      "sha256": "4f51a621242a16c58008d395f5bd9515c8ae2807d1bc137147641bd34cf5f9c2"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/supplement-candidates.js",
+      "bytes": 41291,
+      "sha256": "96aca00ebf3906d29005eeb9d627e1123f3cdc4cd8f032ef2cd09c44971cc09a"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/supplement-neighbor.js",
+      "bytes": 32767,
+      "sha256": "3ef553561da18f5ab89c233ed953363c434ee9a928e55b5c39e6aacdbe81c2e7"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/scripts/register-supplements.mjs",
+      "bytes": 5282,
+      "sha256": "742db95c10029eb5c139e5a57ec3a2de118ecd73eb4d09ada709475d0727dd25"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/tests/supplement-state.test.mjs",
+      "bytes": 14831,
+      "sha256": "073f827940db83d7ec8881c0e376955fd1d6296f23d42e4e8268102a89a715b3"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/tests/supplement-project.test.mjs",
+      "bytes": 14197,
+      "sha256": "a41a7f3ab0e3a6a9475ab2379ef29af0e99674686eed980817f72573d87260e9"
+    }
+  ],
+  "scientific_execution": {
+    "new_research_results_created": false,
+    "models_or_solvers_run": false,
+    "Y_weights_or_full_predictions_read": false,
+    "source_scientific_states_upgraded": false,
+    "complete_candidate_source_geometry_included": false,
+    "new_site_prediction": false,
+    "physical_simulation": false,
+    "thermal_comfort": false,
+    "actual_access_or_use_service": false,
+    "fairness_evaluation": false,
+    "minimum_new_green_area_search": false,
+    "ranking": false
+  },
+  "scientific_relation_delivery": "source_focal_neighbor_description_delivered_configuration_LST_response_not_delivered",
+  "focal_neighbor_direct_vs_upstream_audit_scope": {
+    "this_platform_direct_saved_value_checks": {
+      "primary_rows": 5871,
+      "neighbor_sets": 5871,
+      "neighbor_memberships": 46968,
+      "difference_or_blank_checks": 35226,
+      "all_eight_neighbor_focal_values_present_rows": 5535,
+      "per_metric_support": {
+        "G02": {
+          "original_unit": "share_0_1",
+          "paired_defined_rows": 5871,
+          "focal_undefined_rows": 0,
+          "neighbor_support_incomplete_rows": 0,
+          "undefined_overlap_rows": 0,
+          "undefined_comparison_rows": 0,
+          "direct_complete8_mean_checks": 5535,
+          "context_mean_rows": 336
+        },
+        "G03": {
+          "original_unit": "share_0_1",
+          "paired_defined_rows": 5871,
+          "focal_undefined_rows": 0,
+          "neighbor_support_incomplete_rows": 0,
+          "undefined_overlap_rows": 0,
+          "undefined_comparison_rows": 0,
+          "direct_complete8_mean_checks": 5535,
+          "context_mean_rows": 336
+        },
+        "C01": {
+          "original_unit": "local_fragment_count",
+          "paired_defined_rows": 5871,
+          "focal_undefined_rows": 0,
+          "neighbor_support_incomplete_rows": 0,
+          "undefined_overlap_rows": 0,
+          "undefined_comparison_rows": 0,
+          "direct_complete8_mean_checks": 5535,
+          "context_mean_rows": 336
+        },
+        "C03": {
+          "original_unit": "share_of_local_vegetation_0_1",
+          "paired_defined_rows": 3402,
+          "focal_undefined_rows": 578,
+          "neighbor_support_incomplete_rows": 2379,
+          "undefined_overlap_rows": 488,
+          "undefined_comparison_rows": 2469,
+          "direct_complete8_mean_checks": 3346,
+          "context_mean_rows": 146
+        },
+        "C06": {
+          "original_unit": "metres_per_square_metre",
+          "paired_defined_rows": 5871,
+          "focal_undefined_rows": 0,
+          "neighbor_support_incomplete_rows": 0,
+          "undefined_overlap_rows": 0,
+          "undefined_comparison_rows": 0,
+          "direct_complete8_mean_checks": 5535,
+          "context_mean_rows": 336
+        },
+        "B02": {
+          "original_unit": "roof_projection_share_0_1",
+          "paired_defined_rows": 5231,
+          "focal_undefined_rows": 103,
+          "neighbor_support_incomplete_rows": 610,
+          "undefined_overlap_rows": 73,
+          "undefined_comparison_rows": 640,
+          "direct_complete8_mean_checks": 5006,
+          "context_mean_rows": 255
+        }
+      },
+      "method": "exact_decimal_saved_value_contract_checks_not_new_research",
+      "boundary_or_external_context_values_not_present_in_view": true,
+      "no_external_context_value_fabrication": true
+    },
+    "source_declared_independent_full_source_audit": {
+      "state": "pass_with_upstream_numeric_precision_note",
+      "source_path": "共享接口/本格与周边描述/独立核查.json",
+      "checked_at": "2026-10-06T05:20:43+08:00",
+      "source_bound_report": true,
+      "checked_by_this_module": false,
+      "scope": "independent_X_only_coordinate_reconstruction_all_primary_locations",
+      "nonblocking_findings": [
+        {
+          "severity": "low_upstream_numerical_precision",
+          "affected_field": "B02",
+          "finding": "Frozen X B02 differs at the final stored digits from the declared building backing table; new description preserves frozen X exactly.",
+          "different_rows_all_6567": 4089,
+          "max_abs_value_difference": "1E-16",
+          "conversion_cause": "not_verified_this_turn_not_assumed_lossless_string_reformatting",
+          "description_arithmetic_from_declared_X": "exact",
+          "paired_delta_effect": {
+            "paired_rows_checked": 5231,
+            "maximum_neighbor_mean_abs_difference": "7.625E-17",
+            "maximum_delta_abs_difference": "7.75E-17",
+            "delta_sign_changed_rows": 0
+          },
+          "requires_this_description_repair": false
+        }
+      ]
+    },
+    "source_declared_reproduction_report": {
+      "source_path": "共享接口/本格与周边描述/复现与接纳检查.json",
+      "scope": "actual_temp_directory_reproduction_canonical_outputs_unchanged",
+      "source_report_bound": true,
+      "reproduced_by_this_module": false,
+      "actual_source_admission_tests_passed": 7,
+      "original_fields_retained_in_view": true
+    },
+    "platform_did_not_rerun_source_full_X_audit_or_reproduction": true,
+    "distinction": "5871 locations have saved neighbor identity/support/delta-or-blank checked; direct complete8 arithmetic from saved focal rows covers 5535 locations, with metric-specific missing support retained. Remaining external-context arithmetic is a bound source audit declaration, not a fresh platform full-X check.",
+    "shared_case": {
+      "grid_id": "E4125_N33891",
+      "G02_focal_share_raw": "0.1989",
+      "G02_neighbor_share_raw": "0.6550",
+      "G02_difference_share_raw": "-0.4561",
+      "focal_percent": 19.89,
+      "neighbor_percent": 65.5,
+      "difference_percentage_points": -45.61,
+      "B02_neighbor_mean": null,
+      "B02_difference": null,
+      "B02_status": "neighbor_support_incomplete"
+    },
+    "scientific_namespace": "macro:proxy_v1:c4_min0:EPSG32648:100m",
+    "automatic_merge_with_old_scene_or_preparation": false
+  },
+  "documents": [
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/五组成果资料接入_20261006.md",
+      "bytes": 5790,
+      "sha256": "4b3246a0db98d46f55aba118212e7856915621750deed0b23625e077598c4c70"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/规划成果定位与后续资料接入计划_20261006.md",
+      "bytes": 26127,
+      "sha256": "bab2c259a00183f04832ee42858eb47adf638f4a2904f70568a30501f6b6db8f"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/研究接口与能力准入.md",
+      "bytes": 42240,
+      "sha256": "77d5c74725df281d37d7b061e6a45e5cd5c8ac3f13c2990b5016c0bbe79531b9"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/README.md",
+      "bytes": 7431,
+      "sha256": "b3a50a046f86f45e92238cad0794a8a51454aefea6b4889d6a594a6120df197e"
+    }
+  ],
+  "old_receipts_preserved_with_historical_scope": true
+}

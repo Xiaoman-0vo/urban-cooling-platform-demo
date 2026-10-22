@@ -1,0 +1,162 @@
+{
+  "status": "corrected_summary_count_only_with_explicit_provenance",
+  "corrected_at": "2026-10-06T04:56:34.614Z",
+  "old_raw_backups": [
+    {
+      "original_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/来源几何与对象三组接入_20261006.json",
+      "snapshot_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/BOM摘要更正_20261006/来源几何与对象三组接入_20261006.json.before-a0148bef3a11d16a.raw",
+      "bytes": 890263,
+      "sha256": "a0148bef3a11d16a9bb6bd7c067ef58ee8f957e476a4fb09d2292fcc667b7ac7",
+      "raw_bytes_equal": true
+    },
+    {
+      "original_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/来源几何与对象三组接入_20261006.md",
+      "snapshot_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/BOM摘要更正_20261006/来源几何与对象三组接入_20261006.md.before-df0b42a7a625f7fe.raw",
+      "bytes": 5097,
+      "sha256": "df0b42a7a625f7fe8c674970812b21506a3d45cd2dab8a7de8fb45656f6c1798",
+      "raw_bytes_equal": true
+    },
+    {
+      "original_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/scripts/write-source-geometry-receipt.mjs",
+      "snapshot_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/BOM摘要更正_20261006/write-source-geometry-receipt.mjs.before-bb31740fdd396c11.raw",
+      "bytes": 13111,
+      "sha256": "bb31740fdd396c11cd4a0c4b2226840687e4e43355bc27f71125dece75bca1d0",
+      "raw_bytes_equal": true
+    }
+  ],
+  "new_receipt": {
+    "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/来源几何与对象三组接入_20261006.json",
+    "bytes": 897893,
+    "sha256": "289d808ea46fbb0354d9cc569fe91009b739e4572e41f5862a14c7d94bd88fc9"
+  },
+  "new_readable_record": {
+    "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/来源几何与对象三组接入_20261006.md",
+    "bytes": 6041,
+    "sha256": "161eef666ee69e04c363638e546f982a097881b74b335e37086b538ec4d117a3"
+  },
+  "new_summary_script": {
+    "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/scripts/write-source-geometry-receipt.mjs",
+    "bytes": 13113,
+    "sha256": "41800fbe6416740e489a5e7036d0f96645891121521927cded7213bc30a86da6"
+  },
+  "allowed_semantic_changes": [
+    {
+      "path": "/source_summary/raw_UTF8_BOM_files",
+      "before": 0,
+      "after": 12
+    },
+    {
+      "path": "/current_source_code_fingerprints/21/bytes",
+      "before": 13111,
+      "after": 13113
+    },
+    {
+      "path": "/current_source_code_fingerprints/21/sha256",
+      "before": "bb31740fdd396c11cd4a0c4b2226840687e4e43355bc27f71125dece75bca1d0",
+      "after": "41800fbe6416740e489a5e7036d0f96645891121521927cded7213bc30a86da6"
+    },
+    {
+      "path": "/summary_corrections",
+      "before": "absent",
+      "after": "explicit correction source record"
+    }
+  ],
+  "readable_change": "original bytes retained as prefix; append correction note only",
+  "all_other_receipt_semantics_deep_equal": true,
+  "unchanged_existing_artifact_fingerprints_checked": 47,
+  "source_BOM_files_read": 12,
+  "source_BOM_files": [
+    {
+      "path": "共享接口/服务链准备/窗口与源连通范围诊断_20261006/派生节点与原身份.csv",
+      "bytes": 105439,
+      "sha256": "705ba4b83a09e94a1f772b9e5944aeff648df31a00e9a3c5c566f95c08db7bb0",
+      "leading_bytes_hex": "efbbbf",
+      "role": "source_material"
+    },
+    {
+      "path": "共享接口/服务链准备/窗口与源连通范围诊断_20261006/窗内派生原段.csv",
+      "bytes": 45269,
+      "sha256": "8955e75afd66c362545015deec30eeeabf1495e4884e6c5084278507f3b89220",
+      "leading_bytes_hex": "efbbbf",
+      "role": "source_material"
+    },
+    {
+      "path": "共享接口/服务链准备/窗口与源连通范围诊断_20261006/窗外分量连接支撑.csv",
+      "bytes": 15051,
+      "sha256": "f2e38fa1c87fc6caa92c02585da9547835ad547789748fb2c5c15353c9373d60",
+      "leading_bytes_hex": "efbbbf",
+      "role": "source_material"
+    },
+    {
+      "path": "共享接口/服务链准备/窗口与源连通范围诊断_20261006/窗外来源支撑段.csv",
+      "bytes": 53278,
+      "sha256": "0ddbabec7e5f3f7562df66ff3c74c35e25d75e705e7b4069fb3ad58363e99d60",
+      "leading_bytes_hex": "efbbbf",
+      "role": "source_material"
+    },
+    {
+      "path": "共享接口/服务链准备/窗口与源连通范围诊断_20261006/窗界位置与分量关系.csv",
+      "bytes": 6025,
+      "sha256": "4c70e6f27f1870d94c885c8e5110d3d7b3111a85d836a486e1d29d32a7595125",
+      "leading_bytes_hex": "efbbbf",
+      "role": "source_material"
+    },
+    {
+      "path": "共享接口/服务链准备/窗口与源连通范围诊断_20261006/跨窗分量共同源节点证据.csv",
+      "bytes": 2395,
+      "sha256": "010b21e90cfe14d9d8cff6cbfd55c7ee53b3c0cc8c2d788b25db7ec8212669e4",
+      "leading_bytes_hex": "efbbbf",
+      "role": "source_material"
+    },
+    {
+      "path": "共享接口/服务链准备/窗口与源连通范围诊断_20261006/逐way保存几何长度核对.csv",
+      "bytes": 4288,
+      "sha256": "3ff8e775f34578788b05cc34f6276fe00273868809861bb5903a9440e9c40f0b",
+      "leading_bytes_hex": "efbbbf",
+      "role": "source_material"
+    },
+    {
+      "path": "共享接口/服务链准备/窗口与源连通范围诊断_20261006/逐原段裁切记录.csv",
+      "bytes": 41841,
+      "sha256": "dcc8035d759d41dcfaf95df6a4ad27f93f94d1faf57a83e2f4b9d24b571d4edc",
+      "leading_bytes_hex": "efbbbf",
+      "role": "source_material"
+    },
+    {
+      "path": "共享接口/服务链准备/入口与开放空间来源标记_20261006/入口与开放空间来源标记.csv",
+      "bytes": 6075,
+      "sha256": "872ae0276407a0ed6eb474796580d4300fe56476694bada7457165e5fcd1827c",
+      "leading_bytes_hex": "efbbbf",
+      "role": "source_material"
+    },
+    {
+      "path": "共享接口/服务链准备/入口与开放空间来源标记_20261006/初始未接受字段版本/入口与开放空间来源标记.csv",
+      "bytes": 5420,
+      "sha256": "d61e532aabd8aeb1050f8a1ad6f40d5765422e34e0b4cf6864e4d715837900d4",
+      "leading_bytes_hex": "efbbbf",
+      "role": "retained_unaccepted_schema_history"
+    },
+    {
+      "path": "共享接口/服务链准备/入口与开放空间来源标记_20261006/唯一源对象及导出表示.csv",
+      "bytes": 2667,
+      "sha256": "913758d2b904339931792fa50c8cd93eb6c621c63e10d84663633d7cc9a70ce6",
+      "leading_bytes_hex": "efbbbf",
+      "role": "source_material"
+    },
+    {
+      "path": "共享接口/服务链准备/入口与开放空间来源标记_20261006/源标记及候选受体与开放空间投影关系.csv",
+      "bytes": 5285,
+      "sha256": "d3d15df176a5f42b6d4cdb021bbade0cf3812224f4607e576609086e281032d6",
+      "leading_bytes_hex": "efbbbf",
+      "role": "source_material"
+    }
+  ],
+  "scope": {
+    "original_72_source_bytes_modified": false,
+    "JSON_or_ZIP_downloads_rebuilt": false,
+    "tests_or_build_rerun": false,
+    "research_executed": false,
+    "new_scientific_adoption": false,
+    "existing_generated_at_kept": true
+  }
+}

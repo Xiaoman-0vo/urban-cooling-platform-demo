@@ -1,0 +1,3 @@
+CMAB-A First National-Scale Multi-Attribute Building Dataset 
+
+This data is the building data with a total rooftop area of 23.6 billion square meters in 3,667 natural cities in China, including the attribute of building height, function, age and quality, as well as the code files used to calculate these data. The deep learning models used are OCRNet, XGBoost fine-tuned CLIP and Yolo-v8. Please refer to the paper and README file for details of specific parameters.

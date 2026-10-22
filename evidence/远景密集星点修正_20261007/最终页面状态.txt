@@ -1,0 +1,79 @@
+Browser tab: 4, Title: "街区绿色空间研究 · 本地首版", URL: "http://127.0.0.1:4173/".
+1 AXWebArea 街区绿色空间研究 · 本地首版, URL: 127.0.0.1:4173/
+	2 container
+		3 container 成都全域植被光效与研究场地地图；仅高亮研究区可定位场地
+			4 container Map
+			5 container
+				6 container
+					7 text © 
+					8 link Description: OpenStreetMap, Value: openstreetmap.org/copyright
+					9 text  contributors | 植被分类：
+					10 link Description: CLCD · Yang & Huang, Value: zenodo.org/records/18180184
+					11 text  / 
+					12 link Description: UBGG · Xu & Zhao, Value: zenodo.org/records/8352777
+					13 text ；空间预览，非热模拟
+		14 button 回到成都全域地图
+			15 image
+			16 text 街区绿色空间研究
+		17 pop up button (collapsed, settable) Description: 区域视野, Value: 成都, Secondary Actions: Expand
+			18 menu
+				19 (selected) 成都
+				20 四川
+		21 button 恢复本地保存
+			22 image
+		23 button 重开交接包
+			24 image
+		25 button 保存场地
+			26 image
+		27 button Description: 两种评价情景, Help: 分别编辑与保存评价情景
+		28 container 地图控制
+			29 button 地图放大
+				30 image
+			31 button 地图缩小
+				32 image
+			33 button 回到北向
+				34 image
+			35 button 切换俯视与倾斜
+				36 image
+			37 button 开始环视
+				38 image
+			39 checkbox Description: 地图光效, Help: 全市光效随缩放变化, Value: 1
+				40 image
+			41 button 只用本地图层
+				42 image
+			43 button Description: 来源准备审阅, Help: 审阅三组来源准备
+				44 image
+			45 button Description: 来源几何与对象审阅, Help: 审阅三组来源几何与对象
+				46 image
+		77 text 成都全域 · 植被星图
+		78 heading 从成都，进入你的场地, Value: 1
+			79 text 从成都，进入你的场地
+		80 container
+			81 text 全市动态光效 · 自由拖动与缩放  · 仅高亮研究区可选址
+		82 button 前往成都研究区
+			83 text 前往成都研究区
+			84 image
+		85 container 场地定位
+			86 image
+			87 heading 确认位置与范围, Value: 2
+				88 text 确认位置与范围
+			89 text 工程样例 E4125_N33891 · 104.087474°E, 30.631781°N
+			90 container
+				91 image
+				92 text field (settable) Description: 场地位置, Value: E4125_N33891
+			93 button 导入场地资料
+				94 image
+				95 text 导入场地资料
+			96 container
+				97 text 核心  100 × 100 m
+				98 text 周边视图  300 × 300 m
+			99 button 进入场地
+				100 text 进入场地
+				101 image
+			102 text 当前原包仍保留500米准备窗；物理求解域待定义
+			103 button 浏览真实工程样例
+				104 text 浏览真实工程样例
+				105 image
+		76 text 高亮边界 · 可选研究区 全市地图光效 建筑来源几何 100米核心 500米准备窗 青蓝源线 · 2021参考 在线底图仅供导航  · DEM未接入 · 尚未仿真
+
+The focused UI element is 14 button 回到成都全域地图

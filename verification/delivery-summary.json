@@ -1,0 +1,62 @@
+{
+  "version": "0.1.0-collaboration-copy",
+  "verified_on": "2026-10-22",
+  "environment": {
+    "os": "Darwin",
+    "architecture": "arm64",
+    "node": "24.19.0",
+    "windows_executed": false
+  },
+  "source_label": "平台本地首版",
+  "source_files_hash_checked": 659,
+  "original_source_changed": [],
+  "public_evidence_byte_changes": [],
+  "public": {
+    "files": 48,
+    "bytes": 35719796
+  },
+  "evidence": {
+    "files": 501,
+    "bytes": 395172979
+  },
+  "checks": {
+    "clean_npm_ci": true,
+    "vite_build": true,
+    "sites_packaging": true,
+    "default_tests": {
+      "pass": 76,
+      "fail": 0,
+      "skip": 0
+    },
+    "sites_tests": {
+      "pass": 4,
+      "fail": 0
+    },
+    "prefix_static_assets": 51,
+    "browser_page_errors": [],
+    "browser_internal_failures": [],
+    "worker_prefix_verified": true,
+    "evidence_panels_opened": 5,
+    "visual_review": [
+      "前缀页面.png",
+      "证据面板.png"
+    ],
+    "credential_pattern_findings": 0
+  },
+  "delivery_exclusions": {
+    "node_modules_removed_after_checks": true,
+    "dist_removed_after_checks": true,
+    "symlinks": [],
+    "excluded_name_hits": []
+  },
+  "limits": [
+    "Windows host not executed; npm commands and relative frontend/build paths prepared for both systems.",
+    "Original fifteen-file source verification retained separately; eight files include original research-directory or historical-download checks and were not claimed self-contained.",
+    "Offline preparation/registration/audit scripts retain legacy source-layout assumptions; they are not startup/build dependencies.",
+    "Model HTTP service, weights and complete 02/03/04 research code are separate handoffs.",
+    "Vite reports the existing approximately 2.07MB JavaScript chunk warning; no bundling redesign was performed."
+  ],
+  "remote_actions_performed_by_this_agent": false,
+  "files_before_this_report": 683,
+  "bytes_before_this_report": 436449688
+}

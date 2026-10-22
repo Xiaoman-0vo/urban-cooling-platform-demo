@@ -1,0 +1,309 @@
+{
+  "schema_version": "0.1.read-only-pilot-preparation-registration-receipt",
+  "registration_id": "pilot-preparation:7d66553a704f56bb247003cdb163f5234a7c90abeaca8eb06816db297f764892",
+  "site_id": "E4125_N33891",
+  "started_at": "2026-10-05T19:48:32.339Z",
+  "completed_at": "2026-10-05T19:48:32.382Z",
+  "source_current_index": {
+    "path": "共享接口/共同试点输入对照/当前准备包登记.json",
+    "sha256": "049ff4c417892b0c4a7751c6b5fd0ca8b62c96fb5bc09a632dea519168188855",
+    "bytes": 1693
+  },
+  "archive": {
+    "path": "共享接口/共同试点输入对照/交接准备包/7d66553a704f56bb/E4125_N33891_研究输入准备.zip",
+    "sha256": "08c7156289efc7a383b096fca81a8442cc0915ed265c6986dfe4a6d6eaafd543",
+    "bytes": 93456,
+    "before": {
+      "sha256": "08c7156289efc7a383b096fca81a8442cc0915ed265c6986dfe4a6d6eaafd543",
+      "bytes": 93456
+    },
+    "after": {
+      "sha256": "08c7156289efc7a383b096fca81a8442cc0915ed265c6986dfe4a6d6eaafd543",
+      "bytes": 93456
+    },
+    "unchanged": true
+  },
+  "manifest_source": {
+    "path": "共享接口/共同试点输入对照/交接准备包/7d66553a704f56bb/准备清单.json",
+    "sha256": "d858b018fc206d561202f0d0d6b0c31ea0cf2a05c87256f349fe35ed50c7f0d6",
+    "bytes": 11511,
+    "before": {
+      "sha256": "d858b018fc206d561202f0d0d6b0c31ea0cf2a05c87256f349fe35ed50c7f0d6",
+      "bytes": 11511
+    },
+    "after": {
+      "sha256": "d858b018fc206d561202f0d0d6b0c31ea0cf2a05c87256f349fe35ed50c7f0d6",
+      "bytes": 11511
+    },
+    "unchanged": true
+  },
+  "source_measurements": [
+    {
+      "path": "共享接口/共同试点输入对照/宏观九格现有输入.csv",
+      "declared": {
+        "sha256": "551d3c71d29628f6943eed8edf3a95880774dca146e8c7a8ef3fefa4e4fba496",
+        "bytes": 8835
+      },
+      "before": {
+        "sha256": "551d3c71d29628f6943eed8edf3a95880774dca146e8c7a8ef3fefa4e4fba496",
+        "bytes": 8835
+      },
+      "after": {
+        "sha256": "551d3c71d29628f6943eed8edf3a95880774dca146e8c7a8ef3fefa4e4fba496",
+        "bytes": 8835
+      },
+      "unchanged": true
+    },
+    {
+      "path": "共享接口/共同试点输入对照/宏观九格输入核查.json",
+      "declared": {
+        "sha256": "93ef4b52375081e28190a562728b15596c5bb06f7113ee661434b3991b5d684b",
+        "bytes": 53916
+      },
+      "before": {
+        "sha256": "93ef4b52375081e28190a562728b15596c5bb06f7113ee661434b3991b5d684b",
+        "bytes": 53916
+      },
+      "after": {
+        "sha256": "93ef4b52375081e28190a562728b15596c5bb06f7113ee661434b3991b5d684b",
+        "bytes": 53916
+      },
+      "unchanged": true
+    },
+    {
+      "path": "共享接口/共同试点输入对照/README.md",
+      "declared": {
+        "sha256": "f7b07bee51725c033ad6bc6d47826e67127e1e0ac5284ec36911b188189d985b",
+        "bytes": 5231
+      },
+      "before": {
+        "sha256": "f7b07bee51725c033ad6bc6d47826e67127e1e0ac5284ec36911b188189d985b",
+        "bytes": 5231
+      },
+      "after": {
+        "sha256": "f7b07bee51725c033ad6bc6d47826e67127e1e0ac5284ec36911b188189d985b",
+        "bytes": 5231
+      },
+      "unchanged": true
+    },
+    {
+      "path": "共享接口/公平性输入准备/共同试点住宅候选.csv",
+      "declared": {
+        "sha256": "6e5ca8d220a42ecd6e3610ed2893c5adafdcbf9e25661c326e8388db1269c5dc",
+        "bytes": 10140
+      },
+      "before": {
+        "sha256": "6e5ca8d220a42ecd6e3610ed2893c5adafdcbf9e25661c326e8388db1269c5dc",
+        "bytes": 10140
+      },
+      "after": {
+        "sha256": "6e5ca8d220a42ecd6e3610ed2893c5adafdcbf9e25661c326e8388db1269c5dc",
+        "bytes": 10140
+      },
+      "unchanged": true
+    },
+    {
+      "path": "共享接口/公平性输入准备/共同试点对象与人口支持核查.json",
+      "declared": {
+        "sha256": "19c8326797bcf35c8c5af26d3d9cd3478e44807be3971f329cff0d658a72f866",
+        "bytes": 68743
+      },
+      "before": {
+        "sha256": "19c8326797bcf35c8c5af26d3d9cd3478e44807be3971f329cff0d658a72f866",
+        "bytes": 68743
+      },
+      "after": {
+        "sha256": "19c8326797bcf35c8c5af26d3d9cd3478e44807be3971f329cff0d658a72f866",
+        "bytes": 68743
+      },
+      "unchanged": true
+    },
+    {
+      "path": "共享接口/公平性输入准备/共同试点住宅源对象_展示准备.geojson",
+      "declared": {
+        "sha256": "e8648cb840c25ceda9a8743df619766254a730896ef1d6120aaac224127c39aa",
+        "bytes": 61406
+      },
+      "before": {
+        "sha256": "e8648cb840c25ceda9a8743df619766254a730896ef1d6120aaac224127c39aa",
+        "bytes": 61406
+      },
+      "after": {
+        "sha256": "e8648cb840c25ceda9a8743df619766254a730896ef1d6120aaac224127c39aa",
+        "bytes": 61406
+      },
+      "unchanged": true
+    },
+    {
+      "path": "共享接口/公平性输入准备/共同试点住宅几何展示核查.json",
+      "declared": {
+        "sha256": "d0ff3b7d5ca44928515c8281971b2cdb4ac4987c06f73d8eb023e4b3e9aa1a84",
+        "bytes": 9929
+      },
+      "before": {
+        "sha256": "d0ff3b7d5ca44928515c8281971b2cdb4ac4987c06f73d8eb023e4b3e9aa1a84",
+        "bytes": 9929
+      },
+      "after": {
+        "sha256": "d0ff3b7d5ca44928515c8281971b2cdb4ac4987c06f73d8eb023e4b3e9aa1a84",
+        "bytes": 9929
+      },
+      "unchanged": true
+    },
+    {
+      "path": "共享接口/公平性输入准备/共同试点接纳边界.md",
+      "declared": {
+        "sha256": "5afca662839fabb08d9a8a70affdf39c5962613c3244aecf636245f6207be945",
+        "bytes": 5076
+      },
+      "before": {
+        "sha256": "5afca662839fabb08d9a8a70affdf39c5962613c3244aecf636245f6207be945",
+        "bytes": 5076
+      },
+      "after": {
+        "sha256": "5afca662839fabb08d9a8a70affdf39c5962613c3244aecf636245f6207be945",
+        "bytes": 5076
+      },
+      "unchanged": true
+    },
+    {
+      "path": "共享接口/微观试验准备/实际输入与缺项.json",
+      "declared": {
+        "sha256": "b45c33ebf2abc770f9aa0ee10f15e1baca63fa0f5136a88a9aff3885ba4ec599",
+        "bytes": 138459
+      },
+      "before": {
+        "sha256": "b45c33ebf2abc770f9aa0ee10f15e1baca63fa0f5136a88a9aff3885ba4ec599",
+        "bytes": 138459
+      },
+      "after": {
+        "sha256": "b45c33ebf2abc770f9aa0ee10f15e1baca63fa0f5136a88a9aff3885ba4ec599",
+        "bytes": 138459
+      },
+      "unchanged": true
+    },
+    {
+      "path": "共享接口/微观试验准备/同投入与指标匹配试验准备_草案.md",
+      "declared": {
+        "sha256": "4e837c7f337afc5b9ddc0c137b8fc9e41e2af8e6148816fccf66c07a61ceec62",
+        "bytes": 14075
+      },
+      "before": {
+        "sha256": "4e837c7f337afc5b9ddc0c137b8fc9e41e2af8e6148816fccf66c07a61ceec62",
+        "bytes": 14075
+      },
+      "after": {
+        "sha256": "4e837c7f337afc5b9ddc0c137b8fc9e41e2af8e6148816fccf66c07a61ceec62",
+        "bytes": 14075
+      },
+      "unchanged": true
+    },
+    {
+      "path": "共享接口/微观试验准备/持有气象与地形候选核查.json",
+      "declared": {
+        "sha256": "a9940581a9a412d0d77fbe09111d3f735cbc706c1ca6325038bb2d45d0e63c45",
+        "bytes": 57056
+      },
+      "before": {
+        "sha256": "a9940581a9a412d0d77fbe09111d3f735cbc706c1ca6325038bb2d45d0e63c45",
+        "bytes": 57056
+      },
+      "after": {
+        "sha256": "a9940581a9a412d0d77fbe09111d3f735cbc706c1ca6325038bb2d45d0e63c45",
+        "bytes": 57056
+      },
+      "unchanged": true
+    },
+    {
+      "path": "共享接口/微观试验准备/持有输入能补哪些缺项.md",
+      "declared": {
+        "sha256": "0044804eaef1b35cd23b4874e73a05e21cc4db78865a365f7570a53ccb107b9c",
+        "bytes": 10232
+      },
+      "before": {
+        "sha256": "0044804eaef1b35cd23b4874e73a05e21cc4db78865a365f7570a53ccb107b9c",
+        "bytes": 10232
+      },
+      "after": {
+        "sha256": "0044804eaef1b35cd23b4874e73a05e21cc4db78865a365f7570a53ccb107b9c",
+        "bytes": 10232
+      },
+      "unchanged": true
+    },
+    {
+      "path": "共享接口/服务链准备/双路径受益与获取接口_草案.json",
+      "declared": {
+        "sha256": "06c802c405bfc9373e8e028c84a87c9e13c27d4b541e6f37adb69e63076d3e3d",
+        "bytes": 125141
+      },
+      "before": {
+        "sha256": "06c802c405bfc9373e8e028c84a87c9e13c27d4b541e6f37adb69e63076d3e3d",
+        "bytes": 125141
+      },
+      "after": {
+        "sha256": "06c802c405bfc9373e8e028c84a87c9e13c27d4b541e6f37adb69e63076d3e3d",
+        "bytes": 125141
+      },
+      "unchanged": true
+    },
+    {
+      "path": "共享接口/服务链准备/README.md",
+      "declared": {
+        "sha256": "c5806fadd3a9b2711f9168f45f9ac7cb5c5d026c92cb68cb60fdc57781a3c983",
+        "bytes": 4967
+      },
+      "before": {
+        "sha256": "c5806fadd3a9b2711f9168f45f9ac7cb5c5d026c92cb68cb60fdc57781a3c983",
+        "bytes": 4967
+      },
+      "after": {
+        "sha256": "c5806fadd3a9b2711f9168f45f9ac7cb5c5d026c92cb68cb60fdc57781a3c983",
+        "bytes": 4967
+      },
+      "unchanged": true
+    }
+  ],
+  "verification": {
+    "scope": "original_preparation_zip_manifest_and_explicit_14_metadata_source_bytes_only",
+    "archive_crc_verified": true,
+    "exact_member_count": 15,
+    "verified_source_count": 14,
+    "all_source_and_member_hashes_match": true,
+    "complete_original_zip_bytes_preserved": true,
+    "original_manifest_object_preserved": true,
+    "strict_json_duplicate_keys_and_nonfinite_rejected": true
+  },
+  "operation_gates": {
+    "prediction": false,
+    "physical_simulation": false,
+    "service_evaluation": false,
+    "fairness_evaluation": false,
+    "candidate_generation": false,
+    "ranking": false
+  },
+  "research_execution": {
+    "model_weights_loaded": false,
+    "locked_test_labels_read": false,
+    "raw_raster_links_followed": false,
+    "training_inference_simulation_fairness_or_service_run": false
+  },
+  "outputs": {
+    "current": {
+      "path": "public/data/preparation-state.json",
+      "sha256": "1c7174ca51ecd0adaf44bbb4b2d0962b913bfc0c9be7abdeb56b2d4debed412b",
+      "bytes": 138541
+    },
+    "snapshot": {
+      "path": "public/data/preparation_snapshots/7d66553a704f56bb247003cdb163f5234a7c90abeaca8eb06816db297f764892.json",
+      "sha256": "1c7174ca51ecd0adaf44bbb4b2d0962b913bfc0c9be7abdeb56b2d4debed412b",
+      "bytes": 138541,
+      "reused_existing_snapshot": false
+    },
+    "receipt": {
+      "path": "scripts/preparation-state-registration-receipt.json"
+    },
+    "immutable_receipt": {
+      "path": "scripts/preparation-state-registration-receipt_7d66553a704f56bb247003cdb163f5234a7c90abeaca8eb06816db297f764892.json"
+    }
+  }
+}

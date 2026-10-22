@@ -1,0 +1,35 @@
+{
+  "far": {
+    "frame_count": 40,
+    "captured_elapsed_ms": 3304,
+    "dimensions": [
+      1280,
+      720
+    ],
+    "changed_frames": 37,
+    "animation_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/尺度光效_far_实录_20261006.gif",
+    "pixel_content": "actual_browser_screenshots_no_synthetic_frames"
+  },
+  "city": {
+    "frame_count": 40,
+    "captured_elapsed_ms": 3145,
+    "dimensions": [
+      1280,
+      720
+    ],
+    "changed_frames": 39,
+    "animation_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/尺度光效_city_实录_20261006.gif",
+    "pixel_content": "actual_browser_screenshots_no_synthetic_frames"
+  },
+  "site": {
+    "frame_count": 40,
+    "captured_elapsed_ms": 3530,
+    "dimensions": [
+      1280,
+      720
+    ],
+    "changed_frames": 38,
+    "animation_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/尺度光效_site_实录_20261006.gif",
+    "pixel_content": "actual_browser_screenshots_no_synthetic_frames"
+  }
+}

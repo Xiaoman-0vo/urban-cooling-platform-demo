@@ -1,0 +1,31 @@
+# Prototype Instructions
+
+## Planning research policy — 2026-10-08
+
+Follow the root `AGENTS.md` and `../研究定位与必要检验原则.md`. The current platform plan is `../平台产品设计/当前推进计划_20261008.md`: turn mature research evidence into block diagnosis, scenario comparison and reporting. Reuse completed results and preserve negative findings, missingness and limitations. Do not require broad random-seed repetitions, hyperparameter sweeps, architecture comparisons or generic sensitivity matrices as a default prerequisite for browsing or integrating results. Keep verification proportionate to the actual scientific claim and software changes; do not rerun unchanged checks or restart paused research queues for a planning-policy update. Keep observed LST associations, physical cooling, potential walking access, human thermal comfort and equity distinct.
+
+## Prototype operation
+
+Run the local server yourself and open the preview in the browser available to this environment. Do not give the user server-start instructions when you can run it.
+
+Before making substantial visual changes, use the Product Design plugin's `get-context` skill when the visual source is unclear or no longer matches the current goal. When the user gives durable prototype-specific design feedback, preferences, or decisions, record them in `AGENTS.md`.
+
+When implementing from a selected generated mock, treat that image as the source of truth for layout, component anatomy, density, spacing, color, typography, visible content, and hierarchy.
+
+Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts/prepare-sites-build.mjs`, and `tests/sites-worker.test.mjs` intact so the same local prototype can be handed to Sites. Before a Sites handoff, run `npm run build` and `npm run test:sites`; the build must leave `dist/client/index.html`, `dist/server/index.js`, and `dist/.openai/hosting.json`.
+
+## Durable prototype preferences
+
+The user wants a sci-fi Chengdu/Sichuan bird's-eye map as the entrance, with green point lights and real building outlines. Location entry leads into the 100 × 100 m core and 300 × 300 m surrounding view. Point lights must remain visible after entering or picking a site. The latest feedback rejects far-scale aggregation: retain dense individual source points when zooming out or expanding the view, with smaller continuous screen radii rather than a few large light bubbles. Keep a visible breathing light effect across both stages. Use supplied project geometry and source fields only; decorative lights must not imply validated research or results.
+
+At far zoom, keep fine stable light cores and animate their small screen-space halo radius as well as opacity so the effect is visibly changing. Disable clustering for all three green display sources at every zoom. Keep thin halos on original points through far and intermediate zoom levels. Clicking an existing building or road must keep the scene coating and lights visible. Clicking a green point navigates the display without replacing the loaded site. Once a site is previewed, incidental map clicks preserve it; editing the location input re-enables location picking. Keep light halos above normal site fills, with stable screen size in tilted views, and animate halo radius as well as brightness at middle and near zoom. Ignore location clicks while the style or pickable source geometry is still updating. Halo sizes are display pixels, never cooling distances or service ranges.
+
+Macro outcomes follow the project's planning-paper purpose: spatial organisation, built context, focal/neighbour relationships, support and planning judgement. Prediction-error changes are evidence about distinguishable information, not renovation cooling. Keep independently versioned future source supplements separate from the frozen preparation package; do not infer research validation from visual effects or software save success.
+
+The latest user steering sets the entrance to the Chengdu whole-city view and asks for lights across all Chengdu. Keep Sichuan as an optional navigation view. The user explicitly confirmed that new map, coordinate and grid location previews are selectable only inside the existing Chengdu study area. Use the fixed domain_v1_20261005 2021 counterclockwise Second Ring operational polygon, not the city/province navigation outlines or an enlarged rectangular extent. Outside clicks keep the current scene and registrations intact and explain browse-only status. Pan/zoom and existing object inspection remain available; a conspicuous button and far-scale locator return to the allowed area. Preserve imported and restored records, and keep city/province navigation data separate from Chengdu G02 lights and research admission. Source files being available does not mean all layers are scientifically admitted.
+
+For a fresh location choice in the Chengdu view, clicking the map or a light requests the actual clicked coordinate through the same boundary gate. Do not pick a cluster centroid. Once a location is previewed, light/object clicks retain the loaded scene; editing the location input re-enables a fresh choice.
+
+Whole-city lights use a separate CLCD 2020 display source (forest/shrub/grass classes) and an independent finer UBGG extent. Read native raster windows and masks, use real classified pixel centres, and document aggregation widths. Do not populate G02 with a display share, expand scientific eligibility, fill NoData as zero vegetation, or use random green points outside the actual source support. Preserve breathing light radius and brightness at all scales and keep the original study G02 source intact. The study-jump button must accept pointer events despite its passive caption parent.
+
+The user additionally wants all visual effects across the whole Chengdu view. Keep city-wide breathing lights, animated outline/coating, a moving scan and a clipped backdrop lattice active in both browsing and site stages. The lattice/scan are decorative geometry, not roads, elevation contours, cooling results or a research grid. Clip them to the real navigation city polygon; keep original objects and selection rules independent. The single map-effects control toggles these overlays without clearing their sources.

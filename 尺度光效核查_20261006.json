@@ -1,0 +1,191 @@
+{
+  "schema": "scale_light_visual_fix_review_v1",
+  "date": "2026-10-06",
+  "status": "implemented_built_and_browser_checked",
+  "purpose": "decorative_source_map_display_not_scientific_output",
+  "source_point_count": 5868,
+  "modifications": [
+    "stable_brighter_far_cluster_core",
+    "cluster_halo_screen_radius_and_opacity_breathing",
+    "cluster_ring_screen_radius_and_stroke_opacity_breathing",
+    "raw_point_halo_visible_at_zoom9_transition",
+    "continuous_raw_halo_zoom13_to15"
+  ],
+  "animation": {
+    "period_ms": 3000,
+    "paint_interval_ms": 100,
+    "geometry_or_G02_changed": false,
+    "core_radius_animated": false,
+    "reduced_motion_static": true,
+    "radius_unit": "screen_pixels_not_geographic_buffer"
+  },
+  "tests": {
+    "map": 22,
+    "project": 18,
+    "research": 9,
+    "preparation": 9,
+    "sites": 4,
+    "total": 62,
+    "passed": 62,
+    "failed": 0,
+    "executed_this_turn": true
+  },
+  "build": {
+    "passed": true,
+    "client_index_exists": true,
+    "server_index_exists": true,
+    "hosting_config_exists": true,
+    "main_bundle": {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/dist/client/assets/index-DIj7g2vC.js",
+      "bytes": 1633124,
+      "sha256": "591926d239fffe2d146e354f8781b4191a7b9b469794ceb987a3716c38080784"
+    },
+    "bundle_size_warning": true,
+    "public_deployment_performed": false
+  },
+  "browser": {
+    "url": "http://127.0.0.1:4173/",
+    "states_checked": [
+      "Sichuan far view",
+      "Chengdu city view",
+      "pan and zoom",
+      "site sample entry",
+      "road object detail",
+      "working building151758 detail",
+      "restored existing saved project residence146756"
+    ],
+    "scene_coating_and_lights_retained": true,
+    "actual_frame_record_groups": {
+      "far": {
+        "frame_count": 40,
+        "captured_elapsed_ms": 3304,
+        "dimensions": [
+          1280,
+          720
+        ],
+        "changed_frames": 37,
+        "animation_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/尺度光效_far_实录_20261006.gif",
+        "pixel_content": "actual_browser_screenshots_no_synthetic_frames"
+      },
+      "city": {
+        "frame_count": 40,
+        "captured_elapsed_ms": 3145,
+        "dimensions": [
+          1280,
+          720
+        ],
+        "changed_frames": 39,
+        "animation_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/尺度光效_city_实录_20261006.gif",
+        "pixel_content": "actual_browser_screenshots_no_synthetic_frames"
+      },
+      "site": {
+        "frame_count": 40,
+        "captured_elapsed_ms": 3530,
+        "dimensions": [
+          1280,
+          720
+        ],
+        "changed_frames": 38,
+        "animation_path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/尺度光效_site_实录_20261006.gif",
+        "pixel_content": "actual_browser_screenshots_no_synthetic_frames"
+      }
+    },
+    "fixed_far_visual_pixel_check": {
+      "scope": "screen_visual_check_only",
+      "fixed_camera_far_frames": 40,
+      "roi_screen_pixels": [
+        625,
+        345,
+        705,
+        420
+      ],
+      "green_visible_pixel_count_min": 193,
+      "green_visible_pixel_count_max": 1899,
+      "counts": [
+        839,
+        839,
+        839,
+        680,
+        570,
+        415,
+        415,
+        330,
+        247,
+        193,
+        193,
+        193,
+        248,
+        316,
+        415,
+        578,
+        705,
+        833,
+        1003,
+        1158,
+        1364,
+        1572,
+        1712,
+        1852,
+        1899,
+        1863,
+        1863,
+        1783,
+        1640,
+        1486,
+        1314,
+        1123,
+        978,
+        818,
+        655,
+        655,
+        539,
+        539,
+        539,
+        539
+      ],
+      "interpretation": "screen halo visibly changes; this is not vegetation area or thermal evidence"
+    },
+    "console_error_or_warn_observed": false,
+    "user_original_tab_refreshed_to_build": true,
+    "saved_project_overwritten": false,
+    "new_preparation_or_research_adopted": false
+  },
+  "protected_source_files": [
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/public/data/regional_green_points.geojson",
+      "bytes": 5965792,
+      "sha256": "62bf4f9c85aedbb51b4dc3accaf9fa92f001e917b985a84b29af42f5a4dfa400",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/public/data/preparation-state.json",
+      "bytes": 138541,
+      "sha256": "1c7174ca51ecd0adaf44bbb4b2d0962b913bfc0c9be7abdeb56b2d4debed412b",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/public/data/research-state.json",
+      "bytes": 23017,
+      "sha256": "e9d30ca04de0b7afb8e409515fb8d342923e0e3e938a6decb02615cf5bc32646",
+      "unchanged": true
+    }
+  ],
+  "original_preparation": {
+    "registration_id": "pilot-preparation:7d66553a704f56bb247003cdb163f5234a7c90abeaca8eb06816db297f764892",
+    "archive_bytes": 93456,
+    "archive_sha256": "08c7156289efc7a383b096fca81a8442cc0915ed265c6986dfe4a6d6eaafd543"
+  },
+  "changed_implementation_files": [
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/MapCanvas.jsx",
+      "bytes": 31378,
+      "sha256": "300f19efff37e3520b69f784cff8b10d0be503f7f1fb98875fdbacbe13f345f7"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/tests/map-canvas.test.mjs",
+      "bytes": 41661,
+      "sha256": "3806a0e586bfe30b4709752c0985e1348d93008259f40e38f41eaa0b268c0318"
+    }
+  ],
+  "separate_product_scope": "product_positioning_documents_saved_future_supplement_intake_not_implemented"
+}

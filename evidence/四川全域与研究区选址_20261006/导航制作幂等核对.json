@@ -1,0 +1,11 @@
+{
+  "byte_identical_second_run": true,
+  "sha256": {
+    "sichuan_boundary.geojson": "c15f65f685b8fedd97a2f72efeec4eb8622a74a8c929fd3434660f8afa8f3b4f",
+    "sichuan_rivers.geojson": "1460d171980babba8ad8aed02bcf5f0b5201500160027c469f3b41eb8e358c06",
+    "sichuan_places.geojson": "ba003aa8f36bd8e1fe9f0310f10824e0bb4e7cf205744c5c5e0d2c7de6773bb6",
+    "study_selection_boundary.geojson": "c8d041d7a2a73af3e785127d67069019215376fd62a7e951826a779b5f5d0afc",
+    "regional_map_context.json": "04e3a3c11f0cb5b6644632d52c90846719163bcff4cd17292349bbbdfa415e0d",
+    "REGIONAL_DATA_SOURCES.md": "43c8ae236028e54db2a3cb6888fe3ec19de1d370b972326a0d8392f22e6d7ab6"
+  }
+}

@@ -1,0 +1,259 @@
+[
+  {
+    "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/成果预期/02宏观_规划论文定位与结果解释.md",
+    "bytes": 24639,
+    "sha256": "8a63a04197c6f6fdedbeedc0ab255f7b37d04aee03acd0aad98d724dd79d431a",
+    "verification_scope": "direct_file_read_only_no_scientific_reexecution"
+  },
+  {
+    "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/统筹推进清单.md",
+    "bytes": 11748,
+    "sha256": "629442ab19f8c81ffc0f2a403aeb668906e91c341435dcea6b1458093c49a21c",
+    "verification_scope": "direct_file_read_only_no_scientific_reexecution"
+  },
+  {
+    "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/共同试点增补资料说明_20261006.md",
+    "bytes": 4266,
+    "sha256": "569b1f301c71d1834babf95a8a73246acd20bf2f5bcb7ee0dd53a3bcfa1c23b6",
+    "verification_scope": "direct_file_read_only_no_scientific_reexecution"
+  },
+  {
+    "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/规划开发增补/说明与边界.md",
+    "bytes": 4241,
+    "sha256": "00809352247e8a29dc69d831d6f770a8ec6675b421544ca7a8654c8566c82bb8",
+    "verification_scope": "direct_file_read_only_no_scientific_reexecution"
+  },
+  {
+    "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/规划开发增补/开发增补来源绑定.json",
+    "bytes": 13971,
+    "sha256": "f8d5d24b64bdf21d0dbceff7b5116f0236514a243e11013bca3d2f5221d04801",
+    "verification_scope": "direct_file_read_only_no_scientific_reexecution"
+  },
+  {
+    "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/规划开发增补/配置开发误差_紧凑.csv",
+    "bytes": 21490,
+    "sha256": "9ef34a6a180e677acd14baf76d2f5ec2eef913a14392983e86556c3db387941c",
+    "verification_scope": "direct_file_read_only_no_scientific_reexecution",
+    "data_rows": 80,
+    "fields": [
+      "stage",
+      "scope",
+      "axis",
+      "level",
+      "width",
+      "aggregation",
+      "configuration",
+      "MAE_C_mean",
+      "MAE_C_sample_SD",
+      "RMSE_C_mean",
+      "RMSE_C_sample_SD",
+      "R2_mean",
+      "R2_sample_SD",
+      "spatial_folds",
+      "seed_metrics_per_fold",
+      "source_id",
+      "source_data_row",
+      "source_sha256",
+      "source_bytes"
+    ]
+  },
+  {
+    "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/规划开发增补/配对增量_紧凑.csv",
+    "bytes": 27684,
+    "sha256": "a1b1d61fdc0a6a14c9ce4a1aaec96ef701759870e72714b9655eecd46aee08a7",
+    "verification_scope": "direct_file_read_only_no_scientific_reexecution",
+    "data_rows": 70,
+    "fields": [
+      "stage",
+      "scope",
+      "axis",
+      "level",
+      "width",
+      "aggregation",
+      "contrast",
+      "baseline_configuration",
+      "candidate_configuration",
+      "delta_MAE_C_mean",
+      "delta_MAE_C_sample_SD",
+      "delta_MAE_C_defined_folds",
+      "delta_MAE_C_positive_folds",
+      "delta_RMSE_C_mean",
+      "delta_RMSE_C_sample_SD",
+      "delta_RMSE_C_defined_folds",
+      "delta_RMSE_C_positive_folds",
+      "delta_R2_mean",
+      "delta_R2_sample_SD",
+      "delta_R2_defined_folds",
+      "delta_R2_positive_folds",
+      "relative_delta_MAE_mean",
+      "relative_delta_MAE_sample_SD",
+      "relative_delta_MAE_defined_folds",
+      "relative_delta_MAE_positive_folds",
+      "Yscale_delta_MAE_mean",
+      "Yscale_delta_MAE_sample_SD",
+      "Yscale_delta_MAE_defined_folds",
+      "Yscale_delta_MAE_positive_folds",
+      "spatial_folds",
+      "seed_metrics_per_fold",
+      "source_id",
+      "source_data_row",
+      "source_sha256",
+      "source_bytes"
+    ]
+  },
+  {
+    "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/公平性输入准备/资源支持试核/资源支持说明.md",
+    "bytes": 9159,
+    "sha256": "e999fdfe16f9917282fdf7847fe5f5e6d3aa0715e96cbc583397195101444664",
+    "verification_scope": "direct_file_read_only_no_scientific_reexecution"
+  },
+  {
+    "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/公平性输入准备/资源支持试核/六住宅植被资源支持候选.csv",
+    "bytes": 16717,
+    "sha256": "0d93ad325814bdabd077375cdd1795cc8576c3f5ee1efa415a17dfcadced085e",
+    "verification_scope": "direct_file_read_only_no_scientific_reexecution",
+    "data_rows": 18,
+    "fields": [
+      "candidate_object_id",
+      "source_fid",
+      "source_layer",
+      "publisher_function_label",
+      "unit_status",
+      "resource_window_status",
+      "candidate_radius_m",
+      "resource_period_status",
+      "building_period_status",
+      "resource_area_unit",
+      "fraction_unit",
+      "center_definition",
+      "center_easting_m",
+      "center_northing_m",
+      "centroid_inside_source_face",
+      "analysis_crs",
+      "denominator_definition",
+      "denominator_window_area_m2",
+      "theoretical_circle_area_m2",
+      "polygon_vs_circle_relative_deficit",
+      "native_positive_area_pixel_count",
+      "water_class0_area_m2",
+      "impervious_class1_area_m2",
+      "tree_shrub_class2_area_m2",
+      "grass_class3_area_m2",
+      "farmland_class4_area_m2",
+      "valid_class_area_m2",
+      "nodata_area_m2",
+      "unrecognized_label_area_m2",
+      "outside_raster_area_m2",
+      "total_unknown_support_area_m2",
+      "area_closure_error_m2",
+      "classification_support_complete",
+      "green_2_3_area_m2",
+      "whole_window_green_2_3_fraction",
+      "whole_window_tree_shrub_fraction",
+      "whole_window_grass_fraction",
+      "window_area_outside_500m_preparation_m2",
+      "population_denominator",
+      "public_access",
+      "actual_occupancy",
+      "service_role",
+      "T_P_U",
+      "integration",
+      "scientific_status",
+      "ub_sha256",
+      "cmab_gpkg_sha256"
+    ]
+  },
+  {
+    "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/公平性输入准备/资源支持试核/资源支持核查.json",
+    "bytes": 20040,
+    "sha256": "b8e4ac75a5dc3ec980a9bfdee21566eadc04fdce967fd358082ec3d54f76b128",
+    "verification_scope": "direct_file_read_only_no_scientific_reexecution"
+  },
+  {
+    "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/公平性输入准备/资源支持试核/保存回读核查.json",
+    "bytes": 1153,
+    "sha256": "a831aafb20d8c3c7bf93fa45141ecae5c3d70fdbf67623d16c8a20cc3ef0c4df",
+    "verification_scope": "direct_file_read_only_no_scientific_reexecution"
+  },
+  {
+    "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/公平性输入准备/资源支持试核/候选窗口重叠.csv",
+    "bytes": 6805,
+    "sha256": "1aef8e7ef3e76e5f992392bc82e091ef9f63027fe6598b33fbddf2cf172e86f6",
+    "verification_scope": "direct_file_read_only_no_scientific_reexecution",
+    "data_rows": 45,
+    "fields": [
+      "candidate_radius_m",
+      "left_candidate_id",
+      "right_candidate_id",
+      "positive_geometric_overlap_area_m2",
+      "shared_positive_native_pixel_count",
+      "overlap_status",
+      "may_sum_resource_areas_by_objects"
+    ]
+  },
+  {
+    "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/公平性输入准备/窗口敏感性试核/窗口敏感性说明.md",
+    "bytes": 5459,
+    "sha256": "146610c2a4929a2c582561c5a3305017aa334e54f352a205ae9f607a6eb52a5a",
+    "verification_scope": "direct_file_read_only_no_scientific_reexecution"
+  },
+  {
+    "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/公平性输入准备/窗口敏感性试核/窗口敏感性核查.json",
+    "bytes": 2072,
+    "sha256": "c1a33466c4e75c1ca9b95e8740a040d6675abd3bba80c5e1fb27f6dae3d4111c",
+    "verification_scope": "direct_file_read_only_no_scientific_reexecution"
+  },
+  {
+    "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/公平性输入准备/窗口敏感性试核/六对象窗口变化.csv",
+    "bytes": 1548,
+    "sha256": "f84b1181cec565cfaa95f8d390ca0d3338cb869933391ce787ef0fbde51a7dbb",
+    "verification_scope": "direct_file_read_only_no_scientific_reexecution",
+    "data_rows": 6,
+    "fields": [
+      "candidate_object_id",
+      "centroid_inside_source_face",
+      "green_share_75m_percent",
+      "green_share_150m_percent",
+      "green_share_300m_percent",
+      "max_minus_min_percentage_points",
+      "change_75_to_300_percentage_points",
+      "primary_unit_and_radius_adopted",
+      "fairness_or_service_priority",
+      "source_sha256"
+    ]
+  },
+  {
+    "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/可改空间接纳证据表_20261006.md",
+    "bytes": 5317,
+    "sha256": "4d5bf99c37061035ca85c362cc7d228aa174daaa54402237a99ba4f8405a35d4",
+    "verification_scope": "direct_file_read_only_no_scientific_reexecution"
+  },
+  {
+    "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/可改空间来源与对象证据_20261006.json",
+    "bytes": 187416,
+    "sha256": "8cb0d39292c08de20553141daa27d4698288e664bdded4c76a349aaf538a4680",
+    "verification_scope": "direct_file_read_only_no_scientific_reexecution"
+  },
+  {
+    "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/共享接口/微观试验准备/可改空间接纳证据表_20261006.csv",
+    "bytes": 13250,
+    "sha256": "e7053b11a3f8ae21fda6158587f168d71625f34ca88bb9779947a1d4cd5fcc33",
+    "verification_scope": "direct_file_read_only_no_scientific_reexecution",
+    "data_rows": 21,
+    "fields": [
+      "evidence_id",
+      "topic",
+      "source_ids",
+      "source_support",
+      "source_can_establish",
+      "source_does_not_establish",
+      "research_design_scope_needed",
+      "physical_evidence_needed",
+      "implementation_or_use_permission_needed",
+      "accepted_field",
+      "accepted_value",
+      "accepted_as_modifiable_space",
+      "status"
+    ]
+  }
+]

@@ -1,0 +1,189 @@
+{
+  "created_at_utc": "2026-10-05T23:03:33.565186+00:00",
+  "status": "saved_receipts_read_back",
+  "receipts": [
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/三组来源准备接入_20261006.md",
+      "bytes": 7536,
+      "sha256": "1eef8142f3275bcaf9598a215871a1bbe45b6cfb1bc1f5fd9ac5ba5abf954c62"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/三组来源准备接入_20261006.json",
+      "bytes": 74935,
+      "sha256": "8ca4844d064d59daf78c4969ac74b84a5539afce61394f38fd8427937dfcda09"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/远景光效修复_20261006.md",
+      "bytes": 1470,
+      "sha256": "77dd94d078a8f07a73da5c17fb7c6010eb8604a8f7ef05b5b8f0d78f805d5d1c"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/远景光效修复_20261006.json",
+      "bytes": 4128,
+      "sha256": "db6573b627d08e33795611294be32494bb98b8f8a1b7d87f12188933b2da1a2d"
+    }
+  ],
+  "source_31_and_protected_10_readback": true,
+  "original_manifest_unchanged": true,
+  "independent_audit_unchanged": true,
+  "final_code_fingerprints": [
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/App.jsx",
+      "bytes": 56509,
+      "sha256": "42692f0321282c386f265ab331be26e347eb60ac0bf04afda62274f261e7a85c"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/MapCanvas.jsx",
+      "bytes": 32922,
+      "sha256": "0cf8ef79a085fcd8a38fd835cf574dd10a8dbf3773a68bdb59d6919d1a201816"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/project.js",
+      "bytes": 30522,
+      "sha256": "c56b35a28015c77bfb11a147e6e78b0beee354d680da1f2076e9b8caaca54656"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/SourcePreparationEvidence.jsx",
+      "bytes": 17887,
+      "sha256": "66fedef35404b21a6f7c22a34a2d25ce6a0f0d15adbe55eff2c0183303e1921d"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/source-preparation-state.js",
+      "bytes": 12904,
+      "sha256": "dbbef928c87582173a0de1f7564c37e27854113cbb3b8a521a71f673499f6727"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/source-preparation-catalog.js",
+      "bytes": 27545,
+      "sha256": "a0db8edd1f2e2b7b54a91b518dc7865d8c95f6ab004d0ec06165a00dc2645239"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/source-overlay.js",
+      "bytes": 42032,
+      "sha256": "73521f139415745268e608239b030aec2add68d00fefcccdb9c360c3594ebedc"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/source-weather.js",
+      "bytes": 24436,
+      "sha256": "b66fbf2b7d9ac865ba699a225dced148049bb691c9a60cec2695f14fae59af9b"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/source-roads.js",
+      "bytes": 32561,
+      "sha256": "430ef685019426d84ddbf83051168dc9bfbf8ccc2795e25b64a8f901b6d3c225"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/scripts/register-source-preparations.mjs",
+      "bytes": 4005,
+      "sha256": "5b7d4dc70d1b22130824072a25a9e5ac82f7f60909367bb6ce40d306b6334085"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/scripts/qa-source-preparation-cases.mjs",
+      "bytes": 4373,
+      "sha256": "04a2810c0f5d1e9c4ec9718e44359ec06913aeb2aadb02890189115184ff9709"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/scripts/audit-source-preparation-downloads.mjs",
+      "bytes": 32926,
+      "sha256": "1220ac2e773b57a33424b7c41b9d47f75defdda5496dc9f3267ef54c50bacd36"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/tests/map-canvas.test.mjs",
+      "bytes": 44433,
+      "sha256": "fe76fbfe8f85afc13cbd5a63ce46c7aef9b186dd5809032d8fae8df1c33b5858"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/tests/source-preparation-state.test.mjs",
+      "bytes": 21611,
+      "sha256": "8320a7bcd40ba386e7703de5616a30714ceafc377d52452a3d1aacad90faa40a"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/package.json",
+      "bytes": 863,
+      "sha256": "39acef2975ae51458bf4e20dea7e4b3318958384bbc1b019ea8c5b9f114048ab"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/public/data/source-preparation-state.json",
+      "bytes": 1827086,
+      "sha256": "1d2799ff0d41e81fe461400b71e9cca7fb147ddabb8f622fc5d38d3035115f36"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/tests/source-preparation-project.test.mjs",
+      "bytes": 14991,
+      "sha256": "dc4cd0c6919632dffeb7c8f185674634dc16c0a1d6a7abca58eca79753955097"
+    },
+    {
+      "path": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/src/styles.css",
+      "bytes": 23379,
+      "sha256": "0f4d6b2ab8f727e56ae978357d1642c628452cd1b76d20c93d2299e21f9a810f"
+    }
+  ],
+  "native_idle_claimed": false,
+  "markdown_file_links": [
+    {
+      "document": "三组来源准备接入_20261006.md",
+      "target": "/Users/wangyanbo/Downloads/街区交接_E4125_N33891_2026-10-05T22-39-34-670Z.json",
+      "exists": true
+    },
+    {
+      "document": "三组来源准备接入_20261006.md",
+      "target": "/Users/wangyanbo/Downloads/街区交接_E4125_N33891_2026-10-05T22-40-20-692Z.zip",
+      "exists": true
+    },
+    {
+      "document": "三组来源准备接入_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台产品设计/来源准备三组接入清单_20261006.json",
+      "exists": true
+    },
+    {
+      "document": "三组来源准备接入_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/远景增强光效实录_20261006.gif",
+      "exists": true
+    },
+    {
+      "document": "三组来源准备接入_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/三组真实磁盘独立回读_20261006.json",
+      "exists": true
+    },
+    {
+      "document": "三组来源准备接入_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/三组浏览器完整审阅_20261006.json",
+      "exists": true
+    },
+    {
+      "document": "三组来源准备接入_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/三组完整软件检查_20261006.log",
+      "exists": true
+    },
+    {
+      "document": "三组来源准备接入_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/三组构建_20261006.log",
+      "exists": true
+    },
+    {
+      "document": "三组来源准备接入_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/三组来源准备接入_20261006.json",
+      "exists": true
+    },
+    {
+      "document": "远景光效修复_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/远景增强光效实录_20261006.gif",
+      "exists": true
+    },
+    {
+      "document": "远景光效修复_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/远景光效最终用户页面_20261006.png",
+      "exists": true
+    },
+    {
+      "document": "远景光效修复_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/evidence/远景增强光效变化核对_20261006.json",
+      "exists": true
+    },
+    {
+      "document": "远景光效修复_20261006.md",
+      "target": "/Users/wangyanbo/科研/国自然——高密度街区降温/平台本地首版/远景光效修复_20261006.json",
+      "exists": true
+    }
+  ]
+}

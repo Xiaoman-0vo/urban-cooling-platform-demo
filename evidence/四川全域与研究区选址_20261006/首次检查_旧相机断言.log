@@ -1,0 +1,105 @@
+✔ 26 originals authenticate with 119 literal CSV strings, 39 blanks, 7 historical files, 8 web identities and 11 preview rows (32.433292ms)
+✔ source identity, original bytes, BOM, false adoption and exact metadata cannot be forged (7.4735ms)
+✔ two independent draft identities and edits preserve the other mode and every unknown scientific slot (2.105916ms)
+✔ full source references record purpose only; wrong object/gate bindings and science adoption are rejected (1.22825ms)
+✔ evaluation mismatch, day precision and unknown ends never apply events or create indefinite validity (0.426583ms)
+✔ legacy absence and explicit empty fields remain distinct; drafts roundtrip JSON and closed ZIP with all26 originals (2398.418625ms)
+✔ Sichuan navigation and the fixed study polygon remain independent of scene, green values and source picking (25.061959ms)
+✔ geometry review uses an independent namespace, fixed SVF range and original full-key features (10.2375ms)
+✔ window cut and park representations remain source symbols with explicit unknown application roles (0.949ms)
+✔ source review selects original multi-part support and cells without moving or adopting the research scene (9.256625ms)
+✔ adopted residence source polygons are isolated, selectable and hide without replacing the core scene (10.298416ms)
+✔ local style has no network assets, and research layers pass the installed style validator (6.067833ms)
+✔ stage and visibility cannot expose region extrusions; no geometry or field mutation (1.775333ms)
+✔ snapshot selection filters one real period, with unknown selection retaining both (0.99675ms)
+✔ site clicks inspect full features; neither blank clicks nor dragging replace the scene (1.9315ms)
+✔ region clicks pick locations and return the original grid feature (1.618833ms)
+✔ updated props change data and toggles, without moving the user camera (1.334542ms)
+✔ queries do not select a different input row while an updated GeoJSON source is rendering (1.431583ms)
+✔ default online navigation uses valid OSM raster with visible attribution; offline removes external assets (2.669667ms)
+✔ remote tile failure keeps local layers, reports once, and ignores late failures after offline (5.178125ms)
+✔ scope styles stay distinct, and an empty road snapshot retains both periods without a warning (5.100875ms)
+✖ regional green circles and historical roads persist across stage; greenFx toggles visibility without clearing sources (4.030375ms)
+✔ green display thresholds emphasize higher ratios without dropping any source point (1.705709ms)
+✔ green breathing preserves zoom expressions, continues into site, and stops for greenFx, reduced motion and cleanup (9.034917ms)
+✔ all seven green circles remain viewport-aligned and point halos breathe in legal zoom expressions without changing stable cores (8.24125ms)
+✔ green coating stays above site fills and below all range lines on first load, legacy upgrade and style reload (2.980125ms)
+✔ unready styles and nonempty pending objects block destructive region picks while stable objects and genuine blank clicks still work (4.07325ms)
+✔ green point and cluster clicks expand the display without selecting or replacing a scene; real objects retain priority (2.975292ms)
+✔ a rejected object data update keeps stale tiles unqueryable and retries the same data on the next sync before selecting (2.465583ms)
+✔ region sample objects inspect first and never invoke destructive candidate-location callbacks (3.545417ms)
+✔ cluster and original-point filters are exclusive; legal zoom expressions keep near points visible (1.811042ms)
+✔ low-ratio points retain breathing halos through cluster expansion and middle scales without mutating actual source data (65.691916ms)
+✔ the installed native cluster engine aggregates actual 5868 points through zoom9 and expands unchanged points from zoom10 (73.781042ms)
+✔ sync upgrades an existing zoom12 cluster source and stale paint in the same map without changing data or camera (2.826667ms)
+✔ sync rebuilds only a legacy green source when aggregation properties are absent or incompatible (4.470625ms)
+✔ rejected cluster updates report once while preserving the source data and map (1.785125ms)
+✖ orbit is interruptible and honors reduced motion (1.718667ms)
+✔ P01 真数据保存副本保留源身份、空值、四轴及相互独立的研究目标 (37.123ms)
+✔ P02 真数据全部图层ZIP往返一致，缺失或损坏图层不能冒充成功重开 (1209.318625ms)
+✔ P03 100/300米范围以UTM48N米制构造，几何大小与角色可独立回验 (2.191583ms)
+✔ P04 重复源ID和破损几何被拒绝，合法缺失属性及无源ID资料仍可浏览 (0.59375ms)
+✔ P05 显式错误CRS即使数值像经纬度仍被拒绝，WGS84/CRS84声明可用 (0.281042ms)
+✔ P06 外来schema、缺失方案身份、重复来源/能力/范围ID被拒绝 (104.840167ms)
+✔ P07 重开位置/相机/图层声明与文件名校验，同时允许真实用户位置的空场景 (710.851875ms)
+✔ P08 缺失四轴、哈希或能力结构在接入前被拒绝，不通过默认值补齐 (177.421584ms)
+✔ P09 旧JSON与ZIP无科研登记字段合法，回读不自动补当前登记 (1070.933333ms)
+✔ P10 新科研登记独立保存，JSON/ZIP往返保留历史24源件、原场景与全部原属性 (673.455209ms)
+✔ P11 新ZIP科研sidecar必需且与项目一致，重排JSON不会伪重算原SHA (1715.243125ms)
+✔ P12 科学软件门控严格false且不能以技术通过替代，非法登记保存前拒绝 (144.165125ms)
+✔ P13 真实准备ZIP与清单原字节随独立登记保存，JSON/ZIP往返不覆盖科研状态或历史场景 (514.16075ms)
+✔ P14 准备sidecar与项目必需一致，缺失/孤立/不一致被拒绝但JSON键重排合法 (1566.299167ms)
+✔ P15 即使project与sidecar同步篡改原ZIP，异步字节哈希核验也拒绝导出和重开 (480.376292ms)
+✔ P16 准备登记未知schema、重复或不一致身份与错误scene在保存前拒绝，旧包不回填 (498.034167ms)
+✔ P17 原研究输入准备ZIP及清单不能误作平台project，错误明确且不自动接纳 (5.921ms)
+✔ P18 同ID但试点中心/核心/范围错位或带用户导入不能复用准备登记，布局图层不受限 (588.6265ms)
+✔ selection uses the exact existing operational boundary, never a province or its bounding box (10.744167ms)
+✔ nonconvex areas, holes, closed edges and multiple components use polygon coverage (0.41725ms)
+✔ missing, unclosed, nonpolygonal or invalid study data never opens unrestricted picking (0.286959ms)
+✔ provincial reference points and river lines retain navigation-only semantics (2.014625ms)
+✔ all 6567 held node centres match the independently audited 2021 boundary inclusion field (251.558709ms)
+✔ the live location action rejects outside centres before changing any project field or loading a scope (2.470666ms)
+ℹ tests 61
+ℹ suites 0
+ℹ pass 59
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 9694.441958
+
+✖ failing tests:
+
+test at tests/map-canvas.test.mjs:440:1
+✖ regional green circles and historical roads persist across stage; greenFx toggles visibility without clearing sources (4.030375ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  7.2 !== 12.6
+  
+      at TestContext.<anonymous> (file:///Users/wangyanbo/%E7%A7%91%E7%A0%94/%E5%9B%BD%E8%87%AA%E7%84%B6%E2%80%94%E2%80%94%E9%AB%98%E5%AF%86%E5%BA%A6%E8%A1%97%E5%8C%BA%E9%99%8D%E6%B8%A9/%E5%B9%B3%E5%8F%B0%E6%9C%AC%E5%9C%B0%E9%A6%96%E7%89%88/tests/map-canvas.test.mjs:457:12)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 7.2,
+    expected: 12.6,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/map-canvas.test.mjs:852:1
+✖ orbit is interruptible and honors reduced motion (1.718667ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  6.2 !== 11.6
+  
+      at TestContext.<anonymous> (file:///Users/wangyanbo/%E7%A7%91%E7%A0%94/%E5%9B%BD%E8%87%AA%E7%84%B6%E2%80%94%E2%80%94%E9%AB%98%E5%AF%86%E5%BA%A6%E8%A1%97%E5%8C%BA%E9%99%8D%E6%B8%A9/%E5%B9%B3%E5%8F%B0%E6%9C%AC%E5%9C%B0%E9%A6%96%E7%89%88/tests/map-canvas.test.mjs:862:12)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 6.2,
+    expected: 11.6,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

@@ -1,0 +1,58 @@
+import {readFile,writeFile,readdir} from 'node:fs/promises';
+import {resolve} from 'node:path';
+import {createHash} from 'node:crypto';
+import assert from 'node:assert/strict';
+const app=resolve(import.meta.dirname,'..'),root=resolve(app,'..');
+const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
+async function fingerprint(path){const b=await readFile(path);return {path,bytes:b.length,sha256:sha(b)};}
+const auditPath=resolve(app,'evidence/几何对象72真实磁盘独立回读_20261006.json');
+const browserPath=resolve(app,'evidence/几何对象浏览器完整审阅_20261006.json');
+const audit=JSON.parse(await readFile(auditPath,'utf8')),browser=JSON.parse(await readFile(browserPath,'utf8'));
+assert.equal(audit.status,'pass_actual_disk_and_source_bytes_software_review_only');
+const browserInfo=await fingerprint(browserPath);assert.deepEqual(browserInfo,audit.browser_capture_record);
+assert.equal(browser.tables.length,16);assert.equal(browser.tables.reduce((n,t)=>n+t.rows.length,0),32834);
+assert.equal(browser.tables.reduce((n,t)=>n+t.rows.length*t.fields.length,0),656295);
+assert.equal(browser.negative_cases.length,5);assert.ok(browser.negative_cases.every(c=>c.actual_UI_alert.startsWith('无法重开：')));
+const testPath=resolve(app,'evidence/几何对象全套检查_20261006.tap'),test=await readFile(testPath,'utf8');
+assert.match(test,/pass 144/);assert.match(test,/fail 0/);assert.match(test,/skipped 0/);
+const buildPath=resolve(app,'evidence/几何对象最终构建_20261006.log'),build=await readFile(buildPath,'utf8');
+assert.match(build,/built in/);assert.match(build,/Prepared Sites build/);
+const codePaths=['src/App.jsx','src/GeometrySourceEvidence.jsx','src/MapCanvas.jsx','src/styles.css','src/project.js','src/supplement-state.js','src/source-geometry-state.js','src/source-geometry-building.js','src/source-geometry-window.js','src/source-geometry-marks.js','src/source-geometry-catalog.js','public/data/source-geometry-state.json','package.json','scripts/register-source-geometry.mjs','scripts/audit-source-geometry-downloads.mjs','scripts/qa-source-geometry-cases.mjs','tests/source-geometry-state.test.mjs','tests/source-geometry-context.test.mjs','tests/source-geometry-project.test.mjs','tests/geometry-source-ui.test.mjs','tests/map-canvas.test.mjs'];
+codePaths.push('scripts/write-source-geometry-receipt.mjs');
+const code=await Promise.all(codePaths.map(p=>fingerprint(resolve(app,p))));
+const distPaths=['dist/client/index.html','dist/server/index.js','dist/.openai/hosting.json',...(await readdir(resolve(app,'dist/client/assets'))).map(p=>'dist/client/assets/'+p)];
+const built=await Promise.all(distPaths.map(p=>fingerprint(resolve(app,p))));
+const manifestPath=resolve(root,'平台产品设计/来源几何与对象三组接入清单_20261006.json');
+const manifest=JSON.parse(await readFile(manifestPath,'utf8'));
+const inputs=await Promise.all([manifestPath,resolve(root,'共享接口/来源几何与对象三组交接/55534ca2095418c3/来源几何与对象三组原件_20261006.zip'),resolve(root,'共享接口/来源几何与对象三组交接/55534ca2095418c3/独立接入审阅.json')].map(fingerprint));
+assert.equal(inputs[0].sha256,'55534ca2095418c3415acf6315cb24ae5cf0e9ffc29b9703595ee302b1466e56');
+assert.equal(inputs[1].sha256,'2749735826a63859afe907e358382dc584d966bd9f38f237e0b9e34fba7f60f6');
+assert.equal(inputs[2].sha256,'cc2e88b975a94891553b0d509709c228b03fb8ac6b3bc23d2f728f4a173a13df');
+const proofPaths=[auditPath,browserPath,testPath,buildPath,resolve(app,'evidence/来源几何状态聚焦检查_20261006.tap'),resolve(app,'evidence/来源几何窗口与标记聚焦_20261006.tap'),resolve(app,'evidence/来源几何工程聚焦_20261006.tap'),resolve(app,'evidence/来源几何内存修复聚焦检查_20261006.tap'),resolve(app,'evidence/几何对象72原字节登记_20261006.json'),resolve(app,'evidence/几何对象接入前保护记录_20261006.json'),resolve(app,'evidence/几何对象接入前平台代码_20261006.zip')];
+const proofs=await Promise.all(proofPaths.map(fingerprint));
+const screenshots=await Promise.all(browser.screenshots.map(s=>fingerprint(resolve(app,s.path))));
+const direction=browser.tables.find(t=>t.source_path.endsWith('/六点逐方位遮挡与来源.csv'));
+const receipt={schema_version:'0.1.local-source-geometry-intake-software-receipt',generated_at:new Date().toISOString(),
+ status:'complete_local_readonly_software_intake_and_actual_handoff',task_file:resolve(root,'平台产品设计/来源几何与对象三组接入任务_20261006.md'),
+ scope:{local_only:true,public_deployment:false,new_research_or_physical_solver:false,new_routing_or_OD:false,external_whole_China_PBF_or_ancestor_GPKG_loaded:false,source_producer_scripts_executed:false,scientific_application_gates_opened:false},
+ original_inputs:inputs,source_summary:{groups:3,files:72,source_bytes:21403434,primary_tables:16,primary_rows:32834,original_string_cells:656295,retained_unaccepted_history:4,raw_UTF8_BOM_files:audit.source_files.filter(s=>s.raw_UTF8_BOM_preserved===true).length,
+ groups_registered:audit.groups,all72_nested_direct_current_source_bytes_equal:true,original_manifest_all_group_mirrors_equal:true,all_source_properties_coordinates_nulls_preserved:true},
+ browser_acceptance:{proof:browserInfo,actual_table_count:16,actual_rows:32834,actual_cells:656295,actual_pages:browser.tables.reduce((n,t)=>n+t.pages.length,0),direction_pages:direction.pages.length,direction_rows:direction.rows.length,
+ all_UI_rows_compared_to_originals:audit.browser_source_evidence.complete_16_tables_and_32834_rows_UI_readback,actual_JSON_and_ZIP_reopened:true,actual_local_save_readback_and_reload_restore:true,
+ map_table_two_way_events:browser.events.filter(e=>/map_|filters|scope|bridge|alias|known_failure|same_park/.test(e.step)),unaccepted_history_isolated:browser.events.find(e=>e.step==='unaccepted_history_isolated'),negative_cases:browser.negative_cases,
+ first_adoption_page_crash:{observed:true,resolved_in_fresh_actual_tab:true,scope:'initial candidate retained plus repeated full decode and large CSV temporary strings',fix:'slice/chunk CSV parsing, direct byte-buffer fill, frozen actual-identity verified view reuse at adoption; foreign objects and all save/export/restore retain full authentication',Node_measurement_only:{first_heap_MB_before:461,first_heap_MB_after:151,two_view_heap_MB_before:558,two_view_heap_MB_after:146,RSS_peak_MB_before:849,RSS_peak_MB_after:484},browser_measurement_not_inferred_from_Node:true}},
+ downloads:audit.disk_files,whole_batch_protection:audit.whole_batch_before_after,
+ scientific_unknowns_preserved:{null_paths:Object.keys(audit.whole_batch_before_after.null_paths).length,scientific_boundary_paths:Object.keys(audit.whole_batch_before_after.gate_paths).length,new_group_nine_application_gates:'all false',source_known_failure_records:audit.retained_failures,
+ boundary:'building SVF is saved working geometry; window graph is original source scope; marks do not certify entrances/legal walking/service. Scientific admission, physical cooling, comfort, fairness, minimum area and ranking remain governed separately.'},
+ historical_preservation:audit.historical_preservation,protected_existing_files:audit.protected_existing_files,
+ current_validation:{tests:144,passed:144,failed:0,skipped:0,build:'pass local production build and original handoff packaging, no publish'},
+ final_preview:{url:'http://127.0.0.1:4173/',stage:'region',saved_baseline:'已保存site工程含3组；返回入口和缩放仅当前视图变化，未覆盖已验收保存',screenshot:await fingerprint(resolve(app,'evidence/平台完成入口_20261006.png'))},
+ current_source_code_fingerprints:code,build_fingerprints:built,evidence_fingerprints:proofs,actual_screenshot_fingerprints:screenshots,
+ outer_ZIP_counts:{payload_files_hashed_in_member_receipt:138,archive_receipt_files:1,files:139,empty_original_directory_entries:4,total_entries:143},
+ final_parent_native_check:'Parent must read the native thread status after this final turn; this receipt does not claim the running turn was already idle.'};
+const outputJson=resolve(app,'来源几何与对象三组接入_20261006.json');await writeFile(outputJson,JSON.stringify(receipt,null,2)+'\n');
+assert.deepEqual(JSON.parse(await readFile(outputJson,'utf8')),receipt);
+const link=(label,path)=>`[${label}](<${path}>)`;
+const md=`# 来源几何与对象三组接入记录\n\n2026-10-06。本轮已完成本地只读来源接入、实际浏览器互查、保存恢复、JSON和ZIP真实下载重开以及独立磁盘审计。没有公开发布或执行新增科研、物理、路线计算。\n\n## 当前可用\n\n- 建筑背景：53完整来源建筑、54部件关联、6候选受体、24条四档SVF、32,400条逐方向记录及18条加密差异。方向每页100条，共324页；候选点、采样档和原方向序号可联合检索。原SVF定义、格网北、平坦工作地面和拟议1.5米高度分别显示。\n- 来源窗口：45窗内片段、53窗外片段、92节点、87父原段以及窗内2／窗外8／完整1分量分别审阅。窗外行定位自动切窗外；跨窗父段、way和原节点支撑定位切完整。切点与81原节点身份分列。\n- 来源标记：5表示／4对象；窗内4表示／3对象。同一公园way的线和面关联为一对象。6条受体前缀对应沿完整SHA、图层、原ID绑定。4件未接受历史只读下载，不联查当前地图、计数或主表。\n\n入口为地图右侧“来源几何与对象审阅”。当前预览已回到成都地图入口，点“恢复本地保存”可回到已接纳3组的工程。远景聚合光点、原点薄光晕与呼吸效果随尺度保留；它们是显示像素，不代表降温距离或服务范围。\n\n## 实际验收\n\n浏览器逐页读出16张主表的32,834行、656,295个原单元格，实际343页，其中方向324页；独立审计逐行与原件一致。实际从表定位来源、从建筑、受体、来源片段、原节点及来源标记点击回查完整身份。\n\n本地保存读回、刷新后恢复，以及两个实际下载文件分别通过重开。新JSON为15,867,052字节；新ZIP为30,004,405字节，含72新增逐件原件、3组完整来源包和原manifest。ZIP内工程与JSON逐字节相同。72原字节、所有GeoJSON坐标与原属性、12个CSV BOM和4历史原件均保留。\n\n| 下载 | SHA256 |\n|---|---|\n| JSON | b08a6a127a5709598b16f668fc4b0cfe2dee7e43aecd855c1c4338c3b6ed7628 |\n| ZIP | 9b2a14d5ce03c27d44418976b183e5aaf24bc33ad546a7cf923f5803cc6a45d2 |\n\n五种实际错误文件被拒绝。整批拒绝前与当前后导出逐字节相同；刷新恢复后的工程仅导出时间不同，相机也未变化。4,176个null路径、357个科学边界路径保持一致；没有宣称逐例独立持久导出。方向贡献来源改写在冻结来源身份关口先被拒绝，独立纯验证另覆盖主外键规则。\n\n本轮最终软件检查144/144通过，0失败、0跳过，构建成功。首次实际接纳曾使页面崩溃；已用分段CSV读取、直接缓冲区填充与不可变已核验对象复用解决，并重新完成实际接纳、保存、刷新和两种重开。Node单轮堆内存测量约461→151 MB；这不是浏览器内存测量。\n\n## 保留的限制与历史\n\n建筑15个原解析小例中14通过、1精确角点切线失败；311项原独立回读不认证真实物理场景。窗口严格核查21/22通过、11父段strict-equals失败；有条件浮点复核与首次失败同时保留。672.024米是含分支的来源分量总线长；点面间隔是投影几何距离。来源标记没有确认现实入口、合法通行或实际服务。\n\n所有新组九项应用门控严格false。原24来源、15场景图层、2科研登记、1冻结准备、5组32件增补和3组31件来源准备保持独立，旧缺省工程不会自动登记新资料；原93,456字节准备ZIP及14成员完整保留。17保护文件和72来源读取前后哈希一致。完整中国PBF与祖先场地GPKG为外部来源，未加载；本包所列两件小提取PBF随原件交付。\n\n## 可复核文件\n\n- ${link('实际完整JSON',audit.disk_files.json.path)}\n- ${link('实际完整ZIP',audit.disk_files.zip.path)}\n- ${link('72原件及整批拒绝独立审计',auditPath)}\n- ${link('全量浏览器记录',browserPath)}\n- ${link('最终检查日志',testPath)}\n- ${link('最终构建日志',buildPath)}\n- ${link('结构化软件收据',outputJson)}\n- ${link('原接入清单',manifestPath)}\n\n总控须在本轮最终回复之后读取原生线程状态。本记录没有将尚在运行的当前回合写成idle，也没有改动总控台账或源端接受证明。\n`;
+const outputMd=resolve(app,'来源几何与对象三组接入_20261006.md');await writeFile(outputMd,md);assert.equal(await readFile(outputMd,'utf8'),md);
+console.log(JSON.stringify({json:await fingerprint(outputJson),markdown:await fingerprint(outputMd),audit:await fingerprint(auditPath),tests:144,browser_pages:343,source_files:72},null,2));

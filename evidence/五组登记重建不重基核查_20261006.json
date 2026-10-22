@@ -1,0 +1,12 @@
+{
+  "before": {
+    "src/supplement-catalog.js": "34599e71e973526af3c770a98fba731858c7e6518453f709522a63dee96b570c",
+    "public/data/supplement-state.json": "6a8a7a733d8323cd4770eb88b3987bf085d79b2d100adb52d1df140532b38fdd"
+  },
+  "after": {
+    "src/supplement-catalog.js": "34599e71e973526af3c770a98fba731858c7e6518453f709522a63dee96b570c",
+    "public/data/supplement-state.json": "6a8a7a733d8323cd4770eb88b3987bf085d79b2d100adb52d1df140532b38fdd"
+  },
+  "registered_snapshot_bytes_unchanged": true,
+  "source_changed_rebuild_behavior": "reject_requires_separate_explicit_version_and_retaining_old_registration"
+}

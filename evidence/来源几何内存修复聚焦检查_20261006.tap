@@ -1,0 +1,232 @@
+TAP version 13
+# Subtest: GS01 真实三组核验72原件及原清单SHA/CRC，16主表32834原字符串行，历史与二进制保留
+ok 1 - GS01 真实三组核验72原件及原清单SHA/CRC，16主表32834原字符串行，历史与二进制保留
+  ---
+  duration_ms: 730.867583
+  type: 'test'
+  ...
+# Subtest: GS02 旧缺字段为空合法、1/2组不自动补齐，异步验证返回提交前原快照
+ok 2 - GS02 旧缺字段为空合法、1/2组不自动补齐，异步验证返回提交前原快照
+  ---
+  duration_ms: 80.79575
+  type: 'test'
+  ...
+# Subtest: GS03 闭集拒绝未知schema/key、重复组、metadata重签、失败改通过及九false/null升级
+ok 3 - GS03 闭集拒绝未知schema/key、重复组、metadata重签、失败改通过及九false/null升级
+  ---
+  duration_ms: 20.532292
+  type: 'test'
+  ...
+# Subtest: GS04 多MB严格base64无正则溢出，字节改写SHA拒绝，更新声明SHA不能冒充catalog
+ok 4 - GS04 多MB严格base64无正则溢出，字节改写SHA拒绝，更新声明SHA不能冒充catalog
+  ---
+  duration_ms: 22.998
+  type: 'test'
+  ...
+# Subtest: GS05 重打有效CRC原ZIP并重签源/manifest/archive也不能变更未采用材料
+ok 5 - GS05 重打有效CRC原ZIP并重签源/manifest/archive也不能变更未采用材料
+  ---
+  duration_ms: 12.57575
+  type: 'test'
+  ...
+# Subtest: GS06 实际CRC阶段拒绝破坏，中央目录重复及本组成员/size失配拒绝
+ok 6 - GS06 实际CRC阶段拒绝破坏，中央目录重复及本组成员/size失配拒绝
+  ---
+  duration_ms: 3.922917
+  type: 'test'
+  ...
+# Subtest: GS07 严格JSON重复key/非有限和CSV重复field拒绝，原BOM、负号、False与空项不重写
+ok 7 - GS07 严格JSON重复key/非有限和CSV重复field拒绝，原BOM、负号、False与空项不重写
+  ---
+  duration_ms: 0.401833
+  type: 'test'
+  ...
+# Subtest: GS08 建筑全32400采样复合键及贡献FK拒绝漏行/重复/错误SHA层ID，空贡献不生成ID0
+ok 8 - GS08 建筑全32400采样复合键及贡献FK拒绝漏行/重复/错误SHA层ID，空贡献不生成ID0
+  ---
+  duration_ms: 518.677958
+  type: 'test'
+  ...
+# Subtest: GS09 SVF与无权重/无遮挡诊断不能替换，统一0..1与signed差及null工作高度边界严格
+ok 9 - GS09 SVF与无权重/无遮挡诊断不能替换，统一0..1与signed差及null工作高度边界严格
+  ---
+  duration_ms: 1160.690458
+  type: 'test'
+  ...
+# Subtest: GS10 14/15角点失败与311回读范围分开保留，不升级物理或全32400重新计算
+ok 10 - GS10 14/15角点失败与311回读范围分开保留，不升级物理或全32400重新计算
+  ---
+  duration_ms: 510.658542
+  type: 'test'
+  ...
+# Subtest: GS11 六完整前缀别名连接同SHA/layer/ID，两组原key不改写，不按裸ID连接
+ok 11 - GS11 六完整前缀别名连接同SHA/layer/ID，两组原key不改写，不按裸ID连接
+  ---
+  duration_ms: 1.127375
+  type: 'test'
+  ...
+# Subtest: GS12 窗外来源支撑不改公共路线、原标记False/空服务与2021快照不变准入
+ok 12 - GS12 窗外来源支撑不改公共路线、原标记False/空服务与2021快照不变准入
+  ---
+  duration_ms: 17.533416
+  type: 'test'
+  ...
+# Subtest: SP01 三组真实fixture核验31原件SHA/CRC/清单和语义，返回按group_id及完整原字节
+ok 13 - SP01 三组真实fixture核验31原件SHA/CRC/清单和语义，返回按group_id及完整原字节
+  ---
+  duration_ms: 639.763083
+  type: 'test'
+  ...
+# Subtest: SP02 旧缺字段默认空列表合法；任一无重复子集独立核验，不要求假造31件完整性
+ok 14 - SP02 旧缺字段默认空列表合法；任一无重复子集独立核验，不要求假造31件完整性
+  ---
+  duration_ms: 57.694291
+  type: 'test'
+  ...
+# Subtest: SP03 闭集拒绝重复组、unknown schema/keys、替换身份与缺base64，不自动升级登记
+ok 15 - SP03 闭集拒绝重复组、unknown schema/keys、替换身份与缺base64，不自动升级登记
+  ---
+  duration_ms: 53.976416
+  type: 'test'
+  ...
+# Subtest: SP04 全部catalog元数据闭合，SHA/bytes/字段/PK/CRS单位/四轴及九门控改写均拒绝
+ok 16 - SP04 全部catalog元数据闭合，SHA/bytes/字段/PK/CRS单位/四轴及九门控改写均拒绝
+  ---
+  duration_ms: 6.576917
+  type: 'test'
+  ...
+# Subtest: SP05 原ZIP及独立原manifest字节改写被SHA拒绝，更新声明SHA也不能伪造catalog
+ok 17 - SP05 原ZIP及独立原manifest字节改写被SHA拒绝，更新声明SHA也不能伪造catalog
+  ---
+  duration_ms: 31.628083
+  type: 'test'
+  ...
+# Subtest: SP06 即使重打有效CRC的ZIP并更新源件/manifest/archive哈希，登记仍拒绝重签元数据
+ok 18 - SP06 即使重打有效CRC的ZIP并更新源件/manifest/archive哈希，登记仍拒绝重签元数据
+  ---
+  duration_ms: 19.372417
+  type: 'test'
+  ...
+# Subtest: SP07 真实ZIP的CRC破坏会被重用CRC阶段拒绝，中央目录重复先于同名覆盖被拒绝
+ok 19 - SP07 真实ZIP的CRC破坏会被重用CRC阶段拒绝，中央目录重复先于同名覆盖被拒绝
+  ---
+  duration_ms: 6.512083
+  type: 'test'
+  ...
+# Subtest: SP08 ZIP精确本组文件+source-manifest，漏成员、额外成员、成员大小变化拒绝
+ok 20 - SP08 ZIP精确本组文件+source-manifest，漏成员、额外成员、成员大小变化拒绝
+  ---
+  duration_ms: 5.352584
+  type: 'test'
+  ...
+# Subtest: SP09 严格JSON重复键与非有限数值拒绝，CSV重复field/坏引号/行宽拒绝，原空串/负号保留
+ok 21 - SP09 严格JSON重复键与非有限数值拒绝，CSV重复field/坏引号/行宽拒绝，原空串/负号保留
+  ---
+  duration_ms: 0.227291
+  type: 'test'
+  ...
+# Subtest: SP10 叠合视图拒绝漏行/重复复合键/外键替换及False/null误写，不把空接受值填零
+ok 22 - SP10 叠合视图拒绝漏行/重复复合键/外键替换及False/null误写，不把空接受值填零
+  ---
+  duration_ms: 9.048
+  type: 'test'
+  ...
+# Subtest: SP11 叠合GeoJSON拒绝CRS/几何类型/投影测量单位及道路空宽度升级
+ok 23 - SP11 叠合GeoJSON拒绝CRS/几何类型/投影测量单位及道路空宽度升级
+  ---
+  duration_ms: 8.441709
+  type: 'test'
+  ...
+# Subtest: SP12 天气完整24×35拒绝行键/四文本行号、空时间补值、单位和时长forcing升级
+ok 24 - SP12 天气完整24×35拒绝行键/四文本行号、空时间补值、单位和时长forcing升级
+  ---
+  duration_ms: 3.362625
+  type: 'test'
+  ...
+# Subtest: SP13 道路完整表拒绝漏行/重复PK/节点外键、False/null和直线距离替代通行结果
+ok 25 - SP13 道路完整表拒绝漏行/重复PK/节点外键、False/null和直线距离替代通行结果
+  ---
+  duration_ms: 15.791375
+  type: 'test'
+  ...
+# Subtest: SP14 异步验证读取独立登记快照，调用中外部改写不污染已验证来源与门控
+ok 26 - SP14 异步验证读取独立登记快照，调用中外部改写不污染已验证来源与门控
+  ---
+  duration_ms: 17.140667
+  type: 'test'
+  ...
+# Subtest: S01 五组真实原包完成SHA/CRC/显式源件与语义核验，32来源和原字节不变
+ok 27 - S01 五组真实原包完成SHA/CRC/显式源件与语义核验，32来源和原字节不变
+  ---
+  duration_ms: 729.131458
+  type: 'test'
+  ...
+# Subtest: S02 closed登记拒绝重复组、未知组/schema/字段和被替换登记身份，旧空列表仍可用
+ok 28 - S02 closed登记拒绝重复组、未知组/schema/字段和被替换登记身份，旧空列表仍可用
+  ---
+  duration_ms: 9.251083
+  type: 'test'
+  ...
+# Subtest: S03 来源路径/字节/SHA/MIME和新增单位元数据不能改写冻结catalog
+ok 29 - S03 来源路径/字节/SHA/MIME和新增单位元数据不能改写冻结catalog
+  ---
+  duration_ms: 1.759792
+  type: 'test'
+  ...
+# Subtest: S04 软件回执保持六false，不能因资料核验开放预测/物理/排名或写成科学验证
+ok 30 - S04 软件回执保持六false，不能因资料核验开放预测/物理/排名或写成科学验证
+  ---
+  duration_ms: 1.551583
+  type: 'test'
+  ...
+# Subtest: S05 同长度合法base64改写真实ZIP仍被异步SHA拒绝，重签metadata亦被closed拒绝
+ok 31 - S05 同长度合法base64改写真实ZIP仍被异步SHA拒绝，重签metadata亦被closed拒绝
+  ---
+  duration_ms: 2.544709
+  type: 'test'
+  ...
+# Subtest: S06 实际原ZIP的CRC拒绝链有效；CRC字段损坏不会被JSZip正常解压掩盖
+ok 32 - S06 实际原ZIP的CRC拒绝链有效；CRC字段损坏不会被JSZip正常解压掩盖
+  ---
+  duration_ms: 2.411916
+  type: 'test'
+  ...
+# Subtest: S07 原ZIP中央目录重复成员在JSZip覆盖同名项之前被拒绝，未知/缺失成员同样拒绝
+ok 33 - S07 原ZIP中央目录重复成员在JSZip覆盖同名项之前被拒绝，未知/缺失成员同样拒绝
+  ---
+  duration_ms: 1.226291
+  type: 'test'
+  ...
+# Subtest: S08 严格JSON拒绝重复键/转义同名键/溢出，正常null和文字不误判
+ok 34 - S08 严格JSON拒绝重复键/转义同名键/溢出，正常null和文字不误判
+  ---
+  duration_ms: 0.252208
+  type: 'test'
+  ...
+# Subtest: S09 CSV拒绝重复field/破损引号/行宽，原负号/空串/BOM/引号换行保留
+ok 35 - S09 CSV拒绝重复field/破损引号/行宽，原负号/空串/BOM/引号换行保留
+  ---
+  duration_ms: 0.128458
+  type: 'test'
+  ...
+# Subtest: S10 描述decodedview拒绝单位改写、NA补零、B02套R01结构状态、准入子集和复合身份重复
+ok 36 - S10 描述decodedview拒绝单位改写、NA补零、B02套R01结构状态、准入子集和复合身份重复
+  ---
+  duration_ms: 2.288917
+  type: 'test'
+  ...
+# Subtest: S11 开发decodedview拒绝误差当温度、负号裁切、归一化空项补零、SD/宽度/配对链改写
+ok 37 - S11 开发decodedview拒绝误差当温度、负号裁切、归一化空项补零、SD/宽度/配对链改写
+  ---
+  duration_ms: 7.585292
+  type: 'test'
+  ...
+1..37
+# tests 37
+# suites 0
+# pass 37
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3234.730542
