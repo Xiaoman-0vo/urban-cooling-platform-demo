@@ -1,0 +1,51 @@
+{
+  "checked_at": "2026-10-25T12:59:40.245Z",
+  "browser": "153.0.8010.0",
+  "node": "v24.22.1",
+  "platform": "linux",
+  "deployment_prefix": "/urban-cooling-platform-demo/",
+  "viewports": [
+    [
+      1600,
+      1240
+    ],
+    [
+      900,
+      1100
+    ],
+    [
+      390,
+      844
+    ],
+    [
+      1600,
+      1080
+    ]
+  ],
+  "checks": [
+    "query entry",
+    "native modal and Escape",
+    "ECharts canvases",
+    "WebGL canvas",
+    "source counts",
+    "grid paging",
+    "keyboard-focus playback pause",
+    "playback resume",
+    "reduced motion",
+    "grid visibility",
+    "camera reset",
+    "desktop/tablet/mobile horizontal overflow",
+    "close and reopen",
+    "grid location handoff",
+    "example location handoff",
+    "zero page errors",
+    "zero failed local resources"
+  ],
+  "page_errors": [],
+  "failed_local_resources": [],
+  "limitations": [
+    "External navigation tile requests were blocked in this isolated test; the overview uses local sources.",
+    "QA screenshots use a local Noto Sans CJK SC font; the font asset is not shipped.",
+    "A screenshot demonstrates display behavior, not model execution or physical cooling."
+  ]
+}

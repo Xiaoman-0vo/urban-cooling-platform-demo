@@ -1,4 +1,4 @@
-import React, {useEffect, useMemo, useRef, useState} from 'react';
+import React, {lazy, Suspense, useEffect, useMemo, useRef, useState} from 'react';
 import {ArrowRight, ArrowLeft, ArrowClockwise, ArrowsOut, Buildings, CheckCircle, Compass, DownloadSimple, FileArrowUp, FloppyDisk, FolderOpen, Info, Leaf, MapPin, Minus, MoonStars, Pause, Play, Plus, Sparkle, Stack, WarningCircle, X} from '@phosphor-icons/react';
 import MapCanvas from './MapCanvas.jsx';
 import {requireStudyLocation, validateStudyBoundary} from './regional-navigation.js';
@@ -20,6 +20,7 @@ import {verifyPreparationRegistration} from './preparation-state.js';
 import {PROJECT_MAX_FILE_BYTES, EMPTY_COLLECTION, STORAGE_KEY, boundsOf, createProject, deepCopy, digest, makeArchive, parseArchive, parseProjectJson, scopesFor, validateCollection, validateProject} from './project.js';
 
 const FORMAT = new Intl.NumberFormat('zh-CN',{maximumFractionDigits:2});
+const CityOverview = lazy(() => import('./overview/CityOverview.jsx'));
 const dataUrl = name => `${import.meta.env.BASE_URL}data/${name}`;
 const countText = value => value == null ? '未记录' : FORMAT.format(value);
 const showValue = value => value === null ? '未计算 / 空值' : value === '' ? '缺失 / 空值' : value === undefined ? '不适用' : typeof value === 'object' ? JSON.stringify(value) : String(value);
@@ -77,6 +78,7 @@ export async function geometryViewsForAdoption(registrations,verify=verifyGeomet
 }
 
 export function App() {
+  const [cityOverviewOpen,setCityOverviewOpen] = useState(() => new URLSearchParams(window.location.search).get('view') === 'overview');
   const [data,setData] = useState(null);
   const [bootError,setBootError] = useState('');
   const [stage,setStage] = useState('region');
@@ -697,7 +699,7 @@ export function App() {
     <aside className="map-tools" aria-label="地图控制"><button aria-label="地图放大" onClick={()=>mapRef.current?.zoomIn()}><Plus size={21}/></button><button aria-label="地图缩小" onClick={()=>mapRef.current?.zoomOut()}><Minus size={21}/></button><button aria-label="回到北向" onClick={()=>mapRef.current?.easeTo({bearing:0,duration:600})}><Compass size={23}/></button><button aria-label="切换俯视与倾斜" onClick={()=>mapRef.current?.easeTo({pitch:mapRef.current.getPitch()>10?0:55,duration:600})}><ArrowsOut size={22}/></button><button className={orbit?'on':''} aria-label={orbit?'暂停环视':'开始环视'} onClick={()=>setOrbit(v=>!v)}>{orbit?<Pause size={22}/>:<Play size={22}/>}</button><button className={visible.greenFx!==false?'on':''} aria-label="地图光效" title="全市光效随缩放变化" aria-pressed={visible.greenFx!==false} onClick={()=>toggleLayer('greenFx')}><Sparkle size={22}/></button><button className={offline?'on':''} aria-label={offline?'启用在线导航底图':'只用本地图层'} onClick={()=>{setOffline(v=>!v);setDirty(true);}}><MoonStars size={22}/></button><button className={drawer==='source-preparations'?'on':''} aria-label="来源准备审阅" title="审阅三组来源准备" onClick={()=>changeDrawer('source-preparations')}><Info size={22}/></button><button className={drawer==='geometry-sources'?'on':''} aria-label="来源几何与对象审阅" title="审阅三组来源几何与对象" onClick={()=>changeDrawer('geometry-sources')}><Buildings size={22}/></button></aside>
 
     {stage==='region' && <>
-      <div className="map-caption"><span className="eyebrow">{region==='四川'?'四川全域 · 区域浏览':'成都全域 · 植被星图'}</span><h1>从成都，进入你的场地</h1><p>{region==='四川'?'全省自由浏览':'全市动态光效 · 自由拖动与缩放'} · 仅高亮研究区可选址</p><button className="study-jump" onClick={goStudy}><span className="study-indicator"/>前往成都研究区 <ArrowRight size={16}/></button></div>
+      <div className="map-caption"><span className="eyebrow">{region==='四川'?'四川全域 · 区域浏览':'成都全域 · 植被星图'}</span><h1>从成都，进入你的场地</h1><p>{region==='四川'?'全省自由浏览':'全市动态光效 · 自由拖动与缩放'} · 仅高亮研究区可选址</p><button className="study-jump" onClick={goStudy}><span className="study-indicator"/>前往成都研究区 <ArrowRight size={16}/></button><button className="overview-launch" onClick={()=>{setOrbit(false);setCityOverviewOpen(true);}}>城市总览 · 试用</button></div>
       <section className={`entry-dock ${preview?'has-preview':''}`} aria-label="场地定位">
         <div className="dock-title"><MapPin size={28} weight="duotone"/><div><h2>{preview?'确认位置与范围':'定位你的研究场地'}</h2><p>{preview?`${currentName} · ${centerLabel}`:'在成都研究区点选，或输入区内坐标 / 网格编号'}</p></div></div>
         <div className="dock-controls"><label className="location-field"><MapPin size={20}/><input aria-label="场地位置" value={location} onChange={e=>{setLocation(e.target.value);setPreview(false);setDirty(true);}} onKeyDown={e=>{if(e.key==='Enter')locate();}} placeholder="经纬度或网格编号，例如 E4125_N33891"/></label><button className="secondary" onClick={()=>{setDeclaredCrs(false);setModal(true);}}><FileArrowUp size={20}/>导入场地资料</button><div className="scope-label">核心 <strong>100 × 100 m</strong><br/>周边视图 <strong>300 × 300 m</strong></div><button className="primary" onClick={preview?enterSite:locate}>{preview?'进入场地':'定位并预览'}<ArrowRight size={24}/></button></div>
@@ -745,6 +747,12 @@ export function App() {
     {notice && <div className={`toast ${notice.error?'error':''}`} role={notice.error?'alert':'status'}>{notice.error?<WarningCircle size={21}/>:<CheckCircle size={21}/>}<span>{notice.text}</span><button aria-label="关闭提示" onClick={()=>setNotice(null)}><X size={17}/></button></div>}
 
     {modal && <div className="modal-backdrop"><section className="import-modal" role="dialog" aria-modal="true" aria-labelledby="import-title"><button className="close" aria-label="关闭导入" onClick={()=>setModal(false)}><X size={22}/></button><FileArrowUp size={36} weight="duotone"/><h2 id="import-title">导入你的场地资料</h2><p>首版读取本机GeoJSON。原文件不改写，图层按你声明的角色显示。</p><label>图层角色<select value={importRole} onChange={e=>setImportRole(e.target.value)}><option value="buildings">建筑轮廓（无高度时仅2D）</option><option value="vegetation">植被投影</option><option value="roads">道路线</option><option value="user_import">其他场地几何</option></select></label><label className="checkbox"><input type="checkbox" checked={declaredCrs} onChange={e=>setDeclaredCrs(e.target.checked)}/>我确认文件坐标为WGS84经纬度（EPSG:4326）</label><p className="evidence-note">GeoPackage、GeoTIFF和OBJ目前通过已有受控研究包接入。未知坐标不猜测；导入成功不代表科学验证通过。</p><button className="primary full" disabled={!declaredCrs || loadingFile} onClick={()=>uploadRef.current.click()}>选择GeoJSON文件 <ArrowRight size={22}/></button><button className="text-button" onClick={()=>{setModal(false);reopenRef.current.click();}}>重开本平台的ZIP / JSON交接包</button></section></div>}
+    {cityOverviewOpen && <Suspense fallback={<div className="uc-overview-loading" role="status">正在载入城市总览…<button onClick={()=>setCityOverviewOpen(false)}>返回工作台</button></div>}><CityOverview data={data} onClose={()=>setCityOverviewOpen(false)} onOpenExample={()=>{setCityOverviewOpen(false);goRegion('成都');openExample();}} onLocate={feature=>{
+      const box=boundsOf({type:'FeatureCollection',features:[feature]});
+      if(!box)return;
+      const nextCenter=[(box[0]+box[2])/2,(box[1]+box[3])/2];
+      try{requireStudyLocation(nextCenter,data.studyBoundary);setCityOverviewOpen(false);goRegion('成都');locateAt(nextCenter,feature);mapRef.current?.flyTo({center:nextCenter,zoom:14.5,pitch:35,padding:0,duration:window.matchMedia('(prefers-reduced-motion: reduce)').matches?0:1000});}catch(error){notify(error.message,true);}
+    }}/></Suspense>}
     <input className="hidden-file" ref={uploadRef} type="file" accept=".geojson,.json" onChange={importGeometry} aria-label="选择场地GeoJSON文件"/>
     <input className="hidden-file" ref={reopenRef} type="file" accept=".zip,.json" onChange={reopenFile} aria-label="选择交接包文件"/>
   </main>;

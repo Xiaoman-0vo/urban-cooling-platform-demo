@@ -38,3 +38,9 @@
 .legend-study{background:#b1f4d1;box-shadow:0 0 8px #59d9aa}
 .legend-place{background:#a1d9f5}
 @media(max-width:700px){.study-jump{margin-top:11px;padding:8px 10px;font-size:11px}}
+
+/* The overview is a lazy, read-only trial; its entry remains available before loading. */
+.map-caption .overview-launch{pointer-events:auto;margin:12px 0 0;padding:9px 12px;border:1px solid #477c67;border-radius:6px;background:#163c30;color:#c9edda;font-size:12px;display:flex;width:max-content;max-width:100%}
+.map-caption .overview-launch:hover{background:#24543e;border-color:#8ccca8}
+.uc-overview-loading{position:fixed;inset:0;z-index:20;background:#071b23;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px;color:#a6c9b7}
+@media(max-width:700px){.map-caption .overview-launch{font-size:11px;padding:8px 10px;margin-top:9px}}
