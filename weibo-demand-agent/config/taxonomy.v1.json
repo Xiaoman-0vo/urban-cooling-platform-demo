@@ -1,0 +1,204 @@
+{
+  "taxonomy_version": "t1",
+  "rules_version": "r1",
+  "classifier_version": "c1",
+  "note": "本文件是项目书 §18.5 / §18.6 的机读化。所有枚举值必须与 contract/weibo-demand.contract.v1.schema.json 保持一致。修改任何枚举都要升 taxonomy_version，并写入每条输出的 rules_version/classifier_version。",
+
+  "heat_relevance": {
+    "values": ["relevant", "needs_review", "irrelevant"],
+    "label_zh": {
+      "relevant": "相关",
+      "needs_review": "待核实",
+      "irrelevant": "不相关"
+    },
+    "definition": {
+      "relevant": "文本中有一个可指认的命题，其主词是热环境/体感/遮阴/降温设施，且说话人是在陈述自己的亲历体验、观察，或明确提出与环境相关的诉求。不满足 irrelevant 的排除条件。",
+      "needs_review": "具备 relevant 的表面特征，但同时存在至少一条冲突信号：否定结构、反讽、转述/引用、时间不明、地点不明、仅有场所类别词、城市不明、多地点关系不清。",
+      "irrelevant": "满足任一：①「热」字只出现在非环境语义（热搜/热度/热卖/热爱/火爆/手机发热/热血/热点/热映）；②纯商业推广、抽奖、广告；③主题与热环境无关；④整条文本没有任何可指认的热环境命题。"
+    }
+  },
+
+  "content_types": {
+    "values": ["firsthand", "relay", "suggestion", "forecast", "news", "ad", "unknown"],
+    "label_zh": {
+      "firsthand": "亲历体验",
+      "relay": "转述",
+      "suggestion": "改造建议",
+      "forecast": "天气预报",
+      "news": "新闻转载",
+      "ad": "广告",
+      "unknown": "无法判断"
+    }
+  },
+
+  "experience_tags": {
+    "values": ["hot", "muggy", "sun_exposure", "cool", "mixed", "unspecified"],
+    "label_zh": {
+      "hot": "炎热",
+      "muggy": "闷热",
+      "sun_exposure": "暴晒",
+      "cool": "凉爽",
+      "mixed": "混合",
+      "unspecified": "未说明"
+    }
+  },
+
+  "spatial_demands": {
+    "values": ["shade_deficit", "ventilation", "waiting_comfort", "stay_comfort", "water_or_cooling_facility"],
+    "label_zh": {
+      "shade_deficit": "遮阴不足",
+      "ventilation": "通风诉求",
+      "waiting_comfort": "候车条件",
+      "stay_comfort": "停留条件",
+      "water_or_cooling_facility": "饮水或降温设施诉求"
+    }
+  },
+
+  "activity_scene": {
+    "values": ["walking", "cycling", "waiting", "leisure", "outdoor_work", "other", "unspecified"],
+    "label_zh": {
+      "walking": "步行",
+      "cycling": "骑行",
+      "waiting": "等候",
+      "leisure": "游憩",
+      "outdoor_work": "室外工作",
+      "other": "其他",
+      "unspecified": "未说明"
+    }
+  },
+
+  "evaluation_direction": {
+    "values": ["discomfort", "improvement", "neutral", "mixed", "unclear"],
+    "label_zh": {
+      "discomfort": "不适",
+      "improvement": "改善",
+      "neutral": "中性",
+      "mixed": "混合",
+      "unclear": "不明确"
+    },
+    "definition": "只判断说话人自己表达的体验方向，不看情感词多少。惊叹号、表情、脏话不等于负面；「终于不热了」是 improvement，不是 discomfort。"
+  },
+
+  "time_status": {
+    "values": ["current", "historical", "future", "unknown"],
+    "label_zh": {
+      "current": "当前或近期",
+      "historical": "历史",
+      "future": "未来",
+      "unknown": "无法判断"
+    },
+    "rules": [
+      "今天/刚刚/现在/这两天 → current",
+      "去年/上周/以前/回忆/上个月 → historical",
+      "下周/明天/预报说/预计 → future",
+      "无任何时间线索 → unknown，不得用 published_at 顶上"
+    ]
+  },
+
+  "actionability": {
+    "values": ["A", "B", "C"],
+    "definition": {
+      "A": "有明确对象（具名地点或可确定的场所）+ 明确诉求/体验 → 可直接转现场核查清单",
+      "B": "有对象但待定（场所类别、简称、多候选）→ 需先做地点核对",
+      "C": "只有情绪，无可指认对象 → 仅入信息流，不进入核查"
+    }
+  },
+
+  "demand_topic": {
+    "values": [
+      "shade_deficit",
+      "tree_canopy",
+      "waiting_transit",
+      "walking_route",
+      "plaza_leisure",
+      "campus_school",
+      "park_greenway",
+      "outdoor_work",
+      "water_cooling_facility",
+      "ventilation_stillness",
+      "surface_heat",
+      "positive_cooling",
+      "other"
+    ],
+    "label_zh": {
+      "shade_deficit": "缺少遮阴",
+      "tree_canopy": "树荫/绿化覆盖诉求",
+      "waiting_transit": "候车与换乘暴晒",
+      "walking_route": "步行与通行环境",
+      "plaza_leisure": "广场与开放空间休憩",
+      "campus_school": "校园与学校接送",
+      "park_greenway": "公园与绿道体验",
+      "outdoor_work": "室外作业条件",
+      "water_cooling_facility": "饮水与降温设施",
+      "ventilation_stillness": "通风与闷热",
+      "surface_heat": "地面/铺装辐射热",
+      "positive_cooling": "降温改善的积极体验",
+      "other": "其他或无法归类"
+    },
+    "why_fixed": "用固定词表而不是让模型自由聚类：可复现、可评估、可对表平台方案类型；自由聚类每次结果不同，无法报告准确率，也无法做回归测试。"
+  },
+
+  "match_status": {
+    "values": ["matched", "candidate", "undetermined"],
+    "label_zh": { "matched": "已匹配", "candidate": "候选待核查", "undetermined": "未确定地点" }
+  },
+
+  "spatial_precision": {
+    "values": ["geometry", "poi_point", "parent_place", "district", "study_area", "scene_only", "none"],
+    "label_zh": {
+      "geometry": "有地物范围",
+      "poi_point": "仅有地点参考点",
+      "parent_place": "仅父级地标",
+      "district": "行政区尺度",
+      "study_area": "研究区尺度",
+      "scene_only": "仅场所类别",
+      "none": "无空间信息"
+    },
+    "rule": "poi_point 必须在展示时说明「不是发帖者位置，也不是体验发生的精确点」。"
+  },
+
+  "review_status": {
+    "values": ["auto_accepted", "pending", "confirmed", "corrected", "rejected", "rule_only"],
+    "note": "auto_accepted 也不等于人工核查；界面与导出必须分开标注。"
+  },
+
+  "keyword_groups": {
+    "note": "召回用，不是判定用。关键词命中只提高候选优先级，不直接决定标签。",
+    "groups": [
+      { "id": "heat_discomfort", "label": "高温与不适", "terms": ["太热", "热死了", "热得受不了", "高温", "闷热", "暴晒", "热炸", "热到融化"] },
+      { "id": "shade_stay", "label": "遮阴与停留", "terms": ["没树荫", "没有遮阳", "等车暴晒", "晒得烫", "没地方躲太阳", "树荫", "遮阳棚"] },
+      { "id": "mobility_scene", "label": "出行与活动", "terms": ["步行", "候车", "公交站", "地铁口", "广场", "公园", "绿道", "室外工作", "工地", "外卖"] },
+      { "id": "positive_change", "label": "积极改善", "terms": ["树下凉快", "绿道凉爽", "终于不热了", "通风舒服", "凉快多了", "舒服"] },
+      { "id": "place_names", "label": "具体地点", "terms": ["环球中心", "天府广场", "春熙路", "人民公园", "东门", "南门", "校区", "客运站"] },
+      { "id": "place_categories", "label": "场所类别", "terms": ["学校", "广场", "公园", "公交站", "商场", "医院", "小区"] },
+      { "id": "spatial_relation", "label": "空间关系", "terms": ["东门", "南侧", "旁边", "对面", "门口", "外面的广场", "附近"] },
+      { "id": "ambiguous", "label": "歧义提示（需要排除）", "terms": ["热搜", "热卖", "热度", "热爱", "火爆", "手机发热", "热血", "热点", "热映", "热播", "热门"] }
+    ]
+  },
+
+  "negative_markers": {
+    "note": "命中不判死，只打旗标并降级到 needs_review。",
+    "terms": ["不是", "没说", "哪来的", "并没有", "呵呵", "就这", "反讽意味的引号"]
+  },
+
+  "historical_markers": ["去年", "上周", "上个月", "以前", "小时候", "回忆", "那年", "大一", "高中"],
+  "future_markers": ["下周", "明天", "预报", "预计", "要来", "将会", "以后"],
+
+  "decision_order": [
+    "1. 歧义排除：若无任何非歧义热环境词，且只有 ambiguous 组命中 → irrelevant（短路，不调模型）",
+    "2. 内容性质：ad / news / forecast 影响是否算「民意」；forecast 保留但 time_status=future",
+    "3. 时效：historical / future / unknown 只标时间，不因此降相关性",
+    "4. 相关性：relevant / needs_review / irrelevant 三选一；有任何冲突旗标 → needs_review",
+    "5. 民意三要素：主体（场所/设施）+ 谓词（体验或诉求）+ 非商业非纯资讯 → is_public_demand",
+    "6. 诉求归类：spatial_demands[] 与 demand_topic（多标签，允许 other）",
+    "7. 可行动性：A/B/C，仅 A 可进核查清单",
+    "8. 地点匹配：独立于以上步骤，逐 experience_event 做，不与相关性混算"
+  ],
+
+  "confidence_policy": {
+    "principle": "不使用模型自报概率。confidence 是 ordinal 等级 + 依据列表，由确定性规则合成，可复算、可审计。",
+    "levels": { "high": 0.85, "medium": 0.65, "low": 0.4 },
+    "upgrade_basis": ["span_valid（证据片段能在原文精确回查）", "rule_hit（关键词组命中）", "label_agree（规则与模型的一致项）", "repair_passed（自修复后通过校验）"],
+    "auto_accept_requires": ["span_valid", "heat_relevance != needs_review", "confidence >= 0.65", "无冲突旗标"]
+  }
+}

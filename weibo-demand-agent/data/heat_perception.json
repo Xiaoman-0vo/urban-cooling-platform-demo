@@ -1,0 +1,4119 @@
+{
+  "schema": "heat-perception/1",
+  "mode": "historical_sample",
+  "status": {
+    "overall": "ok",
+    "collection": "ok",
+    "classification": "ok",
+    "place_filter": "ok",
+    "note": "单机小样本采集；未做授权接口接入，仅用于链路演示"
+  },
+  "generated_at": "2026-10-28T10:51:00.918Z",
+  "source": {
+    "channel": "weibo",
+    "method": "search + first-level comments",
+    "queries": [
+      "成都 闷热",
+      "成都 遮阴",
+      "成都 高温"
+    ],
+    "city": "成都",
+    "scope_filter": "only_target_city",
+    "fetched_at": "2026-10-28T09:43:34.134Z"
+  },
+  "counts": {
+    "raw_posts": 76,
+    "raw_comments": 285,
+    "classified_items": 88,
+    "in_scope_items": 69,
+    "in_study_area_items": 69,
+    "public_demand_items": 6,
+    "unique_contents": 48,
+    "identifiable_original_reports": 44,
+    "out_of_scope_items": 5,
+    "place_unknown_items": 14
+  },
+  "meta": {
+    "contract_version": "1.0.0",
+    "taxonomy_version": "t1",
+    "rules_version": "r1",
+    "classifier_version": "c1-model",
+    "place_version": "p2",
+    "model": "deepseek-flash"
+  },
+  "events": [
+    {
+      "event_cluster_id": "ev_69cca1a627",
+      "demand_topic": "waiting_transit",
+      "demand_topic_zh": "候车/等候条件",
+      "item_count": 1,
+      "unique_content_count": 1,
+      "evaluation_direction": {
+        "discomfort": 1
+      },
+      "place_hint": "成都",
+      "first_published_at": "2026-09-25T14:23:24+08:00",
+      "last_published_at": "2026-09-25T14:23:24+08:00",
+      "representative": {
+        "item_id": "wi_72c761131257",
+        "excerpt": "第一次来成都南站，没想到又小又热又闷",
+        "source_url": "https://m.weibo.cn/detail/5347041100434737",
+        "confidence": 0.7,
+        "confidence_level": "medium"
+      },
+      "item_ids": [
+        "wi_72c761131257"
+      ]
+    },
+    {
+      "event_cluster_id": "ev_a4e7d84685",
+      "demand_topic": "ventilation_stillness",
+      "demand_topic_zh": "通风不畅",
+      "item_count": 1,
+      "unique_content_count": 1,
+      "evaluation_direction": {
+        "discomfort": 1
+      },
+      "place_hint": "成都",
+      "first_published_at": "2026-10-27T09:31:39+08:00",
+      "last_published_at": "2026-10-27T09:31:39+08:00",
+      "representative": {
+        "item_id": "wi_5adeb0df77f4",
+        "excerpt": "每年秋冬把站内搞那么热人又多，真的太热太闷了",
+        "source_url": "https://m.weibo.cn/detail/5358564090841614",
+        "confidence": 0.9,
+        "confidence_level": "high"
+      },
+      "item_ids": [
+        "wi_5adeb0df77f4"
+      ]
+    },
+    {
+      "event_cluster_id": "ev_40325971c1",
+      "demand_topic": "tree_canopy",
+      "demand_topic_zh": "树冠/绿化覆盖",
+      "item_count": 1,
+      "unique_content_count": 1,
+      "evaluation_direction": {
+        "discomfort": 1
+      },
+      "place_hint": "成都",
+      "first_published_at": "2022-08-16T12:34:05+08:00",
+      "last_published_at": "2022-08-16T12:34:05+08:00",
+      "representative": {
+        "item_id": "wi_60c379b0e3a7",
+        "excerpt": "成都的“林荫大道”真的太少太少",
+        "source_url": "https://m.weibo.cn/detail/4803069402941625",
+        "confidence": 0.7,
+        "confidence_level": "medium"
+      },
+      "item_ids": [
+        "wi_60c379b0e3a7"
+      ]
+    },
+    {
+      "event_cluster_id": "ev_24a5ffd5ce",
+      "demand_topic": "park_greenway",
+      "demand_topic_zh": "公园绿道",
+      "item_count": 1,
+      "unique_content_count": 1,
+      "evaluation_direction": {
+        "mixed": 1
+      },
+      "place_hint": "成都",
+      "first_published_at": "2025-04-09T18:21:22+08:00",
+      "last_published_at": "2025-04-09T18:21:22+08:00",
+      "representative": {
+        "item_id": "wi_f64d1a8b8063",
+        "excerpt": "由于该公园遮阴处不多，因此气温高的时候走在公园里特别闷",
+        "source_url": "https://m.weibo.cn/detail/5153585864116007",
+        "confidence": 0.65,
+        "confidence_level": "medium"
+      },
+      "item_ids": [
+        "wi_f64d1a8b8063"
+      ]
+    },
+    {
+      "event_cluster_id": "ev_47e214935f",
+      "demand_topic": "shade_deficit",
+      "demand_topic_zh": "遮阴不足",
+      "item_count": 1,
+      "unique_content_count": 1,
+      "evaluation_direction": {
+        "discomfort": 1
+      },
+      "place_hint": "新都",
+      "first_published_at": "2024-08-09T17:03:36+08:00",
+      "last_published_at": "2024-08-09T17:03:36+08:00",
+      "representative": {
+        "item_id": "wi_41f0db31912a",
+        "excerpt": "新都金牛龙泉驿暴晒很难受（近2h基本没有遮阴），快中暑的状态",
+        "source_url": "https://m.weibo.cn/detail/5065506044778475",
+        "confidence": 0.9,
+        "confidence_level": "high"
+      },
+      "item_ids": [
+        "wi_41f0db31912a"
+      ]
+    },
+    {
+      "event_cluster_id": "ev_bd1827fd00",
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "item_count": 1,
+      "unique_content_count": 1,
+      "evaluation_direction": {
+        "discomfort": 1
+      },
+      "place_hint": "成都",
+      "first_published_at": "2026-08-11T22:59:50+08:00",
+      "last_published_at": "2026-08-11T22:59:50+08:00",
+      "representative": {
+        "item_id": "wi_6e9579ca966c",
+        "excerpt": "应通过增加绿化、打通通风廊道、给建筑降温等",
+        "source_url": "https://m.weibo.cn/detail/5330863610661002",
+        "confidence": 0.9,
+        "confidence_level": "high"
+      },
+      "item_ids": [
+        "wi_6e9579ca966c"
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "item_count": 23,
+      "evaluation_direction": {
+        "discomfort": 15,
+        "mixed": 4,
+        "neutral": 4
+      },
+      "examples": [
+        {
+          "item_id": "wi_acbd5e81160f",
+          "excerpt": "体感闷热，提醒小伙伴们多多补水，注意防暑防晒",
+          "source_url": "https://m.weibo.cn/detail/5337515214242011"
+        },
+        {
+          "item_id": "wi_72327eaa57bb",
+          "excerpt": "我记得那天特别特别闷热，真的特别热",
+          "source_url": "https://m.weibo.cn/detail/5358027159110982"
+        }
+      ]
+    },
+    {
+      "demand_topic": "positive_cooling",
+      "demand_topic_zh": "降温改善体验",
+      "item_count": 13,
+      "evaluation_direction": {
+        "mixed": 2,
+        "improvement": 11
+      },
+      "examples": [
+        {
+          "item_id": "wi_a58abc6f1f42",
+          "excerpt": "成都不冷啊，只是凉快",
+          "source_url": "https://m.weibo.cn/detail/5354620907950881"
+        },
+        {
+          "item_id": "wi_f0cfae645082",
+          "excerpt": "期盼已久的冷空气抵达成都，伴随降雨气温大幅回落，持续多日的闷热终于消散。",
+          "source_url": "https://m.weibo.cn/detail/5340813664979578"
+        }
+      ]
+    },
+    {
+      "demand_topic": "ventilation_stillness",
+      "demand_topic_zh": "通风不畅",
+      "item_count": 2,
+      "evaluation_direction": {
+        "mixed": 1,
+        "discomfort": 1
+      },
+      "examples": [
+        {
+          "item_id": "wi_81a26878a975",
+          "excerpt": "一进室内总是闷得不行 一直出汗",
+          "source_url": "https://m.weibo.cn/detail/5346427019985577"
+        },
+        {
+          "item_id": "wi_7c0f650ed200",
+          "excerpt": "今天的成都，室内太闷了！",
+          "source_url": "https://m.weibo.cn/detail/5340567982572903"
+        }
+      ]
+    },
+    {
+      "demand_topic": "surface_heat",
+      "demand_topic_zh": "地面与体感高温",
+      "item_count": 1,
+      "evaluation_direction": {
+        "discomfort": 1
+      },
+      "examples": [
+        {
+          "item_id": "wi_b048b2423d03",
+          "excerpt": "持续高温见不了头，又闷又热又晒，刚才出去接娃，地面温度怕是有50度",
+          "source_url": "https://m.weibo.cn/detail/5318449767125274"
+        }
+      ]
+    },
+    {
+      "demand_topic": "tree_canopy",
+      "demand_topic_zh": "树冠/绿化覆盖",
+      "item_count": 1,
+      "evaluation_direction": {
+        "improvement": 1
+      },
+      "examples": [
+        {
+          "item_id": "wi_db7f3a95ca9f",
+          "excerpt": "不怕晒！成都5条遮阴绿道，骑行健步都适配，新手也适合！",
+          "source_url": "https://m.weibo.cn/detail/5311586397064080"
+        }
+      ]
+    },
+    {
+      "demand_topic": "shade_deficit",
+      "demand_topic_zh": "遮阴不足",
+      "item_count": 1,
+      "evaluation_direction": {
+        "discomfort": 1
+      },
+      "examples": [
+        {
+          "item_id": "wi_6102905affc3",
+          "excerpt": "大停车场是空坝子，没有任何遮阴，也很晒",
+          "source_url": "https://m.weibo.cn/detail/5338773920940580"
+        }
+      ]
+    },
+    {
+      "demand_topic": "park_greenway",
+      "demand_topic_zh": "公园绿道",
+      "item_count": 1,
+      "evaluation_direction": {
+        "improvement": 1
+      },
+      "examples": [
+        {
+          "item_id": "wi_a5f0654e4922",
+          "excerpt": "林木茂密遮阴纳凉，竹林、溪流相伴，清风拂面，沿途多处可供休憩",
+          "source_url": "https://m.weibo.cn/detail/5332163144974479"
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "item_id": "wi_acbd5e81160f",
+      "source": "weibo",
+      "source_post_id": "5337515214242011",
+      "source_url": "https://m.weibo.cn/detail/5337515214242011",
+      "kind": "post",
+      "author": "成都发布",
+      "published_at": "2026-08-30T07:30:56+08:00",
+      "text": "【#早安成都#】@成都气象 预计今天白天多云间阴，气温21~33℃。体感闷热，提醒小伙伴们多多补水，注意防暑防晒。【今日不限行】早安",
+      "excerpt": "体感闷热，提醒小伙伴们多多补水，注意防暑防晒",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "muggy"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 4,
+          "end": 6
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "content_types",
+          "start": 14,
+          "end": 24,
+          "quote": "预计今天白天多云间阴"
+        },
+        {
+          "field": "time_status",
+          "start": 16,
+          "end": 20,
+          "quote": "今天白天"
+        },
+        {
+          "field": "experience_tags",
+          "start": 34,
+          "end": 38,
+          "quote": "体感闷热"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_2d76a7fe56",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_72327eaa57bb",
+      "source": "weibo",
+      "source_post_id": "5358027159110982",
+      "source_url": "https://m.weibo.cn/detail/5358027159110982",
+      "kind": "post",
+      "author": "玄衫万火渡苍生",
+      "published_at": "2026-10-25T21:58:05+08:00",
+      "text": "我刚翻我当时录的视频才发现，丁禹兮在给上来做游戏的小海棠扇风……\n好温柔啊🥺\n我记得那天特别特别闷热，真的特别热，正是7月成都最热的时候，大家在那里陪他们等人（因为来接他们的老师来晚了），所以中间很长一段时间就是没有节目的任务安排，就干等。\n然后丁禹兮就看大家一直跟着等，很渴很枯燥，就说大家来做游戏吧，然后给发水。\n问谁要来，大家就举手，然后就轮流上去了好几个小海棠做游戏。\n我真的第一次注意到原来我宝宝在身后悄悄给小海棠扇风🥺🥺\n顺便还有——\n\n“我肤色黑不黑！！😠”\n“不黑！😾”\n\n#丑八怪巧克力全球品牌代言人丁禹兮# |#丁禹兮沈言#",
+      "excerpt": "我记得那天特别特别闷热，真的特别热",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "muggy",
+        "hot"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "waiting"
+      ],
+      "time_status": "historical",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "海棠",
+          "kind": "other",
+          "start": 26,
+          "end": 28
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 62,
+          "end": 64
+        },
+        {
+          "name": "海棠",
+          "kind": "other",
+          "start": 183,
+          "end": 185
+        },
+        {
+          "name": "海棠",
+          "kind": "other",
+          "start": 211,
+          "end": 213
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 45,
+          "end": 51,
+          "quote": "特别特别闷热"
+        },
+        {
+          "field": "location_mentions",
+          "start": 62,
+          "end": 64,
+          "quote": "成都"
+        },
+        {
+          "field": "activity_scene",
+          "start": 117,
+          "end": 120,
+          "quote": "就干等"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_800cead322",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_b048b2423d03",
+      "source": "weibo",
+      "source_post_id": "5318449767125274",
+      "source_url": "https://m.weibo.cn/detail/5318449767125274",
+      "kind": "post",
+      "author": "金鱼小摆摆",
+      "published_at": "2026-07-08T16:51:39+08:00",
+      "text": "#逗比小孩# 终于考完试了，回家可以尽情玩会儿平板，审阅了微信、QQ消息和朋友圈之后，发了一张神图给我。\n\n是的，这就是这周的四川，真的是被叉出地球烧烤了。打算来成都旅游的小伙伴，要慎重啊……持续高温见不了头，又闷又热又晒，刚才出去接娃，地面温度怕是有50度，简直不适合休闲游啊……",
+      "excerpt": "持续高温见不了头，又闷又热又晒，刚才出去接娃，地面温度怕是有50度",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "surface_heat",
+      "demand_topic_zh": "地面与体感高温",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "hot",
+        "muggy",
+        "sun_exposure"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "leisure"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 81,
+          "end": 83
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 105,
+          "end": 111,
+          "quote": "又闷又热又晒"
+        },
+        {
+          "field": "demand_topic",
+          "start": 119,
+          "end": 129,
+          "quote": "地面温度怕是有50度"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 130,
+          "end": 139,
+          "quote": "简直不适合休闲游啊"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_f4bbf0d3f0",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_6b1b288b18fb",
+      "source": "weibo",
+      "source_post_id": "5299931486884760",
+      "source_url": "https://m.weibo.cn/detail/5299931486884760",
+      "kind": "post",
+      "author": "蹦蹦跳跳的阿龙",
+      "published_at": "2026-05-18T14:26:37+08:00",
+      "text": "上海热的时候那是真的热，没毛病，而且是很闷热那种，但全国有几个地方，我觉得夏天宛如人间炼狱，比如重庆，比如成都，这个真的是少数让我觉得热到我受不了的感觉。那种闷热感，让我想起了印度的加尔各答。",
+      "excerpt": "上海热的时候那是真的热，没毛病，而且是很闷热那种",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "hot",
+        "muggy"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "unknown",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "上海",
+          "kind": "other",
+          "start": 0,
+          "end": 2
+        },
+        {
+          "name": "重庆",
+          "kind": "other",
+          "start": 48,
+          "end": 50
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 53,
+          "end": 55
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "heat_relevance",
+          "start": 0,
+          "end": 11,
+          "quote": "上海热的时候那是真的热"
+        },
+        {
+          "field": "experience_tags",
+          "start": 19,
+          "end": 24,
+          "quote": "很闷热那种"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 67,
+          "end": 73,
+          "quote": "热到我受不了"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_b839afec02",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_81a26878a975",
+      "source": "weibo",
+      "source_post_id": "5346427019985577",
+      "source_url": "https://m.weibo.cn/detail/5346427019985577",
+      "kind": "post",
+      "author": "叽叽今天也向你敬礼",
+      "published_at": "2026-09-23T21:43:16+08:00",
+      "text": "成都最近的温度和天气让我真的完全提不起来性欲\n说热也不热 将近30度也不用开空调\n但是也不那么凉快 还一直处于要下雨的状态里\n室外还挺舒服的 一进室内总是闷得不行 一直出汗\n\n一天到晚身上都很黏\n叽夫一贴着我我就要跑路\n更别说阻碍了\n\n赶紧再降降温吧 有点影响淫魔干正事了",
+      "excerpt": "一进室内总是闷得不行 一直出汗",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "ventilation_stillness",
+      "demand_topic_zh": "通风不畅",
+      "evaluation_direction": "mixed",
+      "experience_tags": [
+        "muggy",
+        "cool"
+      ],
+      "spatial_demands": [
+        "ventilation"
+      ],
+      "activity_scene": [
+        "other"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 0,
+          "end": 2
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "spatial_demands",
+          "start": 50,
+          "end": 62,
+          "quote": "还一直处于要下雨的状态里"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 63,
+          "end": 70,
+          "quote": "室外还挺舒服的"
+        },
+        {
+          "field": "experience_tags",
+          "start": 71,
+          "end": 81,
+          "quote": "一进室内总是闷得不行"
+        },
+        {
+          "field": "demand_topic",
+          "start": 88,
+          "end": 97,
+          "quote": "一天到晚身上都很黏"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_b7501bf91b",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_7f1a1334cbe8",
+      "source": "weibo",
+      "source_post_id": "5316217577407625",
+      "source_url": "https://m.weibo.cn/detail/5316217577407625",
+      "kind": "post",
+      "author": "一只小橘子Dodo",
+      "published_at": "2026-07-02T13:01:44+08:00",
+      "text": "cpi好美、很好逛，就是成都闷热至极。",
+      "excerpt": "cpi好美、很好逛，就是成都闷热至极。",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "muggy"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "leisure"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 12,
+          "end": 14
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "activity_scene",
+          "start": 6,
+          "end": 9,
+          "quote": "很好逛"
+        },
+        {
+          "field": "heat_relevance",
+          "start": 12,
+          "end": 18,
+          "quote": "成都闷热至极"
+        },
+        {
+          "field": "experience_tags",
+          "start": 14,
+          "end": 18,
+          "quote": "闷热至极"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_3910b54140",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_84962fe64d4f",
+      "source": "weibo",
+      "source_post_id": "5335228022522923",
+      "source_url": "https://m.weibo.cn/detail/5335228022522923",
+      "kind": "post",
+      "author": "耍帅小螃蟹",
+      "published_at": "2026-08-24T00:02:27+08:00",
+      "text": "#张韶涵回应突发心脏不适# | #张韶涵做了全面检查#\n昨晚成都演唱会突发心脏不适，可把大伙儿吓坏了！\n\n好在涵涵事后火速发文报平安，说已经做了全面检查，目前一切安好，让大家千万别担心。\n\n其实她自己也解释了，主要是成都太闷热，加上换的那套“木马”造型演出服实在太重，导致心脏负荷过大。\n\n虽然当时难受落泪，但她缓过来后依然坚持唱完了全场，事后还反复跟歌迷道歉，承诺“如果身体不行，会喊停的”，这敬业态度真的没得黑。#一分钟精选视频扶持计划# #张韶涵回应突发心脏不适# 耍帅小螃蟹的微博视频",
+      "excerpt": "主要是成都太闷热，加上换的那套“木马”造型演出服实在太重",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "muggy"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "other"
+      ],
+      "time_status": "historical",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 30,
+          "end": 32
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 108,
+          "end": 110
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 108,
+          "end": 113,
+          "quote": "成都太闷热"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 134,
+          "end": 142,
+          "quote": "导致心脏负荷过大"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_e48fb26d4e",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_72c761131257",
+      "source": "weibo",
+      "source_post_id": "5347041100434737",
+      "source_url": "https://m.weibo.cn/detail/5347041100434737",
+      "kind": "post",
+      "author": "啊熊姨",
+      "published_at": "2026-09-25T14:23:24+08:00",
+      "text": "第一次来成都南站，没想到又小又热又闷，假期客流量太大了，站内没有任何餐厅或休息室，座位有限，候车就是在罚站。 成都·成都南站",
+      "excerpt": "第一次来成都南站，没想到又小又热又闷",
+      "heat_relevance": "relevant",
+      "is_public_demand": true,
+      "demand_topic": "waiting_transit",
+      "demand_topic_zh": "候车/等候条件",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "hot",
+        "muggy"
+      ],
+      "spatial_demands": [
+        "waiting_comfort",
+        "ventilation"
+      ],
+      "activity_scene": [
+        "waiting"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 4,
+          "end": 6
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 55,
+          "end": 57
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 58,
+          "end": 60
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 14,
+          "end": 18,
+          "quote": "又热又闷"
+        },
+        {
+          "field": "spatial_demands",
+          "start": 41,
+          "end": 45,
+          "quote": "座位有限"
+        },
+        {
+          "field": "activity_scene",
+          "start": 46,
+          "end": 53,
+          "quote": "候车就是在罚站"
+        }
+      ],
+      "confidence": 0.7,
+      "confidence_level": "medium",
+      "confidence_basis": [
+        "span_valid",
+        "public_demand"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_b110294da2",
+      "event_cluster_id": "ev_69cca1a627"
+    },
+    {
+      "item_id": "wi_7c0f650ed200",
+      "source": "weibo",
+      "source_post_id": "5340567982572903",
+      "source_url": "https://m.weibo.cn/detail/5340567982572903",
+      "kind": "post",
+      "author": "成小直",
+      "published_at": "2026-09-07T17:41:33+08:00",
+      "text": "今天的成都，室内太闷了！\n感觉快喘不过气了\n温度也不高，可湿度最高都到86%了……\n说是要降雨降温，也不知道什么时候\n\n#今天的成都太闷了#",
+      "excerpt": "今天的成都，室内太闷了！",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "ventilation_stillness",
+      "demand_topic_zh": "通风不畅",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "muggy"
+      ],
+      "spatial_demands": [
+        "ventilation"
+      ],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 3,
+          "end": 5
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 64,
+          "end": 66
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "heat_relevance",
+          "start": 6,
+          "end": 11,
+          "quote": "室内太闷了"
+        },
+        {
+          "field": "experience_tags",
+          "start": 8,
+          "end": 11,
+          "quote": "太闷了"
+        },
+        {
+          "field": "spatial_demands",
+          "start": 13,
+          "end": 21,
+          "quote": "感觉快喘不过气了"
+        }
+      ],
+      "confidence": 0.6,
+      "confidence_level": "low",
+      "confidence_basis": [
+        "span_valid"
+      ],
+      "review_status": "pending",
+      "duplicate_group_id": "dg_2aa9171700",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_9e7926145703",
+      "source": "weibo",
+      "source_post_id": "5327875337093356",
+      "source_url": "https://m.weibo.cn/detail/5327875337093356",
+      "kind": "post",
+      "author": "成都气象",
+      "published_at": "2026-08-03T17:05:29+08:00",
+      "text": "#成都下班天气##成都天气实景# 下班啦朋友们！今日天气转晴，气温跟着回升了，闷热感也再度来袭，此时平均气温为33.3℃，体感稍微闷热，宝子们下班前也记得做好防晒哟~",
+      "excerpt": "今日天气转晴，气温跟着回升了，闷热感也再度来袭",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "muggy",
+        "sun_exposure"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 1,
+          "end": 3
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 9,
+          "end": 11
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "content_types",
+          "start": 24,
+          "end": 38,
+          "quote": "今日天气转晴，气温跟着回升了"
+        },
+        {
+          "field": "heat_relevance",
+          "start": 39,
+          "end": 47,
+          "quote": "闷热感也再度来袭"
+        },
+        {
+          "field": "experience_tags",
+          "start": 61,
+          "end": 67,
+          "quote": "体感稍微闷热"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_e9df52f68b",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_a58abc6f1f42",
+      "source": "weibo",
+      "source_post_id": "5354620907950881",
+      "source_url": "https://m.weibo.cn/detail/5354620907950881",
+      "kind": "post",
+      "author": "少说两句liangju",
+      "published_at": "2026-10-16T12:22:51+08:00",
+      "text": "天定良元 爸啊，成都不冷啊，只是凉快，你穿个棉袄过来不得闷热死",
+      "excerpt": "成都不冷啊，只是凉快",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "positive_cooling",
+      "demand_topic_zh": "降温改善体验",
+      "evaluation_direction": "mixed",
+      "experience_tags": [
+        "cool",
+        "muggy"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 8,
+          "end": 10
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 14,
+          "end": 18,
+          "quote": "只是凉快"
+        },
+        {
+          "field": "experience_tags",
+          "start": 28,
+          "end": 30,
+          "quote": "闷热"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_87807b4d8a",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_86ce333d6d8c",
+      "source": "weibo",
+      "source_post_id": "5322720843662949",
+      "source_url": "https://m.weibo.cn/detail/5322720843662949",
+      "kind": "post",
+      "author": "成都地铁",
+      "published_at": "2026-07-20T11:43:23+08:00",
+      "text": "【实用转存！高温闷热天气防中暑指南】#成都本周5天连续高温# 持续高温闷热容易让人中暑，严重的还可能患上“热射病”，危及生命。如何做好防暑措施？如果中暑如何应对？转发这份防暑指南↓↓#成都高温天气超长待机#（来源：国家应急广播） 成都地铁的微博视频",
+      "excerpt": "持续高温闷热容易让人中暑，严重的还可能患上“热射病”，危及生命",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "hot",
+        "muggy"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "future",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 19,
+          "end": 21
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 92,
+          "end": 94
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 115,
+          "end": 117
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 6,
+          "end": 17,
+          "quote": "高温闷热天气防中暑指南"
+        },
+        {
+          "field": "time_status",
+          "start": 19,
+          "end": 29,
+          "quote": "成都本周5天连续高温"
+        },
+        {
+          "field": "experience_tags",
+          "start": 31,
+          "end": 43,
+          "quote": "持续高温闷热容易让人中暑"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_e7caadad23",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_f367183aceb0",
+      "source": "weibo",
+      "source_post_id": "5317664932106145",
+      "source_url": "https://m.weibo.cn/detail/5317664932106145",
+      "kind": "post",
+      "author": "成都气象",
+      "published_at": "2026-07-06T12:53:00+08:00",
+      "text": "#气象科普# #成都真的热热热# 【闷热的感觉是怎么来的？】有时候气温28~29℃，不算太高，但室外感觉闷热，稍微动一动就出汗，这是为什么呢？其实体感温度才是我们身体真切感知到的冷热。它不单由空气温度决定，湿度、风力、云层、降雨、日照辐射都会影响体感变化。盛夏无风的闷热天气里，高湿度加持下，体感温度普遍比实测气温高出1-3℃。一旦遭遇极端高温高湿环境，温差甚至拉大至6～7℃。#孙颖莎夺冠# 国家应急广播的微博视频",
+      "excerpt": "有时候气温28~29℃，不算太高，但室外感觉闷热，稍微动一动就出汗",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "hot",
+        "muggy"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 8,
+          "end": 10
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 18,
+          "end": 20,
+          "quote": "闷热"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 55,
+          "end": 63,
+          "quote": "稍微动一动就出汗"
+        },
+        {
+          "field": "heat_relevance",
+          "start": 73,
+          "end": 91,
+          "quote": "体感温度才是我们身体真切感知到的冷热"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_df79dfca53",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_f0cfae645082",
+      "source": "weibo",
+      "source_post_id": "5340813664979578",
+      "source_url": "https://m.weibo.cn/detail/5340813664979578",
+      "kind": "post",
+      "author": "吃货小小小饼干",
+      "published_at": "2026-09-08T09:57:48+08:00",
+      "text": "#成都人你们要的降温来了# 期盼已久的冷空气抵达成都，伴随降雨气温大幅回落，持续多日的闷热终于消散。昼夜温差拉大，提醒市民及时增减衣物，出门随身备好雨具，注意出行安全。 吃货小小小饼干的微博视频",
+      "excerpt": "期盼已久的冷空气抵达成都，伴随降雨气温大幅回落，持续多日的闷热终于消散。",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "positive_cooling",
+      "demand_topic_zh": "降温改善体验",
+      "evaluation_direction": "improvement",
+      "experience_tags": [
+        "muggy",
+        "cool"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 1,
+          "end": 3
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 24,
+          "end": 26
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "demand_topic",
+          "start": 8,
+          "end": 12,
+          "quote": "降温来了"
+        },
+        {
+          "field": "content_types",
+          "start": 19,
+          "end": 26,
+          "quote": "冷空气抵达成都"
+        },
+        {
+          "field": "experience_tags",
+          "start": 38,
+          "end": 49,
+          "quote": "持续多日的闷热终于消散"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 45,
+          "end": 49,
+          "quote": "终于消散"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_afb374e099",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_b0fb9acc6308",
+      "source": "weibo",
+      "source_post_id": "5358541778977496",
+      "source_url": "https://m.weibo.cn/detail/5358541778977496",
+      "kind": "post",
+      "author": "南行难行",
+      "published_at": "2026-10-27T08:03:00+08:00",
+      "text": "第42场全马：成都马拉松\n终于弥补了24年中签未能前行的遗憾，但是今年的成马天气十分闷热，刚出发就已浑身湿透；赛道下穿4个隧道，严重干扰节奏；加上上周异常繁忙的工作，未能有效备赛，身体处于极度疲劳状态；到了后半程，腿就明显迈不动，后半程基本就摆烂了。但成绩还行，比想象中好\n本周抓紧恢复，迎接下一场挑战 成都·成都新国际会议展览中心",
+      "excerpt": "今年的成马天气十分闷热，刚出发就已浑身湿透",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "muggy",
+        "hot"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "other"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 7,
+          "end": 9
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 152,
+          "end": 154
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 155,
+          "end": 157
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "heat_relevance",
+          "start": 38,
+          "end": 44,
+          "quote": "天气十分闷热"
+        },
+        {
+          "field": "experience_tags",
+          "start": 40,
+          "end": 44,
+          "quote": "十分闷热"
+        },
+        {
+          "field": "experience_tags",
+          "start": 45,
+          "end": 54,
+          "quote": "刚出发就已浑身湿透"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_f96a74387a",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_099fe9910121",
+      "source": "weibo",
+      "source_post_id": "5340804215997310",
+      "source_url": "https://m.weibo.cn/detail/5340804215997310",
+      "kind": "post",
+      "author": "XU屿",
+      "published_at": "2026-09-08T09:20:15+08:00",
+      "text": "#成都人你们要的降温来了#盼了许久的冷空气终于到货，成都迎来断崖式换季降温，持续多日的闷热天气宣告退场，让不少市民直呼终于等到清凉。根据气象部门预报，本轮降温降雨过程从傍晚开启，全市平均气温累计下降5‑7℃，最高气温回落至24℃左右，正式告别盛夏酷暑。\n\n降温伴随大范围降雨，夜间雨势明显，普降中雨到大雨，中西部局部出现暴雨，还将刮起4‑6级偏北风，局部风力可达7级以上。一夜风雨过后，短袖模式不再适配，昼夜温差急剧拉大，一日跨两季成为常态，早晚体感寒凉。\n\n降温虽令人欣喜，但强降雨、大风也暗藏风险。城市低洼路段容易积水，山区要警惕滑坡、泥石流等次生灾害。提醒市民出门随身携带雨具，避开积水点位，驾车减速慢行。\n\n换季时节气温起伏剧烈，老人、小孩需要及时增添薄外套，谨防感冒。大家多留意气象预警，合理安排出行。一场秋雨一场凉，也期待成都正式迎来舒爽惬意的秋日时光。#成都人你们要的降温来了##一分钟精选视频扶持计划# XU屿的微博视频",
+      "excerpt": "持续多日的闷热天气宣告退场",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "positive_cooling",
+      "demand_topic_zh": "降温改善体验",
+      "evaluation_direction": "improvement",
+      "experience_tags": [
+        "muggy",
+        "cool"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "future",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 1,
+          "end": 3
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 26,
+          "end": 28
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 367,
+          "end": 369
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 384,
+          "end": 386
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "demand_topic",
+          "start": 38,
+          "end": 51,
+          "quote": "持续多日的闷热天气宣告退场"
+        },
+        {
+          "field": "experience_tags",
+          "start": 43,
+          "end": 45,
+          "quote": "闷热"
+        },
+        {
+          "field": "experience_tags",
+          "start": 59,
+          "end": 65,
+          "quote": "终于等到清凉"
+        },
+        {
+          "field": "content_types",
+          "start": 66,
+          "end": 74,
+          "quote": "根据气象部门预报"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_c922faa90a",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_52736d822fbd",
+      "source": "weibo",
+      "source_post_id": "5340813556711442",
+      "source_url": "https://m.weibo.cn/detail/5340813556711442",
+      "kind": "post",
+      "author": "姐有范儿溜",
+      "published_at": "2026-09-08T09:57:21+08:00",
+      "text": "#成都人你们要的降温来了#熬完一整段闷热黏腻的秋老虎，成都人念叨了好多天的降温，终于踩着雨水登场了。#微博二创视频创作季# 姐有范儿溜的微博视频",
+      "excerpt": "熬完一整段闷热黏腻的秋老虎，成都人念叨了好多天的降温，终于踩着雨水登场了",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "positive_cooling",
+      "demand_topic_zh": "降温改善体验",
+      "evaluation_direction": "improvement",
+      "experience_tags": [
+        "muggy",
+        "cool"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 1,
+          "end": 3
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 27,
+          "end": 29
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 18,
+          "end": 22,
+          "quote": "闷热黏腻"
+        },
+        {
+          "field": "content_types",
+          "start": 27,
+          "end": 39,
+          "quote": "成都人念叨了好多天的降温"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 40,
+          "end": 49,
+          "quote": "终于踩着雨水登场了"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_dec3b556cd",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_5adeb0df77f4",
+      "source": "weibo",
+      "source_post_id": "5358564090841614",
+      "source_url": "https://m.weibo.cn/detail/5358564090841614",
+      "kind": "post",
+      "author": "因为总被骗子仿冒忍痛放弃心爱id",
+      "published_at": "2026-10-27T09:31:39+08:00",
+      "text": "成都地铁到底为什么总致力于每年秋冬把站内搞那么热人又多，真的太热太闷了你知不知道@成都地铁 #成都地铁#",
+      "excerpt": "每年秋冬把站内搞那么热人又多，真的太热太闷了",
+      "heat_relevance": "relevant",
+      "is_public_demand": true,
+      "demand_topic": "ventilation_stillness",
+      "demand_topic_zh": "通风不畅",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "hot",
+        "muggy"
+      ],
+      "spatial_demands": [
+        "ventilation",
+        "waiting_comfort"
+      ],
+      "activity_scene": [
+        "waiting"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 0,
+          "end": 2
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 47,
+          "end": 49
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "content_types",
+          "start": 0,
+          "end": 13,
+          "quote": "成都地铁到底为什么总致力于"
+        },
+        {
+          "field": "actionability",
+          "start": 17,
+          "end": 24,
+          "quote": "把站内搞那么热"
+        },
+        {
+          "field": "spatial_demands",
+          "start": 28,
+          "end": 35,
+          "quote": "真的太热太闷了"
+        },
+        {
+          "field": "experience_tags",
+          "start": 30,
+          "end": 40,
+          "quote": "太热太闷了你知不知道"
+        }
+      ],
+      "confidence": 0.9,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees",
+        "public_demand"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_418eb60b1d",
+      "event_cluster_id": "ev_a4e7d84685"
+    },
+    {
+      "item_id": "wi_e1cc779643b9",
+      "source": "weibo",
+      "source_post_id": "5356927905438094",
+      "source_url": "https://m.weibo.cn/detail/5356927905438094",
+      "kind": "post",
+      "author": "秋雨倾襟衫怜",
+      "published_at": "2026-10-22T21:10:02+08:00",
+      "text": "成都的夏天闷热得遭不住，晚上必须开空调才能睡得着。\n我今天早上一看电费单，心都在滴血。\n但是没办法呀，不开空调的话，那个蚊子都要把我抬走了。\n晚上睡觉的时候我家猫一直趴我胸口上，热得我一身汗，又不敢动。",
+      "excerpt": "成都的夏天闷热得遭不住，晚上必须开空调才能睡得着。",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "muggy",
+        "hot"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 0,
+          "end": 2
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 5,
+          "end": 7,
+          "quote": "闷热"
+        },
+        {
+          "field": "heat_relevance",
+          "start": 12,
+          "end": 24,
+          "quote": "晚上必须开空调才能睡得着"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 89,
+          "end": 95,
+          "quote": "热得我一身汗"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_7dce9a4cc8",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_269837a76d7c",
+      "source": "weibo",
+      "source_post_id": "5164755376934054",
+      "source_url": "https://m.weibo.cn/detail/5164755376934054",
+      "kind": "post",
+      "author": "令狐虾",
+      "published_at": "2025-05-10T14:05:01+08:00",
+      "text": "大熊猫和花 20250510 今天阿花花可厉害啦，和妹妹有来有回，最后压住妹妹，开心得去坐秋千啦啦啦啦啦啦。中午太阳高照，六号别墅排队区有竹子遮阴，真的很舒适，游客也不会抱怨也不会暴晒投诉哦@成都大熊猫繁育研究基地 @文旅成都 谭花叶扎根基地老区 成都·大熊猫6号别墅 令狐虾的微博视频",
+      "excerpt": "中午太阳高照，六号别墅排队区有竹子遮阴，真的很舒适",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "positive_cooling",
+      "demand_topic_zh": "降温改善体验",
+      "evaluation_direction": "improvement",
+      "experience_tags": [
+        "sun_exposure",
+        "cool"
+      ],
+      "spatial_demands": [
+        "waiting_comfort"
+      ],
+      "activity_scene": [
+        "waiting",
+        "leisure"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 124,
+          "end": 126
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 54,
+          "end": 60,
+          "quote": "中午太阳高照"
+        },
+        {
+          "field": "actionability",
+          "start": 61,
+          "end": 73,
+          "quote": "六号别墅排队区有竹子遮阴"
+        },
+        {
+          "field": "experience_tags",
+          "start": 68,
+          "end": 79,
+          "quote": "有竹子遮阴，真的很舒适"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 74,
+          "end": 79,
+          "quote": "真的很舒适"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_69a906b633",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_60c379b0e3a7",
+      "source": "weibo",
+      "source_post_id": "4803069402941625",
+      "source_url": "https://m.weibo.cn/detail/4803069402941625",
+      "kind": "post",
+      "author": "芙蓉城里尽余晖",
+      "published_at": "2022-08-16T12:34:05+08:00",
+      "text": "#城市观察#\n成都的“林荫大道”真的太少太少\n这似乎和无处不在的“市树”银杏有关\n这一大夏天，区别就立刻出来了\n既然立志于成为公园城市典范\n成都有没有可能把街道树改为小叶榕、梧桐之类？\n\n遮阴功能更好，四季常绿，不会有几个月的枯叶期，最重要的是夏天的隔热作用会大大提高",
+      "excerpt": "成都的“林荫大道”真的太少太少",
+      "heat_relevance": "relevant",
+      "is_public_demand": true,
+      "demand_topic": "tree_canopy",
+      "demand_topic_zh": "树冠/绿化覆盖",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "sun_exposure"
+      ],
+      "spatial_demands": [
+        "shade_deficit"
+      ],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 7,
+          "end": 9
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 70,
+          "end": 72
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "evaluation_direction",
+          "start": 7,
+          "end": 22,
+          "quote": "成都的“林荫大道”真的太少太少"
+        },
+        {
+          "field": "content_types",
+          "start": 70,
+          "end": 92,
+          "quote": "成都有没有可能把街道树改为小叶榕、梧桐之类？"
+        },
+        {
+          "field": "demand_topic",
+          "start": 94,
+          "end": 100,
+          "quote": "遮阴功能更好"
+        },
+        {
+          "field": "spatial_demands",
+          "start": 117,
+          "end": 134,
+          "quote": "最重要的是夏天的隔热作用会大大提高"
+        }
+      ],
+      "confidence": 0.7,
+      "confidence_level": "medium",
+      "confidence_basis": [
+        "span_valid",
+        "public_demand"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_7a309f05a8",
+      "event_cluster_id": "ev_40325971c1"
+    },
+    {
+      "item_id": "wi_a12e0a077fd2",
+      "source": "weibo",
+      "source_post_id": "5339319204055475",
+      "source_url": "https://m.weibo.cn/detail/5339319204055475",
+      "kind": "post",
+      "author": "环球旅游攻略咖",
+      "published_at": "2026-09-04T06:59:21+08:00",
+      "text": "#微博旅行ing##带着微博去旅行# 青城山后山｜成都周边洗肺徒步秘境🌿\n\n距离成都市区一个多小时车程，青城山后山藏着一片清幽山水。不同于前山浓厚的道观人文，后山主打原生态山林溪流，是成都周边短途爬山、放松身心的绝佳去处。\n\n🌊踏入景区，满眼都是茂密葱郁的林木，满目绿意扑面而来。山间溪流贯穿全程，青苔爬满大大小小的岩石，潺潺瀑布顺着山石倾泻而下，水声潺潺。沿着木质栈道缓步向前，栈道傍着河谷蜿蜒，一路伴着溪水前行，行走其间，暑气瞬间消散，呼吸之间满是草木的清新气息。\n\n🥾徒步难度比较友好，不用硬核爬山。可以慢悠悠边走边赏景，累了就在溪边石头歇脚，听流水叮咚作响。沿途有不少观景点位，随手一拍都是充满山野氛围感的画面。全程山林遮阴，大部分路段不会暴晒，很适合周末出行，约上朋友结伴徒步格外舒服。\n\n后山没有过度商业化，保留着原生的山野质感。不必追赶打卡节奏，放慢脚步，看山泉奔涌，听林间鸟鸣，把城市里积攒的疲惫统统释放。\n\n周末逃离城市喧嚣，来青城山后山，一头扎进绿意满满的山水间，沉浸式感受四川山林独有的清凉与安逸。#四川旅行#",
+      "excerpt": "全程山林遮阴，大部分路段不会暴晒",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "positive_cooling",
+      "demand_topic_zh": "降温改善体验",
+      "evaluation_direction": "improvement",
+      "experience_tags": [
+        "cool"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "walking",
+        "leisure"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 25,
+          "end": 27
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 41,
+          "end": 43
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 93,
+          "end": 95
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "demand_topic",
+          "start": 215,
+          "end": 221,
+          "quote": "暑气瞬间消散"
+        },
+        {
+          "field": "heat_relevance",
+          "start": 313,
+          "end": 329,
+          "quote": "全程山林遮阴，大部分路段不会暴晒"
+        },
+        {
+          "field": "experience_tags",
+          "start": 457,
+          "end": 459,
+          "quote": "清凉"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_a8cbd172a9",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_66a33e242df6",
+      "source": "weibo",
+      "source_post_id": "5314028768335016",
+      "source_url": "https://m.weibo.cn/detail/5314028768335016",
+      "kind": "post",
+      "author": "成都发布",
+      "published_at": "2026-06-26T12:04:11+08:00",
+      "text": "【#成都夏日阴凉徒步地#】成都夏日8大避暑徒步地，满眼绿意，溪水潺潺，平均气温比市区低5-10℃，纯天然的26度空调房！（来源：YOU成都） 成都发布的微博视频",
+      "excerpt": "平均气温比市区低5-10℃，纯天然的26度空调房！",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "positive_cooling",
+      "demand_topic_zh": "降温改善体验",
+      "evaluation_direction": "improvement",
+      "experience_tags": [
+        "cool"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "other"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 13,
+          "end": 15
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 67,
+          "end": 69
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 71,
+          "end": 73
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "demand_topic",
+          "start": 13,
+          "end": 24,
+          "quote": "成都夏日8大避暑徒步地"
+        },
+        {
+          "field": "experience_tags",
+          "start": 35,
+          "end": 48,
+          "quote": "平均气温比市区低5-10℃"
+        },
+        {
+          "field": "content_types",
+          "start": 60,
+          "end": 70,
+          "quote": "（来源：YOU成都）"
+        }
+      ],
+      "confidence": 0.6,
+      "confidence_level": "low",
+      "confidence_basis": [
+        "span_valid"
+      ],
+      "review_status": "pending",
+      "duplicate_group_id": "dg_add87adeb4",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_db7f3a95ca9f",
+      "source": "weibo",
+      "source_post_id": "5311586397064080",
+      "source_url": "https://m.weibo.cn/detail/5311586397064080",
+      "kind": "post",
+      "author": "成都发布",
+      "published_at": "2026-06-19T18:19:04+08:00",
+      "text": "【#成都端午假期好去处#】不怕晒！成都5条遮阴绿道，骑行健步都适配，新手也适合！（来源：YOU成都） 成都发布的微博视频",
+      "excerpt": "不怕晒！成都5条遮阴绿道，骑行健步都适配，新手也适合！",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "tree_canopy",
+      "demand_topic_zh": "树冠/绿化覆盖",
+      "evaluation_direction": "improvement",
+      "experience_tags": [
+        "cool"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "cycling",
+        "walking"
+      ],
+      "time_status": "future",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 17,
+          "end": 19
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 47,
+          "end": 49
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 51,
+          "end": 53
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 13,
+          "end": 16,
+          "quote": "不怕晒"
+        },
+        {
+          "field": "heat_relevance",
+          "start": 21,
+          "end": 25,
+          "quote": "遮阴绿道"
+        },
+        {
+          "field": "activity_scene",
+          "start": 26,
+          "end": 33,
+          "quote": "骑行健步都适配"
+        }
+      ],
+      "confidence": 0.6,
+      "confidence_level": "low",
+      "confidence_basis": [
+        "span_valid"
+      ],
+      "review_status": "pending",
+      "duplicate_group_id": "dg_1a5a8aff5f",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_f64d1a8b8063",
+      "source": "weibo",
+      "source_post_id": "5153585864116007",
+      "source_url": "https://m.weibo.cn/detail/5153585864116007",
+      "kind": "post",
+      "author": "慧爱释小龙哥哥",
+      "published_at": "2025-04-09T18:21:22+08:00",
+      "text": "【刘小慧旅行出游杂谈💗阳光明媚日来成都双流中心公园赏八重樱啦】\n🌸这两天受严重鼻塞的影响，整个人昏昏沉沉的。昨天下午到今天上午经历了严重的胸闷气短加头晕，下午情况稍微好了些，勉强能出门了。听别的网友说，鼻塞特别严重的时候，出门活动活动会缓解鼻塞的症状。今天下午顶着体感三十一度的温度来到了双流中心公园。由于该公园遮阴处不多，因此气温高的时候走在公园里特别闷。下午四点钟的时候在一个稍微遮阴的座椅上坐了一会，这对我来说就相当于公园二十分钟效应了。不过眼下这个时间段成都的花絮依旧很多，不戴口罩的时候鼻子会受到花粉的影响。\n\n🌸今天唯一比较开心的事情便是晚上将近七点钟的时候在公园里面看到了夕阳和晚霞。虽然这个公园不是观赏夕阳和晚霞的绝佳公园，但是晴天的时候还是能看到不错的湖景。不过和成都其他湖景公园比，这个公园的遮阴效果要差一些。在成都众多湖景公园中，我比较喜欢锦城湖公园二号湖区和天府公园秦皇湖。最近这一年时间已经来过这两个公园很多次了，每次过来都能看到非常壮丽的景观。尤其是天府公园里面的秦皇湖，每个季节过去都能看到非常唯美的景观，而且这个公园也特别适合观赏日落。\n慧爱释小龙哥哥的微博直播",
+      "excerpt": "由于该公园遮阴处不多，因此气温高的时候走在公园里特别闷",
+      "heat_relevance": "relevant",
+      "is_public_demand": true,
+      "demand_topic": "park_greenway",
+      "demand_topic_zh": "公园绿道",
+      "evaluation_direction": "mixed",
+      "experience_tags": [
+        "hot",
+        "muggy"
+      ],
+      "spatial_demands": [
+        "shade_deficit",
+        "stay_comfort"
+      ],
+      "activity_scene": [
+        "walking",
+        "leisure"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 18,
+          "end": 20
+        },
+        {
+          "name": "双流",
+          "kind": "target",
+          "start": 20,
+          "end": 22
+        },
+        {
+          "name": "双流",
+          "kind": "target",
+          "start": 146,
+          "end": 148
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 233,
+          "end": 235
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 344,
+          "end": 346
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 369,
+          "end": 371
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 132,
+          "end": 143,
+          "quote": "顶着体感三十一度的温度"
+        },
+        {
+          "field": "spatial_demands",
+          "start": 155,
+          "end": 163,
+          "quote": "该公园遮阴处不多"
+        },
+        {
+          "field": "activity_scene",
+          "start": 172,
+          "end": 180,
+          "quote": "走在公园里特别闷"
+        },
+        {
+          "field": "demand_topic",
+          "start": 354,
+          "end": 367,
+          "quote": "这个公园的遮阴效果要差一些"
+        }
+      ],
+      "confidence": 0.65,
+      "confidence_level": "medium",
+      "confidence_basis": [
+        "span_valid",
+        "public_demand",
+        "negation_flag"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_abca0badde",
+      "event_cluster_id": "ev_24a5ffd5ce"
+    },
+    {
+      "item_id": "wi_41f0db31912a",
+      "source": "weibo",
+      "source_post_id": "5065506044778475",
+      "source_url": "https://m.weibo.cn/detail/5065506044778475",
+      "kind": "post",
+      "author": "Renee雲泥",
+      "published_at": "2024-08-09T17:03:36+08:00",
+      "text": "三根胶、六瓶水、一碗冰粉、一杯绿豆沙，5小时100km，从三圣乡花市进入，顺时针骑行，避开了青龙湖一段持续爬升（所以感觉逆时针更难），南门风景很美，新都金牛龙泉驿暴晒很难受（近2h基本没有遮阴），快中暑的状态。🥵\n\n路上遇到骑友送湿纸巾、在路边加油打气，和对向来车打招呼，对上一个眼神就能同行一段路，骑行的时候我更健康快乐，也更社交悍匪。\n\n这是我的25号底片，是我的“火花”，是我的golden hours。下一次的目标是春秋季能接近4h结束✔️，百公里均速接近25。说好要去更远更远的地方骑行，就要立刻出发🛫\n\n#骑有此理##骑行日记##成都天府绿道##天府绿道骑行# 成都",
+      "excerpt": "新都金牛龙泉驿暴晒很难受（近2h基本没有遮阴），快中暑的状态",
+      "heat_relevance": "relevant",
+      "is_public_demand": true,
+      "demand_topic": "shade_deficit",
+      "demand_topic_zh": "遮阴不足",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "sun_exposure",
+        "hot"
+      ],
+      "spatial_demands": [
+        "shade_deficit"
+      ],
+      "activity_scene": [
+        "cycling"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "龙湖",
+          "kind": "other",
+          "start": 47,
+          "end": 49
+        },
+        {
+          "name": "新都",
+          "kind": "target",
+          "start": 74,
+          "end": 76
+        },
+        {
+          "name": "龙泉驿",
+          "kind": "target",
+          "start": 78,
+          "end": 81
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 273,
+          "end": 275
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 289,
+          "end": 291
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "activity_scene",
+          "start": 37,
+          "end": 42,
+          "quote": "顺时针骑行"
+        },
+        {
+          "field": "experience_tags",
+          "start": 81,
+          "end": 86,
+          "quote": "暴晒很难受"
+        },
+        {
+          "field": "spatial_demands",
+          "start": 87,
+          "end": 96,
+          "quote": "近2h基本没有遮阴"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 98,
+          "end": 104,
+          "quote": "快中暑的状态"
+        }
+      ],
+      "confidence": 0.9,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees",
+        "public_demand"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_6ca0de750d",
+      "event_cluster_id": "ev_47e214935f"
+    },
+    {
+      "item_id": "wi_ad6d94f6f59a",
+      "source": "weibo",
+      "source_post_id": "5350266716029644",
+      "source_url": "https://m.weibo.cn/detail/5350266716029644",
+      "kind": "post",
+      "author": "阿叽啊咗",
+      "published_at": "2026-10-04T12:00:51+08:00",
+      "text": "青城山·前山\n二刷青城山，这次选择全程徒步。\n负氧离子的空气和凉爽天气的加持，爬山起来轻松多了。\n小径悠悠，苍树遮阴，一路神清气爽。去年错过的景点，今年一一补上。 都江堰·青城山景区",
+      "excerpt": "负氧离子的空气和凉爽天气的加持，爬山起来轻松多了。",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "positive_cooling",
+      "demand_topic_zh": "降温改善体验",
+      "evaluation_direction": "improvement",
+      "experience_tags": [
+        "cool"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "walking",
+        "leisure"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "都江堰",
+          "kind": "target",
+          "start": 82,
+          "end": 85
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 31,
+          "end": 35,
+          "quote": "凉爽天气"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 43,
+          "end": 47,
+          "quote": "轻松多了"
+        },
+        {
+          "field": "demand_topic",
+          "start": 54,
+          "end": 58,
+          "quote": "苍树遮阴"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_8093345468",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_18dd2df9cd9c",
+      "source": "weibo",
+      "source_post_id": "5344551929907396",
+      "source_url": "https://m.weibo.cn/detail/5344551929907396",
+      "kind": "post",
+      "author": "食光漫游者",
+      "published_at": "2026-09-18T17:32:20+08:00",
+      "text": "找到公园里，光会停下的地方。国内旅游\n不用长途奔赴，地铁口旁边就藏着一个安静的小园子，彩蝶游园。\n📍位置\n锦江区晨辉东路89号，琉璃场D口步行60米。\n\n🚶园内情况\n属于社区配套游园，树木茂密，遮阴不错。有石头、步道，还有一处凉亭。没有游乐设施，适合短暂停留，简单散步。\n\n✨顺路攻略\n适合顺路打卡，逛完之后，周边生活配套齐全。想吃东西，附近馆子选择多。如果只是短暂放空，这里足够。\n\n💬互动\n出门路过地铁口，你会愿意拐进这种小游园坐一会吗？国内旅游旅游攻略微博兴趣创作计划#带着微博去旅行##兴趣创作计划#云图计划#遇见美好##我的旅行日记# 成都·彩蝶游园",
+      "excerpt": "属于社区配套游园，树木茂密，遮阴不错。有石头、步道，还有一处凉亭。",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "positive_cooling",
+      "demand_topic_zh": "降温改善体验",
+      "evaluation_direction": "improvement",
+      "experience_tags": [
+        "cool"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "leisure",
+        "walking"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "锦江区",
+          "kind": "target",
+          "start": 54,
+          "end": 57
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 276,
+          "end": 278
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "actionability",
+          "start": 54,
+          "end": 75,
+          "quote": "锦江区晨辉东路89号，琉璃场D口步行60米"
+        },
+        {
+          "field": "demand_topic",
+          "start": 94,
+          "end": 103,
+          "quote": "树木茂密，遮阴不错"
+        },
+        {
+          "field": "experience_tags",
+          "start": 99,
+          "end": 103,
+          "quote": "遮阴不错"
+        },
+        {
+          "field": "activity_scene",
+          "start": 125,
+          "end": 136,
+          "quote": "适合短暂停留，简单散步"
+        }
+      ],
+      "confidence": 0.6,
+      "confidence_level": "low",
+      "confidence_basis": [
+        "span_valid"
+      ],
+      "review_status": "pending",
+      "duplicate_group_id": "dg_d3d6093c6a",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_6fa6dde8ea78",
+      "source": "weibo",
+      "source_post_id": "4841457163176567",
+      "source_url": "https://m.weibo.cn/detail/4841457163176567",
+      "kind": "post",
+      "author": "南风知我意_WX",
+      "published_at": "2022-11-30T10:53:20+08:00",
+      "text": "#我的疫情观察##成都疫情#\n\n有一个院子，前院有花，面朝水田\n后院有天井，院子右边有菜地。\n菜地前半截种菜，后半截养鸡。\n院子左边是一排大大的柏树，遮风挡雨，夏日遮阴\n他们不用随时担心被静态\n也不用担心活动不开\n更不用每天去做Hei酸证明自己没病\n\n这就是疫情下我爸妈的养老生活 成都",
+      "excerpt": "院子左边是一排大大的柏树，遮风挡雨，夏日遮阴",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "positive_cooling",
+      "demand_topic_zh": "降温改善体验",
+      "evaluation_direction": "improvement",
+      "experience_tags": [
+        "cool"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "other"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 9,
+          "end": 11
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 141,
+          "end": 143
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "heat_relevance",
+          "start": 75,
+          "end": 84,
+          "quote": "遮风挡雨，夏日遮阴"
+        },
+        {
+          "field": "demand_topic",
+          "start": 80,
+          "end": 84,
+          "quote": "夏日遮阴"
+        }
+      ],
+      "confidence": 0.6,
+      "confidence_level": "low",
+      "confidence_basis": [
+        "span_valid"
+      ],
+      "review_status": "pending",
+      "duplicate_group_id": "dg_1a217dacba",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_05b568f6120e",
+      "source": "weibo",
+      "source_post_id": "5063084863392450",
+      "source_url": "https://m.weibo.cn/detail/5063084863392450",
+      "kind": "post",
+      "author": "hoholeelee",
+      "published_at": "2024-08-03T00:42:42+08:00",
+      "text": "蒋敦豪\n二九十八成都站顺利收官！\n谢谢你敦敦，用了八年来到了成都，走的每一步路都算数。二十九岁的蒋敦豪终于实现了十八岁的梦想。\n如果没有爱，livehouse会很累，但敦敦考虑到了超级多细节尽可能的照顾到大家。为了不让大家夜排，就随机生成入场顺序号码；演出当天成都35度高温最近最热的一天，就斥巨资租了很多帐篷给大家遮阴，看到前排有个年龄很小的妹妹就给她递水。还有用心改编的歌，很有趣的talking环节，说着如果有的人是第一次听这首歌，一定要有下一次哦。热场环节也是放十个勤天的歌，严格按顺序播放，全场大合唱，怎么不爱你一辈子啊敦敦一定还要见很多很多面！",
+      "excerpt": "演出当天成都35度高温最近最热的一天，就斥巨资租了很多帐篷给大家遮阴",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "positive_cooling",
+      "demand_topic_zh": "降温改善体验",
+      "evaluation_direction": "improvement",
+      "experience_tags": [
+        "hot"
+      ],
+      "spatial_demands": [
+        "waiting_comfort"
+      ],
+      "activity_scene": [
+        "waiting"
+      ],
+      "time_status": "historical",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 8,
+          "end": 10
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 30,
+          "end": 32
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 130,
+          "end": 132
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "evaluation_direction",
+          "start": 95,
+          "end": 104,
+          "quote": "尽可能的照顾到大家"
+        },
+        {
+          "field": "activity_scene",
+          "start": 105,
+          "end": 113,
+          "quote": "为了不让大家夜排"
+        },
+        {
+          "field": "experience_tags",
+          "start": 130,
+          "end": 144,
+          "quote": "成都35度高温最近最热的一天"
+        },
+        {
+          "field": "spatial_demands",
+          "start": 149,
+          "end": 160,
+          "quote": "租了很多帐篷给大家遮阴"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_463310dc2a",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_5d6e05cc48c1",
+      "source": "weibo",
+      "source_post_id": "5347380436406325",
+      "source_url": "https://m.weibo.cn/detail/5347380436406325",
+      "kind": "post",
+      "author": "用户7923376804",
+      "published_at": "2026-09-26T12:51:48+08:00",
+      "text": "成都市什么地方最适合避暑养老，都江堰、崇州市、郫都区比较\n\n综合对比来看，都江堰是最适合高血压退休老人避暑养老的选择，其次是崇州九龙沟片区，郫都区更适合日常近郊慢游而非深度避暑长住。\n\n都江堰：核心避暑区青龙岭平均海拔约1000米，夏季平均气温仅26.5℃，比成都城区低5-8℃，90%森林覆盖率搭配80%适宜湿度，完全避开高反风险，对\n\n稳定血压十分友好。\n\n崇州：九龙沟片区海拔800-1000米，夏季平均气温约25℃，同样比城区低5-8℃，山林遮阴效果好，溪边步道全程平缓，体感清凉不闷热。\n\n郫都区：海拔仅500米左右，9月最高温仍可达28-32℃，整体气温更接近成都主城，避暑属性最弱，仅早晚体感舒适。\n\n都江堰：作为官方认证的“长寿之乡”，本地三甲医院、社区养老服务站覆盖完善，2026年成都统一的养老服务消费券可直接抵扣50%居家养老服务费，\n\n每月最高抵扣800元，适老配套成熟度最高。\n\n崇州：九龙沟片区农家乐普遍完成适老化改造，多数加装电梯，部分点位配备基础医务室，连吃带住每天仅120-180元，长住还可议价，性价比突出，但\n\n城区核心医疗资源距离避暑片区约40分钟车程。\n\n郫都区：紧邻成都主城，三甲医院、菜市场、便民商超步行可达，养老配套完全与主城同标准，日常就医、采购零门槛，但夏季清凉感不足，更适合短住慢游。\n\n都江堰：支持天府通公交直达，从成都主城出发全程公共交通2小时内可达，景区周边绿道全部平缓无陡坡，完全适配低强度慢游需求。\n\n崇州：乡村公交可直达九龙沟片区，全程柏油路面，路况平稳不颠簸，即便容易晕车的老人也能舒适抵达，子女周末自驾探望仅需1小时出头。\n\n郫都区：纯公交出行最便捷，P49路等多条线路串联全区景点，绿道系统成熟，日常散步、逛农家院的步行强度极低，完全适配退休老人的出行习惯。\n\n追求避暑效果+成熟养老配套，优先选都江堰，既能享受山林清凉，又能随时对接完善的医疗和养老福利，对高血压老人最友好。\n\n看重高性价比、安静不嘈杂，选崇州九龙沟，低成本包吃住长住两三个月，避暑体验纯粹，适合想彻底躲开城市闷热的老人。\n\n不想离开主城太远、日常需要频繁就医复查，选郫都区，生活便利度拉满，日常在绿道散步吸氧也能获得不错的康养效果。\n\n郫都区周边这些低强度避暑慢游点位，全程平路无陡坡、树荫覆盖率高，适配退休老人慢游节奏，支持天府通公交直达，体感清凉不闷热。\n\n徐堰河湿地公园：标志性双虹桥空中绿道全程平缓，桥面宽3.5米，河风穿桥而过，夏日暑气一扫而空。可在桥下垂钓、亭中纳凉闲聊，游玩结束顺路打卡三道堰古镇品尝河鲜，全程步行不超过3公里。\n\n清水河生态艺术公园：沿清水河蜿蜒2.8公里，分为五大主题亲水板块，浅滩平缓、林荫茂密。可在亲水栈道听流水声，在草坪凉亭歇脚品茶，完全不用爬坡上坎，体感温度比城区低3-4℃。\n\n青杨村湿地公园：本地小众原生态湿地，连片树荫遮蔽几乎无暴晒路段，浅滩平缓安全。可临水散步、静坐纳凉，周边农家乐平价实惠，连吃带住人均80元/天起。\n\n蝴蝶村：千亩稻田搭配花海步道，全程平路错落有致。村内咖啡馆、便民休息点齐全，慢悠悠闲逛2-3小时毫无压力，不同季节还有应季蔬果采摘体验。\n\n东林艺术村：没有喧闹商业，只有稻田林盘间的美术馆和文创空间。绿道平整开阔，可散步赏景，也能租休闲自行车慢骑，沿途补给点充足，完全不用赶\n\n行程。\n\n安德广福村田园绿道：12公里精品田园环线，不拼速不赶场，沿途串起稻浪林盘和乡村市集。步道全程平缓，走累了随时能在田边茶铺歇脚，还能买到新鲜的本土农产品。\n\n三道堰古镇：徐堰河、柏条河双河环绕，亲水步道全程临水，川西民居依水而建。可在河边盖碗茶铺坐一下午，吹河风听流水，沿途小吃店、便民座椅密集，步行强度极低。\n\n唐昌古镇：古城墙、文庙、崇宁公园连片分布，街巷平整无台阶。古镇内遍布老茶馆和地道平价餐馆，逛累了随时能坐下休息，本地的施鸭子、朱记牛肉都是性价比很高的特色美食。\n\n世界科幻公园：沿绿道慢行可直达曙光沙滩，沿途蓝花草、桂香相伴，蜀韵园的川西园林亭台错落，湖边清幽茶舍视野开阔。全程绿道无障碍，走累了随\n\n时能在临湖茶座歇脚放空。\n\n多利桃花源：位于郫都区护白路，千亩田园风光环绕，夏季体感清凉不闷热，长住包吃住人均100-120元/天。园区步道全程平缓无陡坡，配套休闲茶座和\n\n自种有机蔬菜，适合日常慢走散步，距离城区三甲医院仅20分钟车程，就医十分方便。\n\n成都逸亭农家乐：地处友爱镇农科村迎宾路，三面环水，河风常年穿院而过，比城区低3-4℃。集住宿、餐饮、休闲为一体，房间采光通风良好，长住可\n\n定制软烂低盐的农家家常菜，适配老年人口味。\n\n施家大院农家乐：位于安靖镇喜安四组246号，交通便利，自驾和公共交通都能直达。院内空间开阔，树荫覆盖率高，配套棋牌室和便民休息区，长住包\n\n月价格可协商，日常采购生活用品步行10分钟就能到商超。\n\n府河桃源休闲庄：在友爱镇农科村1组23号，整体环境清幽雅致，农家菜口味清淡适口。周边绿道串联多个湿地公园，每天饭后散步就能直达河边纳凉，长住客可享专属洗衣晾晒服务，细节十分贴心。\n\n青城山崧园农家乐：距离青城山景区仅1公里，海拔约800米，夏季平均气温26℃，完全不用开空调。配套免费停车场、公共茶室和棋牌室，房间被褥干爽不返潮，长住包吃住150-180元/天，支持24小时前台服务，紧急情况响应快。\n鲲鹏农庄：位于都江堰天马镇，周边连片葡萄园和猕猴桃采摘园环绕，山林覆盖率高，体感清凉。主打柴火鸡和田间自种鲜蔬，可根据老人需求调整餐食软硬度，周边绿道全程平缓，日常散步就能体验田园采摘乐趣。\n\n小林苑家庭农场：主打农家本味家常菜，食材全部来自农场自种，低盐少油适配高血压老人饮食要求。院内小院安静不嘈杂，配套基础医务室，距离都江堰市区三甲医院仅25分钟车程，长住包月性价比很高。\n\n九龙沟怡心苑农家乐：位于崇州九龙沟核心避暑区，海拔900米，夏季平均气温25℃，溪边步道出门即达。长住包吃住人均120-150元/天，房间全部加装适老化扶手，老板可帮忙代买常用药品，周边山林遮阴效果好，全天几乎无暴晒路段。\n鸡冠山桃园居农家乐：周边被原始山林环绕，负氧离子浓度极高，对稳定血压十分友好。配套免费棋牌和公共茶座，餐食全部用本地山泉水烹饪，长住客可享专属菜园采摘权限，日常散步就能沿溪慢走，完全不用爬坡上坎。\n\n街子古镇味江人家农家乐：紧邻味江河边，河风穿院而过，体感清凉不闷热。距离街子古镇步行仅5分钟，日常逛古镇、赶市集十分方便，长住包吃住130-160元/天，房间全部配备防滑地板，适老化细节到位。\n\n预订前务必和老板视频确认房间通风、被褥干燥度，提前问清水电费、空调费是否额外收费，避免隐形消费。\n\n提前沟通餐食需求，明确是否支持定制低盐、软烂的专属菜品，确认每日几菜几汤的标准。\n\n优先选择距离乡镇卫生院车程20分钟以内的点位，方便日常监测血压和应对突发健康情况。",
+      "excerpt": "连片树荫遮蔽几乎无暴晒路段，浅滩平缓安全",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "positive_cooling",
+      "demand_topic_zh": "降温改善体验",
+      "evaluation_direction": "mixed",
+      "experience_tags": [
+        "muggy",
+        "sun_exposure",
+        "cool"
+      ],
+      "spatial_demands": [
+        "stay_comfort",
+        "water_or_cooling_facility"
+      ],
+      "activity_scene": [
+        "walking",
+        "leisure"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 0,
+          "end": 2
+        },
+        {
+          "name": "都江堰",
+          "kind": "target",
+          "start": 15,
+          "end": 18
+        },
+        {
+          "name": "崇州",
+          "kind": "target",
+          "start": 19,
+          "end": 21
+        },
+        {
+          "name": "郫都",
+          "kind": "target",
+          "start": 23,
+          "end": 25
+        },
+        {
+          "name": "都江堰",
+          "kind": "target",
+          "start": 37,
+          "end": 40
+        },
+        {
+          "name": "崇州",
+          "kind": "target",
+          "start": 62,
+          "end": 64
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "evaluation_direction",
+          "start": 279,
+          "end": 297,
+          "quote": "整体气温更接近成都主城，避暑属性最弱"
+        },
+        {
+          "field": "demand_topic",
+          "start": 1040,
+          "end": 1048,
+          "quote": "夏日暑气一扫而空"
+        },
+        {
+          "field": "experience_tags",
+          "start": 1200,
+          "end": 1213,
+          "quote": "连片树荫遮蔽几乎无暴晒路段"
+        },
+        {
+          "field": "experience_tags",
+          "start": 1746,
+          "end": 1755,
+          "quote": "夏季体感清凉不闷热"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_46fb8858fa",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_6102905affc3",
+      "source": "weibo",
+      "source_post_id": "5338773920940580",
+      "source_url": "https://m.weibo.cn/detail/5338773920940580",
+      "kind": "post",
+      "author": "苟点不二",
+      "published_at": "2026-09-02T18:52:35+08:00",
+      "text": "去成都市政务中心办事，为了节约时间，停车在负二楼下，就是光大金融中心写字楼的停车场。\n\n价格，首小时8元，以后每小时5元。这个地界儿这个价格不算贵，肯定也不便宜。\n\n我看高德地图上不少吐槽价格贵的网友，没办法，这些写字楼下面停车位紧张。隔壁大停车场便宜点，要走一截；大停车场是空坝子，没有任何遮阴，也很晒。 成都·成都市政务中心",
+      "excerpt": "大停车场是空坝子，没有任何遮阴，也很晒",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "shade_deficit",
+      "demand_topic_zh": "遮阴不足",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "sun_exposure"
+      ],
+      "spatial_demands": [
+        "shade_deficit"
+      ],
+      "activity_scene": [
+        "walking",
+        "other"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 1,
+          "end": 3
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 154,
+          "end": 156
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 157,
+          "end": 159
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "excerpt",
+          "start": 133,
+          "end": 152,
+          "quote": "大停车场是空坝子，没有任何遮阴，也很晒"
+        },
+        {
+          "field": "spatial_demands",
+          "start": 142,
+          "end": 148,
+          "quote": "没有任何遮阴"
+        },
+        {
+          "field": "experience_tags",
+          "start": 149,
+          "end": 152,
+          "quote": "也很晒"
+        }
+      ],
+      "confidence": 0.7,
+      "confidence_level": "medium",
+      "confidence_basis": [
+        "span_valid",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_fe3af8f926",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_a5f0654e4922",
+      "source": "weibo",
+      "source_post_id": "5332163144974479",
+      "source_url": "https://m.weibo.cn/detail/5332163144974479",
+      "kind": "post",
+      "author": "文旅成都",
+      "published_at": "2026-08-15T13:03:42+08:00",
+      "text": "#一起追秋到成都# 周末不如来#仰天窝健身步道 #🍃跟着成都公交一同邂逅绿意，清凉迎战 “秋老虎”！\n仰天窝健身步道地势平缓，老人小孩都适合；林木茂密遮阴纳凉，竹林、溪流相伴，清风拂面，沿途多处可供休憩，沉浸式避开燥热。\n🚌乘车指南：\n✅去程｜地铁牛市口 B 口，7:30、8:00、9:00 三趟发车\n✅返程｜桃花溪路永溪街口站（健身步道对面），11:30、16:00、16:30 三班等候#文旅成都# （来源：@成都公交 ）",
+      "excerpt": "林木茂密遮阴纳凉，竹林、溪流相伴，清风拂面，沿途多处可供休憩",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "park_greenway",
+      "demand_topic_zh": "公园绿道",
+      "evaluation_direction": "improvement",
+      "experience_tags": [
+        "cool"
+      ],
+      "spatial_demands": [
+        "stay_comfort"
+      ],
+      "activity_scene": [
+        "walking",
+        "leisure"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 6,
+          "end": 8
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 29,
+          "end": 31
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 201,
+          "end": 203
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "demand_topic",
+          "start": 76,
+          "end": 80,
+          "quote": "遮阴纳凉"
+        },
+        {
+          "field": "experience_tags",
+          "start": 89,
+          "end": 93,
+          "quote": "清风拂面"
+        },
+        {
+          "field": "spatial_demands",
+          "start": 94,
+          "end": 102,
+          "quote": "沿途多处可供休憩"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 103,
+          "end": 110,
+          "quote": "沉浸式避开燥热"
+        }
+      ],
+      "confidence": 0.6,
+      "confidence_level": "low",
+      "confidence_basis": [
+        "span_valid"
+      ],
+      "review_status": "pending",
+      "duplicate_group_id": "dg_2be4956401",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_6e9579ca966c",
+      "source": "weibo",
+      "source_post_id": "5330863610661002",
+      "source_url": "https://m.weibo.cn/detail/5330863610661002",
+      "kind": "post",
+      "author": "友思有径智库",
+      "published_at": "2026-08-11T22:59:50+08:00",
+      "text": "成都为何越来越热？@郑渝川\n\n 文：郑渝川\n\n《中国科学报》8月10日刊发了一篇有意思的报道《给城市做“热体检”，精准揪出高温隐患》。\n\n天气预报说最高温只有三十几摄氏度，怎么感觉像四十摄氏度？不少人在夏天都有过这样的疑惑。此外，即使在同一座城市的不同街区，热浪带来的实际感受也天差地别。这是因为天气预报只报告最高温、最低温和湿度，而人体的感受是温度、湿度、太阳辐射、风速等多种因素共同作用的结果。\n\n近日，四川大学灾后重建与管理学院副研究员常颖团队在城市高温热风险评估与韧性规划领域取得新进展。他们选取2022年8月20日至23日的四川成都作为研究对象，识别出5类具有不同时空动态特征的热风险分区。\n\n研究团队从国际公开的气象档案里提取了成都周边大范围的温度、风速、湿度、辐射数据，利用高分辨率天气研究与预报（WRF）模型，把粗颗粒的底图逐层细化，就像不断拉近的镜头一样，最终把成都主城区划分为高分辨率的空间网格。每个网格单元精细到公里级别，并算出网格里的温度、湿度、风速和太阳辐射等。\n\n团队进一步叠加了每个街区每小时的人口流动数据，以及老年人、婴幼儿比例，医疗设施远近等社会脆弱性指标。\n\n第一类是持续高风险区，属于白天热、晚上更热的全天候“火炉”模式。这类街区通常高楼密集、建筑密度大、人口扎堆。这类区域往往与城市中心地带、繁荣商业区等相重合。研究团队建议，应对这一区域高温，应通过增加绿化、打通通风廊道、给建筑降温等。\n\n第三类是热量滞留波动区，其特点是白天温度不算特别突出，但夜晚降温极慢，热量容易“赖着不走”。“我们建议这些区域增加透水铺装，扩大夜间绿地与水体的降温辐射范围。”\n\n第四类是缓解波动区，这类区域内老年人和0到4岁婴幼儿比例很高，附近医疗设施可及性相对较低。因此，不仅需要增加遮阴设施，还要配备相应的社区急救点等。\n\n这项研究很有价值。\n\n传统的天气预报，主要包括最高温、最低温和湿度等指标。但哪怕这些指标相同的不同城市，以及同一城市的不同街区，市民的实际高温体认情况相差很大。\n\n今年7月中下旬，以及8月中旬，成都再度迎来连日高温。而在7月中下旬，整个四川省、四川盆地范围内，大多数地区都长时段萦绕在高温热之中。\n\n虽然气象部门根据预报和气象实际监测情况，发布高温预警的橙色、黄色、红色警报，但这些警报信息具有显著的滞后性，而且也一定程度上与市民的实际体认情况相悖。\n\n四川盆地内，长江与几个重要支流的交汇点城市，包括重庆、宜宾、泸州，以及支流交汇城市，如乐山，高温热滞留情况显著，不仅天气预报和监测显示的最高温，遥遥领先，而且当地市民的实际高温感受也高于盆地内其他多数城市甚至国外南方大多数城市。\n\n成都和重庆的城市体量，尤其是高楼密集区域面积大，城市中心城区和最近20多年里的新建城区、扩建城区，建筑密度大，在规划建造之初很少考虑留出气流流通的通道，也没有有意识地控制城区玻璃幕墙的密度，进而大片的城区范围内出现研究者所称的全天候“火炉”，就难以避免。\n\n成都曾经在很长时期内，春夏秋三季尤其是夏季的气温要低于重庆。但在近年来，这一定律似乎走向失效。尽管成都城区的最高温、平均温仍低于重庆的沙坪坝等地，但相差绝对值是在缩小的。而从同时拥有两地工作、生活经验的市民的感受来看，也是如此。\n\n从2010年的第六次全国人口普查，到2020年的第七次全国人口普查，成都的常住人口在十年内增长了数百万，突破2000万人大关。而在四川省范围内，多个地级市常住人口大规模“流失”——这其中，多数流入了成都市，一部分则流向了重庆，以及省外其他城市。\n\n这也意味着，作为2000万级人口的超大城市，成都夏季气温升高，缩小与重庆的差距，这与人口快速扩充、城市建成区快速膨胀存在因果关系。如前述，这种快速扩容的过程，就显得相当粗疏，对于城市功能合理分区以缩短通勤距离，减少尾气排放等缓慢但持续升高气温的诱引因素，重视不足。也没有从城市区域规划等视角，设法为城市不同区域、街区留出气流流通通道、控制建筑玻璃幕墙比率、设计建筑降温方案。\n\n这也意味着，现在包括成都在内，很多城市大片大片的城区、街区遭遇夏季高温，会不同程度上分化为持续高风险区、热量滞留波动区，较多的居民暴露在极高温长时段考验下，生命安全和生活质量受到很大影响。\n\n虽然我国城市并不至于出现最近一些年来欧洲很多城市面临的那种没有空调使用，或者印度许多地区面临的缺乏稳定电力供应的状况，但长时段的超高温状态，对于城市运转和生活质量的持续影响仍然十分突出。 友思有径智库的微博视频",
+      "excerpt": "应通过增加绿化、打通通风廊道、给建筑降温等",
+      "heat_relevance": "relevant",
+      "is_public_demand": true,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "hot"
+      ],
+      "spatial_demands": [
+        "shade_deficit",
+        "ventilation",
+        "water_or_cooling_facility"
+      ],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 0,
+          "end": 2
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 269,
+          "end": 271
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 320,
+          "end": 322
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 390,
+          "end": 392
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 870,
+          "end": 872
+        },
+        {
+          "name": "重庆",
+          "kind": "other",
+          "start": 1024,
+          "end": 1026
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 0,
+          "end": 8,
+          "quote": "成都为何越来越热"
+        },
+        {
+          "field": "content_types",
+          "start": 23,
+          "end": 46,
+          "quote": "《中国科学报》8月10日刊发了一篇有意思的报道"
+        },
+        {
+          "field": "spatial_demands",
+          "start": 600,
+          "end": 606,
+          "quote": "打通通风廊道"
+        },
+        {
+          "field": "spatial_demands",
+          "start": 750,
+          "end": 756,
+          "quote": "增加遮阴设施"
+        }
+      ],
+      "confidence": 0.9,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees",
+        "public_demand"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_144e64b40c",
+      "event_cluster_id": "ev_bd1827fd00"
+    },
+    {
+      "item_id": "wi_a909072c0b0b",
+      "source": "weibo",
+      "source_post_id": "5332261192860589",
+      "source_url": "https://m.weibo.cn/detail/5332261192860589",
+      "kind": "post",
+      "author": "weatherman_信欣",
+      "published_at": "2026-08-15T19:33:20+08:00",
+      "text": "【高温】今天新疆四川重庆站点包揽了高温榜前十。福州重庆成都三个省会直辖市出现高温。未来成都和福州因为降雨增多，高温有望告一段落。18日成都只有26℃，比今天低10℃。未来重庆的高温依然会持续，连报7天。常年8月就是重庆全年高温最多的月份，而重庆也是常年8月高温最多的省会首府直辖市。所以8月高温看重庆。\n\n未来2-3天南方总体的高温看似不多，大多不到35℃，但是湿度大，露水凝结点温度普遍超24℃，因此不下雨的时候依然闷热，有不少隐形的高温，体感温度可以超40℃。而且18日以后，因为副热带高压控制，南方明面上的高温也会增多。武汉预计18-22日连续出现高温。目前还在末伏当中，有高温不稀奇。",
+      "excerpt": "不下雨的时候依然闷热",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "mixed",
+      "experience_tags": [
+        "hot",
+        "muggy"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "future",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "other",
+          "start": 10,
+          "end": 12
+        },
+        {
+          "name": "福州",
+          "kind": "other",
+          "start": 23,
+          "end": 25
+        },
+        {
+          "name": "重庆",
+          "kind": "other",
+          "start": 25,
+          "end": 27
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 27,
+          "end": 29
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 43,
+          "end": 45
+        },
+        {
+          "name": "福州",
+          "kind": "other",
+          "start": 46,
+          "end": 48
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "evaluation_direction",
+          "start": 41,
+          "end": 63,
+          "quote": "未来成都和福州因为降雨增多，高温有望告一段落"
+        },
+        {
+          "field": "content_types",
+          "start": 83,
+          "end": 100,
+          "quote": "未来重庆的高温依然会持续，连报7天"
+        },
+        {
+          "field": "time_status",
+          "start": 153,
+          "end": 170,
+          "quote": "未来2-3天南方总体的高温看似不多"
+        },
+        {
+          "field": "experience_tags",
+          "start": 201,
+          "end": 211,
+          "quote": "不下雨的时候依然闷热"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_ec5ec7e940",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_b900c830e412",
+      "source": "weibo",
+      "source_post_id": "5332954058331293",
+      "source_url": "https://m.weibo.cn/detail/5332954058331293",
+      "kind": "post",
+      "author": "中国气象爱好者",
+      "published_at": "2026-08-17T17:26:32+08:00",
+      "text": "#天气##高温##暴雨##四川##重庆# 四川盆地今天继续上演“鸳鸯锅”，盆地西部阴雨凉爽、盆地东部高温酷热，16点成都21.6度与重庆38.4度两地温差高达16.8度，体感完全两个季节!",
+      "excerpt": "四川盆地今天继续上演“鸳鸯锅”，盆地西部阴雨凉爽、盆地东部高温酷热",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "mixed",
+      "experience_tags": [
+        "hot",
+        "cool"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "other",
+          "start": 17,
+          "end": 19
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 58,
+          "end": 60
+        },
+        {
+          "name": "重庆",
+          "kind": "other",
+          "start": 66,
+          "end": 68
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "time_status",
+          "start": 25,
+          "end": 27,
+          "quote": "今天"
+        },
+        {
+          "field": "experience_tags",
+          "start": 37,
+          "end": 54,
+          "quote": "盆地西部阴雨凉爽、盆地东部高温酷热"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 85,
+          "end": 94,
+          "quote": "体感完全两个季节!"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_3c4d15f9b7",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_0541f5321096",
+      "source": "weibo",
+      "source_post_id": "5353680246931709",
+      "source_url": "https://m.weibo.cn/detail/5353680246931709",
+      "kind": "post",
+      "author": "成都发布",
+      "published_at": "2026-10-13T22:05:00+08:00",
+      "text": "【#成都降温降雨快来了#】据成都气象消息，明后两天天空逐步转差，早晚时段多分散的小雨，预计未来一周我市以阴天间多云天气为主，多分散小雨，17日最高气温将降至22℃。晚安",
+      "excerpt": "17日最高气温将降至22℃",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "neutral",
+      "experience_tags": [],
+      "spatial_demands": [],
+      "activity_scene": [],
+      "time_status": "future",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 14,
+          "end": 16
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "heat_relevance",
+          "start": 2,
+          "end": 11,
+          "quote": "成都降温降雨快来了"
+        },
+        {
+          "field": "content_types",
+          "start": 13,
+          "end": 20,
+          "quote": "据成都气象消息"
+        },
+        {
+          "field": "time_status",
+          "start": 21,
+          "end": 25,
+          "quote": "明后两天"
+        }
+      ],
+      "confidence": 0.6,
+      "confidence_level": "low",
+      "confidence_basis": [
+        "span_valid"
+      ],
+      "review_status": "pending",
+      "duplicate_group_id": "dg_f4eb1cdae8",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_6fc967a15f9e",
+      "source": "weibo",
+      "source_post_id": "5323022232977944",
+      "source_url": "https://m.weibo.cn/detail/5323022232977944",
+      "kind": "post",
+      "author": "华东气象爱好者",
+      "published_at": "2026-07-21T07:41:00+08:00",
+      "text": "【成都极端高温】21-23日，四川盆地西部的热力条件还将进一步好转，成都市区将出现40℃左右的极端高温天气，其中22日温江国家站可能有38℃以上，“热度”基本仅次于2022。",
+      "excerpt": "成都市区将出现40℃左右的极端高温天气",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "neutral",
+      "experience_tags": [
+        "hot"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "future",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 1,
+          "end": 3
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 34,
+          "end": 36
+        },
+        {
+          "name": "温江",
+          "kind": "target",
+          "start": 59,
+          "end": 61
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 3,
+          "end": 7,
+          "quote": "极端高温"
+        },
+        {
+          "field": "time_status",
+          "start": 8,
+          "end": 14,
+          "quote": "21-23日"
+        },
+        {
+          "field": "content_types",
+          "start": 34,
+          "end": 53,
+          "quote": "成都市区将出现40℃左右的极端高温天气"
+        },
+        {
+          "field": "location_mentions",
+          "start": 59,
+          "end": 64,
+          "quote": "温江国家站"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_b8faac7d96",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_ef69d1900701",
+      "source": "weibo",
+      "source_post_id": "5358250002219749",
+      "source_url": "https://m.weibo.cn/detail/5358250002219749",
+      "kind": "post",
+      "author": "weatherman_信欣",
+      "published_at": "2026-10-26T12:43:35+08:00",
+      "text": "【一周天气——北冷南热】本周（10月26日-11月1日）依然是北方冷空气占主导，南方副热带高压维持强势。导致南北温度反差很大。北方多地在周二周三以及周六周日，气温有两波创新低过程。云南、华南一带，本周气温持续偏高。此外，孟湾风暴北上+高空槽东移，可能导致西藏南部30日前后出现强降雪。\n\n1、降水\n10月26-28日冷暖空气的交汇区，主要在黄淮、西北地区东南部、四川盆地东部及云贵高原，部分地区有小到中雨，局地大雨。10月29-30日因为高空冷涡+地面气旋发展东移，内蒙古东北部和黑龙江北部等地可能出现明显降雪。图1为官方报、图2-3为欧美数值预报，图4-5为形势场。\n\n10月29日夜间-31日，因为高空槽东移+孟湾风暴北上影响，西藏、青海中南部有明显雨雪天气，西藏中部、青海南部的部分地区有中到大雪或雨夹雪，西藏南部边境，在地形抬升作用下，有暴雪或大暴雪。之后高空槽继续东移，10月31日-11月1日中东部降水增多，但黄淮的降水范围和强度存疑。\n\n对比欧洲报的降水，明显偏强，美国报的降水，明显偏弱。主要是后期高空槽东移后，强度减弱。不利于低空形成很强的水汽输送带。欧洲数值预报的31日的槽也比较平直，因此这应该是欧洲数值习惯性把较远时段低空南风报得偏强，因此临近看31日黄淮一带的降雨可能会大幅调弱甚至调没。\n\n2、气温\n本周有两股较强的冷空气影响我国北方以及长江中下游等地，但华南因为有南岭阻挡+高空有副热带高压控制，冷空气影响不大。10月26-28日，内蒙古、华北、东北地区、甘肃、宁夏、陕西等地部分地区先后有4～6级风，阵风7～9级；上述大部地区平均气温将下降4～6℃，部分地区降温超过8℃。\n\n10月31日-11月2日，受冷空气影响，中东部大部地区普遍降温4～8℃，局地超过10℃，并伴有4～6级风、阵风7～9级。在两股冷空气的冲击下，北方多地气温将创立秋后新低，并且推动北方冬季范围向南扩展。北京可能在10月28日前后入冬。未来最低气温会创立秋后新低的大城市有：\n\n27日太原-1℃（立秋后首次破0）、西宁-4℃、重庆17℃；28日哈尔滨-5℃、长春-6℃、沈阳-4℃、太原-3℃、石家庄4℃、上海13℃、重庆16℃。30日西安6℃、兰州0℃、合肥10℃。31日北京0℃。11月1日重庆14℃、贵阳10℃。11月2日哈尔滨-7℃、银川-4℃、济南5℃、郑州9℃、武汉10℃、南昌13℃、成都11℃。\n\n从形势场预报看，本周云南和华南多地持续受到副热带高压影响，甚至有时还会看到592的区域。本周南宁最高气温持续在30℃以上，广州、海口多数时间也在30℃以上。11月2日冷空气对华南的影响，目前待定。但本周，华南一带的空调应该还是不能彻底停下来。\n\n3、热带气旋\n台风烟花在远海活动，对我国无影响。本周末到下周初，可能在东经130-140度附近转向。具体转向点还有悬念。另外在孟加拉湾会形成气旋风暴，西行登陆印度后转为北上，叠加高空槽东移。29日夜间-31日，青藏高原有大范围雨雪。尤其是西藏南部可能出现强降雪。",
+      "excerpt": "本周南宁最高气温持续在30℃以上，广州、海口多数时间也在30℃以上。",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "neutral",
+      "experience_tags": [
+        "hot"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "future",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "江北",
+          "kind": "other",
+          "start": 242,
+          "end": 244
+        },
+        {
+          "name": "北京",
+          "kind": "other",
+          "start": 804,
+          "end": 806
+        },
+        {
+          "name": "太原",
+          "kind": "other",
+          "start": 844,
+          "end": 846
+        },
+        {
+          "name": "西宁",
+          "kind": "other",
+          "start": 859,
+          "end": 861
+        },
+        {
+          "name": "重庆",
+          "kind": "other",
+          "start": 865,
+          "end": 867
+        },
+        {
+          "name": "哈尔滨",
+          "kind": "other",
+          "start": 874,
+          "end": 877
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "content_types",
+          "start": 1,
+          "end": 5,
+          "quote": "一周天气"
+        },
+        {
+          "field": "time_status",
+          "start": 12,
+          "end": 14,
+          "quote": "本周"
+        },
+        {
+          "field": "heat_relevance",
+          "start": 40,
+          "end": 51,
+          "quote": "南方副热带高压维持强势"
+        },
+        {
+          "field": "experience_tags",
+          "start": 1055,
+          "end": 1069,
+          "quote": "南宁最高气温持续在30℃以上"
+        }
+      ],
+      "confidence": 0.6,
+      "confidence_level": "low",
+      "confidence_basis": [
+        "span_valid"
+      ],
+      "review_status": "pending",
+      "duplicate_group_id": "dg_8544eca0ab",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_b3fdad5c04fd",
+      "source": "weibo",
+      "source_post_id": "5357533436056451",
+      "source_url": "https://m.weibo.cn/detail/5357533436056451",
+      "kind": "post",
+      "author": "怀远如风",
+      "published_at": "2026-10-24T13:16:12+08:00",
+      "text": "蓉城小记～\n\n 重阳节一过，就一个大晴天，仿佛与太阳告个别，特别晴朗。\n\n 然后就开始四个月盆地的阴蛐蛐模式。一个礼拜无一丝阳光是常态，半个月阴蛐蛐是正常。\n\n 记得有一年在成都过冬，20多天没出太阳，人快疯了一脚油门杀奔二郎山，过了隧道一下子阳光灿烂，人立马正常了。\n\n 成都过冬天很恼火历来如此。这几年过夏天居然热到40度，一直热快三个月，这是新常态了。\n\n 好在自己属于3.2亿老年人系列里，哪里舒服去哪里。该收拾一下行装，快到了雁南飞的时机了。",
+      "excerpt": "这几年过夏天居然热到40度，一直热快三个月，这是新常态了。",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "hot"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "蓉城",
+          "kind": "target",
+          "start": 0,
+          "end": 2
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 87,
+          "end": 89
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 137,
+          "end": 139
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "content_types",
+          "start": 81,
+          "end": 91,
+          "quote": "记得有一年在成都过冬"
+        },
+        {
+          "field": "location_mentions",
+          "start": 87,
+          "end": 89,
+          "quote": "成都"
+        },
+        {
+          "field": "experience_tags",
+          "start": 158,
+          "end": 171,
+          "quote": "热到40度，一直热快三个月"
+        },
+        {
+          "field": "is_public_demand",
+          "start": 199,
+          "end": 206,
+          "quote": "哪里舒服去哪里"
+        }
+      ],
+      "confidence": 0.7,
+      "confidence_level": "medium",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_fb36f54677",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_dc5300fffcea",
+      "source": "weibo",
+      "source_post_id": "5358025205878075",
+      "source_url": "https://m.weibo.cn/detail/5358025205878075",
+      "kind": "post",
+      "author": "cathiedong",
+      "published_at": "2026-10-25T21:50:19+08:00",
+      "text": "成都马拉松赛后的花椒冰淇淋简直太好吃了！对于高温天气跑马的选手来说简直雪中送炭！赛前的熊猫🐼也乖惨了马拉松",
+      "excerpt": "对于高温天气跑马的选手来说简直雪中送炭！",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "positive_cooling",
+      "demand_topic_zh": "降温改善体验",
+      "evaluation_direction": "improvement",
+      "experience_tags": [
+        "hot",
+        "cool"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "other"
+      ],
+      "time_status": "unknown",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 0,
+          "end": 2
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "evaluation_direction",
+          "start": 13,
+          "end": 19,
+          "quote": "简直太好吃了"
+        },
+        {
+          "field": "heat_relevance",
+          "start": 22,
+          "end": 26,
+          "quote": "高温天气"
+        },
+        {
+          "field": "experience_tags",
+          "start": 35,
+          "end": 39,
+          "quote": "雪中送炭"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_ef3096601f",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_a2b939de6601",
+      "source": "weibo",
+      "source_post_id": "5358221753581781",
+      "source_url": "https://m.weibo.cn/detail/5358221753581781",
+      "kind": "post",
+      "author": "June_Julyuer",
+      "published_at": "2026-10-26T10:51:19+08:00",
+      "text": "成都热\n但西安这个体感6度也有点冷吧\n西安的秋天太短暂",
+      "excerpt": "成都热",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "mixed",
+      "experience_tags": [
+        "hot",
+        "mixed"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 0,
+          "end": 2
+        },
+        {
+          "name": "西安",
+          "kind": "other",
+          "start": 5,
+          "end": 7
+        },
+        {
+          "name": "西安",
+          "kind": "other",
+          "start": 19,
+          "end": 21
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 0,
+          "end": 3,
+          "quote": "成都热"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 5,
+          "end": 18,
+          "quote": "西安这个体感6度也有点冷吧"
+        }
+      ],
+      "confidence": 0.6,
+      "confidence_level": "low",
+      "confidence_basis": [
+        "span_valid"
+      ],
+      "review_status": "pending",
+      "duplicate_group_id": "dg_d701ffa830",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_7ed3d282d108",
+      "source": "weibo",
+      "source_post_id": "5357865323463214",
+      "source_url": "https://m.weibo.cn/detail/5357865323463214",
+      "kind": "post",
+      "author": "看金牛",
+      "published_at": "2026-10-25T11:15:00+08:00",
+      "text": "【降温降雨继续，成都未来一周都有雨！】#成都真的开始冷起来了#！今天成都阴天，伴有分散小雨，最高温在20℃上下，体感偏凉。@成都气象 预计未来三天我市以阴天为主，多分散小雨，提醒大家记得及时添衣。 成都发布的微博视频",
+      "excerpt": "今天成都阴天，伴有分散小雨，最高温在20℃上下，体感偏凉。",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "neutral",
+      "experience_tags": [
+        "cool"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "future",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 8,
+          "end": 10
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 20,
+          "end": 22
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 34,
+          "end": 36
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 99,
+          "end": 101
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "heat_relevance",
+          "start": 1,
+          "end": 7,
+          "quote": "降温降雨继续"
+        },
+        {
+          "field": "experience_tags",
+          "start": 56,
+          "end": 60,
+          "quote": "体感偏凉"
+        },
+        {
+          "field": "content_types",
+          "start": 67,
+          "end": 86,
+          "quote": "预计未来三天我市以阴天为主，多分散小雨"
+        },
+        {
+          "field": "time_status",
+          "start": 69,
+          "end": 73,
+          "quote": "未来三天"
+        }
+      ],
+      "confidence": 0.7,
+      "confidence_level": "medium",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_394de22397",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_cf7c85688386",
+      "source": "weibo",
+      "source_post_id": "5357382293258740",
+      "source_url": "https://m.weibo.cn/detail/5357382293258740",
+      "kind": "post",
+      "author": "倩倩_xxz",
+      "published_at": "2026-10-24T03:15:37+08:00",
+      "text": "陶吉吉好多歌总会让人感觉到一种平静的幸福\n\n比如 暗恋 Angel 天天\n\n连寂寞的季节这种稍带点孤单悲秋色彩的歌\n\n由于调子太柔\n\n第一个音出来的时候 立马感到一种温情所在\n\n成都每年10月底就很冷了（单指我个人体感） 短袖换成薄羽绒服 不过个把星期时间\n\n同时 随季节更迭的是我的情绪 往年这个时候 我通常会处于一小段低落期 落叶纷飞 像我的少女心事 听不懂的专业课 糟糕的感情 做不完的工作 等等 努力一阵结果还是败了 散了一地 不知道怎么收场 温度骤变带来的身体不适（痛经加重 脚冷睡不好） 实在没有多的精力去应付 于是我变成了一个讨厌秋冬的人\n\n但是今年 好像一切都不一样了\n\ngap了快四个月 走了几个地方 见了很多好朋友 在宁波和堂姐吃吃玩玩 像回到了很小的时候 她是一个极i的人 我耍皮 她嘴上说我好烦但还是每天顶着40度高温陪我出门 打卡不同的美食和景点 我们才五六岁的时候 她也是这样 什么都依着我\n\n妈妈前两天买了很多水果和零食 包了我爱的香菇饺 我带回到我的出租屋 她叮嘱我早上起来一定要吃早饭 我应她好的知道了 然后一边盘算再去盒马买些现卤牛肉、西兰花和蓝莓 简简单单 又是几天的减脂餐 一天一顿 一直在减 但效果甚微\n\n这个世界 没有爱是不行的 家人的爱 朋友的爱 内心深处对自己的爱\n\n最近几个月 身体和心理都处于无比放松的状态 无所事事 游手好闲 作息虽然混乱 小日子还蛮充实 偶尔跟家里老辈子周边玩一下 还看完了大学里没看完的几本书 拼了很多豆豆 完成了去年冬天的石膏娃娃半成品 恶补了十几部很火但我没看过的电影 学会了藤条编织包包等等 当然 最好玩的还是小手机 真的很爽 很幸福\n\n这几天气温微冷 我开始睡电热毯了 被窝好舒服（发明电热毯的人万岁万岁万万岁）体重下了几斤 奖励了自己漂亮的新衣服 我还在观望哪条线秋景比较绝 往年10月之后基本封腿都在家宅了 今年还是想抓住机会出去转转 甚至开始期待冬天 在家煮耙耙柑热啤酒 穿到膝盖的羊毛雪地靴 戴兔兔毛耳罩 去看雾凇和厚厚的雪\n\n接下来会怎么样 能不能找到合适的工作 我不知道 25岁 我的人生才重启吧 不管怎样 活着 健康 自由 照顾好自己 一切都会往好的方向发展\n\n感谢家人朋友 感谢爱",
+      "excerpt": "她嘴上说我好烦但还是每天顶着40度高温陪我出门",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "mixed",
+      "experience_tags": [
+        "hot",
+        "cool"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "leisure",
+        "walking"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 89,
+          "end": 91
+        },
+        {
+          "name": "宁波",
+          "kind": "other",
+          "start": 319,
+          "end": 321
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 364,
+          "end": 375,
+          "quote": "顶着40度高温陪我出门"
+        },
+        {
+          "field": "experience_tags",
+          "start": 709,
+          "end": 716,
+          "quote": "这几天气温微冷"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 726,
+          "end": 731,
+          "quote": "被窝好舒服"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_3690ae0bf7",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_a261674c3cf2",
+      "source": "weibo",
+      "source_post_id": "5318449767125274",
+      "source_url": "https://m.weibo.cn/detail/5318449767125274",
+      "kind": "comment",
+      "author": "leebaby003",
+      "published_at": "2026-07-09T23:14:51+08:00",
+      "text": "8月中旬的成都，是不是更热[黑线]",
+      "excerpt": "8月中旬的成都，是不是更热[黑线]",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "hot"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "unknown",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 5,
+          "end": 7
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "location_mentions",
+          "start": 5,
+          "end": 7,
+          "quote": "成都"
+        },
+        {
+          "field": "heat_relevance",
+          "start": 8,
+          "end": 13,
+          "quote": "是不是更热"
+        },
+        {
+          "field": "experience_tags",
+          "start": 11,
+          "end": 13,
+          "quote": "更热"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 13,
+          "end": 17,
+          "quote": "[黑线]"
+        }
+      ],
+      "confidence": 0.55,
+      "confidence_level": "low",
+      "confidence_basis": [
+        "span_valid",
+        "negation_flag"
+      ],
+      "review_status": "pending",
+      "duplicate_group_id": "dg_d7fb4b494b",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_388d13f7e352",
+      "source": "weibo",
+      "source_post_id": "5318449767125274",
+      "source_url": "https://m.weibo.cn/detail/5318449767125274",
+      "kind": "comment",
+      "author": "haishiyuanxi",
+      "published_at": "2026-07-09T13:54:17+08:00",
+      "text": "队友昨天到成都，说比杭州还热[允悲]",
+      "excerpt": "队友昨天到成都，说比杭州还热[允悲]",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "hot"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "historical",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 5,
+          "end": 7
+        },
+        {
+          "name": "杭州",
+          "kind": "other",
+          "start": 10,
+          "end": 12
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "content_types",
+          "start": 8,
+          "end": 14,
+          "quote": "说比杭州还热"
+        },
+        {
+          "field": "experience_tags",
+          "start": 9,
+          "end": 14,
+          "quote": "比杭州还热"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 14,
+          "end": 18,
+          "quote": "[允悲]"
+        }
+      ],
+      "confidence": 0.6,
+      "confidence_level": "low",
+      "confidence_basis": [
+        "span_valid"
+      ],
+      "review_status": "pending",
+      "duplicate_group_id": "dg_03a6304a3a",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_00509fda2670",
+      "source": "weibo",
+      "source_post_id": "5299931486884760",
+      "source_url": "https://m.weibo.cn/detail/5299931486884760",
+      "kind": "comment",
+      "author": "阿黎在成都",
+      "published_at": "2026-05-20T14:23:15+08:00",
+      "text": "恰好七月要来上海，成都/上海一个样儿，肯定白天热死",
+      "excerpt": "恰好七月要来上海，成都/上海一个样儿，肯定白天热死",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "hot"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "future",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "上海",
+          "kind": "other",
+          "start": 6,
+          "end": 8
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 9,
+          "end": 11
+        },
+        {
+          "name": "上海",
+          "kind": "other",
+          "start": 12,
+          "end": 14
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "time_status",
+          "start": 2,
+          "end": 8,
+          "quote": "七月要来上海"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 19,
+          "end": 25,
+          "quote": "肯定白天热死"
+        },
+        {
+          "field": "experience_tags",
+          "start": 21,
+          "end": 25,
+          "quote": "白天热死"
+        }
+      ],
+      "confidence": 0.7,
+      "confidence_level": "medium",
+      "confidence_basis": [
+        "span_valid",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_70f52346f3",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_2a6a1c90b10c",
+      "source": "weibo",
+      "source_post_id": "5299931486884760",
+      "source_url": "https://m.weibo.cn/detail/5299931486884760",
+      "kind": "comment",
+      "author": "疼的话挠一挠",
+      "published_at": "2026-05-19T12:02:50+08:00",
+      "text": "相比武汉，成都真的还好，武汉这地方才是又闷又湿又晒又热[怒][怒][怒]",
+      "excerpt": "相比武汉，成都真的还好，武汉这地方才是又闷又湿又晒又热",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "hot",
+        "muggy",
+        "sun_exposure"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "武汉",
+          "kind": "other",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 5,
+          "end": 7
+        },
+        {
+          "name": "武汉",
+          "kind": "other",
+          "start": 12,
+          "end": 14
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "heat_relevance",
+          "start": 12,
+          "end": 27,
+          "quote": "武汉这地方才是又闷又湿又晒又热"
+        },
+        {
+          "field": "experience_tags",
+          "start": 19,
+          "end": 27,
+          "quote": "又闷又湿又晒又热"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 27,
+          "end": 36,
+          "quote": "[怒][怒][怒]"
+        }
+      ],
+      "confidence": 0.7,
+      "confidence_level": "medium",
+      "confidence_basis": [
+        "span_valid",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_cf72199a04",
+      "event_cluster_id": null
+    }
+  ],
+  "limits": [
+    "这是抽样观察，不代表成都居民总体感受，也不能推出受影响人数。",
+    "没有线索不等于没有热问题：微博用户结构不等于城市人口结构。",
+    "不据此插值成 100m 网格的热感受分布图。",
+    "首版不把它写入温度模型的训练标签。"
+  ]
+}

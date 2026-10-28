@@ -1,0 +1,1013 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://urbancool.local/contract/weibo-demand.v1.schema.json",
+  "title": "UrbanCool 微博民意调查组件契约 v1",
+  "description": "任意外部 Agent 通过同一 envelope 调用本组件。contract_version 遵循语义化版本：主版本变更=不兼容；次版本=只增字段；补丁=行为修正。",
+  "type": "object",
+  "$defs": {
+    "SemVer": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "Envelope": {
+      "type": "object",
+      "required": [
+        "contract_version",
+        "request_id"
+      ],
+      "properties": {
+        "contract_version": {
+          "$ref": "#/$defs/SemVer",
+          "description": "调用方必须回填自己期望的版本；服务端不匹配时返回 E_CONTRACT_MISMATCH。"
+        },
+        "request_id": {
+          "type": "string",
+          "minLength": 8,
+          "maxLength": 64,
+          "description": "调用方生成的幂等键。相同 request_id + 相同 payload_hash 在 24h 内直接返回缓存结果。"
+        },
+        "client": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": true
+        }
+      }
+    },
+    "Request": {
+      "type": "object",
+      "required": [
+        "contract_version",
+        "request_id",
+        "action",
+        "payload"
+      ],
+      "properties": {
+        "contract_version": {
+          "$ref": "#/$defs/SemVer"
+        },
+        "request_id": {
+          "type": "string",
+          "minLength": 8,
+          "maxLength": 64
+        },
+        "client": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "action": {
+          "enum": [
+            "health",
+            "classify",
+            "extract_batch",
+            "query_items",
+            "review"
+          ]
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string"
+            },
+            "scope": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "description": "目标地点，由调用方按用户提问决定（例如用户问重庆 → scope.city=重庆）；不传则不做地点过滤",
+              "properties": {
+                "city": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "aliases": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "additionalProperties": true
+            }
+          },
+          "additionalProperties": true
+        },
+        "options": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "async": {
+              "type": "boolean",
+              "default": false,
+              "description": "extract_batch 建议 true；同步模式硬上限 20 条 / 60s。"
+            },
+            "callback_url": {
+              "type": "string",
+              "format": "uri",
+              "description": "async=true 时结果回调地址；回调体与同步响应同构。"
+            },
+            "min_confidence": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.65
+            },
+            "return_evidence": {
+              "type": "boolean",
+              "default": true
+            },
+            "locale": {
+              "type": "string",
+              "default": "zh-CN"
+            },
+            "max_items": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 200,
+              "default": 50
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "Response": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/Envelope"
+        }
+      ],
+      "type": "object",
+      "required": [
+        "status",
+        "result",
+        "meta"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "ok",
+            "partial",
+            "accepted",
+            "error"
+          ]
+        },
+        "http_status": {
+          "type": "integer"
+        },
+        "result": {
+          "type": "object"
+        },
+        "meta": {
+          "type": "object",
+          "required": [
+            "rules_version",
+            "classifier_version",
+            "taxonomy_version"
+          ],
+          "properties": {
+            "rules_version": {
+              "type": "string"
+            },
+            "classifier_version": {
+              "type": "string"
+            },
+            "taxonomy_version": {
+              "type": "string"
+            },
+            "model": {
+              "type": "string"
+            },
+            "latency_ms": {
+              "type": "integer"
+            },
+            "cached": {
+              "type": "boolean"
+            },
+            "budget_remaining": {
+              "type": "integer"
+            },
+            "processed_at": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "additionalProperties": true
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Error"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "Error": {
+      "type": "object",
+      "required": [
+        "code",
+        "message",
+        "retryable"
+      ],
+      "properties": {
+        "code": {
+          "enum": [
+            "E_CONTRACT_INVALID",
+            "E_CONTRACT_MISMATCH",
+            "E_AUTH",
+            "E_RATE_LIMIT",
+            "E_BUDGET_EXCEEDED",
+            "E_UPSTREAM_UNAVAILABLE",
+            "E_NO_DATA",
+            "E_LLM_FAIL",
+            "E_SCHEMA_INVALID",
+            "E_EVIDENCE_INVALID",
+            "E_NOT_FOUND",
+            "E_IDEMPOTENT_CONFLICT",
+            "E_KILL_SWITCH",
+            "E_INTERNAL",
+            "E_NOT_IMPLEMENTED"
+          ],
+          "description": "错误码。E_NOT_IMPLEMENTED 表示该动作已在契约中声明、工作流侧尚未接入（HTTP 501）。"
+        },
+        "message": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string",
+          "description": "出错字段，例如 payload.posts[3].text"
+        },
+        "retryable": {
+          "type": "boolean"
+        },
+        "detail": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "EvidenceSpan": {
+      "type": "object",
+      "required": [
+        "field",
+        "start",
+        "end",
+        "quote"
+      ],
+      "description": "必须在原文中可精确回查（excerpt 或全文的子串）。回查失败即 E_EVIDENCE_INVALID，条目降级为 needs_review。",
+      "properties": {
+        "field": {
+          "type": "string"
+        },
+        "start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "end": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "quote": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        }
+      },
+      "additionalProperties": false
+    },
+    "Mention": {
+      "type": "object",
+      "required": [
+        "text",
+        "role",
+        "span"
+      ],
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "place_type": {
+          "enum": [
+            "landmark",
+            "facility",
+            "school",
+            "square",
+            "park",
+            "station",
+            "district",
+            "category",
+            "city",
+            "unknown"
+          ]
+        },
+        "role": {
+          "enum": [
+            "experience_site",
+            "departure",
+            "destination",
+            "comparison",
+            "mentioned_only",
+            "negated",
+            "unknown"
+          ],
+          "description": "role 决定是否把该地点的体验计入线索；mentioned_only / negated 不计入。"
+        },
+        "relation": {
+          "type": "string",
+          "description": "东门 / 外面广场 / 对面 等原文关系描述，不得替换成坐标。"
+        },
+        "span": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        }
+      },
+      "additionalProperties": true
+    },
+    "ExperienceEvent": {
+      "type": "object",
+      "required": [
+        "event_index",
+        "experience_tags",
+        "evaluation_direction"
+      ],
+      "properties": {
+        "event_index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "mention_index": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "experience_tags": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ExperienceTag"
+          }
+        },
+        "spatial_demands": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SpatialDemand"
+          }
+        },
+        "activity_scene": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ActivityScene"
+          }
+        },
+        "evaluation_direction": {
+          "$ref": "#/$defs/EvaluationDirection"
+        },
+        "evidence_span_indexes": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "LocationMatch": {
+      "type": "object",
+      "required": [
+        "event_index",
+        "status",
+        "spatial_precision"
+      ],
+      "properties": {
+        "event_index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "status": {
+          "$ref": "#/$defs/MatchStatus"
+        },
+        "place_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "place_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "parent_place_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "place_source": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "含来源命名空间，例如 amap:poi / project:alias / scene:region"
+        },
+        "place_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "candidates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "match_method": {
+          "enum": [
+            "auto",
+            "manual",
+            "none"
+          ]
+        },
+        "spatial_precision": {
+          "$ref": "#/$defs/SpatialPrecision"
+        },
+        "geometry": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "geometry_role": {
+          "enum": [
+            "place_point",
+            "place_geometry",
+            "evidence_point",
+            "none"
+          ]
+        },
+        "source_crs": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "例如 EPSG:4326；米制计算用 EPSG:32648，不与展示坐标混用。"
+        },
+        "review_required": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    },
+    "Item": {
+      "type": "object",
+      "required": [
+        "item_id",
+        "source",
+        "source_post_id",
+        "heat_relevance",
+        "is_public_demand",
+        "evaluation_direction",
+        "time_status",
+        "confidence",
+        "confidence_basis",
+        "review_status",
+        "rules_version",
+        "classifier_version"
+      ],
+      "properties": {
+        "item_id": {
+          "type": "string"
+        },
+        "query_batch_id": {
+          "type": "string"
+        },
+        "source": {
+          "const": "weibo"
+        },
+        "source_post_id": {
+          "type": "string"
+        },
+        "source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "published_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "fetched_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "event_time_start": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "event_time_end": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "time_status": {
+          "$ref": "#/$defs/TimeStatus"
+        },
+        "location_scope": {
+          "type": "string",
+          "enum": [
+            "target",
+            "other_place",
+            "unknown"
+          ],
+          "description": "target=命中本次目标城市（请求 scope.city）；other_place=只命中目标城市之外的地名；unknown=原文没写地名（不等于不在目标城市）"
+        },
+        "scope_target": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "本次判定的目标城市；请求未给 scope 时为 null"
+        },
+        "in_scope": {
+          "type": "boolean",
+          "description": "是否进入聚合统计：传了 scope 时 location_scope=target 才为 true；未传 scope 时恒为 true"
+        },
+        "in_study_area": {
+          "type": "boolean",
+          "description": "已废弃别名，等同 in_scope（保留是为了不让旧快照校验失败）"
+        },
+        "place_version": {
+          "type": "string",
+          "description": "地名词表版本，对应 config/place-lexicon.v2.json 的 lexicon_version"
+        },
+        "place_evidence": {
+          "type": "array",
+          "maxItems": 6,
+          "items": {
+            "$ref": "#/$defs/PlaceEvidence"
+          }
+        },
+        "excerpt": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "ai_summary": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "必须标注为摘要；不得替代原文。"
+        },
+        "evidence_spans": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/EvidenceSpan"
+          }
+        },
+        "heat_relevance": {
+          "$ref": "#/$defs/HeatRelevance"
+        },
+        "is_public_demand": {
+          "type": "boolean",
+          "description": "三要素齐（主体 + 体验/诉求 + 非商业非纯资讯）才为 true。"
+        },
+        "content_types": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ContentType"
+          }
+        },
+        "experience_tags": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ExperienceTag"
+          }
+        },
+        "spatial_demands": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SpatialDemand"
+          }
+        },
+        "activity_scene": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ActivityScene"
+          }
+        },
+        "evaluation_direction": {
+          "$ref": "#/$defs/EvaluationDirection"
+        },
+        "demand_topic": {
+          "$ref": "#/$defs/DemandTopic"
+        },
+        "actionability": {
+          "$ref": "#/$defs/Actionability"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "由确定性依据合成的 ordinal 等级映射值，不是模型自报概率。"
+        },
+        "confidence_level": {
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        "confidence_basis": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "mentions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Mention"
+          }
+        },
+        "experience_events": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ExperienceEvent"
+          }
+        },
+        "location_matches": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/LocationMatch"
+          }
+        },
+        "duplicate_group_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "repost_chain_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "event_cluster_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "claimed_temperature": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "原文声称的温度，仅作原文记录，不是观测值。"
+        },
+        "review_status": {
+          "$ref": "#/$defs/ReviewStatus"
+        },
+        "review_history": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "rules_version": {
+          "type": "string"
+        },
+        "classifier_version": {
+          "type": "string"
+        },
+        "linked_project_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "linked_run_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "Counts": {
+      "type": "object",
+      "required": [
+        "raw_records",
+        "deduped_contents",
+        "original_reports"
+      ],
+      "properties": {
+        "raw_records": {
+          "type": "integer",
+          "description": "原始记录数（含重复拉取）"
+        },
+        "deduped_contents": {
+          "type": "integer",
+          "description": "去重后内容数"
+        },
+        "original_reports": {
+          "type": "integer",
+          "description": "可识别原创报告数"
+        },
+        "relevant": {
+          "type": "integer"
+        },
+        "needs_review": {
+          "type": "integer"
+        },
+        "irrelevant": {
+          "type": "integer"
+        },
+        "scope_note": {
+          "type": "string",
+          "description": "必须写清采集口径；不得表述为人数或总体满意度。"
+        }
+      },
+      "additionalProperties": true
+    },
+    "HeatRelevance": {
+      "enum": [
+        "relevant",
+        "needs_review",
+        "irrelevant"
+      ]
+    },
+    "ContentType": {
+      "enum": [
+        "firsthand",
+        "relay",
+        "suggestion",
+        "forecast",
+        "news",
+        "ad",
+        "unknown"
+      ]
+    },
+    "ExperienceTag": {
+      "enum": [
+        "hot",
+        "muggy",
+        "sun_exposure",
+        "cool",
+        "mixed",
+        "unspecified"
+      ]
+    },
+    "SpatialDemand": {
+      "enum": [
+        "shade_deficit",
+        "ventilation",
+        "waiting_comfort",
+        "stay_comfort",
+        "water_or_cooling_facility"
+      ]
+    },
+    "ActivityScene": {
+      "enum": [
+        "walking",
+        "cycling",
+        "waiting",
+        "leisure",
+        "outdoor_work",
+        "other",
+        "unspecified"
+      ]
+    },
+    "EvaluationDirection": {
+      "enum": [
+        "discomfort",
+        "improvement",
+        "neutral",
+        "mixed",
+        "unclear"
+      ]
+    },
+    "TimeStatus": {
+      "enum": [
+        "current",
+        "historical",
+        "future",
+        "unknown"
+      ]
+    },
+    "Actionability": {
+      "enum": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    "DemandTopic": {
+      "enum": [
+        "shade_deficit",
+        "tree_canopy",
+        "waiting_transit",
+        "walking_route",
+        "plaza_leisure",
+        "campus_school",
+        "park_greenway",
+        "outdoor_work",
+        "water_cooling_facility",
+        "ventilation_stillness",
+        "surface_heat",
+        "positive_cooling",
+        "other"
+      ]
+    },
+    "MatchStatus": {
+      "enum": [
+        "matched",
+        "candidate",
+        "undetermined"
+      ]
+    },
+    "SpatialPrecision": {
+      "enum": [
+        "geometry",
+        "poi_point",
+        "parent_place",
+        "district",
+        "study_area",
+        "scene_only",
+        "none"
+      ]
+    },
+    "ReviewStatus": {
+      "enum": [
+        "auto_accepted",
+        "pending",
+        "confirmed",
+        "corrected",
+        "rejected",
+        "rule_only"
+      ]
+    },
+    "PlaceEvidence": {
+      "type": "object",
+      "description": "地名证据：原文中命中的地点词，start/end 可直接回查原文",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "kind",
+        "start",
+        "end"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "target",
+            "other",
+            "study_area"
+          ]
+        },
+        "start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "end": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    }
+  },
+  "oneOf": [
+    {
+      "$ref": "#/$defs/Request"
+    },
+    {
+      "$ref": "#/$defs/Response"
+    }
+  ],
+  "examples": [
+    {
+      "contract_version": "1.0.0",
+      "request_id": "req-20260101-0001",
+      "client": {
+        "name": "urbancool-web",
+        "version": "0.3.0"
+      },
+      "action": "classify",
+      "payload": {
+        "text": "成都今天太闷热，公交站等车又没有遮阴。",
+        "source": "weibo",
+        "published_at": "2026-07-18T12:03:00+08:00",
+        "hints": {
+          "city": "成都",
+          "place_aliases": {
+            "环球中心": "landmark"
+          }
+        }
+      },
+      "options": {
+        "min_confidence": 0.65,
+        "return_evidence": true
+      }
+    },
+    {
+      "contract_version": "1.0.0",
+      "request_id": "req-20260101-0001",
+      "status": "ok",
+      "result": {
+        "item": {
+          "item_id": "wi_0001",
+          "source": "weibo",
+          "source_post_id": "dummy_1",
+          "heat_relevance": "relevant",
+          "is_public_demand": true,
+          "content_types": [
+            "firsthand"
+          ],
+          "experience_tags": [
+            "muggy",
+            "sun_exposure"
+          ],
+          "spatial_demands": [
+            "shade_deficit",
+            "waiting_comfort"
+          ],
+          "activity_scene": [
+            "waiting"
+          ],
+          "evaluation_direction": "discomfort",
+          "demand_topic": "waiting_transit",
+          "actionability": "B",
+          "time_status": "current",
+          "confidence": 0.65,
+          "confidence_level": "medium",
+          "confidence_basis": [
+            "span_valid",
+            "rule_hit"
+          ],
+          "review_status": "pending",
+          "rules_version": "r1",
+          "classifier_version": "c1",
+          "evidence_spans": [
+            {
+              "field": "spatial_demands",
+              "start": 6,
+              "end": 13,
+              "quote": "又没有遮阴"
+            }
+          ]
+        }
+      },
+      "meta": {
+        "rules_version": "r1",
+        "classifier_version": "c1",
+        "taxonomy_version": "t1",
+        "model": "provider/model@rev",
+        "latency_ms": 1840,
+        "cached": false,
+        "processed_at": "2026-07-18T12:05:11+08:00"
+      },
+      "errors": []
+    }
+  ]
+}

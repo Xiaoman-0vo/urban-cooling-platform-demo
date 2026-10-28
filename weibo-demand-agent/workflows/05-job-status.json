@@ -1,0 +1,146 @@
+[
+ {
+  "name": "05-job-status",
+  "nodes": [
+   {
+    "parameters": {
+     "httpMethod": "GET",
+     "path": "weibo-job-status",
+     "responseMode": "responseNode",
+     "options": {}
+    },
+    "name": "进度查询",
+    "type": "n8n-nodes-base.webhook",
+    "typeVersion": 2,
+    "position": [
+     0,
+     0
+    ],
+    "webhookId": "ws7b3c1e90d5a24f18"
+   },
+   {
+    "parameters": {
+     "operation": "read",
+     "fileSelector": "/data/jobs/latest.json",
+     "options": {}
+    },
+    "name": "1-读任务",
+    "type": "n8n-nodes-base.readWriteFile",
+    "typeVersion": 1.1,
+    "position": [
+     240,
+     0
+    ],
+    "onError": "continueRegularOutput"
+   },
+   {
+    "parameters": {
+     "operation": "text",
+     "binaryPropertyName": "data",
+     "options": {
+      "destinationKey": "data"
+     }
+    },
+    "name": "2-转文本",
+    "type": "n8n-nodes-base.extractFromFile",
+    "typeVersion": 1.2,
+    "position": [
+     440,
+     0
+    ],
+    "onError": "continueRegularOutput"
+   },
+   {
+    "parameters": {
+     "jsCode": "// 05-job-status 第 3 步：把 latest.json 整理成前端好用的形状\n// 数据流：1-读任务 → 2-转文本(json.data) → 3-整理 → 4-回包\n// 前端只关心这几件事：现在在第几步、百分比、一句话状态、跑完了没有。\nconst raw = $input.first().json.data;\nconst PHASE_ZH = {\n  queued: '排队中',\n  collecting: '正在采集微博',\n  classifying: '正在逐条判定',\n  aggregating: '正在汇总快照',\n  done: '已完成',\n  failed: '失败',\n  idle: '空闲'\n};\n\nlet job = null;\ntry {\n  job = typeof raw === 'string' ? JSON.parse(raw) : raw;\n} catch {\n  job = null;\n}\n\nif (!job || !job.id) {\n  return [{\n    json: {\n      ok: true,\n      active: false,\n      job_id: null,\n      status: 'idle',\n      phase: 'idle',\n      phase_label: '当前没有任务',\n      message: '说「帮我抓成都 遮阴」就会下单',\n      progress: 0,\n      http_status: 200\n    }\n  }];\n}\n\n// 三阶段加权：采集 0–30%，判定 30–95%，汇总 95–100%\nlet progress = 0;\nif (job.status === 'done') progress = 100;\nelse if (job.status === 'failed') progress = 0;\nelse if (job.phase === 'collecting') progress = 12;\nelse if (job.phase === 'aggregating') progress = 97;\nelse if (job.phase === 'classifying') {\n  const total = Number(job.total || 0);\n  const done = Number(job.done || 0);\n  progress = total > 0 ? Math.min(95, 30 + Math.round((done / total) * 65)) : 32;\n}\n\nconst active = !['done', 'failed', 'idle'].includes(job.status);\n\nreturn [{\n  json: {\n    ok: true,\n    active,\n    job_id: job.id,\n    status: job.status,\n    phase: job.phase,\n    phase_label: PHASE_ZH[job.phase] || job.phase,\n    message: job.message || '',\n    query: job.query || '',\n    city: job.city || null,\n    posts: job.posts ?? null,\n    comments: job.comments ?? null,\n    done: job.done ?? null,\n    total: job.total ?? null,\n    progress,\n    error: job.error || null,\n    snapshot: job.snapshot || null,\n    updated_at: job.updated_at || null,\n    http_status: 200\n  }\n}];\n",
+     "options": {}
+    },
+    "name": "3-整理",
+    "type": "n8n-nodes-base.code",
+    "typeVersion": 2,
+    "position": [
+     640,
+     0
+    ]
+   },
+   {
+    "parameters": {
+     "respondWith": "json",
+     "responseBody": "={{ $json }}",
+     "options": {
+      "responseCode": "={{ $json.http_status }}",
+      "responseHeaders": {
+       "entries": [
+        {
+         "name": "Access-Control-Allow-Origin",
+         "value": "*"
+        },
+        {
+         "name": "Cache-Control",
+         "value": "no-store"
+        }
+       ]
+      }
+     }
+    },
+    "name": "4-回包",
+    "type": "n8n-nodes-base.respondToWebhook",
+    "typeVersion": 1.1,
+    "position": [
+     860,
+     0
+    ]
+   }
+  ],
+  "connections": {
+   "进度查询": {
+    "main": [
+     [
+      {
+       "node": "1-读任务",
+       "type": "main",
+       "index": 0
+      }
+     ]
+    ]
+   },
+   "1-读任务": {
+    "main": [
+     [
+      {
+       "node": "2-转文本",
+       "type": "main",
+       "index": 0
+      }
+     ]
+    ]
+   },
+   "2-转文本": {
+    "main": [
+     [
+      {
+       "node": "3-整理",
+       "type": "main",
+       "index": 0
+      }
+     ]
+    ]
+   },
+   "3-整理": {
+    "main": [
+     [
+      {
+       "node": "4-回包",
+       "type": "main",
+       "index": 0
+      }
+     ]
+    ]
+   }
+  },
+  "settings": {
+   "executionOrder": "v1"
+  },
+  "active": false
+ }
+]

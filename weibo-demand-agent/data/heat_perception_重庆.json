@@ -1,0 +1,3764 @@
+{
+  "schema": "heat-perception/1",
+  "mode": "historical_sample",
+  "status": {
+    "overall": "ok",
+    "collection": "ok",
+    "classification": "ok",
+    "place_filter": "ok",
+    "note": "单机小样本采集；未做授权接口接入，仅用于链路演示"
+  },
+  "generated_at": "2026-10-28T10:51:01.161Z",
+  "source": {
+    "channel": "weibo",
+    "method": "search + first-level comments",
+    "queries": [
+      "重庆 高温",
+      "重庆 闷热",
+      "重庆 遮阴"
+    ],
+    "city": "重庆",
+    "scope_filter": "only_target_city",
+    "fetched_at": "2026-10-28T09:46:20.541Z"
+  },
+  "counts": {
+    "raw_posts": 76,
+    "raw_comments": 200,
+    "classified_items": 84,
+    "in_scope_items": 69,
+    "in_study_area_items": 69,
+    "public_demand_items": 5,
+    "unique_contents": 45,
+    "identifiable_original_reports": 43,
+    "out_of_scope_items": 4,
+    "place_unknown_items": 11
+  },
+  "meta": {
+    "contract_version": "1.0.0",
+    "taxonomy_version": "t1",
+    "rules_version": "r1",
+    "classifier_version": "c1-model",
+    "place_version": "p2",
+    "model": "deepseek-flash"
+  },
+  "events": [
+    {
+      "event_cluster_id": "ev_06bedc4fb0",
+      "demand_topic": "shade_deficit",
+      "demand_topic_zh": "遮阴不足",
+      "item_count": 2,
+      "unique_content_count": 2,
+      "evaluation_direction": {
+        "mixed": 2
+      },
+      "place_hint": "重庆",
+      "first_published_at": "2026-09-25T19:48:18+08:00",
+      "last_published_at": "2026-10-27T09:12:22+08:00",
+      "representative": {
+        "item_id": "wi_cf3d4bcfc744",
+        "excerpt": "如果没有保留下来的绿色植被，酷热难以想象。",
+        "source_url": "https://m.weibo.cn/detail/5358559236982068",
+        "confidence": 0.9,
+        "confidence_level": "high"
+      },
+      "item_ids": [
+        "wi_cf3d4bcfc744",
+        "wi_a74d42746097"
+      ]
+    },
+    {
+      "event_cluster_id": "ev_8a65a22811",
+      "demand_topic": "tree_canopy",
+      "demand_topic_zh": "树冠/绿化覆盖",
+      "item_count": 2,
+      "unique_content_count": 2,
+      "evaluation_direction": {
+        "discomfort": 2
+      },
+      "place_hint": "重庆",
+      "first_published_at": "2023-04-11T12:59:17+08:00",
+      "last_published_at": "2026-07-27T09:29:33+08:00",
+      "representative": {
+        "item_id": "wi_cbfb0c0bd4a9",
+        "excerpt": "满目苍翠的大树被剃了光头，铺成水泥瓷砖地白花花一片，光秃秃一片。晒死个人",
+        "source_url": "https://m.weibo.cn/detail/5325223878723252",
+        "confidence": 0.85,
+        "confidence_level": "high"
+      },
+      "item_ids": [
+        "wi_7de44a1f8538",
+        "wi_cbfb0c0bd4a9"
+      ]
+    },
+    {
+      "event_cluster_id": "ev_cf19c7dfdb",
+      "demand_topic": "water_cooling_facility",
+      "demand_topic_zh": "饮水/降温设施",
+      "item_count": 1,
+      "unique_content_count": 1,
+      "evaluation_direction": {
+        "discomfort": 1
+      },
+      "place_hint": "重庆",
+      "first_published_at": "2026-10-27T05:49:49+08:00",
+      "last_published_at": "2026-10-27T05:49:49+08:00",
+      "representative": {
+        "item_id": "wi_70fd186399d0",
+        "excerpt": "走在街上感觉脚底板都要糊了",
+        "source_url": "https://m.weibo.cn/detail/5358508264653475",
+        "confidence": 0.9,
+        "confidence_level": "high"
+      },
+      "item_ids": [
+        "wi_70fd186399d0"
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "item_count": 22,
+      "evaluation_direction": {
+        "neutral": 4,
+        "discomfort": 15,
+        "mixed": 3
+      },
+      "examples": [
+        {
+          "item_id": "wi_486e105fbe8a",
+          "excerpt": "重庆川东35度以上高温还在负隅顽抗",
+          "source_url": "https://m.weibo.cn/detail/5341274926221063"
+        },
+        {
+          "item_id": "wi_0a13e11583c2",
+          "excerpt": "我国多地高温季确实开启得越来越早了",
+          "source_url": "https://m.weibo.cn/detail/5353828096148958"
+        }
+      ]
+    },
+    {
+      "demand_topic": "positive_cooling",
+      "demand_topic_zh": "降温改善体验",
+      "item_count": 13,
+      "evaluation_direction": {
+        "improvement": 13
+      },
+      "examples": [
+        {
+          "item_id": "wi_09e8e42eae66",
+          "excerpt": "当地漫长高温季至此彻底结束、全年高温日数基本锁定53天",
+          "source_url": "https://m.weibo.cn/detail/5341615875164634"
+        },
+        {
+          "item_id": "wi_0727315b6d8b",
+          "excerpt": "告别闷热，终于可以漫步街头，吹一吹山城的秋风。",
+          "source_url": "https://m.weibo.cn/detail/5352415748426763"
+        }
+      ]
+    },
+    {
+      "demand_topic": "outdoor_work",
+      "demand_topic_zh": "户外作业",
+      "item_count": 3,
+      "evaluation_direction": {
+        "neutral": 1,
+        "discomfort": 2
+      },
+      "examples": [
+        {
+          "item_id": "wi_d7f8259784d4",
+          "excerpt": "40℃高温下，三层楼板被一层层打通，断裂的预制板悬在头顶",
+          "source_url": "https://m.weibo.cn/detail/5357544768014676"
+        },
+        {
+          "item_id": "wi_d9505aa2c4c8",
+          "excerpt": "重庆的高温天，他们在户外工作真的不容易。",
+          "source_url": "https://m.weibo.cn/detail/5358756574533749"
+        }
+      ]
+    },
+    {
+      "demand_topic": "waiting_transit",
+      "demand_topic_zh": "候车/等候条件",
+      "item_count": 1,
+      "evaluation_direction": {
+        "mixed": 1
+      },
+      "examples": [
+        {
+          "item_id": "wi_4980cd1ed5b9",
+          "excerpt": "重庆又热成炼丹炉了，出门五分钟流汗两小时。",
+          "source_url": "https://m.weibo.cn/detail/5358665617376157"
+        }
+      ]
+    },
+    {
+      "demand_topic": "plaza_leisure",
+      "demand_topic_zh": "广场与休闲",
+      "item_count": 1,
+      "evaluation_direction": {
+        "improvement": 1
+      },
+      "examples": [
+        {
+          "item_id": "wi_1ce562196109",
+          "excerpt": "该公园充分利用桥下空间遮阴避雨的优势",
+          "source_url": "https://m.weibo.cn/detail/4818268537489424"
+        }
+      ]
+    },
+    {
+      "demand_topic": "tree_canopy",
+      "demand_topic_zh": "树冠/绿化覆盖",
+      "item_count": 1,
+      "evaluation_direction": {
+        "improvement": 1
+      },
+      "examples": [
+        {
+          "item_id": "wi_b9b7d5e73d53",
+          "excerpt": "桑科榕属，也叫大叶榕，夏天遮阴效果特别好，是重庆主城最经典的行道树。",
+          "source_url": "https://m.weibo.cn/detail/5337956421207426"
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "item_id": "wi_486e105fbe8a",
+      "source": "weibo",
+      "source_post_id": "5341274926221063",
+      "source_url": "https://m.weibo.cn/detail/5341274926221063",
+      "kind": "post",
+      "author": "中国气象爱好者",
+      "published_at": "2026-09-09T16:30:41+08:00",
+      "text": "#冷空气##暴雨##高温# 今天冷空气发起入川作战，川渝化身巨型“鸳鸯锅”，重庆川东35度以上高温还在负隅顽抗，而盆地西半部龙门山前暴雨如注、气温跌破20度！今明两天冷空气将逐渐“灌满”整个盆地，2026年重庆高温就要熄灭了。",
+      "excerpt": "重庆川东35度以上高温还在负隅顽抗",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "neutral",
+      "experience_tags": [
+        "hot"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 38,
+          "end": 40
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 103,
+          "end": 105
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "heat_relevance",
+          "start": 10,
+          "end": 12,
+          "quote": "高温"
+        },
+        {
+          "field": "experience_tags",
+          "start": 42,
+          "end": 49,
+          "quote": "35度以上高温"
+        },
+        {
+          "field": "content_types",
+          "start": 79,
+          "end": 97,
+          "quote": "今明两天冷空气将逐渐“灌满”整个盆地"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_327a3ab8ce",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_09e8e42eae66",
+      "source": "weibo",
+      "source_post_id": "5341615875164634",
+      "source_url": "https://m.weibo.cn/detail/5341615875164634",
+      "kind": "post",
+      "author": "中国气象爱好者",
+      "published_at": "2026-09-10T15:05:30+08:00",
+      "text": "#冷空气##天气##高温# 随着冷空气与降雨带南移，今天西南地区成为全国降温重点，尤其是重庆川南直接从高温线俯冲暴跌15度以上，一晚上就实现了从盛夏到初秋的巨大转变！重庆主城昨天午后还有37.5度，但到今天14时气温降至23.5度，当地漫长高温季至此彻底结束、全年高温日数基本锁定53天。",
+      "excerpt": "当地漫长高温季至此彻底结束、全年高温日数基本锁定53天",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "positive_cooling",
+      "demand_topic_zh": "降温改善体验",
+      "evaluation_direction": "improvement",
+      "experience_tags": [
+        "cool"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 44,
+          "end": 46
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 83,
+          "end": 85
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "heat_relevance",
+          "start": 10,
+          "end": 12,
+          "quote": "高温"
+        },
+        {
+          "field": "demand_topic",
+          "start": 71,
+          "end": 82,
+          "quote": "从盛夏到初秋的巨大转变"
+        },
+        {
+          "field": "experience_tags",
+          "start": 106,
+          "end": 115,
+          "quote": "气温降至23.5度"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 118,
+          "end": 129,
+          "quote": "漫长高温季至此彻底结束"
+        }
+      ],
+      "confidence": 0.7,
+      "confidence_level": "medium",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_130bc2d04c",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_0a13e11583c2",
+      "source": "weibo",
+      "source_post_id": "5353828096148958",
+      "source_url": "https://m.weibo.cn/detail/5353828096148958",
+      "kind": "post",
+      "author": "中国天气",
+      "published_at": "2026-10-14T07:52:30+08:00",
+      "text": "#广州或迎史上最晚高温日#【越来越热！大数据揭秘哪里热得更早了】不少小伙伴感觉这些年高温来得越来越早、越来越多。中国天气网统计气象大数据发现，这不是错觉！#我国大部高温来得越来越早# ，日数也在变多。\n\n哪里高温最多？重庆福州等地年均超30天\n\n在气象上，通常以日最高气温≥35℃为高温天气标准。中国天气网统计了1991年至2020年气象大数据发现，我国淮河以南地区以及新疆、内蒙古西部为高温多发区域。其中，海南、广东西北部、江西大部、浙江大部、台湾沿海地区、新疆南疆盆地以及福建、广西、重庆、湖北、内蒙古的部分区域高温最多发，年均高温日数在30天以上。以酷热而闻名的吐鲁番，年均高温日数达107天，为全国之最。\n\n省会级城市中，重庆、福州、杭州、海口等地高温天最多，年均日数超过30天；长沙、南昌、西安、武汉、广州等地“热力值”也不低，平均每年高温日数在20天以上；南宁、郑州、石家庄、合肥、南京、上海、济南、天津、北京的年均高温日数多于10天。各地防暑降温工作不可掉以轻心。\n\n何时高温最猛？北方热得早 南方后劲足\n\n我国高温集中在夏季的6至8月，其中7月最多。不过，我国幅员辽阔，各地的高温出现时间差异很大。相对来看，北方地区高温起步较早，南方地区高温后劲更足，高温总日数也更多。\n\n中国天气网盘点了省会级城市1991年至2020年的高温数据发现，北方往往在6月份就热起来了，7月高温日数达到顶峰，8月开始减少。比如6月份，西安、石家庄、郑州等城市的平均高温日数能达到7至8天，7月能达到7至10天；到了8月，北方城市的高温日数大多不足2天。\n\n南方大部地区高温明显晚一些，常年6月只有零星的高温出现，7月至8月才进入高峰期。但后来者居上，杭州、福州7月平均高温日数超过15天，武汉、南昌、长沙、重庆高温日数也在10天以上；到了8月，南昌、杭州、重庆、福州的高温日数仍能超过10天，热意不减。\n\n此外，还有一个高温超长待机的大城市——海口，由于特殊的地理位置，这里最早在2月就会出现高温，4月至8月还可能连续出现高温。\n\n提前报到！这些地方的高温来得更早了\n\n不少网友感慨，这些年热得越来越早，常常无缝冬转夏，春装几乎没有机会出场。中国天气网统计气象大数据发现，这不是错觉，我国多地高温季确实开启得越来越早了。\n\n对比1971年至2020年逐十年平均的首个高温日期，重庆、南京、福州、杭州等地提前较为明显，其中重庆提前一个多月。20世纪70年代，这些城市的首个高温日往往出现在6月下旬到7月初，到了2011年至2020年这10年间，重庆和福州的平均首个高温日期提前到5月中下旬，杭州、武汉的首个高温时间提前到6月上旬。\n\n越来越多！这些地方的高温日数在变多\n\n近些年的高温“工作”十分勤恳，不仅“提前报到”，还经常“延迟下班”！中国天气网统计了近50年气温数据发现，我国多地的高温日数在波动中呈现明显的增加趋势。\n\n有研究表明，我国不同区域高温日数对全球变暖响应的时间不一致，高温日数开始增加的时间由南向北越来越晚。20世纪70年代中期开始，华南地区的高温日数就开始增加；1980年代初，长江中下游地区开始增多；1980年代末，华北地区高温开始变多。\n\n以省会级城市为例，兰州、银川、天津、郑州、合肥、福州、海口、重庆等地的高温日数都呈现出增多趋势，并在2011年至2020年达到顶峰，相比20世纪70年代，南昌、福州、郑州等地最近十年的年均高温日数增多10天以上。\n\n日夜循环热！这些地方夜间也在变热\n\n如果说白天高温炙烤，夜间气温下降，人们还能有所喘息；要是夜间气温也居高不下，小伙伴就只能感受“日夜连轴热”了。大数据显示，除了白天变热，不少地方夜间也在明显变热。\n\n在夏季的夜晚，南方地区的平均相对湿度一般能超过60%，在这个湿度下，气温28℃对应的体感温度则接近30℃。所以如果全天气温都在28℃以上，人们就能体会到“日夜连轴热”了。\n\n统计显示，北京、天津、郑州、重庆、合肥、福州、杭州、南京、上海等地的最低气温高于28℃的日数正在明显变多。其中，20世纪70年代到90年代，南昌年均日数在5至7天，近十年增加到21.7天。（文/张慧 数据支持/王伟跃 设计/任成英）",
+      "excerpt": "我国多地高温季确实开启得越来越早了",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "hot",
+        "muggy"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "广州",
+          "kind": "other",
+          "start": 1,
+          "end": 3
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 109,
+          "end": 111
+        },
+        {
+          "name": "福州",
+          "kind": "other",
+          "start": 111,
+          "end": 113
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 244,
+          "end": 246
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 315,
+          "end": 317
+        },
+        {
+          "name": "福州",
+          "kind": "other",
+          "start": 318,
+          "end": 320
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "content_types",
+          "start": 56,
+          "end": 70,
+          "quote": "中国天气网统计气象大数据发现"
+        },
+        {
+          "field": "heat_relevance",
+          "start": 940,
+          "end": 957,
+          "quote": "我国多地高温季确实开启得越来越早了"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 1459,
+          "end": 1465,
+          "quote": "白天高温炙烤"
+        },
+        {
+          "field": "experience_tags",
+          "start": 1503,
+          "end": 1508,
+          "quote": "日夜连轴热"
+        }
+      ],
+      "confidence": 0.75,
+      "confidence_level": "medium",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees",
+        "negation_flag"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_c2af20006f",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_d7f8259784d4",
+      "source": "weibo",
+      "source_post_id": "5357544768014676",
+      "source_url": "https://m.weibo.cn/detail/5357544768014676",
+      "kind": "post",
+      "author": "上游新闻",
+      "published_at": "2026-10-24T14:01:14+08:00",
+      "text": "#14年3000余起警情重庆一消防员的答卷#【14年，3000余起警情：一个消防员的“战场答卷”】#研究生消防员把书生气变成逆火担当#40℃高温下，三层楼板被一层层打通，断裂的预制板悬在头顶，10多米高的钢筋混凝土柱摇摇欲坠，雷达还在报警：岩体右侧变形量47.31毫米，里面有人吗？\n\n“哪怕只有百分之一的可能，也要付出百分之百的努力。”穿着被汗和粉尘糊成灰黄色救援服的张健，拿胳膊肘蹭了一把糊住眼睛的汗，又翻进了下一处狭小空间。\n\n张健是重庆市消防救援总队特勤支队红光大道站的一名消防指战员。入队十四年，参与处置各类灾害事故三千余起——重庆山火、武隆建筑倒塌、永川特大暴雨、岳阳团洲垸排涝……他的战场，从来不在办公室。（上游新闻记者 宋剑） 14年，3000余起警情：一个消防员的“战场答卷”",
+      "excerpt": "40℃高温下，三层楼板被一层层打通，断裂的预制板悬在头顶",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "outdoor_work",
+      "demand_topic_zh": "户外作业",
+      "evaluation_direction": "neutral",
+      "experience_tags": [
+        "hot"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "outdoor_work"
+      ],
+      "time_status": "historical",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 12,
+          "end": 14
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 220,
+          "end": 222
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 269,
+          "end": 271
+        },
+        {
+          "name": "永川",
+          "kind": "target",
+          "start": 281,
+          "end": 283
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 67,
+          "end": 73,
+          "quote": "40℃高温下"
+        },
+        {
+          "field": "activity_scene",
+          "start": 169,
+          "end": 187,
+          "quote": "穿着被汗和粉尘糊成灰黄色救援服的张健"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 188,
+          "end": 202,
+          "quote": "拿胳膊肘蹭了一把糊住眼睛的汗"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_fa102b425e",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_a3f20aacfc9e",
+      "source": "weibo",
+      "source_post_id": "5358362870939876",
+      "source_url": "https://m.weibo.cn/detail/5358362870939876",
+      "kind": "post",
+      "author": "三峡融媒",
+      "published_at": "2026-10-26T20:12:04+08:00",
+      "text": "【#本周全国南北气温反差强烈#】北方多地气温跌破0℃，迎来降雪；南方部分地区最高温仍超30℃。#重庆未来三天以小雨为主#，最高气温难超25℃，体感偏凉，出门记得带伞。 @重庆广电第1眼 网页链接 重庆广电第1眼的微博视频",
+      "excerpt": "南方部分地区最高温仍超30℃",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "neutral",
+      "experience_tags": [
+        "unspecified"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "future",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 48,
+          "end": 50
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 98,
+          "end": 100
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "heat_relevance",
+          "start": 32,
+          "end": 46,
+          "quote": "南方部分地区最高温仍超30℃"
+        },
+        {
+          "field": "content_types",
+          "start": 48,
+          "end": 59,
+          "quote": "重庆未来三天以小雨为主"
+        },
+        {
+          "field": "time_status",
+          "start": 50,
+          "end": 54,
+          "quote": "未来三天"
+        }
+      ],
+      "confidence": 0.7,
+      "confidence_level": "medium",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_e0213ec430",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_d9505aa2c4c8",
+      "source": "weibo",
+      "source_post_id": "5358756574533749",
+      "source_url": "https://m.weibo.cn/detail/5358756574533749",
+      "kind": "post",
+      "author": "吨吨吨同学xin",
+      "published_at": "2026-10-27T22:16:31+08:00",
+      "text": "晚上回家路上，看到有个环卫工人坐在路边休息，手里拿着盒饭，吃得简单。\n我走过去问他需不需要水，他说自己有。\n我说辛苦了，他笑了一下，说习惯了。\n重庆的高温天，他们在户外工作真的不容易。\n希望大家都能少扔点垃圾，让他们轻松一点。",
+      "excerpt": "重庆的高温天，他们在户外工作真的不容易。",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "outdoor_work",
+      "demand_topic_zh": "户外作业",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "hot"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "outdoor_work"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 72,
+          "end": 74
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "content_types",
+          "start": 35,
+          "end": 46,
+          "quote": "我走过去问他需不需要水"
+        },
+        {
+          "field": "heat_relevance",
+          "start": 72,
+          "end": 78,
+          "quote": "重庆的高温天"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 72,
+          "end": 92,
+          "quote": "重庆的高温天，他们在户外工作真的不容易。"
+        },
+        {
+          "field": "activity_scene",
+          "start": 79,
+          "end": 91,
+          "quote": "他们在户外工作真的不容易"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_b177f5b7d6",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_4980cd1ed5b9",
+      "source": "weibo",
+      "source_post_id": "5358665617376157",
+      "source_url": "https://m.weibo.cn/detail/5358665617376157",
+      "kind": "post",
+      "author": "orange橙汁Zia",
+      "published_at": "2026-10-27T16:15:05+08:00",
+      "text": "重庆又热成炼丹炉了，出门五分钟流汗两小时。\n我在江北嘴等红绿灯，看对面那个小哥衬衫都湿透了，还在那刷抖音笑嘻了。\n重庆人的乐观真不是盖的，热归热，生活还是要继续。\n晚上回去整点冰粉凉虾，再来个麻辣小龙虾，巴适得板。\n#重庆生活#",
+      "excerpt": "重庆又热成炼丹炉了，出门五分钟流汗两小时。",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "waiting_transit",
+      "demand_topic_zh": "候车/等候条件",
+      "evaluation_direction": "mixed",
+      "experience_tags": [
+        "hot"
+      ],
+      "spatial_demands": [
+        "waiting_comfort"
+      ],
+      "activity_scene": [
+        "waiting",
+        "walking"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 0,
+          "end": 2
+        },
+        {
+          "name": "江北",
+          "kind": "target",
+          "start": 24,
+          "end": 26
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 57,
+          "end": 59
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 109,
+          "end": 111
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 0,
+          "end": 9,
+          "quote": "重庆又热成炼丹炉了"
+        },
+        {
+          "field": "activity_scene",
+          "start": 22,
+          "end": 31,
+          "quote": "我在江北嘴等红绿灯"
+        },
+        {
+          "field": "content_types",
+          "start": 32,
+          "end": 45,
+          "quote": "看对面那个小哥衬衫都湿透了"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 69,
+          "end": 80,
+          "quote": "热归热，生活还是要继续"
+        }
+      ],
+      "confidence": 0.55,
+      "confidence_level": "low",
+      "confidence_basis": [
+        "span_valid",
+        "negation_flag"
+      ],
+      "review_status": "pending",
+      "duplicate_group_id": "dg_0ea938d0a6",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_f199ca497fef",
+      "source": "weibo",
+      "source_post_id": "5358316344577615",
+      "source_url": "https://m.weibo.cn/detail/5358316344577615",
+      "kind": "post",
+      "author": "垫江发布",
+      "published_at": "2026-10-26T17:07:12+08:00",
+      "text": "冷空气 + 阴雨双 buff 叠加！重庆未来三天最高温难超 25℃，雨天出行注意路况！#重庆天气 ##冷空气来袭 # 垫江发布的微博视频",
+      "excerpt": "重庆未来三天最高温难超 25℃，雨天出行注意路况",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "neutral",
+      "experience_tags": [
+        "cool"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "future",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 18,
+          "end": 20
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 44,
+          "end": 46
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 0,
+          "end": 17,
+          "quote": "冷空气 + 阴雨双 buff 叠加"
+        },
+        {
+          "field": "content_types",
+          "start": 18,
+          "end": 33,
+          "quote": "重庆未来三天最高温难超 25℃"
+        }
+      ],
+      "confidence": 0.7,
+      "confidence_level": "medium",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_28e7981172",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_bb68027eb91e",
+      "source": "weibo",
+      "source_post_id": "5358723310820655",
+      "source_url": "https://m.weibo.cn/detail/5358723310820655",
+      "kind": "post",
+      "author": "沿着河流的方向我看见海洋",
+      "published_at": "2026-10-27T20:04:20+08:00",
+      "text": "很难想象重庆人民在除了6月到9月这40度高温的夏天外，见到阳光的日子总数加起来不到半个月的地方，是靠什么保持对生活热情的",
+      "excerpt": "40度高温的夏天",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "hot"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 4,
+          "end": 6
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "location_mentions",
+          "start": 4,
+          "end": 8,
+          "quote": "重庆人民"
+        },
+        {
+          "field": "experience_tags",
+          "start": 17,
+          "end": 22,
+          "quote": "40度高温"
+        },
+        {
+          "field": "heat_relevance",
+          "start": 20,
+          "end": 22,
+          "quote": "高温"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_2fda183eaa",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_cf3d4bcfc744",
+      "source": "weibo",
+      "source_post_id": "5358559236982068",
+      "source_url": "https://m.weibo.cn/detail/5358559236982068",
+      "kind": "post",
+      "author": "用户7728377839",
+      "published_at": "2026-10-27T09:12:22+08:00",
+      "text": "重庆\n\n 大渡口政府近几年大搞破坏，大量公共的社区森林公园，草坪，生态湿地，行道树，绿化隔离带等遭到城管局的严重破坏和毁灭，被钢铁水泥石材塑胶沥青所取代，成了铁板大渡口水泥大渡口。\n\n 万幸的是，楼盘里面是私人领地，城管局无法染指和破坏，使楼盘里保持了绿色生态植被。当年，某个受市民尊敬的市领导提出的建设“森林重庆”的理念，在部分楼盘得到贯彻。重庆在去年连续3个月40多度，成全国的“火炉之王”，历史上罕见。如果没有保留下来的绿色植被，酷热难以想象。小区植被茂密，阻挡夏季高温，再次证明当年那个市领导的高瞻远瞩的目光。\n\n 位于大渡口双林社区的晋愉•天意楼盘，走进里面像走进了密林一般，处处都是绿荫，空气清新，负氧离子含量高，抵抗热辐射和40度的高温，大部分的步道被浓密的树林遮挡，小区里面凉爽宜人，称得上名乎其实的绿色生态小区，森林小区。",
+      "excerpt": "如果没有保留下来的绿色植被，酷热难以想象。",
+      "heat_relevance": "relevant",
+      "is_public_demand": true,
+      "demand_topic": "shade_deficit",
+      "demand_topic_zh": "遮阴不足",
+      "evaluation_direction": "mixed",
+      "experience_tags": [
+        "hot",
+        "cool",
+        "mixed"
+      ],
+      "spatial_demands": [
+        "shade_deficit",
+        "stay_comfort"
+      ],
+      "activity_scene": [
+        "walking",
+        "unspecified"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 0,
+          "end": 2
+        },
+        {
+          "name": "大渡口",
+          "kind": "target",
+          "start": 5,
+          "end": 8
+        },
+        {
+          "name": "大渡口",
+          "kind": "target",
+          "start": 81,
+          "end": 84
+        },
+        {
+          "name": "大渡口",
+          "kind": "target",
+          "start": 86,
+          "end": 89
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 155,
+          "end": 157
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 172,
+          "end": 174
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "spatial_demands",
+          "start": 38,
+          "end": 61,
+          "quote": "行道树，绿化隔离带等遭到城管局的严重破坏和毁灭"
+        },
+        {
+          "field": "heat_relevance",
+          "start": 172,
+          "end": 186,
+          "quote": "重庆在去年连续3个月40多度"
+        },
+        {
+          "field": "demand_topic",
+          "start": 204,
+          "end": 224,
+          "quote": "如果没有保留下来的绿色植被，酷热难以想象"
+        },
+        {
+          "field": "experience_tags",
+          "start": 341,
+          "end": 349,
+          "quote": "小区里面凉爽宜人"
+        }
+      ],
+      "confidence": 0.9,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees",
+        "public_demand"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_02b705f032",
+      "event_cluster_id": "ev_06bedc4fb0"
+    },
+    {
+      "item_id": "wi_70fd186399d0",
+      "source": "weibo",
+      "source_post_id": "5358508264653475",
+      "source_url": "https://m.weibo.cn/detail/5358508264653475",
+      "kind": "post",
+      "author": "李知恩的小可可An",
+      "published_at": "2026-10-27T05:49:49+08:00",
+      "text": "重庆的夏天真的热得快化了。今天最高温38度，走在街上感觉脚底板都要糊了。我赶紧钻进一个商场，看到一群人在那里蹭空调，有的甚至带了小板凳。保安也不管，毕竟大家都不容易。我买了杯冰粉，舀一勺，里面全是花生碎和葡萄干，凉丝丝的，瞬间活过来了。冰粉就是重庆夏天的救星。#夏天的感觉这不就来了#",
+      "excerpt": "走在街上感觉脚底板都要糊了",
+      "heat_relevance": "relevant",
+      "is_public_demand": true,
+      "demand_topic": "water_cooling_facility",
+      "demand_topic_zh": "饮水/降温设施",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "hot",
+        "sun_exposure"
+      ],
+      "spatial_demands": [
+        "water_or_cooling_facility"
+      ],
+      "activity_scene": [
+        "walking"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 0,
+          "end": 2
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 122,
+          "end": 124
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "evaluation_direction",
+          "start": 7,
+          "end": 12,
+          "quote": "热得快化了"
+        },
+        {
+          "field": "experience_tags",
+          "start": 22,
+          "end": 35,
+          "quote": "走在街上感觉脚底板都要糊了"
+        },
+        {
+          "field": "activity_scene",
+          "start": 22,
+          "end": 26,
+          "quote": "走在街上"
+        },
+        {
+          "field": "spatial_demands",
+          "start": 48,
+          "end": 57,
+          "quote": "一群人在那里蹭空调"
+        }
+      ],
+      "confidence": 0.9,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees",
+        "public_demand"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_549cbae306",
+      "event_cluster_id": "ev_cf19c7dfdb"
+    },
+    {
+      "item_id": "wi_a909072c0b0b",
+      "source": "weibo",
+      "source_post_id": "5332261192860589",
+      "source_url": "https://m.weibo.cn/detail/5332261192860589",
+      "kind": "post",
+      "author": "weatherman_信欣",
+      "published_at": "2026-08-15T19:33:20+08:00",
+      "text": "【高温】今天新疆四川重庆站点包揽了高温榜前十。福州重庆成都三个省会直辖市出现高温。未来成都和福州因为降雨增多，高温有望告一段落。18日成都只有26℃，比今天低10℃。未来重庆的高温依然会持续，连报7天。常年8月就是重庆全年高温最多的月份，而重庆也是常年8月高温最多的省会首府直辖市。所以8月高温看重庆。\n\n未来2-3天南方总体的高温看似不多，大多不到35℃，但是湿度大，露水凝结点温度普遍超24℃，因此不下雨的时候依然闷热，有不少隐形的高温，体感温度可以超40℃。而且18日以后，因为副热带高压控制，南方明面上的高温也会增多。武汉预计18-22日连续出现高温。目前还在末伏当中，有高温不稀奇。",
+      "excerpt": "未来2-3天南方总体的高温看似不多，大多不到35℃，但是湿度大",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "hot",
+        "muggy"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "future",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 10,
+          "end": 12
+        },
+        {
+          "name": "福州",
+          "kind": "other",
+          "start": 23,
+          "end": 25
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 25,
+          "end": 27
+        },
+        {
+          "name": "成都",
+          "kind": "other",
+          "start": 27,
+          "end": 29
+        },
+        {
+          "name": "成都",
+          "kind": "other",
+          "start": 43,
+          "end": 45
+        },
+        {
+          "name": "福州",
+          "kind": "other",
+          "start": 46,
+          "end": 48
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "content_types",
+          "start": 83,
+          "end": 100,
+          "quote": "未来重庆的高温依然会持续，连报7天"
+        },
+        {
+          "field": "time_status",
+          "start": 153,
+          "end": 159,
+          "quote": "未来2-3天"
+        },
+        {
+          "field": "experience_tags",
+          "start": 209,
+          "end": 211,
+          "quote": "闷热"
+        },
+        {
+          "field": "experience_tags",
+          "start": 221,
+          "end": 231,
+          "quote": "体感温度可以超40℃"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_ec5ec7e940",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_0727315b6d8b",
+      "source": "weibo",
+      "source_post_id": "5352415748426763",
+      "source_url": "https://m.weibo.cn/detail/5352415748426763",
+      "kind": "post",
+      "author": "玩遍全重庆",
+      "published_at": "2026-10-10T10:20:20+08:00",
+      "text": "#重庆一键切换秋日模式# 重庆终于迎来秋天了！秋雨绵绵，江边、城市公园，树叶慢慢染上浅黄，高低错落的山城建筑，在秋日柔光里格外好看。告别闷热，终于可以漫步街头，吹一吹山城的秋风。这个秋天，在重庆慢慢感受独属于山城的浪漫！（视频/重庆发布）#玩遍全重庆##同城热点创作计划# 重庆 玩遍全重庆的微博视频",
+      "excerpt": "告别闷热，终于可以漫步街头，吹一吹山城的秋风。",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "positive_cooling",
+      "demand_topic_zh": "降温改善体验",
+      "evaluation_direction": "improvement",
+      "experience_tags": [
+        "muggy",
+        "cool"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "walking",
+        "leisure"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 1,
+          "end": 3
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 13,
+          "end": 15
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 95,
+          "end": 97
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 114,
+          "end": 116
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 123,
+          "end": 125
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 137,
+          "end": 139
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 66,
+          "end": 70,
+          "quote": "告别闷热"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 71,
+          "end": 79,
+          "quote": "终于可以漫步街头"
+        },
+        {
+          "field": "demand_topic",
+          "start": 80,
+          "end": 88,
+          "quote": "吹一吹山城的秋风"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_a6e621a982",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_2e0886bb51d6",
+      "source": "weibo",
+      "source_post_id": "5319504884141373",
+      "source_url": "https://m.weibo.cn/detail/5319504884141373",
+      "kind": "post",
+      "author": "weatherman_信欣",
+      "published_at": "2026-07-11T14:44:19+08:00",
+      "text": "【高温闷热】今天截至14时最高，四川陕西湖北重庆河南新疆站点，包揽前十。除了新疆是干热，其他都是闷热。河南漯河体感超44℃，四川渠县、陕西旬阳、湖北兴山、重庆巫溪体感超43℃。\n\n另外今天河北也非常闷热。露水凝结点温度达到了26-30℃，甚至比南方很多地方还高。深泽露水凝结点温度就是30℃，35.2℃的气温，相对湿度76%，因此体感也有43℃。这样的高温高湿，堪称极品桑拿。",
+      "excerpt": "河南漯河体感超44℃",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "hot",
+        "muggy"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "西湖",
+          "kind": "other",
+          "start": 19,
+          "end": 21
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 22,
+          "end": 24
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 77,
+          "end": 79
+        },
+        {
+          "name": "天河",
+          "kind": "other",
+          "start": 93,
+          "end": 95
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 3,
+          "end": 5,
+          "quote": "闷热"
+        },
+        {
+          "field": "time_status",
+          "start": 6,
+          "end": 15,
+          "quote": "今天截至14时最高"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 183,
+          "end": 187,
+          "quote": "极品桑拿"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_a979178d19",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_9f1caa8727a9",
+      "source": "weibo",
+      "source_post_id": "5335523474541500",
+      "source_url": "https://m.weibo.cn/detail/5335523474541500",
+      "kind": "post",
+      "author": "上游新闻",
+      "published_at": "2026-08-24T19:36:28+08:00",
+      "text": "#重庆电梯医生守护山城30万台电梯#【高温下的“电梯医生”】重庆八月，热浪滚滚。“电梯医生”钻进比室外更热的电梯井道“把脉问诊”，守护着山城30万台电梯的平安运行。汗水浸透衣背，换来的是市民每一次的乘梯安全。\n\n他们每天都会提着十几斤重的工具箱，一头扎进更加闷热的电梯井道——他们是重庆市特种设备检测研究院的电梯检验员。(上游新闻记者 王淳 周本帅) 上游新闻的微博视频",
+      "excerpt": "一头扎进更加闷热的电梯井道",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "outdoor_work",
+      "demand_topic_zh": "户外作业",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "hot",
+        "muggy"
+      ],
+      "spatial_demands": [
+        "ventilation"
+      ],
+      "activity_scene": [
+        "other"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 1,
+          "end": 3
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 30,
+          "end": 32
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 141,
+          "end": 143
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 35,
+          "end": 39,
+          "quote": "热浪滚滚"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 82,
+          "end": 88,
+          "quote": "汗水浸透衣背"
+        },
+        {
+          "field": "experience_tags",
+          "start": 127,
+          "end": 136,
+          "quote": "更加闷热的电梯井道"
+        },
+        {
+          "field": "content_types",
+          "start": 161,
+          "end": 174,
+          "quote": "上游新闻记者 王淳 周本帅"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_248af8b998",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_424fe1c82805",
+      "source": "weibo",
+      "source_post_id": "5333420822763291",
+      "source_url": "https://m.weibo.cn/detail/5333420822763291",
+      "kind": "post",
+      "author": "七野Qiye_",
+      "published_at": "2026-08-19T00:21:17+08:00",
+      "text": "说实话几年前去了一次重庆\n回来就决定不会再去第二次了\n人太多了……而且所谓的景点真的很网红\n商业化非常严重，气候也很闷热\n路特别不好走，导航有时候显示也很难走明白",
+      "excerpt": "商业化非常严重，气候也很闷热",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "muggy"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "walking"
+      ],
+      "time_status": "historical",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 10,
+          "end": 12
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 54,
+          "end": 60,
+          "quote": "气候也很闷热"
+        },
+        {
+          "field": "activity_scene",
+          "start": 61,
+          "end": 67,
+          "quote": "路特别不好走"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_54aeb388ad",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_e827c3c0445b",
+      "source": "weibo",
+      "source_post_id": "5335802250792212",
+      "source_url": "https://m.weibo.cn/detail/5335802250792212",
+      "kind": "post",
+      "author": "重庆校园",
+      "published_at": "2026-08-25T14:04:14+08:00",
+      "text": "#山城秋老虎来袭##重庆高温迟迟不肯退场#\n今日处暑，可重庆的秋老虎丝毫没有退场的意思，高温橙色预警再度上线，23个区县气温直冲39℃。本以为节气到了就能迎来降温，结果依旧被闷热高温拿捏，出门一定要做好防暑，坐等降雨降温。\n｜@重庆天气 重庆校园的微博视频",
+      "excerpt": "今日处暑，可重庆的秋老虎丝毫没有退场的意思，高温橙色预警再度上线",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "hot",
+        "muggy"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 10,
+          "end": 12
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 28,
+          "end": 30
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 119,
+          "end": 121
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "content_types",
+          "start": 44,
+          "end": 54,
+          "quote": "高温橙色预警再度上线"
+        },
+        {
+          "field": "content_types",
+          "start": 55,
+          "end": 67,
+          "quote": "23个区县气温直冲39℃"
+        },
+        {
+          "field": "experience_tags",
+          "start": 84,
+          "end": 93,
+          "quote": "依旧被闷热高温拿捏"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_5188a71e16",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_7bb4651fc6d9",
+      "source": "weibo",
+      "source_post_id": "5331485930294081",
+      "source_url": "https://m.weibo.cn/detail/5331485930294081",
+      "kind": "post",
+      "author": "中国天气",
+      "published_at": "2026-08-13T16:12:43+08:00",
+      "text": "【#重庆的高温又续上了# 】#重庆高温后劲十足#\n在冷空气、降雨的影响下，中东部大部地区高温范围缩减。但四川盆地还是一片“红火”，高温频繁。重庆今天高温已经达成，明起6天高温还将持续在线\n\n常年来看，8月也是重庆一年中高温日数最多的月份，闷热正当时。",
+      "excerpt": "重庆今天高温已经达成，明起6天高温还将持续在线",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "hot",
+        "muggy"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "future",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 15,
+          "end": 17
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 70,
+          "end": 72
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 104,
+          "end": 106
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 65,
+          "end": 69,
+          "quote": "高温频繁"
+        },
+        {
+          "field": "time_status",
+          "start": 81,
+          "end": 93,
+          "quote": "明起6天高温还将持续在线"
+        },
+        {
+          "field": "experience_tags",
+          "start": 119,
+          "end": 124,
+          "quote": "闷热正当时"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_ee5cb2cacc",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_b3067cb678c3",
+      "source": "weibo",
+      "source_post_id": "5341148914648388",
+      "source_url": "https://m.weibo.cn/detail/5341148914648388",
+      "kind": "post",
+      "author": "中国天气",
+      "published_at": "2026-09-09T08:09:58+08:00",
+      "text": "#重庆一大早就热到全国第一#看气温实况，重庆一整晚气温都没下过30℃，闷热连轴了……\n\n好消息是，高温明起退场，热了那么久，总算可以喘口气了。#重庆终终终终终于要降温了#",
+      "excerpt": "重庆一整晚气温都没下过30℃，闷热连轴了……",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "mixed",
+      "experience_tags": [
+        "hot",
+        "muggy"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 1,
+          "end": 3
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 20,
+          "end": 22
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 72,
+          "end": 74
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 35,
+          "end": 40,
+          "quote": "闷热连轴了"
+        },
+        {
+          "field": "content_types",
+          "start": 49,
+          "end": 55,
+          "quote": "高温明起退场"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 62,
+          "end": 70,
+          "quote": "总算可以喘口气了"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_be83a3c143",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_06d99efa4dd9",
+      "source": "weibo",
+      "source_post_id": "5303509362147476",
+      "source_url": "https://m.weibo.cn/detail/5303509362147476",
+      "kind": "post",
+      "author": "美丽大数据",
+      "published_at": "2026-05-28T11:23:49+08:00",
+      "text": "重庆这些天闷热闷热闷热。。。",
+      "excerpt": "重庆这些天闷热闷热闷热。。。",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "muggy"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 0,
+          "end": 2
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "evaluation_direction",
+          "start": 0,
+          "end": 14,
+          "quote": "重庆这些天闷热闷热闷热。。。"
+        },
+        {
+          "field": "experience_tags",
+          "start": 5,
+          "end": 11,
+          "quote": "闷热闷热闷热"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_3286c14b60",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_d8d9d083ded5",
+      "source": "weibo",
+      "source_post_id": "5334070643130420",
+      "source_url": "https://m.weibo.cn/detail/5334070643130420",
+      "kind": "post",
+      "author": "重庆广电第1眼",
+      "published_at": "2026-08-20T19:23:25+08:00",
+      "text": "【#热了这么久什么时候降温入秋#】全国多地高温闷热不退，热了这么久，冷空气到底何时来降温？今起三天，黄淮、江淮、江汉、江南、华南北部是高温闷热的核心区域，不仅白天热，夜间最低气温也大多超过25℃，暑热昼夜持续。#重庆23日起将迎来连续高温#，预计8月24日以后，北方将迎来一轮降温过程，此轮降温或助推入秋进程。 重庆广电第1眼的微博视频",
+      "excerpt": "全国多地高温闷热不退，热了这么久，冷空气到底何时来降温？",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "hot",
+        "muggy"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 106,
+          "end": 108
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 156,
+          "end": 158
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 17,
+          "end": 27,
+          "quote": "全国多地高温闷热不退"
+        },
+        {
+          "field": "experience_tags",
+          "start": 83,
+          "end": 97,
+          "quote": "夜间最低气温也大多超过25℃"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 98,
+          "end": 104,
+          "quote": "暑热昼夜持续"
+        },
+        {
+          "field": "content_types",
+          "start": 121,
+          "end": 142,
+          "quote": "预计8月24日以后，北方将迎来一轮降温过程"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_540655d271",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_38dacac612fb",
+      "source": "weibo",
+      "source_post_id": "5335823322974608",
+      "source_url": "https://m.weibo.cn/detail/5335823322974608",
+      "kind": "post",
+      "author": "黄角树",
+      "published_at": "2026-08-25T15:27:58+08:00",
+      "text": "重庆今年闷热，下午又去游了800米。",
+      "excerpt": "重庆今年闷热，下午又去游了800米。",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "muggy"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "other"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 0,
+          "end": 2
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "location_mentions",
+          "start": 0,
+          "end": 2,
+          "quote": "重庆"
+        },
+        {
+          "field": "heat_relevance",
+          "start": 4,
+          "end": 6,
+          "quote": "闷热"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_c650f40ba0",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_cb42954b5569",
+      "source": "weibo",
+      "source_post_id": "5336926137617850",
+      "source_url": "https://m.weibo.cn/detail/5336926137617850",
+      "kind": "post",
+      "author": "杨品-光线摄影学院",
+      "published_at": "2026-08-28T16:30:09+08:00",
+      "text": "8月28日下午4点重庆华岩寺，忽降大雨，闷热的重庆终于要大降温啦！但是，问题是，这雨下着下着反而更加闷热啦！我的个天啊！\n\n今年夏天，2026年7月1日以来，重庆最热的两天，一定是昨天和今天，太闷了！比7月两轮41度高温还要热！\n\n这是真的，其实今年7月虽然是几十年来最热的7月，虽然经常40度高温，但是并不感觉热，早晚没有热气腾腾没有滚滚热浪！\n\n可是，昨天下午，昨天晚上，今天下午，体感比7 月热多了！\n\n终于让人感到热到受不了啦！\n\n希望今天晚上大雨下透，希望今天晚上变清凉啊！\n\n#光线摄影世界曾兰谈天说地# @光线摄影学院曾兰老师",
+      "excerpt": "昨天下午，昨天晚上，今天下午，体感比7 月热多了！",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "hot",
+        "muggy"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 9,
+          "end": 11
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 23,
+          "end": 25
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 79,
+          "end": 81
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 20,
+          "end": 25,
+          "quote": "闷热的重庆"
+        },
+        {
+          "field": "time_status",
+          "start": 178,
+          "end": 192,
+          "quote": "昨天下午，昨天晚上，今天下午"
+        },
+        {
+          "field": "content_types",
+          "start": 193,
+          "end": 203,
+          "quote": "体感比7 月热多了！"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 205,
+          "end": 218,
+          "quote": "终于让人感到热到受不了啦！"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_68ae380ce2",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_3f797ff29efe",
+      "source": "weibo",
+      "source_post_id": "5358943514658579",
+      "source_url": "https://m.weibo.cn/detail/5358943514658579",
+      "kind": "post",
+      "author": "我担全世界最美公主",
+      "published_at": "2026-10-28T10:39:21+08:00",
+      "text": "6月在重庆 从桥那头沿着大桥走到了南滨路\n想起来在几年前的夜晚 从长江国际那头出发已经走过了\n那天就很想从另一头走到长江国际\n走着走着真的发现好远好远啊\n闷热潮湿的夏季 听着蝉鸣声看着街道川流不息\n特别想你们\n是特别",
+      "excerpt": "闷热潮湿的夏季 听着蝉鸣声看着街道川流不息",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "muggy"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "walking"
+      ],
+      "time_status": "historical",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 3,
+          "end": 5
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "activity_scene",
+          "start": 6,
+          "end": 20,
+          "quote": "从桥那头沿着大桥走到了南滨路"
+        },
+        {
+          "field": "experience_tags",
+          "start": 77,
+          "end": 84,
+          "quote": "闷热潮湿的夏季"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 77,
+          "end": 81,
+          "quote": "闷热潮湿"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_44b62c49ed",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_a581eddaf5c0",
+      "source": "weibo",
+      "source_post_id": "5358582088338933",
+      "source_url": "https://m.weibo.cn/detail/5358582088338933",
+      "kind": "post",
+      "author": "fzypcc",
+      "published_at": "2026-10-27T10:43:10+08:00",
+      "text": "今天下雨降温 早上又把朋友送的温暖壁炉拿出来喷 还是好好闻啊 上次喷还是七月份培训的时候 因为包装小 当时培训只带了这个和另外一个小样 七月的重庆闷热 喷温暖壁炉会闷闷的 但是现在 我感觉我在炉火旁 有热牛奶 烤红薯 炒栗子 甜甜的 特别幸福",
+      "excerpt": "七月的重庆闷热 喷温暖壁炉会闷闷的",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "mixed",
+      "experience_tags": [
+        "muggy"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "historical",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 71,
+          "end": 73
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "time_status",
+          "start": 68,
+          "end": 75,
+          "quote": "七月的重庆闷热"
+        },
+        {
+          "field": "experience_tags",
+          "start": 73,
+          "end": 75,
+          "quote": "闷热"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 81,
+          "end": 85,
+          "quote": "会闷闷的"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_ac67270b4f",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_6ba13be99267",
+      "source": "weibo",
+      "source_post_id": "5357554150409549",
+      "source_url": "https://m.weibo.cn/detail/5357554150409549",
+      "kind": "post",
+      "author": "重庆发布",
+      "published_at": "2026-10-24T14:38:31+08:00",
+      "text": "【#重庆人准备tong铺盖# 下一股冷空气在路上了……】最近重庆的天气属实不好拿捏，白天穿衣可以用上万能的 “洋葱穿衣法”，热了脱、冷了加刚刚好，可一到晚上就犯难：铺盖厚了闷热，薄了怕冷！不慌！下一股冷空气或于26日“开工”，重庆人“tong”铺盖的日子越来越近了，话不多说，一起来看天气预报，详情>>网页链接",
+      "excerpt": "可一到晚上就犯难：铺盖厚了闷热，薄了怕冷！",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "muggy"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 30,
+          "end": 32
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 113,
+          "end": 115
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 82,
+          "end": 93,
+          "quote": "铺盖厚了闷热，薄了怕冷"
+        },
+        {
+          "field": "time_status",
+          "start": 97,
+          "end": 112,
+          "quote": "下一股冷空气或于26日“开工”"
+        },
+        {
+          "field": "content_types",
+          "start": 138,
+          "end": 146,
+          "quote": "一起来看天气预报"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_b2339a8a40",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_05267fdd5e18",
+      "source": "weibo",
+      "source_post_id": "5358962845155560",
+      "source_url": "https://m.weibo.cn/detail/5358962845155560",
+      "kind": "post",
+      "author": "旅人饼",
+      "published_at": "2026-10-28T11:56:09+08:00",
+      "text": "想念9.27想念破格5.0想念重庆那个闷热潮湿的下午想念蓝色的小扣和头顶的两个妙脆角",
+      "excerpt": "想念重庆那个闷热潮湿的下午",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "mixed",
+      "experience_tags": [
+        "muggy"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "historical",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 15,
+          "end": 17
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "evaluation_direction",
+          "start": 13,
+          "end": 26,
+          "quote": "想念重庆那个闷热潮湿的下午"
+        },
+        {
+          "field": "experience_tags",
+          "start": 19,
+          "end": 23,
+          "quote": "闷热潮湿"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_2382d86055",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_1ce562196109",
+      "source": "weibo",
+      "source_post_id": "4818268537489424",
+      "source_url": "https://m.weibo.cn/detail/4818268537489424",
+      "kind": "post",
+      "author": "聚焦重庆",
+      "published_at": "2022-09-27T11:10:01+08:00",
+      "text": "#重庆在桥下建体育公园# 【方便又休闲！这里有个遮阴避雨的桥下体育公园】近期，沙坪坝区土湾街道龙泉路立交桥下空间被改造为社区文化体育公园投用，成为居民休闲运动的好去处。该公园充分利用桥下空间遮阴避雨的优势，巧妙地将城市“灰色空间”打造成为一个社区体育文化公园，吸引不少市民前来健身锻炼。",
+      "excerpt": "该公园充分利用桥下空间遮阴避雨的优势",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "plaza_leisure",
+      "demand_topic_zh": "广场与休闲",
+      "evaluation_direction": "improvement",
+      "experience_tags": [
+        "cool"
+      ],
+      "spatial_demands": [
+        "stay_comfort"
+      ],
+      "activity_scene": [
+        "leisure"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 1,
+          "end": 3
+        },
+        {
+          "name": "沙坪坝",
+          "kind": "target",
+          "start": 39,
+          "end": 42
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "demand_topic",
+          "start": 24,
+          "end": 28,
+          "quote": "遮阴避雨"
+        },
+        {
+          "field": "time_status",
+          "start": 36,
+          "end": 70,
+          "quote": "近期，沙坪坝区土湾街道龙泉路立交桥下空间被改造为社区文化体育公园投用"
+        },
+        {
+          "field": "excerpt",
+          "start": 84,
+          "end": 102,
+          "quote": "该公园充分利用桥下空间遮阴避雨的优势"
+        }
+      ],
+      "confidence": 0.6,
+      "confidence_level": "low",
+      "confidence_basis": [
+        "span_valid"
+      ],
+      "review_status": "pending",
+      "duplicate_group_id": "dg_1ab16895f8",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_a510dcf7ffc4",
+      "source": "weibo",
+      "source_post_id": "5194798526891515",
+      "source_url": "https://m.weibo.cn/detail/5194798526891515",
+      "kind": "post",
+      "author": "星耀重庆",
+      "published_at": "2025-08-01T11:45:46+08:00",
+      "text": "重庆来福士这次以「此地·来风」为主题打造的夏日公共艺术装置算是很巧妙的企划。一方面通过在商场出入口、山城花园等户外公共空间节点进行「定制装扮」增加视觉亮点，同时又兼顾了遮阴纳凉的实际功能。",
+      "excerpt": "同时又兼顾了遮阴纳凉的实际功能",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "positive_cooling",
+      "demand_topic_zh": "降温改善体验",
+      "evaluation_direction": "improvement",
+      "experience_tags": [
+        "cool"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 0,
+          "end": 2
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "evaluation_direction",
+          "start": 29,
+          "end": 37,
+          "quote": "算是很巧妙的企划"
+        },
+        {
+          "field": "demand_topic",
+          "start": 84,
+          "end": 93,
+          "quote": "遮阴纳凉的实际功能"
+        }
+      ],
+      "confidence": 0.6,
+      "confidence_level": "low",
+      "confidence_basis": [
+        "span_valid"
+      ],
+      "review_status": "pending",
+      "duplicate_group_id": "dg_69fd3a2790",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_030a9679acb6",
+      "source": "weibo",
+      "source_post_id": "4924526846805089",
+      "source_url": "https://m.weibo.cn/detail/4924526846805089",
+      "kind": "post",
+      "author": "万州吧",
+      "published_at": "2023-07-17T16:22:36+08:00",
+      "text": "#万州城事# 【真.绿树成荫 白岩路绿成一幅画】这个天很多人步行都会找遮阴的地方，在白岩路，两旁的梧桐树把太阳挡得死死的，无论是走路还是开车路过都不会有大片晒到的地方， 真的是绿树成荫了，走在其中就像在画里一样。#重庆万州这条路真绿树成荫#",
+      "excerpt": "两旁的梧桐树把太阳挡得死死的",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "positive_cooling",
+      "demand_topic_zh": "降温改善体验",
+      "evaluation_direction": "improvement",
+      "experience_tags": [
+        "cool"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "walking"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "万州",
+          "kind": "target",
+          "start": 1,
+          "end": 3
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 107,
+          "end": 109
+        },
+        {
+          "name": "万州",
+          "kind": "target",
+          "start": 109,
+          "end": 111
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "demand_topic",
+          "start": 27,
+          "end": 40,
+          "quote": "很多人步行都会找遮阴的地方"
+        },
+        {
+          "field": "location_mentions",
+          "start": 41,
+          "end": 45,
+          "quote": "在白岩路"
+        },
+        {
+          "field": "experience_tags",
+          "start": 46,
+          "end": 60,
+          "quote": "两旁的梧桐树把太阳挡得死死的"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 94,
+          "end": 105,
+          "quote": "走在其中就像在画里一样"
+        }
+      ],
+      "confidence": 0.6,
+      "confidence_level": "low",
+      "confidence_basis": [
+        "span_valid"
+      ],
+      "review_status": "pending",
+      "duplicate_group_id": "dg_df4613fb2c",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_7de44a1f8538",
+      "source": "weibo",
+      "source_post_id": "4889324057789732",
+      "source_url": "https://m.weibo.cn/detail/4889324057789732",
+      "kind": "post",
+      "author": "延时摄影何不易",
+      "published_at": "2023-04-11T12:59:17+08:00",
+      "text": "重庆我又大意了，这个金州公园嗮死了，都是矮灌木，遮阴的大树一颗没有。。。。我忘了这是个新公园 大树要长成是要很多年的 重庆·金州公园",
+      "excerpt": "这个金州公园嗮死了，都是矮灌木，遮阴的大树一颗没有",
+      "heat_relevance": "relevant",
+      "is_public_demand": true,
+      "demand_topic": "tree_canopy",
+      "demand_topic_zh": "树冠/绿化覆盖",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "hot",
+        "sun_exposure"
+      ],
+      "spatial_demands": [
+        "shade_deficit"
+      ],
+      "activity_scene": [
+        "leisure"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 0,
+          "end": 2
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 59,
+          "end": 61
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 14,
+          "end": 17,
+          "quote": "嗮死了"
+        },
+        {
+          "field": "demand_topic",
+          "start": 18,
+          "end": 33,
+          "quote": "都是矮灌木，遮阴的大树一颗没有"
+        },
+        {
+          "field": "spatial_demands",
+          "start": 24,
+          "end": 33,
+          "quote": "遮阴的大树一颗没有"
+        },
+        {
+          "field": "actionability",
+          "start": 59,
+          "end": 66,
+          "quote": "重庆·金州公园"
+        }
+      ],
+      "confidence": 0.7,
+      "confidence_level": "medium",
+      "confidence_basis": [
+        "span_valid",
+        "public_demand"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_f4d53a46fc",
+      "event_cluster_id": "ev_8a65a22811"
+    },
+    {
+      "item_id": "wi_a74d42746097",
+      "source": "weibo",
+      "source_post_id": "5347122867077427",
+      "source_url": "https://m.weibo.cn/detail/5347122867077427",
+      "kind": "post",
+      "author": "夏末又见七月",
+      "published_at": "2026-09-25T19:48:18+08:00",
+      "text": "中秋节桂山岛徒步环岛游。\n耽搁了很久的桂山岛，终于来了。\n蛇口坐船一个小时到。比较小的一个岛。本来要带自行车来，查了点攻略发现环岛公路起伏太多，不适合悠闲骑行。 还是靠两条路走吧。\n十一点在酒店休息后，想着先吃个饭随便转一转。结果又是头脑一热，沿着海岸观景长廊就开始了逆时针环岛………\n大中午好晒，海边的景色是不错，就是完全没得遮阴。看了摩崖石刻，桂山号登陆点遗址，接着上环岛公路。前面一路上坡，直到遇见一个隧道，坐在隧道口，凉风呼呼呼地，眼前就是美丽的海景，这一刻心里才舒坦起来。后面的路走起来也舒服多了。路过正在修的七湾沙滩，在一个面朝大海的驿站吹海风打盹，走过桂山水库，头顶盘旋了七八只说不上名字的大鸟，大的臂展得有一米。再接着往下走，就没路了。遇见工地人员，他们说可以走进去，海豚湾沙滩就在旁边。这一片都是工地，有些像是已经荒废好久了。一个外观看着很不错的卡丁车基地也荒废了。再往前走就来到了海豚湾沙滩，没人，荒凉，都是沙子石头。我们蹲在沙滩上，挖了一些小小的蚬子。沿着沙滩继续往前走，走到尽头，正想着坐在石头上吹会儿海风呢，一回头看见几个人过来，告诉我们这里不开放，海水很危险。简单交谈后，他们说观光车可以捎带我们走到大路上去。于是我们额外享受了一段观光车。再次也提醒下，海豚湾沙滩并没有对外开放，周围都是工地，海水下面有高度落差千万别下水。\n回到桂山大道，我们沿着建设一路游往山上走，顺道看一看民宿，这里高高低低上上下下，倒是有一种走在重庆的感觉。 珠海·珠海桂山岛",
+      "excerpt": "大中午好晒，海边的景色是不错，就是完全没得遮阴。",
+      "heat_relevance": "relevant",
+      "is_public_demand": true,
+      "demand_topic": "shade_deficit",
+      "demand_topic_zh": "遮阴不足",
+      "evaluation_direction": "mixed",
+      "experience_tags": [
+        "sun_exposure",
+        "cool"
+      ],
+      "spatial_demands": [
+        "shade_deficit"
+      ],
+      "activity_scene": [
+        "walking",
+        "leisure"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 624,
+          "end": 626
+        },
+        {
+          "name": "珠海",
+          "kind": "other",
+          "start": 631,
+          "end": 633
+        },
+        {
+          "name": "珠海",
+          "kind": "other",
+          "start": 634,
+          "end": 636
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 143,
+          "end": 148,
+          "quote": "大中午好晒"
+        },
+        {
+          "field": "spatial_demands",
+          "start": 160,
+          "end": 166,
+          "quote": "完全没得遮阴"
+        },
+        {
+          "field": "experience_tags",
+          "start": 213,
+          "end": 219,
+          "quote": "凉风呼呼呼地"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 230,
+          "end": 240,
+          "quote": "这一刻心里才舒坦起来"
+        }
+      ],
+      "confidence": 0.85,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees",
+        "public_demand",
+        "negation_flag"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_b10b829c43",
+      "event_cluster_id": "ev_06bedc4fb0"
+    },
+    {
+      "item_id": "wi_704a56646bc9",
+      "source": "weibo",
+      "source_post_id": "5322440709507566",
+      "source_url": "https://m.weibo.cn/detail/5322440709507566",
+      "kind": "post",
+      "author": "慧爱释小龙哥哥",
+      "published_at": "2026-07-19T17:10:14+08:00",
+      "text": "刘小慧LJH#微博旅行ING##盛夏追光之旅#\n【刘小慧旅行小札💗时隔多日又来半山崖线散步啦】\n\n🏔️今日借着给大家开直播又走了一遍半山崖线（红墙路段），没想到这次过来发现半山崖线正在整修，而在半山崖线红墙出入口附近新开了一家咖啡店。虽然今天的重庆气温很高，但由于半山崖线拥有独特的地理位置，再加上景点遮阴效果很好，因此走在里面不会觉得过于闷热。\n\n🏔️从半山崖线红墙出入口走进去，经过悬空栈道，再经过“开往春天的列车”，最后经过关岳庙就能来到化龙桥地铁站了。化龙桥地铁站挨着印象城商场，商场里面有很多茶饮店，走累了可在商场里找一家店小歇。待电梯全部施工好后，大家就可以乘坐电梯直接下行来到化龙桥地铁站了。\n#刘小慧旅行出游分享# 重庆·半山崖线红墙(入口)",
+      "excerpt": "景点遮阴效果很好，因此走在里面不会觉得过于闷热",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "positive_cooling",
+      "demand_topic_zh": "降温改善体验",
+      "evaluation_direction": "improvement",
+      "experience_tags": [
+        "hot",
+        "cool"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "walking"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 124,
+          "end": 126
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 319,
+          "end": 321
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 124,
+          "end": 130,
+          "quote": "重庆气温很高"
+        },
+        {
+          "field": "experience_tags",
+          "start": 151,
+          "end": 159,
+          "quote": "景点遮阴效果很好"
+        },
+        {
+          "field": "demand_topic",
+          "start": 166,
+          "end": 174,
+          "quote": "不会觉得过于闷热"
+        }
+      ],
+      "confidence": 0.7,
+      "confidence_level": "medium",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_5d17a57853",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_c34719346236",
+      "source": "weibo",
+      "source_post_id": "5067694568902761",
+      "source_url": "https://m.weibo.cn/detail/5067694568902761",
+      "kind": "post",
+      "author": "用户7907128959",
+      "published_at": "2024-08-15T18:00:01+08:00",
+      "text": "重庆主城周边1h耍水💦——水质好巴适👍\n\n📍导航：北碚区桃子湾，或者“金刀峡南门塌方处”\n🚗建议自驾出行，更方便\n🅿️停车：桥下面停车收费，停路边不要钱💰\n\n👍优点：\n✅河道宽、流域广，放得下露营桌椅💺\n✅可烧烤、耍水、搬螃蟹🦀️\n✅金刀峡附近，峡谷地带有遮阴\n\n💗tips：\n1⃣️到了金刀峡建议往上游走点，人稍微少一点。越往上水越清凉💦有深一点的水池可以游泳🏊带上游泳圈\n\n2⃣️拖鞋必备🩴，垃圾带走，防火防水🔥安全第一！\n3⃣️周末人很多，建议早点去🏃可以选有树荫的位置\n4⃣️注意防晒 建议穿长袖长裤👔有野蚊子\n5⃣️文明露营🏕️ 带走自己的垃圾🚮 爱护环境",
+      "excerpt": "✅金刀峡附近，峡谷地带有遮阴",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "positive_cooling",
+      "demand_topic_zh": "降温改善体验",
+      "evaluation_direction": "improvement",
+      "experience_tags": [
+        "cool",
+        "sun_exposure"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "leisure"
+      ],
+      "time_status": "unknown",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 0,
+          "end": 2
+        },
+        {
+          "name": "北碚",
+          "kind": "target",
+          "start": 28,
+          "end": 30
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "demand_topic",
+          "start": 132,
+          "end": 139,
+          "quote": "峡谷地带有遮阴"
+        },
+        {
+          "field": "experience_tags",
+          "start": 172,
+          "end": 181,
+          "quote": "越往上水越清凉💦"
+        },
+        {
+          "field": "activity_scene",
+          "start": 244,
+          "end": 253,
+          "quote": "可以选有树荫的位置"
+        },
+        {
+          "field": "experience_tags",
+          "start": 257,
+          "end": 269,
+          "quote": "注意防晒 建议穿长袖长裤"
+        }
+      ],
+      "confidence": 0.7,
+      "confidence_level": "medium",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_ad89c43477",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_5aa59f8216c9",
+      "source": "weibo",
+      "source_post_id": "5342200068309491",
+      "source_url": "https://m.weibo.cn/detail/5342200068309491",
+      "kind": "post",
+      "author": "猫会跟着走冬",
+      "published_at": "2026-09-12T05:46:52+08:00",
+      "text": "昨晚下了场雨，今天早上起来感觉凉快多了。出门看到很多蜗牛爬在墙上，小时候最喜欢捉来耍，现在看到只觉得滑腻腻的。路过黄桷树，叶子落了一地，环卫阿姨扫了又落，她抱怨：“这个树一年四季都在掉叶子，不晓得啷个设计的。”我说黄桷树是重庆的市树啊，春天换叶，夏天遮阴，秋天又开始落，习惯了就好了。#这个夏天我在重庆#",
+      "excerpt": "昨晚下了场雨，今天早上起来感觉凉快多了。",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "positive_cooling",
+      "demand_topic_zh": "降温改善体验",
+      "evaluation_direction": "improvement",
+      "experience_tags": [
+        "cool"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "walking"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 111,
+          "end": 113
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 149,
+          "end": 151
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "evaluation_direction",
+          "start": 13,
+          "end": 19,
+          "quote": "感觉凉快多了"
+        },
+        {
+          "field": "experience_tags",
+          "start": 15,
+          "end": 19,
+          "quote": "凉快多了"
+        },
+        {
+          "field": "demand_topic",
+          "start": 123,
+          "end": 127,
+          "quote": "夏天遮阴"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_816868922d",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_b9b7d5e73d53",
+      "source": "weibo",
+      "source_post_id": "5337956421207426",
+      "source_url": "https://m.weibo.cn/detail/5337956421207426",
+      "kind": "post",
+      "author": "邝鉴萍",
+      "published_at": "2026-08-31T12:44:08+08:00",
+      "text": "#一条plog告别八月#🌳 黄葛树（常被大家写作黄桷树，重庆市市树）\n\n这就是重庆街头最常见的大树，照片里是居民小区成片栽种的黄葛树。\n\n简单识别特点\n\n1. 树形：高大乔木，树冠伞状铺开，枝干粗壮，老树会长出气生根、板根。\n\n2. 叶片：叶片长椭圆形、油亮，薄革质；重庆民间有个有意思的说法：黄葛树什么时候栽种，就什么时候落叶，所以有的春天落叶，有的夏天落叶。\n\n3. 习性：生命力极强，耐山城的湿热，抗贫瘠，重庆老小区、老街、公园随处可见。\n\n小补充\n\n• 桑科榕属，也叫大叶榕，夏天遮阴效果特别好，是重庆主城最经典的行道树。\n\n• 很多人容易和香樟搞混：香樟揉碎叶子有樟脑香味，黄葛树没有这个味道。",
+      "excerpt": "桑科榕属，也叫大叶榕，夏天遮阴效果特别好，是重庆主城最经典的行道树。",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "tree_canopy",
+      "demand_topic_zh": "树冠/绿化覆盖",
+      "evaluation_direction": "improvement",
+      "experience_tags": [
+        "cool"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "unknown",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 29,
+          "end": 31
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 40,
+          "end": 42
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 135,
+          "end": 137
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 207,
+          "end": 209
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 254,
+          "end": 256
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "evaluation_direction",
+          "start": 89,
+          "end": 95,
+          "quote": "树冠伞状铺开"
+        },
+        {
+          "field": "demand_topic",
+          "start": 243,
+          "end": 252,
+          "quote": "夏天遮阴效果特别好"
+        }
+      ],
+      "confidence": 0.6,
+      "confidence_level": "low",
+      "confidence_basis": [
+        "span_valid"
+      ],
+      "review_status": "pending",
+      "duplicate_group_id": "dg_0682701244",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_820271a9dca4",
+      "source": "weibo",
+      "source_post_id": "5334751889327788",
+      "source_url": "https://m.weibo.cn/detail/5334751889327788",
+      "kind": "post",
+      "author": "健康财富88",
+      "published_at": "2026-08-22T16:30:28+08:00",
+      "text": "山城八月早入秋\n蝉声退去暑气留\n虽有白云来遮阴\n唯思甘霖洒渝州\n\n 重庆蓝天生活碎片日常分享#分享日常# 重庆·恒大中渝广场",
+      "excerpt": "蝉声退去暑气留",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "hot"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 34,
+          "end": 36
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 53,
+          "end": 55
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 12,
+          "end": 15,
+          "quote": "暑气留"
+        },
+        {
+          "field": "demand_topic",
+          "start": 24,
+          "end": 31,
+          "quote": "唯思甘霖洒渝州"
+        }
+      ],
+      "confidence": 0.6,
+      "confidence_level": "low",
+      "confidence_basis": [
+        "span_valid"
+      ],
+      "review_status": "pending",
+      "duplicate_group_id": "dg_346d96c129",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_362e4e088523",
+      "source": "weibo",
+      "source_post_id": "5322498797210637",
+      "source_url": "https://m.weibo.cn/detail/5322498797210637",
+      "kind": "post",
+      "author": "Oaimey",
+      "published_at": "2026-07-19T21:01:03+08:00",
+      "text": "⛰️丨重庆·大圆洞\n\n三伏天没想到能走到一条这么令人舒适的路线😌\n路线难易度💯\n体感温度💯\n全程遮阴度💯 重庆·大圆洞国家森林公园",
+      "excerpt": "全程遮阴度💯 重庆·大圆洞国家森林公园",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "positive_cooling",
+      "demand_topic_zh": "降温改善体验",
+      "evaluation_direction": "improvement",
+      "experience_tags": [
+        "cool"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "walking"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 3,
+          "end": 5
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 57,
+          "end": 59
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "content_types",
+          "start": 14,
+          "end": 31,
+          "quote": "没想到能走到一条这么令人舒适的路线"
+        },
+        {
+          "field": "experience_tags",
+          "start": 42,
+          "end": 48,
+          "quote": "体感温度💯"
+        },
+        {
+          "field": "demand_topic",
+          "start": 49,
+          "end": 56,
+          "quote": "全程遮阴度💯"
+        }
+      ],
+      "confidence": 0.6,
+      "confidence_level": "low",
+      "confidence_basis": [
+        "span_valid"
+      ],
+      "review_status": "pending",
+      "duplicate_group_id": "dg_3c75b36bea",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_03f557ebcc4c",
+      "source": "weibo",
+      "source_post_id": "5344508831338912",
+      "source_url": "https://m.weibo.cn/detail/5344508831338912",
+      "kind": "post",
+      "author": "重庆两江龙兴寺",
+      "published_at": "2026-09-18T14:41:04+08:00",
+      "text": "绿树遮阴，百年梧桐。 重庆·龙兴古镇",
+      "excerpt": "绿树遮阴，百年梧桐。",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "positive_cooling",
+      "demand_topic_zh": "降温改善体验",
+      "evaluation_direction": "improvement",
+      "experience_tags": [
+        "cool"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "unknown",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 11,
+          "end": 13
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "demand_topic",
+          "start": 0,
+          "end": 4,
+          "quote": "绿树遮阴"
+        },
+        {
+          "field": "location_mentions",
+          "start": 11,
+          "end": 18,
+          "quote": "重庆·龙兴古镇"
+        }
+      ],
+      "confidence": 0.6,
+      "confidence_level": "low",
+      "confidence_basis": [
+        "span_valid"
+      ],
+      "review_status": "pending",
+      "duplicate_group_id": "dg_e4d0f9db28",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_b5d46c9d3e4a",
+      "source": "weibo",
+      "source_post_id": "5335499792189349",
+      "source_url": "https://m.weibo.cn/detail/5335499792189349",
+      "kind": "post",
+      "author": "NananaComeOnAn",
+      "published_at": "2026-08-24T18:02:22+08:00",
+      "text": "在路边看到一个写着“山城步道”的牌子，就顺着走了上去。步道很窄，两边是老房子，头顶有绿树遮阴。走着走着就到了一个观景台，能看到大半个渝中半岛。这种步道是重庆特有的，以前是居民上下山的路，现在成了游客探索城市的地方。走在这种步道上，能感受到最真实的重庆。",
+      "excerpt": "步道很窄，两边是老房子，头顶有绿树遮阴。",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "positive_cooling",
+      "demand_topic_zh": "降温改善体验",
+      "evaluation_direction": "improvement",
+      "experience_tags": [
+        "cool"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "walking",
+        "leisure"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "渝中",
+          "kind": "target",
+          "start": 66,
+          "end": 68
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 76,
+          "end": 78
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 123,
+          "end": 125
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "activity_scene",
+          "start": 19,
+          "end": 26,
+          "quote": "就顺着走了上去"
+        },
+        {
+          "field": "excerpt",
+          "start": 27,
+          "end": 47,
+          "quote": "步道很窄，两边是老房子，头顶有绿树遮阴。"
+        },
+        {
+          "field": "experience_tags",
+          "start": 39,
+          "end": 46,
+          "quote": "头顶有绿树遮阴"
+        }
+      ],
+      "confidence": 0.6,
+      "confidence_level": "low",
+      "confidence_basis": [
+        "span_valid"
+      ],
+      "review_status": "pending",
+      "duplicate_group_id": "dg_83ea1d336a",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_bbd7aaef0723",
+      "source": "weibo",
+      "source_post_id": "5325687638461189",
+      "source_url": "https://m.weibo.cn/detail/5325687638461189",
+      "kind": "post",
+      "author": "森之夏目",
+      "published_at": "2026-07-28T16:12:22+08:00",
+      "text": "重庆已经热到给树遮阴了吗....好热",
+      "excerpt": "重庆已经热到给树遮阴了吗....好热",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "hot"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 0,
+          "end": 2
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "heat_relevance",
+          "start": 0,
+          "end": 12,
+          "quote": "重庆已经热到给树遮阴了吗"
+        },
+        {
+          "field": "experience_tags",
+          "start": 16,
+          "end": 18,
+          "quote": "好热"
+        }
+      ],
+      "confidence": 0.6,
+      "confidence_level": "low",
+      "confidence_basis": [
+        "span_valid"
+      ],
+      "review_status": "pending",
+      "duplicate_group_id": "dg_d3e7d71fda",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_cbfb0c0bd4a9",
+      "source": "weibo",
+      "source_post_id": "5325223878723252",
+      "source_url": "https://m.weibo.cn/detail/5325223878723252",
+      "kind": "post",
+      "author": "用户7728377839",
+      "published_at": "2026-07-27T09:29:33+08:00",
+      "text": "重庆大渡口\n\n心湖公园门口，护佑了居民，带来新鲜空气，遮挡夏季40多度爆热，给数万辖区居民带来阴凉10多年的，近20棵参天大树，被大渡口城管局剃了光头。\n\n真是丧尽天良，毫无底线。崽卖爷田不心疼！不把绿色破坏干净不心甘！按四川老太婆的俚语：背时砍脑壳的！\n\n10多年的参天大树，离酒店200多米，八竿子都打不着，挡了谁的财路？还是挡了谁的八辈祖坟？要如此丧心病狂的来破坏？是脑袋进水了还是被驴踢了？把城管局长张宗伟家门前的树，也来剃光头，你不骂娘吗？破坏起辖区居民遮阴的参天大树，怎么就那么的心狠手辣呀？\n\n青山绿水也是金山银山的指示，在城管局眼里啥也不是？崽卖爷田不心疼！不把绿色破坏干净心不甘？满目苍翠的大树被剃了光头，铺成水泥瓷砖地白花花一片，光秃秃一片。晒死个人，这些瓷砖是你们的亲娘！居民和游客，在高温下暴晒，你们暗地里心花怒放！暗中窃喜？\n\n41多度，地表70多度，不把人热死心不甘？蛇蝎心如！破坏的刽子手部门，绿化工程处主任葛宝庆贪污腐败被抓，这就是个侵犯辖区居民权益的腐败工程，为何不恢复绿化？\n\n大渡口豢养的啥子部门？专门来违法破坏生态环境？祸害辖区居民，请区书记张果立即引咎辞职，还我青山绿水，还我金山银山！",
+      "excerpt": "满目苍翠的大树被剃了光头，铺成水泥瓷砖地白花花一片，光秃秃一片。晒死个人",
+      "heat_relevance": "relevant",
+      "is_public_demand": true,
+      "demand_topic": "tree_canopy",
+      "demand_topic_zh": "树冠/绿化覆盖",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "hot",
+        "sun_exposure"
+      ],
+      "spatial_demands": [
+        "shade_deficit",
+        "stay_comfort"
+      ],
+      "activity_scene": [
+        "leisure"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 0,
+          "end": 2
+        },
+        {
+          "name": "大渡口",
+          "kind": "target",
+          "start": 2,
+          "end": 5
+        },
+        {
+          "name": "大渡口",
+          "kind": "target",
+          "start": 65,
+          "end": 68
+        },
+        {
+          "name": "大渡口",
+          "kind": "target",
+          "start": 457,
+          "end": 460
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "actionability",
+          "start": 7,
+          "end": 13,
+          "quote": "心湖公园门口"
+        },
+        {
+          "field": "experience_tags",
+          "start": 27,
+          "end": 37,
+          "quote": "遮挡夏季40多度爆热"
+        },
+        {
+          "field": "spatial_demands",
+          "start": 225,
+          "end": 239,
+          "quote": "破坏起辖区居民遮阴的参天大树"
+        },
+        {
+          "field": "demand_topic",
+          "start": 447,
+          "end": 455,
+          "quote": "为何不恢复绿化？"
+        }
+      ],
+      "confidence": 0.85,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees",
+        "public_demand",
+        "negation_flag"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_1903d21425",
+      "event_cluster_id": "ev_8a65a22811"
+    },
+    {
+      "item_id": "wi_f29ba0595f54",
+      "source": "weibo",
+      "source_post_id": "5323782404965373",
+      "source_url": "https://m.weibo.cn/detail/5323782404965373",
+      "kind": "post",
+      "author": "晚霞报",
+      "published_at": "2026-07-23T10:01:39+08:00",
+      "text": "溪水穿巷、古树遮阴……川渝亲水古镇 自有消暑“凉”方#伏天避暑#\n入伏以来，川渝多地持续高温，闷热天气促使不少人寻找纳凉好去处。众多依河而建、溪水穿巷的亲水古镇，成为今夏亲子出游、短途休闲的热门选择。\n四川：老牌亲水古镇人气旺\n四川多处老牌亲水古镇今夏人气爆棚。成都黄龙溪古镇溪水沿街流淌，浅滩平缓、游玩安全，是家喻户晓的踩水胜地。每逢周末，随处可见孩童手持水枪嬉戏，捞鱼捉虾，烟火气十足。\n洛带古镇客家水龙季活动火热进行中，水龙巡游、泼水祈福等特色活动持续至8月下旬。活动将传统客家民俗与夏日玩水消暑相结合，独特的民俗体验吸引了大批游客前来打卡游玩。\n雅安上里古镇依山傍水，清澈的溪水环绕明清吊脚楼，两岸古树繁茂成荫，生态环境清幽。游客可赤脚漫步浅滩，也可在河边茶馆落座，泡一杯盖碗茶，将双脚浸入溪水，静享晚风清凉。\n眉山柳江古镇河道交错纵横，河岸百年黄葛树枝繁叶茂、遮阴避暑。当地依托天然河道打造多处亲水游玩区域，还可联动瓦屋山规划避暑游玩环线，满足家庭出游需求。\n重庆：到“水中茶馆”品茶纳凉\n重庆近郊多处古镇凭借特色亲水体验走红。偏岩古镇，黑水滩河穿镇而过，浅滩水深仅及膝盖，水流平缓、无暗流，游玩安全性高。当地特色“水中茶馆”将桌椅设置在河道浅水区，游客可品茶纳凉、浸泡溪水。古镇全程免门票，从重庆主城自驾一小时即可到达。（晚霞报见习记者 白宇）\n东溪古镇，太平桥河段浅滩开阔，错落的吊脚楼倒映在河中，清幽雅致。游客可踩水嬉戏、泛舟河面，游玩之余还能漫步古街，品尝本地特色小吃。",
+      "excerpt": "入伏以来，川渝多地持续高温，闷热天气促使不少人寻找纳凉好去处。",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "positive_cooling",
+      "demand_topic_zh": "降温改善体验",
+      "evaluation_direction": "improvement",
+      "experience_tags": [
+        "hot",
+        "muggy",
+        "cool"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "leisure"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "other",
+          "start": 131,
+          "end": 133
+        },
+        {
+          "name": "雅安",
+          "kind": "other",
+          "start": 277,
+          "end": 279
+        },
+        {
+          "name": "眉山",
+          "kind": "other",
+          "start": 360,
+          "end": 362
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 435,
+          "end": 437
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 450,
+          "end": 452
+        },
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 552,
+          "end": 554
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 38,
+          "end": 51,
+          "quote": "川渝多地持续高温，闷热天气"
+        },
+        {
+          "field": "demand_topic",
+          "start": 56,
+          "end": 63,
+          "quote": "寻找纳凉好去处"
+        },
+        {
+          "field": "experience_tags",
+          "start": 301,
+          "end": 309,
+          "quote": "两岸古树繁茂成荫"
+        },
+        {
+          "field": "experience_tags",
+          "start": 373,
+          "end": 389,
+          "quote": "河岸百年黄葛树枝繁叶茂、遮阴避暑"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_6b9bfc3c8f",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_d09779b802ee",
+      "source": "weibo",
+      "source_post_id": "5341615875164634",
+      "source_url": "https://m.weibo.cn/detail/5341615875164634",
+      "kind": "comment",
+      "author": "高山流水5g",
+      "published_at": "2026-09-11T05:12:12+08:00",
+      "text": "重庆近些年国庆节期间出现高温都不稀奇",
+      "excerpt": "重庆近些年国庆节期间出现高温都不稀奇",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "neutral",
+      "experience_tags": [
+        "hot"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "historical",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 0,
+          "end": 2
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "location_mentions",
+          "start": 0,
+          "end": 2,
+          "quote": "重庆"
+        },
+        {
+          "field": "time_status",
+          "start": 2,
+          "end": 5,
+          "quote": "近些年"
+        },
+        {
+          "field": "experience_tags",
+          "start": 12,
+          "end": 14,
+          "quote": "高温"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_66e6013ca5",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_b6e7a5252b46",
+      "source": "weibo",
+      "source_post_id": "4818268537489424",
+      "source_url": "https://m.weibo.cn/detail/4818268537489424",
+      "kind": "comment",
+      "author": "渝小淘",
+      "published_at": "2022-09-27T11:16:20+08:00",
+      "text": "#重庆在桥下建体育公园# 方便又休闲！这里有个遮阴避雨的桥下体育公园[彩虹屁][彩虹屁][彩虹屁]",
+      "excerpt": "这里有个遮阴避雨的桥下体育公园",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "positive_cooling",
+      "demand_topic_zh": "降温改善体验",
+      "evaluation_direction": "improvement",
+      "experience_tags": [
+        "cool"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "leisure"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 1,
+          "end": 3
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "evaluation_direction",
+          "start": 13,
+          "end": 18,
+          "quote": "方便又休闲"
+        },
+        {
+          "field": "activity_scene",
+          "start": 16,
+          "end": 18,
+          "quote": "休闲"
+        },
+        {
+          "field": "experience_tags",
+          "start": 23,
+          "end": 27,
+          "quote": "遮阴避雨"
+        }
+      ],
+      "confidence": 0.6,
+      "confidence_level": "low",
+      "confidence_basis": [
+        "span_valid"
+      ],
+      "review_status": "pending",
+      "duplicate_group_id": "dg_70367efadc",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_29cbb314cde6",
+      "source": "weibo",
+      "source_post_id": "4818268537489424",
+      "source_url": "https://m.weibo.cn/detail/4818268537489424",
+      "kind": "comment",
+      "author": "新重庆",
+      "published_at": "2022-09-27T11:15:14+08:00",
+      "text": "#重庆在桥下建体育公园# 方便又休闲！这里有个遮阴避雨的桥下体育公园[月亮代表我的心]",
+      "excerpt": "这里有个遮阴避雨的桥下体育公园",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "positive_cooling",
+      "demand_topic_zh": "降温改善体验",
+      "evaluation_direction": "improvement",
+      "experience_tags": [
+        "cool"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "leisure"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "重庆",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "重庆",
+          "kind": "target",
+          "start": 1,
+          "end": 3
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "evaluation_direction",
+          "start": 13,
+          "end": 18,
+          "quote": "方便又休闲"
+        },
+        {
+          "field": "activity_scene",
+          "start": 16,
+          "end": 18,
+          "quote": "休闲"
+        },
+        {
+          "field": "heat_relevance",
+          "start": 23,
+          "end": 27,
+          "quote": "遮阴避雨"
+        }
+      ],
+      "confidence": 0.6,
+      "confidence_level": "low",
+      "confidence_basis": [
+        "span_valid"
+      ],
+      "review_status": "pending",
+      "duplicate_group_id": "dg_70367efadc",
+      "event_cluster_id": null
+    }
+  ],
+  "limits": [
+    "这是抽样观察，不代表重庆居民总体感受，也不能推出受影响人数。",
+    "没有线索不等于没有热问题：微博用户结构不等于城市人口结构。",
+    "不据此插值成 100m 网格的热感受分布图。",
+    "首版不把它写入温度模型的训练标签。"
+  ]
+}

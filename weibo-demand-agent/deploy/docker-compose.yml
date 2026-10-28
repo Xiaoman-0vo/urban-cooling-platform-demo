@@ -1,0 +1,29 @@
+# 换一台电脑装这个助手：一键起 n8n + 挂载数据目录
+# 用法（在 weibo-demand-agent 目录下）：
+#   docker compose -f deploy/docker-compose.yml up -d
+# 说明：
+#   - 5678 是 n8n 的端口；改成别的端口就改下面 ports 的左边
+#   - ./data 挂到容器的 /data：n8n 里的"写文件/读文件"节点都指这里，
+#     聊天窗下的采集任务单也写在这里，宿主机工人从同一个目录取
+services:
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: n8n
+    restart: unless-stopped
+    ports:
+      - "5678:5678"
+    environment:
+      - GENERIC_TIMEZONE=Asia/Shanghai
+      - TZ=Asia/Shanghai
+      # 不允许 n8n 读写数据目录以外的路径：即使工作流被改坏，也碰不到系统文件
+      - N8N_RESTRICT_FILE_ACCESS_TO=/data
+      - N8N_SECURE_COOKIE=false
+      # 换电脑后想沿用原来加密过的凭据，把原机的 N8N_ENCRYPTION_KEY 填进来；
+      # 不填则让 n8n 自己生成新的，代价是重填一次模型 API Key。
+      - N8N_ENCRYPTION_KEY=${N8N_ENCRYPTION_KEY:-}
+    volumes:
+      - n8n_data:/home/node/.n8n
+      - ../data:/data
+
+volumes:
+  n8n_data:

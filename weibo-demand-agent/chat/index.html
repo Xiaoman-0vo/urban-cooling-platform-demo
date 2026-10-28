@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>街区增绿降温 · 微博民意助手</title>
+<link rel="stylesheet" href="./vendor/style.css">
+<style>
+  /* ============================================================
+     主题变量：整个聊天组件都是靠这些变量绘制的，改这里最省事
+     ============================================================ */
+  :root {
+    --ink: #e8f1f8;
+    --ink-dim: #93a9bd;
+    --ink-faint: #6b8296;
+    --panel: #0c1624;
+    --panel-2: #101d2e;
+    --line: rgba(140, 176, 208, .16);
+    --accent: #23c39a;
+    --accent-2: #35d6c0;
+    --accent-deep: #12836b;
+    --warn: #e0705f;
+
+    --chat--font-family: "PingFang SC", "Microsoft YaHei", "Segoe UI", system-ui, sans-serif;
+    --chat--color--primary: #23c39a;
+    --chat--color--primary-shade-50: #1a9c7b;
+    --chat--color--secondary: #101d2e;
+    --chat--color-typing: #23c39a;
+    --chat--body--background: transparent;
+    --chat--header--background: transparent;
+    --chat--header--color: var(--ink);
+    --chat--header--border-bottom: 0;
+    --chat--header-height: auto;
+    --chat--header--padding: 18px 22px 14px;
+    --chat--heading--font-size: 19px;
+    --chat--subtitle--font-size: 13px;
+    --chat--subtitle--line-height: 1.65;
+    --chat--footer--background: transparent;
+    --chat--footer--border-top: 0;
+    --chat--footer--color: var(--ink-dim);
+    --chat--message--border-radius: 16px;
+    --chat--message--font-size: 13.5px;
+    --chat--message-line-height: 1.72;
+    --chat--message--padding: 12px 15px;
+    --chat--message--margin-bottom: 10px;
+    --chat--message--bot--background: rgba(255, 255, 255, .045);
+    --chat--message--bot--color: var(--ink);
+    --chat--message--bot--border: 1px solid var(--line);
+    --chat--message--user--background: linear-gradient(135deg, #17967c, #23c39a);
+    --chat--message--user--color: #04241c;
+    --chat--message--user--border: 1px solid transparent;
+    --chat--message--pre--background: rgba(0, 0, 0, .35);
+    --chat--messages-list--padding: 18px 22px 8px;
+    --chat--input--background: transparent;
+    --chat--input--text-color: var(--ink);
+    --chat--input--placeholder--font-size: 13px;
+    --chat--input--font-size: 13.5px;
+    --chat--input--container--background: rgba(255, 255, 255, .05);
+    --chat--input--container--border: 1px solid var(--line);
+    --chat--input--container--border-radius: 18px;
+    --chat--input--container--padding: 6px 6px 6px 12px;
+    --chat--input--border-radius: 12px;
+    --chat--input--send--button--background: linear-gradient(135deg, #17967c, #23c39a);
+    --chat--input--send--button--background-hover: linear-gradient(135deg, #1aa587, #35d6c0);
+    --chat--input--send--button--color: #04241c;
+    --chat--input--send--button--color-hover: #04241c;
+    --chat--button--background--primary: linear-gradient(135deg, #17967c, #23c39a);
+    --chat--button--color--primary: #04241c;
+    --chat--button--border--primary: 0;
+    --chat--button--background--primary--hover: linear-gradient(135deg, #1aa587, #35d6c0);
+    --chat--button--border-radius: 999px;
+    --chat--border-radius: 20px;
+    --chat--toggle--background: #23c39a;
+    --chat--toggle--hover--background: #35d6c0;
+    --chat--toggle--color: #04241c;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { width: 100%; height: 100%; margin: 0; }
+  /* 整页是一个竖向 flex：品牌条固定高度，聊天区吃掉剩下全部高度（否则底部输入框会被挤出屏幕） */
+  body { display: flex; flex-direction: column; overflow: hidden; }
+  body {
+    background:
+      radial-gradient(1100px 620px at 12% -10%, rgba(35, 195, 154, .16), transparent 60%),
+      radial-gradient(900px 560px at 92% 8%, rgba(58, 120, 190, .16), transparent 62%),
+      radial-gradient(700px 500px at 50% 108%, rgba(35, 195, 154, .08), transparent 65%),
+      #070d16;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  /* 细网格：让深色背景不"死"，也不抢内容 */
+  body::before {
+    content: ""; position: fixed; inset: 0; pointer-events: none;
+    background-image:
+      linear-gradient(rgba(122, 160, 190, .045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(122, 160, 190, .045) 1px, transparent 1px);
+    background-size: 46px 46px;
+    mask-image: radial-gradient(900px 700px at 50% 30%, #000 30%, transparent 78%);
+  }
+
+  /* ===== 布局：一条居中的卡片流，不再铺满整个窗口 ===== */
+  .brandbar { flex: 0 0 auto; }
+  #n8n-chat { position: relative; flex: 1 1 auto; min-height: 0; height: auto; }
+  #n8n-chat .chat-layout {
+    width: 100%; max-width: 940px; margin: 0 auto; height: 100%;
+    padding: 0; gap: 0;
+  }
+  /* 组件自带的"欢迎屏"和我们的开场白会同时占位，导致上半屏空一大块：直接藏掉 */
+  #n8n-chat .chat-get-started, #n8n-chat .chat-powered-by { display: none !important; }
+  #n8n-chat .chat-body { justify-content: flex-start !important; }
+  #n8n-chat .chat-messages-list { margin-top: 0 !important; }
+  #n8n-chat.in-conversation .chat-heading,
+  #n8n-chat.in-conversation .chat-header .chat-subtitle,
+  #n8n-chat.in-conversation .chat-header p { display: none !important; }
+  #n8n-chat.in-conversation .chat-header { padding-bottom: 4px; }
+  /* 回答里的「原文」链接：新标签打开，别把聊天页顶掉 */
+  #n8n-chat .n8n-markdown a {
+    color: #7ff0c8; text-decoration: underline; text-underline-offset: 2px;
+    font-weight: 600; word-break: break-all;
+  }
+  #n8n-chat .n8n-markdown a:hover { color: #a9ffe0; }
+  #n8n-chat .chat-messages-list {
+    justify-content: flex-start !important;
+    display: flex; flex-direction: column;
+  }
+  #n8n-chat .chat-body {
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    margin: 0 16px;
+    background: linear-gradient(180deg, rgba(16, 29, 46, .92), rgba(10, 18, 29, .88));
+    backdrop-filter: blur(6px);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, .45), inset 0 1px 0 rgba(255, 255, 255, .04);
+    scrollbar-width: thin;
+    scrollbar-color: rgba(140, 176, 208, .28) transparent;
+  }
+  #n8n-chat .chat-body::-webkit-scrollbar { width: 8px; }
+  #n8n-chat .chat-body::-webkit-scrollbar-thumb {
+    background: rgba(140, 176, 208, .26); border-radius: 8px;
+  }
+
+  /* ===== 顶部标题 ===== */
+  .brandbar {
+    display: flex; align-items: center; gap: 12px;
+    padding: 20px 26px 6px;
+  }
+  .brand-mark {
+    width: 40px; height: 40px; border-radius: 12px; flex: 0 0 auto;
+    background: linear-gradient(135deg, rgba(35, 195, 154, .22), rgba(58, 120, 190, .18));
+    border: 1px solid rgba(35, 195, 154, .35);
+    display: grid; place-items: center;
+    box-shadow: 0 6px 18px rgba(35, 195, 154, .18);
+  }
+  .brand-mark svg { width: 21px; height: 21px; }
+  .brand-text h1 {
+    margin: 0; font-size: 17px; letter-spacing: .2px; font-weight: 650;
+  }
+  .brand-text p {
+    margin: 3px 0 0; font-size: 12px; color: var(--ink-dim);
+  }
+  .brand-badge {
+    margin-left: auto; font-size: 11px; color: var(--ink-faint);
+    border: 1px solid var(--line); border-radius: 999px; padding: 5px 11px;
+    white-space: nowrap;
+  }
+  .brand-badge b { color: var(--accent); font-weight: 600; }
+
+  /* 组件自带的头部（标题/副标题）保留但压扁，避免和自绘 brandbar 重复 */
+  #n8n-chat .chat-header {
+    padding: 6px 26px 14px !important;
+    border: 0 !important;
+  }
+  #n8n-chat .chat-heading { font-size: 15px !important; font-weight: 600; color: var(--ink); }
+  #n8n-chat .chat-subtitle {
+    color: var(--ink-dim) !important; margin-top: 6px !important; max-width: 62ch;
+  }
+
+  /* ===== 消息气泡 ===== */
+  #n8n-chat .chat-message { box-shadow: 0 2px 10px rgba(0, 0, 0, .18); }
+  #n8n-chat .chat-message-from-bot { border-radius: 16px 16px 16px 5px; }
+  /* 用户气泡：组件默认用 flat 背景色，渐变会丢；这里直接落到选择器上，别指望变量 */
+  #n8n-chat .chat-message-from-user {
+    background: linear-gradient(135deg, #17967c, #23c39a) !important;
+    color: #04241c !important;
+    border-radius: 16px 16px 5px 16px !important;
+    box-shadow: 0 6px 18px rgba(35, 195, 154, .22);
+  }
+  #n8n-chat .chat-message-from-user .chat-message-markdown,
+  #n8n-chat .chat-message-from-user .chat-message-markdown * {
+    color: #04241c !important;
+  }
+  #n8n-chat .chat-message-from-user .chat-message-markdown code {
+    background: rgba(4, 36, 28, .16) !important;
+  }
+  #n8n-chat .chat-message-markdown { line-height: 1.72; }
+  #n8n-chat .chat-message-markdown h1,
+  #n8n-chat .chat-message-markdown h2,
+  #n8n-chat .chat-message-markdown h3 {
+    font-size: 14px; margin: 12px 0 6px; color: #bfe9dc;
+  }
+  #n8n-chat .chat-message-markdown strong { color: #cdf3e8; }
+  #n8n-chat .chat-message-markdown ul,
+  #n8n-chat .chat-message-markdown ol { padding-left: 18px; margin: 6px 0; }
+  #n8n-chat .chat-message-markdown li { margin: 3px 0; }
+  #n8n-chat .chat-message-markdown code {
+    background: rgba(35, 195, 154, .13); color: #8fe6cf;
+    padding: 1px 5px; border-radius: 5px; font-size: 12px;
+  }
+  #n8n-chat .chat-message-markdown pre {
+    background: rgba(0, 0, 0, .42) !important; border: 1px solid var(--line);
+    border-radius: 10px; padding: 10px 12px; overflow: auto;
+  }
+  #n8n-chat .chat-message-markdown blockquote {
+    border-left: 2px solid rgba(35, 195, 154, .5);
+    margin: 8px 0; padding: 2px 0 2px 10px; color: var(--ink-dim);
+  }
+  #n8n-chat .chat-message-markdown hr {
+    border: 0; border-top: 1px solid var(--line); margin: 12px 0;
+  }
+  #n8n-chat .chat-message-markdown a { color: var(--accent-2); }
+
+  /* ===== 底部输入区 ===== */
+  #n8n-chat .chat-footer { padding: 10px 16px 16px; }
+  #n8n-chat .chat-input { border: 0 !important; box-shadow: none !important; }
+  #n8n-chat textarea { resize: none; }
+  #n8n-chat .chat-input-send-button {
+    width: 38px; height: 38px; border-radius: 12px !important;
+    box-shadow: 0 6px 16px rgba(35, 195, 154, .28);
+  }
+
+  /* ===== 快捷示例（贴在输入框上方） ===== */
+  .chips {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    padding: 0 22px 10px;
+  }
+  .chip {
+    font-size: 12px; color: var(--ink-dim); cursor: pointer;
+    background: rgba(255, 255, 255, .045);
+    border: 1px solid var(--line); border-radius: 999px;
+    padding: 7px 12px; transition: .16s ease; white-space: nowrap;
+    font-family: inherit;
+  }
+  .chip:hover {
+    color: #06231c; background: linear-gradient(135deg, #17967c, #23c39a);
+    border-color: transparent; transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(35, 195, 154, .25);
+  }
+  .chips .chip-hint {
+    font-size: 12px; color: var(--ink-faint); align-self: center; margin-right: 2px;
+  }
+
+  /* ===== 采集进度条：浮动卡片 ===== */
+  #jobbar {
+    position: fixed; top: 14px; left: 50%; transform: translate(-50%, -160%);
+    width: min(880px, calc(100vw - 32px));
+    z-index: 9999; display: flex; align-items: center; gap: 10px;
+    padding: 10px 14px; border-radius: 14px;
+    background: rgba(12, 22, 36, .92);
+    border: 1px solid rgba(35, 195, 154, .28);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, .5);
+    backdrop-filter: blur(10px);
+    color: #d7e6f2; font-size: 12.5px; line-height: 1.2;
+    transition: transform .32s cubic-bezier(.22, 1, .36, 1), opacity .32s;
+    opacity: 0; pointer-events: none;
+  }
+  #jobbar.show { transform: translate(-50%, 0); opacity: 1; pointer-events: auto; }
+  /* 进度条浮在顶部时，把标题让开一点，别糊在一起（只影响首屏视觉） */
+  body.has-jobbar .brandbar { padding-top: 70px; }
+  #jobbar .dot {
+    width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex: 0 0 auto;
+    box-shadow: 0 0 0 3px rgba(35, 195, 154, .16);
+  }
+  #jobbar.running .dot { animation: pulse 1.2s ease-in-out infinite; }
+  #jobbar.failed { border-color: rgba(224, 112, 95, .45); }
+  #jobbar.failed .dot { background: var(--warn); box-shadow: 0 0 0 3px rgba(224, 112, 95, .18); }
+  @keyframes pulse { 0%,100% { opacity: .35; transform: scale(.85); } 50% { opacity: 1; transform: scale(1.15); } }
+  #jobbar .label { font-weight: 650; white-space: nowrap; color: #bfe9dc; }
+  #jobbar .msg {
+    color: var(--ink-dim); white-space: nowrap; overflow: hidden;
+    text-overflow: ellipsis; flex: 1 1 auto; min-width: 0;
+  }
+  #jobbar .track {
+    flex: 0 0 200px; height: 6px; border-radius: 999px;
+    background: rgba(140, 176, 208, .18); overflow: hidden;
+  }
+  #jobbar .fill {
+    height: 100%; width: 0%; border-radius: 999px;
+    background: linear-gradient(90deg, #12836b, #23c39a, #35d6c0);
+    transition: width .5s ease;
+    position: relative;
+  }
+  #jobbar.show .fill::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .35), transparent);
+    animation: sweep 1.6s linear infinite;
+  }
+  @keyframes sweep { from { transform: translateX(-100%); } to { transform: translateX(100%); } }
+  #jobbar .pct {
+    flex: 0 0 auto; font-variant-numeric: tabular-nums; color: #cfe3f1;
+    min-width: 38px; text-align: right; font-weight: 600;
+  }
+  #jobbar .close {
+    flex: 0 0 auto; cursor: pointer; color: var(--ink-faint);
+    border: 0; background: none; font-size: 16px; padding: 0 2px; line-height: 1;
+  }
+  #jobbar .close:hover { color: var(--ink); }
+
+  @media (max-width: 720px) {
+    .brandbar { padding: 14px 16px 4px; }
+    #n8n-chat .chat-body { margin: 0 8px; border-radius: 16px; }
+    #n8n-chat .chat-header { padding: 4px 16px 10px !important; }
+    #n8n-chat .chat-messages-list { padding: 14px 14px 6px !important; }
+    .chips { padding: 0 14px 8px; }
+    #jobbar .track { flex: 0 0 90px; }
+    #jobbar .brand-badge { display: none; }
+  }
+</style>
+</head>
+<body>
+  <div id="jobbar" role="status" aria-live="polite">
+    <span class="dot"></span>
+    <span class="label">采集任务</span>
+    <span class="msg" id="jobbar-msg">等待任务</span>
+    <span class="track"><span class="fill" id="jobbar-fill"></span></span>
+    <span class="pct" id="jobbar-pct">0%</span>
+    <button class="close" id="jobbar-close" title="收起">×</button>
+  </div>
+
+  <div class="brandbar">
+    <div class="brand-mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#35d6c0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 19h16"/><path d="M6 19V9"/><path d="M12 19V5"/><path d="M18 19v-6"/>
+        <circle cx="12" cy="5" r="1.6" fill="#35d6c0" stroke="none"/>
+      </svg>
+    </div>
+    <div class="brand-text">
+      <h1>街区增绿降温 · 微博民意助手</h1>
+      <p>公开微博抽样 · 规则预筛 + 大模型抽取 + 证据回查</p>
+    </div>
+    <div class="brand-badge">样本回放，非温度观测 · <b>不是人数</b></div>
+  </div>
+
+  <div id="n8n-chat"></div>
+
+  <script src="./vendor/chat.bundle.umd.js"></script>
+  <script>
+    // 与 n8n 同源：本页由 scripts/serve-chat.mjs 提供，/webhook/* 反向代理到 127.0.0.1:5678
+    var CHAT_WEBHOOK = window.CHAT_WEBHOOK || '/webhook/wc9d1f2a34b7e48c0/chat';
+    var STATUS_URL = window.STATUS_URL || '/webhook/weibo-job-status';
+
+    N8nChat.createChat({
+      mode: 'fullscreen',
+      target: '#n8n-chat',
+      webhookUrl: CHAT_WEBHOOK,
+      showWelcomeScreen: true,
+      loadPreviousSession: true,
+      webhookConfig: { method: 'POST', headers: {} },
+      defaultLanguage: 'en',
+      i18n: {
+        en: {
+          title: '开始一次判读',
+          subtitle: '贴一条微博正文，我判断它是不是真实的热相关诉求，并给出可回查的证据片段；也可以问某个城市现在手上有多少线索。',
+          footer: '线索来自公开微博与一级评论的抽样，不是温度观测，也不代表居民总体感受。',
+          getStarted: '开始对话',
+          inputPlaceholder: '贴一条微博，或说“帮我抓成都 遮阴” / “成都现在有多少线索”',
+          closeButtonTooltip: '关闭'
+        }
+      },
+      initialMessages: [
+        '你好，我是微博民意助理。三条边界先说清楚：\n' +
+        '\n1. 我只判读公开微博文本，不产生温度数据，也不代表市民总体感受；' +
+        '\n2. 地点范围由你的问题决定，我不预设城市（词表外的地名按字面采）；' +
+        '\n3. 线索数量不是人数，去重后才是内容条数。',
+        '**怎么用**\n' +
+        '- 贴一条微博 → 我判读并给出可回查的证据片段；\n' +
+        '- 「帮我抓成都 遮阴」→ 我下单去采，顶部进度条会走；\n' +
+        '- 「成都现在有多少线索」→ 我报手上的抽样；\n' +
+        '- 「进度」→ 我看后台跑到哪一步了。'
+      ]
+    });
+
+    /* ===== 快捷示例：点一下直接发送（省得用户想措辞） ===== */
+    (function () {
+      var SAMPLES = [
+        '成都现在有多少线索',
+        '帮我抓成都 遮阴',
+        '进度',
+        '成都南站外面全是水泥地，等车热得不行'
+      ];
+      var mounted = false;
+
+      function setValue(el, value) {
+        var proto = el.tagName === 'TEXTAREA'
+          ? window.HTMLTextAreaElement.prototype
+          : window.HTMLInputElement.prototype;
+        var setter = Object.getOwnPropertyDescriptor(proto, 'value').set;
+        setter.call(el, value);
+        el.dispatchEvent(new Event('input', { bubbles: true }));
+      }
+
+      function mountChips() {
+        if (mounted) return;
+        var footer = document.querySelector('#n8n-chat .chat-footer');
+        var input = document.querySelector('#n8n-chat textarea, #n8n-chat input[type="text"]');
+        if (!footer || !input) return;
+        mounted = true;
+
+        var bar = document.createElement('div');
+        bar.className = 'chips';
+        var hint = document.createElement('span');
+        hint.className = 'chip-hint';
+        hint.textContent = '试试：';
+        bar.appendChild(hint);
+
+        SAMPLES.forEach(function (t) {
+          var b = document.createElement('button');
+          b.className = 'chip';
+          b.type = 'button';
+          b.textContent = t.length > 22 ? t.slice(0, 21) + '…' : t;
+          b.title = t;
+          b.addEventListener('click', function () {
+            var box = document.querySelector('#n8n-chat textarea, #n8n-chat input[type="text"]');
+            if (!box) return;
+            setValue(box, t);
+            box.focus();
+            // 等 Vue 把发送按钮从 disabled 切回来再点
+            setTimeout(function () {
+              var send = document.querySelector('#n8n-chat .chat-input-send-button');
+              if (send && !send.disabled) send.click();
+            }, 60);
+          });
+          bar.appendChild(b);
+        });
+
+        footer.parentNode.insertBefore(bar, footer);
+      }
+
+      var mo = new MutationObserver(mountChips);
+      mo.observe(document.body, { childList: true, subtree: true });
+      setTimeout(mountChips, 600);
+    })();
+
+    // ===== 进度条：轮询 /webhook/weibo-job-status =====
+    (function () {
+      var bar = document.getElementById('jobbar');
+      var msgEl = document.getElementById('jobbar-msg');
+      var fill = document.getElementById('jobbar-fill');
+      var pctEl = document.getElementById('jobbar-pct');
+      var labelEl = bar.querySelector('.label');
+      var hidden = false;
+      var lastJob = null;
+      var doneAt = 0;
+      var lastStatus = '';
+
+      document.getElementById('jobbar-close').addEventListener('click', function () {
+        hidden = true;
+        hideBar();
+      });
+
+      function show() {
+        if (hidden) return;
+        bar.classList.add('show');
+        document.body.classList.add('has-jobbar');
+      }
+
+      function hideBar() {
+        bar.classList.remove('show');
+        document.body.classList.remove('has-jobbar');
+      }
+
+      function render(d) {
+        if (!d || !d.job_id) {
+          // 空闲：跑完 30 秒后收起
+          if (lastJob && Date.now() - doneAt > 30000 && !bar.classList.contains('failed')) {
+            hideBar();
+          }
+          return;
+        }
+        show();
+        bar.classList.remove('running', 'failed');
+        if (d.active) bar.classList.add('running');
+        if (d.status === 'failed') bar.classList.add('failed');
+        labelEl.textContent = d.status === 'failed' ? '任务失败' : (d.status === 'done' ? '采集完成' : '采集任务');
+        var bits = [];
+        bits.push(d.phase_label || '');
+        if (d.query) bits.push('「' + d.query + '」');
+        if (d.total) bits.push((d.done || 0) + '/' + d.total + ' 条');
+        else if (d.posts) bits.push('帖子 ' + d.posts + ' · 评论 ' + (d.comments || 0));
+        if (d.status === 'failed' && d.error) bits.push(d.error);
+        else if (!d.active && d.status === 'done') bits.push('可以问「' + (d.city || '') + '现在有多少线索」');
+        else if (d.message) bits.push(d.message);
+        msgEl.textContent = bits.filter(Boolean).join(' · ');
+        var p = Number(d.progress || 0);
+        fill.style.width = p + '%';
+        pctEl.textContent = p + '%';
+      }
+
+      async function tick() {
+        try {
+          var r = await fetch(STATUS_URL, { cache: 'no-store' });
+          var d = await r.json();
+          if (d.job_id && d.job_id !== lastJob) {
+            doneAt = Date.now();
+            lastJob = d.job_id;
+            hidden = false;   // 新任务来了，自动展开
+          }
+          if (d.status === 'done' && lastStatus !== 'done') doneAt = Date.now();
+          lastStatus = d.status;
+          render(d);
+        } catch (e) {
+          // n8n 没起来时静默，不打扰聊天
+        }
+        var active = bar.classList.contains('running');
+        setTimeout(tick, active ? 1500 : 5000);
+      }
+
+      // 用户自己也刚下单时，立刻打开进度条（不必等下一次轮询）
+      var origSend = window.fetch;
+      window.fetch = function (input, init) {
+        var url = typeof input === 'string' ? input : (input && input.url) || '';
+        var p = origSend.apply(this, arguments);
+        if (url.indexOf('/chat') >= 0 && init && init.body) {
+          try {
+            var body = JSON.parse(init.body);
+            if (/抓|采集|爬|收集|搜|多抓/.test(body.chatInput || '')) {
+              hidden = false;
+              show();
+              msgEl.textContent = '已下单，等后台接单…';
+              fill.style.width = '2%';
+              pctEl.textContent = '2%';
+            }
+          } catch (e) {}
+        }
+        return p;
+      };
+
+      tick();
+    })();
+  </script>
+
+  <script>
+    // 用户发过言后，收起"开始一次判读"引导区，把纵向空间让给对话（纯视觉）
+    (function () {
+      var wrap = document.getElementById('n8n-chat');
+      if (!wrap) return;
+      var sync = function () {
+        wrap.classList.toggle('in-conversation', !!document.querySelector('.chat-message-from-user'));
+      };
+      new MutationObserver(sync).observe(wrap, { childList: true, subtree: true });
+      sync();
+
+      // 回答里的链接一律新标签打开；m.weibo.cn 的原文页需要登录微博才能看，写在 title 里提示一下
+      const fixLinks = function () {
+        document.querySelectorAll('#n8n-chat .n8n-markdown a[href]').forEach(function (a) {
+          if (a.dataset.fixed) return;
+          a.dataset.fixed = '1';
+          a.target = '_blank';
+          a.rel = 'noopener noreferrer';
+          if (a.href.indexOf('weibo.') >= 0) a.title = '在新标签打开微博原文（需登录微博）';
+        });
+      };
+      new MutationObserver(fixLinks).observe(wrap, { childList: true, subtree: true });
+      fixLinks();
+    })();
+  </script>
+</body>
+</html>

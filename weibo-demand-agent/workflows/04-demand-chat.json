@@ -1,0 +1,698 @@
+[
+ {
+  "name": "04-demand-chat",
+  "nodes": [
+   {
+    "parameters": {
+     "public": true,
+     "mode": "hostedChat",
+     "initialMessages": "我是微博热感知助手，只能做两件事：\n1) 问某地现状（读已有快照，秒回）\n2) 贴一条微博正文（调模型判定，约 3-8 秒）\n\n试试：查成都 遮阴",
+     "options": {
+      "responseMode": "lastNode"
+     }
+    },
+    "name": "聊天窗",
+    "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+    "typeVersion": 1.5,
+    "position": [
+     0,
+     0
+    ],
+    "webhookId": "wc9d1f2a34b7e48c0"
+   },
+   {
+    "parameters": {
+     "jsCode": "// 聊天窗第 1 步：把用户这一句话读成\"他想干什么\"\n// 四个去向：query（问某地现状）/ classify（贴了一条微博要判）/ collect（下单去抓）/ status（问进度）/ help（不知道怎么用）\n// 注意：这里只做路由判断，不花钱、不联网。真正干活在后面的分支。\nconst LEXICON = {\"lexicon_version\": \"p2\", \"note\": \"地名判定词表。地点不再写死在『成都』：由调用方按用户提问给出 payload.scope.city（可附 aliases），本词表只负责两件事——① 已知城市的别名表；② 判断一段文本提到的是不是别的城市。匹配前会先按等长掩码盖掉 @昵称，避免『@某市官方账号』把外地帖判成本地。\", \"scope_contract\": {\"payload.scope\": \"{ city: '重庆', aliases: ['重庆','渝中区','解放碑'] }\", \"不传 scope 时\": \"不做地点过滤，location_scope 只标注文本里提到的城市（target / unknown），in_scope 一律 true\", \"传了 scope 时\": \"命中目标城市 → target；只命中别的地名 → other_place；没提地名 → unknown\"}, \"cities\": {\"成都\": {\"aliases\": [\"成都\", \"蓉城\", \"锦官城\", \"天府之国\", \"锦江区\", \"青羊区\", \"武侯区\", \"成华区\", \"金牛区\", \"高新区\", \"天府新区\", \"双流\", \"温江\", \"郫都\", \"新都\", \"龙泉驿\", \"青白江\", \"新津\", \"简阳\", \"都江堰\", \"彭州\", \"邛崃\", \"崇州\", \"金堂\", \"大邑\", \"蒲江\", \"春熙路\", \"太古里\", \"宽窄巷子\", \"人民公园\", \"天府广场\", \"环球中心\", \"九眼桥\", \"玉林\", \"建设路\", \"磨子桥\", \"华西坝\", \"文殊院\", \"兴隆湖\", \"交子大道\", \"东郊记忆\", \"熊猫基地\", \"锦里\", \"武侯祠\"]}, \"重庆\": {\"aliases\": [\"重庆\", \"渝中\", \"渝北\", \"江北\", \"沙坪坝\", \"九龙坡\", \"南岸\", \"北碚\", \"巴南\", \"大渡口\", \"璧山\", \"江津\", \"万州\", \"涪陵\", \"合川\", \"永川\", \"綦江\", \"长寿\", \"铜梁\", \"解放碑\", \"洪崖洞\", \"观音桥\", \"朝天门\", \"大学城\", \"两江新区\"]}, \"北京\": {\"aliases\": [\"北京\", \"三里屯\", \"国贸\", \"西单\", \"中关村\", \"望京\", \"回龙观\", \"通州\"]}, \"上海\": {\"aliases\": [\"上海\", \"陆家嘴\", \"徐家汇\", \"人民广场\", \"陆家浜\", \"静安\", \"浦东\", \"闵行\"]}, \"广州\": {\"aliases\": [\"广州\", \"天河\", \"珠江新城\", \"番禺\", \"白云区\", \"越秀\"]}, \"深圳\": {\"aliases\": [\"深圳\", \"福田\", \"南山\", \"前海\", \"罗湖\", \"宝安\", \"龙岗\"]}, \"杭州\": {\"aliases\": [\"杭州\", \"西湖\", \"武林\", \"滨江\", \"余杭\", \"萧山\"]}, \"南京\": {\"aliases\": [\"南京\", \"新街口\", \"河西\", \"江宁\", \"鼓楼\"]}, \"武汉\": {\"aliases\": [\"武汉\", \"光谷\", \"江汉路\", \"武昌\", \"汉口\", \"汉阳\"]}, \"西安\": {\"aliases\": [\"西安\", \"钟楼\", \"大雁塔\", \"曲江\", \"未央\"]}, \"长沙\": {\"aliases\": [\"长沙\", \"五一广场\", \"岳麓\", \"芙蓉\", \"望城\"]}, \"郑州\": {\"aliases\": [\"郑州\", \"二七\", \"金水\", \"郑东新区\"]}, \"天津\": {\"aliases\": [\"天津\", \"和平区\", \"河西区\", \"滨海新区\"]}, \"昆明\": {\"aliases\": [\"昆明\", \"五华\", \"盘龙\", \"呈贡\"]}, \"贵阳\": {\"aliases\": [\"贵阳\", \"南明\", \"云岩\", \"观山湖\"]}, \"福州\": {\"aliases\": [\"福州\", \"鼓楼区\", \"台江\", \"仓山\"]}, \"厦门\": {\"aliases\": [\"厦门\", \"思明\", \"湖里\", \"集美\"]}, \"南宁\": {\"aliases\": [\"南宁\", \"青秀\", \"兴宁\", \"西乡塘\"]}, \"海口\": {\"aliases\": [\"海口\", \"龙华区\", \"美兰\", \"琼山\"]}, \"哈尔滨\": {\"aliases\": [\"哈尔滨\", \"道里\", \"南岗\", \"松北\"]}, \"沈阳\": {\"aliases\": [\"沈阳\", \"和平\", \"沈河\", \"浑南\"]}, \"长春\": {\"aliases\": [\"长春\", \"朝阳区\", \"南关\", \"净月\"]}, \"大连\": {\"aliases\": [\"大连\", \"中山区\", \"沙河口\", \"甘井子\"]}, \"济南\": {\"aliases\": [\"济南\", \"历下\", \"市中区\", \"槐荫\"]}, \"青岛\": {\"aliases\": [\"青岛\", \"市南\", \"崂山\", \"黄岛\"]}, \"石家庄\": {\"aliases\": [\"石家庄\", \"长安区\", \"桥西\", \"裕华\"]}, \"太原\": {\"aliases\": [\"太原\", \"小店\", \"迎泽\", \"晋源\"]}, \"合肥\": {\"aliases\": [\"合肥\", \"蜀山\", \"包河\", \"庐阳\"]}, \"南昌\": {\"aliases\": [\"南昌\", \"东湖\", \"西湖区\", \"红谷滩\"]}, \"兰州\": {\"aliases\": [\"兰州\", \"城关\", \"七里河\", \"安宁\"]}, \"西宁\": {\"aliases\": [\"西宁\", \"城中\", \"城西\", \"城东\"]}, \"银川\": {\"aliases\": [\"银川\", \"兴庆\", \"金凤\", \"西夏\"]}, \"乌鲁木齐\": {\"aliases\": [\"乌鲁木齐\", \"天山区\", \"沙依巴克\", \"新市区\"]}, \"拉萨\": {\"aliases\": [\"拉萨\", \"城关区\", \"堆龙德庆\"]}, \"呼和浩特\": {\"aliases\": [\"呼和浩特\", \"回民区\", \"赛罕\", \"新城区\"]}, \"绵阳\": {\"aliases\": [\"绵阳\", \"涪城\", \"游仙\"]}, \"德阳\": {\"aliases\": [\"德阳\", \"旌阳\", \"广汉\"]}, \"南充\": {\"aliases\": [\"南充\", \"顺庆\", \"高坪\"]}, \"宜宾\": {\"aliases\": [\"宜宾\", \"翠屏\", \"叙州\"]}, \"泸州\": {\"aliases\": [\"泸州\", \"江阳\", \"龙马潭\"]}, \"乐山\": {\"aliases\": [\"乐山\", \"市中区\", \"峨眉山\"]}, \"自贡\": {\"aliases\": [\"自贡\", \"自流井\", \"贡井\"]}, \"内江\": {\"aliases\": [\"内江\", \"市中区\", \"东兴\"]}, \"眉山\": {\"aliases\": [\"眉山\", \"东坡\", \"彭山\"]}, \"雅安\": {\"aliases\": [\"雅安\", \"雨城\", \"名山\"]}, \"遂宁\": {\"aliases\": [\"遂宁\", \"船山\", \"安居\"]}, \"达州\": {\"aliases\": [\"达州\", \"通川\", \"达川\"]}, \"广元\": {\"aliases\": [\"广元\", \"利州\", \"昭化\"]}, \"巴中\": {\"aliases\": [\"巴中\", \"巴州\", \"恩阳\"]}, \"广安\": {\"aliases\": [\"广安\", \"广安区\", \"前锋\"]}, \"资阳\": {\"aliases\": [\"资阳\", \"雁江\", \"安岳\"]}, \"西昌\": {\"aliases\": [\"西昌\", \"凉山\"]}, \"攀枝花\": {\"aliases\": [\"攀枝花\", \"东区\", \"仁和\"]}, \"苏州\": {\"aliases\": [\"苏州\", \"姑苏\", \"工业园\", \"吴中\"]}, \"无锡\": {\"aliases\": [\"无锡\", \"梁溪\", \"滨湖\", \"新吴\"]}, \"宁波\": {\"aliases\": [\"宁波\", \"海曙\", \"鄞州\", \"江北区\"]}, \"温州\": {\"aliases\": [\"温州\", \"鹿城\", \"瓯海\", \"龙湾\"]}, \"东莞\": {\"aliases\": [\"东莞\", \"南城\", \"东城\", \"松山湖\"]}, \"佛山\": {\"aliases\": [\"佛山\", \"禅城\", \"南海\", \"顺德\"]}, \"珠海\": {\"aliases\": [\"珠海\", \"香洲\", \"金湾\", \"斗门\"]}, \"中山\": {\"aliases\": [\"中山\", \"石岐\", \"火炬\"]}, \"惠州\": {\"aliases\": [\"惠州\", \"惠城\", \"惠阳\"]}, \"汕头\": {\"aliases\": [\"汕头\", \"金平\", \"龙湖\"]}, \"湛江\": {\"aliases\": [\"湛江\", \"赤坎\", \"霞山\"]}, \"桂林\": {\"aliases\": [\"桂林\", \"秀峰\", \"象山\", \"七星\"]}, \"柳州\": {\"aliases\": [\"柳州\", \"城中区\", \"鱼峰\"]}, \"泉州\": {\"aliases\": [\"泉州\", \"鲤城\", \"丰泽\", \"晋江\"]}, \"常州\": {\"aliases\": [\"常州\", \"天宁\", \"钟楼区\", \"武进\"]}, \"三亚\": {\"aliases\": [\"三亚\", \"吉阳\", \"天涯\", \"海棠\"]}}, \"field_contract\": {\"scope_target\": \"本次判定的目标城市（来自请求 scope.city；未传则 null）\", \"location_scope\": \"target = 命中目标城市；other_place = 只命中其他地名；unknown = 没提地名\", \"in_scope\": \"location_scope=target 时为 true；未传 scope 时恒为 true（不过滤）\", \"place_evidence\": \"[{name, kind:'target'|'other', start, end}]，均可回查原文\"}};\n\nconst input = $input.first().json || {};\nconst raw = String(input.chatInput ?? input.text ?? '').trim();\nconst sessionId = input.sessionId || null;\nconst norm = raw.replace(/\\s+/g, '');\n\n// ---- 城市识别：取最长命中的别名，避免\"重庆\"被\"江北\"这类短词抢走 ----\nconst cities = (LEXICON && LEXICON.cities) || {};\nlet city = null;\nlet hitLen = 0;\nfor (const [name, def] of Object.entries(cities)) {\n  const names = [name].concat((def && def.aliases) || []);\n  for (const alias of names) {\n    if (alias && norm.includes(alias) && alias.length > hitLen) {\n      city = name;\n      hitLen = alias.length;\n    }\n  }\n}\n\n// ---- 意图 ----\nconst HELP_PAT = /^(帮助|help|说明|怎么用|你会什么|你能做什么|你是谁|你好|hi|hello)/i;\nconst QUERY_PAT = /(查一?下?|看看|有哪些|有没有|现状|快照|统计|汇总|多少|几条|几个|几成|情况|进展|占比|分布|手上有|收了|采到)/;\n// 像一条微博正文的信号：链接、@某人、#话题#、【标题】、带日期的转发链\nconst POST_PAT = /(https?:\\/\\/|@[\\u4e00-\\u9fa5A-Za-z0-9_-]{1,20}|#[\\u4e00-\\u9fa5A-Za-z0-9]+#|【|】|\\d+\\s*月\\s*\\d+\\s*日)/;\n\nlet intent = 'classify';\n// \"问现状\"要同时满足两点：像在提问，且真的在问我们手上的数据（城市名 / 线索 / 诉求 / 统计）。\n// 只靠\"什么/怎么\"会把贴进来的短微博（\"这天气怎么办\"）误判成提问。\nconst asksData = QUERY_PAT.test(norm) || /(线索|诉求|数据|统计|样本|抽样)/.test(norm);\nconst hasSubject = !!city || /(线索|诉求|数据|统计|样本|抽样)/.test(norm);\n\n// ---- 采集任务：说\"帮我抓/采集/爬 某地 某话题\"就下单，不是判定 ----\nconst COLLECT_PAT = /(抓|采集|爬取|爬一下|收集|搜集|捞|拉一批|跑一批|再抓|多抓|补抓)/;\nconst STATUS_PAT = /(进度|跑到哪|到哪了|好了吗|完成了吗|跑完了吗|还在跑|job)/i;\nconst WANTS_JOB = COLLECT_PAT.test(norm) || /(下单|建个任务|开个任务)/.test(norm);\n\nif (POST_PAT.test(raw)) intent = 'classify';        // 长得像微博正文：直接判，别被\"多少\"抢走\nelse if (STATUS_PAT.test(norm)) intent = 'status';   // 问进度\nelse if (WANTS_JOB) intent = 'collect';              // 下采集订单\nelse if (HELP_PAT.test(norm) || norm.length < 4) intent = 'help';\nelse if (asksData && hasSubject && raw.length <= 60) intent = 'query';\n\n// ---- 词表里没有的地名：**也当成一个城市去采、去统计** ----\n// 旧版是回一句\"请先去词表加一行\"，用户看着像命令没生效。\n// 现在两种写法都认：\n//   ① 带后缀 —— 「平顶山市」「龙泉驿区」\n//   ② 不带后缀但位置很明确 —— 「平顶山现在有多少线索」「帮我抓平顶山 遮阴」\n// 认出来就把字面地名当城市名（去掉\"市/区/县/镇\"），别名带上全称，\n// 判定口径照用（run-pipeline --city/--aliases），所以统计不会全落\"范围外\"。\nconst TOPIC_WORDS = ['遮阴', '树荫', '阴凉', '纳凉', '闷热', '暴晒', '高温', '热浪', '热岛',\n  '凉快', '通风', '绿化', '行道树', '乘凉', '日晒', '候车', '公园', '建筑', '道路', '地面',\n  '气温', '天气', '降温', '体感', '空调', '中暑', '太阳', '水泥', '公交', '地铁', '线索',\n  '诉求', '数据', '统计', '样本', '抽样'];\n\nfunction guessPlace(text) {\n  const suffixed = text.match(/([\\u4e00-\\u9fa5]{2,4})(市|区|县|镇)/);\n  if (suffixed) return { name: suffixed[1], full: suffixed[1] + suffixed[2] };\n  // 去掉开头的动词，避免「帮我抓平顶山遮阴」把\"帮我抓\"当地名\n  const body = text.replace(/^(帮我|给我|请|麻烦|再|多|想)?(抓|采集|爬取|爬一下|爬|收集|搜集|捞|拉一批|跑一批)/, '');\n  const lead = body.match(/^([\\u4e00-\\u9fa5]{2,4}?)(?=现在|目前|最近|今天|这两天|这周|有多少|有啥|有几条|的线索|这边|那边|的|热不热|怎么样)/);\n  if (lead && !TOPIC_WORDS.includes(lead[1])) return { name: lead[1], full: lead[1] };\n  return null;\n}\n\nlet unknown_place = null;\nlet unknown_aliases = [];\nif (!city && !POST_PAT.test(raw)) {\n  const p = guessPlace(norm);\n  if (p) {\n    city = p.name;                                // 规范名：平顶山\n    unknown_place = p.full;                       // 原话：平顶山市 / 平顶山\n    unknown_aliases = [p.full, p.name].filter(Boolean);\n    // \"平顶山市热不热\" 这种短问句别被当成要判定的微博正文\n    if (intent === 'classify' && raw.length <= 25 && /(热不热|怎么样|有没有|多少|现状|线索|诉求)/.test(norm)) {\n      intent = 'query';\n    }\n  }\n}\n\n// ---- 快照文件：按城市名推文件名，**是否真的存在交给后面的读文件节点验证** ----\n// 以前这里写死\"只有成都、重庆\"，结果新采了别的城市它也还是回\"没有\"。\n// 现在一律算出一个候选文件名：读得到就用，读不到（ENOENT）就自动下单去采。\nlet city_file = 'heat_perception.json';   // 没提城市：默认看成都（唯一同步到平台的快照）\nif (city && city !== '成都') city_file = `heat_perception_${city}.json`;\nlet city_note = unknown_place\n  ? `词表里没有「${unknown_place}」，我按字面地名采和统计（想要别名更全，可加一行到 config/place-lexicon.v2.json）`\n  : (intent === 'query' && !city\n      ? '这句里没看出城市名，先按成都那份快照回答；要问别的城市请带上地名（例如「重庆现在有多少线索」）'\n      : '');\n\n// ---- 主题词：把问句里的动词/城市名去掉，剩下的当主题 ----\nconst stop = ['查一下', '查查', '查', '看看', '有哪些', '有没有', '现状', '快照', '统计', '汇总',\n  '多少条', '多少', '几条', '几个', '几成', '情况', '进展', '占比', '分布', '手上有', '收了', '采到',\n  '的', '吗', '呢', '啦', '了', '和', '现在', '目前', '最近', '一共', '总共',\n  '？', '?', '请', '帮我', '我想看', '想知道', '告诉你', '有多少']; \nlet topic = norm;\nfor (const w of stop) topic = topic.split(w).join('');\nif (city) {\n  topic = topic.split(city).join('');\n  for (const alias of ((cities[city] && cities[city].aliases) || [])) topic = topic.split(alias).join('');\n}\ntopic = topic.slice(0, 16);\n\nconst request_id = 'chat-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 8);\n\n// ---- 采集任务单：把这句话拆成\"搜什么、抓多深\" ----\n// 两种情况会建任务单：\n//   1) 用户明说\"帮我抓/采集…\"（intent=collect）\n//   2) 用户问某地现状，但那个城市的快照读不到（intent=query + 有城市名）\n//      → 先按默认参数把单子备好，等读文件节点确认\"文件不存在\"再真正写进队列\n// 关键：地点由这句话决定。没提城市就只按关键词搜（不做城市过滤），不预设成都。\nlet job = null;\nconst auto = (intent === 'query' && !!city);\nif (intent === 'collect' || auto) {\n  let kw = '';\n  if (auto) {\n    // 自动补采时关键词必须跟\"热\"有关：问句里的\"有多少线索\"不是话题。\n    // 先在原句里找热相关词，找不到就用\"高温\"（这也是微博上量最大的热话题词）。\n    const HEAT_WORDS = ['遮阴', '树荫', '阴凉', '纳凉', '闷热', '暴晒', '高温', '热浪',\n      '热岛', '凉快', '通风', '绿化', '行道树', '乘凉', '日晒'];\n    for (const w of HEAT_WORDS) {\n      if (norm.includes(w)) { kw = w; break; }\n    }\n    if (!kw) kw = '高温';\n  } else {\n    const junk = ['帮我', '给我', '麻烦', '请', '我要', '我想', '抓', '采集', '爬取', '爬一下', '爬',\n      '收集', '搜集', '捞', '拉一批', '跑一批', '再抓', '多抓', '补抓', '下单', '建个任务', '开个任务',\n      '一下', '一些', '一批', '点儿', '点', '的微博', '微博', '帖子', '评论', '内容', '数据', '线索',\n      '最近', '现在', '目前', '相关', '吧', '呗', '谢谢', '好吗', '可以吗', '的', '了', '吗', '？', '?'];\n    kw = norm;\n    if (city) {\n      kw = kw.split(city).join('');\n      for (const alias of ((cities[city] && cities[city].aliases) || [])) kw = kw.split(alias).join('');\n    }\n    for (const w of junk) kw = kw.split(w).join('');\n    kw = kw.slice(0, 20).trim() || '高温';\n  }\n\n  // \"多抓点/抓深一点\" → 翻页与帖子数加倍（仍受额度上限约束）\n  const deep = /(多抓|抓多点|深一点|多一些|多来点|全一点|两页|2页)/.test(norm);\n  // 自动补采（用户没明说要抓）默认抓 2 页，样本太小时关切点会空\n  const pages = deep ? 2 : (auto ? 2 : 1);\n  const top = deep ? 12 : 6;\n  const comment_pages = deep ? 2 : 1;\n  const query = (city ? city + ' ' : '') + kw;\n\n  job = {\n    id: 'job-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 6),\n    query,\n    city: city || null,\n    aliases: unknown_aliases,\n    keyword: kw,\n    pages,\n    top,\n    comment_pages,\n    max: 120,\n    pace: auto ? 800 : 1200,\n    auto,                                     // true = 因\"缺快照\"自动补采，不是用户下的单\n    status: 'queued',\n    phase: 'queued',\n    message: '已下单，等待后台工人接单',\n    requested_by: sessionId || 'anonymous',\n    created_at: new Date().toISOString(),\n  };\n}\n\nreturn [{\n  json: {\n    intent,\n    city,\n    city_file,\n    city_note,\n    topic,\n    text: raw,\n    norm,\n    session_id: sessionId,\n    request_id,\n    scope: city ? { city } : null,\n    job,\n    unknown_place,\n    unknown_aliases,\n  },\n}];\n"
+    },
+    "name": "1-意图",
+    "type": "n8n-nodes-base.code",
+    "typeVersion": 2,
+    "position": [
+     240,
+     0
+    ]
+   },
+   {
+    "parameters": {
+     "conditions": {
+      "options": {
+       "caseSensitive": true,
+       "leftValue": "",
+       "typeValidation": "loose"
+      },
+      "conditions": [
+       {
+        "id": "c-query",
+        "leftValue": "={{ $json.intent }}",
+        "rightValue": "query",
+        "operator": {
+         "type": "string",
+         "operation": "equals"
+        }
+       }
+      ],
+      "combinator": "and"
+     },
+     "options": {}
+    },
+    "name": "If-问现状?",
+    "type": "n8n-nodes-base.if",
+    "typeVersion": 2.2,
+    "position": [
+     480,
+     -60
+    ]
+   },
+   {
+    "parameters": {
+     "conditions": {
+      "options": {
+       "caseSensitive": true,
+       "leftValue": "",
+       "typeValidation": "loose"
+      },
+      "conditions": [
+       {
+        "id": "c-classify",
+        "leftValue": "={{ $json.intent }}",
+        "rightValue": "classify",
+        "operator": {
+         "type": "string",
+         "operation": "equals"
+        }
+       }
+      ],
+      "combinator": "and"
+     },
+     "options": {}
+    },
+    "name": "If-判文本?",
+    "type": "n8n-nodes-base.if",
+    "typeVersion": 2.2,
+    "position": [
+     480,
+     300
+    ]
+   },
+   {
+    "parameters": {
+     "conditions": {
+      "options": {
+       "caseSensitive": true,
+       "leftValue": "",
+       "typeValidation": "loose"
+      },
+      "conditions": [
+       {
+        "id": "c-collect",
+        "leftValue": "={{ $json.intent }}",
+        "rightValue": "collect",
+        "operator": {
+         "type": "string",
+         "operation": "equals"
+        }
+       }
+      ],
+      "combinator": "and"
+     },
+     "options": {}
+    },
+    "name": "If-开采集?",
+    "type": "n8n-nodes-base.if",
+    "typeVersion": 2.2,
+    "position": [
+     480,
+     120
+    ]
+   },
+   {
+    "parameters": {
+     "conditions": {
+      "options": {
+       "caseSensitive": true,
+       "leftValue": "",
+       "typeValidation": "loose"
+      },
+      "conditions": [
+       {
+        "id": "c-status",
+        "leftValue": "={{ $json.intent }}",
+        "rightValue": "status",
+        "operator": {
+         "type": "string",
+         "operation": "equals"
+        }
+       }
+      ],
+      "combinator": "and"
+     },
+     "options": {}
+    },
+    "name": "If-查进度?",
+    "type": "n8n-nodes-base.if",
+    "typeVersion": 2.2,
+    "position": [
+     480,
+     200
+    ]
+   },
+   {
+    "parameters": {
+     "jsCode": "// 聊天窗 2d：把任务单序列化成文本，交给 convertToFile 写成文件\n// 数据流：1-意图(job) → 2d-生成任务JSON(job_text) → 2d2-转成文件(二进制) → 2d3-写任务文件 → 3d-回执\nconst src = $('1-意图').first().json;\nconst job = src.job;\n\nif (!job || !job.id) {\n  return [{ json: { job_text: '{}', job_id: null } }];\n}\n\n// 任务单本身就是要被后台工人读的文件：字段少、可人工查看、可手改\nconst job_text = JSON.stringify(job, null, 2);\n\nreturn [{\n  json: {\n    job_id: job.id,\n    job_text,\n    query: job.query,\n    city: job.city,\n  },\n}];\n"
+    },
+    "name": "2d-生成任务JSON",
+    "type": "n8n-nodes-base.code",
+    "typeVersion": 2,
+    "position": [
+     720,
+     120
+    ]
+   },
+   {
+    "parameters": {
+     "operation": "toText",
+     "sourceProperty": "job_text",
+     "binaryPropertyName": "data",
+     "options": {
+      "fileName": "job.json",
+      "encoding": "utf8"
+     }
+    },
+    "name": "2d2-转成文件",
+    "type": "n8n-nodes-base.convertToFile",
+    "typeVersion": 1.2,
+    "position": [
+     880,
+     120
+    ]
+   },
+   {
+    "parameters": {
+     "operation": "write",
+     "fileName": "={{ '/data/jobs/' + $('2d-生成任务JSON').first().json.job_id + '.json' }}",
+     "dataPropertyName": "data",
+     "options": {
+      "append": false
+     }
+    },
+    "name": "2d3-写任务文件",
+    "type": "n8n-nodes-base.readWriteFile",
+    "typeVersion": 1.1,
+    "position": [
+     1040,
+     120
+    ]
+   },
+   {
+    "parameters": {
+     "jsCode": "// 聊天窗 3d：任务已写入队列，回执给用户（含怎么查进度）\n// 数据流：2d3-写任务文件 → 3d-回执 → 聊天窗\n// 两种来源：用户自己说\"帮我抓…\"（job.auto=false）；或问了一个没有快照的城市（job.auto=true）\nconst src = $('1-意图').first().json;\nconst job = src.job || {};\nconst L = [];\n\nif (job.auto) {\n  L.push('**「' + job.city + '」我手上还没有快照，已经自动下单去采了**');\n  if (src.city_note) L.push('');\n  if (src.city_note) L.push('> ' + src.city_note);\n  L.push('');\n  L.push('- 任务号：`' + (job.id || '（生成失败）') + '`');\n  L.push('- 搜索词：`' + (job.query || '') + '`');\n  L.push('- 抓取深度：微博 ' + (job.pages || 2) + ' 页 / 每帖最多 ' + (job.top || 6) + ' 条一级评论 × ' + (job.comment_pages || 1) + ' 页');\n  L.push('');\n  L.push('页面顶部的进度条会自动跟：**采微博 → 逐条判定 → 汇总成快照**，大约 2–3 分钟。');\n  L.push('跑完再问我一句「' + job.city + '现在有多少线索」，就有数字了；中途问「进度」也可以。');\n  L.push('');\n  L.push('_这次是现场抽样采集，样本量决定结论强弱：样本小的时候，没有检出诉求不等于没有热问题。_');\n  L.push('');\n  L.push('_需要后台工人开着（`2-启动采集工人.cmd`）才会真的去跑。_');\n} else {\n  L.push('**已下单，后台开始采集**');\n  L.push('');\n  L.push('- 任务号：`' + (job.id || '（生成失败）') + '`');\n  L.push('- 搜索词：`' + (job.query || '') + '`');\n  if (job.city) L.push('- 地点范围：**' + job.city + '**（只统计命中这个城市的线索）');  else L.push('- 地点范围：**不限定城市**（这句话里没提地名，所以只按关键词搜）');\n  L.push('- 抓取深度：微博 ' + (job.pages || 1) + ' 页 / 每帖最多 ' + (job.top || 6) + ' 条一级评论 × ' + (job.comment_pages || 1) + ' 页');\n  L.push('');\n  L.push('三步会依次跑：**采微博 → 逐条判定 → 汇总成快照**，通常 1–3 分钟。');\n  L.push('问一句「进度」我就报当前到哪一步；跑完后问「' + (job.city || '') + '现在有多少线索」就能看结果。');\n  L.push('');\n  L.push('_采集的是公开微博与一级评论的样本，不是温度观测，也不代表受影响人数。_');\n}\n\nreturn [{ json: { output: L.join('\\n') } }];\n"
+    },
+    "name": "3d-回执",
+    "type": "n8n-nodes-base.code",
+    "typeVersion": 2,
+    "position": [
+     1200,
+     120
+    ]
+   },
+   {
+    "parameters": {
+     "operation": "read",
+     "fileSelector": "/data/jobs/latest.json",
+     "options": {}
+    },
+    "name": "2e-读进度",
+    "type": "n8n-nodes-base.readWriteFile",
+    "typeVersion": 1.1,
+    "position": [
+     720,
+     200
+    ],
+    "onError": "continueRegularOutput"
+   },
+   {
+    "parameters": {
+     "operation": "text",
+     "binaryPropertyName": "data",
+     "options": {
+      "destinationKey": "data"
+     }
+    },
+    "name": "2f-进度文本",
+    "type": "n8n-nodes-base.extractFromFile",
+    "typeVersion": 1.2,
+    "position": [
+     880,
+     200
+    ],
+    "onError": "continueRegularOutput"
+   },
+   {
+    "parameters": {
+     "jsCode": "// 聊天窗 3e：把任务进度文件读成人话\n// 数据流：2e-读进度 → 2f-进度文本(extractFromFile text → json.data) → 3e-进度 → 聊天窗\nconst raw = $('2f-进度文本').first().json.data;\nconst L = [];\n\nlet job = null;\ntry {\n  job = typeof raw === 'string' ? JSON.parse(raw) : raw;\n} catch {\n  job = null;\n}\n\nconst PHASE = {\n  queued: '排队中（后台工人马上接单）',\n  collecting: '第 1 步 / 共 3 步：采微博',\n  classifying: '第 2 步 / 共 3 步：逐条判定',\n  aggregating: '第 3 步 / 共 3 步：汇总快照',\n  done: '全部完成',\n  failed: '中途失败',\n  idle: '当前没有任务',\n};\n\nif (!job || !job.id) {\n  L.push('**当前没有采集任务**');\n  L.push('');\n  L.push('说一句「帮我抓成都 遮阴」就会下单；也可以说「进度」看正在跑的任务。');\n  return [{ json: { output: L.join('\\n') } }];\n}\n\nconst pct = () => {\n  if (job.status === 'done') return 100;\n  if (!job.total) return job.phase === 'collecting' ? 15 : 30;\n  return Math.min(99, Math.round(30 + (Number(job.done || 0) / Number(job.total)) * 65));\n};\n\nL.push('**任务 `' + job.id + '`**');\nL.push('');\nL.push('- 状态：' + (PHASE[job.phase] || job.phase || job.status || '未知'));\nL.push('- 搜索词：`' + (job.query || '') + '`' + (job.city ? '（地点：' + job.city + '）' : '（不限城市）'));\nif (job.posts || job.comments) L.push('- 已抓：帖子 ' + (job.posts || 0) + ' 条 / 评论 ' + (job.comments || 0) + ' 条');\nif (job.total) L.push('- 判定进度：' + (job.done || 0) + ' / ' + job.total);\nif (job.message) L.push('- 最近一步：' + job.message);\nL.push('- 整体完成度：约 **' + pct() + '%**');\n\nif (job.status === 'done') {\n  L.push('');\n  L.push('跑完了。现在可以问「' + (job.city || '') + '现在有多少线索」，或贴一条微博让我判。');\n  if (job.snapshot) L.push('（快照：`' + job.snapshot + '`）');\n} else if (job.status === 'failed') {\n  L.push('');\n  L.push('**失败原因**：' + (job.error || job.message || '未提供'));\n  L.push('常见原因：微博 Cookie 过期（重新打开 Edge 登录一次再跑）、或网络被限流。');\n} else {\n  L.push('');\n  L.push('_还在跑，过一会儿再说一次「进度」即可。_');\n}\n\nL.push('');\nL.push('_这些数字是抽样抓取的条数，不是人数。_');\n\nreturn [{ json: { output: L.join('\\n') } }];\n"
+    },
+    "name": "3e-进度",
+    "type": "n8n-nodes-base.code",
+    "typeVersion": 2,
+    "position": [
+     1040,
+     200
+    ]
+   },
+   {
+    "parameters": {
+     "operation": "read",
+     "fileSelector": "={{ '/data/' + $('1-意图').first().json.city_file }}",
+     "options": {}
+    },
+    "name": "2a-读快照",
+    "type": "n8n-nodes-base.readWriteFile",
+    "typeVersion": 1.1,
+    "position": [
+     740,
+     -160
+    ],
+    "onError": "continueRegularOutput"
+   },
+   {
+    "parameters": {
+     "operation": "text",
+     "binaryPropertyName": "data",
+     "options": {
+      "destinationKey": "data"
+     }
+    },
+    "name": "2c-取文本",
+    "type": "n8n-nodes-base.extractFromFile",
+    "typeVersion": 1.2,
+    "position": [
+     880,
+     -160
+    ],
+    "onError": "continueRegularOutput"
+   },
+   {
+    "parameters": {
+     "jsCode": "// 聊天窗「问现状」第 2g 步：把快照整理成两样东西\n//   ① facts —— 渲染层唯一的事实来源（条数、类别、代表原文、原文链接）\n//   ② model_body —— 交给大模型\"组织语言\"的请求体\n// 关键约束：模型只负责把 facts 讲成人话，数字与原文都由这里提供，渲染层还会再校对一遍。\nconst ctx = $('1-意图').first().json;\nconst first = $input.first();\n\n// 快照文本两种可能：上一节点已解成 json.data，或者仍是二进制 base64\nlet text = first.json && typeof first.json.data === 'string' ? first.json.data : null;\nif (!text) {\n  const bin = first.binary && first.binary.data && first.binary.data.data;\n  if (!bin) return [{ json: { snapshot_missing: true, city: ctx.city || null, facts: null, model_body: null } }];\n  text = Buffer.from(bin, 'base64').toString('utf8');\n}\n\nlet snap;\ntry {\n  snap = JSON.parse(text);\n} catch (e) {\n  return [{ json: { snapshot_broken: true, error: e.message, facts: null, model_body: null } }];\n}\n\nconst c = snap.counts || {};\nconst cityLabel = ctx.city || (snap.source && snap.source.city) || '成都';\n\n// ---- 原文链接：来源唯一，就是快照里每条记录的 source_url（采集器写入 m.weibo.cn/detail/<id>）\n// 缺失 / 空串 / 不是 http 开头 → 一律当成\"原文不可访问\"，绝不拼接猜测的链接\nfunction normUrl(u) {\n  if (typeof u !== 'string') return null;\n  const s = u.trim();\n  if (!/^https?:\\/\\/[^\\s]+$/i.test(s)) return null;\n  return s;\n}\n\nconst DIR_ZH = { discomfort: '不适', improvement: '改善', mixed: '混合', neutral: '中性', unknown: '未说明' };\nfunction dirZh(dir) {\n  if (!dir || typeof dir !== 'object') return '';\n  return Object.entries(dir)\n    .sort((a, b) => b[1] - a[1])\n    .map(([k, v]) => DIR_ZH[k] || k)\n    .join('、');\n}\n\nfunction pickReps(list, max) {\n  const out = [];\n  const seen = new Set();\n  for (const r of list || []) {\n    if (!r || !r.excerpt) continue;\n    const key = String(r.excerpt).slice(0, 40);\n    if (seen.has(key)) continue;\n    seen.add(key);\n    out.push({\n      excerpt: String(r.excerpt).slice(0, 80),\n      url: normUrl(r.source_url),\n      published_at: r.published_at || null,\n      item_id: r.item_id || null,\n    });\n    if (out.length >= max) break;\n  }\n  return out;\n}\n\n// ---- 关切点（有具体空间诉求）----\n// \"other\"（一般性热感受）不是空间诉求，归到下面的体验观察里，避免同一个类别在两处重复计数\nconst events = (Array.isArray(snap.events) ? snap.events : [])\n  .filter((e) => e && e.demand_topic !== 'other')\n  .slice()\n  .sort((a, b) => (b.item_count || 0) - (a.item_count || 0))\n  .map((e) => ({\n    topic_zh: e.demand_topic_zh || e.demand_topic || '未分类',\n    topic: e.demand_topic || null,\n    count: Number(e.item_count || 0),\n    dir: dirZh(e.evaluation_direction),\n    place: e.place_hint || null,\n    first_at: e.first_published_at || null,\n    last_at: e.last_published_at || null,\n    reps: pickReps([e.representative, ...(Array.isArray(e.representatives) ? e.representatives : [])], 3),\n  }));\n\n// ---- 体验观察（没有具体空间诉求，但是民意）----\n// 把 events 里的 \"other\" 也并进来（同一个维度，只在该出现的地方出现一次）\nconst otherEvents = (Array.isArray(snap.events) ? snap.events : []).filter((e) => e && e.demand_topic === 'other');\nconst obsRaw = (Array.isArray(snap.observations) ? snap.observations : []).slice();\nfor (const e of otherEvents) {\n  const hit = obsRaw.find((o) => o && o.demand_topic === 'other');\n  if (hit) {\n    const seen = new Set((hit.examples || []).map((x) => x.item_id));\n    const extra = [e.representative].filter((r) => r && !seen.has(r.item_id));\n    hit.examples = [...(hit.examples || []), ...extra];\n    hit.item_count = Math.max(hit.item_count || 0, e.item_count || 0);\n  } else {\n    obsRaw.push({ demand_topic: 'other', demand_topic_zh: e.demand_topic_zh, item_count: e.item_count, evaluation_direction: e.evaluation_direction, examples: [e.representative].filter(Boolean) });\n  }\n}\nconst observations = obsRaw\n  .slice()\n  .sort((a, b) => (b.item_count || 0) - (a.item_count || 0))\n  .map((o) => ({\n    topic_zh: o.demand_topic_zh || o.demand_topic || '未分类',\n    topic: o.demand_topic || null,\n    count: Number(o.item_count || 0),\n    dir: dirZh(o.evaluation_direction),\n    reps: pickReps(o.examples, 2),\n  }));\n\nconst allReps = [...events.flatMap((e) => e.reps), ...observations.flatMap((o) => o.reps)];\nconst facts = {\n  city: cityLabel,\n  mode: snap.mode || 'unknown',\n  generated_at: snap.generated_at || null,\n  city_note: ctx.city_note || null,\n  counts: {\n    raw_posts: c.raw_posts ?? null,\n    raw_comments: c.raw_comments ?? null,\n    classified_items: c.classified_items ?? null,\n    in_scope_items: c.in_scope_items ?? c.in_study_area_items ?? null,\n    unique_contents: c.unique_contents ?? null,\n    public_demand_items: c.public_demand_items ?? null,\n    out_of_scope_items: c.out_of_scope_items ?? null,\n    place_unknown_items: c.place_unknown_items ?? null,\n  },\n  limits: (Array.isArray(snap.limits) ? snap.limits : []).slice(0, 4),\n  demands: events,\n  observations,\n  link_stats: {\n    reps: allReps.length,\n    with_url: allReps.filter((r) => r.url).length,\n    missing: allReps.filter((r) => !r.url).length,\n  },\n};\n\n// ---- 给模型的材料：只给结论与原文，明确要求\"不许改数字、不许编原文\"----\nconst material = {\n  city: facts.city,\n  counts: facts.counts,\n  demands: events.map((e) => ({ 类别: e.topic_zh, 条数: e.count, 倾向: e.dir, 地点: e.place, 代表原文: e.reps.map((r) => r.excerpt) })),\n  observations: observations.map((o) => ({ 类别: o.topic_zh, 条数: o.count, 倾向: o.dir, 例子: o.reps.map((r) => r.excerpt) })),\n};\n\nconst system = [\n  '你是微博热感知助手的\"讲人话\"环节。给你一份已经抽取好的统计结果，你要把它组织成普通读者能看懂的中文。',\n  '',\n  '硬性规则：',\n  '1. 只能使用给定材料里的数字和原文，不得新增、不得改写条数、不得编造原文，不得推测受影响人数；',\n  '2. 不要使用\"热相关性\"\"空间诉求\"\"分类维度\"\"抽样口径\"这类内部术语，改用日常说法（比如\"抱怨没有遮阴\"\"说等车太晒\"）；',\n  '3. 不要输出链接、不要输出 Markdown 标题或列表，只输出 JSON；',\n  '4. 如果材料里没有具体诉求，就如实说\"这批样本里没看到明确的改造诉求，多是笼统的热感受\"。',\n  '',\n  '输出 JSON，字段如下：',\n  '{',\n  '  \"summary\": \"一两句大白话，说清这批人在抱怨什么/夸什么，不超过 80 字\",',\n  '  \"categories\": [{\"类别\": \"与材料中类别完全一致\", \"一句话\": \"这条类别用大白话解释，不超过 40 字\"}],',\n  '  \"needs\": [\"从材料归纳出的可落地需求，最多 3 条，每条不超过 30 字\"],',\n  '  \"caveat\": \"一句话提醒这不是温度观测、不代表人数\"',\n  '}',\n].join('\\n');\n\nconst model_body = {\n  model: 'deepseek-flash',\n  temperature: 0.3,\n  max_tokens: 900,\n  response_format: { type: 'json_object' },\n  messages: [\n    { role: 'system', content: system },\n    { role: 'user', content: '材料如下（JSON）：\\n' + JSON.stringify(material, null, 2) },\n  ],\n};\n\nreturn [{ json: { facts, model_body, city: cityLabel } }];\n"
+    },
+    "name": "2g-构造摘要",
+    "type": "n8n-nodes-base.code",
+    "typeVersion": 2,
+    "position": [
+     1020,
+     -160
+    ]
+   },
+   {
+    "parameters": {
+     "method": "POST",
+     "url": "https://api.deepseek.com/chat/completions",
+     "authentication": "genericCredentialType",
+     "genericAuthType": "httpHeaderAuth",
+     "sendBody": true,
+     "specifyBody": "json",
+     "jsonBody": "={{ JSON.stringify($json.model_body) }}",
+     "options": {
+      "timeout": 30000,
+      "response": {
+       "response": {
+        "neverError": true
+       }
+      }
+     }
+    },
+    "name": "2h-调摘要模型",
+    "type": "n8n-nodes-base.httpRequest",
+    "typeVersion": 4.2,
+    "position": [
+     1180,
+     -160
+    ],
+    "credentials": {
+     "httpHeaderAuth": {
+      "id": "2ozwVH9LQlzzNSfF",
+      "name": "DeepSeek API"
+     }
+    },
+    "onError": "continueRegularOutput",
+    "alwaysOutputData": true
+   },
+   {
+    "parameters": {
+     "method": "POST",
+     "url": "http://127.0.0.1:5678/webhook/weibo-demand/v1",
+     "sendBody": true,
+     "specifyBody": "json",
+     "jsonBody": "={{ JSON.stringify({ contract_version: '1.0.0', request_id: $('1-意图').first().json.request_id, action: 'classify', payload: {   text: $('1-意图').first().json.text,   scope: $('1-意图').first().json.scope } }) }}",
+     "options": {
+      "timeout": 120000,
+      "response": {
+       "response": {
+        "neverError": true
+       }
+      }
+     }
+    },
+    "name": "2b-调契约",
+    "type": "n8n-nodes-base.httpRequest",
+    "typeVersion": 4.2,
+    "position": [
+     740,
+     120
+    ]
+   },
+   {
+    "parameters": {
+     "jsCode": "// 聊天窗「问现状」第 3a 步：渲染最终回答\n// 输入两种可能：① 大模型回的 JSON（choices[0].message.content）② 模型失败（节点 onError 透传上来的 error）\n// 事实一律取自 2g 节点的 facts；模型只贡献\"一句话总结\"\"类别解释\"\"需求归纳\"这些措辞。\n// 只要模型给的类别不在 facts 里、或者模型说了别的数字，一律以 facts 为准（模型不得改条数）。\nconst ctx = $('1-意图').first().json;\nconst up = $('2g-构造摘要').first().json;\nconst facts = up && up.facts;\n\n// 快照读不到 / 不是合法 JSON：交给后面的 If-缺快照? 决定（有城市名就去自动下单采集）\nif (!facts) {\n  return [{ json: { output: '', snapshot_missing: true, city: (up && up.city) || ctx.city || null } }];\n}\n\n// ---------- 1. 取模型输出（失败就退化成规则摘要，不编造）----------\nlet ai = null;\nlet ai_error = null;\ntry {\n  const body = $input.first().json || {};\n  if (body.error) {\n    ai_error = body.error.message || body.error.code || 'model_error';\n  } else {\n    const content = body.choices && body.choices[0] && body.choices[0].message && body.choices[0].message.content;\n    if (content) {\n      const parsed = JSON.parse(content);\n      if (parsed && typeof parsed === 'object') ai = parsed;\n    } else {\n      ai_error = 'empty_model_response';\n    }\n  }\n} catch (e) {\n  ai_error = 'parse_failed: ' + e.message;\n}\n\n// ---------- 2. 事实与措辞的校对 ----------\nconst c = facts.counts || {};\nconst demandCats = (facts.demands || []).filter((e) => e.count > 0);\nconst obsCats = (facts.observations || []).filter((o) => o.count > 0);\n\n// 模型给的类别解释（按类别中文名匹配；多了的丢掉，少了的不补）\nconst catExplain = {};\nif (ai && Array.isArray(ai.categories)) {\n  for (const item of ai.categories) {\n    if (!item) continue;\n    const key = String(item['类别'] || item.category || item.name || '').trim();\n    const val = String(item['一句话'] || item.explain || item.description || '').trim();\n    if (key && val) catExplain[key] = val;\n  }\n}\n\n// 一句话总结：模型给了就用；没有就用事实拼一句同样通俗的\nfunction fallbackSummary() {\n  if (!demandCats.length) {\n    const total = c.in_scope_items || c.in_study_area_items || 0;\n    return `这批样本里没看到明确的改造诉求，${total} 条内容多是笼统的热感受，另有 ${c.unique_contents || 0} 条去重后的内容可看。`;\n  }\n  const top = demandCats[0];\n  const rest = demandCats.length > 1 ? `，其次是「${demandCats[1].topic_zh}」（${demandCats[1].count} 条）` : '';\n  return `大家主要在说「${top.topic_zh}」（${top.count} 条）${rest}。`;\n}\nconst summary = (ai && typeof ai.summary === 'string' && ai.summary.trim()) ? ai.summary.trim() : fallbackSummary();\n\n// 需求归纳：模型给了就取前 3 条；没有就从类别里直接生成\nlet needs = [];\nif (ai && Array.isArray(ai.needs)) {\n  needs = ai.needs.map((x) => String(x).trim()).filter(Boolean).slice(0, 3);\n}\nif (!needs.length) {\n  needs = demandCats.slice(0, 3).map((e) => `${e.topic_zh}${e.place ? '（' + e.place + '）' : ''}`);\n}\n\n// ---------- 3. 原文链接：有就点得开，没有就明说 ----------\nfunction linkOf(rep) {\n  if (rep && rep.url) return `[原文](${rep.url})`;\n  return '（原文不可访问）';\n}\nfunction quoteOf(rep) {\n  return rep ? `「${String(rep.excerpt).replace(/\\s+/g, ' ').slice(0, 70)}」` : '';\n}\n\nconst modeZh = facts.mode === 'historical_sample' ? '历史抽样回放' : (facts.mode || '未知模式');\nconst L = [];\n\n// ---------- 4. 排版：一句话 / 分类明细 / 需求 / 边界 ----------\nL.push(`**${facts.city} · 微博热感知（${modeZh}）**`);\nif (facts.city_note) L.push(`_${facts.city_note}_`);\nL.push('');\nL.push(`**一句话**：${summary}`);\nL.push('');\n\nL.push('**分类明细**（类别 · 条数 · 代表原文，点「原文」可跳转核对）');\nif (!demandCats.length) {\n  L.push('- 这批样本里没有检出带具体地点的改造诉求。');\n} else {\n  for (const e of demandCats) {\n    const meta = [e.dir ? `倾向：${e.dir}` : '', e.place ? `地点：${e.place}` : ''].filter(Boolean).join(' · ');\n    L.push(`- **${e.topic_zh}** · ${e.count} 条${meta ? ' · ' + meta : ''}`);\n    if (catExplain[e.topic_zh]) L.push(`  - 说的是：${catExplain[e.topic_zh]}`);\n    for (const rep of (e.reps || []).slice(0, 2)) {\n      L.push(`  - ${linkOf(rep)} ${quoteOf(rep)}`);\n    }\n    if (!(e.reps || []).length) L.push('  - （原文不可访问）这一类没有可回查的原文。');\n  }\n}\n\nif (obsCats.length) {\n  L.push('');\n  L.push('**体验观察**（不是改造诉求，但同样是民意）');\n  for (const o of obsCats.slice(0, 5)) {\n    const head = `- **${o.topic_zh}** · ${o.count} 条${o.dir ? '（倾向：' + o.dir + '）' : ''}`;\n    L.push(head);\n    const rep = (o.reps || [])[0];\n    if (rep) L.push(`  - ${linkOf(rep)} ${quoteOf(rep)}`);\n  }\n}\n\nL.push('');\nL.push('**这些线索属于哪些需求**');\nfor (const n of needs) L.push(`- ${n}`);\n\n// 数据口径一行（保留可追溯性，但不堆术语）\nL.push('');\nL.push(`_样本：原始 ${c.raw_posts ?? '?'} 帖 / ${c.raw_comments ?? '?'} 条评论 → 判定 ${c.classified_items ?? '?'} 条 → 落在${facts.city} ${c.in_scope_items ?? '?'} 条 → 去重后 ${c.unique_contents ?? '?'} 条；范围外 ${c.out_of_scope_items ?? '?'} 条、地点待定 ${c.place_unknown_items ?? '?'} 条。_`);\nconst ls = facts.link_stats || {};\nL.push(`_原文链接：${ls.with_url ?? 0} 条可跳转${ls.missing ? `，${ls.missing} 条已缺失或已删除（标注为「原文不可访问」）` : ''}。_`);\n\nif (ai && ai.caveat) {\n  L.push('');\n  L.push(`> ${String(ai.caveat).slice(0, 120)}`);\n}\nconst limits = Array.isArray(facts.limits) ? facts.limits : [];\nif (limits.length) {\n  L.push('');\n  L.push('**边界**');\n  for (const l of limits.slice(0, 3)) L.push(`- ${l}`);\n}\nif (ai_error) L.push('');\nif (ai_error) L.push(`_（这次没能请大模型润色，上面是按规则拼的；原因：${ai_error}）_`);\nL.push(`_快照生成于 ${facts.generated_at || '未知时间'}。_`);\n\nreturn [{ json: { output: L.join('\\n'), ai_used: !!ai, ai_error } }];\n"
+    },
+    "name": "3a-汇总",
+    "type": "n8n-nodes-base.code",
+    "typeVersion": 2,
+    "position": [
+     1360,
+     -160
+    ]
+   },
+   {
+    "parameters": {
+     "conditions": {
+      "options": {
+       "caseSensitive": true,
+       "leftValue": "",
+       "typeValidation": "loose"
+      },
+      "conditions": [
+       {
+        "id": "c-missing",
+        "leftValue": "={{ $json.snapshot_missing }}",
+        "rightValue": true,
+        "operator": {
+         "type": "boolean",
+         "operation": "equals"
+        }
+       }
+      ],
+      "combinator": "and"
+     },
+     "options": {}
+    },
+    "name": "If-缺快照?",
+    "type": "n8n-nodes-base.if",
+    "typeVersion": 2.2,
+    "position": [
+     1520,
+     -160
+    ]
+   },
+   {
+    "parameters": {
+     "jsCode": "// 聊天窗 3a2：快照读到了，把 3a 的排版结果原样往下传\n// 为什么需要这个节点：If 节点自己的输出没有 output 字段，聊天窗（responseMode=lastNode）会显示空消息。\n// 它不是逻辑，只是一次\"搬运\"。\nreturn [{ json: $('3a-汇总').first().json }];\n"
+    },
+    "name": "3a2-透传",
+    "type": "n8n-nodes-base.code",
+    "typeVersion": 2,
+    "position": [
+     1680,
+     -80
+    ]
+   },
+   {
+    "parameters": {
+     "jsCode": "// 聊天窗第 3b 步：把 03 契约服务返回的单条判定结果说成人话\n// 输入：HTTP 节点调 http://127.0.0.1:5678/webhook/weibo-demand/v1 的响应\nconst ctx = $('1-意图').first().json;\nconst resp = $input.first().json || {};\n\nconst fail = (msg) => [{ json: { output: msg } }];\n\n// ---- 出错也要说清楚是哪一类错 ----\n// 注意：成功响应里 errors 可能是空数组，空数组 truthy，必须看长度\nconst errs = Array.isArray(resp.errors) ? resp.errors : [];\nif (resp.status === 'error' || errs.length) {\n  const lines = ['**没能判定**（' + (resp.request_id || '-') + '）'];\n  for (const e of errs.slice(0, 5)) {\n    lines.push(`- \\`${e.code}\\`：${e.message}${e.path ? ' @ ' + e.path : ''}${e.retryable ? '（可重试）' : '（不可重试）'}`);\n  }\n  if (!errs.length) lines.push('- ' + JSON.stringify(resp).slice(0, 300));\n  return fail(lines.join('\\n'));\n}\n\nconst result = resp.result || {};\nconst item = (Array.isArray(result.items) && result.items[0]) || result.item || result;\nif (!item || !item.item_id && !item.heat_relevance) {\n  return fail('返回体里没有找到判定条目：' + JSON.stringify(resp).slice(0, 300));\n}\n\n// 标签中文名来自 config/taxonomy.v1.json（构建时注入），别在这里手抄一份，否则迟早和词表不一致\nconst LBL = {\"heat_relevance\": {\"relevant\": \"相关\", \"needs_review\": \"待核实\", \"irrelevant\": \"不相关\"}, \"evaluation_direction\": {\"discomfort\": \"不适\", \"improvement\": \"改善\", \"neutral\": \"中性\", \"mixed\": \"混合\", \"unclear\": \"不明确\"}, \"activity_scene\": {\"walking\": \"步行\", \"cycling\": \"骑行\", \"waiting\": \"等候\", \"leisure\": \"游憩\", \"outdoor_work\": \"室外工作\", \"other\": \"其他\", \"unspecified\": \"未说明\"}, \"demand_topic\": {\"shade_deficit\": \"缺少遮阴\", \"tree_canopy\": \"树荫/绿化覆盖诉求\", \"waiting_transit\": \"候车与换乘暴晒\", \"walking_route\": \"步行与通行环境\", \"plaza_leisure\": \"广场与开放空间休憩\", \"campus_school\": \"校园与学校接送\", \"park_greenway\": \"公园与绿道体验\", \"outdoor_work\": \"室外作业条件\", \"water_cooling_facility\": \"饮水与降温设施\", \"ventilation_stillness\": \"通风与闷热\", \"surface_heat\": \"地面/铺装辐射热\", \"positive_cooling\": \"降温改善的积极体验\", \"other\": \"其他或无法归类\"}, \"content_types\": {\"firsthand\": \"亲历体验\", \"relay\": \"转述\", \"suggestion\": \"改造建议\", \"forecast\": \"天气预报\", \"news\": \"新闻转载\", \"ad\": \"广告\", \"unknown\": \"无法判断\"}, \"experience_tags\": {\"hot\": \"炎热\", \"muggy\": \"闷热\", \"sun_exposure\": \"暴晒\", \"cool\": \"凉爽\", \"mixed\": \"混合\", \"unspecified\": \"未说明\"}, \"spatial_demands\": {\"shade_deficit\": \"遮阴不足\", \"ventilation\": \"通风诉求\", \"waiting_comfort\": \"候车条件\", \"stay_comfort\": \"停留条件\", \"water_or_cooling_facility\": \"饮水或降温设施诉求\"}};\nconst KIND_ZH = { target: '查询城市', other_place: '范围外', study_area: '研究区' };\n\nconst zhOf = (dim, v) => {\n  const m = (LBL && LBL[dim]) || {};\n  return m[v] || KIND_ZH[v] || v || '-';\n};\nconst list = (dim, a) => (Array.isArray(a) && a.length ? a.map((v) => zhOf(dim, v)).join('、') : '-');\n\nconst h = item.place || {};\nconst ev = (item.evidence_spans || []).map((s) => s.text || s.quote || '').filter(Boolean);\nconst notes = Array.isArray(item.notes) ? item.notes : [];\n\n// 一句话：把标签拼成日常说法，别让读者先学一遍词表\nconst topicZh = item.demand_topic_zh || zhOf('demand_topic', item.demand_topic);\nconst dirZh = zhOf('evaluation_direction', item.evaluation_direction);\nconst demandZh = list('spatial_demands', item.spatial_demands);\nconst isDemand = item.is_public_demand === true;\nlet gist;\nif (item.heat_relevance === 'irrelevant') {\n  gist = '这句话不是在说热，和热环境无关。';\n} else if (isDemand) {\n  gist = `这句话是在提需求：说的是「${topicZh}」，希望能改的地方是${demandZh === '-' ? '（没写具体）' : demandZh}，感受偏${dirZh}。`;\n} else {\n  gist = `这句话是在讲体感：${topicZh}，感受偏${dirZh}，没提具体要改哪儿。`;\n}\n\nconst L = [];\nL.push(`**这句话说了什么**：${gist}`);\nL.push('');\nL.push(`**判定结果**（${resp.request_id || '-'}）`);\nL.push(`- 原话：「${String(item.text || item.text_norm || ctx.text || '').slice(0, 80)}」`);\nL.push(`- 和热有关吗：**${zhOf('heat_relevance', item.heat_relevance)}**`);\nL.push(`- 这是哪种说法：${list('content_types', item.content_types)}`);\nL.push(`- 体感：${list('experience_tags', item.experience_tags)}`);\nL.push(`- 希望能改的地方：${demandZh}`);\nL.push(`- 感受倾向：${dirZh} · 发生场景：${zhOf('activity_scene', item.activity_scene)}`);\nL.push(`- 归类：${topicZh}`);\nif (h.name || h.place_id) {\n  L.push(`- 提到的地方：${h.name || h.place_id}（${zhOf('kind', h.kind)}${item.in_scope === true ? ' · 在查询范围内' : item.in_scope === false ? ' · 不在查询范围内' : ''}）`);\n}\nL.push(`- 把握有多大：${item.confidence ?? '-'}（${item.confidence_level || '-'}）· 需人工复核：${item.needs_review ? '是' : '否'}`);\n// 粘贴进来的文本本身没有链接：明说，不伪造\nL.push('- 原文链接：（这条是你粘贴的文本，没有可跳转的链接；可在微博里搜这句话核对）');\nif (ev.length) {\n  L.push('');\n  L.push('**证据片段（可在原文里对上号）**');\n  for (const s of ev.slice(0, 4)) L.push(`- 「${String(s).slice(0, 80)}」`);\n}\nif (notes.length) {\n  L.push('');\n  L.push('**判定说明**：' + notes.join('；'));\n}\nL.push('');\nL.push('_这是对单条文本的判定：不代表温度观测，也不代表人数。_');\n\nreturn [{ json: { output: L.join('\\n') } }];\n"
+    },
+    "name": "3b-格式化",
+    "type": "n8n-nodes-base.code",
+    "typeVersion": 2,
+    "position": [
+     1000,
+     120
+    ]
+   },
+   {
+    "parameters": {
+     "jsCode": "// 聊天窗兜底：用户没说清要干什么时给用法（不联网、不花钱）\nconst ctx = $('1-意图') ? $('1-意图').first().json : {};\nconst text = (ctx && ctx.text) || '';\n\nconst L = [];\n// 打招呼：先回一句人话，再给用法\nconst isGreeting = /^(你好|您好|在吗|hi|hello|嗨|哈喽)/i.test(String(text).trim());\nif (isGreeting) {\n  L.push('你好。我是微博民意助理，可以帮你把公开微博读成可核查的线索。');\n  L.push('');\n}\n\n// 说了「某某市」但词表里没有这个地名：默认已经按字面地名去采了（chat-1 会把它当城市），\n// 这里只在\"没走采集分支\"时兜底提示一句，别让用户以为命令没生效。\nif (ctx.unknown_place && !ctx.job) {\n  const name = String(ctx.unknown_place).replace(/[市|区|县|镇]$/, '');\n  L.push(`「${ctx.unknown_place}」不在城市词表里，但可以直接按字面地名采：`);\n  L.push('');\n  L.push(`- 发「**帮我抓${name} 遮阴**」→ 我按 \\`${name}\\` 去抓并统计（别名自动带上「${ctx.unknown_place}」）；`);\n  L.push(`- 或问「**${name}现在有多少线索**」→ 没快照会自动补采，进度条会走，约 2–3 分钟。`);\n  L.push('');\n  L.push(`_想把别名补全（让「${name}」也命中「${ctx.unknown_place}」以外的叫法），在 \\`config/place-lexicon.v2.json\\` 的 \\`cities\\` 里加一行即可：_`);\n  L.push('```json');\n  L.push(`\"${name}\": { \"aliases\": [\"${ctx.unknown_place}\"] }`);\n  L.push('```');\n  return [{ json: { output: L.join('\\n') } }];\n}\n\nif (text && !isGreeting) L.push(`没看懂「${String(text).slice(0, 30)}」想让我做什么。`);\nL.push('');\nL.push('**两种用法**');\nL.push('1. **问现状**（读已有快照；没有就自动补采，约 2–3 分钟）：');\nL.push('   - `查成都 遮阴`、`重庆 候车 现状`、`北京有多少条诉求`');\nL.push('2. **贴一条微博**（调模型判定，约 3–8 秒）：');\nL.push('   - 直接粘贴正文，例如：`太阳晒得人眼睛都睁不开，树荫一点都没有`');\nL.push('');\nL.push('**能看出什么**');\nL.push('- 是否与热相关、内容类型（亲历/转述/建议/广告…）、体验标签（炎热/暴晒/闷热/凉爽）、空间诉求（遮阴不足/候车条件/通风…）、评价方向（不适/改善）');\nL.push('- 每条结论都带「证据片段」，可以回到原文核对');\nL.push('');\nL.push('**不能做什么**');\nL.push('- 不是温度观测，也不代表受影响人数；没有线索不等于没有热问题');\nL.push('- 地点范围由你的问题决定，不预设城市；词表（`config/place-lexicon.v2.json`）里没有的地名，也能按字面地名直接采和统计');\nL.push('- 采集需要微博 Cookie，且依赖后台工人（`2-启动采集工人.cmd`）在本机跑');\n\nreturn [{ json: { output: L.join('\\n') } }];\n"
+    },
+    "name": "9-帮助",
+    "type": "n8n-nodes-base.code",
+    "typeVersion": 2,
+    "position": [
+     740,
+     360
+    ]
+   },
+   {
+    "parameters": {
+     "content": "## 微博热感知聊天窗\n两个入口，共用一套判定：\n- **问现状** → 读 `/data/heat_perception*.json`（不花钱、秒回）\n- **贴正文** → 调 `03-demand-agent-api`（模型，3-8 秒）\n\n边界：不是温度观测，不代表人数；无线索≠没有热问题。\n\n改动后重跑 `python scripts/build-chat-workflow.py` 再部署。",
+     "height": 260,
+     "width": 420
+    },
+    "name": "说明",
+    "type": "n8n-nodes-base.stickyNote",
+    "typeVersion": 1,
+    "position": [
+     -460,
+     -60
+    ]
+   }
+  ],
+  "connections": {
+   "聊天窗": {
+    "main": [
+     [
+      {
+       "node": "1-意图",
+       "type": "main",
+       "index": 0
+      }
+     ]
+    ]
+   },
+   "1-意图": {
+    "main": [
+     [
+      {
+       "node": "If-问现状?",
+       "type": "main",
+       "index": 0
+      }
+     ]
+    ]
+   },
+   "If-问现状?": {
+    "main": [
+     [
+      {
+       "node": "2a-读快照",
+       "type": "main",
+       "index": 0
+      }
+     ],
+     [
+      {
+       "node": "If-开采集?",
+       "type": "main",
+       "index": 0
+      }
+     ]
+    ]
+   },
+   "If-开采集?": {
+    "main": [
+     [
+      {
+       "node": "2d-生成任务JSON",
+       "type": "main",
+       "index": 0
+      }
+     ],
+     [
+      {
+       "node": "If-查进度?",
+       "type": "main",
+       "index": 0
+      }
+     ]
+    ]
+   },
+   "If-查进度?": {
+    "main": [
+     [
+      {
+       "node": "2e-读进度",
+       "type": "main",
+       "index": 0
+      }
+     ],
+     [
+      {
+       "node": "If-判文本?",
+       "type": "main",
+       "index": 0
+      }
+     ]
+    ]
+   },
+   "If-判文本?": {
+    "main": [
+     [
+      {
+       "node": "2b-调契约",
+       "type": "main",
+       "index": 0
+      }
+     ],
+     [
+      {
+       "node": "9-帮助",
+       "type": "main",
+       "index": 0
+      }
+     ]
+    ]
+   },
+   "2a-读快照": {
+    "main": [
+     [
+      {
+       "node": "2c-取文本",
+       "type": "main",
+       "index": 0
+      }
+     ]
+    ]
+   },
+   "2c-取文本": {
+    "main": [
+     [
+      {
+       "node": "2g-构造摘要",
+       "type": "main",
+       "index": 0
+      }
+     ]
+    ]
+   },
+   "2g-构造摘要": {
+    "main": [
+     [
+      {
+       "node": "2h-调摘要模型",
+       "type": "main",
+       "index": 0
+      }
+     ]
+    ]
+   },
+   "2h-调摘要模型": {
+    "main": [
+     [
+      {
+       "node": "3a-汇总",
+       "type": "main",
+       "index": 0
+      }
+     ]
+    ]
+   },
+   "3a-汇总": {
+    "main": [
+     [
+      {
+       "node": "If-缺快照?",
+       "type": "main",
+       "index": 0
+      }
+     ]
+    ]
+   },
+   "If-缺快照?": {
+    "main": [
+     [
+      {
+       "node": "2d-生成任务JSON",
+       "type": "main",
+       "index": 0
+      }
+     ],
+     [
+      {
+       "node": "3a2-透传",
+       "type": "main",
+       "index": 0
+      }
+     ]
+    ]
+   },
+   "2b-调契约": {
+    "main": [
+     [
+      {
+       "node": "3b-格式化",
+       "type": "main",
+       "index": 0
+      }
+     ]
+    ]
+   },
+   "2d-生成任务JSON": {
+    "main": [
+     [
+      {
+       "node": "2d2-转成文件",
+       "type": "main",
+       "index": 0
+      }
+     ]
+    ]
+   },
+   "2d2-转成文件": {
+    "main": [
+     [
+      {
+       "node": "2d3-写任务文件",
+       "type": "main",
+       "index": 0
+      }
+     ]
+    ]
+   },
+   "2d3-写任务文件": {
+    "main": [
+     [
+      {
+       "node": "3d-回执",
+       "type": "main",
+       "index": 0
+      }
+     ]
+    ]
+   },
+   "2e-读进度": {
+    "main": [
+     [
+      {
+       "node": "2f-进度文本",
+       "type": "main",
+       "index": 0
+      }
+     ]
+    ]
+   },
+   "2f-进度文本": {
+    "main": [
+     [
+      {
+       "node": "3e-进度",
+       "type": "main",
+       "index": 0
+      }
+     ]
+    ]
+   }
+  },
+  "settings": {
+   "executionOrder": "v1"
+  },
+  "active": false
+ }
+]
