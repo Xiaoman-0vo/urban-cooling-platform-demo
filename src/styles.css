@@ -38,3 +38,31 @@
 .legend-study{background:#b1f4d1;box-shadow:0 0 8px #59d9aa}
 .legend-place{background:#a1d9f5}
 @media(max-width:700px){.study-jump{margin-top:11px;padding:8px 10px;font-size:11px}}
+
+/* ---------- 微博热感知（抽样回放，只读快照） ---------- */
+.heat-perception{margin-top:22px;padding-top:6px;border-top:1px solid #315260}
+.heat-perception h3{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.heat-mode{font-size:10px;font-weight:400;letter-spacing:.5px;padding:3px 8px;border-radius:20px;border:1px solid #4b7288;color:#9fd3e4}
+.heat-mode.live{border-color:#3f8f6d;color:#8fe3bd}
+.heat-mode.mock{border-color:#96754a;color:#e0c391}
+.heat-counts{margin-top:14px}
+.heat-counts>div span{max-width:52%;line-height:1.6}
+.heat-event-list{margin-top:12px}
+.heat-event-list details{border-bottom:1px solid #244450;padding:11px 0}
+.heat-event-list summary{display:flex;justify-content:space-between;gap:12px;cursor:pointer;font-size:12px;color:#bfdde7}
+.heat-event-list strong{color:#8be4c7;font-weight:500;white-space:nowrap}
+.heat-event-list dl{margin:10px 0 2px}
+.heat-excerpt{font-size:11px;line-height:1.8;color:#a8c6d2;padding:8px 10px;margin-top:8px;background:#06232f;border-left:2px solid #2c6d80;overflow-wrap:anywhere}
+.heat-item-list{margin-top:12px;display:flex;flex-direction:column;gap:10px}
+.heat-item{border:1px solid #244a58;border-radius:8px;padding:11px 12px;background:#041d28}
+.heat-item header{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:10px}
+.heat-topic{color:#8fe3bd;border:1px solid #2f6a55;border-radius:20px;padding:2px 8px}
+.heat-tally{font-style:normal;color:#a4bfc9}
+.heat-conf{margin-left:auto;padding:2px 8px;border-radius:20px;border:1px solid #4b7288;color:#a8c6d2}
+.heat-conf.high{border-color:#3f8f6d;color:#8fe3bd}
+.heat-conf.low{border-color:#8a6a4a;color:#dcbf95}
+.heat-item p{font-size:12px;line-height:1.8;color:#cbe2ea;margin-top:8px;overflow-wrap:anywhere}
+.heat-item footer{display:flex;justify-content:space-between;gap:10px;font-size:10px;color:#7d9dab;margin-top:9px;flex-wrap:wrap}
+.heat-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;margin-top:8px;text-decoration:none}
+.heat-link:hover{text-decoration:underline}
+.heat-limits{margin:10px 0 0;padding-left:18px;font-size:11px;line-height:1.9;color:#a4bfc9}
