@@ -108,7 +108,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts\refresh-cookie.ps1
 | `chat/index.html`、`chat/vendor/` | 本地聊天页（资源内置，不依赖 CDN） |
 | `config/taxonomy.v1.json` | **判定词表**：热相关性/内容类型/体验/诉求/话题/关键词/判定顺序 |
 | `config/place-lexicon.v2.json` | **地点词表**：城市→别名；词表外地名按字面采 |
-| `contract/weibo-demand.contract.v1.schema.json` | 对外契约（JSON Schema 2020-12，23 个 `$defs`） |
+| `contract/weibo-demand.contract.v1.schema.json` | 对外契约（JSON Schema 2020-12，24 个 `$defs`） |
 | `contract/validate.py` | 契约自检：`python contract/validate.py` |
 | `workflows/03-demand-agent-api.json` | 契约入口（10 节点）：`POST /webhook/weibo-demand/v1` |
 | `workflows/04-demand-chat.json` | 聊天窗（24 节点）：`/webhook/wc9d1f2a34b7e48c0/chat` |
