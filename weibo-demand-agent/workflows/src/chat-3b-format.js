@@ -55,19 +55,29 @@ const L = [];
 L.push(`**这句话说了什么**：${gist}`);
 L.push('');
 L.push(`**判定结果**（${resp.request_id || '-'}）`);
-L.push(`- 原话：「${String(item.text || item.text_norm || ctx.text || '').slice(0, 80)}」`);
-L.push(`- 和热有关吗：**${zhOf('heat_relevance', item.heat_relevance)}**`);
-L.push(`- 这是哪种说法：${list('content_types', item.content_types)}`);
-L.push(`- 体感：${list('experience_tags', item.experience_tags)}`);
-L.push(`- 希望能改的地方：${demandZh}`);
-L.push(`- 感受倾向：${dirZh} · 发生场景：${zhOf('activity_scene', item.activity_scene)}`);
-L.push(`- 归类：${topicZh}`);
-if (h.name || h.place_id) {
-  L.push(`- 提到的地方：${h.name || h.place_id}（${zhOf('kind', h.kind)}${item.in_scope === true ? ' · 在查询范围内' : item.in_scope === false ? ' · 不在查询范围内' : ''}）`);
+// 五件事按用户要的顺序给：摘要 → 位置 → 体验 → 诉求 → 原文链接
+L.push(`- 原文摘要：「${String(item.excerpt || item.text || ctx.text || '').replace(/\s+/g, ' ').slice(0, 90)}」`);
+const placeName = [h.name, ...(Array.isArray(item.place_evidence) ? item.place_evidence.map((p) => p && p.name) : [])]
+  .filter(Boolean)
+  .filter((v, i, a) => a.indexOf(v) === i)
+  .join('、');
+const kindZh = h && h.kind ? zhOf('kind', h.kind) : '';
+const scopeZh = item.in_scope === true ? '在查询范围内' : item.in_scope === false ? '不在查询范围内' : '';
+const placeTail = [kindZh, scopeZh].filter(Boolean).join(' · ');
+if (placeName) {
+  L.push(`- 位置：${placeName}${placeTail ? `（${placeTail}）` : ''}`);
+} else if (item.scope_target) {
+  L.push(`- 位置：${item.scope_target}（原文没写具体地点）`);
+} else {
+  L.push('- 位置：原文里没识别出具体地点');
 }
-L.push(`- 把握有多大：${item.confidence ?? '-'}（${item.confidence_level || '-'}）· 需人工复核：${item.needs_review ? '是' : '否'}`);
+L.push(`- 体验：${list('experience_tags', item.experience_tags)}（倾向：${dirZh} · 场景：${zhOf('activity_scene', item.activity_scene)}）`);
+L.push(`- 诉求：${demandZh === '-' ? '只说体感，没提出要改什么' : demandZh}${topicZh ? ` · 归类：${topicZh}` : ''}`);
 // 粘贴进来的文本本身没有链接：明说，不伪造
 L.push('- 原文链接：（这条是你粘贴的文本，没有可跳转的链接；可在微博里搜这句话核对）');
+L.push('');
+L.push(`- 和热有关吗：**${zhOf('heat_relevance', item.heat_relevance)}** · 这是哪种说法：${list('content_types', item.content_types)}`);
+L.push(`- 把握有多大：${item.confidence ?? '-'}（${item.confidence_level || '-'}）· 需人工复核：${item.needs_review ? '是' : '否'}`);
 if (ev.length) {
   L.push('');
   L.push('**证据片段（可在原文里对上号）**');
@@ -79,5 +89,6 @@ if (notes.length) {
 }
 L.push('');
 L.push('_这是对单条文本的判定：不代表温度观测，也不代表人数。_');
+L.push('_模型：deepseek-flash（DeepSeek /chat/completions）· 判定 T=0.2 max_tokens=3000 · 分类器 c1-model · 规则 r1_');
 
 return [{ json: { output: L.join('\n') } }];

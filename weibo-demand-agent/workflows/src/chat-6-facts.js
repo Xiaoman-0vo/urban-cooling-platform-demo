@@ -32,7 +32,16 @@ function normUrl(u) {
   return s;
 }
 
-const DIR_ZH = { discomfort: '不适', improvement: '改善', mixed: '混合', neutral: '中性', unknown: '未说明' };
+const DIR_ZH = { discomfort: '不适', improvement: '改善', mixed: '混合', neutral: '中性', unclear: '未说明', unknown: '未说明' };
+// 体验标签、空间诉求的中文名：只在这里维护一份，渲染层不要再手抄
+const EXP_ZH = { hot: '炎热', muggy: '闷热', sun_exposure: '暴晒', cool: '凉爽', mixed: '混合', unspecified: '未说明' };
+const DEMAND_ZH = {
+  shade_deficit: '需要遮阴',
+  ventilation: '需要通风',
+  waiting_comfort: '候车/等候条件要改善',
+  stay_comfort: '停留时要更舒服',
+  water_or_cooling_facility: '需要饮水/降温设施',
+};
 function dirZh(dir) {
   if (!dir || typeof dir !== 'object') return '';
   return Object.entries(dir)
@@ -104,8 +113,61 @@ const observations = obsRaw
   }));
 
 const allReps = [...events.flatMap((e) => e.reps), ...observations.flatMap((o) => o.reps)];
+
+// ---- 线索清单：逐条给「原文摘要 / 位置 / 体验 / 诉求 / 原文链接」----
+// 五样都从快照的 items 里取；缺哪样就写"未说明"，绝不替它编一个
+function expZh(arr) {
+  const a = Array.isArray(arr) ? arr.filter(Boolean).map((v) => EXP_ZH[v] || v) : [];
+  return [...new Set(a)].join('、') || '未说明';
+}
+function demandZhOf(it) {
+  const a = Array.isArray(it.spatial_demands) ? it.spatial_demands.filter(Boolean).map((v) => DEMAND_ZH[v] || v) : [];
+  if (a.length) return [...new Set(a)].join('、');
+  // 没有空间诉求时，用话题兜底；话题本身是"一般性热感受"就明说
+  const t = it.demand_topic_zh || it.demand_topic || '';
+  if (!t || it.demand_topic === 'other') return '无具体空间诉求（只说体感）';
+  return `无具体空间诉求（话题：${t}）`;
+}
+function placeOf(it) {
+  const ev = Array.isArray(it.place_evidence) ? it.place_evidence : [];
+  // 只认"目标城市"的地名（target/study_area）；顺带提到的外地城市不算这条线索的位置
+  const targets = ev.filter((p) => p && (p.kind === 'target' || p.kind === 'study_area')).map((p) => p.name).filter(Boolean);
+  const names = targets.length ? targets : ev.map((p) => (p && p.name) || '').filter(Boolean);
+  if (names.length) return [...new Set(names)].slice(0, 3).join('、');
+  const scope = it.scope_target || null;
+  if (scope) return `${scope}（具体地点未指明）`;
+  return '未指明具体地点';
+}
+function dirOf(it) {
+  const d = it.evaluation_direction;
+  return (d && (DIR_ZH[d] || d)) || '未说明';
+}
+const leads = (Array.isArray(snap.items) ? snap.items : [])
+  .filter((it) => it && it.heat_relevance === 'relevant' && it.in_scope !== false)
+  .sort((a, b) => {
+    const dc = Number(b.confidence || 0) - Number(a.confidence || 0);
+    if (dc) return dc;
+    return String(b.published_at || '').localeCompare(String(a.published_at || ''));
+  })
+  .slice(0, 12)
+  .map((it) => ({
+    item_id: it.item_id || null,
+    // 摘要：优先用判定时截下来的那句原文（evidence 片段），没有才退回正文开头
+    excerpt: String(it.excerpt || it.text || '').replace(/\s+/g, ' ').slice(0, 90),
+    place: placeOf(it),
+    experience: expZh(it.experience_tags),
+    demands: demandZhOf(it),
+    direction: dirOf(it),
+    topic_zh: it.demand_topic_zh || it.demand_topic || null,
+    published_at: it.published_at || null,
+    url: normUrl(it.source_url),
+    confidence: it.confidence ?? null,
+    review_status: it.review_status || null,
+  }));
+
 const facts = {
   city: cityLabel,
+  snap_city: (snap.source && snap.source.city) || null,
   mode: snap.mode || 'unknown',
   generated_at: snap.generated_at || null,
   city_note: ctx.city_note || null,
@@ -122,10 +184,24 @@ const facts = {
   limits: (Array.isArray(snap.limits) ? snap.limits : []).slice(0, 4),
   demands: events,
   observations,
+  leads,
+  model_info: {
+    model: 'deepseek-flash',
+    provider: 'DeepSeek（OpenAI 兼容接口 /chat/completions）',
+    temperature: 0.3,
+    max_tokens: 900,
+    classify_model: 'deepseek-flash',
+    classify_temperature: 0.2,
+    rules_version: (snap.meta && snap.meta.rules_version) || 'r1',
+    taxonomy_version: (snap.meta && snap.meta.taxonomy_version) || 't1',
+    classifier_version: (snap.meta && snap.meta.classifier_version) || 'c1-model',
+    place_version: (snap.meta && snap.meta.place_version) || 'p2',
+  },
   link_stats: {
+    leads: leads.length,
     reps: allReps.length,
-    with_url: allReps.filter((r) => r.url).length,
-    missing: allReps.filter((r) => !r.url).length,
+    with_url: leads.filter((r) => r.url).length,
+    missing: leads.filter((r) => !r.url).length,
   },
 };
 

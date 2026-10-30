@@ -142,6 +142,20 @@ nodes.append({
     "typeVersion": 1.1,
     "position": [1040, 120],
 })
+# 2d4) 同时把任务单指针写到 latest.json：
+# 进度条读的就是这一份。没这一步，陌生人下单后直到工人接单前，前端什么都看不到。
+nodes.append({
+    "parameters": {
+        "operation": "write",
+        "fileName": "/data/jobs/latest.json",
+        "dataPropertyName": "data",
+        "options": {"append": False},
+    },
+    "name": "2d4-写进度指针",
+    "type": "n8n-nodes-base.readWriteFile",
+    "typeVersion": 1.1,
+    "position": [1120, 120],
+})
 nodes.append(code_node("3d-回执", "chat-3d-receipt.js", 1200, 120))
 
 # 3c) 查进度：读 latest.json（工人每次更新任务都会同步这一份）
@@ -311,7 +325,8 @@ connections = {
     "2b-调契约": {"main": [[{"node": "3b-格式化", "type": "main", "index": 0}]]},
     "2d-生成任务JSON": {"main": [[{"node": "2d2-转成文件", "type": "main", "index": 0}]]},
     "2d2-转成文件": {"main": [[{"node": "2d3-写任务文件", "type": "main", "index": 0}]]},
-    "2d3-写任务文件": {"main": [[{"node": "3d-回执", "type": "main", "index": 0}]]},
+    "2d3-写任务文件": {"main": [[{"node": "2d4-写进度指针", "type": "main", "index": 0}]]},
+    "2d4-写进度指针": {"main": [[{"node": "3d-回执", "type": "main", "index": 0}]]},
     "2e-读进度": {"main": [[{"node": "2f-进度文本", "type": "main", "index": 0}]]},
     "2f-进度文本": {"main": [[{"node": "3e-进度", "type": "main", "index": 0}]]},
 }

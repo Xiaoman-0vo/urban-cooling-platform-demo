@@ -18,6 +18,7 @@
 | 「帮我抓成都 遮阴」 | 下单去采 → 顶部进度条实时走：采微博 → 逐条判定 → 汇总快照 |
 | 「嘉峪关现在有多少线索」（词表里没有） | 自动按"嘉峪关"字面下单采集，不再让你去改配置 |
 | 贴一条微博正文 | 单条判读：热相关性、体验、空间诉求、评价方向、场景、置信度、**证据片段**（可在原文里对号） |
+| 「洛阳现在有多少线索」（没采过） | 自动下单去采，进度条从「已下单」走到 100%，跑完再问就有数字 |
 | 「进度」 | 报后台任务当前阶段与条数 |
 
 界面截图：
@@ -95,6 +96,8 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts\refresh-cookie.ps1
 
 工人跑在宿主机而不是容器里：采集要用本机 Edge 的登录态，判定要走本机网络；容器只管编排与契约。
 
+**模型**：判定与摘要都用 `deepseek-flash`（`api.deepseek.com/chat/completions`，判定 T=0.2/max_tokens=3000，摘要 T=0.3/max_tokens=900）；每条回答末尾都会打印模型与各版本号。
+
 **进度条**：工人每步写 `data/jobs/<id>.progress.json`，聊天页每 2 秒查 `GET /webhook/weibo-job-status`
 （工作流 `05-job-status`），取 `latest.json` 或当前任务文件渲染。
 
@@ -111,7 +114,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts\refresh-cookie.ps1
 | `contract/weibo-demand.contract.v1.schema.json` | 对外契约（JSON Schema 2020-12，24 个 `$defs`） |
 | `contract/validate.py` | 契约自检：`python contract/validate.py` |
 | `workflows/03-demand-agent-api.json` | 契约入口（10 节点）：`POST /webhook/weibo-demand/v1` |
-| `workflows/04-demand-chat.json` | 聊天窗（24 节点）：`/webhook/wc9d1f2a34b7e48c0/chat` |
+| `workflows/04-demand-chat.json` | 聊天窗（25 节点）：`/webhook/wc9d1f2a34b7e48c0/chat` |
 | `workflows/05-job-status.json` | 进度查询：`GET /webhook/weibo-job-status` |
 | `workflows/src/*.js` | 各 Code 节点源码（**改这里，再跑 `scripts/build-*.py` 重新生成 JSON**） |
 | `scripts/collect-weibo.mjs` | 采集器（搜索 + 一级评论，`--job-id/--progress` 支持进度） |

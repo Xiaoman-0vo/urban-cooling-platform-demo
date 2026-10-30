@@ -80,12 +80,36 @@ function quoteOf(rep) {
 const modeZh = facts.mode === 'historical_sample' ? '历史抽样回放' : (facts.mode || '未知模式');
 const L = [];
 
-// ---------- 4. 排版：一句话 / 分类明细 / 需求 / 边界 ----------
+// ---------- 4. 排版：一句话 / 线索清单 / 分类明细 / 需求 / 边界 ----------
+// 快照城市和用户问的城市不一致时，先说清楚，别让人以为答的是别处
+if (facts.snap_city && ctx.city && facts.snap_city !== ctx.city) {
+  L.push(`> ⚠️ 你问的是「${ctx.city}」，但手上这份快照是「${facts.snap_city}」的，下面这些都是${facts.snap_city}的数据。`);
+  L.push('');
+}
 L.push(`**${facts.city} · 微博热感知（${modeZh}）**`);
 if (facts.city_note) L.push(`_${facts.city_note}_`);
 L.push('');
 L.push(`**一句话**：${summary}`);
 L.push('');
+
+// ---------- 5. 线索清单：每条都按「摘要 / 位置 / 体验 / 诉求 / 原文链接」给 ----------
+const leads = Array.isArray(facts.leads) ? facts.leads : [];
+if (leads.length) {
+  L.push(`**线索清单**（${leads.length} 条，按可信度排序；每条都能回到原文核对）`);
+  leads.forEach((ld, i) => {
+    L.push('');
+    L.push(`**${i + 1}.** ${ld.excerpt}`);
+    L.push(`- 位置：${ld.place}`);
+    L.push(`- 体验：${ld.experience}（${ld.direction}）`);
+    L.push(`- 诉求：${ld.demands}${ld.topic_zh ? ` · 归类：${ld.topic_zh}` : ''}`);
+    const when = ld.published_at ? ` · ${String(ld.published_at).slice(0, 10)}` : '';
+    L.push(`- 原文：${ld.url ? `[点开微博](${ld.url})` : '（原文不可访问）'} · 可信度 ${ld.confidence ?? '-'}${when}`);
+  });
+  L.push('');
+} else {
+  L.push('**线索清单**：这批样本里没有检出符合条件（落在本市、判为热相关）的单条线索。');
+  L.push('');
+}
 
 L.push('**分类明细**（类别 · 条数 · 代表原文，点「原文」可跳转核对）');
 if (!demandCats.length) {
@@ -136,5 +160,8 @@ if (limits.length) {
 if (ai_error) L.push('');
 if (ai_error) L.push(`_（这次没能请大模型润色，上面是按规则拼的；原因：${ai_error}）_`);
 L.push(`_快照生成于 ${facts.generated_at || '未知时间'}。_`);
+// 模型透明：这条回答里"哪一段是谁写的"必须能追溯
+const mi = facts.model_info || {};
+L.push(`_模型：${mi.model || 'deepseek-flash'}（${mi.provider || 'DeepSeek'}）· 判定 T=${mi.classify_temperature ?? 0.2} / 摘要 T=${mi.temperature ?? 0.3} max_tokens=${mi.max_tokens ?? 900} · 规则 ${mi.rules_version || 'r1'} · 分类器 ${mi.classifier_version || 'c1-model'} · 词表 ${mi.taxonomy_version || 't1'} · 地名词库 ${mi.place_version || 'p2'}_`);
 
 return [{ json: { output: L.join('\n'), ai_used: !!ai, ai_error } }];

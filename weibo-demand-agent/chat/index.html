@@ -477,19 +477,25 @@
         }
         show();
         bar.classList.remove('running', 'failed');
-        if (d.active) bar.classList.add('running');
+        // 排队阶段也算"进行中"：工人还没接单时，进度条也要亮着，让人知道确实下单成功了
+        var queued = d.status === 'queued';
+        if (d.active || queued) bar.classList.add('running');
         if (d.status === 'failed') bar.classList.add('failed');
-        labelEl.textContent = d.status === 'failed' ? '任务失败' : (d.status === 'done' ? '采集完成' : '采集任务');
+        labelEl.textContent = d.status === 'failed'
+          ? '任务失败'
+          : (d.status === 'done' ? '采集完成' : (queued ? '已下单' : '采集任务'));
         var bits = [];
-        bits.push(d.phase_label || '');
+        if (queued) bits.push('等待后台工人接单');
+        else bits.push(d.phase_label || '');
         if (d.query) bits.push('「' + d.query + '」');
         if (d.total) bits.push((d.done || 0) + '/' + d.total + ' 条');
         else if (d.posts) bits.push('帖子 ' + d.posts + ' · 评论 ' + (d.comments || 0));
         if (d.status === 'failed' && d.error) bits.push(d.error);
         else if (!d.active && d.status === 'done') bits.push('可以问「' + (d.city || '') + '现在有多少线索」');
-        else if (d.message) bits.push(d.message);
+        else if (!queued && d.message) bits.push(d.message);
         msgEl.textContent = bits.filter(Boolean).join(' · ');
-        var p = Number(d.progress || 0);
+        // 排队时给 2% 的起色，让人看出"确实动起来了"，但不假装有真实进度
+        var p = d.status === 'done' ? 100 : (queued ? Math.max(Number(d.progress || 0), 2) : Number(d.progress || 0));
         fill.style.width = p + '%';
         pctEl.textContent = p + '%';
       }
