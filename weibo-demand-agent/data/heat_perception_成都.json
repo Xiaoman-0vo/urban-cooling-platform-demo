@@ -1,0 +1,246 @@
+{
+  "schema": "heat-perception/1",
+  "mode": "historical_sample",
+  "status": {
+    "overall": "ok",
+    "collection": "ok",
+    "classification": "ok",
+    "place_filter": "ok",
+    "note": "单机小样本采集；未做授权接口接入，仅用于链路演示"
+  },
+  "generated_at": "2026-10-30T09:34:45.420Z",
+  "source": {
+    "window_days": 365,
+    "window_from": "2025-10-30",
+    "channel": "weibo",
+    "method": "search + first-level comments",
+    "queries": [
+      "成都 遮阴"
+    ],
+    "city": "成都",
+    "scope_filter": "only_target_city",
+    "fetched_at": "2026-10-30T09:34:45.186Z"
+  },
+  "counts": {
+    "raw_posts": 15,
+    "raw_comments": 88,
+    "classified_items": 8,
+    "in_scope_items": 5,
+    "in_study_area_items": 5,
+    "public_demand_items": 0,
+    "unique_contents": 2,
+    "identifiable_original_reports": 2,
+    "out_of_scope_items": 1,
+    "place_unknown_items": 2
+  },
+  "meta": {
+    "contract_version": "1.0.0",
+    "taxonomy_version": "t1",
+    "rules_version": "r1",
+    "classifier_version": "c1-model",
+    "place_version": "p2",
+    "model": "deepseek-flash"
+  },
+  "events": [],
+  "observations": [
+    {
+      "demand_topic": "park_greenway",
+      "demand_topic_zh": "公园绿道",
+      "item_count": 2,
+      "evaluation_direction": {
+        "improvement": 2
+      },
+      "examples": [
+        {
+          "item_id": "wi_66a33e242df6",
+          "excerpt": "成都夏日8大避暑徒步地，满眼绿意，溪水潺潺，平均气温比市区低5-10℃",
+          "source_url": "https://m.weibo.cn/detail/5314028768335016"
+        },
+        {
+          "item_id": "wi_db7f3a95ca9f",
+          "excerpt": "不怕晒！成都5条遮阴绿道，骑行健步都适配，新手也适合！",
+          "source_url": "https://m.weibo.cn/detail/5311586397064080"
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "item_id": "wi_66a33e242df6",
+      "source": "weibo",
+      "source_post_id": "5314028768335016",
+      "source_url": "https://m.weibo.cn/detail/5314028768335016",
+      "kind": "post",
+      "author": "成都发布",
+      "published_at": "2026-06-26T12:04:11+08:00",
+      "text": "【#成都夏日阴凉徒步地#】成都夏日8大避暑徒步地，满眼绿意，溪水潺潺，平均气温比市区低5-10℃，纯天然的26度空调房！（来源：YOU成都） 成都发布的微博视频",
+      "excerpt": "成都夏日8大避暑徒步地，满眼绿意，溪水潺潺，平均气温比市区低5-10℃",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "park_greenway",
+      "demand_topic_zh": "公园绿道",
+      "evaluation_direction": "improvement",
+      "experience_tags": [
+        "cool"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "walking"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 13,
+          "end": 15
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 67,
+          "end": 69
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 71,
+          "end": 73
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 19,
+          "end": 24,
+          "quote": "避暑徒步地"
+        },
+        {
+          "field": "demand_topic",
+          "start": 25,
+          "end": 29,
+          "quote": "满眼绿意"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 35,
+          "end": 48,
+          "quote": "平均气温比市区低5-10℃"
+        }
+      ],
+      "confidence": 0.6,
+      "confidence_level": "low",
+      "confidence_basis": [
+        "span_valid"
+      ],
+      "review_status": "pending",
+      "duplicate_group_id": "dg_add87adeb4",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_db7f3a95ca9f",
+      "source": "weibo",
+      "source_post_id": "5311586397064080",
+      "source_url": "https://m.weibo.cn/detail/5311586397064080",
+      "kind": "post",
+      "author": "成都发布",
+      "published_at": "2026-06-19T18:19:04+08:00",
+      "text": "【#成都端午假期好去处#】不怕晒！成都5条遮阴绿道，骑行健步都适配，新手也适合！（来源：YOU成都） 成都发布的微博视频",
+      "excerpt": "不怕晒！成都5条遮阴绿道，骑行健步都适配，新手也适合！",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "park_greenway",
+      "demand_topic_zh": "公园绿道",
+      "evaluation_direction": "improvement",
+      "experience_tags": [
+        "sun_exposure"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "cycling",
+        "walking"
+      ],
+      "time_status": "future",
+      "location_scope": "target",
+      "scope_target": "成都",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 17,
+          "end": 19
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 47,
+          "end": 49
+        },
+        {
+          "name": "成都",
+          "kind": "target",
+          "start": 51,
+          "end": 53
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "evaluation_direction",
+          "start": 13,
+          "end": 17,
+          "quote": "不怕晒！"
+        },
+        {
+          "field": "heat_relevance",
+          "start": 21,
+          "end": 25,
+          "quote": "遮阴绿道"
+        },
+        {
+          "field": "activity_scene",
+          "start": 26,
+          "end": 33,
+          "quote": "骑行健步都适配"
+        },
+        {
+          "field": "content_types",
+          "start": 51,
+          "end": 60,
+          "quote": "成都发布的微博视频"
+        }
+      ],
+      "confidence": 0.6,
+      "confidence_level": "low",
+      "confidence_basis": [
+        "span_valid"
+      ],
+      "review_status": "pending",
+      "duplicate_group_id": "dg_1a5a8aff5f",
+      "event_cluster_id": null
+    }
+  ],
+  "limits": [
+    "这是抽样观察，不代表成都居民总体感受，也不能推出受影响人数。",
+    "没有线索不等于没有热问题：微博用户结构不等于城市人口结构。",
+    "不据此插值成 100m 网格的热感受分布图。",
+    "首版不把它写入温度模型的训练标签。"
+  ]
+}

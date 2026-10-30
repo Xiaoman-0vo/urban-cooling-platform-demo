@@ -1,0 +1,1320 @@
+{
+  "schema": "heat-perception/1",
+  "mode": "historical_sample",
+  "status": {
+    "overall": "ok",
+    "collection": "ok",
+    "classification": "ok",
+    "place_filter": "ok",
+    "note": "单机小样本采集；未做授权接口接入，仅用于链路演示"
+  },
+  "generated_at": "2026-10-30T09:24:21.538Z",
+  "source": {
+    "window_days": 365,
+    "window_from": "2025-10-30",
+    "channel": "weibo",
+    "method": "search + first-level comments",
+    "queries": [
+      "定西 高温"
+    ],
+    "city": "定西",
+    "scope_filter": "only_target_city",
+    "fetched_at": "2026-10-30T09:24:21.347Z"
+  },
+  "counts": {
+    "raw_posts": 25,
+    "raw_comments": 77,
+    "classified_items": 29,
+    "in_scope_items": 20,
+    "in_study_area_items": 20,
+    "public_demand_items": 0,
+    "unique_contents": 14,
+    "identifiable_original_reports": 15,
+    "out_of_scope_items": 4,
+    "place_unknown_items": 5
+  },
+  "meta": {
+    "contract_version": "1.0.0",
+    "taxonomy_version": "t1",
+    "rules_version": "r1",
+    "classifier_version": "c1-model",
+    "place_version": "p2",
+    "model": "deepseek-flash"
+  },
+  "events": [],
+  "observations": [
+    {
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "item_count": 12,
+      "evaluation_direction": {
+        "neutral": 8,
+        "discomfort": 1,
+        "mixed": 1,
+        "improvement": 2
+      },
+      "examples": [
+        {
+          "item_id": "wi_b41df825e4e2",
+          "excerpt": "10日的高温将攀升至37℃，10日傍晚到11日全市迎来大范围降雨",
+          "source_url": "https://m.weibo.cn/detail/5330299253950915"
+        },
+        {
+          "item_id": "wi_26b6bba90f89",
+          "excerpt": "为避开正午高温，队员们抢抓清晨、傍晚黄金训练时段",
+          "source_url": "https://m.weibo.cn/detail/5325950678209009"
+        }
+      ]
+    },
+    {
+      "demand_topic": "outdoor_work",
+      "demand_topic_zh": "户外作业",
+      "item_count": 2,
+      "evaluation_direction": {
+        "neutral": 2
+      },
+      "examples": [
+        {
+          "item_id": "wi_d9f5466517ac",
+          "excerpt": "预计24－26日，河西五市部分地方及陇中、陇东南局部地方有35℃以上高温天气",
+          "source_url": "https://m.weibo.cn/detail/5324220513127942"
+        },
+        {
+          "item_id": "wi_a3d24a3e0056",
+          "excerpt": "地面温度不断飙升",
+          "source_url": "https://m.weibo.cn/detail/5329198920240933"
+        }
+      ]
+    },
+    {
+      "demand_topic": "positive_cooling",
+      "demand_topic_zh": "降温改善体验",
+      "item_count": 1,
+      "evaluation_direction": {
+        "improvement": 1
+      },
+      "examples": [
+        {
+          "item_id": "wi_366a11e83f2a",
+          "excerpt": "受其影响，高温天气得以停歇，体感舒适不少。",
+          "source_url": "https://m.weibo.cn/detail/5330816092605043"
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "item_id": "wi_b41df825e4e2",
+      "source": "weibo",
+      "source_post_id": "5330299253950915",
+      "source_url": "https://m.weibo.cn/detail/5330299253950915",
+      "kind": "post",
+      "author": "兰州微导航",
+      "published_at": "2026-08-10T09:37:17+08:00",
+      "text": "【#兰州先遇37℃高温再迎明显降温#】8月9日，来自省、市气象局的消息，10日到12日，我省仍将有降水天气过程，祁连山区东部、定西南部、陇南北部等多地将出现大到暴雨，降水来临前，兰州、白银、陇南三市局部仍维持35℃以上高温天气。省会兰州市，10日的高温将攀升至37℃，10日傍晚到11日全市迎来大范围降雨，局部地方可达大雨，受降水影响最高气温回落至31℃，高温天气将明显缓解。气象部门提示，此次降水局地强度大，公众需及时关注天气变化，做好防暑、防雨及次生灾害防范准备。#同城热点创作计划# 兰州先遇37℃高温再迎明显降温",
+      "excerpt": "10日的高温将攀升至37℃，10日傍晚到11日全市迎来大范围降雨",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "neutral",
+      "experience_tags": [
+        "hot"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "future",
+      "location_scope": "target",
+      "scope_target": "定西",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "兰州",
+          "kind": "other",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "name": "定西",
+          "kind": "target",
+          "start": 63,
+          "end": 65
+        },
+        {
+          "name": "兰州",
+          "kind": "other",
+          "start": 89,
+          "end": 91
+        },
+        {
+          "name": "兰州",
+          "kind": "other",
+          "start": 116,
+          "end": 118
+        },
+        {
+          "name": "兰州",
+          "kind": "other",
+          "start": 245,
+          "end": 247
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "content_types",
+          "start": 24,
+          "end": 35,
+          "quote": "来自省、市气象局的消息"
+        },
+        {
+          "field": "experience_tags",
+          "start": 104,
+          "end": 113,
+          "quote": "35℃以上高温天气"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 178,
+          "end": 187,
+          "quote": "高温天气将明显缓解"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_8afbb5b378",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_26b6bba90f89",
+      "source": "weibo",
+      "source_post_id": "5325950678209009",
+      "source_url": "https://m.weibo.cn/detail/5325950678209009",
+      "kind": "post",
+      "author": "会宁发布",
+      "published_at": "2026-07-29T09:37:36+08:00",
+      "text": "顶烈日、强体能、磨技艺！会宁扎实推进省十六运赛前备战训练\n\n骄阳似火，酷暑练兵。距离甘肃省第十六届运动会越来越近，连日来，会宁田径、拳击项目青少年运动员顶高温、战酷暑，坚守训练一线，铆足干劲冲刺备赛，在一遍遍打磨技术、一次次突破自我中积蓄力量，努力以最佳状态迎接这场体育盛会的到来。\n\n炎炎夏日，早晚的训练场总能看见田径小将奔跑的身影。为避开正午高温，队员们抢抓清晨、傍晚黄金训练时段，扎根跑道刻苦训练。针对长跑耐力不足、短跑后程乏力、跑姿呼吸不规范等常见问题，教练一对一精准指导、量身定制训练方案，力争让运动员能够从技术细节、体能储备到心理调适实现全方位突破，为即将到来的赛事夯实基础。\n\n甘肃省第十六届运动会青少年田径会宁县代表队队员 张宇浩：整个暑假我几乎每天都早晚来训练场报到，避开正午最热的时段开展训练。长跑考验耐力，短跑比拼爆发力，教练针对我后程发力不足的短板制定了专项训练计划，不断纠正我的跑步姿势和呼吸节奏。训练过程确实很累，酷暑之下长时间奔跑难免产生疲惫感，但一想到可以代表咱们会宁站上省运会赛场，所有辛苦都值得。接下来我会放平心态，扎实完成剩余训练任务，把日常训练的稳定水平发挥出来，不辜负这段时间的付出。\n\n如果说田径训练拼的是耐力和毅力，那拳击训练拼的就是韧劲、技巧和心态。走进拳击训练馆，呐喊声、击打声此起彼伏，火热的训练氛围扑面而来。大家两两组队开展实战对抗，反复打磨进攻节奏、强化防守格挡，针对性解决实战中的漏洞短板，全力把竞技状态调整到巅峰。\n\n甘肃省第十六届运动会青少年拳击赛会宁县代表队队员 景垣杰：拳击训练不仅身体累，对心态的要求也很高，日常对抗训练磕碰、肌肉酸痛都是常态。备战这段时间，我们减少了娱乐休息时间，重点打磨进攻连贯性，弥补防守松懈的问题，还会模拟不同风格对手开展队内对抗。拳击教会我的不只是动作技巧，更是遇事沉稳、直面困难的勇气。马上就要奔赴省运会赛场，我会放下紧张情绪，严格遵循教练布置的战术，稳扎稳打打好每一轮比赛，尽力展现训练成果，为家乡争取荣耀。\n\n据了解，甘肃省第十六届运动会将在定西市举办，主体赛事定于8月19日开幕，8月26日闭幕，部分项目已提前开赛。临近赛事，科学备赛尤为关键。目前，会宁拳击代表队已进入赛前最后的调整冲刺阶段，不再追求大强度、大运动量的超负荷训练，而是以提质、调态、稳心态为核心，帮助队员适应比赛节奏、克服赛前焦虑，同时坚持以体育人，在赛事中锤炼意志品质，使学生在面对未来学习和生活中的困难时，具备更强的心理韧性和抗压能力。\n\n甘肃省第十六届运动会青少年拳击赛会宁县代表队教练 张杰：目前全队备战已经进入最后的调整冲刺阶段，我们不再盲目增强训练量，核心放在固化技术动作、调整体能峰值、疏导赛前焦虑情绪上。训练时重点规范队员出拳效率、减少无效动作，同时增加小规模模拟对战，让队员提前适应赛场氛围。参加省运会，成绩只是一方面，我们更希望孩子们借着赛事磨炼意志、积累赛场经验，赛出风格、赛出素养，充分展现会师青少年积极向上的精神面貌。\n\n（会宁融媒记者 牛丽娜 王文）",
+      "excerpt": "为避开正午高温，队员们抢抓清晨、傍晚黄金训练时段",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "discomfort",
+      "experience_tags": [
+        "hot",
+        "sun_exposure"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "other"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "定西",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "定西",
+          "kind": "target",
+          "start": 871,
+          "end": 873
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 76,
+          "end": 83,
+          "quote": "顶高温、战酷暑"
+        },
+        {
+          "field": "excerpt",
+          "start": 168,
+          "end": 192,
+          "quote": "为避开正午高温，队员们抢抓清晨、傍晚黄金训练时段"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 421,
+          "end": 437,
+          "quote": "酷暑之下长时间奔跑难免产生疲惫感"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_47a37644d9",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_ca245e7bd96b",
+      "source": "weibo",
+      "source_post_id": "5318511385907936",
+      "source_url": "https://m.weibo.cn/detail/5318511385907936",
+      "kind": "post",
+      "author": "大兰州",
+      "published_at": "2026-07-08T20:56:30+08:00",
+      "text": "#甘肃连日高温将降温# 甘肃人盼来退烧雨！高温拐点马上到🔥#同城热点创作计划#\n连续多日蒸桑拿模式终于要结束，今天是本轮高温顶峰，河西、陇南局部直逼 40 度。\n9 号晚到 10 号，兰州、定西、白银、临夏、甘南多地降下中到大雨，气温直接跳水，清凉上线！\n提醒大家：今天出门注意防暑，后天降雨带好雨伞，雷雨天气减少户外逗留，注意出行安全～ 中国甘肃网的微博视频",
+      "excerpt": "连续多日蒸桑拿模式终于要结束，今天是本轮高温顶峰，河西、陇南局部直逼 40 度。",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "mixed",
+      "experience_tags": [
+        "hot",
+        "muggy"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "定西",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "河西",
+          "kind": "other",
+          "start": 66,
+          "end": 68
+        },
+        {
+          "name": "兰州",
+          "kind": "other",
+          "start": 93,
+          "end": 95
+        },
+        {
+          "name": "定西",
+          "kind": "target",
+          "start": 96,
+          "end": 98
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 45,
+          "end": 50,
+          "quote": "蒸桑拿模式"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 50,
+          "end": 55,
+          "quote": "终于要结束"
+        },
+        {
+          "field": "demand_topic",
+          "start": 123,
+          "end": 127,
+          "quote": "清凉上线"
+        },
+        {
+          "field": "content_types",
+          "start": 171,
+          "end": 181,
+          "quote": "中国甘肃网的微博视频"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_ff613cc76d",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_f639e1436bca",
+      "source": "weibo",
+      "source_post_id": "5318841119016525",
+      "source_url": "https://m.weibo.cn/detail/5318841119016525",
+      "kind": "post",
+      "author": "大兰州",
+      "published_at": "2026-07-09T18:46:45+08:00",
+      "text": "#甘肃人盼来降温雨#【告别连日高温，甘肃大部将迎中到大雨，兰州最高温直降10℃】记者从甘肃省气象局获悉，明天起，随着高空槽东移，近期影响我省的阶段性高温天气趋于结束。预计7月10日至11日，省内大部将迎来一次降水天气过程，陇中、甘南高原、陇东南南部及祁连山区有中雨，局部地方有大到暴雨。#同城热点创作计划#\n\n今天夜间到明天白天，甘南州、临夏州、陇南市、定西市、天水市等州市多云转阴，部分地方有阵雨或雷阵雨。\n\n明天夜间到后天白天，临夏州、甘南州、兰州市、白银市、定西市等州市多云转阴有中雨，部分地方有大雨，其中临夏州、定西市及甘南州北部、兰州市南部、白银市中南部等地局部地方有暴雨；省内其余地方多云转阴，大部分地方有阵雨或雷阵雨。\n\n7月10日夜间到11日白天，河西五市阴有小雨，其中张掖市、金昌市、武威市三市部分地方有中雨，沿山地区可达大雨；省内其余地方阴有小到中雨，其中定西市、陇南市及甘南州东部、天水市西部、平凉市西部、庆阳市北部有大雨，局部地方有暴雨。\n\n气象部门在此提示，公众外出请携带好雨具，安全出行。需要注意的是，山区强对流天气频发，地质灾害风险增大，加之旱涝急转也可能带来不利影响，相关单位和公众需及时关注预报预警信息，加强防范。\n\n兰州天气预报：\n\n记者从兰州市气象局获悉，明天夜间至7月11日，兰州市将迎来一波降水降温天气，部分区县局地有暴雨，最高温将下降10℃左右。\n\n明天白天，兰州市天气晴或多云，其中明天上午永登县中北部有阵雨。明天夜间至7月11日，兰州市将有一次降水降温天气，七里河区南部、西固区东部、红古区西部、永登县西南部、皋兰县东部、榆中县南部及北部有暴雨，其余地区中到大雨。\n\n随着降雨天气的来临，兰州市的最高温也将有所回落。\n\n未来三天兰州市天气预报如下：\n\n7月9日，晴转多云，气温为21至36℃；\n7月10日，中雨，气温为20至32℃；\n7月11日，中雨转小雨，气温为20至22℃。\n（来源：西固发布）",
+      "excerpt": "告别连日高温，甘肃大部将迎中到大雨，兰州最高温直降10℃",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "improvement",
+      "experience_tags": [
+        "hot",
+        "cool"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "future",
+      "location_scope": "target",
+      "scope_target": "定西",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "兰州",
+          "kind": "other",
+          "start": 29,
+          "end": 31
+        },
+        {
+          "name": "定西",
+          "kind": "target",
+          "start": 177,
+          "end": 179
+        },
+        {
+          "name": "兰州",
+          "kind": "other",
+          "start": 224,
+          "end": 226
+        },
+        {
+          "name": "定西",
+          "kind": "target",
+          "start": 232,
+          "end": 234
+        },
+        {
+          "name": "定西",
+          "kind": "target",
+          "start": 260,
+          "end": 262
+        },
+        {
+          "name": "兰州",
+          "kind": "other",
+          "start": 270,
+          "end": 272
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "evaluation_direction",
+          "start": 11,
+          "end": 17,
+          "quote": "告别连日高温"
+        },
+        {
+          "field": "experience_tags",
+          "start": 13,
+          "end": 17,
+          "quote": "连日高温"
+        },
+        {
+          "field": "content_types",
+          "start": 40,
+          "end": 51,
+          "quote": "记者从甘肃省气象局获悉"
+        },
+        {
+          "field": "heat_relevance",
+          "start": 71,
+          "end": 82,
+          "quote": "阶段性高温天气趋于结束"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_9a26aa838c",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_fab46f37d911",
+      "source": "weibo",
+      "source_post_id": "5325050988471201",
+      "source_url": "https://m.weibo.cn/detail/5325050988471201",
+      "kind": "post",
+      "author": "一碗茗月",
+      "published_at": "2026-07-26T22:02:33+08:00",
+      "text": "#生活手记#\n丙午年六月十三\n星期日 晴 转多云 18～35℃\n清晨，发现一只喜鹊在椿树枝头叽叽喳喳，不知是呼朋唤友还是吊嗓子，反正是跳来跳去的叫，东张西望地叫。且不管它为啥叫，先把它收入我的手机相册里。\n\n今天看了两部电影，其一，1956年的法国老电影《巴黎圣母院》，是年轻时候看过的小说，发现了电影又重温一下，内容自不必说。其二，今年暑期新上映的动画片《八仙》。这部片子刚开始看着没啥意思，坚持到最后，还是被感动了。影片从剧情到美术，从语言到动作，是颠覆传统的。全剧我只记住了吕洞宾的“我只做我认为对的事，拯救苍生，一点也不蠢。”正是吕洞宾等仙骨子里的侠义之心，才加深了这部电影的意义。原来脑子里都是根深蒂固的传统动画片的艺术形象，要接受现代的动漫艺术还真得有个过程，尤其我这个年近花甲的小老太太。不过，总的来说还算可以。只要三观正，便是好影片。\n\n刚刚新闻里看到：定西渭源县双石门沟景区，今天下午因暴雨引发山洪爆发，致10人死亡23人受伤的事故，心中不由一阵难过。这几天恰逢高温天气，出门露营避暑也很正常。谁能想到好端端的出门，会有这样大的祸事发生，真是明天和意外不知道哪个先来。愿逝者安息，愿伤者早康复，愿众生皆平安！\n2026.7.26",
+      "excerpt": "这几天恰逢高温天气，出门露营避暑也很正常",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "neutral",
+      "experience_tags": [
+        "hot"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "outdoor_work"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "定西",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "定西",
+          "kind": "target",
+          "start": 385,
+          "end": 387
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "content_types",
+          "start": 15,
+          "end": 31,
+          "quote": "星期日 晴 转多云 18～35℃"
+        },
+        {
+          "field": "experience_tags",
+          "start": 435,
+          "end": 444,
+          "quote": "这几天恰逢高温天气"
+        },
+        {
+          "field": "heat_relevance",
+          "start": 445,
+          "end": 451,
+          "quote": "出门露营避暑"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_ef7ee180e5",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_d9f5466517ac",
+      "source": "weibo",
+      "source_post_id": "5324220513127942",
+      "source_url": "https://m.weibo.cn/detail/5324220513127942",
+      "kind": "post",
+      "author": "天水发布",
+      "published_at": "2026-07-24T15:02:32+08:00",
+      "text": "【甘肃高温、强对流天气双双来袭】\n\n预计24－26日，河西五市部分地方及陇中、陇东南局部地方有35℃以上高温天气，其中酒泉市西部及东部、张掖市北部可达40℃以上，具有一定的极端性。大家白天外出需做好防暑降温和防晒措施，避免在高温时段长时间进行室外作业和户外运动，谨防中暑和热射病。\n\n另外，伴随高温，多地强对流天气频发，建议公众密切关注当地气象部门发布的临近预报和预警信息，尽量避免强对流活跃时段外出。\n\n07月24日至晚20时，全省各地晴或多云，其中陇南市东部、庆阳市东部及甘岷山区阴有阵雨或雷阵雨。另外，河西五市有4－5级偏东风，其中酒泉市阵风可达7－8级。\n\n（07月24日20时－07月25日20时），甘南、陇南两州市部分地方及平凉市中部、庆阳市东南部多云间阴有阵雨或雷阵雨；省内其余地方晴或多云，河西五市有4－5级偏东风。\n\n07月25日夜间到07月26日白天（07月25日20时－07月26日20时），甘南、定西、陇南、天水、平凉、庆阳等州市多云间阴，部分地方有阵雨或雷阵雨；省内其余地方晴或多云。\n\n另外，24－26日河西五市部分地方及陇中、陇东南局部地方有35℃以上高温天气，其中酒泉市西部及东部、张掖市北部可达40℃以上。",
+      "excerpt": "预计24－26日，河西五市部分地方及陇中、陇东南局部地方有35℃以上高温天气",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "outdoor_work",
+      "demand_topic_zh": "户外作业",
+      "evaluation_direction": "neutral",
+      "experience_tags": [
+        "hot"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "outdoor_work"
+      ],
+      "time_status": "future",
+      "location_scope": "target",
+      "scope_target": "定西",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "河西",
+          "kind": "other",
+          "start": 27,
+          "end": 29
+        },
+        {
+          "name": "河西",
+          "kind": "other",
+          "start": 254,
+          "end": 256
+        },
+        {
+          "name": "河西",
+          "kind": "other",
+          "start": 353,
+          "end": 355
+        },
+        {
+          "name": "定西",
+          "kind": "target",
+          "start": 410,
+          "end": 412
+        },
+        {
+          "name": "河西",
+          "kind": "other",
+          "start": 466,
+          "end": 468
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "time_status",
+          "start": 18,
+          "end": 26,
+          "quote": "预计24－26日"
+        },
+        {
+          "field": "experience_tags",
+          "start": 46,
+          "end": 56,
+          "quote": "有35℃以上高温天气"
+        },
+        {
+          "field": "activity_scene",
+          "start": 109,
+          "end": 130,
+          "quote": "避免在高温时段长时间进行室外作业和户外运动"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_bd0fa9ef07",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_366a11e83f2a",
+      "source": "weibo",
+      "source_post_id": "5330816092605043",
+      "source_url": "https://m.weibo.cn/detail/5330816092605043",
+      "kind": "post",
+      "author": "每日甘肃网",
+      "published_at": "2026-08-11T19:51:01+08:00",
+      "text": "#天气早知道# 【未来三天 甘肃陇东南部分地方多阵性降水】记者从甘肃省气象局获悉，受高空槽东移影响，今天8时至14时，我省武威市以东大部出现降水，其中定西市北部和南部、天水市西部及庆阳市北部出现大雨，受其影响，高温天气得以停歇，体感舒适不少。\n　　今天夜间到明天白天，甘南州大部和庆阳市东部多云间阴有阵雨或雷阵雨；省内其余地方晴或多云，其中酒泉市西部有5至6级偏东风。\n未来三天 甘肃陇东南部分地方多阵性降水",
+      "excerpt": "受其影响，高温天气得以停歇，体感舒适不少。",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "positive_cooling",
+      "demand_topic_zh": "降温改善体验",
+      "evaluation_direction": "improvement",
+      "experience_tags": [
+        "cool"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "future",
+      "location_scope": "target",
+      "scope_target": "定西",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "定西",
+          "kind": "target",
+          "start": 75,
+          "end": 77
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "content_types",
+          "start": 9,
+          "end": 28,
+          "quote": "未来三天 甘肃陇东南部分地方多阵性降水"
+        },
+        {
+          "field": "time_status",
+          "start": 9,
+          "end": 13,
+          "quote": "未来三天"
+        },
+        {
+          "field": "heat_relevance",
+          "start": 105,
+          "end": 113,
+          "quote": "高温天气得以停歇"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 114,
+          "end": 120,
+          "quote": "体感舒适不少"
+        }
+      ],
+      "confidence": 0.7,
+      "confidence_level": "medium",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_7325a8d164",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_01ffb9db5255",
+      "source": "weibo",
+      "source_post_id": "5330800514173542",
+      "source_url": "https://m.weibo.cn/detail/5330800514173542",
+      "kind": "post",
+      "author": "兰州发布",
+      "published_at": "2026-08-11T18:49:07+08:00",
+      "text": "#甘肃身边事# 【未来三天陇东南部分地方多阵性降水，注意防范】受高空槽东移影响，今天（11日）08时至14时，我省武威以东大部出现降水，其中定西北部和南部、天水西部及庆阳北部出现大雨，受其影响，高温天气得以停歇，体感舒适不少。\n\n预计未来三天，陇东南地区部分地方多阵性降水，省内其余大部以晴或多云天气为主。\n\n当前正处于“七下八上”防汛关键期，又是户外游玩、外出旅游旺季，建议公众及时查看所在地天气预报预警信息，合理安排生产生活，确保安全。（来源:@甘肃气象 ）",
+      "excerpt": "受其影响，高温天气得以停歇，体感舒适不少。",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "improvement",
+      "experience_tags": [
+        "cool"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "定西",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "定西",
+          "kind": "target",
+          "start": 70,
+          "end": 72
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "evaluation_direction",
+          "start": 97,
+          "end": 105,
+          "quote": "高温天气得以停歇"
+        },
+        {
+          "field": "experience_tags",
+          "start": 106,
+          "end": 112,
+          "quote": "体感舒适不少"
+        },
+        {
+          "field": "content_types",
+          "start": 115,
+          "end": 136,
+          "quote": "预计未来三天，陇东南地区部分地方多阵性降水"
+        }
+      ],
+      "confidence": 0.7,
+      "confidence_level": "medium",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_21b2208597",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_0e9b7fd8ee92",
+      "source": "weibo",
+      "source_post_id": "5330400273502376",
+      "source_url": "https://m.weibo.cn/detail/5330400273502376",
+      "kind": "post",
+      "author": "陇南发布",
+      "published_at": "2026-08-10T16:18:42+08:00",
+      "text": "8月9日夜间到12日，我省仍将有降水天气过程。祁连山区东部、定西南部、陇南北部等多地将出现大到暴雨。降水来临前，兰州、白银、陇南三市局部仍维持35℃以上高温天气。气象部门提示：此次降水局地强度大，公众需及时关注天气变化。做好防暑、防雨及次生灾害防范准备。\n\n根据最新气象观测资料，预计9日夜间到10日白天，河西五市多云转阴有阵雨或小雨，其中祁连山区中东部有中到大雨。省内其余地方多云，部分地方阴有阵雨或雷阵雨。另外，兰州、白银、陇南三市局部地方有35℃以上高温天气。\n\n10日夜间到11日白天，金昌、武威、白银、临夏、定西、陇南、平凉等市州部分地方阴有中雨，其中定西东部和南部、陇南北部、平凉西部、太子山沿线及祁连山区东部有大到暴雨；张掖、兰州、甘南、天水、庆阳等市州阴有小到中雨，其中兰州东部、甘南东部、天水西部、庆阳北部有中到大雨，省内其余地方阴有阵雨。另外，河西西部伴有5到6级偏东风。\n\n11日夜间到12日白天，临夏、甘南、定西、陇南等州市多云，部分地方阴有阵雨。省内其余地方晴或多云，其中河西西部伴有4到5级偏东风。",
+      "excerpt": "降水来临前，兰州、白银、陇南三市局部仍维持35℃以上高温天气",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "neutral",
+      "experience_tags": [
+        "hot"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "future",
+      "location_scope": "target",
+      "scope_target": "定西",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "定西",
+          "kind": "target",
+          "start": 30,
+          "end": 32
+        },
+        {
+          "name": "兰州",
+          "kind": "other",
+          "start": 56,
+          "end": 58
+        },
+        {
+          "name": "河西",
+          "kind": "other",
+          "start": 153,
+          "end": 155
+        },
+        {
+          "name": "兰州",
+          "kind": "other",
+          "start": 208,
+          "end": 210
+        },
+        {
+          "name": "定西",
+          "kind": "target",
+          "start": 259,
+          "end": 261
+        },
+        {
+          "name": "定西",
+          "kind": "target",
+          "start": 281,
+          "end": 283
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 71,
+          "end": 80,
+          "quote": "35℃以上高温天气"
+        },
+        {
+          "field": "content_types",
+          "start": 81,
+          "end": 109,
+          "quote": "气象部门提示：此次降水局地强度大，公众需及时关注天气变化"
+        },
+        {
+          "field": "evaluation_direction",
+          "start": 110,
+          "end": 126,
+          "quote": "做好防暑、防雨及次生灾害防范准备"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_fc89d8c00e",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_85744c1906a4",
+      "source": "weibo",
+      "source_post_id": "5330303712235099",
+      "source_url": "https://m.weibo.cn/detail/5330303712235099",
+      "kind": "post",
+      "author": "微游陇原",
+      "published_at": "2026-08-10T09:55:00+08:00",
+      "text": "【#兰州先遇37℃高温再迎明显降温#】8月9日，来自省、市气象局的消息，10日到12日，我省仍将有降水天气过程，祁连山区东部、定西南部、陇南北部等多地将出现大到暴雨，降水来临前，兰州、白银、陇南三市局部仍维持35℃以上高温天气。省会兰州市，10日的高温将攀升至37℃，10日傍晚到11日全市迎来大范围降雨，局部地方可达大雨，受降水影响最高气温回落至31℃，高温天气将明显缓解。气象部门提示，此次降水局地强度大，公众需及时关注天气变化，做好防暑、防雨及次生灾害防范准备。#同城热点创作计划#网页链接",
+      "excerpt": "10日的高温将攀升至37℃",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "neutral",
+      "experience_tags": [
+        "hot"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "future",
+      "location_scope": "target",
+      "scope_target": "定西",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "兰州",
+          "kind": "other",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "name": "定西",
+          "kind": "target",
+          "start": 63,
+          "end": 65
+        },
+        {
+          "name": "兰州",
+          "kind": "other",
+          "start": 89,
+          "end": 91
+        },
+        {
+          "name": "兰州",
+          "kind": "other",
+          "start": 116,
+          "end": 118
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 104,
+          "end": 113,
+          "quote": "35℃以上高温天气"
+        },
+        {
+          "field": "time_status",
+          "start": 134,
+          "end": 152,
+          "quote": "10日傍晚到11日全市迎来大范围降雨"
+        },
+        {
+          "field": "heat_relevance",
+          "start": 178,
+          "end": 187,
+          "quote": "高温天气将明显缓解"
+        },
+        {
+          "field": "content_types",
+          "start": 188,
+          "end": 194,
+          "quote": "气象部门提示"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_8afbb5b378",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_15fc922dcf8d",
+      "source": "weibo",
+      "source_post_id": "5330298724422792",
+      "source_url": "https://m.weibo.cn/detail/5330298724422792",
+      "kind": "post",
+      "author": "甘肃交通12328",
+      "published_at": "2026-08-10T09:35:11+08:00",
+      "text": "甘肃省气象台发布《甘肃省气象实况信息快报》提示：预计今天白天到夜间，张掖、金昌、武威三市阴有中雨，其中祁连山区东部有大到暴雨；省内其余地方多云转阴有阵雨或雷阵雨，其中太子山沿线及兰州东部、白银中南部、定西东部、甘南西部、平凉西部有中雨。另外，兰州、白银、陇南三市局部地方有 35℃以上高温天气。庆阳南部清晨有雾。",
+      "excerpt": "兰州、白银、陇南三市局部地方有 35℃以上高温天气。",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "neutral",
+      "experience_tags": [
+        "hot"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "future",
+      "location_scope": "target",
+      "scope_target": "定西",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "兰州",
+          "kind": "other",
+          "start": 89,
+          "end": 91
+        },
+        {
+          "name": "定西",
+          "kind": "target",
+          "start": 100,
+          "end": 102
+        },
+        {
+          "name": "兰州",
+          "kind": "other",
+          "start": 121,
+          "end": 123
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "content_types",
+          "start": 24,
+          "end": 33,
+          "quote": "预计今天白天到夜间"
+        },
+        {
+          "field": "location_mentions",
+          "start": 121,
+          "end": 135,
+          "quote": "兰州、白银、陇南三市局部地方"
+        },
+        {
+          "field": "heat_relevance",
+          "start": 137,
+          "end": 146,
+          "quote": "35℃以上高温天气"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_b0abcd9353",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_a3d24a3e0056",
+      "source": "weibo",
+      "source_post_id": "5329198920240933",
+      "source_url": "https://m.weibo.cn/detail/5329198920240933",
+      "kind": "post",
+      "author": "甘肃交通运输",
+      "published_at": "2026-08-07T08:44:57+08:00",
+      "text": "网页链接\n连日来，高温天气持续“霸屏”，高速公路持续开启“炙热模式”，地面温度不断飙升。正值出行、旅游高峰，辖区路段车流量明显增长，保畅压力与高温考验双双来袭。面对这场“大烤”，高速公路运营管理定西分公司全体员工无惧“烤”验，用汗水与坚守，全力守护辖区高速公路安全，保障过往司乘平安、顺畅、舒心出行。",
+      "excerpt": "地面温度不断飙升",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "outdoor_work",
+      "demand_topic_zh": "户外作业",
+      "evaluation_direction": "neutral",
+      "experience_tags": [
+        "hot"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "outdoor_work"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "定西",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "定西",
+          "kind": "target",
+          "start": 97,
+          "end": 99
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 9,
+          "end": 19,
+          "quote": "高温天气持续“霸屏”"
+        },
+        {
+          "field": "experience_tags",
+          "start": 35,
+          "end": 43,
+          "quote": "地面温度不断飙升"
+        },
+        {
+          "field": "activity_scene",
+          "start": 89,
+          "end": 112,
+          "quote": "高速公路运营管理定西分公司全体员工无惧“烤”验"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_a5c53e32b4",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_960d0cb5feaf",
+      "source": "weibo",
+      "source_post_id": "5328638526623020",
+      "source_url": "https://m.weibo.cn/detail/5328638526623020",
+      "kind": "post",
+      "author": "中国兰州网",
+      "published_at": "2026-08-05T19:38:09+08:00",
+      "text": "#甘肃身边事# 【正值中伏！甘肃河西防暑，河东防雨】俗话说夏有三伏，热在中伏，眼下我们正处在一年中最热的中伏时段，也是三伏天里暑气最旺盛的阶段。我省的河西大部有35℃以上高温天气，其中酒泉西部有38℃以上高温天气。\n\n受到局地对流影响，在我省的甘南、定西、陇南、天水、平凉、庆阳等州市多云转阴有阵雨或雷阵雨，其中庆阳市部分地方及平凉市东南部有中到大雨，庆阳市东部和北部有暴雨，计划出游的小伙伴务必要随身携带雨具，注意防范短时降水带来的不便。（来源:@甘肃气象 ）",
+      "excerpt": "我省的河西大部有35℃以上高温天气，其中酒泉西部有38℃以上高温天气。",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "neutral",
+      "experience_tags": [
+        "hot"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "current",
+      "location_scope": "target",
+      "scope_target": "定西",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "河西",
+          "kind": "other",
+          "start": 16,
+          "end": 18
+        },
+        {
+          "name": "河西",
+          "kind": "other",
+          "start": 75,
+          "end": 77
+        },
+        {
+          "name": "定西",
+          "kind": "target",
+          "start": 125,
+          "end": 127
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "experience_tags",
+          "start": 39,
+          "end": 56,
+          "quote": "眼下我们正处在一年中最热的中伏时段"
+        },
+        {
+          "field": "heat_relevance",
+          "start": 72,
+          "end": 89,
+          "quote": "我省的河西大部有35℃以上高温天气"
+        },
+        {
+          "field": "content_types",
+          "start": 221,
+          "end": 229,
+          "quote": "来源:@甘肃气象"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_f02ae4f63d",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_6d2c9e862c29",
+      "source": "weibo",
+      "source_post_id": "5327894135965192",
+      "source_url": "https://m.weibo.cn/detail/5327894135965192",
+      "kind": "post",
+      "author": "每日甘肃网",
+      "published_at": "2026-08-03T18:20:12+08:00",
+      "text": "#天气早知道# 【未来一周甘肃降水与高温轮番登场】记者从甘肃省气象局获悉，预计未来一周，甘肃天气呈现雨水与高温轮番登场的格局，降水过程和晴热天气将交替影响各地，公众需随时留意天气变化，做好防雨准备及防暑降温。\n　　今天夜间到明天白天，甘南州、临夏州、定西市三州市多云间阴，部分地方有阵雨或雷阵雨；省内其余地方晴或多云，祁连山区东部阴有阵雨或雷阵雨。\n未来一周甘肃降水与高温轮番登场",
+      "excerpt": "预计未来一周，甘肃天气呈现雨水与高温轮番登场的格局",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "neutral",
+      "experience_tags": [
+        "hot"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "unspecified"
+      ],
+      "time_status": "future",
+      "location_scope": "target",
+      "scope_target": "定西",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "定西",
+          "kind": "target",
+          "start": 125,
+          "end": 127
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "content_types",
+          "start": 9,
+          "end": 24,
+          "quote": "未来一周甘肃降水与高温轮番登场"
+        },
+        {
+          "field": "heat_relevance",
+          "start": 18,
+          "end": 24,
+          "quote": "高温轮番登场"
+        },
+        {
+          "field": "time_status",
+          "start": 37,
+          "end": 43,
+          "quote": "预计未来一周"
+        },
+        {
+          "field": "experience_tags",
+          "start": 68,
+          "end": 79,
+          "quote": "晴热天气将交替影响各地"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_c61e58eb55",
+      "event_cluster_id": null
+    },
+    {
+      "item_id": "wi_a883d65ea135",
+      "source": "weibo",
+      "source_post_id": "5326319516912880",
+      "source_url": "https://m.weibo.cn/detail/5326319516912880",
+      "kind": "post",
+      "author": "甘肃好网民",
+      "published_at": "2026-07-30T10:03:14+08:00",
+      "text": "#厚道甘肃闻汛而动# 【本周甘肃多地阴雨持续 需防范农业灾害】7月29日，甘肃省气象局发布预报，本周全省大部分地区仍有阴雨天气，提醒陇中麦区抢抓阴雨间隙及时收获晾晒成熟夏粮，河西沿山、陇中南部、陇东南部分地方谨防局地短时强降水对农业生产带来的危害。\n\n上周我省气温整体偏高，河西、陇中、陇南多地气温较常年同期偏高2℃至6℃，前期持续高温加剧农田土壤失墒，作物遭遇热害风险较高。降水分布差异显著，河东大部降水偏多，崇信降水偏多2倍；河西及甘南、临夏部分区域降水大幅偏少，土壤墒情持续偏差。当前全省冬小麦基本收获完毕，春小麦进入乳熟至成熟期，春玉米处于开花灌浆关键期，马铃薯正值开花结薯期，秋作物整体长势良好。但上周局地灾害天气造成负面影响，环县、镇原等地相继遭遇冰雹、暴雨洪涝，玉米、小杂粮、林果及中药材等作物不同程度受灾，持续降水也延误了部分区域夏收进度。\n\n据预报，7月31日至8月3日，河东中南部及陇东阴有小到中雨，其中定西东部、天水东部和南部、平凉中西部有大雨，陇南市东南部有大到暴雨。甘肃省气象局提醒，陇中麦区需抢抓阴雨间隙，及时收获晾晒成熟小麦，防止籽粒发芽霉变；及时疏通农田沟渠，做好排涝保墒工作，防范田间渍涝。同时，密切监测雷暴、大风、冰雹等强对流天气，全力筑牢农业生产安全防线。#网络文明陇风清#",
+      "excerpt": "上周我省气温整体偏高，河西、陇中、陇南多地气温较常年同期偏高2℃至6℃",
+      "heat_relevance": "relevant",
+      "is_public_demand": false,
+      "demand_topic": "other",
+      "demand_topic_zh": "一般性热感受（无具体空间诉求）",
+      "evaluation_direction": "neutral",
+      "experience_tags": [
+        "hot"
+      ],
+      "spatial_demands": [],
+      "activity_scene": [
+        "other"
+      ],
+      "time_status": "future",
+      "location_scope": "target",
+      "scope_target": "定西",
+      "in_scope": true,
+      "in_study_area": true,
+      "place_evidence": [
+        {
+          "name": "河西",
+          "kind": "other",
+          "start": 87,
+          "end": 89
+        },
+        {
+          "name": "河西",
+          "kind": "other",
+          "start": 137,
+          "end": 139
+        },
+        {
+          "name": "河西",
+          "kind": "other",
+          "start": 215,
+          "end": 217
+        },
+        {
+          "name": "定西",
+          "kind": "target",
+          "start": 412,
+          "end": 414
+        }
+      ],
+      "evidence_spans": [
+        {
+          "field": "content_types",
+          "start": 37,
+          "end": 47,
+          "quote": "甘肃省气象局发布预报"
+        },
+        {
+          "field": "experience_tags",
+          "start": 130,
+          "end": 136,
+          "quote": "气温整体偏高"
+        },
+        {
+          "field": "heat_relevance",
+          "start": 177,
+          "end": 187,
+          "quote": "作物遭遇热害风险较高"
+        },
+        {
+          "field": "time_status",
+          "start": 384,
+          "end": 394,
+          "quote": "7月31日至8月3日"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_level": "high",
+      "confidence_basis": [
+        "span_valid",
+        "rule_hit",
+        "rule_agrees"
+      ],
+      "review_status": "auto_accepted",
+      "duplicate_group_id": "dg_802f05f389",
+      "event_cluster_id": null
+    }
+  ],
+  "limits": [
+    "这是抽样观察，不代表定西居民总体感受，也不能推出受影响人数。",
+    "没有线索不等于没有热问题：微博用户结构不等于城市人口结构。",
+    "不据此插值成 100m 网格的热感受分布图。",
+    "首版不把它写入温度模型的训练标签。"
+  ]
+}

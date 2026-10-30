@@ -142,18 +142,25 @@ function dirOf(it) {
   const d = it.evaluation_direction;
   return (d && (DIR_ZH[d] || d)) || '未说明';
 }
-const leads = (Array.isArray(snap.items) ? snap.items : [])
+// 展示上限：单一来源 config/answer-caps.json（构建时注入），改完重跑 build-chat-workflow.py 再部署
+const CAPS = /*__ANSWER_CAPS__*/null || {};
+const CAP_LEADS = Number(CAPS.leads) > 0 ? Number(CAPS.leads) : 40;
+const CAP_EXCERPT = Number(CAPS.lead_excerpt_chars) > 0 ? Number(CAPS.lead_excerpt_chars) : 120;
+
+const allLeads = (Array.isArray(snap.items) ? snap.items : [])
   .filter((it) => it && it.heat_relevance === 'relevant' && it.in_scope !== false)
   .sort((a, b) => {
     const dc = Number(b.confidence || 0) - Number(a.confidence || 0);
     if (dc) return dc;
     return String(b.published_at || '').localeCompare(String(a.published_at || ''));
-  })
-  .slice(0, 12)
+  });
+const lead_total = allLeads.length;
+const leads = allLeads
+  .slice(0, CAP_LEADS)
   .map((it) => ({
     item_id: it.item_id || null,
     // 摘要：优先用判定时截下来的那句原文（evidence 片段），没有才退回正文开头
-    excerpt: String(it.excerpt || it.text || '').replace(/\s+/g, ' ').slice(0, 90),
+    excerpt: String(it.excerpt || it.text || '').replace(/\s+/g, ' ').slice(0, CAP_EXCERPT),
     place: placeOf(it),
     experience: expZh(it.experience_tags),
     demands: demandZhOf(it),
@@ -210,6 +217,13 @@ const facts = {
   heat_feel: heatFeel,
   time_range: timeRange,
   leads,
+  lead_total,
+  caps: {
+    leads: CAP_LEADS,
+    reps_per_category: Number(CAPS.reps_per_category) > 0 ? Number(CAPS.reps_per_category) : 3,
+    observation_categories: Number(CAPS.observation_categories) > 0 ? Number(CAPS.observation_categories) : 8,
+    needs: Number(CAPS.needs) > 0 ? Number(CAPS.needs) : 5,
+  },
   model_info: {
     model: 'deepseek-flash',
     provider: 'DeepSeek（OpenAI 兼容接口 /chat/completions）',

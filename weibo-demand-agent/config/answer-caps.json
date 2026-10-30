@@ -1,0 +1,9 @@
+{
+  "caps_version": "c1",
+  "_note": "聊天回答里各列表的展示上限。改完要重跑 scripts/build-chat-workflow.py 再部署。",
+  "leads": 40,
+  "lead_excerpt_chars": 120,
+  "reps_per_category": 3,
+  "observation_categories": 8,
+  "needs": 5
+}

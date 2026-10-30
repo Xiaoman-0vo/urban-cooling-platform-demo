@@ -33,6 +33,8 @@ try {
 
 // ---------- 2. 事实与措辞的校对 ----------
 const c = facts.counts || {};
+const FCAPS = (facts && facts.caps) || {};
+const capOf = (k, d) => (Number(FCAPS[k]) > 0 ? Number(FCAPS[k]) : d);
 const demandCats = (facts.demands || []).filter((e) => e.count > 0);
 const obsCats = (facts.observations || []).filter((o) => o.count > 0);
 
@@ -65,7 +67,7 @@ if (ai && Array.isArray(ai.needs)) {
   needs = ai.needs.map((x) => String(x).trim()).filter(Boolean).slice(0, 3);
 }
 if (!needs.length) {
-  needs = demandCats.slice(0, 3).map((e) => `${e.topic_zh}${e.place ? '（' + e.place + '）' : ''}`);
+  needs = demandCats.slice(0, capOf('needs', 3)).map((e) => `${e.topic_zh}${e.place ? '（' + e.place + '）' : ''}`);
 }
 
 // ---------- 3. 原文链接：有就点得开，没有就明说 ----------
@@ -100,7 +102,9 @@ L.push('');
 // ---------- 5. 线索清单：每条都按「摘要 / 位置 / 体验 / 诉求 / 原文链接」给 ----------
 const leads = Array.isArray(facts.leads) ? facts.leads : [];
 if (leads.length) {
-  L.push(`**线索清单**（${leads.length} 条，按可信度排序；每条都能回到原文核对）`);
+  const leadTotal = Number(facts.lead_total) || leads.length;
+  const more = leadTotal > leads.length ? `；另有 ${leadTotal - leads.length} 条未展开，全量在平台侧栏` : '';
+  L.push(`**线索清单**（共 ${leadTotal} 条，这里列 ${leads.length} 条，按可信度排序${more}）`);
   leads.forEach((ld, i) => {
     L.push('');
     L.push(`**${i + 1}.** ${ld.excerpt}`);
@@ -124,7 +128,7 @@ if (!demandCats.length) {
     const meta = [e.dir ? `倾向：${e.dir}` : '', e.place ? `地点：${e.place}` : ''].filter(Boolean).join(' · ');
     L.push(`- **${e.topic_zh}** · ${e.count} 条${meta ? ' · ' + meta : ''}`);
     if (catExplain[e.topic_zh]) L.push(`  - 说的是：${catExplain[e.topic_zh]}`);
-    for (const rep of (e.reps || []).slice(0, 2)) {
+    for (const rep of (e.reps || []).slice(0, capOf('reps_per_category', 2))) {
       L.push(`  - ${linkOf(rep)} ${quoteOf(rep)}`);
     }
     if (!(e.reps || []).length) L.push('  - （原文不可访问）这一类没有可回查的原文。');
@@ -134,7 +138,7 @@ if (!demandCats.length) {
 if (obsCats.length) {
   L.push('');
   L.push('**体验观察**（不是改造诉求，但同样是民意）');
-  for (const o of obsCats.slice(0, 5)) {
+  for (const o of obsCats.slice(0, capOf('observation_categories', 5))) {
     const head = `- **${o.topic_zh}** · ${o.count} 条${o.dir ? '（倾向：' + o.dir + '）' : ''}`;
     L.push(head);
     const rep = (o.reps || [])[0];

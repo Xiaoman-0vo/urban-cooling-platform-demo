@@ -8,7 +8,7 @@
     "place_filter": "ok",
     "note": "单机小样本采集；未做授权接口接入，仅用于链路演示"
   },
-  "generated_at": "2026-10-30T09:19:53.540Z",
+  "generated_at": "2026-10-30T09:40:36.377Z",
   "source": {
     "window_days": 365,
     "window_from": "2025-10-30",

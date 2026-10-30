@@ -42,6 +42,9 @@ def js(name):
         code = code.replace("/*__PLACE_LEXICON__*/null", json.dumps(lex, ensure_ascii=False))
     if "/*__TAXONOMY_ZH__*/null" in code:
         code = code.replace("/*__TAXONOMY_ZH__*/null", json.dumps(taxonomy_zh(), ensure_ascii=False))
+    if "/*__ANSWER_CAPS__*/null" in code:
+        caps = json.loads((ROOT / "config" / "answer-caps.json").read_text(encoding="utf-8"))
+        code = code.replace("/*__ANSWER_CAPS__*/null", json.dumps(caps, ensure_ascii=False))
     return code
 
 
