@@ -26,10 +26,16 @@ if (!item || !item.item_id && !item.heat_relevance) {
 // 标签中文名来自 config/taxonomy.v1.json（构建时注入），别在这里手抄一份，否则迟早和词表不一致
 const LBL = /*__TAXONOMY_ZH__*/null;
 const KIND_ZH = { target: '查询城市', other_place: '范围外', study_area: '研究区' };
+// 词表里没给中文的维度，在这里兜底（否则会把 waiting,walking 这种枚举直接印给用户）
+const FALLBACK_ZH = {
+  activity_scene: { walking: '步行', cycling: '骑行', waiting: '等候', leisure: '游憩', outdoor_work: '室外工作', other: '其他', unspecified: '未说明' },
+  time_status: { current: '当前或近期', historical: '历史', future: '未来', unknown: '无法判断' },
+  actionability: { A: '可直接核查', B: '待确认地点', C: '仅记录感受' },
+};
 
 const zhOf = (dim, v) => {
   const m = (LBL && LBL[dim]) || {};
-  return m[v] || KIND_ZH[v] || v || '-';
+  return m[v] || (FALLBACK_ZH[dim] && FALLBACK_ZH[dim][v]) || KIND_ZH[v] || v || '-';
 };
 const list = (dim, a) => (Array.isArray(a) && a.length ? a.map((v) => zhOf(dim, v)).join('、') : '-');
 

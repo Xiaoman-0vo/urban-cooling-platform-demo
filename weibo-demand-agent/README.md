@@ -98,6 +98,8 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts\refresh-cookie.ps1
 
 **模型**：判定与摘要都用 `deepseek-flash`（`api.deepseek.com/chat/completions`，判定 T=0.2/max_tokens=3000，摘要 T=0.3/max_tokens=900）；每条回答末尾都会打印模型与各版本号。
 
+**界面**：长回答按小标题折叠、每条线索一张卡片（摘要/位置/体验/诉求/原文），带复制与回到底部按钮，窄屏可用。
+
 **条数上限**：聊天回答里各列表的展示上限集中在 `config/answer-caps.json`（线索清单默认 40 条），改完重跑 `build-chat-workflow.py` 并部署。
 
 **时间窗**：只统计**最近 365 天**发布的帖子（`--days` 可改），送判与聚合两处都过滤。

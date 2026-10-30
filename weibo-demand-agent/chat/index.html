@@ -304,6 +304,22 @@
   }
   #jobbar .close:hover { color: var(--ink); }
 
+
+  @media (max-width: 560px) {
+    .brand-badge { display: none; }
+    .brand-text h1 { font-size: 15px; }
+    .brand-text p { font-size: 11px; }
+    .brandbar { padding: 12px 14px 2px; gap: 10px; }
+    .brand-mark { width: 34px; height: 34px; border-radius: 10px; }
+    #n8n-chat .chat-body { margin: 0 6px; border-radius: 14px; }
+    #n8n-chat .chat-message-markdown { font-size: 13px; }
+    #jobbar { top: 8px; width: calc(100vw - 16px); padding: 8px 10px; }
+    #jobbar .track { flex: 0 0 70px; }
+    #jobbar .msg { font-size: 11.5px; }
+    .chips { padding-left: 14px; padding-right: 14px; }
+    /* 右侧渐隐，暗示"还能往右滑" */
+    .chips { -webkit-mask-image: linear-gradient(90deg, #000 84%, transparent); mask-image: linear-gradient(90deg, #000 84%, transparent); }
+  }
   @media (max-width: 720px) {
     .brandbar { padding: 14px 16px 4px; }
     #n8n-chat .chat-body { margin: 0 8px; border-radius: 16px; }
@@ -312,6 +328,90 @@
     .chips { padding: 0 14px 8px; }
     #jobbar .track { flex: 0 0 90px; }
     #jobbar .brand-badge { display: none; }
+  }
+
+  /* ============================================================
+     长回答：分区折叠 + 单条线索卡片（由页面底部脚本做 DOM 分组）
+     ============================================================ */
+  #n8n-chat .chat-message { position: relative; }
+  /* 问话/回答都限制一下宽度，长句子读起来不费眼 */
+  #n8n-chat .chat-message-from-bot { max-width: 100%; }
+  #n8n-chat .n8n-markdown details.sec {
+    border: 1px solid var(--line); border-radius: 12px;
+    margin: 10px 0; padding: 8px 12px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, .028), rgba(255, 255, 255, .01));
+  }
+  #n8n-chat .n8n-markdown details.sec > summary {
+    cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px;
+    font-weight: 650; color: #bfe9dc; padding: 2px 0; user-select: none;
+  }
+  #n8n-chat .n8n-markdown details.sec > summary::-webkit-details-marker { display: none; }
+  #n8n-chat .n8n-markdown details.sec > summary::before {
+    content: "▸"; color: var(--accent); font-size: 11px; transition: transform .18s ease;
+  }
+  #n8n-chat .n8n-markdown details.sec[open] > summary::before { transform: rotate(90deg); }
+  #n8n-chat .n8n-markdown details.sec > summary:hover { color: #dff7ee; }
+  #n8n-chat .n8n-markdown details.sec > *:not(summary) { margin-left: 4px; }
+
+  /* 单条线索：一张小卡片，摘要一行、四条属性一屏看完 */
+  #n8n-chat .n8n-markdown .lead-card {
+    border: 1px solid var(--line); border-radius: 12px;
+    padding: 9px 12px 6px; margin: 8px 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, .035), rgba(255, 255, 255, .012));
+  }
+  #n8n-chat .n8n-markdown .lead-card > .lead-title {
+    margin: 0 0 5px; font-weight: 600; color: #dff7ee; line-height: 1.6;
+  }
+  #n8n-chat .n8n-markdown .lead-card > .lead-title .lead-no {
+    display: inline-grid; place-items: center;
+    min-width: 20px; height: 20px; padding: 0 5px; margin-right: 7px;
+    border-radius: 6px; font-size: 11px; font-weight: 700;
+    color: #04241c; background: linear-gradient(135deg, #17967c, #23c39a);
+    vertical-align: 1px;
+  }
+  #n8n-chat .n8n-markdown .lead-card ul { margin: 0; padding-left: 16px; }
+  #n8n-chat .n8n-markdown .lead-card li { margin: 2px 0; color: var(--ink-dim); }
+  #n8n-chat .n8n-markdown .lead-card li a { color: #7ff0c8; }
+
+  /* 消息右上角：复制 */
+  .msg-tools { position: absolute; top: 6px; right: 8px; opacity: 0; transition: opacity .15s ease; }
+  #n8n-chat .chat-message:hover .msg-tools { opacity: 1; }
+  .msg-tools button {
+    font: inherit; font-size: 11px; cursor: pointer;
+    color: var(--ink-dim); background: rgba(10, 18, 29, .9);
+    border: 1px solid var(--line); border-radius: 8px; padding: 3px 8px;
+  }
+  .msg-tools button:hover { color: var(--ink); border-color: rgba(35, 195, 154, .45); }
+
+  /* 回到底部 */
+  #toBottom {
+    position: fixed; right: 22px; bottom: 104px; z-index: 60;
+    width: 38px; height: 38px; border-radius: 50%; cursor: pointer;
+    display: none; place-items: center;
+    color: #04241c; background: linear-gradient(135deg, #17967c, #23c39a);
+    border: 0; box-shadow: 0 10px 24px rgba(35, 195, 154, .3);
+  }
+  #toBottom.show { display: grid; }
+  #toBottom svg { width: 17px; height: 17px; }
+
+  /* 快捷示例：一行横滚，窄屏也不换行挤成一堆 */
+  .chips {
+    flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden;
+    scrollbar-width: none; -ms-overflow-style: none;
+    padding-bottom: 12px;
+  }
+  .chips::-webkit-scrollbar { display: none; }
+  .chips .chip-hint { position: sticky; left: 0; background: linear-gradient(90deg, #070d16 70%, transparent); padding-right: 8px; }
+
+  /* 新消息淡入，别"啪"一下出现 */
+  @keyframes msgIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+  #n8n-chat .chat-message { animation: msgIn .2s ease both; }
+
+  @media (max-width: 720px) {
+    /* 窄屏没地方放悬浮按钮：挪到右下角，并给正文留出底边距 */
+    .msg-tools { opacity: 1; top: auto; bottom: 6px; right: 8px; }
+    #n8n-chat .chat-message-from-bot .chat-message-markdown { padding-bottom: 18px; }
+    #toBottom { right: 14px; bottom: 96px; }
   }
 </style>
 </head>
@@ -566,6 +666,206 @@
       };
       new MutationObserver(fixLinks).observe(wrap, { childList: true, subtree: true });
       fixLinks();
+    })();
+  </script>
+
+  <script>
+    // ===== 长回答整理：分区折叠 + 线索卡片 + 复制按钮 + 回到底部 =====
+    (function () {
+      var SECTION_HEADS = ['线索清单', '分类明细', '体验观察', '这些线索属于哪些需求'];
+      var OPEN_BY_DEFAULT = ['线索清单', '分类明细'];
+      var LEADS_OPEN = 5;   // 线索清单里默认展开前 5 条，其余折起来
+
+      function isSectionHead(el) {
+        if (el.tagName !== 'P') return false;
+        var t = (el.textContent || '').trim();
+        return SECTION_HEADS.some(function (h) { return t.indexOf(h) === 0; });
+      }
+      function isLeadTitle(el) {
+        return el.tagName === 'P' && /^\d+\.\s/.test((el.textContent || '').trim());
+      }
+      function headText(el) {
+        var t = (el.textContent || '').trim();
+        return t.replace(/\s+/g, ' ').slice(0, 40);
+      }
+
+      // 把 <p><strong>1.</strong> 摘要</p> + <ul>…</ul> 包成一张卡片
+      function buildLeadCards(nodes) {
+        var out = [];
+        var current = null;
+        nodes.forEach(function (el) {
+          if (isLeadTitle(el)) {
+            current = { title: el, body: [] };
+            out.push(current);
+          } else if (current) {
+            current.body.push(el);
+          } else {
+            out.push({ loose: el });
+          }
+        });
+        return out;
+      }
+
+      function renderLeadCards(list) {
+        var frag = document.createDocumentFragment();
+        list.forEach(function (item) {
+          if (item.loose) { frag.appendChild(item.loose); return; }
+          var card = document.createElement('div');
+          card.className = 'lead-card';
+          var title = document.createElement('div');
+          title.className = 'lead-title';
+          var m = (item.title.textContent || '').match(/^\s*(\d+)\./);
+          if (m) {
+            var no = document.createElement('span');
+            no.className = 'lead-no';
+            no.textContent = m[1];
+            title.appendChild(no);
+            // 摘要把序号去掉再排版
+            var rest = item.title.textContent.replace(/^\s*\d+\.\s*/, '');
+            title.appendChild(document.createTextNode(rest));
+          } else {
+            title.textContent = item.title.textContent;
+          }
+          card.appendChild(title);
+          item.body.forEach(function (b) { card.appendChild(b); });
+          frag.appendChild(card);
+        });
+        return frag;
+      }
+
+      function enhance(md) {
+        if (!md || md.dataset.enhanced) return;
+        md.dataset.enhanced = '1';
+        var nodes = Array.prototype.slice.call(md.children);
+        if (!nodes.length) return;
+
+        // 1) 按小标题切段
+        var sections = [];
+        var cur = { head: null, body: [] };
+        nodes.forEach(function (el) {
+          if (isSectionHead(el)) {
+            if (cur.head || cur.body.length) sections.push(cur);
+            cur = { head: el, body: [] };
+          } else {
+            cur.body.push(el);
+          }
+        });
+        if (cur.head || cur.body.length) sections.push(cur);
+
+        // 2) 线索清单段：整段先做卡片，再把超出的折起来
+        var frag = document.createDocumentFragment();
+        sections.forEach(function (sec) {
+          var isLeads = sec.head && headText(sec.head).indexOf('线索清单') === 0;
+          if (!isLeads) return;
+          var cards = buildLeadCards(sec.body);
+          sec.cards = cards;
+          var cardNodes = Array.prototype.slice.call(renderLeadCards(cards).childNodes);
+          var keep = cardNodes.slice(0, LEADS_OPEN);
+          var rest = cardNodes.slice(LEADS_OPEN);
+          sec.body = keep;
+          sec.rest = rest;
+        });
+
+        // 3) 拼回去：正文保持原样，可折叠的段包 details
+        var rebuilt = document.createDocumentFragment();
+        sections.forEach(function (sec) {
+          var head = sec.head;
+          var body = sec.body || [];
+          var foldable = head && SECTION_HEADS.some(function (h) { return headText(head).indexOf(h) === 0; });
+          var openByDefault = head && OPEN_BY_DEFAULT.some(function (h) { return headText(head).indexOf(h) === 0; });
+
+          if (foldable) {
+            var d = document.createElement('details');
+            d.className = 'sec';
+            if (openByDefault) d.open = true;
+            var sm = document.createElement('summary');
+            d.appendChild(sm);
+            body.forEach(function (b) { d.appendChild(b); });
+
+            // 线索清单：超出 LEADS_OPEN 的 40 条 -> 折起来
+            if (sec.rest && sec.rest.length) {
+              var d2 = document.createElement('details');
+              d2.className = 'sec';
+              var sm2 = document.createElement('summary');
+              sm2.textContent = '展开其余 ' + sec.rest.length + ' 条线索';
+              d2.appendChild(sm2);
+              sec.rest.forEach(function (b) { d2.appendChild(b); });
+              d.appendChild(d2);
+            }
+            // 摘要里的计数：让收起的段落也知道里面有多少东西
+            var label = headText(head).replace(/\*\*/g, '').split('（')[0].trim();
+            if (headText(head).indexOf('线索清单') === 0) {
+              // 线索清单的标题里本来就有"共 N 条"，直接用它，不再数 li
+              sm.textContent = label + '（' + (String(head.textContent).match(/共\s*(\d+)\s*条/) || [0, '?'])[1] + ' 条）';
+            } else {
+              var list = Array.prototype.find.call(d.children, function (c) { return c.tagName === 'UL'; });
+              var n = list ? list.children.length : 0;
+              sm.textContent = n ? label + '（' + n + ' 项）' : label;
+            }
+            rebuilt.appendChild(d);
+          } else {
+            if (head) rebuilt.appendChild(head);
+            body.forEach(function (b) { rebuilt.appendChild(b); });
+          }
+        });
+
+        md.innerHTML = '';
+        md.appendChild(rebuilt);
+      }
+
+      // 复制按钮
+      function addCopy(msg) {
+        if (msg.dataset.copy) return;
+        msg.dataset.copy = '1';
+        var tools = document.createElement('div');
+        tools.className = 'msg-tools';
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.textContent = '复制';
+        btn.addEventListener('click', function () {
+          var md = msg.querySelector('.n8n-markdown');
+          var text = md ? md.innerText : msg.innerText;
+          navigator.clipboard.writeText(text || '').then(function () {
+            btn.textContent = '已复制';
+            setTimeout(function () { btn.textContent = '复制'; }, 1200);
+          }).catch(function () { btn.textContent = '复制失败'; });
+        });
+        tools.appendChild(btn);
+        msg.appendChild(tools);
+      }
+
+      function sweep() {
+        document.querySelectorAll('#n8n-chat .chat-message-from-bot').forEach(function (msg) {
+          var md = msg.querySelector('.n8n-markdown');
+          enhance(md);
+          addCopy(msg);
+        });
+      }
+
+      var wrap = document.getElementById('n8n-chat');
+      if (!wrap) return;
+      new MutationObserver(function () { sweep(); }).observe(wrap, { childList: true, subtree: true });
+      sweep();
+
+      // ===== 回到底部 =====
+      var btn = document.createElement('button');
+      btn.id = 'toBottom';
+      btn.title = '回到最新';
+      btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m6 13 6 6 6-6"/></svg>';
+      document.body.appendChild(btn);
+      var body = document.querySelector('#n8n-chat .chat-body');
+      function syncBtn() {
+        if (!body) return;
+        var far = body.scrollHeight - body.scrollTop - body.clientHeight > 160;
+        btn.classList.toggle('show', far);
+      }
+      if (body) {
+        body.addEventListener('scroll', syncBtn);
+        syncBtn();
+      }
+      btn.addEventListener('click', function () {
+        if (body) body.scrollTo({ top: body.scrollHeight, behavior: 'smooth' });
+      });
     })();
   </script>
 </body>
