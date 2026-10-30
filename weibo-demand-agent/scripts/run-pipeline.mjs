@@ -92,6 +92,22 @@ for (const c of comments.values()) {
     source_url: `https://m.weibo.cn/detail/${c.parent_post_id}`,
   });
 }
+// 时间窗：只看最近 N 天（默认 365，可用 --days 改）。
+// 判定按"帖子发布时间"算，不看抓取时间——旧帖再新抓也还是旧帖。
+const DAYS = Number(arg('--days', '365')) || 0;
+const cut = DAYS > 0 ? Date.now() - DAYS * 24 * 3600 * 1000 : null;
+function tooOld(ts) {
+  if (!cut || !ts) return false;
+  const t = Date.parse(ts);
+  return Number.isFinite(t) && t < cut;
+}
+const beforeWindow = candidates.length;
+const kept = candidates.filter((c) => !tooOld(c.published_at));
+const dropped = beforeWindow - kept.length;
+if (dropped) console.log(`时间窗 ${DAYS} 天：丢弃 ${dropped} 条超出窗口的旧内容（按发布时间）`);
+candidates.length = 0;
+candidates.push(...kept);
+
 // 增量：已判过的跳过，重跑只补失败的和新采的（省时间也省钱）
 let prev = [];
 try {

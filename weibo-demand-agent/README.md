@@ -98,6 +98,8 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts\refresh-cookie.ps1
 
 **模型**：判定与摘要都用 `deepseek-flash`（`api.deepseek.com/chat/completions`，判定 T=0.2/max_tokens=3000，摘要 T=0.3/max_tokens=900）；每条回答末尾都会打印模型与各版本号。
 
+**时间窗**：只统计**最近 365 天**发布的帖子（`--days` 可改），送判与聚合两处都过滤。
+
 **进度条**：工人每步写 `data/jobs/<id>.progress.json`，聊天页每 2 秒查 `GET /webhook/weibo-job-status`
 （工作流 `05-job-status`），取 `latest.json` 或当前任务文件渲染。
 

@@ -165,6 +165,29 @@ const leads = (Array.isArray(snap.items) ? snap.items : [])
     review_status: it.review_status || null,
   }));
 
+// ---- 温度感受：先按体感标签数一遍（这是"从温度感受入手"的那一步，纯规则、可复现）----
+// 每条帖子可能同时命中多个感受标签，所以这里的合计会大于帖子条数，只是"提及次数"
+const FEEL_DEFS = [
+  { zh: '炎热', tags: ['hot'] },
+  { zh: '闷热', tags: ['muggy'] },
+  { zh: '暴晒', tags: ['sun_exposure'] },
+  { zh: '凉爽/改善', tags: ['cool'] },
+];
+const scopeItems = (Array.isArray(snap.items) ? snap.items : []).filter(
+  (it) => it && it.heat_relevance === 'relevant' && it.in_scope !== false,
+);
+const heatFeel = FEEL_DEFS.map((d) => ({
+  感受: d.zh,
+  条数: scopeItems.filter((it) => (it.experience_tags || []).some((t) => d.tags.includes(t))).length,
+})).filter((x) => x.条数 > 0);
+// 时间范围：回答里要能说清"这批帖子是多久以内的"
+const dates = scopeItems.map((it) => it.published_at).filter(Boolean).sort();
+const timeRange = {
+  from: dates.length ? String(dates[0]).slice(0, 10) : null,
+  to: dates.length ? String(dates[dates.length - 1]).slice(0, 10) : null,
+  window_days: (snap.source && snap.source.window_days) || null,
+};
+
 const facts = {
   city: cityLabel,
   snap_city: (snap.source && snap.source.city) || null,
@@ -184,6 +207,8 @@ const facts = {
   limits: (Array.isArray(snap.limits) ? snap.limits : []).slice(0, 4),
   demands: events,
   observations,
+  heat_feel: heatFeel,
+  time_range: timeRange,
   leads,
   model_info: {
     model: 'deepseek-flash',
@@ -209,8 +234,10 @@ const facts = {
 const material = {
   city: facts.city,
   counts: facts.counts,
+  温度感受: heatFeel,
   demands: events.map((e) => ({ 类别: e.topic_zh, 条数: e.count, 倾向: e.dir, 地点: e.place, 代表原文: e.reps.map((r) => r.excerpt) })),
   observations: observations.map((o) => ({ 类别: o.topic_zh, 条数: o.count, 倾向: o.dir, 例子: o.reps.map((r) => r.excerpt) })),
+  时间范围: timeRange,
 };
 
 const system = [
@@ -219,12 +246,12 @@ const system = [
   '硬性规则：',
   '1. 只能使用给定材料里的数字和原文，不得新增、不得改写条数、不得编造原文，不得推测受影响人数；',
   '2. 不要使用"热相关性""空间诉求""分类维度""抽样口径"这类内部术语，改用日常说法（比如"抱怨没有遮阴""说等车太晒"）；',
-  '3. 不要输出链接、不要输出 Markdown 标题或列表，只输出 JSON；',
+  '3. 先说温度感受（热、闷、暴晒、凉快各有多少人提），再说这些感受集中在什么场景/诉求上；不要输出链接、不要输出 Markdown 标题或列表，只输出 JSON；',
   '4. 如果材料里没有具体诉求，就如实说"这批样本里没看到明确的改造诉求，多是笼统的热感受"。',
   '',
   '输出 JSON，字段如下：',
   '{',
-  '  "summary": "一两句大白话，说清这批人在抱怨什么/夸什么，不超过 80 字",',
+  '  "summary": "一两句大白话：先讲温度感受（哪种感受最多），再讲集中在哪里，不超过 80 字",',
   '  "categories": [{"类别": "与材料中类别完全一致", "一句话": "这条类别用大白话解释，不超过 40 字"}],',
   '  "needs": ["从材料归纳出的可落地需求，最多 3 条，每条不超过 30 字"],',
   '  "caveat": "一句话提醒这不是温度观测、不代表人数"',

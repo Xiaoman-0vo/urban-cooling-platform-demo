@@ -82,7 +82,18 @@ const jaccard = (a, b) => {
 };
 
 const inScopeOf = (x) => x.in_scope === true || (x.in_scope === undefined && x.in_study_area === true);
-const pool = items.filter((x) => inScopeOf(x) && x.heat_relevance === 'relevant' && x.review_status !== 'rule_only');
+// 时间窗：只聚合最近 N 天（默认 365）的帖子，按发布时间算。
+// 这样即使 items.json 里还留着老条目，快照也不会把 2024 年的帖子端上来。
+const DAYS = Number(arg('--days', '365')) || 0;
+const cut = DAYS > 0 ? Date.now() - DAYS * 24 * 3600 * 1000 : null;
+function fresh(ts) {
+  if (!cut || !ts) return true;
+  const t = Date.parse(ts);
+  return !Number.isFinite(t) || t >= cut;
+}
+const oldCount = items.filter((x) => !fresh(x.published_at)).length;
+if (oldCount) console.log(`时间窗 ${DAYS} 天：${oldCount} 条超出窗口的旧内容不进聚合`);
+const pool = items.filter((x) => fresh(x.published_at) && inScopeOf(x) && x.heat_relevance === 'relevant' && x.review_status !== 'rule_only');
 const groups = []; // {group_id, norm, grams, item_ids}
 for (const it of pool) {
   const norm = normalize(it.text_full || it.excerpt || '');
@@ -164,6 +175,8 @@ const snapshot = {
   },
   generated_at: new Date().toISOString(),
   source: {
+    window_days: DAYS || null,
+    window_from: cut ? new Date(cut).toISOString().slice(0, 10) : null,
     channel: 'weibo',
     method: 'search + first-level comments',
     queries: [...queries],
@@ -174,14 +187,14 @@ const snapshot = {
   counts: {
     raw_posts: rawPostCount,
     raw_comments: rawCommentCount,
-    classified_items: items.length,
-    in_scope_items: inScope.length,
+    classified_items: items.filter((x) => fresh(x.published_at)).length,
+    in_scope_items: inScope.filter((x) => fresh(x.published_at)).length,
     in_study_area_items: inScope.length,
     public_demand_items: demandPool.length,
     unique_contents: groups.length,
     identifiable_original_reports: pool.filter((x) => x.kind === 'post').length,
-    out_of_scope_items: items.filter((x) => x.location_scope === 'other_place' || x.location_scope === 'other_city').length,
-    place_unknown_items: items.filter((x) => x.location_scope === 'unknown').length,
+    out_of_scope_items: items.filter((x) => fresh(x.published_at) && (x.location_scope === 'other_place' || x.location_scope === 'other_city')).length,
+    place_unknown_items: items.filter((x) => fresh(x.published_at) && x.location_scope === 'unknown').length,
   },
   meta: {
     contract_version: '1.0.0',

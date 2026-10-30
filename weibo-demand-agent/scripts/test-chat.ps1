@@ -1,4 +1,4 @@
-# 测聊天窗：直接给聊天接口发一句话，看它回什么
+﻿# 测聊天窗：直接给聊天接口发一句话，看它回什么
 # 用法：powershell -NoProfile -ExecutionPolicy Bypass -File scripts\test-chat.ps1
 param(
     [string]$Hook = 'wc9d1f2a34b7e48c0',
@@ -15,7 +15,7 @@ $cases = @(
     @{ name = '问现状·重庆候车'; text = '重庆 候车 现状'; expect = '重庆' },
     @{ name = '贴一条微博';      text = '太阳晒得人眼睛都睁不开，这段路树荫一点都没有，等公交晒到冒烟'; expect = '这句话说了什么' },
     @{ name = '没说清';          text = '你好';           expect = '两种用法' },
-    @{ name = '词表外地名';      text = '嘉峪关现在有多少线索'; expect = '下单' }
+    @{ name = '词表外地名';      text = '定西现在有多少线索'; expect = '下单' }
 )
 
 # n8n 重启后聊天路由要过几秒才注册好，先探一下，别把 404 当成功能坏了

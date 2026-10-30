@@ -90,6 +90,11 @@ L.push(`**${facts.city} · 微博热感知（${modeZh}）**`);
 if (facts.city_note) L.push(`_${facts.city_note}_`);
 L.push('');
 L.push(`**一句话**：${summary}`);
+const feel = Array.isArray(facts.heat_feel) ? facts.heat_feel : [];
+if (feel.length) {
+  L.push('');
+  L.push('**温度感受**：' + feel.map((f) => `${f.感受} ${f.条数} 条`).join(' · ') + '（按帖子里的体感标签数，同一条可能命中多种）');
+}
 L.push('');
 
 // ---------- 5. 线索清单：每条都按「摘要 / 位置 / 体验 / 诉求 / 原文链接」给 ----------
@@ -143,19 +148,15 @@ for (const n of needs) L.push(`- ${n}`);
 
 // 数据口径一行（保留可追溯性，但不堆术语）
 L.push('');
-L.push(`_样本：原始 ${c.raw_posts ?? '?'} 帖 / ${c.raw_comments ?? '?'} 条评论 → 判定 ${c.classified_items ?? '?'} 条 → 落在${facts.city} ${c.in_scope_items ?? '?'} 条 → 去重后 ${c.unique_contents ?? '?'} 条；范围外 ${c.out_of_scope_items ?? '?'} 条、地点待定 ${c.place_unknown_items ?? '?'} 条。_`);
+const tr = facts.time_range || {};
+const trText = (tr.from && tr.to ? `${tr.from} ~ ${tr.to}` : '时间未知') + (tr.window_days ? `（只算最近 ${tr.window_days} 天）` : '');
+L.push(`_样本：原始 ${c.raw_posts ?? '?'} 帖 / ${c.raw_comments ?? '?'} 条评论 → 判定 ${c.classified_items ?? '?'} 条 → 落在${facts.city} ${c.in_scope_items ?? '?'} 条 → 去重后 ${c.unique_contents ?? '?'} 条；发布时间 ${trText}；范围外 ${c.out_of_scope_items ?? '?'} 条、地点待定 ${c.place_unknown_items ?? '?'} 条。_`);
 const ls = facts.link_stats || {};
 L.push(`_原文链接：${ls.with_url ?? 0} 条可跳转${ls.missing ? `，${ls.missing} 条已缺失或已删除（标注为「原文不可访问」）` : ''}。_`);
 
 if (ai && ai.caveat) {
   L.push('');
   L.push(`> ${String(ai.caveat).slice(0, 120)}`);
-}
-const limits = Array.isArray(facts.limits) ? facts.limits : [];
-if (limits.length) {
-  L.push('');
-  L.push('**边界**');
-  for (const l of limits.slice(0, 3)) L.push(`- ${l}`);
 }
 if (ai_error) L.push('');
 if (ai_error) L.push(`_（这次没能请大模型润色，上面是按规则拼的；原因：${ai_error}）_`);

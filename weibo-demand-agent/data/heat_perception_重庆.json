@@ -8,8 +8,10 @@
     "place_filter": "ok",
     "note": "单机小样本采集；未做授权接口接入，仅用于链路演示"
   },
-  "generated_at": "2026-10-28T10:51:01.161Z",
+  "generated_at": "2026-10-30T09:20:11.560Z",
   "source": {
+    "window_days": 365,
+    "window_from": "2025-10-30",
     "channel": "weibo",
     "method": "search + first-level comments",
     "queries": [
@@ -24,12 +26,12 @@
   "counts": {
     "raw_posts": 76,
     "raw_comments": 200,
-    "classified_items": 84,
-    "in_scope_items": 69,
+    "classified_items": 77,
+    "in_scope_items": 62,
     "in_study_area_items": 69,
-    "public_demand_items": 5,
-    "unique_contents": 45,
-    "identifiable_original_reports": 43,
+    "public_demand_items": 4,
+    "unique_contents": 39,
+    "identifiable_original_reports": 38,
     "out_of_scope_items": 4,
     "place_unknown_items": 11
   },
@@ -67,30 +69,6 @@
       ]
     },
     {
-      "event_cluster_id": "ev_8a65a22811",
-      "demand_topic": "tree_canopy",
-      "demand_topic_zh": "树冠/绿化覆盖",
-      "item_count": 2,
-      "unique_content_count": 2,
-      "evaluation_direction": {
-        "discomfort": 2
-      },
-      "place_hint": "重庆",
-      "first_published_at": "2023-04-11T12:59:17+08:00",
-      "last_published_at": "2026-07-27T09:29:33+08:00",
-      "representative": {
-        "item_id": "wi_cbfb0c0bd4a9",
-        "excerpt": "满目苍翠的大树被剃了光头，铺成水泥瓷砖地白花花一片，光秃秃一片。晒死个人",
-        "source_url": "https://m.weibo.cn/detail/5325223878723252",
-        "confidence": 0.85,
-        "confidence_level": "high"
-      },
-      "item_ids": [
-        "wi_7de44a1f8538",
-        "wi_cbfb0c0bd4a9"
-      ]
-    },
-    {
       "event_cluster_id": "ev_cf19c7dfdb",
       "demand_topic": "water_cooling_facility",
       "demand_topic_zh": "饮水/降温设施",
@@ -111,6 +89,29 @@
       },
       "item_ids": [
         "wi_70fd186399d0"
+      ]
+    },
+    {
+      "event_cluster_id": "ev_34a092dbb9",
+      "demand_topic": "tree_canopy",
+      "demand_topic_zh": "树冠/绿化覆盖",
+      "item_count": 1,
+      "unique_content_count": 1,
+      "evaluation_direction": {
+        "discomfort": 1
+      },
+      "place_hint": "重庆",
+      "first_published_at": "2026-07-27T09:29:33+08:00",
+      "last_published_at": "2026-07-27T09:29:33+08:00",
+      "representative": {
+        "item_id": "wi_cbfb0c0bd4a9",
+        "excerpt": "满目苍翠的大树被剃了光头，铺成水泥瓷砖地白花花一片，光秃秃一片。晒死个人",
+        "source_url": "https://m.weibo.cn/detail/5325223878723252",
+        "confidence": 0.85,
+        "confidence_level": "high"
+      },
+      "item_ids": [
+        "wi_cbfb0c0bd4a9"
       ]
     }
   ],
@@ -140,9 +141,9 @@
     {
       "demand_topic": "positive_cooling",
       "demand_topic_zh": "降温改善体验",
-      "item_count": 13,
+      "item_count": 8,
       "evaluation_direction": {
-        "improvement": 13
+        "improvement": 8
       },
       "examples": [
         {
@@ -190,21 +191,6 @@
           "item_id": "wi_4980cd1ed5b9",
           "excerpt": "重庆又热成炼丹炉了，出门五分钟流汗两小时。",
           "source_url": "https://m.weibo.cn/detail/5358665617376157"
-        }
-      ]
-    },
-    {
-      "demand_topic": "plaza_leisure",
-      "demand_topic_zh": "广场与休闲",
-      "item_count": 1,
-      "evaluation_direction": {
-        "improvement": 1
-      },
-      "examples": [
-        {
-          "item_id": "wi_1ce562196109",
-          "excerpt": "该公园充分利用桥下空间遮阴避雨的优势",
-          "source_url": "https://m.weibo.cn/detail/4818268537489424"
         }
       ]
     },
@@ -2348,298 +2334,6 @@
       "event_cluster_id": null
     },
     {
-      "item_id": "wi_1ce562196109",
-      "source": "weibo",
-      "source_post_id": "4818268537489424",
-      "source_url": "https://m.weibo.cn/detail/4818268537489424",
-      "kind": "post",
-      "author": "聚焦重庆",
-      "published_at": "2022-09-27T11:10:01+08:00",
-      "text": "#重庆在桥下建体育公园# 【方便又休闲！这里有个遮阴避雨的桥下体育公园】近期，沙坪坝区土湾街道龙泉路立交桥下空间被改造为社区文化体育公园投用，成为居民休闲运动的好去处。该公园充分利用桥下空间遮阴避雨的优势，巧妙地将城市“灰色空间”打造成为一个社区体育文化公园，吸引不少市民前来健身锻炼。",
-      "excerpt": "该公园充分利用桥下空间遮阴避雨的优势",
-      "heat_relevance": "relevant",
-      "is_public_demand": false,
-      "demand_topic": "plaza_leisure",
-      "demand_topic_zh": "广场与休闲",
-      "evaluation_direction": "improvement",
-      "experience_tags": [
-        "cool"
-      ],
-      "spatial_demands": [
-        "stay_comfort"
-      ],
-      "activity_scene": [
-        "leisure"
-      ],
-      "time_status": "current",
-      "location_scope": "target",
-      "scope_target": "重庆",
-      "in_scope": true,
-      "in_study_area": true,
-      "place_evidence": [
-        {
-          "name": "重庆",
-          "kind": "target",
-          "start": 1,
-          "end": 3
-        },
-        {
-          "name": "沙坪坝",
-          "kind": "target",
-          "start": 39,
-          "end": 42
-        }
-      ],
-      "evidence_spans": [
-        {
-          "field": "demand_topic",
-          "start": 24,
-          "end": 28,
-          "quote": "遮阴避雨"
-        },
-        {
-          "field": "time_status",
-          "start": 36,
-          "end": 70,
-          "quote": "近期，沙坪坝区土湾街道龙泉路立交桥下空间被改造为社区文化体育公园投用"
-        },
-        {
-          "field": "excerpt",
-          "start": 84,
-          "end": 102,
-          "quote": "该公园充分利用桥下空间遮阴避雨的优势"
-        }
-      ],
-      "confidence": 0.6,
-      "confidence_level": "low",
-      "confidence_basis": [
-        "span_valid"
-      ],
-      "review_status": "pending",
-      "duplicate_group_id": "dg_1ab16895f8",
-      "event_cluster_id": null
-    },
-    {
-      "item_id": "wi_a510dcf7ffc4",
-      "source": "weibo",
-      "source_post_id": "5194798526891515",
-      "source_url": "https://m.weibo.cn/detail/5194798526891515",
-      "kind": "post",
-      "author": "星耀重庆",
-      "published_at": "2025-08-01T11:45:46+08:00",
-      "text": "重庆来福士这次以「此地·来风」为主题打造的夏日公共艺术装置算是很巧妙的企划。一方面通过在商场出入口、山城花园等户外公共空间节点进行「定制装扮」增加视觉亮点，同时又兼顾了遮阴纳凉的实际功能。",
-      "excerpt": "同时又兼顾了遮阴纳凉的实际功能",
-      "heat_relevance": "relevant",
-      "is_public_demand": false,
-      "demand_topic": "positive_cooling",
-      "demand_topic_zh": "降温改善体验",
-      "evaluation_direction": "improvement",
-      "experience_tags": [
-        "cool"
-      ],
-      "spatial_demands": [],
-      "activity_scene": [
-        "unspecified"
-      ],
-      "time_status": "current",
-      "location_scope": "target",
-      "scope_target": "重庆",
-      "in_scope": true,
-      "in_study_area": true,
-      "place_evidence": [
-        {
-          "name": "重庆",
-          "kind": "target",
-          "start": 0,
-          "end": 2
-        }
-      ],
-      "evidence_spans": [
-        {
-          "field": "evaluation_direction",
-          "start": 29,
-          "end": 37,
-          "quote": "算是很巧妙的企划"
-        },
-        {
-          "field": "demand_topic",
-          "start": 84,
-          "end": 93,
-          "quote": "遮阴纳凉的实际功能"
-        }
-      ],
-      "confidence": 0.6,
-      "confidence_level": "low",
-      "confidence_basis": [
-        "span_valid"
-      ],
-      "review_status": "pending",
-      "duplicate_group_id": "dg_69fd3a2790",
-      "event_cluster_id": null
-    },
-    {
-      "item_id": "wi_030a9679acb6",
-      "source": "weibo",
-      "source_post_id": "4924526846805089",
-      "source_url": "https://m.weibo.cn/detail/4924526846805089",
-      "kind": "post",
-      "author": "万州吧",
-      "published_at": "2023-07-17T16:22:36+08:00",
-      "text": "#万州城事# 【真.绿树成荫 白岩路绿成一幅画】这个天很多人步行都会找遮阴的地方，在白岩路，两旁的梧桐树把太阳挡得死死的，无论是走路还是开车路过都不会有大片晒到的地方， 真的是绿树成荫了，走在其中就像在画里一样。#重庆万州这条路真绿树成荫#",
-      "excerpt": "两旁的梧桐树把太阳挡得死死的",
-      "heat_relevance": "relevant",
-      "is_public_demand": false,
-      "demand_topic": "positive_cooling",
-      "demand_topic_zh": "降温改善体验",
-      "evaluation_direction": "improvement",
-      "experience_tags": [
-        "cool"
-      ],
-      "spatial_demands": [],
-      "activity_scene": [
-        "walking"
-      ],
-      "time_status": "current",
-      "location_scope": "target",
-      "scope_target": "重庆",
-      "in_scope": true,
-      "in_study_area": true,
-      "place_evidence": [
-        {
-          "name": "万州",
-          "kind": "target",
-          "start": 1,
-          "end": 3
-        },
-        {
-          "name": "重庆",
-          "kind": "target",
-          "start": 107,
-          "end": 109
-        },
-        {
-          "name": "万州",
-          "kind": "target",
-          "start": 109,
-          "end": 111
-        }
-      ],
-      "evidence_spans": [
-        {
-          "field": "demand_topic",
-          "start": 27,
-          "end": 40,
-          "quote": "很多人步行都会找遮阴的地方"
-        },
-        {
-          "field": "location_mentions",
-          "start": 41,
-          "end": 45,
-          "quote": "在白岩路"
-        },
-        {
-          "field": "experience_tags",
-          "start": 46,
-          "end": 60,
-          "quote": "两旁的梧桐树把太阳挡得死死的"
-        },
-        {
-          "field": "evaluation_direction",
-          "start": 94,
-          "end": 105,
-          "quote": "走在其中就像在画里一样"
-        }
-      ],
-      "confidence": 0.6,
-      "confidence_level": "low",
-      "confidence_basis": [
-        "span_valid"
-      ],
-      "review_status": "pending",
-      "duplicate_group_id": "dg_df4613fb2c",
-      "event_cluster_id": null
-    },
-    {
-      "item_id": "wi_7de44a1f8538",
-      "source": "weibo",
-      "source_post_id": "4889324057789732",
-      "source_url": "https://m.weibo.cn/detail/4889324057789732",
-      "kind": "post",
-      "author": "延时摄影何不易",
-      "published_at": "2023-04-11T12:59:17+08:00",
-      "text": "重庆我又大意了，这个金州公园嗮死了，都是矮灌木，遮阴的大树一颗没有。。。。我忘了这是个新公园 大树要长成是要很多年的 重庆·金州公园",
-      "excerpt": "这个金州公园嗮死了，都是矮灌木，遮阴的大树一颗没有",
-      "heat_relevance": "relevant",
-      "is_public_demand": true,
-      "demand_topic": "tree_canopy",
-      "demand_topic_zh": "树冠/绿化覆盖",
-      "evaluation_direction": "discomfort",
-      "experience_tags": [
-        "hot",
-        "sun_exposure"
-      ],
-      "spatial_demands": [
-        "shade_deficit"
-      ],
-      "activity_scene": [
-        "leisure"
-      ],
-      "time_status": "current",
-      "location_scope": "target",
-      "scope_target": "重庆",
-      "in_scope": true,
-      "in_study_area": true,
-      "place_evidence": [
-        {
-          "name": "重庆",
-          "kind": "target",
-          "start": 0,
-          "end": 2
-        },
-        {
-          "name": "重庆",
-          "kind": "target",
-          "start": 59,
-          "end": 61
-        }
-      ],
-      "evidence_spans": [
-        {
-          "field": "experience_tags",
-          "start": 14,
-          "end": 17,
-          "quote": "嗮死了"
-        },
-        {
-          "field": "demand_topic",
-          "start": 18,
-          "end": 33,
-          "quote": "都是矮灌木，遮阴的大树一颗没有"
-        },
-        {
-          "field": "spatial_demands",
-          "start": 24,
-          "end": 33,
-          "quote": "遮阴的大树一颗没有"
-        },
-        {
-          "field": "actionability",
-          "start": 59,
-          "end": 66,
-          "quote": "重庆·金州公园"
-        }
-      ],
-      "confidence": 0.7,
-      "confidence_level": "medium",
-      "confidence_basis": [
-        "span_valid",
-        "public_demand"
-      ],
-      "review_status": "auto_accepted",
-      "duplicate_group_id": "dg_f4d53a46fc",
-      "event_cluster_id": "ev_8a65a22811"
-    },
-    {
       "item_id": "wi_a74d42746097",
       "source": "weibo",
       "source_post_id": "5347122867077427",
@@ -2799,84 +2493,6 @@
       ],
       "review_status": "auto_accepted",
       "duplicate_group_id": "dg_5d17a57853",
-      "event_cluster_id": null
-    },
-    {
-      "item_id": "wi_c34719346236",
-      "source": "weibo",
-      "source_post_id": "5067694568902761",
-      "source_url": "https://m.weibo.cn/detail/5067694568902761",
-      "kind": "post",
-      "author": "用户7907128959",
-      "published_at": "2024-08-15T18:00:01+08:00",
-      "text": "重庆主城周边1h耍水💦——水质好巴适👍\n\n📍导航：北碚区桃子湾，或者“金刀峡南门塌方处”\n🚗建议自驾出行，更方便\n🅿️停车：桥下面停车收费，停路边不要钱💰\n\n👍优点：\n✅河道宽、流域广，放得下露营桌椅💺\n✅可烧烤、耍水、搬螃蟹🦀️\n✅金刀峡附近，峡谷地带有遮阴\n\n💗tips：\n1⃣️到了金刀峡建议往上游走点，人稍微少一点。越往上水越清凉💦有深一点的水池可以游泳🏊带上游泳圈\n\n2⃣️拖鞋必备🩴，垃圾带走，防火防水🔥安全第一！\n3⃣️周末人很多，建议早点去🏃可以选有树荫的位置\n4⃣️注意防晒 建议穿长袖长裤👔有野蚊子\n5⃣️文明露营🏕️ 带走自己的垃圾🚮 爱护环境",
-      "excerpt": "✅金刀峡附近，峡谷地带有遮阴",
-      "heat_relevance": "relevant",
-      "is_public_demand": false,
-      "demand_topic": "positive_cooling",
-      "demand_topic_zh": "降温改善体验",
-      "evaluation_direction": "improvement",
-      "experience_tags": [
-        "cool",
-        "sun_exposure"
-      ],
-      "spatial_demands": [],
-      "activity_scene": [
-        "leisure"
-      ],
-      "time_status": "unknown",
-      "location_scope": "target",
-      "scope_target": "重庆",
-      "in_scope": true,
-      "in_study_area": true,
-      "place_evidence": [
-        {
-          "name": "重庆",
-          "kind": "target",
-          "start": 0,
-          "end": 2
-        },
-        {
-          "name": "北碚",
-          "kind": "target",
-          "start": 28,
-          "end": 30
-        }
-      ],
-      "evidence_spans": [
-        {
-          "field": "demand_topic",
-          "start": 132,
-          "end": 139,
-          "quote": "峡谷地带有遮阴"
-        },
-        {
-          "field": "experience_tags",
-          "start": 172,
-          "end": 181,
-          "quote": "越往上水越清凉💦"
-        },
-        {
-          "field": "activity_scene",
-          "start": 244,
-          "end": 253,
-          "quote": "可以选有树荫的位置"
-        },
-        {
-          "field": "experience_tags",
-          "start": 257,
-          "end": 269,
-          "quote": "注意防晒 建议穿长袖长裤"
-        }
-      ],
-      "confidence": 0.7,
-      "confidence_level": "medium",
-      "confidence_basis": [
-        "span_valid",
-        "rule_hit"
-      ],
-      "review_status": "auto_accepted",
-      "duplicate_group_id": "dg_ad89c43477",
       "event_cluster_id": null
     },
     {
@@ -3454,7 +3070,7 @@
       ],
       "review_status": "auto_accepted",
       "duplicate_group_id": "dg_1903d21425",
-      "event_cluster_id": "ev_8a65a22811"
+      "event_cluster_id": "ev_34a092dbb9"
     },
     {
       "item_id": "wi_f29ba0595f54",
@@ -3624,134 +3240,6 @@
       ],
       "review_status": "auto_accepted",
       "duplicate_group_id": "dg_66e6013ca5",
-      "event_cluster_id": null
-    },
-    {
-      "item_id": "wi_b6e7a5252b46",
-      "source": "weibo",
-      "source_post_id": "4818268537489424",
-      "source_url": "https://m.weibo.cn/detail/4818268537489424",
-      "kind": "comment",
-      "author": "渝小淘",
-      "published_at": "2022-09-27T11:16:20+08:00",
-      "text": "#重庆在桥下建体育公园# 方便又休闲！这里有个遮阴避雨的桥下体育公园[彩虹屁][彩虹屁][彩虹屁]",
-      "excerpt": "这里有个遮阴避雨的桥下体育公园",
-      "heat_relevance": "relevant",
-      "is_public_demand": false,
-      "demand_topic": "positive_cooling",
-      "demand_topic_zh": "降温改善体验",
-      "evaluation_direction": "improvement",
-      "experience_tags": [
-        "cool"
-      ],
-      "spatial_demands": [],
-      "activity_scene": [
-        "leisure"
-      ],
-      "time_status": "current",
-      "location_scope": "target",
-      "scope_target": "重庆",
-      "in_scope": true,
-      "in_study_area": true,
-      "place_evidence": [
-        {
-          "name": "重庆",
-          "kind": "target",
-          "start": 1,
-          "end": 3
-        }
-      ],
-      "evidence_spans": [
-        {
-          "field": "evaluation_direction",
-          "start": 13,
-          "end": 18,
-          "quote": "方便又休闲"
-        },
-        {
-          "field": "activity_scene",
-          "start": 16,
-          "end": 18,
-          "quote": "休闲"
-        },
-        {
-          "field": "experience_tags",
-          "start": 23,
-          "end": 27,
-          "quote": "遮阴避雨"
-        }
-      ],
-      "confidence": 0.6,
-      "confidence_level": "low",
-      "confidence_basis": [
-        "span_valid"
-      ],
-      "review_status": "pending",
-      "duplicate_group_id": "dg_70367efadc",
-      "event_cluster_id": null
-    },
-    {
-      "item_id": "wi_29cbb314cde6",
-      "source": "weibo",
-      "source_post_id": "4818268537489424",
-      "source_url": "https://m.weibo.cn/detail/4818268537489424",
-      "kind": "comment",
-      "author": "新重庆",
-      "published_at": "2022-09-27T11:15:14+08:00",
-      "text": "#重庆在桥下建体育公园# 方便又休闲！这里有个遮阴避雨的桥下体育公园[月亮代表我的心]",
-      "excerpt": "这里有个遮阴避雨的桥下体育公园",
-      "heat_relevance": "relevant",
-      "is_public_demand": false,
-      "demand_topic": "positive_cooling",
-      "demand_topic_zh": "降温改善体验",
-      "evaluation_direction": "improvement",
-      "experience_tags": [
-        "cool"
-      ],
-      "spatial_demands": [],
-      "activity_scene": [
-        "leisure"
-      ],
-      "time_status": "current",
-      "location_scope": "target",
-      "scope_target": "重庆",
-      "in_scope": true,
-      "in_study_area": true,
-      "place_evidence": [
-        {
-          "name": "重庆",
-          "kind": "target",
-          "start": 1,
-          "end": 3
-        }
-      ],
-      "evidence_spans": [
-        {
-          "field": "evaluation_direction",
-          "start": 13,
-          "end": 18,
-          "quote": "方便又休闲"
-        },
-        {
-          "field": "activity_scene",
-          "start": 16,
-          "end": 18,
-          "quote": "休闲"
-        },
-        {
-          "field": "heat_relevance",
-          "start": 23,
-          "end": 27,
-          "quote": "遮阴避雨"
-        }
-      ],
-      "confidence": 0.6,
-      "confidence_level": "low",
-      "confidence_basis": [
-        "span_valid"
-      ],
-      "review_status": "pending",
-      "duplicate_group_id": "dg_70367efadc",
       "event_cluster_id": null
     }
   ],
