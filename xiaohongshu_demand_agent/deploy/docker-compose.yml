@@ -1,5 +1,5 @@
 # 换一台电脑装这个助手：一键起 n8n + 挂载数据目录
-# 用法（在 weibo-demand-agent 目录下）：
+# 用法（在 xiaohongshu_demand_agent 目录下）：
 #   docker compose -f deploy/docker-compose.yml up -d
 # 说明：
 #   - 5678 是 n8n 的端口；改成别的端口就改下面 ports 的左边

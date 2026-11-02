@@ -33,7 +33,7 @@ Python 不是必需的（只有改词表/契约校验时才用）。
 
 ## 二、搬文件
 
-把整个 `weibo-demand-agent` 文件夹拷过去。**必须带的**：
+把整个 `xiaohongshu_demand_agent` 文件夹拷过去。**必须带的**：
 
 - `chat/`（聊天页前端，含 `vendor/` 约 2.4 MB 的离线脚本）
 - `workflows/`、`workflows/src/`、`contract/`、`config/`
@@ -46,7 +46,7 @@ Cookie 是本机账号的登录态，换机器必须重新登一次（见第四�
 ## 三、起 n8n
 
 ```powershell
-cd "路径\weibo-demand-agent"
+cd "路径\xiaohongshu_demand_agent"
 docker compose -f deploy/docker-compose.yml up -d
 docker ps --filter name=n8n
 ```

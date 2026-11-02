@@ -10,7 +10,7 @@ from pathlib import Path
 from jsonschema import Draft202012Validator
 
 HERE = Path(__file__).resolve().parent
-SCHEMA_PATH = HERE / "weibo-demand.contract.v1.schema.json"
+SCHEMA_PATH = HERE / "xiaohongshu_demand.contract.v1.schema.json"
 
 
 def main() -> int:

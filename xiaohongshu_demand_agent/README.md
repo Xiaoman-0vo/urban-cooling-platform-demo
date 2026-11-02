@@ -1,10 +1,10 @@
-# 微博民意助手（weibo-demand-agent）
+# 小红书民意助手（xiaohongshu_demand_agent）
 
-把公开微博里"哪里热得难受、希望改哪里"的说法，判读成**可回查、可统计、可对接平台**的城市热感知线索。
+把公开小红书笔记里"哪里热得难受、希望改哪里"的说法，判读成**可回查、可统计、可对接平台**的城市热感知线索。
 运行在 n8n 上：聊天窗下单 → 后台工人采集 → 规则+大模型判定 → 汇总快照 → 平台地图侧栏读取。
 
 > **三条边界（先看这个）**
-> 1. 只判读公开微博文本，**不产生温度数据**，也不代表市民总体感受；
+> 1. 只判读公开小红书笔记文本，**不产生温度数据**，也不代表市民总体感受；
 > 2. 线索数量**不是人数**，去重后才是内容条数；
 > 3. 地点范围**由提问决定**，默认不预设城市；词表外的地名按字面采集。
 
@@ -14,10 +14,10 @@
 
 | 你在聊天窗里说 | 它做什么 |
 |---|---|
-| 「成都现在有多少线索」 | 读已有快照，报条数、类别明细、代表原文（**可点开跳微博**）、需求归类 |
-| 「帮我抓成都 遮阴」 | 下单去采 → 顶部进度条实时走：采微博 → 逐条判定 → 汇总快照 |
+| 「成都现在有多少线索」 | 读已有快照，报条数、类别明细、代表原文（**可点开跳小红书**）、需求归类 |
+| 「帮我抓成都 遮阴」 | 下单去采 → 顶部进度条实时走：采小红书 → 逐条判定 → 汇总快照 |
 | 「嘉峪关现在有多少线索」（词表里没有） | 自动按"嘉峪关"字面下单采集，不再让你去改配置 |
-| 贴一条微博正文 | 单条判读：热相关性、体验、空间诉求、评价方向、场景、置信度、**证据片段**（可在原文里对号） |
+| 贴一条小红书笔记正文 | 单条判读：热相关性、体验、空间诉求、评价方向、场景、置信度、**证据片段**（可在原文里对号） |
 | 「洛阳现在有多少线索」（没采过） | 自动下单去采，进度条从「已下单」走到 100%，跑完再问就有数字 |
 | 「进度」 | 报后台任务当前阶段与条数 |
 
@@ -30,13 +30,13 @@
 
 ## 二、快速开始（Windows，3 步）
 
-**前置**：Docker Desktop 已装并启动、Node.js ≥ 20.19（或 ≥ 22.12）、这台电脑的 Edge 已登录微博。
+**前置**：Docker Desktop 已装并启动、Node.js ≥ 20.19（或 ≥ 22.12）、这台电脑的 Edge 已登录小红书（浏览器桥复用登录态）。
 
 ### 第 1 步：起 n8n 并导入工作流
 
 ```powershell
 docker start n8n          # 没有容器就先按 docs/03-n8n环境与本次改动.md 建一个
-cd "C:\path\to\weibo-demand-agent"
+cd "C:\path\to\xiaohongshu_demand_agent"
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts\deploy-workflow.ps1 -WorkflowFile workflows\04-demand-chat.json
 ```
 
@@ -82,7 +82,7 @@ agent-reach login xiaohongshu
                         ▼
                  n8n：04-demand-chat（24 节点）
                    ├─ 问现状 → 读 data/heat_perception*.json → 模型组织语言
-                   ├─ 贴微博 → 规则层 → 大模型抽取 → 证据回查 → 判读卡片
+                   ├─ 贴小红书 → 规则层 → 大模型抽取 → 证据回查 → 判读卡片
                    └─ 要采集 → 写任务单 data/jobs/<id>.json（异步，立刻回执）
                         │
                         ▼
@@ -118,7 +118,7 @@ agent-reach login xiaohongshu
 | `chat/index.html`、`chat/vendor/` | 本地聊天页（资源内置，不依赖 CDN） |
 | `config/taxonomy.v1.json` | **判定词表**：热相关性/内容类型/体验/诉求/话题/关键词/判定顺序 |
 | `config/place-lexicon.v2.json` | **地点词表**：城市→别名；词表外地名按字面采 |
-| `contract/weibo-demand.contract.v1.schema.json` | 对外契约（JSON Schema 2020-12，24 个 `$defs`） |
+| `contract/xiaohongshu_demand.contract.v1.schema.json` | 对外契约（JSON Schema 2020-12，24 个 `$defs`） |
 | `contract/validate.py` | 契约自检：`python contract/validate.py` |
 | `workflows/03-demand-agent-api.json` | 契约入口（10 节点）：`POST /webhook/weibo-demand/v1` |
 | `workflows/04-demand-chat.json` | 聊天窗（25 节点）：`/webhook/wc9d1f2a34b7e48c0/chat` |
@@ -143,7 +143,7 @@ agent-reach login xiaohongshu
 **每条线索**（`items_<城市>.json` 的 Item，约 40 个字段）关键字段：
 
 ```
-source_post_id / source_url                               原始微博
+source_post_id / source_url                               原始小红书
 published_at / fetched_at / event_time_* / time_status    时间三分（发布/发生/抓取）
 text / excerpt / ai_summary / evidence_spans              原文与可回查证据片段
 heat_relevance / content_types / experience_tags          判定结论
@@ -207,7 +207,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts\test-chat.ps1      #
 
 ## 八、已知限制
 
-- 采集依赖**已登录浏览器**的 Cookie：低频小样本（默认微博 2 页、每帖 6 条一级评论、1.5s 限速），不适合当"实时舆情监听"。
+- 采集依赖**已登录浏览器**的 Cookie：低频小样本（默认小红书 2 页、每帖 6 条一级评论、1.5s 限速），不适合当"实时舆情监听"。
 - 判定用 `deepseek-flash`，单条约 2–6 秒；120 条样本约 2–4 分钟。置信度是**确定性依据合成**的三档，不是模型自报概率。
 - 快照 `mode=historical_sample`：**不是实时**，也不做 100m 网格插值。
 - 平台侧目前只读消费快照，未做接口级联调（真接口方案见 `docs/01-方案设计.md` §7）。
@@ -220,11 +220,11 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts\test-chat.ps1      #
 | `docs/01-方案设计.md` | 定位与边界、五层架构、判定标准与准确度、契约、平台对接、异常 |
 | `docs/02-实现计划.md` | P0–P9 施工顺序、里程碑、验收用例 |
 | `docs/03-n8n环境与本次改动.md` | 容器怎么建的、改了哪些宿主机设置 |
-| `docs/04-采集适配器说明.md` | 微博接口、Cookie、限速与断点 |
+| `docs/04-采集适配器说明.md` | 小红书接口、Cookie、限速与断点 |
 | `docs/05-采集与研判上线.md` | 两城实测数据、判定质量抽样、延迟 |
 | `docs/06-n8n聊天窗.md` | 24 节点编排、进度条机制、换电脑/局域网 |
 
 ---
 
 **技术栈**：n8n 2.45（Docker）· DeepSeek `deepseek-flash` · Node 26 ESM · JSON Schema 2020-12
-**数据口径**：公开微博与一级评论的抽样，历史回放，非温度观测，非人数。
+**数据口径**：公开小红书与一级评论的抽样，历史回放，非温度观测，非人数。
