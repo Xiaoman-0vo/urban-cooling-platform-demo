@@ -1,7 +1,7 @@
 // P5-1：把采集结果送进 n8n 判定，产出带来源元数据的 items.json
 // 用法：node scripts/run-pipeline.mjs [--max 40] [--pace 400]
 //
-// 与 classify-samples.mjs 的区别：这里保留「这句话是谁在哪个帖子下说的」，
+// 与「采集样本逐个打接口」的旧用法（classify-samples）的区别：这里保留「这句话是谁在哪个帖子下说的」，
 // 聚合阶段要按帖子、时间、话题分组，丢了来源就没法聚类，也没法回查。
 
 import fs from 'node:fs';

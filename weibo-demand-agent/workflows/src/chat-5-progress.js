@@ -12,7 +12,7 @@ try {
 
 const PHASE = {
   queued: '排队中（后台工人马上接单）',
-  collecting: '第 1 步 / 共 3 步：采微博',
+  collecting: '第 1 步 / 共 3 步：采小红书',
   classifying: '第 2 步 / 共 3 步：逐条判定',
   aggregating: '第 3 步 / 共 3 步：汇总快照',
   done: '全部完成',
@@ -44,12 +44,12 @@ L.push('- 整体完成度：约 **' + pct() + '%**');
 
 if (job.status === 'done') {
   L.push('');
-  L.push('跑完了。现在可以问「' + (job.city || '') + '现在有多少线索」，或贴一条微博让我判。');
+  L.push('跑完了。现在可以问「' + (job.city || '') + '现在有多少线索」，或贴一条笔记正文让我判。');
   if (job.snapshot) L.push('（快照：`' + job.snapshot + '`）');
 } else if (job.status === 'failed') {
   L.push('');
   L.push('**失败原因**：' + (job.error || job.message || '未提供'));
-  L.push('常见原因：微博 Cookie 过期（重新打开 Edge 登录一次再跑）、或网络被限流。');
+  L.push('常见原因：小红书登录态失效（在终端跑一次「agent-reach login xiaohongshu」再重试）、或网络被限流。');
 } else {
   L.push('');
   L.push('_还在跑，过一会儿再说一次「进度」即可。_');

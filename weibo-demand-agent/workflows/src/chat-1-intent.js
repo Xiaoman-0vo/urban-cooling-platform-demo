@@ -131,6 +131,7 @@ if (intent === 'collect' || auto) {
     const junk = ['帮我', '给我', '麻烦', '请', '我要', '我想', '抓', '采集', '爬取', '爬一下', '爬',
       '收集', '搜集', '捞', '拉一批', '跑一批', '再抓', '多抓', '补抓', '下单', '建个任务', '开个任务',
       '一下', '一些', '一批', '点儿', '点', '的微博', '微博', '帖子', '评论', '内容', '数据', '线索',
+      '小红书', '小蓝书', '薯条', '笔记',
       '最近', '现在', '目前', '相关', '吧', '呗', '谢谢', '好吗', '可以吗', '的', '了', '吗', '？', '?'];
     kw = norm;
     if (city) {
@@ -138,15 +139,15 @@ if (intent === 'collect' || auto) {
       for (const alias of ((cities[city] && cities[city].aliases) || [])) kw = kw.split(alias).join('');
     }
     for (const w of junk) kw = kw.split(w).join('');
+    kw = kw.replace(/[（(]\s*(小红书|xiaohongshu|xhs)\s*[)）]/gi, '').replace(/[（(]\s*[)）]/g, '');
     kw = kw.slice(0, 20).trim() || '高温';
   }
 
-  // "多抓点/抓深一点" → 翻页与帖子数加倍（仍受额度上限约束）
+  // "多抓点/抓深一点" → 笔记数与评论数加倍（仍是抽样，小红书单条 20–35 秒，别贪多）
   const deep = /(多抓|抓多点|深一点|多一些|多来点|全一点|两页|2页)/.test(norm);
-  // 自动补采（用户没明说要抓）默认抓 2 页，样本太小时关切点会空
-  const pages = deep ? 2 : (auto ? 2 : 1);
-  const top = deep ? 12 : 6;
-  const comment_pages = deep ? 2 : 1;
+  // 小红书：搜一次 → 逐条读正文 → 逐条读评论，一条笔记 20–35 秒，所以默认只取 6 条
+  const limit = deep ? 10 : (auto ? 6 : 6);
+  const per_note_comments = deep ? 12 : (auto ? 6 : 8);
   const query = (city ? city + ' ' : '') + kw;
 
   job = {
@@ -155,12 +156,11 @@ if (intent === 'collect' || auto) {
     city: city || null,
     aliases: unknown_aliases,
     keyword: kw,
-    pages,
-    top,
-    comment_pages,
+    channel: 'xiaohongshu',
+    limit,
+    per_note_comments,
+    auto,                                    // true = 因“缺快照”自动补采，不是用户下的单
     max: 120,
-    pace: auto ? 800 : 1200,
-    auto,                                     // true = 因"缺快照"自动补采，不是用户下的单
     status: 'queued',
     phase: 'queued',
     message: '已下单，等待后台工人接单',

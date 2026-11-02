@@ -23,7 +23,7 @@ try {
 const c = snap.counts || {};
 const cityLabel = ctx.city || (snap.source && snap.source.city) || '成都';
 
-// ---- 原文链接：来源唯一，就是快照里每条记录的 source_url（采集器写入 m.weibo.cn/detail/<id>）
+// ---- 原文链接：来源唯一，就是快照里每条记录的 source_url（小红书为 xiaohongshu.com/explore/<id>，微博为 m.weibo.cn/detail/<id>）
 // 缺失 / 空串 / 不是 http 开头 → 一律当成"原文不可访问"，绝不拼接猜测的链接
 function normUrl(u) {
   if (typeof u !== 'string') return null;
@@ -197,6 +197,9 @@ const timeRange = {
 
 const facts = {
   city: cityLabel,
+  channel_zh: ((snap.source && snap.source.channel) || '').indexOf('xiaohongshu') >= 0
+    ? '小红书'
+    : (((snap.source && snap.source.channel) || '').indexOf('weibo') >= 0 ? '微博' : '公开平台'),
   snap_city: (snap.source && snap.source.city) || null,
   mode: snap.mode || 'unknown',
   generated_at: snap.generated_at || null,
@@ -255,7 +258,7 @@ const material = {
 };
 
 const system = [
-  '你是微博热感知助手的"讲人话"环节。给你一份已经抽取好的统计结果，你要把它组织成普通读者能看懂的中文。',
+  '你是城市热环境民意助手的"讲人话"环节。给你一份已经抽取好的统计结果（来源可能是小红书或微博），你要把它组织成普通读者能看懂的中文。',
   '',
   '硬性规则：',
   '1. 只能使用给定材料里的数字和原文，不得新增、不得改写条数、不得编造原文，不得推测受影响人数；',

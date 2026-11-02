@@ -80,7 +80,7 @@ if (placeName) {
 L.push(`- 体验：${list('experience_tags', item.experience_tags)}（倾向：${dirZh} · 场景：${zhOf('activity_scene', item.activity_scene)}）`);
 L.push(`- 诉求：${demandZh === '-' ? '只说体感，没提出要改什么' : demandZh}${topicZh ? ` · 归类：${topicZh}` : ''}`);
 // 粘贴进来的文本本身没有链接：明说，不伪造
-L.push('- 原文链接：（这条是你粘贴的文本，没有可跳转的链接；可在微博里搜这句话核对）');
+L.push('- 原文链接：（这条是你粘贴的文本，没有可跳转的链接；可在小红书/微博里搜这句话核对）');
 L.push('');
 L.push(`- 和热有关吗：**${zhOf('heat_relevance', item.heat_relevance)}** · 这是哪种说法：${list('content_types', item.content_types)}`);
 L.push(`- 把握有多大：${item.confidence ?? '-'}（${item.confidence_level || '-'}）· 需人工复核：${item.needs_review ? '是' : '否'}`);

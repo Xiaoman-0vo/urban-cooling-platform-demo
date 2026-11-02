@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>街区增绿降温 · 微博民意助手</title>
+<title>街区增绿降温 · 舆情民意助手</title>
 <link rel="stylesheet" href="./vendor/style.css">
 <style>
   /* ============================================================
@@ -433,8 +433,8 @@
       </svg>
     </div>
     <div class="brand-text">
-      <h1>街区增绿降温 · 微博民意助手</h1>
-      <p>公开微博抽样 · 规则预筛 + 大模型抽取 + 证据回查</p>
+      <h1>街区增绿降温 · 小红书民意助手</h1>
+      <p>小红书公开笔记抽样 · 规则预筛 + 大模型抽取 + 证据回查</p>
     </div>
     <div class="brand-badge">样本回放，非温度观测 · <b>不是人数</b></div>
   </div>
@@ -458,20 +458,20 @@
       i18n: {
         en: {
           title: '开始一次判读',
-          subtitle: '贴一条微博正文，我判断它是不是真实的热相关诉求，并给出可回查的证据片段；也可以问某个城市现在手上有多少线索。',
-          footer: '线索来自公开微博与一级评论的抽样，不是温度观测，也不代表居民总体感受。',
+          subtitle: '贴一条小红书笔记或微博正文，我判断它是不是真实的热相关诉求，并给出可回查的证据片段；也可以问某个城市现在手上有多少线索。',
+          footer: '线索来自小红书公开笔记与已加载的一级评论的抽样，不是温度观测，也不代表居民总体感受。',
           getStarted: '开始对话',
-          inputPlaceholder: '贴一条微博，或说“帮我抓成都 遮阴” / “成都现在有多少线索”',
+          inputPlaceholder: '贴一条笔记，或说“帮我抓成都 遮阴（小红书）” / “成都现在有多少线索”',
           closeButtonTooltip: '关闭'
         }
       },
       initialMessages: [
-        '你好，我是微博民意助理。三条边界先说清楚：\n' +
-        '\n1. 我只判读公开微博文本，不产生温度数据，也不代表市民总体感受；' +
+        '你好，我是城市热环境民意助理，当前接入小红书。三条边界先说清楚：\n' +
+        '\n1. 我只判读公开笔记文本，不产生温度数据，也不代表市民总体感受；' +
         '\n2. 地点范围由你的问题决定，我不预设城市（词表外的地名按字面采）；' +
         '\n3. 线索数量不是人数，去重后才是内容条数。',
         '**怎么用**\n' +
-        '- 贴一条微博 → 我判读并给出可回查的证据片段；\n' +
+        '- 贴一条笔记 → 我判读并给出可回查的证据片段；\n' +
         '- 「帮我抓成都 遮阴」→ 我下单去采，顶部进度条会走；\n' +
         '- 「成都现在有多少线索」→ 我报手上的抽样；\n' +
         '- 「进度」→ 我看后台跑到哪一步了。'
@@ -589,7 +589,7 @@
         else bits.push(d.phase_label || '');
         if (d.query) bits.push('「' + d.query + '」');
         if (d.total) bits.push((d.done || 0) + '/' + d.total + ' 条');
-        else if (d.posts) bits.push('帖子 ' + d.posts + ' · 评论 ' + (d.comments || 0));
+        else if (d.posts) bits.push('笔记 ' + d.posts + ' · 评论 ' + (d.comments || 0));
         if (d.status === 'failed' && d.error) bits.push(d.error);
         else if (!d.active && d.status === 'done') bits.push('可以问「' + (d.city || '') + '现在有多少线索」');
         else if (!queued && d.message) bits.push(d.message);
@@ -654,14 +654,15 @@
       new MutationObserver(sync).observe(wrap, { childList: true, subtree: true });
       sync();
 
-      // 回答里的链接一律新标签打开；m.weibo.cn 的原文页需要登录微博才能看，写在 title 里提示一下
+      // 回答里的链接一律新标签打开；小红书原文页需要登录才能看，写在 title 里提示一下
       const fixLinks = function () {
         document.querySelectorAll('#n8n-chat .n8n-markdown a[href]').forEach(function (a) {
           if (a.dataset.fixed) return;
           a.dataset.fixed = '1';
           a.target = '_blank';
           a.rel = 'noopener noreferrer';
-          if (a.href.indexOf('weibo.') >= 0) a.title = '在新标签打开微博原文（需登录微博）';
+          if (a.href.indexOf('xiaohongshu.com') >= 0) a.title = '在新标签打开小红书原文（需登录小红书）';
+      else if (a.href.indexOf('weibo.') >= 0) a.title = '在新标签打开微博原文（需登录微博）';
         });
       };
       new MutationObserver(fixLinks).observe(wrap, { childList: true, subtree: true });

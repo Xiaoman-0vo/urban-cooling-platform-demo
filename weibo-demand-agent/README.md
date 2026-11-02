@@ -63,10 +63,11 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts\deploy-workflow.ps1 
 **采集失败？** 多半是登录态过期，执行一次（装 Edge 的机器上）：
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File scripts\refresh-cookie.ps1
+# 小红书走 Agent Reach 的登录态（opencli 浏览器桥），登录一次即可：
+agent-reach login xiaohongshu
 ```
 
-它直接从本机 Edge 取登录态写入 `.weibo-cookie`（已在 `.gitignore`，**永不进仓库**）。
+登录态由 `agent-reach` 自己保管（不在本仓库），本项目不存任何 cookie。
 
 ---
 
@@ -86,7 +87,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts\refresh-cookie.ps1
                         │
                         ▼
                  scripts/job-worker.mjs（宿主机工人，串行）
-                   ① collect-weibo.mjs          采微博 + 一级评论 → data/raw_*.json
+                   ① collect-xhs.mjs            采小红书（search→read→comments）→ data/raw_<地区>_xhs.json
                    ② run-pipeline.mjs           逐条判定 → data/items_<城市>.json
                    ③ aggregate-heat-perception.mjs → data/heat_perception_<城市>.json
                         │
@@ -123,12 +124,11 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts\refresh-cookie.ps1
 | `workflows/04-demand-chat.json` | 聊天窗（25 节点）：`/webhook/wc9d1f2a34b7e48c0/chat` |
 | `workflows/05-job-status.json` | 进度查询：`GET /webhook/weibo-job-status` |
 | `workflows/src/*.js` | 各 Code 节点源码（**改这里，再跑 `scripts/build-*.py` 重新生成 JSON**） |
-| `scripts/collect-weibo.mjs` | 采集器（搜索 + 一级评论，`--job-id/--progress` 支持进度） |
+| `scripts/collect-xhs.mjs` | 采集器（小红书 search→read→comments，`--job-id/--progress` 支持进度） |
 | `scripts/run-pipeline.mjs` | 判定流水线（规则 → 模型 → 校验 → 合流，按城市过滤） |
 | `scripts/aggregate-heat-perception.mjs` | 汇总成平台快照 |
 | `scripts/job-worker.mjs` | 后台工人（轮询任务单，串行执行三步） |
 | `scripts/serve-chat.mjs` | 本地聊天页服务 + n8n 反向代理 |
-| `scripts/refresh-cookie.ps1` | 从 Edge 取登录态（CDP，需要时可重跑） |
 | `scripts/test-chat.ps1` | 聊天窗回归（5/5） |
 | `scripts/test-rules-local.mjs` / `test-place-scope.mjs` / `test-p3-api.ps1` | 规则层 13/13、地点 16/16、契约接口 10/10 |
 | `scripts/capture-chat.mjs` | 无头 Edge 给聊天页截图（`--welcome` 拍首屏） |
@@ -176,7 +176,7 @@ limits[] / generated_at / city
 |---|---|
 | 聊天页打不开 | `1-启动聊天窗.cmd` 的窗口必须开着；端口被占就 `--port 4178` |
 | 说"已下单"但一直排队 | `2-启动采集工人.cmd` 没开；`data/jobs` 被删（启动器会自动重建） |
-| 采集 0 条 | 登录态过期 → `scripts\refresh-cookie.ps1`；或换关键词确认有结果 |
+| 采集 0 条 | 小红书登录态过期 → `agent-reach login xiaohongshu` 重登；或换关键词确认有结果 |
 | 进度条不动 | `05-job-status` 没导入/没发布 → `deploy-workflow.ps1 -WorkflowFile workflows\05-job-status.json` |
 | 卡在"等待快照" | 看工人窗口报错；重跑 `node scripts\aggregate-heat-perception.mjs` |
 | 条数是旧的 | 快照还是上一轮 → 重新下单，或按城市重跑聚合 |
@@ -191,7 +191,7 @@ limits[] / generated_at / city
 | 判定口径、关键词、话题分类 | `config/taxonomy.v1.json` | 无（下次请求生效），同步升 `taxonomy_version` |
 | 城市别名 | `config/place-lexicon.v2.json` | 无；词表外城市本来也能按字面采 |
 | 节点逻辑（意图、渲染、校验） | `workflows/src/*.js` | `python scripts/build-chat-workflow.py` → `deploy-workflow.ps1` → 重启 n8n |
-| 采集规则（页数、评论数、限速） | `scripts/collect-weibo.mjs` + `chat-4-job.js` 取参 | 同上（重新构建 04） |
+| 采集规则（笔记数、每条评论数） | `chat-1-intent.js` 的 `limit` / `per_note_comments` + `scripts/collect-xhs.mjs` | 同上（重新构建 04） |
 | 平台读数 | `data/heat_perception*.json` | 拷到平台 `public/data/` |
 
 **自检命令**

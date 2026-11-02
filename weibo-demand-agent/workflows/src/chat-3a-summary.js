@@ -88,7 +88,7 @@ if (facts.snap_city && ctx.city && facts.snap_city !== ctx.city) {
   L.push(`> ⚠️ 你问的是「${ctx.city}」，但手上这份快照是「${facts.snap_city}」的，下面这些都是${facts.snap_city}的数据。`);
   L.push('');
 }
-L.push(`**${facts.city} · 微博热感知（${modeZh}）**`);
+L.push(`**${facts.city} · ${facts.channel_zh || '平台'}热感知（${modeZh}）**`);
 if (facts.city_note) L.push(`_${facts.city_note}_`);
 L.push('');
 L.push(`**一句话**：${summary}`);
@@ -112,7 +112,7 @@ if (leads.length) {
     L.push(`- 体验：${ld.experience}（${ld.direction}）`);
     L.push(`- 诉求：${ld.demands}${ld.topic_zh ? ` · 归类：${ld.topic_zh}` : ''}`);
     const when = ld.published_at ? ` · ${String(ld.published_at).slice(0, 10)}` : '';
-    L.push(`- 原文：${ld.url ? `[点开微博](${ld.url})` : '（原文不可访问）'} · 可信度 ${ld.confidence ?? '-'}${when}`);
+    L.push(`- 原文：${ld.url ? `[点开原文](${ld.url})` : '（原文不可访问）'} · 可信度 ${ld.confidence ?? '-'}${when}`);
   });
   L.push('');
 } else {

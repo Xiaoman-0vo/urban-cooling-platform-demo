@@ -53,10 +53,14 @@ const files = fs
 const CITY = String(arg('--city', '')).trim() || items.find((x) => x.scope_target)?.scope_target || null;
 let rawPostCount = 0;
 let rawCommentCount = 0;
+let RAW_CHANNEL_RAW = '';      // 采集渠道从原始文件的 stats 里读，不写死
 const queries = new Set();
 for (const f of files) {
   const j = JSON.parse(fs.readFileSync(path.join('data', f), 'utf8'));
   if (j.query) queries.add(j.query);
+  if (!RAW_CHANNEL_RAW && j.stats && (j.stats.channel || j.stats.source_channel)) {
+    RAW_CHANNEL_RAW = j.stats.channel || j.stats.source_channel;
+  }
   rawPostCount += (j.posts || []).length;
   rawCommentCount += (j.comments || []).length;
 }
@@ -161,6 +165,12 @@ const observations = [...obsByTopic.entries()]
     examples: list.slice(0, 2).map((x) => ({ item_id: x.item_id, excerpt: x.excerpt, source_url: x.source_url })),
   }));
 
+// ---------- 数据渠道：从原始文件里读，不写死 ----------
+// 采集器会在 raw.stats 里写 channel / source_channel；换成小红书后这里自动跟着变。
+const RAW_CHANNEL = RAW_CHANNEL_RAW || 'unknown';
+const CHANNEL = /xiaohongshu|xhs/i.test(RAW_CHANNEL) ? 'xiaohongshu' : (/weibo/i.test(RAW_CHANNEL) ? 'weibo' : RAW_CHANNEL);
+const CHANNEL_ZH = CHANNEL === 'xiaohongshu' ? '小红书' : (CHANNEL === 'weibo' ? '微博' : '公开平台');
+
 // ---------- 计数（三个计数分开报，不合并成“人数”）----------
 const inScope = items.filter(inScopeOf);
 const snapshot = {
@@ -177,7 +187,7 @@ const snapshot = {
   source: {
     window_days: DAYS || null,
     window_from: cut ? new Date(cut).toISOString().slice(0, 10) : null,
-    channel: 'weibo',
+    channel: CHANNEL,
     method: 'search + first-level comments',
     queries: [...queries],
     city: CITY,
@@ -208,7 +218,7 @@ const snapshot = {
   observations,
   items: pool.map((x) => ({
     item_id: x.item_id,
-    source: 'weibo',
+    source: CHANNEL,
     source_post_id: x.source_post_id,
     source_url: x.source_url,
     kind: x.kind,
@@ -240,7 +250,7 @@ const snapshot = {
   })),
   limits: [
     `这是抽样观察，不代表${CITY || '查询范围'}居民总体感受，也不能推出受影响人数。`,
-    '没有线索不等于没有热问题：微博用户结构不等于城市人口结构。',
+    `没有线索不等于没有热问题：${CHANNEL_ZH}用户结构不等于城市人口结构。`,
     '不据此插值成 100m 网格的热感受分布图。',
     '首版不把它写入温度模型的训练标签。',
   ],

@@ -21,7 +21,6 @@ Thumbs.db
 
 # ---- 凭证：只在本机，绝不入库 ----
 .weibo-cookie
-.weibo-cookie*
 cookie-paste.txt
 capture.har
 raw_weibo.json

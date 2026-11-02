@@ -107,22 +107,21 @@ function nodeBin() {
 async function runJob(job) {
   save(job, { status: 'running', phase: 'collecting', message: '开始采集', started_at: now() });
 
-  const rawName = `raw_job_${job.id}`;
+  const rawName = `raw_${job.city || 'all'}_xhs`;
   await run(
     nodeBin(),
     [
-      'scripts/collect-weibo.mjs',
+      'scripts/collect-xhs.mjs',
       '--query', job.query,
-      '--pages', String(job.pages || 1),
-      '--top', String(job.top || 6),
-      '--comment-pages', String(job.comment_pages || 1),
+      // 小红书单条笔记 20–35 秒，默认只取 6 条正文 + 每条 8 条一级评论
+      '--limit', String(job.limit || 6),
+      '--comments', String(job.per_note_comments || 8),
       '--out', `data/${rawName}.json`,
       '--job-id', job.id,
-      '--progress', `data/jobs/${job.id}.progress.json`,
-      '--pace', String(job.pace || 1200)
+      '--progress', `data/jobs/${job.id}.progress.json`
     ],
     job,
-    `采集：${job.query}`
+    `采集（小红书）：${job.query}`
   );
 
   save(job, { phase: 'classifying', message: '开始判定', done: 0, total: null });

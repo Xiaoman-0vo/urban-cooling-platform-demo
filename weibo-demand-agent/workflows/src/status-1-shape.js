@@ -4,7 +4,7 @@
 const raw = $input.first().json.data;
 const PHASE_ZH = {
   queued: '排队中',
-  collecting: '正在采集微博',
+  collecting: '正在采集小红书',
   classifying: '正在逐条判定',
   aggregating: '正在汇总快照',
   done: '已完成',
@@ -39,7 +39,12 @@ if (!job || !job.id) {
 let progress = 0;
 if (job.status === 'done') progress = 100;
 else if (job.status === 'failed') progress = 0;
-else if (job.phase === 'collecting') progress = 12;
+else if (job.phase === 'collecting') {
+  // 采集阶段：用"已抓评论的笔记数 / 目标笔记数"做 5%→28% 的细粒度进度
+  const targets = Number(job.comment_targets || job.posts || 0);
+  const doneNotes = Number(job.comment_done || 0);
+  progress = targets > 0 ? Math.min(28, 5 + Math.round((doneNotes / targets) * 23)) : 6;
+}
 else if (job.phase === 'aggregating') progress = 97;
 else if (job.phase === 'classifying') {
   const total = Number(job.total || 0);
