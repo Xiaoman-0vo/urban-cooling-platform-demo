@@ -37,6 +37,11 @@ function parseArgs(argv) {
     jobId: '',
     progress: '',
     timeout: 180000,   // 单次 agent-reach 调用超时（毫秒）
+    dry: false,        // --dry-run：只做 search + 标题粗筛，不 read 正文（测筛选用）
+    // --backend opencli|public-web：钉住取数后端。
+    // 默认 opencli（浏览器桥）：约 17s，但结果是真的小红书笔记、带 xsec_token，正文才读得到；
+    // public-web：约 2s，但结果偏泛、多半没有 token，read 会失败。
+    backend: 'opencli',
   };
   for (let i = 2; i < argv.length; i++) {
     const k = argv[i];
@@ -48,6 +53,8 @@ function parseArgs(argv) {
     else if (k === '--job-id') { out.jobId = v; i++; }
     else if (k === '--progress') { out.progress = v; i++; }
     else if (k === '--timeout') { out.timeout = Number(v); i++; }
+    else if (k === '--dry-run') { out.dry = true; i++; }
+    else if (k === '--backend') { out.backend = v; i++; }
   }
   return out;
 }
@@ -165,7 +172,9 @@ async function main() {
   writeProgress({ phase: 'searching', message: `搜索小红书「${ARGS.query}」` });
 
   // 1) 搜索（拿签名链接）
-  const s = callAgentReach(['xiaohongshu', 'search', ARGS.query], '搜索');
+  const searchArgs = ['xiaohongshu', 'search', ARGS.query];
+  if (ARGS.backend) searchArgs.push('--backend', ARGS.backend);
+  const s = callAgentReach(searchArgs, '搜索');
   if (!s.ok) {
     if (isLoginProblem(s)) {
       throw Object.assign(
@@ -180,7 +189,39 @@ async function main() {
   writeProgress({ phase: 'searching', pages_done: 1, posts: 0, message: `搜索命中 ${found.length} 条笔记，开始逐条读正文` });
   if (!found.length) throw new Error('搜索没有结果（可能是关键词太窄，或登录态已失效）');
 
-  const targets = found.slice(0, Math.max(1, ARGS.limit));
+  // ---- 标题粗筛：先按标题（和搜索页自带的预览正文）打分，只去读命中的 ----
+  // 为什么要筛：read 一条 18–35 秒，而搜索结果的标题里已经能看出八成是不是热相关。
+  // 打分规则：强词 2 分（遮阴/树荫/暴晒/闷热/高温…），弱词 1 分（热/晒/凉/公园/绿道…）；
+  // 命中线 = 强词至少 1 个，或弱词至少 2 个。全都没命中就退回原顺序，不至于 0 条。
+  const STRONG = ['遮阴', '遮荫', '树荫', '林荫', '阴凉', '荫凉', '纳凉', '乘凉', '闷热', '暴晒',
+    '晒死', '晒伤', '高温', '热死', '太晒', '晒得', '晒到', '降温', '通风', '遮阳', '热浪',
+    '中暑', '热岛', '体感', '避暑', '防晒', '纳凉点', '热得'];
+  const WEAK = ['热', '晒', '凉', '汗', '太阳', '公园', '绿道', '广场', '地铁站', '公交站', '室外'];
+  function scoreOf(it) {
+    const hay = String(it.title || '') + ' ' + String(it.text || '').slice(0, 200);
+    let score = 0;
+    const hits = [];
+    for (const w of STRONG) if (hay.includes(w)) { score += 2; hits.push(w); }
+    for (const w of WEAK) if (hay.includes(w)) { score += 1; hits.push(w); }
+    return { score, hits };
+  }
+  const scored = found.map((it, i) => ({ it, i, ...scoreOf(it) }));
+  const matched = scored.filter((x) => x.score >= 2);
+  const picked = (matched.length ? matched : scored).slice(0, Math.max(1, ARGS.limit));
+  log(`  标题粗筛：命中 ${matched.length}/${found.length} 条${matched.length ? '' : '（都没命中，退回原顺序）'}，本轮读 ${picked.length} 条`);
+  for (const x of scored) {
+    log(`    ${picked.includes(x) ? '✓' : '·'} [${x.score}] ${String(x.it.title || '').slice(0, 34)}${x.hits.length ? '  ← ' + x.hits.slice(0, 4).join('/') : ''}`);
+  }
+  writeProgress({
+    phase: 'searching', pages_done: 1,
+    notes_matched: matched.length, notes_found: found.length,
+    message: `搜索命中 ${found.length} 条，标题粗筛后读 ${picked.length} 条`,
+  });
+  if (ARGS.dry) {
+    log('（--dry-run：到此为止，不读正文、不写文件）');
+    return;
+  }
+  const targets = picked.map((x) => x.it);
   writeProgress({ comment_targets: targets.length, message: `逐条读正文（0/${targets.length}）` });
 
   // 2) 逐条读正文（同一轮里立刻读，签名链接不落地缓存）
