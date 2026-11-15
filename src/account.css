@@ -1,0 +1,58 @@
+.account-page {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  color: #edf8f2;
+  background: radial-gradient(ellipse at 14% 4%, #214333, transparent 55%), #0e1915;
+}
+.account-card, .account-dialog {
+  width: min(100%, 410px);
+  padding: 28px;
+  color: #edf8f2;
+  background: #15261f;
+  border: 1px solid #3a574a;
+  border-radius: 18px;
+  box-shadow: 0 20px 65px #07130f80;
+}
+.account-brand { display: flex; align-items: center; gap: 10px; color: #a9e6ba; font-weight: 700; }
+.account-card h1 { font-size: clamp(24px, 6vw, 31px); margin: 18px 0 6px; }
+.account-card p, .account-dialog p { color: #b7cfc1; line-height: 1.5; margin: 0 0 14px; font-size: 14px; }
+.account-card form, .account-dialog form { display: grid; gap: 14px; }
+.account-card label, .account-dialog label { display: grid; gap: 6px; font-size: 14px; }
+.account-card input, .account-dialog input, .account-dialog select {
+  width: 100%;
+  min-height: 43px;
+  padding: 9px 12px;
+  background: #0e1d17;
+  border: 1px solid #456255;
+  border-radius: 8px;
+  color: #edf8f2;
+  font: inherit;
+}
+.account-card input:focus-visible, .account-dialog :is(input, select, button):focus-visible,
+.account-card button:focus-visible { outline: 2px solid #aff0c0; outline-offset: 2px; }
+.account-primary {
+  min-height: 43px;
+  border: 0;
+  border-radius: 9px;
+  background: #b8ebc6;
+  color: #102819;
+  font-weight: 700;
+  cursor: pointer;
+}
+.account-primary:disabled, .account-link:disabled, .account-close:disabled { opacity: .65; cursor: wait; }
+.account-link, .account-close { border: 0; background: transparent; color: #b8ebc6; cursor: pointer; }
+.account-link { margin-top: 14px; min-height: 38px; padding: 0; text-decoration: underline; }
+.account-dialog { width: min(440px, calc(100% - 32px)); max-height: calc(100dvh - 32px); overflow: auto; margin: auto; }
+.account-dialog::backdrop { background: #071510c4; }
+.account-dialog header { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+.account-dialog h2 { margin: 0 0 4px; font-size: 23px; }
+.account-dialog .account-close { padding: 4px; }
+.account-card .account-error, .account-dialog .account-error { color: #ffc4b5; margin: 0; }
+.account-settings-nav {display:flex;gap:10px;margin:14px 0;border-bottom:1px solid #456255}
+.account-settings-nav button {padding:7px 9px;background:transparent;border:0;border-bottom:2px solid transparent;color:#a9c9b9;cursor:pointer}
+.account-settings-nav button[aria-pressed=true] {color:#d8f7e3;border-bottom-color:#b8ebc6}
+.account-mcp-actions {display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px}
+.account-mcp-actions .account-link {margin:0}
+.account-mcp-actions .account-primary {padding:0 12px}

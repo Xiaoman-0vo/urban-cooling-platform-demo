@@ -1,0 +1,9 @@
+{
+  "id": "chengdu-E4125_N33891-discussion-v1",
+  "site_id": "E4125_N33891",
+  "scenario_id": "E4125_N33891_preparation_baseline",
+  "candidates": [
+    { "id": "A", "review_id": "H2", "bounds_utm": [412581, 3389146, 412593, 3389158] },
+    { "id": "B", "review_id": "H1", "bounds_utm": [412541, 3389123, 412551, 3389153] }
+  ]
+}

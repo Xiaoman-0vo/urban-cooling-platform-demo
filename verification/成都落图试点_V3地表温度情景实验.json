@@ -1,0 +1,103 @@
+{
+  "schema": "chengdu-pilot-lst-experiment/1",
+  "status": "exploratory_no_intervention_validation",
+  "pilot_id": "chengdu-E4125_N33891-discussion-v1",
+  "site_id": "E4125_N33891",
+  "date": "2022-09-28",
+  "scene_id": "LC09_L2SP_129039_20220928_02_T1",
+  "observed_utc": "2022-09-28T03:33:44.881466Z",
+  "measurement_crs": "EPSG:32648",
+  "reference_grid_count": 1558,
+  "pilot_sha256": "c98724518a9091d5f9587d9cc400974a1136eadc3416d98d5dee82286ca863fb",
+  "raster_sha256": {
+    "datasets/extracted/03/urban-cooling-data-20261022/data/UBGG_Chengdu/chengdu_UBGG_3m.tif": "1799ed4a381549bb13dd3f591448165daa729ab0d89fc14fb17d37e8efcab8cb",
+    "datasets/extracted/03/urban-cooling-data-20261022/data/CNBH2020/CNBH10m_X105Y31.tif": "b3c94c4139fad665047520bdfb144ace7f84d98ab81b4d10943e10085a833dc9"
+  },
+  "feature_order": [
+    "ubgg_class_0_pct",
+    "ubgg_class_1_pct",
+    "ubgg_class_2_pct",
+    "ubgg_class_3_pct",
+    "ubgg_class_4_pct",
+    "cnbh_positive_support_pct",
+    "cnbh_positive_mean_height_m"
+  ],
+  "intervention": {
+    "from_ubgg_class": 1,
+    "to_ubgg_class": 2,
+    "mask": "impervious_excluding_positive_cnbh",
+    "assumption": "Missing CNBH heights are only considered under assumed site verification."
+  },
+  "baseline": {
+    "observed_lst_c": 33.567,
+    "estimated_lst_c": 32.97,
+    "center": [
+      0.0,
+      80.11,
+      19.89,
+      0.0,
+      0.0,
+      70.0,
+      17.009
+    ],
+    "neighbor_mean": [
+      0.011,
+      34.489,
+      65.5,
+      0.0,
+      0.0,
+      34.5,
+      18.145
+    ]
+  },
+  "candidates": [
+    {
+      "candidate_id": "A",
+      "bounds_utm": [
+        412581,
+        3389146,
+        412593,
+        3389158
+      ],
+      "footprint_m2": 144,
+      "impervious_m2": 144.0,
+      "impervious_with_positive_cnbh_m2": 144.0,
+      "impervious_with_unavailable_cnbh_m2": 0,
+      "impervious_with_nonpositive_cnbh_m2": 0,
+      "assumed_converted_m2": 0,
+      "status": "no_eligible_area",
+      "center": null,
+      "estimated_lst_c": null,
+      "baseline_minus_scenario_c": null
+    },
+    {
+      "candidate_id": "B",
+      "bounds_utm": [
+        412541,
+        3389123,
+        412551,
+        3389153
+      ],
+      "footprint_m2": 300,
+      "impervious_m2": 300.0,
+      "impervious_with_positive_cnbh_m2": 140.0,
+      "impervious_with_unavailable_cnbh_m2": 160.0,
+      "impervious_with_nonpositive_cnbh_m2": 0,
+      "assumed_converted_m2": 160.0,
+      "status": "conditional_on_cnbh_gap",
+      "center": [
+        0.0,
+        78.51,
+        21.49,
+        0.0,
+        0.0,
+        70.0,
+        17.009
+      ],
+      "estimated_lst_c": 32.996,
+      "baseline_minus_scenario_c": -0.027
+    }
+  ],
+  "model_sha256": "9a2c5db870c913f24215aee390864ca2ddaa22002c7428408d6e20e2db375ad2",
+  "dataset_sha256": "1ad57cb859bcfa30e9e329d030ed7dbddaad8ed45e62868bbe648b8143a93e54"
+}

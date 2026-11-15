@@ -24,6 +24,8 @@ const RAWS = String(arg('--raws', ''))
   .map((x) => x.trim())
   .filter(Boolean);
 const NO_PLATFORM = argv.includes('--no-platform');
+const workbenchData = process.env.URBANCOOL_XHS_JOB_DATA_DIR;
+const DATA = workbenchData || 'data';
 
 const TOPIC_ZH = {
   shade_deficit: '遮阴不足',
@@ -46,17 +48,21 @@ const raw = JSON.parse(fs.readFileSync(ITEMS_FILE, 'utf8'));
 const items = raw.items || [];
 // 分城市独立成账：只统计本次跑批读过的那些原始文件，避免把别的城市的采集量算进来
 const files = fs
-  .readdirSync('data')
+  .readdirSync(DATA)
   .filter((f) => /^raw_.*\.json$/.test(f))
   .filter((f) => !RAWS.length || RAWS.some((k) => f.includes(k)));
 // 目标城市：优先取逐条判定里带回来的 scope_target，其次取命令行给的 --city
 const CITY = String(arg('--city', '')).trim() || items.find((x) => x.scope_target)?.scope_target || null;
 let rawPostCount = 0;
 let rawCommentCount = 0;
+let collectedAt = null;
+let incompleteCollection = false;
 let RAW_CHANNEL_RAW = '';      // 采集渠道从原始文件的 stats 里读，不写死
 const queries = new Set();
 for (const f of files) {
-  const j = JSON.parse(fs.readFileSync(path.join('data', f), 'utf8'));
+  const j = JSON.parse(fs.readFileSync(path.join(DATA, f), 'utf8'));
+  if (j.fetched_at && (!collectedAt || j.fetched_at > collectedAt)) collectedAt = j.fetched_at;
+  if (j.stats?.errors > 0) incompleteCollection = true;
   if (j.query) queries.add(j.query);
   if (!RAW_CHANNEL_RAW && j.stats && (j.stats.channel || j.stats.source_channel)) {
     RAW_CHANNEL_RAW = j.stats.channel || j.stats.source_channel;
@@ -175,11 +181,11 @@ const CHANNEL_ZH = CHANNEL === 'xiaohongshu' ? '小红书' : (CHANNEL === 'weibo
 const inScope = items.filter(inScopeOf);
 const snapshot = {
   schema: 'heat-perception/1',
-  mode: 'historical_sample', // 抽样回放，不是实时流，也不是全市样本
+  mode: workbenchData ? 'on_demand_sample' : 'historical_sample',
   status: {
     overall: 'ok',
-    collection: 'ok',
-    classification: 'ok',
+    collection: workbenchData && incompleteCollection ? 'partial' : 'ok',
+    classification: workbenchData && raw.classification_failed > 0 ? 'partial' : 'ok',
     place_filter: 'ok',
     note: '单机小样本采集；未做授权接口接入，仅用于链路演示',
   },
@@ -192,7 +198,7 @@ const snapshot = {
     queries: [...queries],
     city: CITY,
     scope_filter: CITY ? 'only_target_city' : 'none',
-    fetched_at: raw.generated_at || null,
+    fetched_at: workbenchData ? collectedAt : raw.generated_at || null,
   },
   counts: {
     raw_posts: rawPostCount,
@@ -261,7 +267,7 @@ fs.writeFileSync(OUT_FILE, JSON.stringify(snapshot, null, 2), 'utf8');
 
 // 平台前端的静止快照位置（零后端改动即可读到）
 const platformDir = path.resolve('..', 'urban-cooling-platform-demo', 'public', 'data');
-if (!NO_PLATFORM && fs.existsSync(platformDir)) {
+if (!workbenchData && !NO_PLATFORM && fs.existsSync(platformDir)) {
   fs.writeFileSync(path.join(platformDir, 'heat_perception.json'), JSON.stringify(snapshot, null, 2), 'utf8');
   console.log('已同步到平台：' + path.join(platformDir, 'heat_perception.json'));
 }
@@ -276,5 +282,5 @@ for (const e of events) {
   console.log(`  ${String(e.item_count).padStart(2)} 条 · ${e.demand_topic_zh.padEnd(8)} · ${e.evaluation_direction ? JSON.stringify(e.evaluation_direction) : ''}`);
   console.log(`       「${(e.representative.excerpt || '').slice(0, 46)}」`);
 }
-const size = fs.statSync('data/heat_perception.json').size;
+const size = fs.statSync(OUT_FILE).size;
 console.log('\n写入 ' + OUT_FILE + '（' + size + ' 字节）');

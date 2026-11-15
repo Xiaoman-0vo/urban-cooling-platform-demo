@@ -1,0 +1,177 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "d61e278b-47e4-4c3e-8a19-b1bb6c246ce0",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              104.08779768844472,
+              30.631746956003955
+            ],
+            [
+              104.08792289302913,
+              30.63174783431453
+            ],
+            [
+              104.08792187741858,
+              30.631856105407312
+            ],
+            [
+              104.0877966726948,
+              30.631855227092974
+            ],
+            [
+              104.08779768844472,
+              30.631746956003955
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "candidate_id": "A",
+        "goal_version": 1,
+        "area_m2": 144,
+        "budget_rmb": 100000,
+        "cost_rmb": 43200,
+        "comparison_status": "within_declared_limits",
+        "review_status": "pending_team_review",
+        "source_review_id": "H2",
+        "pilot_sha256": "253eabefe479c47c4d265a101fb7100c977f965ca8b124f801251de03203cae8",
+        "prediction_status": "not_run"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "210f3cdc-9988-44c3-b740-eb9c802c614d",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              104.0873822875988,
+              30.631536507863245
+            ],
+            [
+              104.0874866245142,
+              30.63153724012586
+            ],
+            [
+              104.08748408428441,
+              30.631807917830205
+            ],
+            [
+              104.08737974707864,
+              30.63180718555973
+            ],
+            [
+              104.0873822875988,
+              30.631536507863245
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "candidate_id": "B",
+        "goal_version": 1,
+        "area_m2": 300,
+        "budget_rmb": 100000,
+        "cost_rmb": 90000,
+        "comparison_status": "within_declared_limits",
+        "review_status": "pending_team_review",
+        "source_review_id": "H1",
+        "pilot_sha256": "253eabefe479c47c4d265a101fb7100c977f965ca8b124f801251de03203cae8",
+        "prediction_status": "not_run"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a8590054-47b7-40ce-885d-dfb3451fbe6b",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              104.08779768844472,
+              30.631746956003955
+            ],
+            [
+              104.08792289302913,
+              30.63174783431453
+            ],
+            [
+              104.08792187741858,
+              30.631856105407312
+            ],
+            [
+              104.0877966726948,
+              30.631855227092974
+            ],
+            [
+              104.08779768844472,
+              30.631746956003955
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "candidate_id": "A",
+        "goal_version": 2,
+        "area_m2": 144,
+        "budget_rmb": 50000,
+        "cost_rmb": 43200,
+        "comparison_status": "within_declared_limits",
+        "review_status": "pending_team_review",
+        "source_review_id": "H2",
+        "pilot_sha256": "253eabefe479c47c4d265a101fb7100c977f965ca8b124f801251de03203cae8",
+        "prediction_status": "not_run"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "af1d7c22-9aa4-4eb8-8124-c95cdf20ab4e",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              104.0873822875988,
+              30.631536507863245
+            ],
+            [
+              104.0874866245142,
+              30.63153724012586
+            ],
+            [
+              104.08748408428441,
+              30.631807917830205
+            ],
+            [
+              104.08737974707864,
+              30.63180718555973
+            ],
+            [
+              104.0873822875988,
+              30.631536507863245
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "candidate_id": "B",
+        "goal_version": 2,
+        "area_m2": 300,
+        "budget_rmb": 50000,
+        "cost_rmb": 90000,
+        "comparison_status": "outside_declared_limits",
+        "review_status": "pending_team_review",
+        "source_review_id": "H1",
+        "pilot_sha256": "253eabefe479c47c4d265a101fb7100c977f965ca8b124f801251de03203cae8",
+        "prediction_status": "not_run"
+      }
+    }
+  ]
+}

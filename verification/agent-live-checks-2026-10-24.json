@@ -1,0 +1,56 @@
+{
+  "verified_at_utc": "2026-10-24T08:35:00.625260+00:00",
+  "provider": "DeepSeek",
+  "model": "deepseek-flash",
+  "local_session_id": "b1b3345d-5d51-4f71-b694-c5dd51c5848f",
+  "baseline": {
+    "scene_sha256": "ab2c7bcdc210ebe674688da9fe3abf3c7702ce66b92946367a75669afad03d2d",
+    "grid_sha256": "cf2e7722453f7b59ae9c8e3a54dae88df93da76997b6d9fe0a46afb9f805a1c4",
+    "case_id": "CD_E4125_N33891_source_handoff_v1",
+    "scenario_id": "E4125_N33891_preparation_baseline",
+    "source": "public/data/scene.json"
+  },
+  "verified_user_turns": 5,
+  "model_requests": 14,
+  "usage": {
+    "input_tokens": 56113,
+    "output_tokens": 2036
+  },
+  "tool_calls": [
+    "get_project_overview",
+    "get_input_gaps",
+    "set_planning_goal",
+    "generate_scenario_options",
+    "compare_scenario_options",
+    "set_planning_goal",
+    "generate_scenario_options",
+    "compare_scenario_options",
+    "export_planning_report",
+    "export_planning_report"
+  ],
+  "goal_version": 2,
+  "current_budget_rmb": 50000,
+  "current_areas_m2": [
+    250,
+    375,
+    500
+  ],
+  "current_costs_rmb": [
+    25000,
+    37500,
+    50000
+  ],
+  "retained_old_scenarios": 3,
+  "temperature_model_executed": false,
+  "checks": {
+    "source_query": true,
+    "goal_from_user_quote": true,
+    "deterministic_scenario_arithmetic": true,
+    "budget_revision_keeps_old_version": true,
+    "server_restart_restores_session": true,
+    "versioned_markdown_report": true,
+    "all_prediction_values_null": true,
+    "no_rejected_tools_or_turn_errors": true
+  },
+  "observed_limitation": "联调中有一次大模型复述旧版数值时口误并自我更正；数值卡片和程序报告结果正确。已收紧回答格式，后续需要继续评估自然语言事实一致性。"
+}
