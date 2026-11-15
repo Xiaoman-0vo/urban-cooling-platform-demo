@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {ArrowSquareOut, ChatCircleDots, Info, WarningCircle} from '@phosphor-icons/react';
 
 const dataUrl = name => `${import.meta.env.BASE_URL}data/${name}`;
+const SOURCE_LABELS = {weibo: '微博', xiaohongshu: '小红书'};
 
 const MODE_LABELS = {
   live: '实时授权接口',
@@ -43,7 +44,7 @@ function DirectionTally({tally}) {
 }
 
 /**
- * 微博热感知：只读展示 n8n 工作流产出的抽样快照。
+ * 只读展示公开表达的热感知抽样快照。
  * 快照里的每一条都是“公开表达线索”，不是观测温度，也不是居民总体感受。
  */
 export default function HeatPerceptionPanel({mode = 'full'}) {
@@ -54,7 +55,7 @@ export default function HeatPerceptionPanel({mode = 'full'}) {
     (async () => {
       try {
         const response = await fetch(dataUrl('heat_perception.json'), {cache: 'no-store'});
-        if (!response.ok) throw new Error(`微博热感知快照尚未接入（HTTP ${response.status}）。`);
+        if (!response.ok) throw new Error(`无法读取热感知快照（HTTP ${response.status}）。`);
         const snapshot = await response.json();
         if (snapshot?.schema !== 'heat-perception/1') throw new Error('快照版本不是 heat-perception/1，未载入。');
         if (alive) setState({loading: false, error: '', snapshot});
@@ -65,18 +66,20 @@ export default function HeatPerceptionPanel({mode = 'full'}) {
     return () => {alive = false;};
   }, []);
 
-  if (state.loading) return <section className="heat-perception" aria-label="微博热感知">
-    <h3>微博热感知</h3>
+  if (state.loading) return <section className="heat-perception" aria-label="热感知抽样">
+    <h3>热感知抽样</h3>
     <p className="muted">正在读取抽样快照……</p>
   </section>;
 
-  if (state.error) return <section className="heat-perception" aria-label="微博热感知">
-    <h3>微博热感知</h3>
+  if (state.error) return <section className="heat-perception" aria-label="热感知抽样">
+    <h3>热感知抽样</h3>
     <div className="empty-note"><Info size={22}/><span>{state.error}</span></div>
     <p className="evidence-note">这一栏没有数据时保持空缺，不用其它资料补齐，也不推断“没有人反映”。</p>
   </section>;
 
   const snapshot = state.snapshot;
+  const sourceLabel = SOURCE_LABELS[snapshot.source?.channel];
+  const title = sourceLabel ? `${sourceLabel}热感知` : '热感知抽样';
   const counts = snapshot.counts || {};
   const events = snapshot.events || [];
   const observations = snapshot.observations || [];
@@ -85,9 +88,9 @@ export default function HeatPerceptionPanel({mode = 'full'}) {
   const shown = mode === 'full' ? items.slice(0, 40) : items.slice(0, 2);
   const degraded = snapshot.mode !== 'live';
 
-  return <section className="heat-perception" aria-label="微博热感知">
-    <h3>微博热感知 <span className={`heat-mode ${snapshot.mode}`}>{MODE_LABELS[snapshot.mode] || snapshot.mode}</span></h3>
-    <p className="muted">来自公开微博搜索与一级评论的抽样线索，经工作流判定后回放。它描述“有人这样表达”，不描述温度，也不代表全市民意分布。</p>
+  return <section className="heat-perception" aria-label={title}>
+    <h3>{title} <span className={`heat-mode ${snapshot.mode}`}>{MODE_LABELS[snapshot.mode] || snapshot.mode}</span></h3>
+    <p className="muted">公开帖子和一级评论的抽样线索，可用于发现待核查的地点和诉求。</p>
 
     <div className="stat-rows heat-counts">
       <div><span>原始记录（帖 / 评）</span><strong>{countText(counts.raw_posts)} / {countText(counts.raw_comments)}</strong></div>

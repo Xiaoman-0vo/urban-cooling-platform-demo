@@ -1,6 +1,7 @@
 import React, {useEffect, useMemo, useRef, useState} from 'react';
 import {ArrowRight, ArrowLeft, ArrowClockwise, ArrowsOut, Buildings, ChatCircleDots, CheckCircle, Compass, DownloadSimple, FileArrowUp, FloppyDisk, FolderOpen, Info, Leaf, MapPin, Minus, MoonStars, Pause, Play, Plus, Sparkle, Stack, WarningCircle, X} from '@phosphor-icons/react';
 import MapCanvas from './MapCanvas.jsx';
+import AgentPanel from './AgentPanel.jsx';
 import {requireStudyLocation, validateStudyBoundary} from './regional-navigation.js';
 import ConditionalScenarios from './ConditionalScenarios.jsx';
 import {verifyConditionalSources} from './conditional-source-state.js';
@@ -77,7 +78,8 @@ export async function geometryViewsForAdoption(registrations,verify=verifyGeomet
   return views;
 }
 
-export function App() {
+export function App({account,modelRevision,accountControl,onModelSettings}={}) {
+  const accountId=account?.id;
   const [data,setData] = useState(null);
   const [bootError,setBootError] = useState('');
   const [stage,setStage] = useState('region');
@@ -119,6 +121,8 @@ export function App() {
   const exportSnapshotRef=useRef(null);
   const [preview,setPreview] = useState(false);
   const [drawer,setDrawer] = useState('');
+  const [agentOpen,setAgentOpen] = useState(false);
+  const [pilotPreview,setPilotPreview] = useState(null);
   const [selected,setSelected] = useState(null);
   const [visible,setVisible] = useState(DEFAULT_VISIBLE);
   const [offline,setOffline] = useState(false);
@@ -214,12 +218,13 @@ export function App() {
         setPreparationError(preparationLoadError);
         setSiteScene(scene);
         setSiteLayers(layerSubset(scene.layers));
-        setSaved(!!await readSavedProjectText());
+        const savedProject=await readSavedProjectText(accountId);
+        if(active)setSaved(Boolean(savedProject));
       } catch(error) { if(active) setBootError(error.message); }
     }
     load();
     return ()=>{active=false;clearTimeout(noticeTimer.current);};
-  },[]);
+  },[accountId]);
 
   const counts = siteScene?.counts || {};
   const native = Boolean(siteScene && data?.scene && siteScene.site_id === data.scene.site_id);
@@ -560,9 +565,9 @@ export function App() {
       const verifiedConditionalViews=await verifyConditionalSources(value.conditionalSourceRegistrations||[]);
       validateConditionalDrafts(value.conditionalScenarioDrafts||[],value.conditionalSourceRegistrations||[],verifiedConditionalViews,[...(value.preparationRegistrations||[]),...(value.sourcePreparationRegistrations||[]),...(value.geometrySourceRegistrations||[])]);
       requireUnchangedProject(snapshot);
-      await saveProjectText(JSON.stringify(value));
-      const readback=parseProjectJson(await readSavedProjectText());
-      if(JSON.stringify(readback)!==JSON.stringify(value)) throw new Error('本地保存读回不一致。');
+      await saveProjectText(JSON.stringify(value),accountId);
+      const readback=parseProjectJson(await readSavedProjectText(accountId));
+      if(JSON.stringify(readback)!==JSON.stringify(value)) throw new Error('保存读回不一致。');
       requireUnchangedProject(snapshot);
       setSaved(true);setSaveState('已保存');setDirty(false);
       notify(`已保存并读回核对：科研登记 ${researchRegistrations.length} 份，冻结准备 ${preparationRegistrations.length} 份，成果 ${supplementRegistrations.length} 组，来源准备 ${sourcePreparationRegistrations.length} 组，来源几何 ${geometrySourceRegistrations.length} 组。原科学状态保留。`);
@@ -574,9 +579,9 @@ export function App() {
     try {
       setLoadingFile(true);
       const snapshot=projectSnapshot();
-      const text=await readSavedProjectText();
-      if(!text) throw new Error('此浏览器没有已保存的场地。');
-      await restore(parseProjectJson(text),snapshot);setSaveState('已保存');notify('已恢复本地保存的场地、准备资料与视图；科学状态保持原值。');
+      const text=await readSavedProjectText(accountId);
+      if(!text) throw new Error(accountId?'此账户还没有已保存的场地。':'此浏览器没有已保存的场地。');
+      await restore(parseProjectJson(text),snapshot);setSaveState('已保存');notify('已恢复保存的场地、准备资料与视图。');
     } catch(error) {notify(error.message,true);}
     finally {setLoadingFile(false);}
   }
@@ -688,11 +693,12 @@ export function App() {
   const geometrySourceEvidence=mode=><GeometrySourceEvidence registrations={geometrySourceRegistrations} views={geometrySourceViews} currentRegistrations={data.currentGeometrySourceRegistrations||[]} currentViews={data.currentGeometrySourceViews||{}} error={geometrySourceError} mode={mode} busy={loadingFile} onAdopt={adoptGeometrySources} onOpen={()=>changeDrawer('geometry-sources')} onExportJson={()=>exportProject('json')} onShowGroup={showGeometryGroup} onHideMap={()=>{setGeometryReviewGroup('');setGeometrySelectedRef(null);}} onLocate={locateGeometry} onError={message=>notify(message,true)} onOptions={setGeometryReviewOptions} onSelectReference={selectGeometryReference} reviewGroup={geometryReviewGroup} selectedReference={geometrySelectedRef} options={geometryReviewOptions}/>;
 
   return <main className={`workspace ${stage}`}>
-    <MapCanvas sceneLayers={siteLayers} regionalNodes={data.nodes} regionalGreenPoints={data.greenPoints} regionalRoads={data.regionalRoads} cityBoundary={data.cityBoundary} cityGreenPoints={data.cityGreenPoints} urbanGreenPoints={data.urbanGreenPoints} cityEffects={data.cityEffects} browseRegion={region} provinceBoundary={data.provinceBoundary} provinceRivers={data.provinceRivers} provincePlaces={data.provincePlaces} studyBoundary={data.studyBoundary} studyReferenceCenter={data.navigationContext?.study_reference_center} residenceCandidates={residenceCandidates} sourceReviewCollections={sourceReviewCollections} geometryReviewCollections={geometryReviewCollections} center={center} stage={stage} locationPicking={stage==='region' && region==='成都' && !preview} visible={visible} offline={offline} orbit={orbit} onOrbitPause={()=>setOrbit(false)} onPick={pick} onStudyFocus={goStudy} onSelect={selectMapObject} onReady={map=>{mapRef.current=map;fitCity(map,0);map.on('moveend',()=>{if(!restoringRef.current)setDirty(true);});}} onMapError={error=>notify(error?.message || String(error),true)}/>
+    <AgentPanel accountId={accountId} modelRevision={modelRevision} onModelSettings={onModelSettings} open={agentOpen} onOpenChange={value=>{setAgentOpen(value);if(value)setDrawer('');}} context={{site_id:siteScene?.site_id,scenario_id:siteScene?.scenario_id,selection:{layer:selected?.layerKey || '',id:String(selected?.feature?.properties?.grid_id || selected?.feature?.properties?.merged_id || selected?.feature?.id || '')}}} onLocate={point=>{setOrbit(false);mapRef.current?.flyTo({center:point,zoom:16,pitch:35,duration:1000});}} onPreview={(collection,point)=>{setPilotPreview(collection?{siteId:siteScene?.site_id,scenarioId:siteScene?.scenario_id,collection}:null);if(point){setOrbit(false);mapRef.current?.flyTo({center:point,zoom:18.7,pitch:0,offset:[-140,0],duration:800});}}}/>
+    <MapCanvas sceneLayers={siteLayers} regionalNodes={data.nodes} regionalGreenPoints={data.greenPoints} regionalRoads={data.regionalRoads} cityBoundary={data.cityBoundary} cityGreenPoints={data.cityGreenPoints} urbanGreenPoints={data.urbanGreenPoints} cityEffects={data.cityEffects} browseRegion={region} provinceBoundary={data.provinceBoundary} provinceRivers={data.provinceRivers} provincePlaces={data.provincePlaces} studyBoundary={data.studyBoundary} studyReferenceCenter={data.navigationContext?.study_reference_center} residenceCandidates={residenceCandidates} sourceReviewCollections={sourceReviewCollections} geometryReviewCollections={geometryReviewCollections} planningPilotPreview={pilotPreview?.siteId===siteScene?.site_id&&pilotPreview?.scenarioId===siteScene?.scenario_id?pilotPreview?.collection:null} center={center} stage={stage} locationPicking={stage==='region' && region==='成都' && !preview} visible={visible} offline={offline} orbit={orbit} onOrbitPause={()=>setOrbit(false)} onPick={pick} onStudyFocus={goStudy} onSelect={selectMapObject} onReady={map=>{mapRef.current=map;fitCity(map,0);map.on('moveend',()=>{if(!restoringRef.current)setDirty(true);});}} onMapError={error=>notify(error?.message || String(error),true)}/>
     <header className="masthead">
       <button className="brand" onClick={()=>goRegion('成都')} aria-label="回到成都全域地图"><Stack size={34} weight="duotone"/><span>街区绿色空间研究<small>城市尺度 · 精细场地 · 科学分析</small></span></button>
       <nav className="steps" aria-label="研究路径"><button className={stage==='region'?'active':''} onClick={()=>goRegion()}><span>1</span>定位场地</button><ArrowRight size={15}/><button className={stage==='site'&&drawer!=='capabilities'?'active':''} onClick={()=>{if(stage==='region')enterSite();else changeDrawer('overview');}}><span>2</span>检查资料</button><ArrowRight size={15}/><button className={drawer==='capabilities'?'active':''} onClick={()=>changeDrawer('capabilities')}><span>3</span>分析条件</button></nav>
-      <div className="header-actions"><select aria-label="区域视野" value={region} onChange={e=>goRegion(e.target.value)}><option>成都</option><option>四川</option></select><button title="恢复本地保存" aria-label="恢复本地保存" onClick={restoreSaved} disabled={!saved || loadingFile}><FolderOpen size={21}/></button><button title="重开交接包" aria-label="重开交接包" disabled={loadingFile} onClick={()=>reopenRef.current.click()}><FileArrowUp size={21}/></button><button title="保存场地" aria-label="保存场地" disabled={loadingFile} onClick={save}><FloppyDisk size={21}/></button><button aria-label="两种评价情景" title="分别编辑与保存评价情景" onClick={()=>changeDrawer('conditional-scenarios')}>情景</button><button className={drawer==='weibo'?'on':''} aria-label="微博热感知" title="微博热感知抽样回放" onClick={()=>changeDrawer('weibo')}><ChatCircleDots size={21}/></button><span className="save-status">{dirty?'有未保存设置':saveState}</span></div>
+      <div className="header-actions"><select aria-label="区域视野" value={region} onChange={e=>goRegion(e.target.value)}><option>成都</option><option>四川</option></select><button title={accountId?"恢复账户工程":"恢复本地保存"} aria-label={accountId?"恢复账户工程":"恢复本地保存"} onClick={restoreSaved} disabled={!saved || loadingFile}><FolderOpen size={21}/></button><button title="重开交接包" aria-label="重开交接包" disabled={loadingFile} onClick={()=>reopenRef.current.click()}><FileArrowUp size={21}/></button><button title="保存场地" aria-label="保存场地" disabled={loadingFile} onClick={save}><FloppyDisk size={21}/></button><button aria-label="两种评价情景" title="分别编辑与保存评价情景" onClick={()=>changeDrawer('conditional-scenarios')}>情景</button><button className={drawer==='weibo'?'on':''} aria-label="热感知抽样" title="查看公开热感知线索" onClick={()=>changeDrawer('weibo')}><ChatCircleDots size={21}/></button>{accountControl}<span className="save-status">{dirty?'有未保存设置':saveState}</span></div>
     </header>
 
     <aside className="map-tools" aria-label="地图控制"><button aria-label="地图放大" onClick={()=>mapRef.current?.zoomIn()}><Plus size={21}/></button><button aria-label="地图缩小" onClick={()=>mapRef.current?.zoomOut()}><Minus size={21}/></button><button aria-label="回到北向" onClick={()=>mapRef.current?.easeTo({bearing:0,duration:600})}><Compass size={23}/></button><button aria-label="切换俯视与倾斜" onClick={()=>mapRef.current?.easeTo({pitch:mapRef.current.getPitch()>10?0:55,duration:600})}><ArrowsOut size={22}/></button><button className={orbit?'on':''} aria-label={orbit?'暂停环视':'开始环视'} onClick={()=>setOrbit(v=>!v)}>{orbit?<Pause size={22}/>:<Play size={22}/>}</button><button className={visible.greenFx!==false?'on':''} aria-label="地图光效" title="全市光效随缩放变化" aria-pressed={visible.greenFx!==false} onClick={()=>toggleLayer('greenFx')}><Sparkle size={22}/></button><button className={offline?'on':''} aria-label={offline?'启用在线导航底图':'只用本地图层'} onClick={()=>{setOffline(v=>!v);setDirty(true);}}><MoonStars size={22}/></button><button className={drawer==='source-preparations'?'on':''} aria-label="来源准备审阅" title="审阅三组来源准备" onClick={()=>changeDrawer('source-preparations')}><Info size={22}/></button><button className={drawer==='geometry-sources'?'on':''} aria-label="来源几何与对象审阅" title="审阅三组来源几何与对象" onClick={()=>changeDrawer('geometry-sources')}><Buildings size={22}/></button></aside>
@@ -734,7 +740,7 @@ export function App() {
       {drawer==='supplements' && <><h2>五组成果资料</h2>{supplementEvidence('full')}</>}
       {drawer==='source-preparations' && <><h2>三组来源准备</h2>{sourcePreparationEvidence('full')}</>}
       {drawer==='geometry-sources' && <><h2>来源几何与对象</h2>{geometrySourceEvidence('full')}</>}
-      {drawer==='weibo' && <><h2>微博热感知</h2><p className="muted">抽样回放：公开微博与一级评论经 n8n 工作流判定后的线索。不是温度观测，也不是居民总体感受。</p><HeatPerceptionPanel mode="full"/></>}
+      {drawer==='weibo' && <><h2>热感知抽样</h2><HeatPerceptionPanel mode="full"/></>}
       {drawer==='research' && <><h2>科研开发证据</h2>{researchEvidence('full')}</>}
       {drawer==='capabilities' && <><h2>选择下一项研究任务</h2><p className="muted">当前可进行资料检查与已有指标浏览。各科研模块须通过其输入、研究验证及软件验收。</p>{supplementEvidence('summary')}{preparationEvidence('summary')}{researchEvidence('summary')}<HeatPerceptionPanel mode="summary"/><h3>各方向应用条件</h3><div className="capability-list">{data.sourcePackage.capabilities.map(cap=><details key={cap.capability_id}><summary><span>{cap.capability_id} · {cap.question}</span><em>条件待补 / 待接入</em></summary><dl>{Object.entries(cap).filter(([key])=>!['question','capability_id'].includes(key)).map(([key,value])=><React.Fragment key={key}><dt>{key}</dt><dd>{showValue(value)}</dd></React.Fragment>)}</dl></details>)}</div><div className="goal-note"><h3>两种目标分别保存</h3><p>02：最小标准化指标距离D（无量纲）。</p><p>03：达到共同预测目标的最少新增绿色投影面积（m²），协议与独立搜索待确认。</p><p>D候选换算面积不等于面积最优。当前未执行这两种搜索。</p></div><button className="primary full" onClick={save}>保存分析准备记录 <FloppyDisk size={21}/></button></>}
       <div className="drawer-footer"><button className="secondary" disabled={loadingFile} onClick={save}><FloppyDisk size={18}/>保存</button><button className="primary" onClick={exportProject} disabled={loadingFile}><DownloadSimple size={18}/>{loadingFile?'整理中':'导出交接'}</button></div>

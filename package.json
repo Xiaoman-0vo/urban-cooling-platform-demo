@@ -5,14 +5,25 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 127.0.0.1 --port 5173 --strictPort",
+    "dev:agent": "node scripts/dev-agent.mjs",
+    "dev:agent:qwen": "node scripts/dev-agent.mjs --qwen",
+    "dev:accounts": "node scripts/dev-agent.mjs --accounts",
+    "agent:server": "node server/agent-server.mjs",
+    "start:accounts": "node server/agent-server.mjs --workbench",
+    "test:agent": "node --test tests/agent.test.mjs tests/goal-evidence.test.mjs tests/multi-agent.test.mjs tests/qwen-client.test.mjs tests/planning-pilot.test.mjs",
+    "test:accounts": "node --test tests/accounts.test.mjs",
     "build": "vite build && node scripts/prepare-sites-build.mjs",
+    "build:accounts": "vite build --mode accounts && node scripts/prepare-sites-build.mjs",
     "preview": "vite preview --host 127.0.0.1 --port 4190 --strictPort",
     "test:sites": "node --test tests/sites-worker.test.mjs",
     "test:startup": "node --test tests/local-platform-service.test.mjs",
-    "test": "node --test tests/regional-navigation.test.mjs tests/supplement-state.test.mjs tests/supplement-project.test.mjs tests/source-preparation-state.test.mjs tests/source-geometry-state.test.mjs tests/geometry-source-ui.test.mjs tests/sites-worker.test.mjs tests/local-platform-service.test.mjs tests/embedded-evidence.test.mjs",
+    "test": "node --test tests/agent.test.mjs tests/goal-evidence.test.mjs tests/multi-agent.test.mjs tests/planning-pilot.test.mjs tests/regional-navigation.test.mjs tests/supplement-state.test.mjs tests/supplement-project.test.mjs tests/source-preparation-state.test.mjs tests/source-geometry-state.test.mjs tests/geometry-source-ui.test.mjs tests/sites-worker.test.mjs tests/local-platform-service.test.mjs tests/embedded-evidence.test.mjs",
     "test:research-source": "node --test tests/regional-navigation.test.mjs tests/map-canvas.test.mjs tests/project.test.mjs tests/research-state.test.mjs tests/preparation-state.test.mjs tests/supplement-state.test.mjs tests/supplement-project.test.mjs tests/source-preparation-state.test.mjs tests/source-preparation-project.test.mjs tests/sites-worker.test.mjs tests/source-geometry-state.test.mjs tests/source-geometry-context.test.mjs tests/source-geometry-project.test.mjs tests/geometry-source-ui.test.mjs tests/conditional-scenarios.test.mjs"
   },
   "dependencies": {
+    "@langchain/core": "1.4.0",
+    "@langchain/langgraph": "1.7.4",
+    "@modelcontextprotocol/sdk": "1.32.2",
     "@phosphor-icons/react": "2.1.10",
     "@vitejs/plugin-react": "5.0.4",
     "jszip": "3.10.2",
@@ -20,7 +31,9 @@
     "proj4": "2.22.0",
     "react": "19.2.0",
     "react-dom": "19.2.0",
-    "vite": "6.4.2"
+    "sirv": "3.0.2",
+    "vite": "6.4.2",
+    "zod": "4.6.7"
   },
   "engines": {
     "node": "^20.19.0 || >=22.12.0"

@@ -1,0 +1,28 @@
+# ---- 本机运行产物，不进仓库 ----
+data/*
+!data/.gitkeep
+!data/jobs/
+!data/jobs/.gitkeep
+!data/heat_perception*.json
+data/jobs/*.json
+data/screens/
+data/nodes.json
+data/collect/
+data/_*
+.env
+*.log
+node_modules/
+__pycache__/
+*.bak
+Thumbs.db
+.DS_Store
+.vscode/
+.idea/
+
+# ---- 凭证：只在本机，绝不入库 ----
+.weibo-cookie
+.weibo-cookie*
+cookie-paste.txt
+capture.har
+raw_weibo.json
+classified_weibo.json

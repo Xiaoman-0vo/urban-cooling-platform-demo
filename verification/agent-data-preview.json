@@ -1,0 +1,308 @@
+{
+  "purpose": "DeepSeek项目Agent真实资料联调，拟外发内容预览",
+  "provider": "DeepSeek official API",
+  "user_question": "梳理当前场地的真实绿量、数据限制和预测接入缺项。",
+  "tool_definitions": [
+    {
+      "type": "function",
+      "function": {
+        "name": "get_project_overview",
+        "description": "读取项目真实能力、当前场地、资料版本与预测接入状态。",
+        "parameters": {
+          "type": "object",
+          "properties": {},
+          "required": [],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "get_grid_context",
+        "description": "查询已保存网格的位置和已有指标；非示例网格通常只有索引，不能复用示例数值。",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "grid_id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "grid_id"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "get_input_gaps",
+        "description": "读取真实场地缺项与接入温度服务所需移交清单。",
+        "parameters": {
+          "type": "object",
+          "properties": {},
+          "required": [],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "set_planning_goal",
+        "description": "将用户明确给出的数字登记为目标草案；预算/候选面积/单价不得自行假设。金额单位元，面积㎡。",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "budget_rmb": {
+              "type": "number",
+              "description": "建设预算"
+            },
+            "candidate_area_m2": {
+              "type": "number",
+              "description": "用户声明的候选面积"
+            },
+            "unit_cost_rmb_per_m2": {
+              "type": "number",
+              "description": "假设建设单价"
+            },
+            "added_green_target_m2": {
+              "type": "number",
+              "description": "新增绿量目标"
+            },
+            "target_delta_lst_c": {
+              "type": "number",
+              "description": "期望地表降温"
+            },
+            "evidence_quote": {
+              "type": "string",
+              "description": "包含所登记数字的用户原话，必须逐字引用"
+            }
+          },
+          "required": [
+            "evidence_quote"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "generate_scenario_options",
+        "description": "根据已登记预算、用户声明候选面积与假设单价生成三档配置目标；不是空间布局或降温优化。",
+        "parameters": {
+          "type": "object",
+          "properties": {},
+          "required": [],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "compare_scenario_options",
+        "description": "比较当前目标版本的草案面积和假设费用，旧版本单独标记。",
+        "parameters": {
+          "type": "object",
+          "properties": {},
+          "required": [],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "request_temperature_prediction",
+        "description": "用户明确要求预测时检查接入状态。当前必定返回未接通与空值，不会调用或虚构温度模型。",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "scenario_id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "scenario_id"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "export_planning_report",
+        "description": "将真实资料、当前目标及方案比较导出为带依据和假设的Markdown记录。",
+        "parameters": {
+          "type": "object",
+          "properties": {},
+          "required": [],
+          "additionalProperties": false
+        }
+      }
+    }
+  ],
+  "project_overview": {
+    "status": "source_query",
+    "context": {
+      "site_id": "E4125_N33891",
+      "scenario_id": "E4125_N33891_preparation_baseline",
+      "selection": {
+        "layer": "",
+        "id": ""
+      },
+      "data_scope": "loaded_research_example"
+    },
+    "capabilities": {
+      "project_query": true,
+      "goal_drafts": true,
+      "assumption_based_scenarios": true,
+      "report_export": true,
+      "temperature_prediction": false,
+      "spatial_intervention_compiler": false,
+      "construction_feasibility": false,
+      "note": "支持真实资料查询与配置目标草案；草案面积和费用依赖用户声明，未落实到地块，未计算温度。"
+    },
+    "baseline": {
+      "scene_sha256": "ab2c7bcdc210ebe674688da9fe3abf3c7702ce66b92946367a75669afad03d2d",
+      "grid_sha256": "cf2e7722453f7b59ae9c8e3a54dae88df93da76997b6d9fe0a46afb9f805a1c4",
+      "case_id": "CD_E4125_N33891_source_handoff_v1",
+      "scenario_id": "E4125_N33891_preparation_baseline",
+      "source": "public/data/scene.json"
+    },
+    "current_site": {
+      "status": "research_preparation_evidence",
+      "grid_id": "E4125_N33891",
+      "area_m2": 10000,
+      "role": "inside_full",
+      "location": [
+        104.0874739021715,
+        30.631780775840326
+      ],
+      "location_role": "saved_grid_geometry_reference_center",
+      "references": [
+        "public/data/scene.json#counts",
+        "public/data/scene.json#records",
+        "public/data/macro_nodes.geojson"
+      ],
+      "temperature_prediction": null,
+      "sample_status": "agent_selected_replaceable_working_example_not_user_confirmed_or_formal_sample",
+      "scientific_scope": "mixed_date_geometry_preparation_not_certified_synchronous_baseline",
+      "source_scenario_id": "E4125_N33891_preparation_baseline",
+      "classified_green_projection_area_m2": 1989,
+      "classified_green_projection_percent": 19.89,
+      "green_fragments": 3,
+      "green_source_groups": 1,
+      "source_buildings_in_preparation_window": 53,
+      "working_building_parts": 54,
+      "core_source_buildings": 5,
+      "source_classification_variant": "c4_min0",
+      "remaining_buildable_area_m2": null,
+      "observed_temperature": null,
+      "note": "分类绿色投影是现有来源描述；不能据总面积减建筑和绿地推断可改造面积。未调用温度模型。"
+    },
+    "research_lines": [
+      {
+        "id": "02",
+        "name": "冻结温度预测与函数目标反推",
+        "online_service": false
+      },
+      {
+        "id": "03",
+        "name": "独立增绿需求与土地负担",
+        "joint_contract_aligned": false
+      },
+      {
+        "id": "04",
+        "name": "潜在冷机会与人口分配",
+        "joint_contract_aligned": false
+      }
+    ],
+    "note": "各研究线保持独立，现有来源登记不代表当前模型已执行。"
+  },
+  "input_gaps": {
+    "status": "missing_inputs",
+    "site_scope": "E4125_N33891",
+    "site_items": [
+      {
+        "group": "geometry",
+        "item": "building_footprint_height_date",
+        "status": "pending_source_and_field_check",
+        "required_evidence": "屋顶投影、工作高度及现状变化",
+        "value": null
+      },
+      {
+        "group": "fixed_space",
+        "item": "road_polygons_and_access",
+        "status": "missing",
+        "required_evidence": "道路占地、可通行与可改造位置",
+        "value": null
+      },
+      {
+        "group": "vegetation",
+        "item": "tree_position_crown_height_leaf_structure",
+        "status": "missing",
+        "required_evidence": "单木位置、树高、冠幅、冠底、叶量；合类不能替代",
+        "value": null
+      },
+      {
+        "group": "material",
+        "item": "wall_roof_paving_thermal_properties",
+        "status": "missing",
+        "required_evidence": "材料类别与可追溯热工参数",
+        "value": null
+      },
+      {
+        "group": "soil",
+        "item": "profile_initial_moisture_irrigation",
+        "status": "missing",
+        "required_evidence": "土壤分层、初始含水与灌溉条件",
+        "value": null
+      },
+      {
+        "group": "forcing",
+        "item": "synchronous_hourly_weather",
+        "status": "missing_for_this_site_day",
+        "required_evidence": "研究日同期背景气象",
+        "value": null
+      },
+      {
+        "group": "observation",
+        "item": "air_surface_wind_measurements",
+        "status": "missing_for_this_site_day",
+        "required_evidence": "同日同位置观测与独立留出",
+        "value": null
+      },
+      {
+        "group": "solver",
+        "item": "executable_and_site_adapter",
+        "status": "not_ready",
+        "required_evidence": "引擎运行环境和模型专属输入适配",
+        "value": null
+      }
+    ],
+    "model_service_missing": [
+      "冻结推理代码与权重",
+      "训练时的标准化和状态编码器",
+      "同口径特征与完整图邻域",
+      "固定样例和依赖环境",
+      "受支持干预到模型特征的转换规则",
+      "在线推理接口与适用性检查"
+    ],
+    "references": [
+      "public/data/scene.json#tables.micro_missing_inputs",
+      "README.md#模型服务另行整理的范围"
+    ]
+  },
+  "planning_test_assumptions": {
+    "budget_rmb": 100000,
+    "candidate_area_m2": 800,
+    "unit_cost_rmb_per_m2": 100,
+    "source": "agent_live_test_example_assumptions"
+  }
+}

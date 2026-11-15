@@ -151,7 +151,7 @@ export function roadSnapshot(data, requested) {
 
 /** Build categorical input layers only; no generated trees, contours or heat output. */
 export const GEOMETRY_SVF_STOPS = Object.freeze([[0, '#440154'], [0.25, '#3b528b'], [0.5, '#21918c'], [0.75, '#5ec962'], [1, '#fde725']]);
-export function researchDescriptors({ sceneLayers = {}, regionalNodes, regionalGreenPoints, regionalRoads, cityGreenPoints, urbanGreenPoints, cityBoundary, cityEffects, browseRegion = '成都', provinceBoundary, provinceRivers, provincePlaces, studyBoundary, studyReferenceCenter, residenceCandidates, sourceReviewCollections = {}, geometryReviewCollections = {},
+export function researchDescriptors({ sceneLayers = {}, regionalNodes, regionalGreenPoints, regionalRoads, cityGreenPoints, urbanGreenPoints, cityBoundary, cityEffects, browseRegion = '成都', provinceBoundary, provinceRivers, provincePlaces, studyBoundary, studyReferenceCenter, residenceCandidates, sourceReviewCollections = {}, geometryReviewCollections = {}, planningPilotPreview,
   center, stage = 'region', visible = {} }) {
   const items = [];
   const add = (key, data, layers, toggle = key) => {
@@ -168,6 +168,7 @@ export function researchDescriptors({ sceneLayers = {}, regionalNodes, regionalG
   const line = (color, width, dash) => ({ id: 'line', type: 'line', paint: {
     'line-color': color, 'line-width': width, ...(dash ? { 'line-dasharray': dash } : {}),
   } });
+
 
   // Generalized provincial navigation stays separate from the unsimplified
   // operational study polygon. Blue places do not represent green measurements.
@@ -460,6 +461,8 @@ export function researchDescriptors({ sceneLayers = {}, regionalNodes, regionalG
   }] } : EMPTY, [{ id: 'point', type: 'circle', paint: {
     'circle-radius': 5, 'circle-color': '#8fd7e5', 'circle-stroke-color': '#122631', 'circle-stroke-width': 2,
   } }]);
+  const pilotColor=['case',['==',['get','comparison_status'],'outside_declared_limits'],'#ffb457','#5de8e3'];
+  add('planning_pilot',planningPilotPreview,[fill(pilotColor,0.25),line(pilotColor,3,[2,1])]);
   return { items, snapshot };
 }
 
@@ -751,7 +754,7 @@ export default function MapCanvas(props) {
   useEffect(() => { sync(); }, [props.sceneLayers, props.regionalNodes, props.regionalGreenPoints, props.regionalRoads,
     props.cityGreenPoints, props.urbanGreenPoints, props.cityBoundary, props.cityEffects, props.browseRegion,
     props.provinceBoundary, props.provinceRivers, props.provincePlaces, props.studyBoundary, props.studyReferenceCenter,
-    props.residenceCandidates, props.sourceReviewCollections, props.geometryReviewCollections,
+    props.residenceCandidates, props.sourceReviewCollections, props.geometryReviewCollections, props.planningPilotPreview,
     props.stage, props.visible, pivot?.[0], pivot?.[1]]);
 
   useEffect(() => {

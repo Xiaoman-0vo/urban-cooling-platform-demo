@@ -1,0 +1,120 @@
+{
+  "verified_at": "2026-10-25T21:20:59.517346+08:00",
+  "provider": "DeepSeek",
+  "model": "deepseek-flash",
+  "session_id": "c400d76f-00bc-4e96-bcb2-bf2a02fa14d3",
+  "baseline": {
+    "scene_sha256": "ab2c7bcdc210ebe674688da9fe3abf3c7702ce66b92946367a75669afad03d2d",
+    "grid_sha256": "cf2e7722453f7b59ae9c8e3a54dae88df93da76997b6d9fe0a46afb9f805a1c4",
+    "case_id": "CD_E4125_N33891_source_handoff_v1",
+    "scenario_id": "E4125_N33891_preparation_baseline",
+    "source": "public/data/scene.json"
+  },
+  "root_tasks": [
+    {
+      "id": "ba12d64e-61b7-4bd0-a352-34ccb1664792",
+      "status": "completed_with_limits",
+      "input_goal_version": 0,
+      "output_goal_version": 1,
+      "budget": {
+        "limits": {
+          "model_requests": 16,
+          "tool_calls": 36,
+          "delegations": 6
+        },
+        "used": {
+          "model_requests": 13,
+          "tool_calls": 16,
+          "delegations": 3
+        },
+        "input_tokens": 53044,
+        "output_tokens": 2517
+      }
+    },
+    {
+      "id": "e9810da1-d9c7-4393-823d-8cc1e35757b4",
+      "status": "completed",
+      "input_goal_version": 1,
+      "output_goal_version": 2,
+      "budget": {
+        "limits": {
+          "model_requests": 16,
+          "tool_calls": 36,
+          "delegations": 6
+        },
+        "used": {
+          "model_requests": 8,
+          "tool_calls": 6,
+          "delegations": 1
+        },
+        "input_tokens": 27513,
+        "output_tokens": 847
+      }
+    }
+  ],
+  "child_tasks": [
+    {
+      "agent_id": "data_audit",
+      "status": "completed",
+      "parent_task_id": "ba12d64e-61b7-4bd0-a352-34ccb1664792",
+      "goal_version": 1,
+      "tool_trace_count": 3
+    },
+    {
+      "agent_id": "plan_exploration",
+      "status": "completed",
+      "parent_task_id": "ba12d64e-61b7-4bd0-a352-34ccb1664792",
+      "goal_version": 1,
+      "tool_trace_count": 2
+    },
+    {
+      "agent_id": "prediction_evaluation",
+      "status": "blocked",
+      "parent_task_id": "ba12d64e-61b7-4bd0-a352-34ccb1664792",
+      "goal_version": 1,
+      "tool_trace_count": 6
+    },
+    {
+      "agent_id": "plan_exploration",
+      "status": "completed",
+      "parent_task_id": "e9810da1-d9c7-4393-823d-8cc1e35757b4",
+      "goal_version": 2,
+      "tool_trace_count": 2
+    }
+  ],
+  "checks": {
+    "real_separate_role_model_calls": true,
+    "live_progress_observed": true,
+    "data_and_planning_completed": true,
+    "prediction_blocked_without_fake_values": true,
+    "service_restart_restored_session": true,
+    "budget_revision_delegated_only_planning": true,
+    "old_scenarios_retained": true,
+    "no_prediction_in_refused_turn": true,
+    "traces_link_to_tasks": true,
+    "invalid_goal_patch_rejected_and_repaired": true
+  },
+  "recovered_tool_rejections": [
+    {
+      "role": "coordinator",
+      "tool": "set_planning_goal",
+      "code": "unsupported_goal_value"
+    }
+  ],
+  "current_areas_m2": [
+    250,
+    375,
+    500
+  ],
+  "current_costs_rmb": [
+    25000,
+    37500,
+    50000
+  ],
+  "old_scenarios": 3,
+  "temperature_model_executed": false,
+  "limitations": [
+    "方案仍是固定面积费用配置模板，尚无空间优化。",
+    "角色摘要由语言模型生成，科研事实和宏观/微观缺项范围仍需核对工具原始字段；任务成功不代表科学验证。"
+  ]
+}

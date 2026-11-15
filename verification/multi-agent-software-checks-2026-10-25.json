@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-25",
+  "build": {
+    "command": "npm.cmd run build",
+    "exit_code": 0,
+    "note": "Vite及Sites打包通过；保留既有大包体提示。"
+  },
+  "agent_tests": {
+    "command": "npm.cmd run test:agent",
+    "total": 33,
+    "passed": 33,
+    "failed": 0
+  },
+  "full_tests": {
+    "command": "npm.cmd test",
+    "total": 109,
+    "passed": 107,
+    "failed": 0,
+    "skipped": 2,
+    "note": "两个原有macOS服务测试按原定义跳过；最终回归在Windows文件锁修复后完成。"
+  },
+  "temperature_model_executed": false,
+  "research_state_changed": false,
+  "public_deployment_created": false
+}
