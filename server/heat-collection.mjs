@@ -6,6 +6,7 @@ import {resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {summarizeHeatSnapshot} from './heat-perception-contract.mjs';
 import {findAgentReach} from '../xiaohongshu_demand_agent/scripts/agent-reach-bin.mjs';
+import {configuredOpenCliEntry} from '../xiaohongshu_demand_agent/scripts/opencli-xhs.mjs';
 
 const sources={
   weibo:{label:'微博',worker:'weibo-demand-agent',directory:'weibo-collections',dataEnv:'URBANCOOL_WEIBO_JOB_DATA_DIR',
@@ -34,6 +35,7 @@ export function createHeatCollection(accountId,sourceId) {
       const pointer=await readJson(latest);
       if(!uuid.test(pointer.id))throw new Error('Invalid collection pointer');
       job=await readJson(jobPath(pointer.id));
+      if(job.id!==pointer.id)throw new Error('Invalid collection job');
     }catch(error){
       if(error.code==='ENOENT')return {status:'idle'};
       throw error;
@@ -42,7 +44,14 @@ export function createHeatCollection(accountId,sourceId) {
     const state=expired?'failed':job.status;
     const result={job_id:job.id,query:job.query,status:state,phase:job.phase,message:stages[job.phase]||stages[state],
       posts:job.posts,comments:job.comments,classified:job.done,total:job.total};
-    if(state==='failed')return {...result,message:expired?'采集已超时，请重新提交。':`采集或判定失败。请检查${source.label}登录状态和 n8n 后重试。`};
+    if(state==='failed'){
+      const progress=sourceId==='xiaohongshu'&&!expired?await readJson(resolve(directory,job.id,'jobs',`${job.id}.progress.json`)).catch(()=>null):null;
+      const message=expired?'采集已超时，请重新提交。':
+        progress?.browser_disconnected?'OpenCLI 浏览器桥未连接。请启用扩展并保持浏览器打开。':
+        progress?.need_login?'请在 OpenCLI 已连接的浏览器中登录小红书。':
+        `采集或判定失败。请检查${source.label}登录状态和 n8n 后重试。`;
+      return {...result,message};
+    }
     if(state!=='done')return result;
 
     if(!uuid.test(job.id))throw new Error('Invalid collection job');
@@ -77,8 +86,10 @@ export function createHeatCollection(accountId,sourceId) {
       }catch{
         return issue('weibo_login_required','采集机器缺少微博登录文件，请先在 Edge 登录微博并刷新采集凭证。');
       }
-    }else if(!findAgentReach()){
-      return issue('xhs_agent_reach_required','采集机器找不到 Agent Reach。请安装并配置小红书浏览器桥后重试。');
+    }else if(process.env.OPENCLI_ENTRY&&!configuredOpenCliEntry()){
+      return issue('xhs_opencli_unavailable','找不到已配置的 OpenCLI 程序。请检查 OPENCLI_ENTRY。');
+    }else if(!process.env.OPENCLI_ENTRY&&!findAgentReach()){
+      return issue('xhs_agent_reach_required','请配置 OpenCLI，或安装 Agent Reach 后重试。');
     }
     try{
       const response=await fetch('http://127.0.0.1:5678/healthz',{signal:AbortSignal.timeout(2000),redirect:'error'});

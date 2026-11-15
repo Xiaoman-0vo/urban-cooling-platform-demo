@@ -226,23 +226,23 @@ test('two accounts isolate project snapshots, Agent sessions and model settings'
   const existingXhs=await request('/xhs-collection',{account:restored,method:'POST',body:{keyword:'高温 遮阴'}});
   assert.equal(existingXhs.status,202);
   assert.equal(existingXhs.data.collection.job_id,xhsJobId);
-  const xhsMock=join(directory,'xhs-upstream.mjs');
-  await writeFile(xhsMock,`
-    import childProcess from 'node:child_process';
-    import {syncBuiltinESMExports} from 'node:module';
+  const openCli=join(directory,'opencli-fixture.mjs');
+  await writeFile(openCli,`
     const missing='https://www.xiaohongshu.com/explore/'+'a'.repeat(24)+'?xsec_token=fixture';
     const found='https://www.xiaohongshu.com/explore/'+'b'.repeat(24)+'?xsec_token=fixture';
     const published_at=new Date().toISOString();
-    childProcess.spawnSync=(command,[site,method,input])=>{
-      if(command!==process.execPath||site!=='xiaohongshu')throw new Error('Unexpected subprocess');
-      let items=[];
-      if(method==='search')items=[{url:missing,title:'成都高温'},{url:found,title:'成都公交站遮阴'}];
-      else if(method==='read'&&input===found)items=[{text:'成都公交站中午太晒，希望增加遮阴设施。',published_at}];
-      else if(method==='comments'&&input===found)items=[{id:'comment-1',text:'这里的候车座位晒得太烫了，希望增设树荫。',published_at}];
-      else return {status:1,stdout:JSON.stringify({ok:false,error:{code:'EMPTY',message:'Fixture miss'}}),stderr:''};
-      return {status:0,stdout:JSON.stringify({ok:true,items}),stderr:''};
-    };
-    syncBuiltinESMExports();
+    const [, , site, method, input, ...options]=process.argv;
+    if(site!=='xiaohongshu'||!options.includes('json')) process.exit(64);
+    if(method==='search')console.log(JSON.stringify([{url:missing,title:'成都高温'},{url:found,title:'成都公交站遮阴',published_at}]));
+    else if(method==='note'&&input===found)console.log(JSON.stringify([{field:'content',value:'成都公交站中午太晒，希望增加遮阴设施。'}]));
+    else if(method==='comments'&&input===found)console.log(JSON.stringify([
+      {rank:1,text:'应排除的二级回复',is_reply:true},
+      {rank:2,text:'这里的候车座位晒得太烫了，希望增设树荫。',is_reply:false},
+    ]));
+    else process.exit(66);
+  `);
+  const xhsMock=join(directory,'xhs-upstream.mjs');
+  await writeFile(xhsMock,`
     globalThis.fetch=async (url,options)=>{
       if(new URL(url).pathname!=='/webhook/weibo-demand/v1')throw new Error('Unexpected URL');
       const {payload}=JSON.parse(options.body);
@@ -253,7 +253,7 @@ test('two accounts isolate project snapshots, Agent sessions and model settings'
   `);
   await exec(process.execPath,['scripts/job-worker.mjs','--once'],{
     cwd:fileURLToPath(new URL('xiaohongshu_demand_agent/',root)),
-    env:{...process.env,AGENT_REACH:process.execPath,URBANCOOL_XHS_JOB_DATA_DIR:xhsJobDir,
+    env:{...process.env,OPENCLI_ENTRY:openCli,URBANCOOL_XHS_JOB_DATA_DIR:xhsJobDir,
       NODE_OPTIONS:`--import=${pathToFileURL(xhsMock).href}`},
   });
   const xhsDone=await request('/xhs-collection',{account:restored});
