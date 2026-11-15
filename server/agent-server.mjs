@@ -187,7 +187,7 @@ async function loadLocalEnvironment() {
   try {
     const text=await readFile(resolve(ROOT,'.env.local'),'utf8');
     for(const line of text.split(/\r?\n/)) {
-      const match=line.match(/^\s*(DEEPSEEK_API_KEY|DEEPSEEK_MODEL|AGENT_PORT|URBANCOOL_[A-Z_]+|QWEN_[A-Z_]+)\s*=\s*(.*?)\s*$/);
+      const match=line.match(/^\s*(DEEPSEEK_API_KEY|DEEPSEEK_MODEL|AGENT_PORT|AGENT_REACH|URBANCOOL_[A-Z_]+|QWEN_[A-Z_]+)\s*=\s*(.*?)\s*$/);
       if(match && !process.env[match[1]]) process.env[match[1]]=match[2].replace(/^(['"])(.*)\1$/,'$2');
     }
   } catch(error) {if(error.code!=='ENOENT')throw error;}

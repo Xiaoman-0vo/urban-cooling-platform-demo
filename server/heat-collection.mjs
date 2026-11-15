@@ -90,7 +90,7 @@ export function createHeatCollection(accountId,sourceId) {
     const id=randomUUID();
     const jobDir=resolve(directory,id);
     const query=/^(?:成都|成都市)(?:\s|$)/.test(keyword)?keyword:`成都 ${keyword}`;
-    const job={id,query,city:'成都',aliases:['成都','成都市'],...source.limits,
+    const job={id,query,city:'成都',...source.limits,
       status:'queued',phase:'queued',created_at:new Date().toISOString(),auto:false};
     await mkdir(resolve(jobDir,'jobs'),{recursive:true});
     await writeFile(jobPath(id),JSON.stringify(job),{flag:'wx'});
