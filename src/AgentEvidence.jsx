@@ -56,8 +56,10 @@ export default function AgentEvidence({traces,tasks,runId,isRunning,loadEvidence
           <div><dt>观测日期</dt><dd>{result.date}</dd></div>
         </dl>}
         {result.transport==='mcp_stdio'&&result.source&&<p className="agent-caption">
-          MCP · {result.city}城市级抽样 · {result.source.generated_at?.slice(0,10)}归档
+          MCP · {result.source.channel} · {result.city}城市级抽样 · {result.source.generated_at?.slice(0,10)}归档
         </p>}
+        {trace.tool==='get_chengdu_xhs_heat_perception'&&result.examples?.length>0&&
+          <ul>{result.examples.map(({url,excerpt})=><li key={url}><a href={url} target="_blank" rel="noreferrer">{excerpt||'查看原笔记'}</a></li>)}</ul>}
         {result.transport==='mcp_streamable_http'&&<p className="agent-caption">MCP · {result.source.server_label} · {result.source.tool}{result.truncated?' · 结果已截断':''}</p>}
         {result.message&&<p className="agent-caption">{result.message}</p>}
         {Array.isArray(result.blockers)&&<ul className="agent-evidence-blockers">{result.blockers.map(reason=><li key={reason}>{reason}</li>)}</ul>}

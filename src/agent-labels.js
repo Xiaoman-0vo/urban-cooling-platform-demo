@@ -8,6 +8,7 @@ export const TOOL_NAMES={
   request_temperature_prediction:'检查方案预测条件',
   estimate_historical_surface_temperature:'估计历史地表温度',
   get_chengdu_heat_perception:'读取成都微博热感知快照',
+  get_chengdu_xhs_heat_perception:'读取成都小红书热感知快照',
   export_planning_report:'生成规划讨论记录',
   delegate_data_audit:'委派资料核查',
   delegate_plan_exploration:'委派方案探索',

@@ -139,6 +139,19 @@ test('two accounts isolate project snapshots, Agent sessions and model settings'
   assert.equal(heat.data.session.traces.at(-1).result.transport,'mcp_stdio');
   assert.equal(heat.data.session.tasks.at(-1).agent_id,'data_audit');
   assert.equal(heat.data.session.tasks.at(-1).language_model,null);
+  const xhs=await form({type:'xhs_heat_perception'});
+  assert.equal(xhs.status,200);
+  const xhsTrace=xhs.data.session.traces.at(-1);
+  assert.equal(xhsTrace.tool,'get_chengdu_xhs_heat_perception');
+  assert.equal(xhsTrace.result.transport,'mcp_stdio');
+  assert.equal(xhsTrace.result.source.channel,'小红书');
+  assert.equal(xhsTrace.result.source.path,'public/data/heat_perception.json');
+  assert.ok(xhsTrace.result.examples.length>0);
+  assert.ok(xhsTrace.result.examples.every(({url})=>url.startsWith('https://www.xiaohongshu.com/explore/')));
+  const chatXhs=await request('/chat',{account:restored,method:'POST',body:{context,session_id:id,message:'查一下成都小红书热感知归档有几条。'}});
+  assert.equal(chatXhs.status,200);
+  assert.match(chatXhs.data.session.messages.at(-1).content,/小红书热感知归档/);
+  assert.equal(chatXhs.data.session.traces.at(-1).tool,'get_chengdu_xhs_heat_perception');
   assert.equal(upstream.length,startCount);
 
   assert.equal((await request('/weibo-collection')).status,401);
@@ -199,6 +212,61 @@ test('two accounts isolate project snapshots, Agent sessions and model settings'
   assert.equal(completed.data.collection.summary.collected_at,raw.fetched_at);
   assert.equal(completed.data.collection.summary.public_demand_count,1);
   assert.equal((await request('/weibo-collection',{account:b})).data.collection.status,'idle');
+
+  assert.equal((await request('/xhs-collection')).status,401);
+  assert.equal((await request('/xhs-collection',{account:restored})).data.collection.status,'idle');
+  const xhsJobId=randomUUID();
+  const xhsRoot=fileURLToPath(new URL(`.runtime/xhs-collections/${a.id}/`,root));
+  const xhsJobDir=join(xhsRoot,xhsJobId);
+  const xhsJobFile=join(xhsJobDir,'jobs',`${xhsJobId}.json`);
+  await mkdir(join(xhsJobDir,'jobs'),{recursive:true});
+  t.after(()=>rm(xhsRoot,{recursive:true,force:true}));
+  await writeFile(join(xhsRoot,'latest.json'),JSON.stringify({id:xhsJobId}));
+  await writeFile(xhsJobFile,JSON.stringify({id:xhsJobId,query,city:'成都',created_at:new Date().toISOString(),status:'queued',phase:'queued',limit:2}));
+  const existingXhs=await request('/xhs-collection',{account:restored,method:'POST',body:{keyword:'高温 遮阴'}});
+  assert.equal(existingXhs.status,202);
+  assert.equal(existingXhs.data.collection.job_id,xhsJobId);
+  const xhsMock=join(directory,'xhs-upstream.mjs');
+  await writeFile(xhsMock,`
+    import childProcess from 'node:child_process';
+    import {syncBuiltinESMExports} from 'node:module';
+    const missing='https://www.xiaohongshu.com/explore/'+'a'.repeat(24)+'?xsec_token=fixture';
+    const found='https://www.xiaohongshu.com/explore/'+'b'.repeat(24)+'?xsec_token=fixture';
+    const published_at=new Date().toISOString();
+    childProcess.spawnSync=(command,[site,method,input])=>{
+      if(command!==process.execPath||site!=='xiaohongshu')throw new Error('Unexpected subprocess');
+      let items=[];
+      if(method==='search')items=[{url:missing,title:'成都高温'},{url:found,title:'成都公交站遮阴'}];
+      else if(method==='read'&&input===found)items=[{text:'成都公交站中午太晒，希望增加遮阴设施。',published_at}];
+      else if(method==='comments'&&input===found)items=[{id:'comment-1',text:'这里的候车座位晒得太烫了，希望增设树荫。',published_at}];
+      else return {status:1,stdout:JSON.stringify({ok:false,error:{code:'EMPTY',message:'Fixture miss'}}),stderr:''};
+      return {status:0,stdout:JSON.stringify({ok:true,items}),stderr:''};
+    };
+    syncBuiltinESMExports();
+    globalThis.fetch=async (url,options)=>{
+      if(new URL(url).pathname!=='/webhook/weibo-demand/v1')throw new Error('Unexpected URL');
+      const {payload}=JSON.parse(options.body);
+      if(payload.scope.city!=='成都')throw new Error('Missing classifier scope');
+      return Response.json({result:{route:'fixture',item:{in_scope:true,scope_target:'成都',heat_relevance:'relevant',
+        excerpt:payload.text,is_public_demand:true,demand_topic:'shade_deficit',evaluation_direction:'discomfort'}}});
+    };
+  `);
+  await exec(process.execPath,['scripts/job-worker.mjs','--once'],{
+    cwd:fileURLToPath(new URL('xiaohongshu_demand_agent/',root)),
+    env:{...process.env,AGENT_REACH:process.execPath,URBANCOOL_XHS_JOB_DATA_DIR:xhsJobDir,
+      NODE_OPTIONS:`--import=${pathToFileURL(xhsMock).href}`},
+  });
+  const xhsDone=await request('/xhs-collection',{account:restored});
+  assert.equal(xhsDone.status,200);
+  assert.equal(xhsDone.data.collection.status,'done');
+  const xhsSummary=xhsDone.data.collection.summary;
+  assert.equal(xhsSummary.raw_posts,1);
+  assert.equal(xhsSummary.raw_comments,1);
+  assert.equal(xhsSummary.public_demand_count,2);
+  assert.equal(xhsSummary.collection,'partial');
+  assert.deepEqual(xhsSummary.examples.map(example=>example.url),['https://www.xiaohongshu.com/explore/'+'b'.repeat(24)]);
+  assert.equal((await request('/xhs-collection',{account:b})).data.collection.status,'idle');
+  assert.equal((await request('/weibo-collection',{account:restored})).data.collection.job_id,jobId);
 });
 
 test('account-selectable team MCP only exposes approved read-only tools to the data audit role',async t=>{

@@ -9,7 +9,7 @@ import {publicRoles} from './agent-roles.mjs';
 import {recoverInterruptedTasks} from './agent-task-state.mjs';
 import {DEFAULT_RUN_LIMITS} from './agent-runtime.mjs';
 import {createHistoricalTemperature} from './historical-lst.mjs';
-import {queryHeatPerception,requestHeatCollection} from './heat-perception-client.mjs';
+import {queryHeatPerception,queryXhsHeatPerception,requestHeatCollection} from './heat-perception-client.mjs';
 import {loadTeamMcpPresets} from './team-mcp.mjs';
 
 const ROOT=resolve(dirname(fileURLToPath(import.meta.url)),'..');
@@ -93,18 +93,22 @@ export function createAgentServer({catalog,client,store,accounts,historicalTempe
       }
       const user=accounts?.authorize(request);
       if(user)requestStore=accounts.storeFor(user);
-      if(path==='/weibo-collection'&&url.pathname==='/api/agent/weibo-collection'){
-        if(!user)throw new AgentError('login_required','请登录工作台后使用微博采集。',401);
-        if(request.method==='GET')return json(response,200,{collection:await requestHeatCollection(user.id)});
+      const collectionRoute=/^\/api\/agent\/(weibo|xhs)-collection$/.exec(url.pathname);
+      if(collectionRoute){
+        if(!user)throw new AgentError('login_required','请登录工作台后使用采集。',401);
+        const channel=collectionRoute[1];
+        const options={source:channel==='xhs'?'xiaohongshu':'weibo'};
+        if(request.method==='GET')return json(response,200,{collection:await requestHeatCollection(user.id,undefined,options)});
         if(request.method==='POST'){
           const {keyword}=await requestBody(request);
-          if(typeof keyword!=='string')throw new AgentError('invalid_weibo_keyword','请输入采集关键词。');
-          if(pendingCollectionStarts.has(user.id))throw new AgentError('weibo_start_pending','采集任务正在提交，请稍后查看。',409);
-          pendingCollectionStarts.add(user.id);
+          if(typeof keyword!=='string')throw new AgentError(`invalid_${channel}_keyword`,'请输入采集关键词。');
+          const key=`${user.id}:${channel}`;
+          if(pendingCollectionStarts.has(key))throw new AgentError(`${channel}_start_pending`,'采集任务正在提交，请稍后查看。',409);
+          pendingCollectionStarts.add(key);
           try{
-            const collection=await requestHeatCollection(user.id,keyword);
+            const collection=await requestHeatCollection(user.id,keyword,options);
             return json(response,202,{collection});
-          }finally{pendingCollectionStarts.delete(user.id);}
+          }finally{pendingCollectionStarts.delete(key);}
         }
       }
       if(user&&request.method==='GET'&&path==='/sessions'){
@@ -117,7 +121,7 @@ export function createAgentServer({catalog,client,store,accounts,historicalTempe
         const modelAvailable=await activeClient.probe?.();
         return json(response,200,{status:'ready',provider:activeClient.provider||'DeepSeek',model:activeClient.model,configured:activeClient.configured,capabilities:capabilities(catalog.pilot),
           ...(typeof modelAvailable==='boolean'?{model_available:modelAvailable}:{}),
-          heat_perception:{transport:'mcp_stdio',collection:Boolean(user)},
+          heat_perception:{transport:'mcp_stdio',collection:Boolean(user),xiaohongshu:true},
           ...(activeClient.localPlanning?{local_planning:true}:{}),
           ...(historicalTemperature?{historical_temperature:{sample_prompt:historicalTemperature.sample_prompt}}:{}),
           ...(catalog.pilot?{pilot:{site_id:catalog.pilot.site_id,scenario_id:catalog.pilot.scenario_id,
@@ -161,7 +165,8 @@ export function createAgentServer({catalog,client,store,accounts,historicalTempe
       response.once('close',()=>{if(!response.writableEnded)controller.abort();});
       try {
         const result=await runAgentTurn({session,context:body.context,text:body.message,planningAction:body.planning_action,catalog,client:activeClient,historicalTemperature,
-          heatPerception:queryHeatPerception,teamMcp:user?accounts.teamMcpFor(user):null,signal:controller.signal,
+          heatPerception:queryHeatPerception,xhsHeatPerception:queryXhsHeatPerception,
+          teamMcp:user?accounts.teamMcpFor(user):null,signal:controller.signal,
           onProgress:()=>requestStore.save(session)});
         await requestStore.save(session);
         return json(response,200,{session:result});

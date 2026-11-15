@@ -6,7 +6,7 @@ import AgentEvidence from './AgentEvidence.jsx';
 import {activeStep} from './agent-labels.js';
 import {pilotGeoJson} from './pilot-map.js';
 import {AGENT_API,accountRequest} from './account-api.js';
-import WeiboCollection from './WeiboCollection.jsx';
+import HeatCollection from './HeatCollection.jsx';
 
 const STORAGE='urbancool-project-agent-v1';
 const format=new Intl.NumberFormat('zh-CN',{maximumFractionDigits:2});
@@ -198,7 +198,9 @@ export default function AgentPanel({open,onOpenChange,context,onLocate,onPreview
         {pilotAvailable&&<button type="button" disabled={busy} aria-pressed={pilotActive} onClick={()=>{setPilotMode(!pilotActive);setTab(pilotActive?'chat':'plans');}}>{pilotActive?'返回常规草案':'打开落图试点'}</button>}
         {historicalPrompt&&<button type="button" disabled={busy} onClick={()=>send(historicalPrompt)}>运行历史温度样例</button>}
         {snapshotAvailable&&<button type="button" disabled={busy} onClick={()=>send('查询成都微博热感知快照',{type:'heat_perception'})}>查微博历史归档</button>}
+        {health?.heat_perception?.xiaohongshu&&<button type="button" disabled={busy} onClick={()=>send('查询成都小红书热感知快照',{type:'xhs_heat_perception'})}>查小红书归档</button>}
         {health?.heat_perception?.collection&&<button type="button" aria-pressed={tab==='weibo'} onClick={()=>setTab(tab==='weibo'?'chat':'weibo')}>采集最新微博</button>}
+        {health?.heat_perception?.collection&&health.heat_perception.xiaohongshu&&<button type="button" aria-pressed={tab==='xhs'} onClick={()=>setTab(tab==='xhs'?'chat':'xhs')}>采集小红书</button>}
       </div>}
       <nav className="agent-tabs" aria-label="规划助手视图">
         <button className={tab==='chat'?'active':''} aria-pressed={tab==='chat'} onClick={()=>setTab('chat')}>协作对话</button>
@@ -208,7 +210,7 @@ export default function AgentPanel({open,onOpenChange,context,onLocate,onPreview
       </nav>
       {modelOffline&&<p className="agent-offline-note">模型对话暂不可用。仍可查询{historicalPrompt?'快照和历史温度':'快照'}，也可用落图试点表单比较方案。</p>}
       {error&&<div className="agent-error" role="alert"><WarningCircle size={17}/><span>{error.message}</span></div>}
-      {tab==='weibo'&&<WeiboCollection accountId={accountId}/>}
+      {(tab==='weibo'||tab==='xhs')&&<HeatCollection key={tab} accountId={accountId} channel={tab}/>}
       {tab==='chat'&&<div className="agent-chat" ref={scrollRef} aria-live="polite">
         {!session?.messages?.length&&<div className="agent-welcome"><div className="agent-welcome-icon"><Sparkle size={29}/></div><h3>从一个规划问题开始</h3><p>{localPlanning?'可以查询历史地表温度。比较面积、费用和旧版本，请先打开落图试点。':'一起查看已有资料，明确目标，再比较可追溯的配置草案。'}</p>{!localPlanning&&<div className="agent-suggestions">{[['先看看场地','请梳理当前已载入场地的真实资料，说明现有绿量和数据限制。'],['检查计算条件','当前场地还缺哪些输入，为什么还不能运行温度预测？'],['准备方案比较','我想比较几套增绿方案，先告诉我需要提供哪些条件。'],['体验多 Agent 协作',TEAM_DEMO_PROMPT]].map(([label,prompt])=><button key={label} onClick={()=>send(prompt)} disabled={busy}>{label}<span>↗</span></button>)}</div>}<div className="agent-boundary"><CheckCircle size={15}/><span>{historicalPrompt?'已登记网格可估计历史地表温度，方案降温待验证。':'方案降温计算待接入。'}</span></div></div>}
         {(session?.messages || []).map(message=>{

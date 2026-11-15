@@ -9,6 +9,8 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 
 const BASE = 'http://127.0.0.1:5678/webhook/weibo-demand/v1';
+const workbenchData = process.env.URBANCOOL_XHS_JOB_DATA_DIR;
+const DATA = workbenchData || 'data';
 const argv = process.argv.slice(2);
 const arg = (k, d) => {
   const i = argv.indexOf(k);
@@ -48,7 +50,7 @@ const sha = (s) => crypto.createHash('sha256').update(s).digest('hex').slice(0, 
 
 // ---------- 1. 合并所有 raw_*.json ----------
 const files = fs
-  .readdirSync('data')
+  .readdirSync(DATA)
   .filter((f) => /^raw_.*\.json$/.test(f))
   .filter((f) => !RAWS.length || RAWS.some((k) => f.includes(k)))
   .sort();
@@ -56,7 +58,7 @@ const posts = new Map();
 const comments = new Map();
 const queries = [];
 for (const f of files) {
-  const j = JSON.parse(fs.readFileSync(path.join('data', f), 'utf8'));
+  const j = JSON.parse(fs.readFileSync(path.join(DATA, f), 'utf8'));
   if (j.query) queries.push(j.query);
   for (const p of j.posts || []) if (p.source_post_id && !posts.has(p.source_post_id)) posts.set(p.source_post_id, p);
   for (const c of j.comments || []) if (c.source_comment_id && !comments.has(c.source_comment_id)) comments.set(c.source_comment_id, c);
@@ -89,7 +91,7 @@ for (const c of comments.values()) {
     published_at: c.published_at || null, author: c.author || null,
     like: c.like_count ?? null, comment_count: null,
     parent_post_id: c.parent_post_id,
-    source_url: `https://m.weibo.cn/detail/${c.parent_post_id}`,
+    source_url: posts.get(c.parent_post_id)?.source_url || null,
   });
 }
 // 时间窗：只看最近 N 天（默认 365，可用 --days 改）。
@@ -168,7 +170,12 @@ for (let i = 0; i < todo.length; i++) {
 }
 
 fs.mkdirSync(path.dirname(OUT), { recursive: true });
-fs.writeFileSync(OUT, JSON.stringify({ generated_at: new Date().toISOString(), queries: [...new Set(queries)], scope: SCOPE, items }, null, 2), 'utf8');
+const classified = items.length - prev.length;
+if (workbenchData && todo.length && !classified) throw new Error('n8n 未完成任何小红书线索判定');
+fs.writeFileSync(OUT, JSON.stringify({
+  generated_at: new Date().toISOString(), queries: [...new Set(queries)], scope: SCOPE, items,
+  ...(workbenchData ? { classification_failed: todo.length - classified } : {}),
+}, null, 2), 'utf8');
 
 const by = (k) => items.reduce((m, x) => ((m[x[k]] = (m[x[k]] || 0) + 1), m), {});
 console.log('\n=== 判定小结 ===');

@@ -86,7 +86,7 @@ function McpSettings({accountId}) {
   }
 
   return <section className="account-mcp" aria-label="MCP 工具设置">
-    <p>在 AI 规划助手里可以查成都微博历史归档，也可以提交新采集。下方可为当前账户选择一个团队服务。</p>
+    <p>AI 规划助手可以查询微博和小红书归档，也可以提交新采集。下方可为当前账户选择一个团队服务。</p>
     {!settings&&!error&&<p role="status">正在读取 MCP 设置…</p>}
     {settings?.presets.length===0&&<p>团队服务登记后会出现在这里。请将 MCP 服务地址和只读工具名称交给维护者。</p>}
     {settings?.presets.length>0&&<form onSubmit={event=>{event.preventDefault();submit(false);}}>

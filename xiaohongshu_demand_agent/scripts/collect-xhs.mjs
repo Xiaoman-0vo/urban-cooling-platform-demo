@@ -24,6 +24,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
+import { findAgentReach } from './agent-reach-bin.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -93,14 +94,6 @@ function writeProgress(patch) {
 }
 
 /* ---------------- agent-reach 调用 ---------------- */
-function agentReachBin() {
-  if (process.env.AGENT_REACH) return process.env.AGENT_REACH;
-  const home = os.homedir();
-  const exe = process.platform === 'win32' ? 'agent-reach.exe' : 'agent-reach';
-  const p = path.join(home, '.local', 'bin', exe);
-  return fs.existsSync(p) ? p : 'agent-reach';
-}
-
 // opencli（小红书渠道的浏览器桥）装在 agent-reach 自己的 npm 前缀里，PATH 里没有
 const CHILD_ENV = {
   ...process.env,
@@ -113,7 +106,8 @@ const CHILD_ENV = {
 
 /** 调一次 agent-reach，返回解析后的 JSON 对象 */
 function callAgentReach(args, label) {
-  const bin = agentReachBin();
+  const bin = findAgentReach();
+  if (!bin) throw new Error('找不到 Agent Reach。请安装后加入 PATH，或配置 AGENT_REACH。');
   const r = spawnSync(bin, args, {
     cwd: ROOT,
     env: CHILD_ENV,
@@ -227,6 +221,7 @@ async function main() {
   // 2) 逐条读正文（同一轮里立刻读，签名链接不落地缓存）
   const fetchedAt = new Date().toISOString();
   const posts = [];
+  const commentLinks = [];
   const errors = [];
   for (let i = 0; i < targets.length; i++) {
     const it = targets[i];
@@ -267,6 +262,7 @@ async function main() {
         comments_collected: 0,
         read_ms: (r.meta && r.meta.elapsed_ms) || null,
       });
+      commentLinks.push(url);
     } catch (e) {
       if (e.code === 'NEED_LOGIN') throw e;
       log(`    ! 读正文失败：${e.message}`);
@@ -287,7 +283,7 @@ async function main() {
   writeProgress({ phase: 'comments', comment_done: 0, comments: 0, message: `抓一级评论（0/${posts.length} 条笔记）` });
   for (let i = 0; i < posts.length; i++) {
     const p = posts[i];
-    const url = (targets[i] && targets[i].url) || p.source_url;
+    const url = commentLinks[i];
     try {
       log(`  · [${i + 1}/${posts.length}] 抓评论：${String(p.title || '').slice(0, 24)}`);
       const c = callAgentReach(['xiaohongshu', 'comments', url], '抓评论');
