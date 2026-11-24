@@ -1,0 +1,13 @@
+services:
+  workbench:
+    build:
+      target: cloud-v3
+    image: ${URBANCOOL_IMAGE:-urbancool-workbench:topic1-v3}
+    environment:
+      URBANCOOL_LST_ROOT: /models/v3
+      URBANCOOL_LST_PYTHON: /opt/v3/bin/python
+    volumes:
+      - type: bind
+        source: ${URBANCOOL_LST_DIR:?Set the directory of the verified V3 model and data-v3 files}
+        target: /models/v3
+        read_only: true

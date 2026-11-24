@@ -1,0 +1,34 @@
+services:
+  workbench:
+    build:
+      context: ../..
+      dockerfile: Dockerfile
+      target: cloud
+      args:
+        NODE_IMAGE: ${URBANCOOL_NODE_IMAGE:-node:24-bookworm-slim}
+    image: ${URBANCOOL_IMAGE:-urbancool-workbench:topic1}
+    environment:
+      AGENT_HOST: 0.0.0.0
+      AGENT_PORT: "5181"
+      URBANCOOL_SITE_ORIGIN: ${URBANCOOL_SITE_ORIGIN:?Set the HTTPS origin or a loopback HTTP origin for local acceptance}
+      URBANCOOL_DEFAULT_PROVIDER: local
+      URBANCOOL_COLLECTOR_MODE: disabled
+      HUAWEI_MAAS_BASE_URL: ${HUAWEI_MAAS_BASE_URL:-https://api.modelarts-maas.com/openai/v1}
+      HUAWEI_MAAS_MODEL: ${HUAWEI_MAAS_MODEL:-}
+    ports:
+      - "127.0.0.1:${URBANCOOL_HTTP_PORT:-5181}:5181"
+    volumes:
+      - workspace:/app/.runtime
+    tmpfs:
+      - /tmp:size=128m,mode=1777
+    read_only: true
+    init: true
+    restart: unless-stopped
+    stop_grace_period: 200s
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+
+volumes:
+  workspace:

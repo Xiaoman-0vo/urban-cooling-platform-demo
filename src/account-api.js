@@ -19,13 +19,17 @@ export async function accountStatus(signal) {
 }
 
 export async function accountRequest(path,{accountId,method='GET',body,signal}={}) {
-  const response=await fetch(`${AGENT_API}${path}`,{
+  let response;
+  try{response=await fetch(`${AGENT_API}${path}`,{
     method,signal,cache:'no-store',
     headers:{...(accountId?{'X-UrbanCool-Account':accountId}:{}),
       ...(method!=='GET'?{'X-UrbanCool-Agent':'1'}:{}),
       ...(body!==undefined?{'Content-Type':'application/json'}:{})},
     body:body===undefined?undefined:JSON.stringify(body),
-  });
+  });}catch(error){
+    if(error instanceof TypeError)throw new Error('暂时无法连接工作台，请检查本地服务是否正在运行。');
+    throw error;
+  }
   const data=await response.json().catch(()=>{throw new Error('账户服务未返回有效响应。');});
   if(!response.ok){
     if(accountId&&(response.status===401||data.error?.code==='account_changed'))

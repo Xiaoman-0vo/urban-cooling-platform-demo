@@ -6,6 +6,7 @@ import {AgentError} from './agent-tools.mjs';
 
 const run = promisify(execFile);
 const program = fileURLToPath(new URL('./historical-lst.py', import.meta.url));
+const temperatureArea = fileURLToPath(new URL('../public/data/planning-pilot-temperature.json', import.meta.url));
 const gridPattern = /(?<![\w])E\d{4}_N\d{5}(?![\w])/gi;
 const datePattern = /(?<!\d)(\d{4})\s*(?:年|[-/.])\s*(\d{1,2})\s*(?:月|[-/.])\s*(\d{1,2})(?!\d)\s*[日号]?/g;
 const partialDatePattern = /\d{1,2}\s*月\s*\d{1,2}\s*[日号]?/g;
@@ -44,14 +45,18 @@ export function historicalTemperatureRequest(text, {selection, siteId, nodes, pe
 export function createHistoricalTemperature({root=process.env.URBANCOOL_LST_ROOT, python=process.env.URBANCOOL_LST_PYTHON || 'python'}={}) {
   if(!root)return null;
   const experiment=resolve(root);
+  async function estimate(query, args, signal) {
+    const {stdout}=await run(python,[program,'--experiment',experiment,'--grid',query.grid_id,'--date',query.date,...args],
+      {signal, timeout:15000, maxBuffer:16384, windowsHide:true, env:{...process.env, OMP_NUM_THREADS:'2', PYTHONDONTWRITEBYTECODE:'1'}});
+    const result=JSON.parse(stdout);
+    if(result.grid_id!==query.grid_id||result.date!==query.date)throw new Error('response scope');
+    return result;
+  }
   return {
     sample_prompt:'估计 E4105_N33911 在 2022-09-28 的历史地表温度',
     async estimate(query, {signal}={}) {
       try {
-        const {stdout}=await run(python,[program,'--experiment',experiment,'--grid',query.grid_id,'--date',query.date],
-          {signal, timeout:15000, maxBuffer:16384, windowsHide:true, env:{...process.env, OMP_NUM_THREADS:'2', PYTHONDONTWRITEBYTECODE:'1'}});
-        const result=JSON.parse(stdout);
-        if(result.grid_id!==query.grid_id||result.date!==query.date)throw new Error('response scope');
+        const result=await estimate(query,[],signal);
         if(result.status==='no_data')return {...query,status:'no_data'};
         if(result.status!=='estimated'||!Number.isFinite(result.estimated_lst_c)||!Number.isFinite(result.observed_lst_c))
           throw new Error('response estimate');
@@ -59,6 +64,20 @@ export function createHistoricalTemperature({root=process.env.URBANCOOL_LST_ROOT
       } catch {
         if(signal?.aborted)throw new AgentError('turn_cancelled','本轮估计已停止。',499);
         throw new AgentError('historical_temperature_unavailable','历史地表温度模型未能运行，请检查本机 Python 环境和 V3 数据。',503);
+      }
+    },
+    async evaluatePilot(query, {signal}={}) {
+      try {
+        const result=await estimate(query,['--temperature-area',temperatureArea,'--temperature-area-sha256',query.area_sha256,
+          '--scenario-bounds',...query.bounds_utm.map(String)],signal);
+        if(result.status!=='scenario_estimated'||result.area_sha256!==query.area_sha256||result.scene_id!==query.scene_id||
+          result.area_m2!==query.area_m2||JSON.stringify(result.bounds_utm)!==JSON.stringify(query.bounds_utm)||
+          !['observed_lst_c','baseline_lst_c','scenario_lst_c','predicted_delta_lst_c'].every(key=>Number.isFinite(result[key])))
+          throw new Error('invalid scenario response');
+        return result;
+      } catch {
+        signal?.throwIfAborted();
+        throw new AgentError('pilot_temperature_unavailable','试算未能运行。请检查本机 Python、V3 模型数据和试算范围的版本后重试。',503);
       }
     },
   };

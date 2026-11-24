@@ -39,7 +39,10 @@ async function invokeHeatTool(name,args,{accountId,signal,label,xhs}) {
   signal?.throwIfAborted();
   const client=new Client({name:'urbancool-workbench',version:'0.1.0'});
   const env=accountId?{URBANCOOL_HEAT_WORKBENCH_ACCOUNT:accountId,
+    ...(process.env.URBANCOOL_CLASSIFIER_ORIGIN?{URBANCOOL_CLASSIFIER_ORIGIN:process.env.URBANCOOL_CLASSIFIER_ORIGIN}:{}),
+    ...(process.env.URBANCOOL_COLLECTOR_MODE?{URBANCOOL_COLLECTOR_MODE:process.env.URBANCOOL_COLLECTOR_MODE}:{}),
     ...(xhs&&process.env.AGENT_REACH?{AGENT_REACH:process.env.AGENT_REACH}:{}),
+    ...(xhs&&process.env.OPENCLI_WINDOW?{OPENCLI_WINDOW:process.env.OPENCLI_WINDOW}:{}),
     ...(xhs&&process.env.OPENCLI_ENTRY?{OPENCLI_ENTRY:process.env.OPENCLI_ENTRY}:{})}:undefined;
   const transport=new StdioClientTransport({command:process.execPath,args:[entry],stderr:'ignore',env});
   try{

@@ -23,6 +23,7 @@ export function runOpenCliXhs(entry,action,input,{timeout,maxComments}){
   const limits=command==='comments'?['--limit',String(Math.max(1,maxComments))]:[];
   const child=spawnSync(process.execPath,[entry,'xiaohongshu',command,input,...limits,'-f','json'],{
     encoding:'utf8',timeout,maxBuffer:4*1024*1024,windowsHide:true,
+    env:{...process.env,OPENCLI_WINDOW:process.env.OPENCLI_WINDOW||'background'},
   });
   if(child.error?.code==='ETIMEDOUT')return {ok:false,error:errors[75]};
   if(child.status===66&&command!=='note')return {ok:true,backend:'opencli',items:[]};

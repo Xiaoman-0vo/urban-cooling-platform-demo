@@ -2,8 +2,15 @@ import {readFile} from 'node:fs/promises';
 import {createHash, randomUUID} from 'node:crypto';
 import {resolve} from 'node:path';
 import {publicTasks} from './agent-task-state.mjs';
+import {applyGoalToPilotTemperature,pilotTemperatureReport} from './pilot-temperature.mjs';
+import {temperatureReportScope} from '../src/pilot-map.js';
+import {currentPilotProtection,protectionVersionChanged} from '../src/protected-areas.js';
+import {currentPilotPriority,priorityComparison,priorityMarkdown} from '../src/priority-areas.js';
+import {pilotSearchMarkdown,pilotSearchIsCurrent} from '../src/pilot-search-state.js';
 import {goalValueMentioned,predictionRequested,pilotPredictionRequested} from './goal-evidence.mjs';
 import {loadPlanningPilot,pilotOptions} from './planning-pilot.mjs';
+import {candidateDecisionMarkdown} from '../src/candidate-decision.js';
+import {candidateEvaluationId} from '../src/candidate-evaluation-state.js';
 
 export class AgentError extends Error {
   constructor(code, message, status = 400) { super(message); this.code = code; this.status = status; }
@@ -54,8 +61,8 @@ export function newSession(context, catalog) {
 export function capabilities(pilot=null) {
   return {project_query: true, goal_drafts: true, assumption_based_scenarios: true, report_export: true,multi_agent:true,
     temperature_prediction: false, spatial_intervention_compiler: false, construction_feasibility: false,
-    ...(pilot?{mapped_discussion_pilot:true}:{}),
-    note: pilot?'试点支持候选范围落图与面积费用核查。现场条件待核实，温度服务待接入。':'支持真实资料查询与配置目标草案；草案面积和费用依赖用户声明，未落实到地块，未计算温度。'};
+    ...(pilot?{mapped_discussion_pilot:true,bounded_spatial_search:Boolean(pilot.temperature_area)}:{}),
+    note: pilot?'试点支持候选范围落图与面积费用核查。工作台另提供指定覆盖假设的温度试算入口。':'支持真实资料查询与配置目标草案；草案面积和费用依赖用户声明，未落实到地块，未计算温度。'};
 }
 
 function objectArguments(args, allowed, required = []) {
@@ -117,7 +124,10 @@ function setGoal(session, args, catalog) {
   for (const field of changed) { next[field] = args[field]; next.assumptions[field] = {source:'user_declared', evidence_quote:args.evidence_quote}; }
   session.goal = next;
   session.revision += 1;
+  const mappedScenario=session.pilot?applyGoalToPilotTemperature(session,catalog.pilot?.temperature_area):null;
   return {status:'goal_draft_saved', goal:clone(next), stale_scenario_ids:session.scenarios.filter(s => s.goal_version !== next.version).map(s => s.id),
+    ...(mappedScenario?{temperature_scenario:{id:mappedScenario.id,version:mappedScenario.version,area_m2:mappedScenario.area_m2,
+      estimated_construction_cost_rmb:mappedScenario.estimated_construction_cost_rmb}}:{}),
     note:session.pilot?'已登记本轮讨论约束。候选范围和来源按试点记录保留。':'目标配置草案已保存；候选面积和单价是用户声明，未完成地块核查或模型转换。'};
 }
 
@@ -127,7 +137,7 @@ function generateScenarios(session) {
   const missing = required.filter(field => typeof goal[field] !== 'number');
   if (missing.length) return {status:'needs_inputs', missing:missing.map(field => ({field, name:GOAL_NAMES[field]})),
     note:session.pilot?'请补充预算及假设单价。试点范围来自已登记讨论多边形。':'请用户提供预算、声明候选面积和假设单价；不从现状绿量推断可施工空间。'};
-  const existing=session.scenarios.filter(s=>s.goal_version===goal.version&&s.kind===(session.pilot?'mapped_pilot_option':'configuration_target_not_spatial_layout'));
+  const existing=session.scenarios.filter(s=>s.goal_version===goal.version&&!protectionVersionChanged(s,session)&&s.kind===(session.pilot?'mapped_pilot_option':'configuration_target_not_spatial_layout'));
   if(existing.length)return {status:'draft_options_reused',scenarios:clone(existing),note:'复用当前目标版本的固定配置模板，不重复创建相同草案。'};
   if(session.pilot){
     const scenarios=pilotOptions(session).map(option=>({...option,id:randomUUID(),site_id:session.context.site_id,
@@ -167,9 +177,9 @@ function generateScenarios(session) {
 }
 
 function compareScenarios(session) {
-  const current = session.scenarios.filter(scenario => scenario.goal_version === session.goal.version);
+  const current = session.scenarios.filter(scenario => scenario.goal_version === session.goal.version&&!protectionVersionChanged(scenario,session));
   return {status:current.length?'comparison_ready':'no_current_options', goal_version:session.goal.version,
-    scenarios:clone(current), stale_scenario_count:session.scenarios.length-current.length,
+    scenarios:clone(current), ...(session.pilot?{priority_comparison:priorityComparison(session),spatial_search:session.pilot_searches?.length?{...clone(session.pilot_searches.at(-1)),is_current:pilotSearchIsCurrent(session.pilot_searches.at(-1),session)}:null}:{}), stale_scenario_count:session.scenarios.length-current.length,
     comparison_scope:session.pilot?'按两块候选范围核算面积与假设建设费。超预算或超声明面积者保留原形并标明。':'仅比较用户声明条件下的新增面积和假设建设费；未计养护费，不能评价降温排名。'};
 }
 
@@ -186,19 +196,29 @@ function makeReport(session, catalog) {
     ...comparison.scenarios.map(s=>`| ${s.title} | ${s.added_green_area_m2} | ${s.estimated_construction_cost_rmb} | ${s.added_green_target_met == null ? '未声明' : s.added_green_target_met ? '已达到声明目标' : `未达到，缺口${s.added_green_target_gap_m2}㎡`} | 未计算 |`),
     '', '## 依据与适用范围','- public/data/scene.json','- public/data/macro_nodes.geojson',
     session.pilot?'- 候选面积按已登记的米制多边形量测，费用按用户声明单价核算。可施工性待核实。':'- 现状引用的是已保存的研究准备资料；草案费用和容量来自用户声明，未核实可施工性。',
-    '- 未运行冻结温度模型、情景编译器、物理模拟、公平性联算或可达性分析。',
+    '- 上表中的草案未运行冻结温度模型、情景编译器、物理模拟、公平性联算或可达性分析。',
     session.pilot?'- 候选多边形为原资料审阅面内的讨论范围，现场与管控条件待核实。':'- 草案没有地物几何，不能当作实际布局或施工方案。',
     '', '## 本轮协作记录（生成报告时的快照）',
     ...(session.tasks || []).filter(t=>t.run_id===session.active_run_id && t.parent_task_id).map(t=>`- ${t.agent_name}：${t.status}；任务 ${t.id}；工具依据 ${t.trace_ids.join('、') || '无'}。`),
     '- 协作任务完成不代表温度模型执行；模型摘要与程序计算结果分别保留。'];
   if(session.pilot)lines.push('', '## 落图方案版本对比',`试点 ${session.pilot.id} · ${session.pilot.sha256}`,
-    '| 目标版本 | 候选 | 范围面积（㎡） | 预算（元） | 假设费用（元） | 费用及面积检查 |', '|---|---|---:|---:|---:|---|',
-    ...session.scenarios.filter(s=>s.kind==='mapped_pilot_option').map(s=>`| v${s.goal_version} | ${s.candidate_id}（${s.source_review_id}） | ${s.added_green_area_m2} | ${s.budget_rmb} | ${s.estimated_construction_cost_rmb} | ${s.budget_check_passed?'预算内':'超预算'} / ${s.capacity_check_passed?'面积条件通过':'超声明面积'} |`),
+    '| 目标版本 | 候选 | 范围面积（㎡） | 预算（元） | 假设费用（元） | 费用及面积检查 | 保留范围版本 | 保留检查 |', '|---|---|---:|---:|---:|---|---|---|',
+    ...session.scenarios.filter(s=>s.kind==='mapped_pilot_option').map(s=>`| v${s.goal_version} | ${s.candidate_id}（${s.source_review_id}） | ${s.added_green_area_m2} | ${s.budget_rmb} | ${s.estimated_construction_cost_rmb} | ${s.budget_check_passed?'预算内':'超预算'} / ${s.capacity_check_passed?'面积条件通过':'超声明面积'} | v${s.protection_version??0} | ${s.protection_check_passed===false?'与用户保留区冲突':s.protection_version>0?'无重叠':'未设置用户保留区'} |`),
     '', '可从目标与草案页导出带版本的地图 GeoJSON。当前版本和旧版各自保留原始条件。',
     ...session.pilot.references.map(({path,sha256})=>`- ${path} · ${sha256}`),
     ...session.pilot.outstanding.map(item=>`- 待组员核实：${item}`),
     ...session.traces.filter(t=>t.tool==='request_temperature_prediction'&&t.result.status!=='rejected').map(t=>`- 预测检查 ${t.result.scenario_id}：${t.result.status}，${t.result.execution_status}。`));
-  const report = {id, goal_version:session.goal.version, created_at:new Date().toISOString(), markdown:lines.join('\n')};
+  lines.push(...pilotTemperatureReport(session.pilot_temperature_scenarios));
+  const protection=currentPilotProtection(session);
+  if(session.pilot)lines.push('',`## 用户保留范围 v${protection.version}`,
+    ...protection.areas.map(a=>`- ${a.label}（${a.id}）：${a.bounds_utm.join(', ')}，${a.measurement_crs}；用户声明，来源范围 SHA-256 ${a.area_sha256}。`),
+    ...(protection.areas.length?[]:['本版未设置用户保留区；不表示现场保护条件已核查。']));
+  if(session.pilot)lines.push(...priorityMarkdown(session));
+  if(session.pilot)lines.push(...pilotSearchMarkdown(session));
+  if(session.pilot)lines.push(...candidateDecisionMarkdown(session));
+  const report = {id, goal_version:session.goal.version, ...temperatureReportScope(session.pilot_temperature_scenarios,currentPilotProtection(session).version,currentPilotPriority(session).version,session.pilot_searches?.at(-1)?.id??null),
+    ...(candidateEvaluationId(session)?{candidate_evaluation_id:candidateEvaluationId(session)}:{}),
+    created_at:new Date().toISOString(), markdown:lines.join('\n')};
   session.reports.push(report);
   session.revision += 1;
   return {status:'report_created', report:clone(report)};
@@ -240,9 +260,11 @@ export function executeTool(name, args, session, catalog) {
       fail('prediction_not_requested','当前用户未明确提出计算请求。');
     const scenario = session.scenarios.find(item=>item.id===args.scenario_id);
     if (!scenario) fail('unknown_scenario','未找到该会话中的草案。');
+    if(protectionVersionChanged(scenario,session))return {status:'stale_scenario',execution_status:'not_run',scenario_id:scenario.id,predicted_delta_lst_c:null,
+      blockers:['草案引用旧保留约束版本'],note:'请按当前保留约束重新比较候选范围。'};
     if(session.pilot&&scenario.goal_version===session.goal.version&&scenario.comparison_status==='outside_declared_limits')
       return {status:'candidate_blocked',execution_status:'not_run',scenario_id:scenario.id,predicted_delta_lst_c:null,
-        blockers:['该候选超出本轮预算或声明面积'],note:'当前候选未满足本轮条件。'};
+        blockers:['该候选违反本轮预算、声明面积或用户保留约束'],note:'当前候选未满足本轮条件。'};
     return {status:scenario.goal_version!==session.goal.version?'stale_scenario':'not_connected',
       execution_status:'not_run',scenario_id:scenario.id,predicted_delta_lst_c:null,
       blockers:scenario.goal_version!==session.goal.version?['草案引用旧目标版本']:['冻结模型与输入未接通',session.pilot?'候选用地待人工核查，干预特征编译待接通':'配置目标尚无地物几何与完整特征编译'],
@@ -254,8 +276,8 @@ export function executeTool(name, args, session, catalog) {
 export function publicSession(session) {
   return {id:session.id, revision:session.revision,event_version:session.event_version || 0,active_run_id:session.active_run_id || null,
     tasks:publicTasks(session),context:clone(session.context), baseline:clone(session.baseline),
-    ...(session.pilot?{pilot:clone(session.pilot)}:{}),
+    ...(session.pilot?{pilot:clone(session.pilot),pilot_temperature_scenarios:clone(session.pilot_temperature_scenarios??[]),pilot_protection_versions:clone(session.pilot_protection_versions??[]),pilot_priority_versions:clone(session.pilot_priority_versions??[]),pilot_searches:clone(session.pilot_searches??[])}:{}),
     messages:clone(session.messages), goal:clone(session.goal),
-    scenarios:session.scenarios.map(s=>({...clone(s),is_stale:s.goal_version!==session.goal.version})),
+    scenarios:session.scenarios.map(s=>({...clone(s),is_stale:s.goal_version!==session.goal.version||protectionVersionChanged(s,session)})),
     reports:clone(session.reports), traces:clone(session.traces.slice(-40)), capabilities:capabilities(session.pilot)};
 }

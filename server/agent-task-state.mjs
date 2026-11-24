@@ -1,4 +1,5 @@
 import {randomUUID} from 'node:crypto';
+import {currentPilotProtection,protectionVersionChanged} from '../src/protected-areas.js';
 
 const clone=value=>structuredClone(value);
 const now=()=>new Date().toISOString();
@@ -12,6 +13,7 @@ export function ensureTaskState(session) {
 export function taskScope(session) {
   return {site_id:session.context.site_id,scenario_id:session.context.scenario_id,
     goal_version:session.goal.version,scene_sha256:session.baseline.scene_sha256,grid_sha256:session.baseline.grid_sha256,
+    protection_version:currentPilotProtection(session).version,
     temperature_model_version:null};
 }
 
@@ -29,6 +31,7 @@ export function scenarioSummary(s) {
   return {id:s.id,title:s.title,site_id:s.site_id,goal_version:s.goal_version,kind:s.kind,
     added_green_area_m2:s.added_green_area_m2,estimated_construction_cost_rmb:s.estimated_construction_cost_rmb,
     capacity_check_passed:s.capacity_check_passed,budget_check_passed:s.budget_check_passed,
+    protection_version:s.protection_version,protection_check_passed:s.protection_check_passed,protection_conflicts:s.protection_conflicts,
     added_green_target_met:s.added_green_target_met,added_green_target_gap_m2:s.added_green_target_gap_m2,
     geometry:s.geometry,predicted_delta_lst_c:s.predicted_delta_lst_c,prediction_status:s.prediction_status,implementation_status:s.implementation_status};
 }
@@ -44,7 +47,7 @@ export function completeTask(session,task,summary,summarySource='language_model'
   const children=session.tasks.filter(t=>t.parent_task_id===task.id);
   const statuses=traces.map(t=>t.result.status);
   let status='completed';
-  if(statuses.some(s=>['not_connected','stale_scenario','no_positive_allocation','candidate_blocked'].includes(s)))status='blocked';
+  if(statuses.some(s=>['not_connected','stale_scenario','no_positive_allocation','candidate_blocked','no_feasible_candidates'].includes(s)))status='blocked';
   else if(statuses.some(s=>['needs_inputs','no_current_options'].includes(s)))status='needs_inputs';
   else if(task.execution_kind==='historical_temperature'&&statuses.includes('no_data'))status='no_data';
   else if(statuses.includes('no_data'))status='needs_inputs';
@@ -73,7 +76,7 @@ export function failTask(session,task,error,{cancelled=false}={}) {
 
 export function publicTasks(session) {
   return (session.tasks || []).map(t=>({...clone(t),is_stale:
-    (t.status!=='running' && t.depends_on_goal && (t.output_scope || t.input_scope).goal_version!==session.goal.version) ||
+    (t.status!=='running' && t.depends_on_goal && ((t.output_scope || t.input_scope).goal_version!==session.goal.version||protectionVersionChanged(t.output_scope||t.input_scope,session))) ||
     t.input_scope.scene_sha256!==session.baseline.scene_sha256 || t.input_scope.grid_sha256!==session.baseline.grid_sha256}));
 }
 

@@ -1,0 +1,25 @@
+npm notice run urban-cooling-platform-collaboration@0.1.0 test:accounts
+npm notice run node --test tests/accounts.test.mjs tests/inspection-state.test.mjs tests/planning-workflow.test.mjs
+✔ two accounts isolate project snapshots, Agent sessions and model settings (11881.9459ms)
+✔ account-selectable team MCP only exposes approved read-only tools to the data audit role (616.3303ms)
+✔ unsaved inspection drafts recover across view changes and remain scoped to the account and record (1.6179ms)
+✔ recovering against a newer saved record keeps the original draft revision so it cannot silently overwrite changes (0.1688ms)
+✔ site association drafts recover without replacing the saved association, including drafts from older clients (0.7279ms)
+✔ unavailable or malformed browser storage does not break the saved inspection list (0.3499ms)
+✔ status and text filters compose across the saved location, source and field notes (0.4341ms)
+✔ site filters compose with status and keyword filters while leaving unassociated evidence visible in all sites (0.1782ms)
+✔ workflow uses saved state and keeps geometry previews, missing evaluations and outdated reports explicit (14.857ms)
+✔ version comparison preserves zero, leaves unrun results empty and separates changed baselines (1.2354ms)
+✔ next action follows saved planning state and never skips missing constraints or a pending evaluation (0.9181ms)
+✔ selected versions compare only identical registered baselines and preserve zero or warming signs (0.4604ms)
+✔ progress archive roundtrips saved versions and hashes each member, including only inspections associated with this site (31.6161ms)
+✔ numeric checks recompute version costs, expose conflicts despite successful evaluation, and never infer missing limits (1.0284ms)
+✔ exports label old reports and reject mixed sites, mixed baselines and active tasks (14.5146ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 14321.018

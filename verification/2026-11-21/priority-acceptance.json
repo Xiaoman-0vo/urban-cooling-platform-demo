@@ -1,0 +1,183 @@
+{
+  "schema": "urbancool-priority-region-acceptance/1",
+  "client_date": "2026-11-21",
+  "recorded_at": "2026-11-21T11:26:37.944Z",
+  "scope": "isolated_software_acceptance_not_field_case_or_cooling_validation",
+  "source_sha256_at_recording": {
+    "src/priority-areas.js": "5f0da23125f67f48a882ae8c1db7f88effc58e47bd94ad78fbbc588a3c6df69a",
+    "server/pilot-priority.mjs": "b2c4567e89684f198f4d067b21b23ee5c7ae9f7c5eb2cc5d7e0fbbf321154ae7",
+    "server/local-planning.mjs": "f15ca57e21ccc391adf0f7e3b8e3244e982b57564ba0b5838ec8cf9ca925e445",
+    "server/multi-agent.mjs": "52d52e33085469822da82333c4bea518f5f0d1f28c7fe4dc6b2c4e441ab41c6a",
+    "server/agent-tools.mjs": "ba9f51d96da67131db1c0c020ef556bf6ca450233f4ce63dc5af59879c21d6a8",
+    "src/PilotTemperature.jsx": "dce01163fb8db7bb4b0605e510cfa327b2d50798a4882000cab95c1e8e3b5751",
+    "src/AgentPanel.jsx": "3e1fecd3dcd41f529341190423d5856a7e3db4ef44e7937bc131df4b55d60d44",
+    "src/pilot-map.js": "9409673656d4af6ed103a4f5b298bf235fcbcd031217ebc0181001db3069108f",
+    "src/planning-workflow.js": "fd81dde4959592c08a42293ff3fa2ad1e2bc0537f20be294b7a25da6b190a8fc",
+    "src/PlanningWorkflow.jsx": "0151ef3eb4087d0d0687db0b11d158887b7e5c233eb8745e9a45f2396842164d",
+    "src/MapCanvas.jsx": "16d86cf2fd8fa180516fea1765a4397c4cab1e4c91c8c88685ae039e5a4a91b2",
+    "src/agent-labels.js": "cfee9818f494061b9d059d2c33883fe2c930df9efb89d3b1b1b8dbe59d9c4a43",
+    "src/agent.css": "7835a658c2b4056ba51aa63dcf467b6f75341a7c4b0ea11b080dddddbd869cfa",
+    "tests/pilot-priority.test.mjs": "3acf5c0d32b34bed8374adaafd30ea322ecf892d2accab7363944ecfdee66ff8",
+    "package.json": "8d6766706d05ee1e8fa29aa60c5aea12717973bbad9e196411b9efeec0020c11"
+  },
+  "execution": {
+    "backend": "real_local_account_workbench",
+    "priority_input": "browser_UI_two_map_clicks_and_label",
+    "language_model_calls": 0,
+    "temperature_model_calls": 0,
+    "cloud_resources_created": 0
+  },
+  "session_id": "064083f5-1ae4-4c43-a863-966afa79750c",
+  "site_id": "E4125_N33891",
+  "priority_version": 2,
+  "selected_areas": [
+    {
+      "id": "ca2b173d-bd1e-4ed8-bdd3-b223f48abc98",
+      "label": "优先等候空间（软件验收）",
+      "bounds_utm": [
+        412545,
+        3389131,
+        412546,
+        3389132
+      ],
+      "area_m2": 1
+    },
+    {
+      "id": "57ec2c53-0f8a-44cb-a868-60da2cea746d",
+      "label": "周边等候空间（软件验收）",
+      "bounds_utm": [
+        412543,
+        3389129,
+        412548,
+        3389133
+      ],
+      "area_m2": 20
+    }
+  ],
+  "union_area_m2": 20,
+  "comparison": {
+    "priority_version": 2,
+    "protection_version": 0,
+    "area_sha256": "7211471d56e98b8f64052f4744391f678025f8b0b84d2fb8a722766c8da34f41",
+    "source_valid": true,
+    "total_priority_area_m2": 20,
+    "scope": "current_user_priority_geometric_overlap_not_cooling_or_service_benefit",
+    "rows": [
+      {
+        "id": "A",
+        "label": "候选 A",
+        "priority_overlap_m2": 0,
+        "protected_conflicts": []
+      },
+      {
+        "id": "B",
+        "label": "候选 B",
+        "priority_overlap_m2": 20,
+        "protected_conflicts": []
+      }
+    ]
+  },
+  "report_status": "stale",
+  "manual_ui_checks": {
+    "create_priority": "passed",
+    "overlap_not_counted_twice": "1sqm contained in 20sqm, union20sqm",
+    "old_report_marked_stale": "passed",
+    "actual_progress_download": "passed"
+  },
+  "automated_checks": {
+    "accounts_build": "passed",
+    "priority_protection_export": {
+      "passed": 15,
+      "failed": 0
+    },
+    "default": {
+      "passed": 137,
+      "skipped": 2,
+      "failed": 0
+    },
+    "supplemental": {
+      "passed": 33,
+      "failed": 0
+    },
+    "temperature_snapshot_preservation": "tested with synthetic model output; no model run in this acceptance",
+    "account_restart_and_isolation": "passed"
+  },
+  "export": {
+    "path": "verification/2026-11-21/priority-planning-qa.zip",
+    "sha256": "025eeeb5622dcfbd1ffd9c5daf6942b64ebc625926fb75056dca3ef9ee5cdc9f",
+    "members": [
+      {
+        "name": "规划进度.md",
+        "bytes": 2605,
+        "sha256": "13ecd1e9074b8dc4f2e2bcecbcb8014e1a74c7f3631661e1287bc1156f7d4889"
+      },
+      {
+        "name": "规划会话.json",
+        "bytes": 67427,
+        "sha256": "c29d9c5e75d292a8679da8285e275b72a3a48ff3b1f6bbcc1963db4aca6ab383"
+      },
+      {
+        "name": "温度情景.geojson",
+        "bytes": 51,
+        "sha256": "9ecdafe2ce4c617b6be7420a06e6918223f34a6f429bfe957ee733c49d03be4d"
+      },
+      {
+        "name": "讨论范围.geojson",
+        "bytes": 2284,
+        "sha256": "c0dff5491d3fc892e01b2c2ed475bd53e5801dfd6ffc00e7e4142609e556e85a"
+      },
+      {
+        "name": "场地核查记录.json",
+        "bytes": 2,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "name": "情景约束检查.json",
+        "bytes": 178,
+        "sha256": "46b6dbbe42341be62fda34f30094675b4c7508f3395c3ab92c300b9a609a2f78"
+      },
+      {
+        "name": "情景修改记录.json",
+        "bytes": 2,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "name": "保留范围版本.json",
+        "bytes": 2,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "name": "优先区域版本.json",
+        "bytes": 3924,
+        "sha256": "66c0d696722261366af36f43bbb5237ef2b136255217c4fe9f02f08c69a17f1f"
+      },
+      {
+        "name": "优先覆盖比较.json",
+        "bytes": 539,
+        "sha256": "2728113e156378c77a22258a1d6b978e4611c9fec43d9af0e47f290967c93fd8"
+      },
+      {
+        "name": "用户优先区.geojson",
+        "bytes": 2040,
+        "sha256": "bd47e407985e3dfac0bdf41eae8ed557fb2309bb4a59879fb9f4ee228d40b1a7"
+      },
+      {
+        "name": "用户保留区.geojson",
+        "bytes": 51,
+        "sha256": "9ecdafe2ce4c617b6be7420a06e6918223f34a6f429bfe957ee733c49d03be4d"
+      },
+      {
+        "name": "旧版讨论报告.md",
+        "bytes": 3413,
+        "sha256": "4b92c83961d8e08304389acc1c5889922ebb35e748daf1b9a8c221849b8b6a98"
+      }
+    ],
+    "hashes_verified": true
+  },
+  "limitations": [
+    "User-declared rectangles only in registered B trial area",
+    "Geometric overlap does not prove cooling or beneficiaries",
+    "No automatic candidate ranking or layout optimization",
+    "Independent field case and live language model workflow remain pending"
+  ]
+}

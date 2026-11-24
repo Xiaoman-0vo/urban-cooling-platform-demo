@@ -1,0 +1,93 @@
+{
+  "schema": "urbancool-case-protocol/1",
+  "created_at": "2026-11-24T10:09:41.429Z",
+  "case_id": "chengdu-registered-cover-diagnostic-20261124",
+  "site_id": "E4125_N33891",
+  "scene_id": "LC09_L2SP_129039_20220928_02_T1",
+  "reference_date": "2022-09-28",
+  "area_sha256": "7211471d56e98b8f64052f4744391f678025f8b0b84d2fb8a722766c8da34f41",
+  "source_description": "Previously registered real Chengdu geometry and frozen historical LST data; not a field intervention trial.",
+  "discussion_assumptions": {
+    "budget_rmb": 40000,
+    "unit_cost_rmb_per_m2": 300,
+    "minimum_area_m2": 102,
+    "source": "developer_authored_reproducible_task_not_user_study"
+  },
+  "cases": [
+    {
+      "id": "baseline",
+      "operation": "historical_baseline"
+    },
+    {
+      "id": "area_51",
+      "bounds": [
+        412541,
+        3389123,
+        412544,
+        3389140
+      ]
+    },
+    {
+      "id": "area_102_left",
+      "bounds": [
+        412541,
+        3389123,
+        412547,
+        3389140
+      ]
+    },
+    {
+      "id": "area_102_right",
+      "bounds": [
+        412544,
+        3389123,
+        412550,
+        3389140
+      ]
+    },
+    {
+      "id": "area_128",
+      "bounds": [
+        412541,
+        3389123,
+        412549,
+        3389139
+      ]
+    },
+    {
+      "id": "area_153",
+      "bounds": [
+        412541,
+        3389123,
+        412550,
+        3389140
+      ]
+    },
+    {
+      "id": "repeat_102_left",
+      "bounds": [
+        412541,
+        3389123,
+        412547,
+        3389140
+      ]
+    }
+  ],
+  "call_limit": 7,
+  "checks_predeclared": [
+    "same query repeatability",
+    "same area different layout compilation",
+    "feature response across area",
+    "frozen input provenance",
+    "rule-reference cost comparison"
+  ],
+  "not_measured": [
+    "actual_cooling",
+    "thermal_comfort",
+    "uncertainty",
+    "human_task_time",
+    "field_feasibility"
+  ],
+  "weights_modified": false,
+  "training_requested": false
+}

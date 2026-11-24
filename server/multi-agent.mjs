@@ -7,16 +7,32 @@ import {pilotPredictionRequested} from './goal-evidence.mjs';
 import {summarizePilotTurn} from './planning-pilot.mjs';
 import {HISTORICAL_LST_TOOL,historicalTemperatureReply,historicalTemperatureRequest} from './historical-lst.mjs';
 import {localPlanningAction} from './local-planning.mjs';
+import {EVALUATE_PILOT_CANDIDATES,evaluatePilotCandidates} from './candidate-evaluation.mjs';
+import {scenarioConstraintCheck,temperatureResultSummary} from '../src/scenario-checks.js';
+import {UPDATE_PILOT_PROTECTION,updatePilotProtection} from './pilot-protection.mjs';
+import {UPDATE_PILOT_PRIORITY,updatePilotPriority} from './pilot-priority.mjs';
+import {GENERATE_PILOT_CANDIDATES,ADOPT_PILOT_CANDIDATE,generatePilotCandidates,adoptPilotCandidate} from './pilot-search.mjs';
+import {pilotSearchIsCurrent} from '../src/pilot-search-state.js';
+import {READ_SPATIAL_SEARCH,executeSpatialSearchTool,spatialSearchTurnReply} from './spatial-search-agent.mjs';
+import {spatialSearchRequest} from './spatial-search-evidence.mjs';
+import {currentPilotPriority,priorityComparison} from '../src/priority-areas.js';
+import {currentPilotProtection,protectionVersionChanged} from '../src/protected-areas.js';
+import {SAVE_PILOT_TEMPERATURE,EVALUATE_PILOT_TEMPERATURE,RESTORE_PILOT_TEMPERATURE,savePilotTemperature,evaluatePilotTemperature,restorePilotTemperature} from './pilot-temperature.mjs';
 import {HEAT_PERCEPTION_TOOL,XHS_HEAT_PERCEPTION_TOOL,heatCollectionRequested,heatPerceptionRequested,heatSnapshotOnly,heatSnapshotReply} from './heat-perception-contract.mjs';
 
 function stateSnapshot(session) {
   return {context:session.context,goal:session.goal,baseline:session.baseline,
     ...(session.pilot?{pilot:{id:session.pilot.id,review_status:session.pilot.review_status,
       candidates:session.pilot.candidates.map(({id,area_m2})=>({id,area_m2}))}}:{}),
-    scenarios:session.scenarios.filter(s=>s.goal_version===session.goal.version).slice(-6).map(scenarioSummary)};
+    protection:currentPilotProtection(session),priority:currentPilotPriority(session),priority_comparison:session.pilot?priorityComparison(session):null,
+    latest_spatial_search:session.pilot_searches?.length?{id:session.pilot_searches.at(-1).id,is_current:pilotSearchIsCurrent(session.pilot_searches.at(-1),session),
+      goal_version:session.pilot_searches.at(-1).scope.goal_version,minimum_area_m2:session.pilot_searches.at(-1).scope.minimum_area_m2,
+      feasible_count:session.pilot_searches.at(-1).feasible_count,
+      candidates:pilotSearchIsCurrent(session.pilot_searches.at(-1),session)?session.pilot_searches.at(-1).candidates:[]}:null,
+    scenarios:session.scenarios.filter(s=>s.goal_version===session.goal.version&&!protectionVersionChanged(s,session)).slice(-6).map(scenarioSummary)};
 }
 
-const PILOT_INSTRUCTIONS='落图试点采用 A、B 两个固定讨论范围，各自独立比较。只登记用户明确给出的预算和假设单价；候选面积来自已登记多边形，用户若另给面积上限则登记该上限。方案探索使用原工具计算两块候选，超过预算者仍列出限制。现场与管控待核，不能保证施工。明确请求预测时程序会记录接入检查。';
+const PILOT_INSTRUCTIONS='落图试点的 A/B 是固定参考范围，空间搜索是独立批次。用户要求生成空间候选时，使用方案探索Agent的generate_pilot_spatial_candidates，不以A/B模板替代；最低改造面积是下限，声明候选面积是可选上限，不得混用。只登记用户明确给出的预算和假设单价。空间搜索只检查登记范围内1米整点单矩形，费用、保留区及优先区来自当前会话；现场与管控待核。采用和覆盖温度评价保留手动入口；明确请求固定草案预测时程序只记录接入检查。';
 
 function predictionTargets(session,text) {
   if(!session.pilot||!pilotPredictionRequested(text))return [];
@@ -25,7 +41,7 @@ function predictionTargets(session,text) {
     .flatMap(m=>[m[1],m[2]].filter(Boolean).map(id=>id.toUpperCase())));
   const requestedOld=/(?:用|按|对|给)(?:旧版|旧方案|旧草案|上(?:一)?版)/.test(commands);
   const version=requestedOld?Math.max(0,...session.scenarios.filter(s=>s.goal_version<session.goal.version).map(s=>s.goal_version)):session.goal.version;
-  return session.scenarios.filter(s=>s.goal_version===version&&(!named.size||named.has(s.candidate_id)));
+  return session.scenarios.filter(s=>s.goal_version===version&&(requestedOld||!protectionVersionChanged(s,session))&&(!named.size||named.has(s.candidate_id)));
 }
 
 function delegationArguments(args) {
@@ -42,6 +58,7 @@ export async function runCollaborativeTurn({session,context,text,planningAction,
   if(planningAction!==undefined&&!snapshotAction&&!session.pilot)
     throw new AgentError('planning_action_unavailable','请先打开成都落图试点。');
   const manual=planningAction===undefined||snapshotAction?null:localPlanningAction(planningAction);
+  const temperatureAction=['save_temperature_scenario','evaluate_temperature_scenario','evaluate_spatial_candidates','restore_temperature_scenario','update_protection','update_priority','generate_spatial_candidates','adopt_spatial_candidate'].includes(manual?.type);
   if(manual)text=manual.text;
   if(snapshotAction)text=`查询成都${xhsAction?'小红书':'微博'}热感知快照。`;
   if(typeof text!=='string' || !text.trim() || text.length>4000)throw new AgentError('invalid_message','请输入1至4000字的规划问题。');
@@ -81,10 +98,27 @@ export async function runCollaborativeTurn({session,context,text,planningAction,
   const modelForRole=role=>client.modelForRole?.(role.id)??client.model;
   const root=createTask(session,{runId,role:coordinator,instruction:text.trim(),model:modelForRole(coordinator),
     executionKind});
-  if(historicalRequest||localSnapshot||snapshotOnly)root.depends_on_goal=false;
+  if(historicalRequest||localSnapshot||snapshotOnly||temperatureAction)root.depends_on_goal=false;
   root.budget=budget;
   const checkpoint=async()=>{session.event_version++;await onProgress();};
-  const callTool=(name,args)=>archiveTools.has(name)?archiveTools.get(name)(args,{signal}):executeTool(name,args,session,catalog);
+  const callTool=(name,args)=>{
+    if(name===READ_SPATIAL_SEARCH)return executeSpatialSearchTool(name,args,session,catalog);
+    if(name===GENERATE_PILOT_CANDIDATES)return generatePilotCandidates(session,catalog.pilot.temperature_area,args);
+    if(name===ADOPT_PILOT_CANDIDATE)return adoptPilotCandidate(session,catalog.pilot.temperature_area,args);
+    if(name===EVALUATE_PILOT_CANDIDATES)return evaluatePilotCandidates(session,catalog.pilot.temperature_area,args,historicalTemperature,{
+      runId,signal,onProgress:checkpoint,beforeCandidate:()=>consumeBudget(budget,'tool_calls'),
+      onCandidate:row=>appendTrace(session,{runId,task:root,tool:'evaluate_pilot_candidate',args:{search_id:args.search_id,candidate_id:row.candidate_id},result:row})});
+    if(name===UPDATE_PILOT_PRIORITY)return updatePilotPriority(session,catalog.pilot.temperature_area,args);
+    if(name===UPDATE_PILOT_PROTECTION)return updatePilotProtection(session,catalog.pilot.temperature_area,args);
+    if(archiveTools.has(name))return archiveTools.get(name)(args,{signal});
+    if(name===SAVE_PILOT_TEMPERATURE)return savePilotTemperature(session,catalog.pilot.temperature_area,args.bounds_utm);
+    if(name===EVALUATE_PILOT_TEMPERATURE)return evaluatePilotTemperature(session,catalog.pilot.temperature_area,args.scenario_id,historicalTemperature,{runId,signal});
+    if(name===RESTORE_PILOT_TEMPERATURE)return restorePilotTemperature(session,catalog.pilot.temperature_area,args.scenario_id,args.expected_current_scenario_id);
+    return executeTool(name,args,session,catalog);
+  };
+  const spatialSearch=Boolean(session.pilot?.temperature_area);
+  const callModelTool=(name,args)=>[READ_SPATIAL_SEARCH,GENERATE_PILOT_CANDIDATES].includes(name)?
+    executeSpatialSearchTool(name,args,session,catalog):callTool(name,args);
   async function runProgramTool(task,tool,args){
     signal?.throwIfAborted();
     consumeBudget(budget,'tool_calls');
@@ -150,12 +184,14 @@ export async function runCollaborativeTurn({session,context,text,planningAction,
       }else{
         const connection=role.id==='data_audit'&&useTeamMcp?await teamMcp(signal):null;
         try{
-          const available=roleTools(role.id,{heatPerception:canReadWeibo,xhsHeatPerception:canReadXhs});
+          const available=roleTools(role.id,{heatPerception:canReadWeibo,xhsHeatPerception:canReadXhs,spatialSearch});
           if(connection)available.push(...connection.tools);
           const result=await runRoleLoop({session,runId,task:child,role,tools:available,messages:childMessages,client,budget,
-            execute:(tool,parameters)=>connection&&tool.startsWith('mcp_')?connection.call(tool,parameters):callTool(tool,parameters),
+            execute:(tool,parameters)=>connection&&tool.startsWith('mcp_')?connection.call(tool,parameters):callModelTool(tool,parameters),
             checkpoint,signal});
-          completeTask(session,child,result.answer);
+          const grounded=spatialSearchTurnReply(session,runId,text);
+          completeTask(session,child,role.id==='plan_exploration'&&grounded?grounded:result.answer,
+            role.id==='plan_exploration'&&grounded?'system':'language_model');
         }finally{await connection?.close();}
       }
     } catch(error) {
@@ -218,26 +254,60 @@ export async function runCollaborativeTurn({session,context,text,planningAction,
         instruction:text.trim(),executionKind:'mcp_read'});
       grounded=await readHeatSnapshot(audit);
     }else if(manual||client.localPlanning){
-      if(manual?.type==='compare'){
+      if(manual?.type==='generate_spatial_candidates'){
+        const {batch}=await runProgramTool(root,GENERATE_PILOT_CANDIDATES,manual.args);
+        grounded=batch.feasible_count?`按当前条件检查 ${batch.scanned_count} 个矩形，${batch.feasible_count} 个满足约束，整理为 ${batch.candidates.length} 个不同候选。请先手动评价本轮候选，对照费用与效果后再决定采用。`:
+          batch.notes.join(' ');
+      }else if(manual?.type==='evaluate_spatial_candidates'){
+        const {evaluation}=await runProgramTool(root,EVALUATE_PILOT_CANDIDATES,manual.args);
+        const completed=evaluation.results.filter(row=>row.status==='estimated').length;
+        grounded=`已记录本轮 ${completed}/${evaluation.results.length} 个候选的有效评价。请在方案工作台对照新增费用、模型温差和当前结论，再决定采用。`;
+      }else if(manual?.type==='adopt_spatial_candidate'){
+        const {scenario}=await runProgramTool(root,ADOPT_PILOT_CANDIDATE,manual.args);
+        grounded=`已采用空间候选为情景 v${scenario.version}，面积 ${scenario.area_m2}㎡，假设费用 ${scenario.estimated_construction_cost_rmb} 元。旧版保留，${scenario.result?'本版带入同一输入下已完成的候选评价及原运行依据，未重复推理。':'本版温度等待手动评价。'}`;
+      }else if(manual?.type==='update_priority'){
+        const {priority}=await runProgramTool(root,UPDATE_PILOT_PRIORITY,manual.args);
+        grounded=`已保存优先区域 v${priority.version}，当前 ${priority.areas.length} 块。覆盖比较已更新，已有方案和温度结果保留；报告需重新生成。未运行预测。`;
+      }else if(manual?.type==='update_protection'){
+        const {protection,scenario}=await runProgramTool(root,UPDATE_PILOT_PROTECTION,manual.args);
+        grounded=`已保存保留范围 v${protection.version}，当前 ${protection.areas.length} 块。${scenario?`情景更新为 v${scenario.version}，${scenarioConstraintCheck(scenario).label}；新版尚未运行评价。`:'后续保存和评价会检查这些范围。'}旧约束、情景和结果保留。`;
+      }else if(manual?.type==='set_conditions'){
+        await runProgramTool(root,'set_planning_goal',manual.args);
+        grounded=summarizePilotTurn(session,runId,text)||'已保存本轮条件。可填写最低改造面积并生成空间候选。';
+      }else if(manual?.type==='compare'){
         await runProgramTool(root,'set_planning_goal',manual.args);
         await runProgramTool(root,'generate_scenario_options',{});
         grounded=summarizePilotTurn(session,runId,text);
+      }else if(manual?.type==='save_temperature_scenario'){
+        const {scenario}=await runProgramTool(root,SAVE_PILOT_TEMPERATURE,manual.args);
+        grounded=`已保存温度情景 v${scenario.version}，覆盖变化面积 ${scenario.area_m2}㎡。可在「目标与草案」手动运行评价。`;
+      }else if(manual?.type==='restore_temperature_scenario'){
+        const {scenario}=await runProgramTool(root,RESTORE_PILOT_TEMPERATURE,manual.args);
+        grounded=`已将旧范围保存为情景 v${scenario.version}（${scenario.area_m2}㎡），按当前目标 v${scenario.goal_version} 重新核价。${scenarioConstraintCheck(scenario).label}。历史结果保留，新版尚未运行温度评价。`;
+      }else if(manual?.type==='evaluate_temperature_scenario'){
+        const {scenario}=await runProgramTool(root,EVALUATE_PILOT_TEMPERATURE,manual.args);
+        const result=scenario.result;
+        root.temperature_model=result.model_version;
+        grounded=`温度情景 v${scenario.version}（${scenario.area_m2}㎡）。模型基线 **${result.baseline_lst_c.toFixed(3)}℃**，情景预测 **${result.scenario_lst_c.toFixed(3)}℃**，温差（基线减情景）**${result.predicted_delta_lst_c.toFixed(3)}℃**。${temperatureResultSummary(result)} ${scenarioConstraintCheck(scenario).label}。该结果适用于指定覆盖假设和参考时相。`;
       }else if(manual?.type==='export'){
         await runProgramTool(root,'export_planning_report',{});
-        grounded=`已生成目标 v${session.goal.version} 的讨论记录，可下载查看各版方案。`;
+        grounded='已生成讨论记录，可下载查看各版方案及已完成的试算。';
       }else{
         grounded=useTeamMcp?'团队 MCP 的对话查询需要启用语言模型。连接状态可在 MCP 工具设置中检查。':
-          '本地试用支持查询历史地表温度。要比较 A、B 或修改预算，请打开落图试点的「目标与草案」。';
+          '本地试用支持查询历史地表温度。保存预算、单价和生成空间候选请打开落图试点的「目标与草案」；自然语言委派搜索需先连接 Qwen 等对话模型。';
       }
     }else{
-      const result=await runRoleLoop({session,runId,task:root,role:coordinator,tools:roleTools('coordinator'),messages,client,budget,
+      const result=await runRoleLoop({session,runId,task:root,role:coordinator,tools:roleTools('coordinator',{spatialSearch}),messages,client,budget,
         execute:async(name,args,parent)=>{
           if(name==='export_planning_report')await ensurePilotCheck(parent);
-          return DELEGATION_ROLES[name]?delegate(name,args,parent):executeTool(name,args,session,catalog);
+          return DELEGATION_ROLES[name]?delegate(name,args,parent):callModelTool(name,args);
         },checkpoint,signal,maxRounds,beforeAnswer:snapshotOnly?ensureHeatSnapshot:ensurePilotCheck});
       modelAnswer=result.answer;
+      if(spatialSearch&&spatialSearchRequest(text).related&&!spatialSearchRequest(text).requested&&
+        !session.traces.some(trace=>trace.turn_id===runId&&[READ_SPATIAL_SEARCH,GENERATE_PILOT_CANDIDATES].includes(trace.tool)))
+        await runProgramTool(root,READ_SPATIAL_SEARCH,{});
       if(snapshotTask?.result)grounded=snapshotTask.result.error?.message||snapshotTask.result.summary;
-      else grounded=summarizePilotTurn(session,runId,text);
+      else grounded=spatialSearchTurnReply(session,runId,text)||summarizePilotTurn(session,runId,text);
     }
     signal?.throwIfAborted();
     const reply=grounded||modelAnswer;

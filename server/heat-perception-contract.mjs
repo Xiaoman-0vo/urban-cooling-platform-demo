@@ -54,3 +54,34 @@ export function summarizeHeatSnapshot(snapshot,channel) {
   }
   return summary;
 }
+
+export function heatClues(snapshot,channel) {
+  return snapshot.items.filter(item=>item.in_scope===true&&typeof item.item_id==='string').map(item=>{
+    const source=String(item.source_url||'');
+    const allowed=channel==='xiaohongshu'
+      ?/^https:\/\/(?:www\.)?xiaohongshu\.com\/explore\/[0-9a-f]{24}(?=$|[/?#])/i
+      :/^https:\/\/(?:(?:m|www)\.)?weibo\.(?:com|cn)\//i;
+    const match=source.match(allowed);
+    let sourceUrl=null;
+    if(match){
+      const url=new URL(source);url.search='';url.hash='';
+      sourceUrl=channel==='xiaohongshu'?match[0]:url.href;
+    }
+    const places=new Map();
+    for(const place of Array.isArray(item.place_evidence)?item.place_evidence:[]){
+      if(typeof place?.name!=='string')continue;
+      const name=place.name.trim().slice(0,200);
+      if(name&&!places.has(name))places.set(name,{name,kind:String(place.kind||'')});
+    }
+    return {
+      item_id:item.item_id,kind:item.kind==='comment'?'comment':'post',
+      excerpt:String(item.excerpt||item.text||'').slice(0,600),
+      text:String(item.text||item.text_full||item.excerpt||'').slice(0,8000),
+      author:typeof item.author==='string'?item.author.slice(0,120):null,
+      source_url:sourceUrl,
+      published_at:item.published_at||null,topic:String(item.demand_topic_zh||item.demand_topic||'待分类'),
+      is_public_demand:item.is_public_demand===true,places:[...places.values()],
+      review_status:typeof item.review_status==='string'?item.review_status:'needs_review',
+    };
+  });
+}

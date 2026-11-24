@@ -2,12 +2,15 @@ import {AgentError} from './agent-tools.mjs';
 import {openAccountDatabase,credentials,loginToken,sessionCookie} from './account-database.mjs';
 import {createDeepSeekClient} from './project-agent.mjs';
 import {createQwenClient} from './qwen-client.mjs';
+import {QWEN_DEFAULTS} from './qwen-config.mjs';
 import {connectTeamMcp} from './team-mcp.mjs';
 import {PROJECT_MAX_FILE_BYTES,validateProject} from '../src/project.js';
+import {inspectionFromCollection,editInspectionItem} from './inspection-items.mjs';
 
 const DEFAULT={provider:'tuned',model:'',endpoint:''};
 const LOCAL={provider:'本地规划工具',model:'本地规划工具',configured:true,localPlanning:true};
 const DEEPSEEK_ENDPOINT='https://api.deepseek.com';
+export const HUAWEI_MAAS_ENDPOINT='https://api.modelarts-maas.com/openai/v1';
 
 function allowedEndpoints(values) {
   return [...new Set(values.map(value=>{
@@ -18,12 +21,19 @@ function allowedEndpoints(values) {
   }))];
 }
 
-export function createAccountService({filename,secureCookie=false,qwen={},endpoints=[],mcpPresets=new Map(),fetchImpl=fetch}) {
+export function createAccountService({filename,secureCookie=false,qwen={},maas={},defaultProvider='tuned',endpoints=[],mcpPresets=new Map(),fetchImpl=fetch}) {
   const compatibleEndpoints=allowedEndpoints(endpoints);
+  if(!['tuned','base','local'].includes(defaultProvider))throw new Error('默认模型可配置为 tuned、base 或 local。');
+  let maasUrl;try{maasUrl=new URL(maas.baseUrl||HUAWEI_MAAS_ENDPOINT);}catch{throw new Error('华为云 MaaS 地址无效。');}
+  if(maasUrl.protocol!=='https:'||!['api.modelarts-maas.com','api-ap-southeast-1.modelarts-maas.com'].includes(maasUrl.hostname)||
+    maasUrl.username||maasUrl.password||maasUrl.search||maasUrl.hash||maasUrl.port||maasUrl.pathname.replace(/\/$/,'')!=='/openai/v1')
+    throw new Error('请配置华为云 MaaS 官方 OpenAI 兼容接口 Base URL。');
+  const maasEndpoint=maasUrl.href.replace(/\/$/,'');
+  const defaultSettings={...DEFAULT,provider:defaultProvider};
   const db=openAccountDatabase(filename);
   const attemptBuckets=new Map();
-  const tunedModel=qwen.model||'epoch_2';
-  const baseModel=qwen.specialistModel||'base';
+  const tunedModel=qwen.model||QWEN_DEFAULTS.model;
+  const baseModel=qwen.specialistModel||QWEN_DEFAULTS.specialistModel;
 
   function loginLimit(address) {
     const now=Date.now();
@@ -35,10 +45,10 @@ export function createAccountService({filename,secureCookie=false,qwen={},endpoi
   }
 
   function publicSettings(user) {
-    const row=db.readModel(user.id)||DEFAULT;
-    const defaults={tuned:tunedModel,base:baseModel,local:'',deepseek:'deepseek-flash'};
+    const row=db.readModel(user.id)||defaultSettings;
+    const defaults={tuned:tunedModel,base:baseModel,local:'',deepseek:'deepseek-flash',maas:maas.model||''};
     return {provider:row.provider,model:row.model||defaults[row.provider]||'',endpoint:row.endpoint,
-      key_configured:Boolean(row.encrypted_key),compatible_endpoints:compatibleEndpoints};
+      key_configured:Boolean(row.encrypted_key),compatible_endpoints:compatibleEndpoints,maas_endpoint:maasEndpoint,maas_model:maas.model||''};
   }
 
   function saveSettings(user,body) {
@@ -50,8 +60,8 @@ export function createAccountService({filename,secureCookie=false,qwen={},endpoi
     const model=typeof body.model==='string'?body.model.trim():'';
     if(!/^[\w][\w./:+-]{0,127}$/.test(model))
       throw new AgentError('invalid_model','请填写有效的模型 ID。');
-    const endpoint=provider==='deepseek'?DEEPSEEK_ENDPOINT:body.endpoint;
-    if(provider!=='deepseek'&&(provider!=='compatible'||!compatibleEndpoints.includes(endpoint)))
+    const endpoint=provider==='deepseek'?DEEPSEEK_ENDPOINT:provider==='maas'?maasEndpoint:body.endpoint;
+    if(!['deepseek','maas'].includes(provider)&&(provider!=='compatible'||!compatibleEndpoints.includes(endpoint)))
       throw new AgentError('invalid_endpoint','请选择已登记的模型 API 地址。');
     const previous=db.readModel(user.id);
     let apiKey=typeof body.api_key==='string'?body.api_key.trim():'';
@@ -84,6 +94,7 @@ export function createAccountService({filename,secureCookie=false,qwen={},endpoi
 
   return {
     authorize,
+    health:()=>({ready:db.ping()}),
     close:()=>db.close(),
     storeFor:user=>db.agentStore(user.id),
     teamMcpFor(user) {
@@ -91,19 +102,21 @@ export function createAccountService({filename,secureCookie=false,qwen={},endpoi
       return preset?signal=>connectTeamMcp(preset,{signal}):null;
     },
     clientFor(user) {
-      const row=db.readModel(user.id)||DEFAULT;
+      const row=db.readModel(user.id)||defaultSettings;
       if(row.provider==='local')return LOCAL;
       if(row.provider==='tuned'||row.provider==='base'){
         return createQwenClient({...qwen,model:row.provider==='tuned'?tunedModel:baseModel,
           specialistModel:baseModel,provider:row.provider==='tuned'?'UrbanCool Qwen 微调版':'Qwen 基座版',fetchImpl});
       }
       const apiKey=db.readModelKey(user.id,row);
+      if(row.provider==='maas'&&row.endpoint===maasEndpoint)
+        return createQwenClient({baseUrl:maasEndpoint,model:row.model,specialistModel:row.model,apiKey,provider:'华为云 MaaS',qwenTemplate:false,fetchImpl});
       if(row.provider==='deepseek')return createDeepSeekClient({model:row.model,apiKey,fetchImpl});
       if(row.provider==='compatible'&&compatibleEndpoints.includes(row.endpoint))
         return createQwenClient({baseUrl:row.endpoint,model:row.model,apiKey,provider:'兼容 API',qwenTemplate:false,fetchImpl});
       throw new AgentError('invalid_endpoint','已保存的 API 地址暂不可用，请在模型设置中重新选择。',503);
     },
-    async route(path,request,response,json,body) {
+    async route(path,request,response,json,body,catalog) {
       const {method}=request;
       const token=loginToken(request);
       if(path==='/account'&&method==='GET')
@@ -118,6 +131,19 @@ export function createAccountService({filename,secureCookie=false,qwen={},endpoi
         return json(response,registration?201:200,{user});
       }
       const user=authorize(request);
+      if(path==='/inspection-items'&&method==='GET')
+        return json(response,200,{items:db.inspectionItems(user.id)});
+      if(path==='/inspection-items'&&method==='POST'){
+        const {evidenceKey,item}=await inspectionFromCollection(user.id,await body(request));
+        return json(response,200,{item:db.addInspectionItem(user.id,evidenceKey,item)});
+      }
+      const inspectionMatch=/^\/inspection-items\/([\da-f-]{36})$/.exec(path);
+      if(inspectionMatch&&method==='PUT'){
+        const current=db.inspectionItem(user.id,inspectionMatch[1]);
+        const changes=await body(request);
+        const updated=editInspectionItem(current,changes,catalog);
+        return json(response,200,{item:db.updateInspectionItem(user.id,updated,changes.revision)});
+      }
       if(path==='/account/logout'&&method==='POST'){
         db.endSession(token);
         response.setHeader('Set-Cookie',sessionCookie(null,secureCookie));

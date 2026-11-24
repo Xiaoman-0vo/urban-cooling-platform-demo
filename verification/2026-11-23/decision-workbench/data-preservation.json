@@ -1,0 +1,33 @@
+{
+  "verified_at": "2026-11-23T14:10:59.992Z",
+  "all_original_records_unchanged": true,
+  "comparison": "SHA-256 of complete rows from consistent before-upgrade and after-first-upgrade snapshots; added QA records allowed",
+  "tables": {
+    "users": {
+      "original_records": 4,
+      "all_original_records_unchanged": true
+    },
+    "projects": {
+      "original_records": 1,
+      "all_original_records_unchanged": true
+    },
+    "agent_sessions": {
+      "original_records": 3,
+      "all_original_records_unchanged": true
+    },
+    "model_settings": {
+      "original_records": 1,
+      "all_original_records_unchanged": true
+    },
+    "mcp_settings": {
+      "original_records": 0,
+      "all_original_records_unchanged": true
+    },
+    "inspection_items": {
+      "original_records": 0,
+      "all_original_records_unchanged": true
+    }
+  },
+  "backup_integrity": "ok",
+  "original_key_preserved": true
+}

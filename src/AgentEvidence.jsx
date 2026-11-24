@@ -9,6 +9,8 @@ const statuses={
   source_metadata:'已读取',research_preparation_evidence:'已读取',
   goal_draft_saved:'已保存',draft_options_created:'已生成',draft_options_reused:'已复用',
   comparison_ready:'可比较',report_created:'已生成报告',
+  temperature_scenario_saved:'已保存情景',temperature_scenario_reused:'已复用情景',
+  temperature_scenario_result_saved:'已计算',temperature_scenario_result_reused:'已复用结果',
   heat_perception_snapshot:'已读取归档',
   mcp_read:'已读取',
 };

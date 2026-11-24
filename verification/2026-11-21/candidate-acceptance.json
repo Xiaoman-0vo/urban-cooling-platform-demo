@@ -1,0 +1,456 @@
+{
+  "schema": "urbancool-spatial-candidate-acceptance/1",
+  "client_date": "2026-11-21",
+  "recorded_at": "2026-11-21T11:55:10.302Z",
+  "scope": "isolated_software_acceptance_not_field_case_or_cooling_validation",
+  "current_source_sha256": {
+    "server/pilot-search.mjs": "8b28d1c1e6ae3c838b6e9ef367db4dfc6e0c74f5d87d7fb45dca27535fe185ea",
+    "src/pilot-search-state.js": "18f7e973a51c3677af567d09a61011bea662a41566a01c28aed0fa0add4bd82f",
+    "src/PilotCandidateSearch.jsx": "23f8ece87658bbfbf3bd33666a926aea3a3374535f2833dda42fd3f963ba924a",
+    "server/local-planning.mjs": "3c111be0c15041382b072d0b49fc2357f3acf17c8d0fd244dbb2bf4444388d71",
+    "server/multi-agent.mjs": "d2f0ae8125840c33dc2a68c43af7dc12254502bf3636a1a5a78f6356905489bc",
+    "server/agent-tools.mjs": "7bb22b6709111219479cd0e47cefcdc6386df6d96ae9f92da35384fa638a85e8",
+    "server/agent-task-state.mjs": "18d4b7b16279771b8f5f8e4da9087ff84978336d592d0dd5d21ca0450412e2a8",
+    "src/PilotTemperature.jsx": "3bfe5a9d1db2e5ca866956cf82970330352dfeb742f3014f17a6f754110daeeb",
+    "src/AgentPanel.jsx": "ecea83c01ab5ab3f96891c35d411d3ac53cdb9e286d741bcd5075d3d8348860b",
+    "src/pilot-map.js": "933bd813e7c3f77f17d0ba399d20bc3610d13e31fa5554009bba40693f6d4e4b",
+    "src/planning-workflow.js": "336d5f4216b43322b82708685f4a9ba6716f62caab86c688f32ef7e476ae8587",
+    "src/PlanningWorkflow.jsx": "40d745ec2010820770df0711d299ed62fd0b41be8bbe9ae6a68d2583a568f83f",
+    "src/agent.css": "03549bb55b0e4be734c7845ab5f042d5e9ce849ac2fdd962b1ff3f7c87a57252",
+    "src/agent-labels.js": "2160f0b1fe166acbc3349ce7e9aed6a4494e9bc9b8647d5926830dc6ffea1fe1",
+    "tests/pilot-search.test.mjs": "f414595d004662fca3554fed1ee2675f97d6a7404e255021c6699ecb2af1844b",
+    "package.json": "cfb300c1c4e1bf6bb9a6afa80e335c4e4791bf980b6750d77e97597fac3e616e"
+  },
+  "execution": {
+    "backend": "real_isolated_account_workbench",
+    "inputs": "browser_forms_and_map_clicks",
+    "language_model_calls": 0,
+    "temperature_model_calls": 0,
+    "cloud_resources_created": 0
+  },
+  "site_id": "E4125_N33891",
+  "session_id": "473a361c-eddc-47c5-824d-73a72d07e78c",
+  "assumptions": {
+    "initial_budget_rmb": 15000,
+    "unit_cost_rmb_per_m2": 300,
+    "minimum_area_m2": 10,
+    "protected_area_m2": 2,
+    "priority_area_m2": 20
+  },
+  "first_search": {
+    "scope": {
+      "algorithm": "registered-rectangles-1m/1",
+      "site_id": "E4125_N33891",
+      "scenario_id": "E4125_N33891_preparation_baseline",
+      "baseline": {
+        "scene_sha256": "ab2c7bcdc210ebe674688da9fe3abf3c7702ce66b92946367a75669afad03d2d",
+        "grid_sha256": "cf2e7722453f7b59ae9c8e3a54dae88df93da76997b6d9fe0a46afb9f805a1c4",
+        "case_id": "CD_E4125_N33891_source_handoff_v1",
+        "scenario_id": "E4125_N33891_preparation_baseline",
+        "source": "public/data/scene.json"
+      },
+      "area_sha256": "7211471d56e98b8f64052f4744391f678025f8b0b84d2fb8a722766c8da34f41",
+      "area_bounds": [
+        412541,
+        3389123,
+        412550,
+        3389140
+      ],
+      "reference_date": "2022-09-28",
+      "raster_sha256": {
+        "datasets/extracted/03/urban-cooling-data-20261022/data/UBGG_Chengdu/chengdu_UBGG_3m.tif": "1799ed4a381549bb13dd3f591448165daa729ab0d89fc14fb17d37e8efcab8cb",
+        "datasets/extracted/03/urban-cooling-data-20261022/data/CNBH2020/CNBH10m_X105Y31.tif": "b3c94c4139fad665047520bdfb144ace7f84d98ab81b4d10943e10085a833dc9"
+      },
+      "goal_version": 1,
+      "budget_rmb": 15000,
+      "unit_cost_rmb_per_m2": 300,
+      "area_limit_m2": null,
+      "minimum_area_m2": 10,
+      "protection": {
+        "version": 1,
+        "areas": [
+          {
+            "id": "6d362f1f-fc14-4059-8f43-c3cd9f5d3bd7",
+            "label": "保留活动空间（软件验收）",
+            "bounds_utm": [
+              412542,
+              3389134,
+              412543,
+              3389136
+            ],
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    104.08739178978075,
+                    30.631635829583605
+                  ],
+                  [
+                    104.08740222348281,
+                    30.631635902813077
+                  ],
+                  [
+                    104.08740205411888,
+                    30.63165394799303
+                  ],
+                  [
+                    104.08739162041492,
+                    30.631653874763494
+                  ],
+                  [
+                    104.08739178978075,
+                    30.631635829583605
+                  ]
+                ]
+              ]
+            },
+            "measurement_crs": "EPSG:32648",
+            "area_sha256": "7211471d56e98b8f64052f4744391f678025f8b0b84d2fb8a722766c8da34f41",
+            "source": "user_declared_keep_area"
+          }
+        ],
+        "area_sha256": "7211471d56e98b8f64052f4744391f678025f8b0b84d2fb8a722766c8da34f41",
+        "created_at": "2026-11-21T11:43:11.204Z",
+        "previous_version": 0,
+        "change": {
+          "operation": "add",
+          "area_id": "6d362f1f-fc14-4059-8f43-c3cd9f5d3bd7",
+          "label": "保留活动空间（软件验收）"
+        }
+      },
+      "priority": {
+        "version": 1,
+        "areas": [
+          {
+            "id": "91c8534a-9ac2-4b15-bb90-088019f25b8d",
+            "label": "等候空间优先（软件验收）",
+            "bounds_utm": [
+              412543,
+              3389129,
+              412548,
+              3389133
+            ],
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    104.08740264689192,
+                    30.631590789862987
+                  ],
+                  [
+                    104.08745481537855,
+                    30.631591155997178
+                  ],
+                  [
+                    104.0874544766707,
+                    30.631627246357795
+                  ],
+                  [
+                    104.0874023081647,
+                    30.631626880223088
+                  ],
+                  [
+                    104.08740264689192,
+                    30.631590789862987
+                  ]
+                ]
+              ]
+            },
+            "measurement_crs": "EPSG:32648",
+            "area_sha256": "7211471d56e98b8f64052f4744391f678025f8b0b84d2fb8a722766c8da34f41",
+            "source": "user_declared_priority_area"
+          }
+        ],
+        "area_sha256": "7211471d56e98b8f64052f4744391f678025f8b0b84d2fb8a722766c8da34f41",
+        "created_at": "2026-11-21T11:42:41.902Z",
+        "previous_version": 0,
+        "change": {
+          "operation": "add",
+          "area_id": "91c8534a-9ac2-4b15-bb90-088019f25b8d",
+          "label": "等候空间优先（软件验收）"
+        }
+      }
+    },
+    "scanned": 6885,
+    "feasible": 3054,
+    "candidates": [
+      {
+        "bounds_utm": [
+          412543,
+          3389129,
+          412548,
+          3389131
+        ],
+        "area_m2": 10,
+        "cost_rmb": 3000,
+        "priority_overlap_m2": 10,
+        "perimeter_m": 14,
+        "id": "0358dee7-7872-461c-a59c-546634e7ee68",
+        "strategies": [
+          "cost"
+        ],
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                104.08740264689192,
+                30.631590789862987
+              ],
+              [
+                104.08745481537855,
+                30.631591155997178
+              ],
+              [
+                104.08745464602471,
+                30.63160920117751
+              ],
+              [
+                104.08740247752839,
+                30.63160883504306
+              ],
+              [
+                104.08740264689192,
+                30.631590789862987
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "bounds_utm": [
+          412543,
+          3389123,
+          412548,
+          3389133
+        ],
+        "area_m2": 50,
+        "cost_rmb": 15000,
+        "priority_overlap_m2": 20,
+        "perimeter_m": 30,
+        "id": "e38d9983-c024-42c3-9f54-0bbdc56345be",
+        "strategies": [
+          "area"
+        ],
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                104.08740315498159,
+                30.63153665432245
+              ],
+              [
+                104.08745532343919,
+                30.631537020455863
+              ],
+              [
+                104.0874544766707,
+                30.631627246357795
+              ],
+              [
+                104.0874023081647,
+                30.631626880223088
+              ],
+              [
+                104.08740315498159,
+                30.63153665432245
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "bounds_utm": [
+          412543,
+          3389129,
+          412548,
+          3389133
+        ],
+        "area_m2": 20,
+        "cost_rmb": 6000,
+        "priority_overlap_m2": 20,
+        "perimeter_m": 18,
+        "id": "cd5a5a9f-af6a-4f39-b531-09322307012b",
+        "strategies": [
+          "priority"
+        ],
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                104.08740264689192,
+                30.631590789862987
+              ],
+              [
+                104.08745481537855,
+                30.631591155997178
+              ],
+              [
+                104.0874544766707,
+                30.631627246357795
+              ],
+              [
+                104.0874023081647,
+                30.631626880223088
+              ],
+              [
+                104.08740264689192,
+                30.631590789862987
+              ]
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "budget_change": {
+    "budget_rmb": 2000,
+    "old_candidates_disabled_in_UI": true,
+    "no_feasible_count": 0,
+    "notes": [
+      "没有同时满足最低 10㎡、预算、面积上限和保留区的单矩形；请核对条件或调整目标。",
+      "最低面积按当前单价至少需要 3000 元，超过预算 2000 元。"
+    ]
+  },
+  "current": {
+    "goal_version": 3,
+    "search_id": "a9ab6c03-12a9-43a9-89b1-8babe38b34f2",
+    "scenario_id": "605bd6f8-9d37-4bef-9884-cd8f7b2beb7a",
+    "scenario_version": 4,
+    "area_m2": 50,
+    "cost_rmb": 15000,
+    "result": null,
+    "change": {
+      "type": "candidate_adoption",
+      "source_scenario_id": null,
+      "search_id": "a9ab6c03-12a9-43a9-89b1-8babe38b34f2",
+      "candidate_id": "89d29e73-ac55-40f7-9f87-9fff5f8b5320",
+      "strategies": [
+        "area"
+      ],
+      "previous_scenario_id": "dc7f600c-d872-46dd-a055-407a6121e9b9"
+    },
+    "history_count": 4
+  },
+  "validation": {
+    "accounts_build": "passed",
+    "default": {
+      "passed": 144,
+      "failed": 0,
+      "skipped": 2
+    },
+    "supplemental": {
+      "passed": 33,
+      "failed": 0
+    },
+    "final_search_and_agent_scope": {
+      "passed": 33,
+      "failed": 0
+    },
+    "UI": [
+      "save_conditions_without_fixed_A_B_generation",
+      "three_distinct_candidates",
+      "adoption",
+      "budget_change_expires_previous_candidates",
+      "explicit_no_solution",
+      "regenerate_and_adopt_with_history",
+      "report_current",
+      "progress_generated_message_15_members"
+    ],
+    "browser_download": "Download-event tooling failed; UI generation confirmed, no new Downloads file confirmed. QA archive generated directly from this saved isolated account session with the same exporter and individually hash-verified.",
+    "final_source_note": "Final backend model-context projection adds an explicit current/stale flag after UI testing; its related tests passed. No live language model was used."
+  },
+  "export": {
+    "path": "verification/2026-11-21/candidate-planning-qa.zip",
+    "method": "same_exporter_from_saved_UI_QA_session",
+    "members": [
+      {
+        "name": "规划进度.md",
+        "bytes": 5556,
+        "sha256": "d30fcd9dbc020be99fdf6c87bbdd25e0c49ff758cfdc2f88d2a518c59874e4ee"
+      },
+      {
+        "name": "规划会话.json",
+        "bytes": 207079,
+        "sha256": "1ce2aa1842c391b9e36395fdd662f3bf2245cc92c6f5feeac3955ee83fb606ef"
+      },
+      {
+        "name": "温度情景.geojson",
+        "bytes": 16851,
+        "sha256": "a84ee832ae3c9959a53b35a5950bf22b9045c1fcc739f57548b9ce3fb6385762"
+      },
+      {
+        "name": "讨论范围.geojson",
+        "bytes": 51,
+        "sha256": "9ecdafe2ce4c617b6be7420a06e6918223f34a6f429bfe957ee733c49d03be4d"
+      },
+      {
+        "name": "场地核查记录.json",
+        "bytes": 2,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "name": "情景约束检查.json",
+        "bytes": 4368,
+        "sha256": "f2d1a67ce2a259d553170104548df4ff0cc34c7db510d0eb2138c9a31e8184a3"
+      },
+      {
+        "name": "情景修改记录.json",
+        "bytes": 1592,
+        "sha256": "8cf32018b1eaee5142e6b3b8007596a345a2cc8b6be730e7a169874f9dc284c6"
+      },
+      {
+        "name": "保留范围版本.json",
+        "bytes": 1428,
+        "sha256": "51527cec399c4abdd38af301a9b6fe0f38c6b37461b1813c97b90c3e3b78dcb0"
+      },
+      {
+        "name": "优先区域版本.json",
+        "bytes": 1431,
+        "sha256": "e838437323bd487a3451a470dccde7e7db9ecacffb7bb736be03f5f7dc62099c"
+      },
+      {
+        "name": "优先覆盖比较.json",
+        "bytes": 871,
+        "sha256": "25c337f73d9134951393d8c17fa697446bf448065313b81831fd443fd5d3c6a0"
+      },
+      {
+        "name": "空间候选搜索.json",
+        "bytes": 20810,
+        "sha256": "dc773516256555cc0131d7212dc5ac5c24db86a361142f0149872c1ecea54653"
+      },
+      {
+        "name": "搜索候选.geojson",
+        "bytes": 7394,
+        "sha256": "f00868c1d58cb19e172eb4979172cfa194164d290e158603a367e9bc2a468acf"
+      },
+      {
+        "name": "用户优先区.geojson",
+        "bytes": 1046,
+        "sha256": "ef7ecc30f0c4d24ef220e55a96c0c3df56a859b710edd7b815c1b9ef231a31ec"
+      },
+      {
+        "name": "用户保留区.geojson",
+        "bytes": 1045,
+        "sha256": "bb086cdf1889dbaffff106ab3a0be54ba69eef1076c78502868fee0290e4b941"
+      },
+      {
+        "name": "当前讨论报告.md",
+        "bytes": 12157,
+        "sha256": "a2b607eda935a922abacb6191517b07b351652e804cbcd4ba705e9c27f2e17ba"
+      }
+    ],
+    "sha256": "3b9014ab52464b37f67f7e5f86454a6fe5ec04aff8bde1bcab373e3cc67c1af4",
+    "hashes_verified": true
+  },
+  "limitations": [
+    "Registered B trial area only; integer-metre axis-aligned single rectangles",
+    "Optimizes explicit cost/area/geometric-priority objectives, not cooling",
+    "Site feasibility and actual cooling require independent validation",
+    "No live AI planning or cloud deployment claimed"
+  ]
+}

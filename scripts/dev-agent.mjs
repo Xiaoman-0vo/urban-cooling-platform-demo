@@ -1,6 +1,7 @@
 import {spawn} from 'node:child_process';
 import {resolve,dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {loadLocalEnvironment} from '../server/agent-server.mjs';
 
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const children=[];
@@ -13,12 +14,8 @@ function stop(code=0) {
 }
 const accounts=process.argv.includes('--accounts');
 const qwen=process.argv.includes('--qwen')&&!accounts;
+await loadLocalEnvironment();
 const env={...process.env};
-if(qwen){
-  env.QWEN_BASE_URL||='http://127.0.0.1:18084/v1';
-  env.QWEN_MODEL||='epoch_2';
-  env.QWEN_SPECIALIST_MODEL||='base';
-}
 if(accounts){
   env.URBANCOOL_ACCOUNTS='1';
   env.VITE_URBANCOOL_ACCOUNTS='1';

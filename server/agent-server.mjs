@@ -11,6 +11,10 @@ import {DEFAULT_RUN_LIMITS} from './agent-runtime.mjs';
 import {createHistoricalTemperature} from './historical-lst.mjs';
 import {queryHeatPerception,queryXhsHeatPerception,requestHeatCollection} from './heat-perception-client.mjs';
 import {loadTeamMcpPresets} from './team-mcp.mjs';
+import {checkCollectionReadiness} from './collection-readiness.mjs';
+import {workbenchRuntime} from './workbench-runtime.mjs';
+import {canManageClassifier,createLocalClassifierService} from './local-classifier-service.mjs';
+import {qwenConfig} from './qwen-config.mjs';
 
 const ROOT=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const UUID=/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/;
@@ -62,7 +66,7 @@ async function requestBody(request,maxBytes=32768) {
   catch { throw new AgentError('invalid_json','请求不是有效 JSON。'); }
 }
 
-export function createAgentServer({catalog,client,store,accounts,historicalTemperature,staticFiles,port=5181,uiPorts=[5173,4190],siteOrigin,turnTimeoutMs=180000}) {
+export function createAgentServer({catalog,client,store,accounts,historicalTemperature,staticFiles,classifierService,port=5181,uiPorts=[5173,4190],siteOrigin,turnTimeoutMs=180000}) {
   const hosts=new Set([`127.0.0.1:${port}`,`localhost:${port}`]);
   const origins=new Set(uiPorts.flatMap(p=>[`http://127.0.0.1:${p}`,`http://localhost:${p}`]));
   if(siteOrigin){
@@ -81,18 +85,30 @@ export function createAgentServer({catalog,client,store,accounts,historicalTempe
       if (!boundHosts.has(request.headers.host) || (request.headers.origin && !origins.has(request.headers.origin)))
         throw new AgentError('origin_rejected','此原型仅允许本机规划页面访问。',403);
       const url=new URL(request.url,`http://127.0.0.1:${port}`);
+      if(url.pathname==='/healthz'&&['GET','HEAD'].includes(request.method)){
+        try{
+          if(accounts?.health&&!accounts.health().ready)return json(response,503,{status:'unavailable'});
+          return json(response,200,{status:'ready',service:'urbancool-workbench',accounts:Boolean(accounts)});
+        }catch{return json(response,503,{status:'unavailable'});}
+      }
       if(staticFiles&&['GET','HEAD'].includes(request.method)&&!/^\/api(?:\/|$)/.test(url.pathname))
         return staticFiles(request,response,()=>{response.writeHead(404);response.end();});
       if(request.method!=='GET' && request.headers['x-urbancool-agent']!=='1')
         throw new AgentError('client_header_required','缺少客户端标识。',403);
       const path=url.pathname.slice('/api/agent'.length);
-      if(url.pathname.startsWith('/api/agent/')&&(/^\/(account|mcp-settings)(?:\/|$)/.test(path)||['/model','/project'].includes(path))){
-        if(accounts)return await accounts.route(path,request,response,json,requestBody);
+      if(url.pathname.startsWith('/api/agent/')&&(/^\/(account|mcp-settings|inspection-items)(?:\/|$)/.test(path)||['/model','/project'].includes(path))){
+        if(accounts)return await accounts.route(path,request,response,json,requestBody,catalog);
         if(path==='/account'&&request.method==='GET')return json(response,200,{enabled:false});
         throw new AgentError('not_found','账户功能未启用。',404);
       }
       const user=accounts?.authorize(request);
       if(user)requestStore=accounts.storeFor(user);
+      if(request.method==='GET'&&path==='/collection-readiness'){
+        if(!user)throw new AgentError('login_required','请登录工作台后查看采集准备情况。',401);
+        const channel=url.searchParams.get('channel');
+        if(!['xhs','weibo'].includes(channel))throw new AgentError('invalid_channel','请选择小红书或微博。');
+        return json(response,200,await checkCollectionReadiness(channel,{classifierService}));
+      }
       const collectionRoute=/^\/api\/agent\/(weibo|xhs)-collection$/.exec(url.pathname);
       if(collectionRoute){
         if(!user)throw new AgentError('login_required','请登录工作台后使用采集。',401);
@@ -118,14 +134,18 @@ export function createAgentServer({catalog,client,store,accounts,historicalTempe
       }
       if (request.method==='GET' && url.pathname==='/api/agent/health') {
         const activeClient=user?accounts.clientFor(user):client;
-        const modelAvailable=await activeClient.probe?.();
+        const modelConnection=await activeClient.probeStatus?.();
+        const modelAvailable=modelConnection?modelConnection.available:await activeClient.probe?.();
         return json(response,200,{status:'ready',provider:activeClient.provider||'DeepSeek',model:activeClient.model,configured:activeClient.configured,capabilities:capabilities(catalog.pilot),
           ...(typeof modelAvailable==='boolean'?{model_available:modelAvailable}:{}),
+          ...(modelConnection?{model_connection:modelConnection}:{}),
           heat_perception:{transport:'mcp_stdio',collection:Boolean(user),xiaohongshu:true},
           ...(activeClient.localPlanning?{local_planning:true}:{}),
           ...(historicalTemperature?{historical_temperature:{sample_prompt:historicalTemperature.sample_prompt}}:{}),
           ...(catalog.pilot?{pilot:{site_id:catalog.pilot.site_id,scenario_id:catalog.pilot.scenario_id,
-            candidates:catalog.pilot.candidates,outstanding:catalog.pilot.outstanding}}:{}),
+            candidates:catalog.pilot.candidates,outstanding:catalog.pilot.outstanding,
+            temperature_area:catalog.pilot.temperature_area,
+            temperature_configured:Boolean(historicalTemperature?.evaluatePilot)}}:{}),
           orchestration:'supervisor-workers',agents:publicRoles(),run_limits:DEFAULT_RUN_LIMITS});
       }
       const match=url.pathname.match(/^\/api\/agent\/sessions\/([^/]+)(?:\/(evidence|cancel))?$/);
@@ -183,11 +203,11 @@ export function createAgentServer({catalog,client,store,accounts,historicalTempe
   return server;
 }
 
-async function loadLocalEnvironment() {
+export async function loadLocalEnvironment() {
   try {
     const text=await readFile(resolve(ROOT,'.env.local'),'utf8');
     for(const line of text.split(/\r?\n/)) {
-      const match=line.match(/^\s*(DEEPSEEK_API_KEY|DEEPSEEK_MODEL|AGENT_PORT|AGENT_REACH|OPENCLI_ENTRY|URBANCOOL_[A-Z_]+|QWEN_[A-Z_]+)\s*=\s*(.*?)\s*$/);
+      const match=line.match(/^\s*(DEEPSEEK_API_KEY|DEEPSEEK_MODEL|AGENT_PORT|AGENT_HOST|AGENT_REACH|OPENCLI_ENTRY|OPENCLI_WINDOW|URBANCOOL_[A-Z_]+|QWEN_[A-Z_]+|HUAWEI_MAAS_BASE_URL|HUAWEI_MAAS_MODEL)\s*=\s*(.*?)\s*$/);
       if(match && !process.env[match[1]]) process.env[match[1]]=match[2].replace(/^(['"])(.*)\1$/,'$2');
     }
   } catch(error) {if(error.code!=='ENOENT')throw error;}
@@ -195,8 +215,7 @@ async function loadLocalEnvironment() {
 
 export async function startAgentServer({workbench=false}={}) {
   await loadLocalEnvironment();
-  const port=Number(process.env.AGENT_PORT || 5181);
-  if (!Number.isInteger(port)||port<1024||port>65535)throw new Error('AGENT_PORT must be a valid local port');
+  const {port,host,siteOrigin}=workbenchRuntime(process.env,{workbench});
   const catalog=await loadProjectCatalog(ROOT);
   const localPlanning=process.env.URBANCOOL_LOCAL_TRIAL==='1';
   const client=localPlanning?{provider:'本地试用',model:'本地规划工具',configured:true,localPlanning}:
@@ -213,11 +232,13 @@ export async function startAgentServer({workbench=false}={}) {
     }});
   }
   const accounts=workbench||process.env.URBANCOOL_ACCOUNTS==='1'?await startAccounts():null;
-  const siteOrigin=process.env.URBANCOOL_SITE_ORIGIN||(workbench?`http://127.0.0.1:${port}`:undefined);
-  const server=createAgentServer({catalog,client,store,accounts,staticFiles,port,siteOrigin,historicalTemperature:createHistoricalTemperature()});
+  const classifierService=canManageClassifier({workbench,host})?createLocalClassifierService():null;
+  const server=createAgentServer({catalog,client,store,accounts,staticFiles,classifierService,port,siteOrigin,historicalTemperature:createHistoricalTemperature()});
   if(accounts)server.on('close',()=>accounts.close());
-  server.listen(port,'127.0.0.1',()=>console.log(`UrbanCool Agent: http://127.0.0.1:${port} (${accounts?'accounts':localPlanning?'local trial':client.configured?'DeepSeek configured':'DEEPSEEK_API_KEY missing'})`));
+  if(classifierService)server.on('close',()=>classifierService.close());
+  server.listen(port,host,()=>console.log(`UrbanCool Agent: ${siteOrigin||`http://127.0.0.1:${port}`} (${accounts?'accounts':localPlanning?'local trial':client.configured?'DeepSeek configured':'DEEPSEEK_API_KEY missing'})`));
   server.on('error',error=>{console.error(`Agent service could not start (${error.code || 'error'}).`);process.exitCode=1;});
+  if(classifierService)server.once('listening',()=>{void classifierService.ensure();});
   return server;
 }
 
@@ -228,10 +249,15 @@ async function startAccounts() {
     secureCookie:process.env.URBANCOOL_SECURE_COOKIE==='1'||process.env.URBANCOOL_SITE_ORIGIN?.startsWith('https://'),
     endpoints:(process.env.URBANCOOL_MODEL_ENDPOINTS||'').split(',').map(item=>item.trim()).filter(Boolean),
     mcpPresets:loadTeamMcpPresets(process.env.URBANCOOL_MCP_SERVERS),
-    qwen:{baseUrl:process.env.QWEN_BASE_URL||'http://127.0.0.1:18084/v1',model:process.env.QWEN_MODEL,
-      specialistModel:process.env.QWEN_SPECIALIST_MODEL,apiKey:process.env.QWEN_API_KEY},
+    defaultProvider:process.env.URBANCOOL_DEFAULT_PROVIDER||'tuned',
+    maas:{baseUrl:process.env.HUAWEI_MAAS_BASE_URL,model:process.env.HUAWEI_MAAS_MODEL},
+    qwen:qwenConfig(),
   });
 }
 
-if (process.argv[1] && resolve(process.argv[1])===fileURLToPath(import.meta.url))
-  await startAgentServer({workbench:process.argv.includes('--workbench')});
+if (process.argv[1] && resolve(process.argv[1])===fileURLToPath(import.meta.url)){
+  const server=await startAgentServer({workbench:process.argv.includes('--workbench')});
+  let closing=false;
+  const close=()=>{if(!closing){closing=true;server.close();}};
+  process.once('SIGTERM',close);process.once('SIGINT',close);
+}

@@ -53,6 +53,18 @@
 .agent-temperature-result>div {padding:9px;background:#0f2934;border:1px solid #31565b;border-radius:8px}
 .agent-temperature-result dt {font-size:11px;color:#9ec2c4}
 .agent-temperature-result dd {margin:4px 0 0;color:#ddf1e9;font-size:14px;font-weight:650;font-variant-numeric:tabular-nums}
+.pilot-temperature p {display:block;font-size:11px;line-height:1.65;margin-top:8px;color:#adc3c6}
+.pilot-temperature h5 {margin:14px 0 4px;font-size:12px;font-weight:600;color:#e0ede8}
+.pilot-temperature .pilot-temperature-actions {display:flex;flex-wrap:wrap;justify-content:flex-start;gap:7px;margin-top:8px}
+.pilot-temperature-actions .agent-locate {margin:0}
+.pilot-temperature .agent-temperature-result {grid-template-columns:repeat(auto-fit,minmax(84px,1fr))}
+.pilot-temperature .agent-temperature-result dd {font-size:14px}
+.pilot-temperature-history {border-top:1px solid #35565b;margin-top:9px;padding-top:2px}
+@media(max-width:800px){.agent-panel:has(.pilot-temperature-drawing){top:auto;max-height:49dvh}}
+.pilot-map-preview{position:absolute;z-index:35;left:24px;bottom:72px;display:flex;align-items:center;gap:16px;max-width:min(700px,calc(100vw - 48px));padding:16px 20px;border:1px solid #69d8ba;border-radius:12px;background:#0b252ff5;box-shadow:0 8px 30px #0006;color:#d9f6ed}
+.pilot-map-preview div{min-width:0}.pilot-map-preview small,.pilot-map-preview strong,.pilot-map-preview span{display:block}.pilot-map-preview small{font-size:11px;color:#8bbaae;margin-bottom:5px}.pilot-map-preview strong{font-size:16px;margin-bottom:5px}.pilot-map-preview span{font-size:13px}.pilot-map-preview p{font-size:11px;color:#a5c4c2;margin:7px 0 0;line-height:1.6}.pilot-map-preview button{flex-shrink:0;border:1px solid #6aaf9e;border-radius:7px;background:#245d4c;color:#e0fff2;padding:10px;cursor:pointer}.pilot-map-preview button:last-child{padding:7px;background:transparent}
+.candidate-reading-guide{border-left:3px solid #7ecfb6;padding:10px 12px;margin:14px 0;background:#133b3a}.candidate-reading-guide strong,.candidate-temperature strong{font-size:12px;color:#d3efe2}.pilot-temperature .candidate-reading-guide p,.pilot-temperature .agent-search-candidate p,.pilot-temperature .candidate-temperature p{display:block;line-height:1.7;margin:6px 0;font-size:11px;color:#adc5c2}.candidate-temperature{border-top:1px solid #42645f;margin-top:10px;padding-top:9px}.candidate-condition-status{color:#adeac5!important}
+@media(max-width:800px){.pilot-map-preview{left:12px;right:12px;bottom:58px;max-width:none;gap:10px;padding:12px;flex-wrap:wrap}.pilot-map-preview div{flex:1 1 calc(100% - 44px)}.pilot-map-preview button:nth-child(2){order:3;padding:8px 12px}.pilot-map-preview button:last-child{align-self:flex-start}.pilot-map-preview strong{font-size:14px}}
 .agent-evidence .agent-trace-data {margin:8px 0 0;padding:5px 0;border:0;background:none}
 .agent-evidence .agent-trace-data>summary {font-size:11px;color:#a3c8c4}
 
@@ -78,6 +90,39 @@
 .agent-composer:not(:has(form)) .agent-bottom-actions {margin-top:0}
 .agent-task-status.no_data {border-color:#526d75;color:#afc5ca;background:#253d48}
 .agent-offline-note {margin:8px 16px 0;padding:7px 9px;border-radius:6px;background:#4b3b282e;color:#ead29f;font-size:11px}
+.agent-offline-note p {margin:4px 0;line-height:1.6}
+.agent-collection-readiness {margin:16px 0;padding:14px;border:1px solid #36565d;border-radius:10px;background:#102d37}
+.agent-collection-readiness-heading {display:flex;justify-content:space-between;align-items:center;gap:12px}
+.agent-collection-readiness-heading h4 {margin:0;font-size:13px;font-weight:500}
+.agent-collection-check {display:grid;grid-template-columns:8px 1fr auto;align-items:center;gap:8px;margin-top:12px;font-size:12px}
+.agent-collection-check strong {font-weight:400}
+.agent-collection-check>span:last-of-type {color:#a8c7c0}
+.agent-collection-check p {grid-column:2/-1;margin:0;color:#d7c9a7;font-size:11px;line-height:1.7}
+.agent-collection-readiness a {display:inline-block;margin-top:12px;color:#b7e3cb;font-size:12px}
+.agent-collection-browser-links {display:flex;flex-wrap:wrap;gap:16px}
+.agent-heat-clue {padding:15px;margin:14px 0;border:1px solid #355b60;border-radius:10px;background:#102e38}
+.agent-heat-clue header {display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px}
+.agent-heat-clue header strong {font-size:13px;color:#d9ece3;font-weight:500}
+.agent-heat-clue header span {font-size:10px;color:#94b6bd}
+.agent-heat-clue blockquote {margin:12px 0;padding-left:10px;border-left:2px solid #689d8b;color:#d4e2df;font-size:12px;line-height:1.8;white-space:pre-wrap;overflow-wrap:anywhere}
+.agent-heat-clue p {font-size:11px;line-height:1.8;color:#9fbac0;overflow-wrap:anywhere}
+.agent-heat-clue-actions {display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.agent-heat-clue-actions a {color:#bce4cf;font-size:11px}
+.agent-heat-clue details {margin-top:12px;color:#a1bdc2;font-size:11px}
+.agent-heat-clue .agent-clue-original {white-space:pre-wrap;max-height:240px;overflow:auto}
+.agent-inspection-record {margin:20px 0;border-bottom:1px solid #35515a;padding-bottom:20px}
+.agent-inspection-form {display:grid;gap:12px}
+.agent-inspection-form label {display:grid;gap:6px;color:#a9c1c5;font-size:11px}
+.agent-inspection-form :is(input,textarea,select) {width:100%;border:1px solid #3c6066;border-radius:7px;padding:9px;background:#0c2934;color:#d6e8e0;font:inherit}
+.agent-inspection-form textarea {resize:vertical;line-height:1.6}
+.agent-inspection-counts {display:flex;flex-wrap:wrap;gap:7px;margin:16px 0 12px}
+.agent-inspection-counts button {padding:6px 9px;border:1px solid #3c6066;border-radius:7px;background:#102d37;color:#b7cfd0;font:inherit;font-size:11px}
+.agent-inspection-counts button[aria-pressed="true"] {background:#285546;border-color:#72aa92;color:#e1f0e6}
+.agent-inspection-search {display:grid;gap:7px;color:#b7cfd0;font-size:11px}
+.agent-inspection-search input {width:100%;padding:10px;border:1px solid #3c6066;border-radius:7px;background:#0c2934;color:#d6e8e0;font:inherit}
+.agent-inspection-conflict {padding:12px;border:1px solid #9a8051;border-radius:8px;background:#4b3b282e;color:#ead29f;font-size:11px;line-height:1.7;overflow-wrap:anywhere}
+.agent-inspection-conflict p {white-space:pre-wrap}
+.agent-inspection-conflict .agent-heat-clue-actions {margin-top:10px}
 .agent-tabs {gap:0;justify-content:space-between}
 .agent-tabs button {min-height:40px;padding:6px 3px}
 @media(max-width:480px) {
@@ -93,3 +138,7 @@
 .agent-weibo-result{margin-top:16px;padding:13px;border:1px solid #355a5a;border-radius:10px;background:#102f3a}
 .agent-weibo-result p{margin:6px 0;color:#bdd4d4}
 .agent-weibo-result code{overflow-wrap:anywhere}
+.agent-scenario-checks{margin:12px 0;padding:12px;border:1px solid #477266;border-radius:8px;background:#173c3438;font-size:12px;line-height:1.7}.agent-scenario-checks[data-status=failed]{border-color:#ac8660;background:#4e341f38}.agent-scenario-checks ul{padding-left:18px;margin:8px 0}.agent-scenario-checks p{font-size:11px;color:#b5c4c2}
+.agent-protected-areas{margin:14px 0;padding:12px;border:1px solid #a16e82;border-radius:9px;background:#3a233126;line-height:1.8}.agent-protected-areas h5{margin:0 0 8px;color:#e0b8c8;font-size:12px}.agent-protected-areas p{margin:7px 0}.agent-protection-item{display:flex;flex-wrap:wrap;align-items:center;gap:8px;border-top:1px solid #68505c;margin-top:9px;padding-top:9px;font-size:11px}.agent-protection-label{display:block;margin:10px 0;font-size:11px}.agent-protection-label input{display:block;width:100%;margin-top:6px;padding:8px;border:1px solid #806475;border-radius:6px;background:#102b36;color:#e2eee9}
+.agent-priority-areas{margin:14px 0;padding:12px;border:1px solid #6687b5;border-radius:9px;background:#26374d33;line-height:1.8}.agent-priority-areas h5{margin:0 0 8px;color:#b6d2fa;font-size:12px}.agent-priority-areas p{margin:7px 0}.agent-priority-areas .agent-protection-item{border-color:#46617d}.agent-priority-comparison{width:100%;border-collapse:collapse;font-size:11px;margin:12px 0}.agent-priority-comparison caption{text-align:left;color:#c8dcf5;margin-bottom:6px}.agent-priority-comparison :is(th,td){text-align:left;padding:6px;border-bottom:1px solid #44617c}
+.agent-spatial-search{margin:16px 0;padding:14px;border:1px solid #588b79;border-radius:10px;background:#1d41372e}.agent-spatial-search h5{font-size:13px;margin:0 0 8px;color:#c7e8d6}.agent-spatial-search form{display:grid;gap:10px;margin:14px 0}.agent-spatial-search label{display:grid;gap:6px;font-size:11px}.agent-spatial-search input{padding:9px;border:1px solid #557f75;border-radius:7px;background:#102b36;color:#e2eee9;width:100%}.agent-search-candidate{border-top:1px solid #41695e;margin-top:14px;padding-top:12px}.agent-search-candidate h6{margin:0 0 9px;font-size:12px;color:#c3e5d4}.agent-search-candidate dl{display:flex;flex-wrap:wrap;gap:14px;margin:0 0 9px}.agent-search-candidate dl div{display:grid;gap:3px}.agent-search-candidate dt{font-size:10px;color:#a4beb4}.agent-search-candidate dd{margin:0;color:#e0efe7;font-size:13px}

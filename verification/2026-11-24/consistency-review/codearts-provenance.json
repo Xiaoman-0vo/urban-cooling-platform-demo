@@ -1,0 +1,68 @@
+{
+  "schema": "urbancool-codearts-development-followup/1",
+  "observed_at": "2026-11-24T11:05:13.184Z",
+  "product": "CodeArts Agent",
+  "displayed_model": "DeepSeek-V4.1-Flash-1017",
+  "task_title": "实现评估就绪模块与测试文件",
+  "previous_snapshot": "../case-evaluation/codearts-provenance.json",
+  "original_task_completion_observed": true,
+  "original_displayed_duration": "7min 52s",
+  "repair_rounds": [
+    {
+      "issue": "identical full input with different integer millicelsius output",
+      "completion_observed": true,
+      "displayed_duration": "1min 53s",
+      "external_tests": {
+        "pass": 16,
+        "fail": 0
+      }
+    },
+    {
+      "issue": "conflict explanation survives re-evaluation and any identical-input subset among 3+ rows is checked",
+      "completion_observed": true,
+      "displayed_duration": "2min 18s",
+      "external_tests": {
+        "pass": 18,
+        "fail": 0
+      }
+    }
+  ],
+  "host_feedback_acknowledged": true,
+  "feedback_completion_displayed_duration": "11s",
+  "codearts_scope": [
+    "src/evaluation-readiness.js",
+    "tests/evaluation-readiness.test.mjs"
+  ],
+  "source_snapshot": [
+    {
+      "path": "codearts-source-final/evaluation-readiness.js",
+      "sha256": "d5496226e9dbc4bc675171f2fb9d19e27af8c9a3b5b7273c67d26946ded51d0a"
+    },
+    {
+      "path": "codearts-source-final/evaluation-readiness.test.mjs",
+      "sha256": "58953d7769d5efa7f890608830417036809cd002a0ca9693c3c40a747ec4bfd3"
+    }
+  ],
+  "main_module_byte_identical_to_codearts_final": true,
+  "host_scope": [
+    "independent review and regression tests",
+    "decision, UI, report and ZIP integration",
+    "reject inconsistent cached batch on manual retry while preserving history",
+    "external test execution",
+    "local container backup, update and browser/API acceptance"
+  ],
+  "boundaries": {
+    "original_task_reported_one_read_only_directory_command": true,
+    "repair_rounds_reported_no_terminal_commands": true,
+    "codearts_test_execution": false,
+    "cloud_operations": false,
+    "model_operations": false,
+    "entire_project_generated_by_codearts": false
+  },
+  "evidence": [
+    "codearts-final-completion.txt",
+    "codearts-final-completed.png",
+    "codearts-feedback.txt",
+    "codearts-feedback.png"
+  ]
+}

@@ -60,6 +60,8 @@ test('two accounts isolate project snapshots, Agent sessions and model settings'
   const password='account-test-passphrase';
   const apiKey='fixture-only-key-abc123';
   assert.equal((await request('/health')).status,401);
+  assert.equal((await request('/collection-readiness?channel=xhs')).status,401);
+  assert.equal((await request('/inspection-items')).status,401);
   const a=await authenticate('/account/register','Alice',password);
   const b=await authenticate('/account/register','Bob',password);
   const duplicate=await request('/account/register',{method:'POST',body:{username:'ALICE',password}});
@@ -232,6 +234,7 @@ test('two accounts isolate project snapshots, Agent sessions and model settings'
     const found='https://www.xiaohongshu.com/explore/'+'b'.repeat(24)+'?xsec_token=fixture';
     const published_at=new Date().toISOString();
     const [, , site, method, input, ...options]=process.argv;
+    if(process.env.OPENCLI_WINDOW!=='background')process.exit(65);
     if(site!=='xiaohongshu'||!options.includes('json')) process.exit(64);
     if(method==='search')console.log(JSON.stringify([{url:missing,title:'成都高温'},{url:found,title:'成都公交站遮阴',published_at}]));
     else if(method==='note'&&input===found)console.log(JSON.stringify([{field:'content',value:'成都公交站中午太晒，希望增加遮阴设施。'}]));
@@ -244,16 +247,17 @@ test('two accounts isolate project snapshots, Agent sessions and model settings'
   const xhsMock=join(directory,'xhs-upstream.mjs');
   await writeFile(xhsMock,`
     globalThis.fetch=async (url,options)=>{
-      if(new URL(url).pathname!=='/webhook/weibo-demand/v1')throw new Error('Unexpected URL');
+      if(new URL(url).pathname!=='/webhook/weibo-demand/v1'||new URL(url).port!=='15678')throw new Error('Unexpected URL');
       const {payload}=JSON.parse(options.body);
       if(payload.scope.city!=='成都')throw new Error('Missing classifier scope');
       return Response.json({result:{route:'fixture',item:{in_scope:true,scope_target:'成都',heat_relevance:'relevant',
+        place_evidence:[{name:'成都',kind:'target'},{name:'成都',kind:'target'}],
         excerpt:payload.text,is_public_demand:true,demand_topic:'shade_deficit',evaluation_direction:'discomfort'}}});
     };
   `);
   await exec(process.execPath,['scripts/job-worker.mjs','--once'],{
     cwd:fileURLToPath(new URL('xiaohongshu_demand_agent/',root)),
-    env:{...process.env,OPENCLI_ENTRY:openCli,URBANCOOL_XHS_JOB_DATA_DIR:xhsJobDir,
+    env:{...process.env,URBANCOOL_CLASSIFIER_ORIGIN:'http://127.0.0.1:15678',OPENCLI_ENTRY:openCli,OPENCLI_WINDOW:'',URBANCOOL_XHS_JOB_DATA_DIR:xhsJobDir,
       NODE_OPTIONS:`--import=${pathToFileURL(xhsMock).href}`},
   });
   const xhsDone=await request('/xhs-collection',{account:restored});
@@ -265,8 +269,64 @@ test('two accounts isolate project snapshots, Agent sessions and model settings'
   assert.equal(xhsSummary.public_demand_count,2);
   assert.equal(xhsSummary.collection,'partial');
   assert.deepEqual(xhsSummary.examples.map(example=>example.url),['https://www.xiaohongshu.com/explore/'+'b'.repeat(24)]);
+  const clues=xhsDone.data.collection.clues;
+  assert.deepEqual(clues.map(clue=>clue.kind),['post','comment']);
+  assert.ok(clues.every(clue=>clue.source_url===xhsSummary.examples[0].url&&clue.text&&clue.topic==='遮阴不足'));
+  assert.deepEqual(clues[0].places,[{name:'成都',kind:'target'}]);
+  const selection={channel:'xhs',job_id:xhsJobId,item_id:clues[0].item_id};
+  const simultaneous=await Promise.all([1,2].map(()=>request('/inspection-items',{account:restored,method:'POST',body:selection})));
+  assert.ok(simultaneous.every(reply=>reply.status===200));
+  const inspection=simultaneous[0].data.item;
+  assert.equal(simultaneous[1].data.item.id,inspection.id);
+  assert.deepEqual(inspection.clue,clues[0]);
+  assert.equal(inspection.source.sha256,xhsSummary.sha256);
+  assert.equal(inspection.status,'pending');
+  assert.equal((await request('/inspection-items',{account:restored})).data.items.length,1);
+  assert.deepEqual((await request('/inspection-items',{account:b})).data.items,[]);
+  assert.equal((await request('/inspection-items',{account:b,method:'POST',body:selection})).status,404);
+  const update={revision:1,status:'verified',location_note:'测试站点东侧候车区',verification_note:'现场确认午间缺少遮阴，保留人行通道。'};
+  assert.equal((await request(`/inspection-items/${inspection.id}`,{account:b,method:'PUT',body:update})).status,404);
+  const invalidReview=await request(`/inspection-items/${inspection.id}`,{account:restored,method:'PUT',body:{...update,verification_note:''}});
+  assert.equal(invalidReview.status,400);
+  const reviewed=await request(`/inspection-items/${inspection.id}`,{account:restored,method:'PUT',body:update});
+  assert.equal(reviewed.status,200);
+  assert.equal(reviewed.data.item.revision,2);
+  assert.equal(reviewed.data.item.verification_note,update.verification_note);
+  assert.equal((await request(`/inspection-items/${inspection.id}`,{account:restored,method:'PUT',body:update})).status,409);
+  const duplicateInspection=await request('/inspection-items',{account:restored,method:'POST',body:selection});
+  assert.equal(duplicateInspection.data.item.verification_note,update.verification_note);
+  assert.equal(duplicateInspection.data.item.revision,2);
+  const invalidSite=await request(`/inspection-items/${inspection.id}`,{account:restored,method:'PUT',body:{...update,revision:2,site_id:'invented-site'}});
+  assert.equal(invalidSite.status,400);
+  assert.equal(invalidSite.data.error.code,'inspection_site_unknown');
+  assert.equal((await request(`/inspection-items/${inspection.id}`,{account:restored,method:'PUT',
+    body:{...update,revision:2,site_id:scene.site_id,center_lon_lat:[0,0]}})).status,400);
+  const linked=await request(`/inspection-items/${inspection.id}`,{account:restored,method:'PUT',body:{...update,revision:2,site_id:scene.site_id}});
+  assert.equal(linked.status,200);
+  assert.equal(linked.data.item.site.site_id,scene.site_id);
+  assert.equal(linked.data.item.site.association,'user_selected');
+  assert.equal(linked.data.item.site.source_sha256,catalog.baseline.grid_sha256);
+  assert.ok(linked.data.item.site.center_lon_lat.every((value,index)=>Math.abs(value-scene.center_lon_lat[index])<0.00001));
+  assert.equal(linked.data.item.source.sha256,xhsSummary.sha256);
+  const legacyUpdate=await request(`/inspection-items/${inspection.id}`,{account:restored,method:'PUT',body:{...update,revision:3}});
+  assert.equal(legacyUpdate.status,200);
+  assert.deepEqual(legacyUpdate.data.item.site,linked.data.item.site);
+  const unlinked=await request(`/inspection-items/${inspection.id}`,{account:restored,method:'PUT',body:{...update,revision:4,site_id:null}});
+  assert.equal(unlinked.status,200);
+  assert.equal(unlinked.data.item.site,null);
+  const relinked=await request(`/inspection-items/${inspection.id}`,{account:restored,method:'PUT',body:{...update,revision:5,site_id:scene.site_id}});
+  assert.equal(relinked.status,200);
+  const duplicateLinked=await request('/inspection-items',{account:restored,method:'POST',body:selection});
+  assert.deepEqual(duplicateLinked.data.item.site,relinked.data.item.site);
+  assert.equal((await request('/inspection-items',{account:restored,method:'POST',body:{...selection,item_id:'invented'}})).status,404);
   assert.equal((await request('/xhs-collection',{account:b})).data.collection.status,'idle');
   assert.equal((await request('/weibo-collection',{account:restored})).data.collection.job_id,jobId);
+  await stop();accounts=createAccountService(config);base=await start();
+  const savedInspection=(await request('/inspection-items',{account:restored})).data.items[0];
+  assert.equal(savedInspection.id,inspection.id);
+  assert.equal(savedInspection.status,'verified');
+  assert.equal(savedInspection.source.sha256,xhsSummary.sha256);
+  assert.deepEqual(savedInspection.site,relinked.data.item.site);
 });
 
 test('account-selectable team MCP only exposes approved read-only tools to the data audit role',async t=>{

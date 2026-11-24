@@ -1,35 +1,43 @@
 # Qwen 主 Agent 接入
 
-新增独立入口`server/qwen-agent-server.mjs`，通过兼容Chat Completions的接口调用Qwen。主协调和专业角色可以指定不同模型；本次本地推理脚本支持`active`（验证集所选主模型）和`base`（未加适配器的量化基座）。
+工作台、独立 Qwen 后端、开发启动器和验收入口使用同一份默认配置，定义在 `server/qwen-config.mjs`：
 
-此入口沿用现有工具权限、目标版本、原始用户约束和调用上限。温度科研模型仍未接通，语言模型名称不能作为温度科研模型版本或执行证明。
-
-先启动服务器上的Qwen语言推理进程，并按实际SSH地址建立本机转发：
-
-```bash
-cd /path/to/qwen-runtime
-venv/bin/python -u qwen_runtime.py serve
+```dotenv
+QWEN_BASE_URL=http://127.0.0.1:18084/v1
+QWEN_MODEL=epoch_2
+QWEN_SPECIALIST_MODEL=base
 ```
 
-该脚本读取服务器selection.json，本轮选中epoch_1。基座保存在qwen3-8b-nf4，适配器在results/adapter_epoch_1。无需重新训练。
+在仓库根目录 `.env.local` 配置实际服务；已经设置的进程环境变量优先。独立后端也会读取 `.env.local`，无需在每个终端重复填写。服务需要认证时在服务端设置 `QWEN_API_KEY`，凭证不进入前端、源码或验收记录。
+
+原 V4 服务器的实验目录是 `/root/urbancool-main-v4-20261104`，推理入口为 `train_v4.py serve --port 18084`。使用已经运行的服务时，将远端端口转发到工作台电脑，并替换以下 SSH 占位符：
 
 ```powershell
-ssh -p SSH_PORT -N -L 127.0.0.1:18083:127.0.0.1:18083 SSH_USER@SSH_HOST
+ssh -N -o ExitOnForwardFailure=yes -L 127.0.0.1:18084:127.0.0.1:18084 -p SSH_PORT SSH_USER@SSH_HOST
 ```
 
-在项目目录启动Qwen后端：
+保持转发终端打开，在项目目录运行 `npm start`，或用 `npm run dev:agent:qwen` 启动开发页面和 Qwen 后端。独立后端入口是 `node server/qwen-agent-server.mjs`。默认 Agent 端口5181，开发页面端口5173；已有其他进程监听时需选择空闲端口。
+
+旧版推理服务使用18083及`active`别名时，可以显式设置 `QWEN_BASE_URL` 与 `QWEN_MODEL` 继续使用。其他兼容服务使用它实际注册的模型名称。当前默认值不会修改旧服务器或选择新模型权重，不重新训练。
+
+## 空间候选的真实模型验收
+
+服务连接恢复后，在仓库运行：
 
 ```powershell
-$env:QWEN_BASE_URL='http://127.0.0.1:18083/v1'
-$env:QWEN_MODEL='active'
-$env:QWEN_SPECIALIST_MODEL='base'
-node server/qwen-agent-server.mjs
+npm run verify:spatial:live -- --output verification/新的独立验收目录
 ```
 
-另一个终端执行`npm run dev`后，网页继续通过5181访问本地Agent后端。该端口应由本次选择的后端占用；已有服务占用时，不直接覆盖进程。Qwen入口将会话保存在`.runtime/agent-qwen/sessions/`，试用时从页面开始新会话。
+目录必须不存在，以保留以前的证据。命令读取当前模型配置，直接通过真实 Chat Completions HTTP 调用驱动现有 LangGraph 角色和项目工具；使用内存中的独立会话，不修改用户账户、工程、已有报告或科研资料。不启动云实例、推理服务、训练或温度模型。
 
-其他Qwen兼容服务应按实际配置`QWEN_BASE_URL`、`QWEN_MODEL`和`QWEN_SPECIALIST_MODEL`；需要认证时使用环境变量`QWEN_API_KEY`。凭证不写入源码或前端。`active`和`base`是本次试验入口的别名，其他服务应使用实际注册的模型名。
+六类问法覆盖按条件生成、只改预算且沿用下限、最低面积未知、明确取消、旧候选过期查询、报告导出。记录包含各项检查、真实工具轨迹、显示回答及模型原始摘要。只在全部通过时返回退出码0；流程失败返回1；模型离线／加载中时不发送推理请求，保存`not_run`并返回2。未知健康接口不会冒充就绪状态，是否可用由实际请求验证。
 
-本文件提供接入方法，不表示候选模型已经通过主Agent质量验收。训练和闭环评估在项目父目录`finetune-main-qwen-20261101/`。默认原DeepSeek入口仍保留。
+输出目录的 `acceptance.json` 逐轮写入；中断时保留已执行部分。它记录的模型调用次数是实际发起的请求数，不表示每次请求成功。模型越权尝试即使被后端安全拦截，也会使对应验收项失败。脚本化响应只用于自动测试，不能代替这份真实服务记录。
 
-本轮限定工作流新测试从16/30提高到22/30，但真实专业模型三轮接入探针未通过，存在可选字段填null/0、预算更新证据引用和失败恢复问题。当前只作为实验主Agent候选。详细结果见该目录的评估报告.md及失败复核.md。
+2026-11-21，默认18084入口未连通，两条已登记 SSH 连接均超时，本轮真实模型对话未执行。上一轮检查的是客户端旧默认18083，不能据此代表工作台18084的状态；本轮已按18084复查。参见[改进与验收记录](改进与验收记录.md)。
+
+## 能力与既有记录
+
+主 Agent 负责登记明确条件和委派；方案探索 Agent 可以运行登记试点内的有限单矩形搜索，最低面积须匹配用户原话。关键面积、假设费用与优先覆盖取自真实工具结果。采用候选与指定覆盖温度试算仍由用户手动操作。语言模型名称不代表温度科研模型或科学适用性。
+
+2026-11-13 的 V4 固定 A/B 工作台记录在[当日实测对照](../verification/成都试点_Qwen工作台复测_2026-11-13.md)。它使用当时的工具与开发侧问法，不能证明新空间搜索工具或独立业务问法已通过。旧实验的训练、验证与失败材料保留在项目父目录对应实验文件夹，本次不恢复训练。

@@ -1,0 +1,32 @@
+{
+  "schema_version": "spatial-dialogue-acceptance/1",
+  "started_at": "2026-11-21T13:32:54.732Z",
+  "provider": "Qwen",
+  "model": "epoch_2",
+  "specialist_model": "base",
+  "context": {
+    "site_id": "E4125_N33891",
+    "scenario_id": "E4125_N33891_preparation_baseline",
+    "planning_mode": "mapped_pilot"
+  },
+  "status": "not_run",
+  "model_requests": 0,
+  "cases": [],
+  "controls": [],
+  "scope": "Tool-grounded software acceptance with developer-authored prompts. Model weights, independent user language, cooling and construction feasibility are not validated.",
+  "connection": {
+    "state": "unavailable",
+    "available": false,
+    "code": "model_unreachable",
+    "message": "尚未连接到 Qwen 推理服务。使用云端模型时，请确认实例已开机、推理服务已启动，并保持 SSH 转发运行。",
+    "checked_at": "2026-11-21T13:32:54.746Z"
+  },
+  "reason": "模型服务未就绪，本次未发送推理请求。",
+  "passed": 0,
+  "finished_at": "2026-11-21T13:32:54.746Z",
+  "inference_transport": "configured_qwen_http",
+  "endpoint": {
+    "origin": "http://127.0.0.1:18084",
+    "api_path": "/v1"
+  }
+}

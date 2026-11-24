@@ -1,0 +1,53 @@
+diff --git a/verification/2026-11-24/case-evaluation/codearts-source/evaluation-readiness.js b/src/evaluation-readiness.js
+index 0650176..b65f54c 100644
+--- a/verification/2026-11-24/case-evaluation/codearts-source/evaluation-readiness.js
++++ b/src/evaluation-readiness.js
+@@ -19,6 +19,7 @@ const NEXT_STEPS = Object.freeze([
+ const isRecord = value => value !== null && typeof value === 'object' && !Array.isArray(value);
+ const isFiniteNumber = value => typeof value === 'number' && Number.isFinite(value);
+ const isFiniteVector = value => Array.isArray(value) && value.length > 0 && value.every(isFiniteNumber);
++const isSha256 = value => typeof value === 'string' && /^[a-f0-9]{64}$/.test(value);
+ const vectorEquals = (left, right) => left.length === right.length && left.every((value, index) => value === right[index]);
+ 
+ function toMillicelsius(value) {
+@@ -47,16 +48,19 @@ function usableRow(row) {
+   const temperature = row.temperature;
+   if (!isRecord(temperature) || !isFiniteNumber(temperature.predicted_delta_lst_c)) return null;
+ 
+-  const presentNumbers = TEMPERATURE_NUMERIC_KEYS.filter(key => temperature[key] !== undefined);
+-  if (presentNumbers.length > 0 && presentNumbers.length < TEMPERATURE_NUMERIC_KEYS.length) return null;
+-  if (!presentNumbers.every(key => isFiniteNumber(temperature[key]))) return null;
++  // Host review: missing metadata cannot silently become a complete comparison.
++  if (!TEMPERATURE_NUMERIC_KEYS.every(key => isFiniteNumber(temperature[key]))) return null;
++  if (!['model_sha256','dataset_sha256','area_sha256'].every(key => isSha256(temperature[key]))) return null;
++  if (!['grid_id','scene_id','date','observed_utc','model_version'].every(key => typeof temperature[key] === 'string' && temperature[key].length > 0)) return null;
++  if (!Number.isSafeInteger(temperature.reference_grid_count) || temperature.reference_grid_count < 1) return null;
++  if (!Number.isSafeInteger(toMillicelsius(temperature.predicted_delta_lst_c))) return null;
++  if (Math.abs(temperature.baseline_lst_c-temperature.scenario_lst_c-temperature.predicted_delta_lst_c)>0.002) return null;
+ 
+   const features = temperature.compiled_features;
+   if (!isRecord(features) || !isFiniteVector(features.scenario_center)) return null;
+ 
+   const scenario = features.scenario_center;
+-  const hasStructuredFeatures = ['order', ...FEATURE_VECTOR_KEYS].some(key => features[key] !== undefined);
+-  if (hasStructuredFeatures) {
++  {
+     const order = features.order;
+     if (!Array.isArray(order) || order.length === 0 || !order.every(key => typeof key === 'string')) return null;
+     if (order.length !== scenario.length) return null;
+@@ -181,7 +185,7 @@ export function evaluationReadiness(decision) {
+   }
+ 
+   const signatures = new Set(items.map(item => basisSignature(item.temperature, item.features)));
+-  if (signatures.size > 1 || decision?.comparable === false || decision?.status === 'incomparable') {
++  if (signatures.size > 1 || decision?.comparable !== true || decision?.status === 'incomparable') {
+     return resultBase(
+       'incomparable',
+       '评价基准不一致，不能直接比较',
+@@ -234,4 +238,4 @@ export function evaluationReadiness(decision) {
+     model_delta_distinguishable: distinguishable,
+     response
+   };
+-}
+\ No newline at end of file
++}

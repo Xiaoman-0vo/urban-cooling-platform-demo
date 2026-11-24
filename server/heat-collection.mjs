@@ -4,9 +4,12 @@ import {once} from 'node:events';
 import {access,mkdir,readFile,rename,writeFile} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {summarizeHeatSnapshot} from './heat-perception-contract.mjs';
+import {summarizeHeatSnapshot,heatClues} from './heat-perception-contract.mjs';
+import {AgentError} from './agent-tools.mjs';
 import {findAgentReach} from '../xiaohongshu_demand_agent/scripts/agent-reach-bin.mjs';
 import {configuredOpenCliEntry} from '../xiaohongshu_demand_agent/scripts/opencli-xhs.mjs';
+import {collectorEnabled,COLLECTOR_DISABLED_MESSAGE} from './workbench-runtime.mjs';
+import {classifierOrigin} from './classifier-config.mjs';
 
 const sources={
   weibo:{label:'微博',worker:'weibo-demand-agent',directory:'weibo-collections',dataEnv:'URBANCOOL_WEIBO_JOB_DATA_DIR',
@@ -29,6 +32,25 @@ export function createHeatCollection(accountId,sourceId) {
   const latest=resolve(directory,'latest.json');
   const jobPath=id=>resolve(directory,id,'jobs',`${id}.json`);
 
+  async function readSnapshot(id) {
+    if(!uuid.test(id||''))throw new AgentError('invalid_collection_id','采集批次标识无效。');
+    let job,bytes;
+    try{
+      job=await readJson(jobPath(id));
+      bytes=await readFile(resolve(directory,id,`heat_perception_job_${id}.json`));
+    }catch(error){
+      if(error.code==='ENOENT')throw new AgentError('collection_not_found','该账户下没有已完成的这批采集结果。',404);
+      throw error;
+    }
+    const snapshot=JSON.parse(bytes);
+    if(job.id!==id||job.status!=='done'||snapshot.schema!=='heat-perception/1'||!Array.isArray(snapshot.items)||
+       snapshot.mode!=='on_demand_sample'||snapshot.source?.channel!==sourceId||
+       !Number.isFinite(Date.parse(snapshot.source?.fetched_at))||
+       Date.parse(snapshot.source.fetched_at)<Date.parse(job.created_at)||!snapshot.source.queries?.includes(job.query))
+      throw new AgentError('collection_mismatch','采集结果与批次不一致，请重新采集。',409);
+    return {job,snapshot,sha256:createHash('sha256').update(bytes).digest('hex')};
+  }
+
   async function get() {
     let job;
     try {
@@ -49,27 +71,23 @@ export function createHeatCollection(accountId,sourceId) {
       const message=expired?'采集已超时，请重新提交。':
         progress?.browser_disconnected?'OpenCLI 浏览器桥未连接。请启用扩展并保持浏览器打开。':
         progress?.need_login?'请在 OpenCLI 已连接的浏览器中登录小红书。':
-        `采集或判定失败。请检查${source.label}登录状态和 n8n 后重试。`;
+        '上一次采集未完成。请查看当前准备情况，条件就绪后可重新采集。';
       return {...result,message};
     }
     if(state!=='done')return result;
 
-    if(!uuid.test(job.id))throw new Error('Invalid collection job');
-    let bytes;
-    try{bytes=await readFile(resolve(directory,job.id,`heat_perception_job_${job.id}.json`));}
+    let saved;
+    try{saved=await readSnapshot(job.id);}
     catch(error){
-      if(error.code==='ENOENT')return {...result,status:'failed',message:'采集结果文件不存在，请重新提交。'};
+      if(error instanceof AgentError)return {...result,status:'failed',message:error.message};
       throw error;
     }
-    const snapshot=JSON.parse(bytes);
-    if(snapshot.mode!=='on_demand_sample'||snapshot.source?.channel!==sourceId||!Number.isFinite(Date.parse(snapshot.source?.fetched_at))||
-      Date.parse(snapshot.source.fetched_at)<Date.parse(job.created_at)||!snapshot.source.queries?.includes(job.query))
-      return {...result,status:'failed',message:'采集结果与本次任务不匹配，请重新提交。'};
-    return {...result,summary:{
+    const {snapshot,sha256}=saved;
+    return {...result,clues:heatClues(snapshot,sourceId),summary:{
       ...summarizeHeatSnapshot(snapshot,sourceId),
       collected_at:snapshot.source.fetched_at,
       generated_at:snapshot.generated_at,
-      sha256:createHash('sha256').update(bytes).digest('hex'),
+      sha256,
       classification:snapshot.status.classification,
       collection:snapshot.status.collection,
       raw_posts:snapshot.counts.raw_posts,
@@ -78,6 +96,7 @@ export function createHeatCollection(accountId,sourceId) {
   }
 
   async function start(keyword) {
+    if(!collectorEnabled())return issue('collector_disabled',COLLECTOR_DISABLED_MESSAGE);
     const previous=await get();
     if(['queued','running'].includes(previous.status))return previous;
     if(sourceId==='weibo'){
@@ -92,11 +111,11 @@ export function createHeatCollection(accountId,sourceId) {
       return issue('xhs_agent_reach_required','请配置 OpenCLI，或安装 Agent Reach 后重试。');
     }
     try{
-      const response=await fetch('http://127.0.0.1:5678/healthz',{signal:AbortSignal.timeout(2000),redirect:'error'});
+      const response=await fetch(classifierOrigin()+'/healthz',{signal:AbortSignal.timeout(2000),redirect:'error'});
       if(!response.ok)throw new Error('n8n offline');
       await response.body?.cancel();
     }catch{
-      return issue(sourceId==='weibo'?'weibo_n8n_unavailable':'xhs_n8n_unavailable','采集机器上的 n8n 不可用。请启动 n8n 判定服务后重试。');
+      return issue(sourceId==='weibo'?'weibo_n8n_unavailable':'xhs_n8n_unavailable','判定服务正在恢复，请稍后查看采集准备状态并重试。');
     }
     const id=randomUUID();
     const jobDir=resolve(directory,id);
@@ -109,7 +128,7 @@ export function createHeatCollection(accountId,sourceId) {
     await writeFile(pointer,JSON.stringify({id}),{flag:'wx'});
     await rename(pointer,latest);
     const worker=spawn(process.execPath,[resolve(workerDir,'scripts/job-worker.mjs'),'--once'],{
-      cwd:workerDir,env:{...process.env,[source.dataEnv]:jobDir},
+      cwd:workerDir,env:{...process.env,URBANCOOL_CLASSIFIER_ORIGIN:classifierOrigin(),[source.dataEnv]:jobDir},
       detached:true,windowsHide:true,stdio:'ignore',
     });
     try{
@@ -122,5 +141,5 @@ export function createHeatCollection(accountId,sourceId) {
     return get();
   }
 
-  return {get,start};
+  return {get,start,readSnapshot};
 }

@@ -4,9 +4,16 @@ import {resolve} from 'node:path';
 import {isDeepStrictEqual} from 'node:util';
 import {pilotGeoJson} from '../src/pilot-map.js';
 import {revisions,revisionChecks} from '../tests/fixtures/agent-revisions.mjs';
+import {loadLocalEnvironment} from '../server/agent-server.mjs';
+import {qwenConfig} from '../server/qwen-config.mjs';
+
+await loadLocalEnvironment();
+const modelConfig=qwenConfig();
+const modelHealth=new URL(modelConfig.baseUrl);
+modelHealth.pathname=modelHealth.pathname.replace(/\/v1\/?$/,'').replace(/\/$/,'')+'/health';
 
 const api=process.env.URBANCOOL_VERIFY_API||'http://127.0.0.1:5173/api/agent';
-const inference=process.env.URBANCOOL_VERIFY_INFERENCE||'http://127.0.0.1:18084/health';
+const inference=process.env.URBANCOOL_VERIFY_INFERENCE||modelHealth.href;
 const outputDir=process.env.URBANCOOL_VERIFY_OUTPUT;
 const destination=name=>outputDir?resolve(outputDir,name):new URL(`../verification/${name}`,import.meta.url);
 const revisionRun=process.argv.includes('--revisions');
@@ -15,7 +22,7 @@ const baseRun=process.argv.includes('--base');
 if(baseRun&&!accountRun)throw new Error('--base requires --account.');
 if(accountRun&&!outputDir)throw new Error('Set URBANCOOL_VERIFY_OUTPUT to a fresh output directory for an account run.');
 if(outputDir)await mkdir(outputDir,{recursive:true});
-const expectedModel=baseRun?'base':'epoch_2';
+const expectedModel=baseRun?modelConfig.specialistModel:modelConfig.model;
 let accountHeaders={};
 
 async function request(url,data,method=data?'POST':'GET') {

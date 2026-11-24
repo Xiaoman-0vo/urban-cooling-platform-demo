@@ -1,3 +1,5 @@
+import {lowerAreaBound} from './spatial-search-evidence.mjs';
+
 // Conservative lexical evidence checks. Ambiguous paraphrases remain a request
 // for clarification; the presence of an unrelated number never authorizes it.
 const FIELD_WORDS = {
@@ -17,6 +19,8 @@ export function goalValueMentioned(field, value, quote) {
     const before=text.slice(0,start),after=text.slice(end);
     const left=before.split(/[，,、；;。!?！？\n]/).at(-1);
     const right=after.split(/[，,、；;。!?！？\n]/)[0];
+    if(field==='candidate_area_m2'&&(lowerAreaBound(left)||
+      /^\s*(?:平方米|平米|㎡|m2|m²)\s*(?:的)?(?:最低(?:改造)?面积|面积下限|起步面积)/i.test(right)))continue;
     if (/(?:不是|不采用|不要|非)\s*$/.test(left) || /^\s*(?:元|平方米|㎡|度)?\s*(?:不用了|作废|不采用|撤回)/.test(right)) continue;
     // A source value in an explicit "from X to Y" revision is not authorization to save X.
     if (/(?:从|由)\s*$/.test(left) &&

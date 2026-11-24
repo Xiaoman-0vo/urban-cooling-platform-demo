@@ -1,0 +1,10 @@
+{
+  "schema": "urbancool-topic1-evidence/1",
+  "status": "template_not_execution_evidence",
+  "codearts": {"status": "not_performed", "task_record": "", "commit": "", "logs": []},
+  "skills": {"status": "not_performed", "name": "", "version": "", "execution_record": ""},
+  "cloud_services": {"status": "not_provisioned", "services": [], "region": ""},
+  "cloud_deployment": {"status": "not_deployed", "https_url": "", "image_digest": "", "health_record": ""},
+  "maas": {"status": "live_call_not_verified", "model_id": "", "request_id": "", "result_record": ""},
+  "acceptance": {"status": "pending_cloud_acceptance", "dataset_sha256": "", "run_ids": [], "report_sha256": ""}
+}

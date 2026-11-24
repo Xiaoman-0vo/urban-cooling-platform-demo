@@ -1,0 +1,43 @@
+{
+  "local": {
+    "project": "urbancool-t1-298f3ef92e",
+    "origin": "http://127.0.0.1:5312",
+    "image": "urbancool-workbench:consistency-review-20261124",
+    "container": {
+      "id": "e10e97f2ca13ed7302fa3eb36957712b71ffaa69a887756ec691affdae1510ed",
+      "image_id": "sha256:109e672ad0dd90f68420a29a9a3d4ffbc0f3e2e0a1377fe43347362f531d36ec"
+    },
+    "workspace_volume": "urbancool-t1-298f3ef92e_workspace",
+    "model_mount_read_only": true,
+    "codearts_execution_verified": false,
+    "cloud_provider_verified": false
+  },
+  "previous_container": {
+    "id": "80cdbfbea04c8efb112b2c88046dbba572ad911e2fb54b3ac65e07964ca1931c",
+    "image_id": "sha256:1e197d9d2acbe070306221f4ac8d4ba3bbf6d55f53a04f4d752910bbce01faaa"
+  },
+  "probe": {
+    "schema": "urbancool-topic1-runtime/1",
+    "origin": "http://127.0.0.1:5312",
+    "scope": "local_runtime",
+    "checks": {
+      "health": true,
+      "page": true
+    },
+    "cloud_provider_verified": false,
+    "status": "passed"
+  },
+  "consistent_backup": true,
+  "original_volume_preserved": true,
+  "counts_before": {
+    "users": 5,
+    "sessions": 4,
+    "projects": 1
+  },
+  "counts_after": {
+    "users": 5,
+    "sessions": 4,
+    "projects": 1
+  },
+  "model_read_only": true
+}

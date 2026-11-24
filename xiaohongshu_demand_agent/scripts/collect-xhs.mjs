@@ -99,6 +99,7 @@ function writeProgress(patch) {
 // opencli（小红书渠道的浏览器桥）装在 agent-reach 自己的 npm 前缀里，PATH 里没有
 const CHILD_ENV = {
   ...process.env,
+  OPENCLI_WINDOW:process.env.OPENCLI_WINDOW||'background',
   PYTHONUTF8: '1',
   PATH: [
     path.join(os.homedir(), '.local', 'bin'),

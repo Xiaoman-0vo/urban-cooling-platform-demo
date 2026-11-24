@@ -1,0 +1,18 @@
+npm notice run urban-cooling-platform-collaboration@0.1.0 test:topic1
+npm notice run node --test tests/topic1-delivery.test.mjs
+✔ release packages boot inputs while excluding secrets, private targets and user state (91.0984ms)
+✔ modified members, extra files and traversal names cannot be accepted for upload (83.1199ms)
+✔ target accepts the intentionally blank cloud fields and rejects credential fields and unsafe origins (1.1164ms)
+✔ OBS planning and incomplete execution never instantiate the SDK client (63.5362ms)
+✔ official OBS request contract creates a private bucket, uploads a content-addressed ZIP and verifies length (60.9931ms)
+✔ OBS denied access or wrong object size fails honestly without logging SDK error secrets or retrying (67.488ms)
+✔ runtime probe tests real readiness and page markers without asserting a cloud provider (23.7445ms)
+✔ CLI creates a reviewable blank-target plan and refuses to replace its existing evidence (417.1606ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1029.696

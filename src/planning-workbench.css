@@ -1,0 +1,146 @@
+/* Decision workspace: readable hierarchy for the manual planning loop. */
+.planning-workbench.agent-panel{left:22px;right:auto;top:100px;bottom:22px;width:min(608px,calc(100vw - 44px));max-width:none;background:#f7f9f8;color:#243d3c;border:1px solid #d1ddda;border-radius:20px;box-shadow:0 18px 60px #061c2840;overflow:hidden;z-index:35}
+.planning-workbench .agent-heading{padding:20px 24px 12px;background:#fff;border:0;gap:12px;color:#173c3a}
+.planning-workbench .agent-heading h2{font-size:23px;letter-spacing:-.5px;margin:3px 0 0;color:#153b38}
+.planning-workbench .agent-heading span{font-size:10px;letter-spacing:1.8px;color:#718784}
+.planning-workbench .agent-mark{color:#2d715e;background:#e7f1eb;border:0;border-radius:12px}
+.planning-workbench .agent-heading>button{color:#55716d;background:#f2f6f4;border-radius:50%}
+.planning-intro{padding:0 24px 15px;background:#fff}
+.planning-intro p{font-size:14px;margin:0 0 5px;font-weight:600;color:#385951}
+.planning-intro>span{font-size:12px;color:#6d817a}
+.planning-workbench .agent-context{padding:8px 24px;background:#edf3f0;color:#536c63;font-size:11px}
+.planning-workbench .agent-context button{color:#48695e;margin-left:auto}
+.planning-workbench .agent-scope{padding:9px 24px;background:#fff;color:#58716b;border-bottom:1px solid #e4ebe7}
+.planning-workbench .agent-tabs{background:#fff;padding:0 18px;gap:8px;flex-shrink:0;border-bottom:1px solid #dce6e1}
+.planning-workbench .agent-tabs button{padding:13px 9px;font-size:12px;color:#6f817c;border-radius:0;background:none}
+.planning-workbench .agent-tabs button.active{color:#245e4c;background:none;border-bottom:3px solid #327658;font-weight:700}
+.planning-workbench .agent-plan-list{padding:24px;overflow:auto;scrollbar-width:thin;scrollbar-color:#b6c8be transparent}
+.planning-workbench .agent-plan-list>h3{font-size:18px;color:#203f34;margin:0 0 8px}
+.planning-workbench .agent-plan-list>h3 small{color:#7f9488;font-size:11px}
+.planning-workbench .agent-caption{color:#728379;font-size:12px;line-height:1.7}
+.planning-workbench .agent-goal-form{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;padding:14px 0;background:none;border:0}
+.planning-workbench .agent-goal-form label{font-size:11px;color:#65796f}
+.planning-workbench .agent-goal-form label>div{display:flex;background:#fff;border:1px solid #cad8d0;border-radius:8px;padding:0 9px;align-items:center;margin-top:6px}
+.planning-workbench .agent-goal-form input{min-width:0;width:100%;border:0;background:transparent;color:#233e33;padding:11px 0;outline-offset:4px;font-size:14px}
+.planning-workbench .agent-goal-form label span{font-size:10px;color:#829086;white-space:nowrap}
+.planning-workbench .agent-goal-form>button{grid-column:1/-1;justify-self:start;padding:9px 16px}
+.planning-workbench .agent-goal-summary{display:flex;flex-wrap:wrap;gap:8px;padding:12px;background:#eaf1ec;border:1px solid #d9e4dc;border-radius:10px;margin:0 0 14px}
+.planning-workbench .agent-goal-summary>div{flex:1;min-width:100px;display:flex;flex-direction:column;gap:4px}
+.planning-workbench .agent-goal-summary span{color:#6b8273;font-size:11px}
+.planning-workbench .agent-goal-summary strong{color:#234934;font-size:14px}
+.planning-workbench .agent-goal-summary p{width:100%;margin:0;color:#75887b;font-size:10px}
+.planning-workbench .pilot-temperature.agent-option{padding:0;background:transparent;border:0;border-radius:0;margin:0}
+.planning-workbench .pilot-temperature>div{display:block}
+.planning-reference{display:flex!important;flex-wrap:wrap;gap:6px;margin:4px 0 22px;font-size:10px;color:#71857a}
+.planning-reference span{padding:4px 7px;border-radius:5px;background:#e9eeeb}
+.planning-section-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:0 0 10px}
+.planning-section-heading small,.candidate-decision header small{color:#769583;font-size:10px;letter-spacing:1px}
+.planning-section-heading h4,.candidate-decision header h4{color:inherit!important;margin:5px 0 0!important;font-size:17px!important;line-height:1.5}
+.planning-area-badge{font-size:10px;color:#527162;background:#e7eee9;border-radius:20px;padding:6px 10px;white-space:nowrap}
+.planning-workbench .agent-spatial-search{padding:0;margin:0;border:0;background:none}
+.planning-workbench .agent-spatial-search>p{display:block;color:#718176;font-size:12px;line-height:1.7}
+.planning-workbench .agent-spatial-search>form{display:flex;align-items:end;gap:12px;margin:14px 0 0}
+.planning-workbench .agent-spatial-search>form label{flex:1;font-size:12px;color:#596f61}
+.planning-workbench .agent-spatial-search input{display:block;box-sizing:border-box;width:100%;background:#fff;border:1px solid #c5d5c9;color:#294632;border-radius:8px;padding:11px;margin-top:7px;font-size:14px}
+.planning-workbench .agent-spatial-search>form button{white-space:nowrap;padding:11px 15px;min-height:41px}
+.planning-workbench button.agent-primary,.planning-workbench .decision-evaluate{border:1px solid #2f6b50;background:#326d51;color:#fff;border-radius:8px;font-size:12px}
+.planning-workbench button.agent-locate{background:#fff;border:1px solid #bdcfc1;color:#3d654b;border-radius:7px;padding:8px 10px;font-size:11px}
+.planning-workbench button:hover:not(:disabled){filter:brightness(.97)}
+.planning-workbench button:disabled{opacity:.48;cursor:default}
+.planning-search-receipt{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:11px;border-top:1px solid #dde7df;padding:13px 0;margin-top:16px}
+.planning-search-receipt strong{color:#456d53;font-size:13px}
+.planning-search-receipt>span{color:#7b8c7d}
+.planning-search-receipt details{width:100%;color:#819181;font-size:11px}
+.planning-search-receipt summary{cursor:pointer}
+.planning-search-receipt p{display:block!important;line-height:1.7!important;color:#7b8a7e!important}
+.candidate-decision{border:1px solid #b7cfc0;background:#f5faf7;color:#284b37;border-radius:13px;margin:12px 0 26px;padding:18px}
+.candidate-decision header{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.decision-evaluate{display:flex;align-items:center;justify-content:center;gap:6px;background:#3c7356;border:1px solid #638f73;border-radius:7px;color:white;padding:10px;font-size:11px;white-space:nowrap}
+.decision-evaluate:disabled{opacity:.55}
+.decision-verdict{display:flex;gap:10px;padding:13px;background:#e8f1eb;border-radius:8px;margin:16px 0;color:#46694e}
+.decision-verdict>svg{flex-shrink:0;margin-top:2px}
+.decision-verdict strong{font-size:14px}
+.decision-verdict p{display:block!important;font-size:12px!important;color:inherit!important;margin:7px 0 0!important;line-height:1.8!important}
+.decision-verdict[data-state="no_improvement"],.decision-verdict[data-state="partial"],.decision-verdict[data-state="incomparable"]{background:#fff2de;color:#885b25}
+.decision-table-wrap{overflow:auto}
+.decision-table{width:100%;border-collapse:collapse;white-space:nowrap;font-size:12px;text-align:left}
+.decision-table th,.decision-table td{border:0;border-bottom:1px solid #dae6de;padding:11px 6px!important;vertical-align:top;color:#32543e;background:none}
+.decision-table thead th{font-weight:400;color:#829284;font-size:10px}
+.decision-table small{display:block;font-size:10px;font-weight:400;white-space:normal;line-height:1.7;color:#829080;margin-top:4px}
+.decision-table .decision-baseline{background:#ebf2ed}
+.decision-table .decision-warming,.decision-table .decision-warming small{color:#9c6835}
+.decision-tradeoff{display:block!important;color:#647c67!important;font-size:12px!important;line-height:1.8!important;margin:14px 0!important}
+.candidate-decision footer{border:0!important;background:none!important;padding:0!important;font-size:10px!important;color:#7a8f7e!important;line-height:1.7}
+.candidate-decision footer>div{display:flex;gap:12px;margin-top:9px}
+.candidate-decision footer button{border:0;background:none;color:#477353;padding:0;font-size:11px;text-decoration:underline;text-underline-offset:3px}
+.planning-candidate-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.planning-workbench .agent-search-candidate{background:#fff;border:1px solid #d6e2d9;border-radius:11px;margin:0;padding:16px}
+.planning-workbench .agent-search-candidate[data-adopted="true"]{border-color:#609579;box-shadow:inset 0 0 0 1px #609579}
+.agent-search-candidate>header{display:flex;gap:9px;align-items:center}
+.candidate-number{font-size:23px;font-weight:300;letter-spacing:-1px;color:#8fa895}
+.planning-workbench .agent-search-candidate h6{font-size:14px;color:#3a5e43;margin:0 0 4px}
+.agent-search-candidate header div>span{font-size:10px;color:#8b9a8b}
+.planning-workbench .agent-search-candidate dl{display:grid;grid-template-columns:1fr 1fr;margin:16px 0 8px;gap:8px}
+.planning-workbench .agent-search-candidate dt{font-size:10px;color:#8c9b8d}
+.planning-workbench .agent-search-candidate dd{font-size:17px;color:#2d4d37;margin:5px 0}
+.planning-workbench .agent-search-candidate dd small{font-size:10px;margin-left:3px;color:#8b9c8c}
+.planning-workbench .agent-search-candidate p{display:block;font-size:10px;color:#7e917f;line-height:1.8;margin:8px 0}
+.planning-workbench .agent-search-candidate summary{font-size:10px;color:#6f8b75;cursor:pointer;margin:8px 0}
+.planning-workbench .agent-search-candidate .pilot-temperature-actions{display:flex;flex-direction:column;gap:7px;margin-top:13px}
+.planning-workbench .agent-search-candidate .pilot-temperature-actions button{width:100%;padding:9px 4px;font-size:11px;margin:0}
+.planning-workbench .planning-model-boundary{font-size:11px!important;border-left:2px solid #cbdccf;padding:0 0 0 10px;margin:18px 0 24px;color:#7d8f81}
+.planning-advanced,.planning-saved-scenario,.planning-legacy{border-top:1px solid #dde7df;padding:15px 0;margin:0!important;font-size:12px}
+.planning-advanced>summary,.planning-saved-scenario>summary,.planning-legacy>summary{color:#4d6e55;cursor:pointer;font-weight:600;line-height:1.7}
+.planning-advanced>summary small,.planning-saved-scenario>summary small,.planning-legacy>summary small{font-size:10px;font-weight:400;margin-left:8px;color:#8c9d8e}
+.planning-workbench .planning-advanced p,.planning-workbench .planning-saved-scenario p{display:block;line-height:1.8;color:#718273;font-size:12px}
+.planning-workbench .agent-protected-areas,.planning-workbench .agent-priority-areas{background:#f0f5f0;border-color:#d6e2d8;color:#506d56}
+.planning-workbench .planning-outputs{border-top:1px solid #dde7df;padding-top:18px}
+.planning-workbench .planning-outputs h3{font-size:16px;color:#36573f}
+.planning-workbench .agent-report-link{background:#e5f0e8;border:1px solid #c4d9cb;border-radius:8px;color:#3b714a;font-size:12px;margin-top:10px;padding:12px}
+.planning-workbench .agent-composer{background:#fff;border-top:1px solid #dbe5df;flex-shrink:0}
+.planning-workbench .agent-bottom-actions{font-size:10px;color:#8b9b8c}
+.planning-workbench .agent-bottom-actions button{color:#627b66}
+.planning-workbench .agent-error{background:#fff0e6;color:#a86635}
+.workspace:has(.planning-workbench) .layer-panel,.workspace:has(.planning-workbench) .map-caption,.workspace:has(.planning-workbench) .entry-dock{visibility:hidden}
+@media(max-width:900px){.planning-workbench.agent-panel{left:12px;top:91px;bottom:12px;width:min(570px,calc(100vw - 24px))}.planning-workbench .agent-heading{padding:16px 20px 10px}.planning-intro{padding-left:20px;padding-right:20px}.planning-workbench .agent-plan-list{padding:20px}.planning-workbench .agent-heading h2{font-size:21px}}
+@media(max-width:580px){.planning-workbench.agent-panel{top:90px;left:8px;bottom:8px;width:calc(100vw - 16px);border-radius:14px}.planning-workbench .agent-heading{padding:14px 16px 10px}.planning-intro{padding:0 16px 12px}.planning-workbench .agent-plan-list{padding:18px 16px}.planning-workbench .agent-context,.planning-workbench .agent-scope{padding:7px 16px}.planning-workbench .agent-goal-form{grid-template-columns:1fr 1fr}.planning-workbench .agent-goal-form label:last-of-type{grid-column:1/-1}.planning-candidate-grid{grid-template-columns:1fr}.candidate-decision{padding:14px}.candidate-decision header{align-items:start;flex-direction:column}.decision-evaluate{width:100%;margin-top:7px}.planning-section-heading h4,.candidate-decision header h4{font-size:16px!important}.planning-area-badge{font-size:9px;padding:5px}.planning-workbench .agent-spatial-search>form{align-items:stretch;flex-direction:column;gap:9px}.planning-workbench .agent-tabs{padding:0 10px;gap:2px}.planning-workbench .agent-tabs button{font-size:11px;padding:11px 7px}.decision-table{font-size:11px}.decision-table th,.decision-table td{padding:9px 5px!important}.planning-workbench .agent-search-candidate .pilot-temperature-actions{flex-direction:row}}
+.planning-workbench .agent-heading{min-height:0;padding:12px 20px 8px}
+.planning-workbench .agent-heading h2{font-size:21px;line-height:1.25}
+.planning-workbench .agent-mark{width:36px;height:36px;min-width:36px}
+.planning-workbench .agent-heading>div>span{line-height:1.2}
+.planning-intro{padding:0 20px 10px}
+.planning-intro p{margin-bottom:2px;font-size:13px;line-height:1.5}
+.planning-intro>span{font-size:11px;line-height:1.5}
+.planning-workbench .agent-context{padding:5px 20px;line-height:1.5}
+.planning-workbench .agent-scope{padding:6px 20px;line-height:1.5}
+.planning-workbench .agent-tabs button{padding:10px 9px;font-size:12px}
+.planning-goal-editor{margin:0 0 12px;font-size:12px}
+.planning-goal-editor>summary{cursor:pointer;color:#64826e;padding:2px 0 7px}
+.planning-workbench .agent-plan-list>h3{margin-bottom:10px}
+.planning-workbench .agent-spatial-search>p,.planning-workbench .decision-verdict p,.planning-workbench .decision-tradeoff{font-size:13px!important}
+.planning-workbench .decision-table{font-size:13px}
+.planning-workbench .decision-table small{font-size:11px}
+.planning-workbench .decision-table thead th{font-size:11px}
+.planning-workbench .agent-search-candidate p,.planning-workbench .agent-search-candidate summary{font-size:12px}
+.planning-workbench .agent-search-candidate dt{font-size:11px}
+.planning-workbench .planning-reference{font-size:11px;margin-bottom:18px}
+.workspace:has(.planning-workbench) .layer-rail,.workspace:has(.planning-workbench) .site-info,.workspace:has(.planning-workbench) .site-dock{visibility:hidden}
+@media(max-width:580px){.planning-workbench .agent-heading{padding:12px 16px 8px}.planning-workbench .agent-tabs button{padding:10px 6px;font-size:11px}.planning-workbench .agent-context,.planning-workbench .agent-scope{padding:5px 16px}.planning-workbench .decision-table{font-size:12px}.planning-workbench .decision-table small{font-size:10px}}
+.planning-intro>button{border:0;background:none;color:#5f7d69;font-size:11px;margin-left:9px;padding:0;text-decoration:underline;text-underline-offset:3px}
+.planning-intro .planning-outcome-warming{color:#9e6d34;font-weight:600}
+.workspace:has(.planning-workbench) .site-toolbar,.workspace:has(.planning-workbench) .site-location{visibility:hidden}
+.planning-workbench .planning-intro>button{border:0;background:transparent;color:#537a60;font-size:11px;margin-left:9px;padding:0;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:700px){.workspace .workflow-nav{display:flex;flex-wrap:nowrap;overflow-x:auto;justify-content:space-between;gap:2px;scrollbar-width:none}.workspace .workflow-nav button{flex:0 0 auto;min-width:0;padding:7px 8px;font-size:11px;line-height:1.4}.workspace .workflow-nav button svg{width:12px;height:12px;margin-right:3px}}
+@media(max-width:700px){.workspace .masthead nav.steps.workflow-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:3px;width:100%;height:auto}.workspace .masthead nav.steps.workflow-nav button{display:flex;justify-content:center;min-width:0;width:auto;min-height:32px;font-size:11px;padding:6px 3px}.workspace .masthead nav.steps.workflow-nav button>svg{display:none}}
+.evaluation-readiness{padding:15px 0;margin:12px 0 18px;border-top:1px solid #cfdfd3;color:#526d59}
+.evaluation-readiness header{display:flex;align-items:center;gap:12px;justify-content:space-between;font-size:13px}
+.evaluation-readiness header span{font-size:10px;color:#708978;border:1px solid #c8d9cd;border-radius:15px;padding:3px 7px;white-space:nowrap}
+.evaluation-readiness p{display:block!important;font-size:12px!important;line-height:1.8!important;color:inherit!important;margin:8px 0!important}
+.evaluation-readiness .evaluation-readiness-title{font-weight:600;color:#41624b!important}
+.evaluation-readiness dl{display:block!important;margin:12px 0!important;font-size:11px!important}
+.evaluation-readiness dl>div{display:flex!important;justify-content:space-between;gap:12px;margin:5px 0}
+.evaluation-readiness dt{color:#7e9182!important;font-size:11px!important}
+.evaluation-readiness dd{margin:0!important;color:#637c68!important;font-size:11px!important;text-align:right}
+.evaluation-readiness summary{font-size:11px;cursor:pointer;color:#5c7f64}
+.evaluation-readiness ul{padding-left:18px;font-size:12px;line-height:1.8;color:#6a826f}
+@media(max-width:580px){.evaluation-readiness header{align-items:start;flex-direction:column;gap:5px}.evaluation-readiness dl>div{flex-direction:column;gap:4px}.evaluation-readiness dd{text-align:left}}

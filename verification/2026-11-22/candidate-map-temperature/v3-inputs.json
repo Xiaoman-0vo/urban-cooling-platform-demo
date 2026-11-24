@@ -1,0 +1,41 @@
+{
+  "source": "D:/华为ICT大赛/finetune-temperature-deepseek",
+  "read_only_mount": "D:\\华为ICT大赛\\.tmp-work\\urbancool-workbench-preview\\.runtime\\candidate-quality\\v3-runtime",
+  "files": [
+    {
+      "path": "data-v3/manifest.json",
+      "sha256": "1ad57cb859bcfa30e9e329d030ed7dbddaad8ed45e62868bbe648b8143a93e54",
+      "bytes": 392327
+    },
+    {
+      "path": "data-v3/test.jsonl",
+      "sha256": "1e77970fbbbad0424b29ee7523a6236e50af38f7de43bfee576302e6127461cd",
+      "bytes": 4653895
+    },
+    {
+      "path": "data-v3/reference.jsonl",
+      "sha256": "7dcf01a2dd9811fddcd1ab4d72bb2e48608f3ae848a353bf76b7d373857c0ef7",
+      "bytes": 4782538
+    },
+    {
+      "path": "tabular-v3/model.joblib",
+      "sha256": "9a2c5db870c913f24215aee390864ca2ddaa22002c7428408d6e20e2db375ad2",
+      "bytes": 280203
+    },
+    {
+      "path": "fit_tabular_v2.py",
+      "sha256": "fcdb60d6335caebfe0a7542c1bc6f35d1c00b4809bd020a5a1ad86ab06b89497",
+      "bytes": 10347
+    },
+    {
+      "path": "hotspot_metrics.py",
+      "sha256": "0203a915823b65a895ccd1d546f25deefca9be50e0563e69a6c8aceb7283a0f0",
+      "bytes": 2405
+    },
+    {
+      "path": "prepare_multiscene.py",
+      "sha256": "242a1eca15703fce304ae0886ecc5ad2a9aa5f63b337caf7483141bae21cec46",
+      "bytes": 8952
+    }
+  ]
+}

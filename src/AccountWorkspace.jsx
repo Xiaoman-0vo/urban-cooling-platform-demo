@@ -9,6 +9,7 @@ const modelChoices=[
   ['base','Qwen 基座版'],
   ['local','本地规划工具'],
   ['deepseek','DeepSeek API'],
+  ['maas','华为云 MaaS'],
   ['compatible','兼容 API'],
 ];
 
@@ -122,12 +123,12 @@ function ModelSettings({user,onClose,onSaved,onLogout}) {
     }).catch(error=>{if(!controller.signal.aborted)setError(error.message);});
     return ()=>{controller.abort();modal.close();};
   },[user.id]);
-  const external=provider==='deepseek'||provider==='compatible';
+  const external=['deepseek','compatible','maas'].includes(provider);
   const keyStored=Boolean(settings?.key_configured&&settings.provider===provider&&settings.endpoint===endpoint);
   function changeProvider(value) {
     setProvider(value);setApiKey('');setError('');
-    setModel(value===settings.provider?settings.model:value==='deepseek'?'deepseek-flash':'');
-    setEndpoint(value===settings.provider?settings.endpoint:value==='deepseek'?'https://api.deepseek.com':settings.compatible_endpoints[0]||'');
+    setModel(value===settings.provider?settings.model:value==='deepseek'?'deepseek-flash':value==='maas'?settings.maas_model||'':'');
+    setEndpoint(value===settings.provider?settings.endpoint:value==='deepseek'?'https://api.deepseek.com':value==='maas'?settings.maas_endpoint:settings.compatible_endpoints[0]||'');
   }
   async function save(event) {
     event.preventDefault();
@@ -163,6 +164,7 @@ function ModelSettings({user,onClose,onSaved,onLogout}) {
       {provider==='local'&&<p>使用表单比较方案，也可以查询历史地表温度。</p>}
       {['tuned','base'].includes(provider)&&<p>对话调用项目组的 Qwen 推理服务。</p>}
       {external&&<>
+        {provider==='maas'&&<p>服务地址：{settings.maas_endpoint}。填写控制台已开通且支持工具调用的模型 ID 与自己的 MaaS API Key。</p>}
         {provider==='compatible'&&<label>API 地址<select value={endpoint} onChange={event=>{setEndpoint(event.target.value);setApiKey('');}} required>
           <option value="">选择地址</option>
           {settings.compatible_endpoints.map(url=><option key={url}>{url}</option>)}

@@ -1,0 +1,60 @@
+已按 reference/host-reviewed-readiness.js 和 reference/host-reviewed-readiness.test.mjs 更新两个目标文件。
+实际改动：
+• src/evaluation-readiness.js
+◦ 采用审阅版的严格校验：完整温差数值、模型/数据集/区域哈希、字符串元数据、reference_grid_count、安全整数毫摄氏度、温差一致性、完整特征结构，以及 comparable !== true 的不可比判断。
+◦ 新增同输入输出不一致分支（src/evaluation-readiness.js:215）：当 scenario_center 完全相同但整数毫摄氏度不同，返回 incomparable、response = not_comparable、model_delta_distinguishable = null；说明“同输入输出不一致，需要复核运行记录；保留两个原值，不能据此排名”，并保留 delta_millicelsius 中的两个原值。
+• tests/evaluation-readiness.test.mjs
+◦ 同步审阅版测试。
+◦ 新增同输入但温差为 -0.058 与 -0.020 的 fixture 测试（tests/evaluation-readiness.test.mjs:263），验证会返回 incomparable、不可区分性为 null，且两个原值 [-58, -20] 都保留。
+◦ 新增正反对照测试（tests/evaluation-readiness.test.mjs:287）：相同输入且相同输出仍为 limited_comparison / same_features；输入不同且输出不同仍为 limited_comparison / different_features_different_delta。
+测试边界：本轮未运行任何终端命令，包括目录列举和搜索命令；只使用读取与写入文件工具。未执行 npm test、node --test、构建、联网、云资源或模型操作，因此没有真实测试结果，不能宣称测试通过。
+宿主可执行：
+￼
+bash
+
+￼
+￼
+
+npm test
+或：
+￼
+bash
+
+￼
+￼
+
+node --test
+ tests/evaluation-readiness.test.mjs
+产物汇总（2）
+￼
+2个文件已更改
+￼
++573
+
+
+
+
+￼
+￼
+变更文件（2）
+
+全部拒绝
+全部接受
+/ 调用快捷指令, # 添加上下文
+
+￼
+￼
+DeepSeek-V4.1-Flash-1017DeepSeek-V4.1-Flas…
+
+￼
+
+
+￼
+22.13
+·
+￼
+11.8%
+内容由AI生成
+￼
+￼
+￼

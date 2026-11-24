@@ -67,6 +67,11 @@ export function openAccountDatabase(filename) {
       snapshot TEXT NOT NULL
     );
     CREATE INDEX IF NOT EXISTS agent_sessions_scope ON agent_sessions(user_id,site,scenario,mode,updated);
+    CREATE TABLE IF NOT EXISTS inspection_items (
+      id TEXT PRIMARY KEY, user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+      evidence_key TEXT NOT NULL, revision INTEGER NOT NULL, updated INTEGER NOT NULL,
+      snapshot TEXT NOT NULL, UNIQUE(user_id,evidence_key)
+    );
   `);
   const busy=new Set();
   const dummySalt=randomBytes(16);
@@ -106,6 +111,7 @@ export function openAccountDatabase(filename) {
   }
   return {
     close:()=>db.close(),
+    ping:()=>db.prepare('SELECT 1 AS ready').get().ready===1,
     async register({username,login,password}) {
       const id=randomUUID(),salt=randomBytes(16);
       const hashed=await hash(password,salt);
@@ -157,6 +163,27 @@ export function openAccountDatabase(filename) {
     },
     saveMcpPreset(userId,presetId) {
       db.prepare('INSERT INTO mcp_settings VALUES(?,?) ON CONFLICT(user_id) DO UPDATE SET preset_id=excluded.preset_id').run(userId,presetId);
+    },
+    inspectionItems(userId) {
+      return db.prepare('SELECT snapshot FROM inspection_items WHERE user_id=? ORDER BY updated DESC,id DESC').all(userId)
+        .map(row=>JSON.parse(row.snapshot));
+    },
+    addInspectionItem(userId,evidenceKey,item) {
+      db.prepare('INSERT INTO inspection_items VALUES(?,?,?,?,?,?) ON CONFLICT(user_id,evidence_key) DO NOTHING')
+        .run(item.id,userId,evidenceKey,1,Date.now(),JSON.stringify(item));
+      return JSON.parse(db.prepare('SELECT snapshot FROM inspection_items WHERE user_id=? AND evidence_key=?')
+        .get(userId,evidenceKey).snapshot);
+    },
+    inspectionItem(userId,id) {
+      const row=db.prepare('SELECT snapshot FROM inspection_items WHERE user_id=? AND id=?').get(userId,id);
+      if(!row)throw new AgentError('inspection_not_found','该账户下没有这条核查记录。',404);
+      return JSON.parse(row.snapshot);
+    },
+    updateInspectionItem(userId,item,previousRevision) {
+      const saved=db.prepare('UPDATE inspection_items SET revision=?,updated=?,snapshot=? WHERE user_id=? AND id=? AND revision=?')
+        .run(item.revision,Date.now(),JSON.stringify(item),userId,item.id,previousRevision);
+      if(!saved.changes)throw new AgentError('inspection_changed','核查记录已有更新，请重新读取后再保存。',409);
+      return item;
     },
     agentStore(userId) {
       return {

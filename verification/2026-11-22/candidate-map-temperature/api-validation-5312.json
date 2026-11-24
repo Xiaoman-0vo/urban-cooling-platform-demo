@@ -1,0 +1,144 @@
+{
+  "scope": "independent_local_QA_account",
+  "origin": "http://127.0.0.1:5312",
+  "username": "mapqa_547c7124",
+  "original_session_preserved": true,
+  "model_results": [
+    {
+      "version": 1,
+      "candidate_id": "165cd916-ebe8-4a31-bc65-0f02887cc218",
+      "cost": 30600,
+      "status": "scenario_estimated",
+      "grid_id": "E4125_N33891",
+      "date": "2022-09-28",
+      "bounds_utm": [
+        412541,
+        3389123,
+        412547,
+        3389140
+      ],
+      "area_m2": 102,
+      "area_sha256": "7211471d56e98b8f64052f4744391f678025f8b0b84d2fb8a722766c8da34f41",
+      "scene_id": "LC09_L2SP_129039_20220928_02_T1",
+      "observed_utc": "2022-09-28T03:33:44.881466Z",
+      "reference_grid_count": 1558,
+      "observed_lst_c": 33.567,
+      "baseline_lst_c": 32.97,
+      "scenario_lst_c": 33.027,
+      "predicted_delta_lst_c": -0.058,
+      "model_version": "V3 同日校准梯度提升树",
+      "model_sha256": "9a2c5db870c913f24215aee390864ca2ddaa22002c7428408d6e20e2db375ad2",
+      "dataset_sha256": "1ad57cb859bcfa30e9e329d030ed7dbddaad8ed45e62868bbe648b8143a93e54",
+      "compiled_features": {
+        "order": [
+          "ubgg_class_0_pct",
+          "ubgg_class_1_pct",
+          "ubgg_class_2_pct",
+          "ubgg_class_3_pct",
+          "ubgg_class_4_pct",
+          "cnbh_positive_support_pct",
+          "cnbh_positive_mean_height_m"
+        ],
+        "baseline_center": [
+          0,
+          80.11,
+          19.89,
+          0,
+          0,
+          70,
+          17.009
+        ],
+        "scenario_center": [
+          0,
+          79.09,
+          20.91,
+          0,
+          0,
+          70,
+          17.009
+        ],
+        "neighbor_mean": [
+          0.011,
+          34.489,
+          65.5,
+          0,
+          0,
+          34.5,
+          18.145
+        ]
+      },
+      "run_id": "99dc216c-a47d-4fc1-9350-feb61df59f5d",
+      "completed_at": "2026-11-22T13:36:32.198Z"
+    },
+    {
+      "version": 2,
+      "candidate_id": "ce4da50b-770d-43fe-a2d4-f64954670274",
+      "cost": 38400,
+      "status": "scenario_estimated",
+      "grid_id": "E4125_N33891",
+      "date": "2022-09-28",
+      "bounds_utm": [
+        412541,
+        3389123,
+        412549,
+        3389139
+      ],
+      "area_m2": 128,
+      "area_sha256": "7211471d56e98b8f64052f4744391f678025f8b0b84d2fb8a722766c8da34f41",
+      "scene_id": "LC09_L2SP_129039_20220928_02_T1",
+      "observed_utc": "2022-09-28T03:33:44.881466Z",
+      "reference_grid_count": 1558,
+      "observed_lst_c": 33.567,
+      "baseline_lst_c": 32.97,
+      "scenario_lst_c": 33.028,
+      "predicted_delta_lst_c": -0.058,
+      "model_version": "V3 同日校准梯度提升树",
+      "model_sha256": "9a2c5db870c913f24215aee390864ca2ddaa22002c7428408d6e20e2db375ad2",
+      "dataset_sha256": "1ad57cb859bcfa30e9e329d030ed7dbddaad8ed45e62868bbe648b8143a93e54",
+      "compiled_features": {
+        "order": [
+          "ubgg_class_0_pct",
+          "ubgg_class_1_pct",
+          "ubgg_class_2_pct",
+          "ubgg_class_3_pct",
+          "ubgg_class_4_pct",
+          "cnbh_positive_support_pct",
+          "cnbh_positive_mean_height_m"
+        ],
+        "baseline_center": [
+          0,
+          80.11,
+          19.89,
+          0,
+          0,
+          70,
+          17.009
+        ],
+        "scenario_center": [
+          0,
+          78.83,
+          21.17,
+          0,
+          0,
+          70,
+          17.009
+        ],
+        "neighbor_mean": [
+          0.011,
+          34.489,
+          65.5,
+          0,
+          0,
+          34.5,
+          18.145
+        ]
+      },
+      "run_id": "5c2c2790-b0a2-43a1-b33f-90bf2b76c9a8",
+      "completed_at": "2026-11-22T13:36:33.479Z"
+    }
+  ],
+  "report_id": "55fb7e08-1ed3-437e-a167-e813a0bcc382",
+  "active_run_id": null,
+  "language_model_calls": 0,
+  "cloud_operations": 0
+}

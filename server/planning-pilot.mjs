@@ -3,6 +3,8 @@ import {readFile} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import proj4 from 'proj4';
 import {pilotPredictionCancelled,pilotPredictionRequested} from './goal-evidence.mjs';
+import {pilotBoxGeometry,pilotBoxWithin} from '../src/pilot-map.js';
+import {currentPilotProtection,protectionConflicts,protectionVersionChanged} from '../src/protected-areas.js';
 
 const UTM='+proj=utm +zone=48 +datum=WGS84 +units=m +no_defs';
 const WGS='EPSG:4326';
@@ -81,18 +83,33 @@ export async function loadPlanningPilot(root,scene) {
     const checks=checkPilotBox(box,review_id,sources);
     if(Object.values(checks).some(ok=>!ok))throw new Error(`试点 ${id} 未通过来源几何检查`);
     const [x,y,X,Y]=box;
-    const ring=[[x,y],[X,y],[X,Y],[x,Y],[x,y]].map(point=>proj4(UTM,WGS,point));
     return {id,review_id,area_m2:(X-x)*(Y-y),bounds_utm:box,checks,
-      geometry:{type:'Polygon',coordinates:[ring]},review_status:'pending_team_review'};
+      geometry:pilotBoxGeometry(box),review_status:'pending_team_review'};
   });
+  const temperatureArea=await loadTemperatureArea(root,seed,candidates);
   return {id:seed.id,site_id:seed.site_id,scenario_id:seed.scenario_id,
     sha256:hash(JSON.stringify([hash(bytes),references])),measurement_crs:'EPSG:32648',
-    review_status:'pending_team_review',outstanding,references,candidates};
+    review_status:'pending_team_review',outstanding,references,candidates,temperature_area:temperatureArea};
+}
+
+async function loadTemperatureArea(root,seed,candidates) {
+  const path='public/data/planning-pilot-temperature.json';
+  let bytes;
+  try{bytes=await readFile(resolve(root,path));}
+  catch(error){if(error.code==='ENOENT')return null;throw error;}
+  const area=JSON.parse(bytes);
+  const candidate=candidates.find(item=>item.id===area.candidate_id);
+  if(area.pilot_id!==seed.id||!candidate||area.measurement_crs!=='EPSG:32648'||
+     area.source_cover_class!==1||area.scenario_cover_class!==2||area.height_evidence!=='missing'||
+     !pilotBoxWithin(area.bounds_utm,candidate.bounds_utm))
+    throw new Error('温度试算范围与成都试点来源不符');
+  return {...area,path,sha256:hash(bytes),geometry:pilotBoxGeometry(area.bounds_utm)};
 }
 
 export function pilotOptions(session) {
   const {goal,pilot}=session;
   return pilot.candidates.map(candidate=>{
+    const protection=currentPilotProtection(session),conflicts=protectionConflicts(candidate.bounds_utm,protection.areas);
     const rawCost=candidate.area_m2*goal.unit_cost_rmb_per_m2;
     const cost=Math.round(rawCost*100)/100;
     const capacity=goal.candidate_area_m2==null||candidate.area_m2<=goal.candidate_area_m2;
@@ -100,7 +117,8 @@ export function pilotOptions(session) {
     return {kind:'mapped_pilot_option',candidate_id:candidate.id,title:`候选 ${candidate.id}`,
       added_green_area_m2:candidate.area_m2,estimated_construction_cost_rmb:cost,
       budget_check_passed:budget,capacity_check_passed:capacity,
-      comparison_status:budget&&capacity?'within_declared_limits':'outside_declared_limits',
+      protection_version:protection.version,protected_areas:structuredClone(protection.areas),protection_conflicts:conflicts,protection_check_passed:conflicts.length===0,
+      comparison_status:budget&&capacity&&!conflicts.length?'within_declared_limits':'outside_declared_limits',
       geometry:structuredClone(candidate.geometry),spatial_checks:{...candidate.checks},
       review_status:candidate.review_status,source_review_id:candidate.review_id};
   });
@@ -110,18 +128,21 @@ function limitsLabel(option) {
   const limits=[];
   if(!option.budget_check_passed)limits.push('超预算');
   if(!option.capacity_check_passed)limits.push('超声明面积');
+  if(option.protection_check_passed===false)limits.push(`与保留区 ${option.protection_conflicts.map(c=>c.label).join('、')} 冲突`);
   return limits.length?limits.join('、'):'预算及面积条件通过';
 }
 
 export function summarizePilotTurn(session,runId,text) {
   if(!session.pilot)return null;
   const traces=session.traces.filter(t=>t.turn_id===runId&&t.result.status!=='rejected');
-  const saved=traces.some(t=>t.tool==='set_planning_goal'&&t.result.status==='goal_draft_saved');
+  const saved=traces.findLast(t=>t.tool==='set_planning_goal'&&t.result.status==='goal_draft_saved');
   const checks=traces.filter(t=>t.tool==='request_temperature_prediction');
   const compared=traces.some(t=>t.tool==='generate_scenario_options'||(!checks.length&&t.tool==='compare_scenario_options'));
-  const current=session.scenarios.filter(s=>s.goal_version===session.goal.version);
+  const current=session.scenarios.filter(s=>s.goal_version===session.goal.version&&!protectionVersionChanged(s,session));
   const parts=[];
   if(saved)parts.push(`已保存目标 v${session.goal.version}。`);
+  const revised=saved?.result.temperature_scenario;
+  if(revised)parts.push(`已为 ${revised.area_m2}㎡ 范围保存落图情景 v${revised.version}${revised.estimated_construction_cost_rmb==null?'':`，假设费用 ${revised.estimated_construction_cost_rmb} 元`}。温度评价等待手动运行。`);
   if(saved||compared){
     const missing=[];
     if(session.goal.budget_rmb==null)missing.push('预算');

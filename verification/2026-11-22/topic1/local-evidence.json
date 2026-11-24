@@ -1,0 +1,56 @@
+{
+  "schema": "urbancool-topic1-local/1",
+  "started_at": "2026-11-22T08:21:38.554Z",
+  "status": "passed",
+  "scope": "local_container_only",
+  "project": "urbancool-t1-298f3ef92e",
+  "image": "urbancool-workbench:urbancool-t1-298f3ef92e",
+  "node_image": "node:25.9-trixie-slim",
+  "origin": "http://127.0.0.1:5312",
+  "checks": {
+    "fresh_build": true,
+    "default_local_provider": true,
+    "goal_saved": true,
+    "candidates_generated": true,
+    "scenario_adopted": true,
+    "report_generated": true,
+    "account_isolation": true,
+    "temperature_uncomputed": true,
+    "session_persisted": true,
+    "isolation_after_restart": true,
+    "non_root": true,
+    "read_only": true
+  },
+  "cloud_provider_verified": false,
+  "codearts_execution_verified": false,
+  "runtime": {
+    "schema": "urbancool-topic1-runtime/1",
+    "origin": "http://127.0.0.1:5312",
+    "scope": "local_runtime",
+    "checks": {
+      "health": true,
+      "page": true
+    },
+    "cloud_provider_verified": false,
+    "status": "passed"
+  },
+  "feasible_candidates": 1798,
+  "session_state_sha256": "9332ac4bd3bf981aa84cae2e6da39075ba7c80dda8124b943f582dd4148a5b83",
+  "language_model_calls": 0,
+  "temperature_model_calls": 0,
+  "container": {
+    "id": "930df745b3b6800b732a3b6af42eccc268b50ab23783d6c86ff52d25e536266b",
+    "image_id": "sha256:ea5144e92e3a3ec07d6f7abad6b7113acb85b803078e51116b7495fde7913edf",
+    "user": "node",
+    "read_only": true,
+    "mounts": [
+      {
+        "type": "volume",
+        "destination": "/app/.runtime",
+        "name": "urbancool-t1-298f3ef92e_workspace"
+      }
+    ],
+    "health": "starting"
+  },
+  "finished_at": "2026-11-22T08:22:43.779Z"
+}
