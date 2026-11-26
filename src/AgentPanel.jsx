@@ -272,7 +272,8 @@ export default function AgentPanel({open,onOpenChange,workspace=false,context,on
         <button type="button" className="agent-text-button" disabled={checkingHealth||busy} onClick={()=>setHealthRevision(value=>value+1)}>{checkingHealth?'正在检查…':'重新检查模型连接'}</button>
       </section>}
       {error&&<div className="agent-error" role="alert"><WarningCircle size={17}/><span>{error.message}</span></div>}
-      {(tab==='weibo'||tab==='xhs')&&<HeatCollection key={`${accountId}:${tab}`} accountId={accountId} channel={tab} onInspect={()=>setTab('inspection')}/>}
+      {(tab==='weibo'||tab==='xhs')&&<HeatCollection key={`${accountId}:${tab}`} accountId={accountId} channel={tab} onInspect={()=>setTab('inspection')}
+        onArchive={()=>{setTab('chat');send(tab==='xhs'?'查询成都小红书热感知快照':'查询成都热感知快照',{type:tab==='xhs'?'xhs_heat_perception':'heat_perception'});}}/>}
       {tab==='inspection'&&<InspectionList key={accountId} accountId={accountId} currentSiteId={context.site_id} onDiscuss={discussInspection} onLocate={onLocate}/>}
       {tab==='chat'&&<div className="agent-chat" ref={scrollRef} aria-live="polite">
         {!session?.messages?.length&&<div className="agent-welcome"><div className="agent-welcome-icon"><Sparkle size={29}/></div>

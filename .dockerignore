@@ -15,6 +15,7 @@
 !config/sites-hosting.json
 !scripts/
 !scripts/prepare-sites-build.mjs
+!scripts/build-workbench.mjs
 !weibo-demand-agent/
 !weibo-demand-agent/scripts/
 !weibo-demand-agent/scripts/**

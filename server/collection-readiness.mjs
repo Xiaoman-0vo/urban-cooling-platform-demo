@@ -26,7 +26,7 @@ export async function checkClassification(fetchImpl=fetch,{env=process.env}={}) 
 }
 
 export async function checkCollectionReadiness(channel,{fetchImpl=fetch,env=process.env,classifierService}={}) {
-  if(!collectorEnabled(env))return {ready:false,checks:[{id:'execution',label:'采集运行位置',ready:false,message:COLLECTOR_DISABLED_MESSAGE}]};
+  if(!collectorEnabled(env))return {ready:false,enabled:false,state:'disabled',checks:[{id:'execution',label:'此入口未启用新采集',ready:false,state:'disabled',message:COLLECTOR_DISABLED_MESSAGE}]};
   const classifierPromise=checkClassification(fetchImpl,{env}).then(check=>{
     if(check.ready||!classifierService)return check;
     void classifierService.ensure();

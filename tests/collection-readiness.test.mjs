@@ -8,10 +8,24 @@ import {createServer} from 'node:http';
 import {once} from 'node:events';
 import {randomUUID} from 'node:crypto';
 import {requestHeatCollection} from '../server/heat-perception-client.mjs';
+import {collectionUnavailable,collectionReadinessRetryDelay} from '../src/collection-readiness.js';
 
 const env={OPENCLI_ENTRY:fileURLToPath(import.meta.url)};
 const missingEntry=fileURLToPath(new URL('./missing-opencli-program.mjs',import.meta.url));
 const health={status:'ok',result:{route:'health',alive:true}};
+
+test('disabled collection is a stable capability state; browser failures remain retryable',async()=>{
+  const disabled=await checkCollectionReadiness('xhs',{env:{URBANCOOL_COLLECTOR_MODE:'disabled'},
+    fetchImpl:()=>{throw new Error('Disabled deployments must not contact browser dependencies');}});
+  assert.equal(disabled.state,'disabled');assert.equal(disabled.enabled,false);
+  assert.equal(collectionUnavailable(disabled),true);
+  assert.equal(collectionReadinessRetryDelay(disabled),null);
+  assert.equal(collectionUnavailable({ready:false,checks:[{id:'execution',ready:false}]}),true);
+  const disconnected={ready:false,checks:[{id:'browser',ready:false}]};
+  assert.equal(collectionUnavailable(disconnected),false);
+  assert.equal(collectionReadinessRetryDelay(disconnected),15000);
+  assert.equal(collectionReadinessRetryDelay(null),15000);
+});
 
 test('collection readiness requires a published classifier and a connected browser',async()=>{
   let classifier=health;

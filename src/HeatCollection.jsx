@@ -1,6 +1,7 @@
 import React,{useEffect,useState} from 'react';
 import {accountRequest} from './account-api.js';
 import HeatClue from './HeatClue.jsx';
+import {collectionUnavailable,collectionReadinessRetryDelay} from './collection-readiness.js';
 
 const active=collection=>['queued','running'].includes(collection?.status);
 const time=new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Shanghai',dateStyle:'medium',timeStyle:'short'});
@@ -10,7 +11,7 @@ const sources={
   xhs:{label:'小红书',entry:'采集小红书',item:'笔记',scope:'按关键词发起新搜索，抽取公开笔记和页面已加载的一级评论。'},
 };
 
-export default function HeatCollection({accountId,channel,onInspect}){
+export default function HeatCollection({accountId,channel,onInspect,onArchive}){
   const source=sources[channel];
   const route=`/${channel}-collection`;
   const [keyword,setKeyword]=useState('高温 遮阴');
@@ -24,16 +25,19 @@ export default function HeatCollection({accountId,channel,onInspect}){
   const [saved,setSaved]=useState({});
   const [saving,setSaving]=useState(null);
   const [savedError,setSavedError]=useState('');
+  const unavailable=collectionUnavailable(readiness);
   useEffect(()=>{
     const controller=new AbortController();
     let timer;
     async function refresh(){
+      let retry=15000;
       try{
         const result=await accountRequest(`/collection-readiness?channel=${channel}`,{accountId,signal:controller.signal});
         if(controller.signal.aborted)return;
         setReadiness(result);setReadinessError('');
+        retry=collectionReadinessRetryDelay(result);
       }catch(err){if(!controller.signal.aborted)setReadinessError(err.message);}
-      finally{if(!controller.signal.aborted)timer=setTimeout(refresh,15000);}
+      finally{if(!controller.signal.aborted&&retry!==null)timer=setTimeout(refresh,retry);}
     }
     refresh();
     return()=>{controller.abort();clearTimeout(timer);};
@@ -47,14 +51,14 @@ export default function HeatCollection({accountId,channel,onInspect}){
         if(controller.signal.aborted)return;
         setReadError('');
         setCollection(collection);
-        if(active(collection))timer=setTimeout(refresh,3500);
+        if(active(collection)&&!unavailable)timer=setTimeout(refresh,3500);
       }catch(err){
-        if(!controller.signal.aborted){setReadError(err.message);timer=setTimeout(refresh,5000);}
+        if(!controller.signal.aborted){setReadError(err.message);if(!unavailable)timer=setTimeout(refresh,5000);}
       }
     }
     refresh();
     return ()=>{controller.abort();clearTimeout(timer);};
-  },[accountId,busy,revision,route]);
+  },[accountId,busy,revision,route,unavailable]);
   useEffect(()=>{
     if(collection?.status!=='done')return;
     const controller=new AbortController();
@@ -92,9 +96,15 @@ export default function HeatCollection({accountId,channel,onInspect}){
   const summary=collection?.summary;
   return <section className="agent-chat" aria-label={source.entry}>
     <h3>{source.entry}</h3>
-    <p>{source.scope}</p>
-    {channel==='xhs'&&<p className="agent-caption">采集在后台浏览器窗口读取页面。你可以留在工作台查看进度。</p>}
+    {!unavailable&&<p>{source.scope}</p>}
+    {!unavailable&&channel==='xhs'&&<p className="agent-caption">采集在后台浏览器窗口读取页面。你可以留在工作台查看进度。</p>}
     <section className="agent-collection-readiness" aria-label="采集准备情况">
+      {unavailable?<>
+        <div className="agent-collection-readiness-heading"><h4>此入口未启用新采集</h4></div>
+        <p>可以继续查询{source.label}历史归档和整理核查记录。</p>
+        <p className="agent-caption">这是当前入口的功能范围，重复检查不会开启采集。新采集需要在已连接浏览器的本机工作台运行。</p>
+        {onArchive&&<button type="button" className="agent-text-button" onClick={onArchive}>查看{source.label}历史归档</button>}
+      </>:<>
       <div className="agent-collection-readiness-heading"><h4>采集准备</h4>
         <button type="button" className="agent-text-button" onClick={()=>setRevision(value=>value+1)}>重新检查</button>
       </div>
@@ -110,17 +120,18 @@ export default function HeatCollection({accountId,channel,onInspect}){
           <a href="https://chromewebstore.google.com/detail/opencli/ildkmabpimmkaediidaifkhjpohdnifk" target="_blank" rel="noreferrer">安装 OpenCLI 扩展</a>
           <a href="https://www.xiaohongshu.com/" target="_blank" rel="noreferrer">打开小红书</a>
         </div>}
+      </>}
     </section>
-    <form className="agent-weibo-form" onSubmit={submit}>
+    {!unavailable&&<form className="agent-weibo-form" onSubmit={submit}>
       <label>成都{source.label}关键词<input value={keyword} onChange={event=>setKeyword(event.target.value)} maxLength={40}
         required disabled={busy||active(collection)}/></label>
       <button type="submit" className="agent-primary" disabled={busy||active(collection)||!keyword.trim()||readiness?.ready!==true||Boolean(readinessError)}>
         {busy?'正在提交…':readiness?.ready?'开始采集':'等待采集条件就绪'}
       </button>
-    </form>
+    </form>}
     {error&&<p role="alert" className="agent-error">{error}</p>}
     {readError&&<div role="alert" className="agent-error">{readError} 将自动重试。 <button type="button" onClick={()=>setRevision(value=>value+1)}>重新读取状态</button></div>}
-    {!collection&&!error&&!readError&&<p role="status">正在读取采集状态…</p>}
+    {!unavailable&&!collection&&!error&&!readError&&<p role="status">正在读取采集状态…</p>}
     {collection&&collection.status!=='idle'&&<div className="agent-weibo-result" role="status">
       {collection.status==='failed'&&<p className="agent-caption">上一次采集未完成；当前准备情况见上方。条件就绪后可重新采集。</p>}
       <strong>{collection.message}</strong>
