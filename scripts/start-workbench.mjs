@@ -16,6 +16,7 @@ import {configuredOpenCliEntry} from '../xiaohongshu_demand_agent/scripts/opencl
 import {createQwenClient} from '../server/qwen-client.mjs';
 import {qwenConfig} from '../server/qwen-config.mjs';
 import {portOccupied,serverMatches} from './local-platform-service.mjs';
+import {buildWorkbench} from './build-workbench.mjs';
 
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const runtime=join(root,'.runtime');
@@ -38,17 +39,13 @@ async function prepareBuild() {
   if(!await exists(join(root,'node_modules/vite/bin/vite.js')))
     throw new Error('请先在工作台目录运行一次 npm ci 安装依赖。');
   const index=join(root,'dist/client/index.html');
-  const inputs=['src','public','index.html','vite.config.mjs','package.json','package-lock.json'];
+  const inputs=['src','public','index.html','vite.config.mjs','package.json','package-lock.json','scripts/build-workbench.mjs'];
   const newest=Math.max(...await Promise.all(inputs.map(path=>newestFile(join(root,path)))));
   if(await exists(index)&&(await stat(index)).mtimeMs>=newest){
     console.log('页面已是最新构建。');return;
   }
   console.log('正在准备最新页面，首次启动需要稍等…');
-  for(const args of [['node_modules/vite/bin/vite.js','build','--mode','accounts'],['scripts/prepare-sites-build.mjs']]){
-    const child=spawn(process.execPath,args,{cwd:root,stdio:'inherit',windowsHide:true});
-    const [code]=await once(child,'exit');
-    if(code!==0)throw new Error('页面构建失败，请查看上方提示。');
-  }
+  await buildWorkbench({root,mode:'accounts'});
 }
 
 async function prepareModel() {
@@ -144,7 +141,8 @@ async function main() {
   console.log('正在准备 UrbanCool 工作台…');
   await prepareBuild();
   await prepareModel();
-  try{
+  if(process.argv.includes('--skip-qwen-check'))console.log('Qwen 对话 · 已跳过连接检查。');
+  else try{
     const languageModel=createQwenClient(qwenConfig());
     if(languageModel.probeStatus){
       const connection=await languageModel.probeStatus();
