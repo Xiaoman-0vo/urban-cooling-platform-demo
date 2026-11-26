@@ -31,6 +31,8 @@ jobs:
         run: npm run build
       - name: 运行默认软件与证据检查
         run: npm test
+      - name: 检查 Agent 与账户工作台
+        run: npm run test:agent && npm run test:accounts
       - name: 离线检查数据下载与校验工具
         run: python3 -m unittest discover -s datasets -p 'test_download_data.py' -v
       - name: 上传通过检查的静态页面

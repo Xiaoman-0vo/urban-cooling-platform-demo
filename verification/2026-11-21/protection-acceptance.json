@@ -1,0 +1,231 @@
+{
+  "schema": "urbancool-user-protection-acceptance/1",
+  "client_date": "2026-11-21",
+  "recorded_at": "2026-11-21T03:13:07.871Z",
+  "scope": "isolated_software_acceptance_user_declared_rectangles_not_field_or_legal_verification",
+  "site_id": "E4125_N33891",
+  "session_id": "f1a2fe45-5263-4e05-86b7-ea73167eb373",
+  "protection_input_method": "browser_map_two_clicks_and_label_form",
+  "protection": {
+    "version": 1,
+    "areas": [
+      {
+        "id": "c7afbf6a-82cc-4dc0-a0da-197eec331e45",
+        "label": "保留活动空间（软件验收）",
+        "bounds_utm": [
+          412543,
+          3389130,
+          412546,
+          3389133
+        ],
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                104.08740256221017,
+                30.631599812453032
+              ],
+              [
+                104.08743386330495,
+                30.63160003213614
+              ],
+              [
+                104.08743360926819,
+                30.63162709990643
+              ],
+              [
+                104.0874023081647,
+                30.631626880223088
+              ],
+              [
+                104.08740256221017,
+                30.631599812453032
+              ]
+            ]
+          ]
+        },
+        "measurement_crs": "EPSG:32648",
+        "area_sha256": "7211471d56e98b8f64052f4744391f678025f8b0b84d2fb8a722766c8da34f41",
+        "source": "user_declared_keep_area"
+      }
+    ],
+    "area_sha256": "7211471d56e98b8f64052f4744391f678025f8b0b84d2fb8a722766c8da34f41",
+    "created_at": "2026-11-21T03:11:21.474Z",
+    "previous_version": 0,
+    "change": {
+      "operation": "add",
+      "area_id": "c7afbf6a-82cc-4dc0-a0da-197eec331e45",
+      "label": "保留活动空间（软件验收）"
+    }
+  },
+  "source_sha256_at_recording": {
+    "server/pilot-protection.mjs": "49668bad447b4c2a5afc85f03b38e51333594872e73f659290874d6c34abfd80",
+    "server/pilot-temperature.mjs": "67f74e3b69ba9fbfe2fef9dff70de1c91b368338eee29861e35db982b44d92e3",
+    "server/local-planning.mjs": "36f7aca6e55d5276387fbe7f9e6832f23d66197d97ee74ae19b19cc9e433fb73",
+    "server/agent-tools.mjs": "9e9e35b6792cb6a9d7cde2d637eaa8dddaf064cbe6abcdcce9663de151772cf4",
+    "server/multi-agent.mjs": "b481b640adca3898bbaf944f77283a9910c95f69e68a6bad19283103f2ff2970",
+    "server/planning-pilot.mjs": "5ffc6c752f3b24b8ee1d6705e9f58cdd4ce292d55a57beae68795421e1285985",
+    "server/agent-task-state.mjs": "b5bfd7ebe6cc8c4ab8752f901d3ccda97e56213f81ca99961f04164b7cf815e7",
+    "src/protected-areas.js": "bc50feb66d3f9bbbe645d75e83663bca10ce99e3c021b4e5cc09b12bfc14a82e",
+    "src/PilotTemperature.jsx": "41fc0079be43801430e825eb5acbe66fe0fdae629d379e5a79ab7db70e234c4c",
+    "src/pilot-map.js": "8df75b99a27cde542b0d51c555843f65c07834052a57944e1005a77a85f3713c",
+    "src/scenario-checks.js": "4764b11914212ed4c7beb0dd826e04f769a43decbdf7186103770a34d7834eaf",
+    "src/MapCanvas.jsx": "7dc58d131de8a84108880db93f199f2076493c6d65830b2dcc17ba1cc9159185",
+    "src/planning-workflow.js": "5748a36017c1a1b876be5af799c4db8be0653aea670171ab74cd5230bc6e955b"
+  },
+  "original": {
+    "scenario_id": "df7eb58b-e7f7-4577-852c-104d690a1e31",
+    "snapshot_sha256": "52a42aeff9d99b239aee09dcf15a342e54182b24690f61db5de7f95390646b9f",
+    "preserved": true,
+    "run_id": "1ae914d3-d2e5-44b3-8fc0-c5686afdb727",
+    "model_sha256": "9a2c5db870c913f24215aee390864ca2ddaa22002c7428408d6e20e2db375ad2",
+    "dataset_sha256": "1ad57cb859bcfa30e9e329d030ed7dbddaad8ed45e62868bbe648b8143a93e54",
+    "predicted_delta_lst_c": -0.026
+  },
+  "blocked": {
+    "scenario_id": "043299aa-bec5-4607-876c-06021f1ee689",
+    "protection_version": 1,
+    "result": null,
+    "conflicts": [
+      {
+        "id": "c7afbf6a-82cc-4dc0-a0da-197eec331e45",
+        "label": "保留活动空间（软件验收）",
+        "overlap_m2": 9
+      }
+    ],
+    "ui_evaluate_disabled": true
+  },
+  "server_rejections": [
+    {
+      "operation": "evaluate_temperature_scenario",
+      "status": 409,
+      "code": "protected_area_conflict"
+    },
+    {
+      "operation": "save_temperature_scenario",
+      "status": 409,
+      "code": "protected_area_conflict"
+    },
+    {
+      "operation": "restore_temperature_scenario",
+      "status": 409,
+      "code": "protected_area_conflict"
+    },
+    {
+      "operation": "stale_protection_remove",
+      "status": 409,
+      "code": "stale_protection_version"
+    }
+  ],
+  "accepted_non_overlapping": {
+    "id": "d95cdabc-8c2c-4d1c-a936-de36c46fec75",
+    "bounds_utm": [
+      412546,
+      3389123,
+      412550,
+      3389140
+    ],
+    "area_m2": 68,
+    "protection_version": 1,
+    "result": null
+  },
+  "model_successful_runs": 1,
+  "language_model_calls": 0,
+  "cloud_resources_created": 0,
+  "software_checks": {
+    "default": {
+      "passed": 131,
+      "failed": 0,
+      "skipped": 2
+    },
+    "supplemental": {
+      "passed": 33,
+      "failed": 0
+    }
+  },
+  "export": {
+    "path": "protected-planning-qa.zip",
+    "sha256": "acca650ce8bcfe547ceaa5f46174ef4320e56cfd04798d6e8a499f19c2388418",
+    "report_status": "stale",
+    "protection_version": 1,
+    "members": [
+      {
+        "name": "规划进度.md",
+        "bytes": 2691,
+        "sha256": "244acf633fc85059b06860910c5a9c1d21624598718545cb06aa93bf4a60d216"
+      },
+      {
+        "name": "规划会话.json",
+        "bytes": 126767,
+        "sha256": "bfb9ddc0f6a7158da49f239d1c8f788c4f0e57344ba2ac1df97d492aa1366db4"
+      },
+      {
+        "name": "温度情景.geojson",
+        "bytes": 13092,
+        "sha256": "785fec914e86a377f75d2685c04390f18cd82f015ea356d2cdd641f4c63ac210"
+      },
+      {
+        "name": "讨论范围.geojson",
+        "bytes": 2284,
+        "sha256": "d8c0b76c8bf8ac358edeca30c84eabc941d299c3ed44ce872cdbc8f385392c83"
+      },
+      {
+        "name": "场地核查记录.json",
+        "bytes": 2,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "name": "情景约束检查.json",
+        "bytes": 3550,
+        "sha256": "24e077a9f77b8b58c8e79802fa18b6a37fdfaa916f2e6439ce283e84ca1b43f6"
+      },
+      {
+        "name": "情景修改记录.json",
+        "bytes": 904,
+        "sha256": "7c864bd1b896c1e5cd975dff385a479bbfddb33ecb8fc6c8aae96aa443ad6294"
+      },
+      {
+        "name": "保留范围版本.json",
+        "bytes": 1426,
+        "sha256": "b2a0b4b17267952c3c6ae9ca24ca51bff34314ceabe9396afb7017b8635e2063"
+      },
+      {
+        "name": "用户保留区.geojson",
+        "bytes": 1043,
+        "sha256": "7d15e445ed70a0ef65e53b39554ab228849de2098bcabbca4d664ddaa872d6c5"
+      },
+      {
+        "name": "旧版讨论报告.md",
+        "bytes": 5663,
+        "sha256": "a258c25592f2fa3522f3b54afb52a885c82f50079611295c7da30b88094cc334"
+      }
+    ],
+    "all_member_hashes_verified": true
+  },
+  "screenshot": {
+    "path": "protected-area-ui.jpg",
+    "sha256": "08d5873506ae85b975a00594b4c06d7f254c513b591e1cab6f90bed62ddb5dae",
+    "state": "blocked_v2_before_non_overlapping_v3_acceptance"
+  },
+  "credentials_included": false,
+  "final_review": {
+    "recorded_at": "2026-11-21T03:16:37.673Z",
+    "source_sha256": {
+      "server/pilot-protection.mjs": "49668bad447b4c2a5afc85f03b38e51333594872e73f659290874d6c34abfd80",
+      "server/pilot-temperature.mjs": "67f74e3b69ba9fbfe2fef9dff70de1c91b368338eee29861e35db982b44d92e3",
+      "server/local-planning.mjs": "36f7aca6e55d5276387fbe7f9e6832f23d66197d97ee74ae19b19cc9e433fb73",
+      "server/agent-tools.mjs": "6031a6f3302475e18711dd8dce969936fd5078db75ca22e89ba77ae01fb4c9de",
+      "server/multi-agent.mjs": "329333db2ecb3c90177fe5c1a306c75c51a45489602a8886ade0e8710fa9bbfb",
+      "server/planning-pilot.mjs": "5ffc6c752f3b24b8ee1d6705e9f58cdd4ce292d55a57beae68795421e1285985",
+      "server/agent-task-state.mjs": "b5bfd7ebe6cc8c4ab8752f901d3ccda97e56213f81ca99961f04164b7cf815e7",
+      "src/protected-areas.js": "bc50feb66d3f9bbbe645d75e83663bca10ce99e3c021b4e5cc09b12bfc14a82e",
+      "src/PilotTemperature.jsx": "f040cd3c72e1b93ed1f0cf0dbbfaa36af5b928474c0b46cc4ff8c9152f23db9b",
+      "src/pilot-map.js": "8df75b99a27cde542b0d51c555843f65c07834052a57944e1005a77a85f3713c",
+      "src/scenario-checks.js": "4764b11914212ed4c7beb0dd826e04f769a43decbdf7186103770a34d7834eaf",
+      "src/MapCanvas.jsx": "7dc58d131de8a84108880db93f199f2076493c6d65830b2dcc17ba1cc9159185",
+      "src/planning-workflow.js": "5748a36017c1a1b876be5af799c4db8be0653aea670171ab74cd5230bc6e955b"
+    },
+    "notes": "Final follow-up excludes obsolete protection snapshots from default prediction targets and clarifies report/history constraint versions; default regression 131 passed, 2 skipped."
+  }
+}

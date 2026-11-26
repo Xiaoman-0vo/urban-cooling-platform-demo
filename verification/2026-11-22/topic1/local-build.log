@@ -1,0 +1,110 @@
+ Image urbancool-workbench:urbancool-t1-298f3ef92e Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 721B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.75kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/node:25.9-trixie-slim
+#3 DONE 5.1s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 638B done
+#4 DONE 0.0s
+
+#5 [build 1/6] FROM docker.io/library/node:25.9-trixie-slim@sha256:aabbe39553d15ede8a97cc60c9e1a97034ff772afcf696ea42b94e7f5f2ec71b
+#5 resolve docker.io/library/node:25.9-trixie-slim@sha256:aabbe39553d15ede8a97cc60c9e1a97034ff772afcf696ea42b94e7f5f2ec71b 0.0s done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 673.89kB 0.1s done
+#6 DONE 0.1s
+
+#7 [build 2/6] WORKDIR /app
+#7 CACHED
+
+#8 [build 3/6] COPY package.json package-lock.json ./
+#8 DONE 0.1s
+
+#9 [build 4/6] RUN npm ci --no-audit --no-fund
+#9 27.49 
+#9 27.49 added 240 packages in 27s
+#9 27.49 npm notice
+#9 27.49 npm notice New minor version of npm available! 11.12.1 -> 11.21.3
+#9 27.49 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.21.3
+#9 27.49 npm notice To update run: npm install -g npm@11.21.3
+#9 27.49 npm notice
+#9 DONE 27.8s
+
+#10 [build 5/6] COPY . .
+#10 DONE 0.4s
+
+#11 [build 6/6] RUN npm run build:accounts
+#11 0.374 
+#11 0.374 > urban-cooling-platform-collaboration@0.1.0 build:accounts
+#11 0.374 > vite build --mode accounts && node scripts/prepare-sites-build.mjs
+#11 0.374 
+#11 0.578 vite v6.4.2 building for accounts...
+#11 0.628 transforming...
+#11 7.745 ✓ 5320 modules transformed.
+#11 8.295 rendering chunks...
+#11 8.514 computing gzip size...
+#11 8.576 dist/client/index.html                            0.43 kB │ gzip:   0.33 kB
+#11 8.576 dist/client/assets/CityOverview-uMBUjLbh.css     11.12 kB │ gzip:   2.97 kB
+#11 8.576 dist/client/assets/index-B1bVY938.css           225.88 kB │ gzip:  34.36 kB
+#11 8.576 dist/client/assets/CityOverview-Cmp7xB5F.js   1,071.81 kB │ gzip: 317.59 kB
+#11 8.576 dist/client/assets/index-DLDmw0Ei.js          2,230.34 kB │ gzip: 664.03 kB
+#11 8.577 
+#11 8.577 (!) Some chunks are larger than 500 kB after minification. Consider:
+#11 8.577 - Using dynamic import() to code-split the application
+#11 8.577 - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+#11 8.577 - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+#11 8.577 ✓ built in 7.98s
+#11 8.838 Prepared Sites build: dist/server/index.js and dist/.openai/hosting.json
+#11 DONE 8.9s
+
+#12 [runtime  3/11] COPY --from=build /app/package.json /app/package-lock.json ./
+#12 DONE 0.1s
+
+#13 [runtime  4/11] COPY --from=build /app/node_modules ./node_modules
+#13 DONE 1.9s
+
+#14 [runtime  5/11] COPY --from=build /app/dist/client ./dist/client
+#14 DONE 0.2s
+
+#15 [runtime  6/11] COPY --from=build /app/public/data ./public/data
+#15 DONE 0.1s
+
+#16 [runtime  7/11] COPY --from=build /app/server ./server
+#16 DONE 0.1s
+
+#17 [runtime  8/11] COPY --from=build /app/src ./src
+#17 DONE 0.1s
+
+#18 [runtime  9/11] COPY --from=build /app/weibo-demand-agent/scripts ./weibo-demand-agent/scripts
+#18 DONE 0.1s
+
+#19 [runtime 10/11] COPY --from=build /app/xiaohongshu_demand_agent/scripts ./xiaohongshu_demand_agent/scripts
+#19 DONE 0.1s
+
+#20 [runtime 11/11] RUN mkdir -p /app/.runtime && chown node:node /app/.runtime
+#20 DONE 0.3s
+
+#21 exporting to image
+#21 exporting layers
+#21 exporting layers 8.6s done
+#21 exporting manifest sha256:383e3565b98210ef333e5ce601e8b7c442fa718a384529d8f0fa425acecf35ca 0.0s done
+#21 exporting config sha256:4f0c75550a865653b518ebeb1b1d9d163bf414e7b59398defe199294dc8a4c00 0.0s done
+#21 exporting attestation manifest sha256:e07cefeb68f04382a95d6fd4f42fa64a7c3c3981397851c6fd336acf2115a4a9 0.1s done
+#21 exporting manifest list sha256:ea5144e92e3a3ec07d6f7abad6b7113acb85b803078e51116b7495fde7913edf
+#21 exporting manifest list sha256:ea5144e92e3a3ec07d6f7abad6b7113acb85b803078e51116b7495fde7913edf 0.0s done
+#21 naming to docker.io/library/urbancool-workbench:urbancool-t1-298f3ef92e done
+#21 unpacking to docker.io/library/urbancool-workbench:urbancool-t1-298f3ef92e
+#21 unpacking to docker.io/library/urbancool-workbench:urbancool-t1-298f3ef92e 3.5s done
+#21 DONE 12.4s
+
+#22 resolving provenance for metadata file
+#22 DONE 0.0s
+ Image urbancool-workbench:urbancool-t1-298f3ef92e Built 

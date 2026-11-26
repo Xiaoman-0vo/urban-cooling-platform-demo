@@ -1,0 +1,34 @@
+{
+  "default_tests": {
+    "command": "npm test",
+    "tests": 185,
+    "pass": 183,
+    "skip": 2,
+    "fail": 0
+  },
+  "accounts": {
+    "command": "npm run test:accounts",
+    "tests": 15,
+    "pass": 15
+  },
+  "cloud_topic1_candidate_quality": {
+    "command": "node --test tests/cloud-workbench.test.mjs tests/topic1-delivery.test.mjs tests/candidate-quality.test.mjs",
+    "tests": 15,
+    "pass": 15
+  },
+  "map_source": {
+    "command": "node --test --test-name-pattern='small planning polygons' tests/map-canvas.test.mjs",
+    "tests": 1,
+    "pass": 1
+  },
+  "build": {
+    "command": "Dockerfile.preview build:accounts",
+    "status": "passed",
+    "dependency_lock_compared_with_verified_base": true,
+    "node_image": "node:25.9-trixie-slim"
+  },
+  "startup_launcher": {
+    "command": "node scripts/start-topic1-preview.mjs --no-open",
+    "status": "passed"
+  }
+}

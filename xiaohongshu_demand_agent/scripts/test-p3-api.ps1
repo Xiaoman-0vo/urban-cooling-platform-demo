@@ -1,7 +1,13 @@
 # P3 规则层 —— 走真实 HTTP 的验收测试（不是本地模拟，是真的打到 n8n）
 # 用法：powershell -NoProfile -ExecutionPolicy Bypass -File scripts\test-p3-api.ps1
+param([string]$BaseUrl = '')
 $ErrorActionPreference = 'Stop'
-$base = 'http://127.0.0.1:5678/webhook/weibo-demand/v1'
+if (-not $BaseUrl) {
+    $config = (& node (Join-Path $PSScriptRoot 'runtime-config.mjs')) | ConvertFrom-Json
+    if ($LASTEXITCODE -ne 0) { throw 'Cannot load classifier configuration.' }
+    $BaseUrl = $config.classifierOrigin + '/webhook/weibo-demand/v1'
+}
+$base = $BaseUrl
 
 function Post-Item($obj) {
     $json = $obj | ConvertTo-Json -Depth 10 -Compress

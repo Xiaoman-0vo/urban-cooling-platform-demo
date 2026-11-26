@@ -1,0 +1,311 @@
+{
+  "schema": "urbancool-topic1-prototype-acceptance/1",
+  "recorded_at": "2026-11-22T08:31:15.984Z",
+  "date": "2026-11-22",
+  "implementation_origin": "Codex; no retroactive CodeArts attribution",
+  "status": "executable_local_prototype_verified_cloud_pending",
+  "cloud_target": {
+    "schema": "urbancool-topic1-target/1",
+    "region": "",
+    "obs": {
+      "bucket": "",
+      "create_bucket": false
+    },
+    "ecs": {
+      "host": "",
+      "ssh_port": null,
+      "ssh_user": "",
+      "deploy_directory": "",
+      "https_origin": ""
+    }
+  },
+  "target_decision": "User confirmed no ECS and requested that host/region/SSH target fields remain blank.",
+  "codearts": {
+    "ide_found": true,
+    "bundled_cli_found": true,
+    "standalone_cli_credentials_count": 0,
+    "ide_authentication_status": "not_verified",
+    "ui_operation": "stopped_by_user_physical_escape",
+    "project_skill": {
+      "schema": "urbancool-codearts-skill/1",
+      "status": "packaged_not_imported",
+      "path": ".codeartsdoer/skills/urbancool-huawei-delivery",
+      "archive": "topic1-final/urbancool-huawei-delivery.zip",
+      "sha256": "59dc228ed4a8f13d1b61a6e65279142e5c8a30c9843ca31a841a52dcd4653d1f",
+      "bytes": 2015,
+      "requires_current_repository": true,
+      "format_validation": "passed using quick_validate.py with Python UTF-8 mode",
+      "zip_member_verified": true,
+      "git_discoverable": true
+    },
+    "actual_development_verified": false,
+    "skill_import_verified": false,
+    "existing_official_skill_execution_verified": false
+  },
+  "obs": {
+    "sdk": "esdk-obs-nodejs@3.26.10",
+    "integration_scope": "private content-addressed deployment source storage adapter",
+    "plan": {
+      "schema": "urbancool-topic1-obs/1",
+      "status": "planned_not_executed",
+      "region": "",
+      "bucket": "",
+      "object_key": "urbancool/releases/ccf830c462a56853232a12b54c8ea3646f1d036d09045861fb736ca65d65002f.zip",
+      "bundle": {
+        "sha256": "ccf830c462a56853232a12b54c8ea3646f1d036d09045861fb736ca65d65002f",
+        "bytes": 11936239,
+        "members": 199
+      },
+      "operations": [],
+      "missing": [
+        "region",
+        "obs.bucket"
+      ]
+    },
+    "missing_configuration_guard": {
+      "schema": "urbancool-topic1-obs/1",
+      "status": "not_run",
+      "region": "",
+      "bucket": "",
+      "object_key": "urbancool/releases/ccf830c462a56853232a12b54c8ea3646f1d036d09045861fb736ca65d65002f.zip",
+      "bundle": {
+        "sha256": "ccf830c462a56853232a12b54c8ea3646f1d036d09045861fb736ca65d65002f",
+        "bytes": 11936239,
+        "members": 199
+      },
+      "operations": [],
+      "missing": [
+        "region",
+        "obs.bucket",
+        "environment_credentials"
+      ]
+    },
+    "real_cloud_operations": 0,
+    "real_upload_verified": false,
+    "fixture_tests_are_not_cloud_evidence": true
+  },
+  "deployment": {
+    "local": {
+      "schema": "urbancool-topic1-local/1",
+      "started_at": "2026-11-22T08:21:38.554Z",
+      "status": "passed",
+      "scope": "local_container_only",
+      "project": "urbancool-t1-298f3ef92e",
+      "image": "urbancool-workbench:urbancool-t1-298f3ef92e",
+      "node_image": "node:25.9-trixie-slim",
+      "origin": "http://127.0.0.1:5312",
+      "checks": {
+        "fresh_build": true,
+        "default_local_provider": true,
+        "goal_saved": true,
+        "candidates_generated": true,
+        "scenario_adopted": true,
+        "report_generated": true,
+        "account_isolation": true,
+        "temperature_uncomputed": true,
+        "session_persisted": true,
+        "isolation_after_restart": true,
+        "non_root": true,
+        "read_only": true
+      },
+      "cloud_provider_verified": false,
+      "codearts_execution_verified": false,
+      "runtime": {
+        "schema": "urbancool-topic1-runtime/1",
+        "origin": "http://127.0.0.1:5312",
+        "scope": "local_runtime",
+        "checks": {
+          "health": true,
+          "page": true
+        },
+        "cloud_provider_verified": false,
+        "status": "passed"
+      },
+      "feasible_candidates": 1798,
+      "session_state_sha256": "9332ac4bd3bf981aa84cae2e6da39075ba7c80dda8124b943f582dd4148a5b83",
+      "language_model_calls": 0,
+      "temperature_model_calls": 0,
+      "container": {
+        "id": "930df745b3b6800b732a3b6af42eccc268b50ab23783d6c86ff52d25e536266b",
+        "image_id": "sha256:ea5144e92e3a3ec07d6f7abad6b7113acb85b803078e51116b7495fde7913edf",
+        "user": "node",
+        "read_only": true,
+        "mounts": [
+          {
+            "type": "volume",
+            "destination": "/app/.runtime",
+            "name": "urbancool-t1-298f3ef92e_workspace"
+          }
+        ],
+        "health": "starting"
+      },
+      "finished_at": "2026-11-22T08:22:43.779Z"
+    },
+    "subsequent_docker_health_observation": "healthy",
+    "latest_probe": {
+      "schema": "urbancool-topic1-runtime/1",
+      "origin": "http://127.0.0.1:5312",
+      "scope": "local_runtime",
+      "checks": {
+        "health": true,
+        "page": true
+      },
+      "cloud_provider_verified": false,
+      "status": "passed"
+    },
+    "retained_local_url": "http://127.0.0.1:5312/?view=workflow",
+    "production_node24_build_verified": false,
+    "ecs_deployment_verified": false,
+    "public_https_verified": false,
+    "rds_redis_integrated": false,
+    "v3_container_verified": false
+  },
+  "validation": {
+    "default_suite": {
+      "passed": 174,
+      "skipped": 2,
+      "failed": 0
+    },
+    "accounts_planning_cloud_suite": {
+      "passed": 19,
+      "failed": 0
+    },
+    "delivery_suite": {
+      "passed": 8,
+      "failed": 0
+    },
+    "accounts_build": "passed in the fresh Docker build",
+    "shell_syntax": "passed with bash -n",
+    "initial_sandbox_failure": "Loopback HTTP was denied with EACCES. Rerun with local network access passed; no application fix was needed."
+  },
+  "release": {
+    "sha256": "ccf830c462a56853232a12b54c8ea3646f1d036d09045861fb736ca65d65002f",
+    "bytes": 11936239,
+    "members": 199,
+    "artifact": ".runtime/topic1/source-tracked-skill-20261122/urbancool-source.zip",
+    "manifest": "topic1-final/source-release.json",
+    "scope": "deployment subset; not a complete development checkout or a user-data/model backup",
+    "snapshot_timing": "after runtime acceptance; deployment tooling/docs are outside the application Docker build allowlist"
+  },
+  "raw_local_logs": [
+    {
+      "path": "topic1-final/local-evidence.json",
+      "bytes": 1678,
+      "sha256": "8ed8512c25c3351dfafce9234a07727488323af493ca5067ca5016f71b45db55"
+    },
+    {
+      "path": "topic1-final/local-compose-config.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "topic1-final/local-build.log",
+      "bytes": 4461,
+      "sha256": "8846dfd96a4b7fe5807bb14c2e74a3d0a96ba7e3ce3a7b8c1bb1d68c7d1139de"
+    },
+    {
+      "path": "topic1-final/local-start.log",
+      "bytes": 430,
+      "sha256": "2afcf534575e8a0c23a586938a5be74609bf0ce7495665d7bed80558a07ee496"
+    },
+    {
+      "path": "topic1-final/local-restart.log",
+      "bytes": 115,
+      "sha256": "b48d4c7c0e035793c1606cd84b1b70b8b95a2af86fa287c6fd68a03572797148"
+    }
+  ],
+  "files_touched_this_round": [
+    {
+      "path": ".gitignore",
+      "bytes": 187,
+      "sha256": "b0975d3e14b9298d381c64137be5094d944a643d16b2307c9a624ff6df8a8281"
+    },
+    {
+      "path": "README.md",
+      "bytes": 27078,
+      "sha256": "edc1729ca5c855e95728b1b16b6581041254d67ff7bb3b2785582bc8d97f2846"
+    },
+    {
+      "path": "package.json",
+      "bytes": 3427,
+      "sha256": "ababe9be48a0b21e6e7ea0e1be5fca5557e4427f9dc6ca90b1ff8eb4736286b9"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 132586,
+      "sha256": "35f362483b484e877dab82e35361ba10153135a8d791d3f7baf57a4729015079"
+    },
+    {
+      "path": "CODEARTS_TASK.md",
+      "bytes": 4479,
+      "sha256": "12213aa9bb76eccb7d08015c73e8803bf0a274fe61e635d35f66779df040fa99"
+    },
+    {
+      "path": "documentation/赛题1部署与交付.md",
+      "bytes": 10479,
+      "sha256": "4d6c5128c3d2b6e8ab3b578b92681bf7282918db4380b1ab399e7c31332b0718"
+    },
+    {
+      "path": "documentation/计划书进度与优先级_2026-11-22.md",
+      "bytes": 7823,
+      "sha256": "20de67e749ed3de56d0266e1bb0c4bbec52eda2ce5cc733516764c69c2c3cc55"
+    },
+    {
+      "path": "deploy/huawei/compose.yaml",
+      "bytes": 998,
+      "sha256": "9fe7d648f38ba69dc4befd5d92cdcfde63caa643405f793f7018e63c8e027f74"
+    },
+    {
+      "path": "deploy/huawei/delivery.mjs",
+      "bytes": 9403,
+      "sha256": "4b6f1202cd72376f227163d3c12a34563b66d591690e0a1581bb95a013858c72"
+    },
+    {
+      "path": "deploy/huawei/deploy.sh",
+      "bytes": 840,
+      "sha256": "43f6fca51d14022576818a0801565add74d4881c2e4fbf6f003060cfe1a025b1"
+    },
+    {
+      "path": "deploy/huawei/target.example.json",
+      "bytes": 210,
+      "sha256": "844bc9389fb6d9c0f05611484673dd196cfa5d2ed01bf6405b5017d4b7a1c760"
+    },
+    {
+      "path": "scripts/topic1-delivery.mjs",
+      "bytes": 8108,
+      "sha256": "52834bec111b415a9bc18c8f244d3749bb62be05020b4729b7ba99af244806e5"
+    },
+    {
+      "path": "scripts/topic1-local-smoke.mjs",
+      "bytes": 3628,
+      "sha256": "6bdfc47b188d92c3faba03615c70384fcd0b407eba242d4cc4b234e1b51d8c37"
+    },
+    {
+      "path": ".codeartsdoer/.gitignore",
+      "bytes": 145,
+      "sha256": "5ce901f281bf6f1ed8644ab9b0b6672342055e1a7138b4ca0fe37772863f0105"
+    },
+    {
+      "path": ".codeartsdoer/skills/urbancool-huawei-delivery/SKILL.md",
+      "bytes": 2677,
+      "sha256": "5555f47b04ee93ed00aa160835ad1b883c6d09487d819c0b3c8f9f0d8b9004bf"
+    },
+    {
+      "path": "tests/topic1-delivery.test.mjs",
+      "bytes": 8850,
+      "sha256": "ad3e6eaa54d65d50698878691efe5a266992d5aced9c92733762c0d791d40211"
+    }
+  ],
+  "git": {
+    "committed": false,
+    "pushed": false,
+    "preexisting_dirty_changes_preserved": true
+  },
+  "remaining": [
+    "Real CodeArts development task with original task/diff/execution records",
+    "Run an actually available existing CodeArts agent/Skill against explicit Huawei Cloud resources",
+    "Real OBS service operation and request IDs",
+    "Existing ECS, region and HTTPS target then real deployment and account acceptance",
+    "Production Node 24 and optional V3 acceptance in corresponding environments"
+  ]
+}

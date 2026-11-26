@@ -14,12 +14,39 @@ import { spawn } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {loadRuntimeEnvironment} from './runtime-config.mjs';
+import {createServer} from 'node:net';
+import {once} from 'node:events';
+import {createHash} from 'node:crypto';
+
+await loadRuntimeEnvironment();
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const JOBS = path.join(ROOT, 'data', 'jobs');
+const workbenchData = process.env.URBANCOOL_XHS_JOB_DATA_DIR;
+const DATA = workbenchData || 'data';
+const JOBS = path.resolve(ROOT, DATA, 'jobs');
 const ONCE = process.argv.includes('--once');
 const POLL_MS = 1500;
 
+let canStart=true;
+// Windows 启动器可能被重复点击；同一队列只留一个工人，账户独立队列互不阻塞。
+if(process.platform==='win32'){
+  const guard=createServer();
+  const key=createHash('sha256').update(JOBS.toLowerCase()).digest('hex').slice(0,24);
+  try{
+    guard.listen('\\\\.\\pipe\\urbancool-xhs-worker-'+key);
+    await once(guard,'listening');
+    guard.unref();
+  }catch(error){
+    if(error.code!=='EADDRINUSE')throw error;
+    console.log('已有工人在处理这个队列，继续使用原进程。');
+    canStart=false;
+  }
+}
+
+if(canStart)await work();
+
+async function work(){
 fs.mkdirSync(JOBS, { recursive: true });
 
 const now = () => new Date().toISOString();
@@ -41,6 +68,7 @@ function save(job, patch) {
   const tmp = path.join(JOBS, `${job.id}.tmp`);
   fs.writeFileSync(tmp, body, 'utf8');
   fs.renameSync(tmp, path.join(JOBS, `${job.id}.json`)); // 原子替换，避免前端读到半截
+  if (workbenchData) return;
   // latest.json 给"查进度"和前端进度条看：永远指向最近动过的那个任务
   try {
     fs.writeFileSync(path.join(JOBS, 'latest.json'), body, 'utf8');
@@ -63,6 +91,7 @@ function run(cmd, args, job, phaseLabel) {
   return new Promise((resolve, reject) => {
     log(job, phaseLabel);
     const child = spawn(cmd, args, { cwd: ROOT, stdio: ['ignore', 'pipe', 'pipe'] });
+    const deadline = workbenchData ? setTimeout(() => child.kill(), 10 * 60 * 1000) : null;
     let tail = '';
     const onData = (buf) => {
       const s = buf.toString();
@@ -90,35 +119,34 @@ function run(cmd, args, job, phaseLabel) {
     }, 1200);
     child.on('error', (e) => {
       clearInterval(timer);
+      clearTimeout(deadline);
       reject(new Error(`${cmd} 启动失败：${e.message}`));
     });
     child.on('close', (code) => {
       clearInterval(timer);
+      clearTimeout(deadline);
       if (code === 0) resolve(tail);
       else reject(new Error(`${cmd} 退出码 ${code}：${tail.split('\n').filter(Boolean).slice(-3).join(' | ')}`));
     });
   });
 }
 
-function nodeBin() {
-  return process.platform === 'win32' ? 'node.exe' : 'node';
-}
-
 async function runJob(job) {
   save(job, { status: 'running', phase: 'collecting', message: '开始采集', started_at: now() });
 
-  const rawName = `raw_${job.city || 'all'}_xhs`;
+  const rawName = workbenchData ? `raw_job_${job.id}` : `raw_${job.city || 'all'}_xhs`;
   await run(
-    nodeBin(),
+    process.execPath,
     [
       'scripts/collect-xhs.mjs',
       '--query', job.query,
       // 小红书单条笔记 20–35 秒，默认只取 6 条正文 + 每条 8 条一级评论
       '--limit', String(job.limit || 6),
       '--comments', String(job.per_note_comments || 8),
-      '--out', `data/${rawName}.json`,
+      '--out', path.join(DATA, `${rawName}.json`),
       '--job-id', job.id,
-      '--progress', `data/jobs/${job.id}.progress.json`
+      '--progress', progressPath(job),
+      ...(workbenchData ? ['--timeout', '45000'] : [])
     ],
     job,
     `采集（小红书）：${job.query}`
@@ -127,7 +155,7 @@ async function runJob(job) {
   save(job, { phase: 'classifying', message: '开始判定', done: 0, total: null });
   const itemsName = `items_job_${job.id}`;
   await run(
-    nodeBin(),
+    process.execPath,
     [
       'scripts/run-pipeline.mjs',
       '--city', job.city || '',
@@ -135,43 +163,43 @@ async function runJob(job) {
         ? ['--aliases', job.aliases.join(',')]
         : []),
       '--raws', rawName,
-      '--out', `data/${itemsName}.json`,
+      '--out', path.join(DATA, `${itemsName}.json`),
       '--max', String(job.max || 120),
       '--pace', '300',
-      '--progress', `data/jobs/${job.id}.progress.json`
+      '--progress', progressPath(job)
     ],
     job,
     `判定：${job.city || '(不限定城市)'}`
   );
 
   save(job, { phase: 'aggregating', message: '汇总成快照' });
-  const snapName = `heat_perception_${job.city || 'all'}.json`;
+  const snapName = workbenchData ? `heat_perception_job_${job.id}.json` : `heat_perception_${job.city || 'all'}.json`;
   await run(
-    nodeBin(),
+    process.execPath,
     [
       'scripts/aggregate-heat-perception.mjs',
-      '--items', `data/${itemsName}.json`,
+      '--items', path.join(DATA, `${itemsName}.json`),
       '--city', job.city || '',
       '--raws', rawName,
       '--no-platform',
-      '--out', `data/${snapName}`
+      '--out', path.join(DATA, snapName)
     ],
     job,
     '聚合：生成快照（不改平台那份）'
   );
 
   // 让聊天窗能立刻查到：成都写回默认文件名，其他城市写回 heat_perception_<城市>.json
-  const fixed = job.city === '成都' ? 'heat_perception.json' : `heat_perception_${job.city}.json`;
-  fs.copyFileSync(path.join(ROOT, 'data', snapName), path.join(ROOT, 'data', fixed));
+  const fixed = workbenchData ? snapName : job.city === '成都' ? 'heat_perception.json' : snapName;
+  if (!workbenchData && snapName !== fixed) fs.copyFileSync(path.join(ROOT, DATA, snapName), path.join(ROOT, DATA, fixed));
   log(job, `快照就位：data/${fixed}`);
 
   save(job, {
     status: 'done',
     phase: 'done',
     message: '完成：可以直接问「' + (job.city || '') + '现在有多少线索」',
-    snapshot: `data/${fixed}`,
-    items_file: `data/${itemsName}.json`,
-    raw_file: `data/${rawName}.json`,
+    snapshot: workbenchData ? fixed : `data/${fixed}`,
+    items_file: workbenchData ? `${itemsName}.json` : `data/${itemsName}.json`,
+    raw_file: workbenchData ? `${rawName}.json` : `data/${rawName}.json`,
     finished_at: now()
   });
 }
@@ -263,3 +291,4 @@ for (;;) {
   await sleep(POLL_MS);
 }
 console.log('工人退出。');
+}

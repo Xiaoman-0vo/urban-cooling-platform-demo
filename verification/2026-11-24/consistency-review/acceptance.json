@@ -1,0 +1,115 @@
+{
+  "schema": "urbancool-consistency-review-acceptance/1",
+  "completed_at": "2026-11-24T11:05:13.230Z",
+  "behavior": [
+    "identical model inputs with conflicting displayed outputs are incomparable",
+    "original values remain visible in UI, report and archive",
+    "matching-input subset conflict checked for 3+ candidates",
+    "manual retry recalculates conflicting batch and preserves original results",
+    "normal complete consistent batches are reused"
+  ],
+  "codearts": {
+    "task_completion_observed": true,
+    "repair_rounds_completed": 2,
+    "final_external_module_tests": {
+      "pass": 18,
+      "fail": 0
+    },
+    "host_feedback_acknowledged": true,
+    "provenance": "codearts-provenance.json"
+  },
+  "checks": {
+    "targeted": {
+      "tests": 27,
+      "pass": 27,
+      "fail": 0
+    },
+    "default": {
+      "tests": 205,
+      "pass": 203,
+      "skip": 2,
+      "fail": 0
+    },
+    "accounts": {
+      "tests": 15,
+      "pass": 15,
+      "fail": 0
+    },
+    "delivery": {
+      "tests": 8,
+      "pass": 8,
+      "fail": 0
+    },
+    "frontend_build": "passed",
+    "local_api_report_and_persistence": "passed",
+    "browser": "browser.json",
+    "initial_environment_failures": [
+      "HTTP regression was blocked by sandbox loopback EACCES; passed after allowing local network",
+      "Docker buildx lock and Docker pipe access required host permission; passed after permitted rerun"
+    ]
+  },
+  "deployment": {
+    "origin": "http://127.0.0.1:5312",
+    "image": "urbancool-workbench:consistency-review-20261124",
+    "image_id": "sha256:109e672ad0dd90f68420a29a9a3d4ffbc0f3e2e0a1377fe43347362f531d36ec",
+    "original_account_volume_preserved": true,
+    "record_counts_preserved": true,
+    "consistent_backup": true,
+    "model_mount_read_only": true
+  },
+  "baseline_diagnostic_unchanged": "../case-evaluation/results.json",
+  "scientific_scope": "registered_historical_cover_scenario_only",
+  "field_conditions": "unavailable_confirmed_by_user",
+  "field_effect_validated": false,
+  "thermal_comfort_validated": false,
+  "model_retrained": false,
+  "new_model_inference_for_this_fix": false,
+  "implementation_recommended": false,
+  "cloud": {
+    "resources_created": false,
+    "skills_cloud_operations_verified": false,
+    "huawei_deployment_verified": false,
+    "target_fields": "left_blank"
+  },
+  "committed": false,
+  "pushed": false,
+  "source_hashes": [
+    {
+      "path": "src/evaluation-readiness.js",
+      "sha256": "d5496226e9dbc4bc675171f2fb9d19e27af8c9a3b5b7273c67d26946ded51d0a"
+    },
+    {
+      "path": "src/candidate-decision.js",
+      "sha256": "c0556851038578002c94e69d7d69a4e24ec88b58dcfb680df02d9c32d25ef254"
+    },
+    {
+      "path": "src/CandidateDecision.jsx",
+      "sha256": "ea6289447831830f20285f194f53812a6237fbe9f855e42e4869dc6f8bd0d0cf"
+    },
+    {
+      "path": "src/EvaluationReadiness.jsx",
+      "sha256": "651ff496ff045cb215e30ff7613d63f8e8b087fb26c4dae8e2f15bbc9391f33f"
+    },
+    {
+      "path": "src/evaluation-readiness-report.js",
+      "sha256": "f119f9915ca155a389e2b071a50c6506e88b27685bc52a7b87bffc003988ee3d"
+    },
+    {
+      "path": "server/candidate-evaluation.mjs",
+      "sha256": "d02258abbb08e40886443643d3ea74571f6d654c14fa2b1f4cd594619101170c"
+    },
+    {
+      "path": "tests/evaluation-readiness.test.mjs",
+      "sha256": "dc28a2b4a443e831a0e4745dc63682299c2e818ede76f2532b0e12b1cba61500"
+    },
+    {
+      "path": "tests/candidate-evaluation.test.mjs",
+      "sha256": "b02113600abebf4279b67449cb06f12f53e81cc9611a1e1f3d3640aba6f309c2"
+    },
+    {
+      "path": "deploy/huawei/delivery.mjs",
+      "sha256": "502eb931d14d3ee13bcf41c96adf6dc21866a0543b98cfd9113717acd20ec36e"
+    }
+  ],
+  "artifact_record": "release.json is generated separately after this snapshot; no artifact hashes are circularly embedded"
+}

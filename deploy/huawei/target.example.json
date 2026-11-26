@@ -1,0 +1,6 @@
+{
+  "schema": "urbancool-topic1-target/1",
+  "region": "",
+  "obs": {"bucket": "", "create_bucket": false},
+  "ecs": {"host": "", "ssh_port": null, "ssh_user": "", "deploy_directory": "", "https_origin": ""}
+}

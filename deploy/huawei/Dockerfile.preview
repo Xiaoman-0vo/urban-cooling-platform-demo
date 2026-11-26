@@ -1,0 +1,20 @@
+ARG NODE_IMAGE=node:25.9-trixie-slim
+ARG PREVIEW_BASE=urbancool-workbench:candidate-map-v3-20261122
+FROM ${NODE_IMAGE} AS build
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci --no-audit --no-fund
+COPY . .
+RUN npm run build:accounts
+
+# Local UI iteration only. Reuse the already verified Python environment.
+# Dependency changes must use the full Dockerfile cloud-v3 build instead.
+FROM ${PREVIEW_BASE} AS runtime
+USER root
+COPY --from=build /app/package-lock.json /tmp/preview-package-lock.json
+RUN cmp /app/package-lock.json /tmp/preview-package-lock.json && rm /tmp/preview-package-lock.json
+COPY --from=build /app/dist/client ./dist/client
+COPY --from=build /app/server ./server
+COPY --from=build /app/src ./src
+COPY --from=build /app/public/data ./public/data
+USER node

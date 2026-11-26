@@ -1,0 +1,180 @@
+{
+  "schema": "urbancool-planning-revision-acceptance/1",
+  "client_date": "2026-11-21",
+  "recorded_at": "2026-11-21T02:45:21.270Z",
+  "scope": "isolated_software_acceptance_not_field_case_or_scientific_validation",
+  "execution": {
+    "backend": "real_local_account_service",
+    "restore": "browser_UI",
+    "temperature": "existing_local_V3_CPU",
+    "language_model_calls": 0,
+    "cloud_resources_created": 0
+  },
+  "site_id": "E4125_N33891",
+  "scenario_id": "E4125_N33891_preparation_baseline",
+  "session_id": "468c289e-abca-4692-9ad4-ab4fe166d2ea",
+  "source_sha256_at_recording": {
+    "server/pilot-temperature.mjs": "427a204352fe841401bdabb75728c8b1a37cf704ebf748cfaa494554f88bf608",
+    "server/local-planning.mjs": "ae1c684e09de9fb3c21005b81bde1c8077d08662de13a47662f5e93c33a1d090",
+    "server/multi-agent.mjs": "c4dca3625f0e512c713474f6c386dc3780d4cee677f2c87e18567970cbbd4807",
+    "src/scenario-checks.js": "81409418e8a2650d1e8186a3ac4215cfb495b561ca388f0d05e92c7d84c75146",
+    "src/PilotTemperature.jsx": "25128eece158ca9508e9d60c877720ffda8e2ea01d0e9b2e6d74126c43ef085d",
+    "src/PlanningWorkflow.jsx": "0fd8b9c0390e7cddff129e8ce386722ad0930d2fdcca13922c6c2d5faaee2f33",
+    "src/planning-workflow.js": "998379860061724146f5082dc8e981b58ae6ed216eda0731803a04b002eeb0f2",
+    "src/AgentPanel.jsx": "a9e4b93faa794b066ce1c86c85b373b00ed9a50bca184245df704857d98fa4a9",
+    "src/agent-labels.js": "b12d0ed1b40a3d9f10fa541240ba57eca19e9733e80bb0ae71df80f29faa3ff6",
+    "src/agent.css": "2b80153e06968868794398378fc6af6aeb5778312fe3eb34cf0ab18ecd03dd26"
+  },
+  "source_snapshot_note": "Current workspace bytes at recording time; historical snapshots retain their original timestamps and model hashes.",
+  "software_checks": {
+    "accounts_build": "passed",
+    "default": {
+      "passed": 127,
+      "failed": 0,
+      "skipped": 2
+    },
+    "supplemental": {
+      "passed": 33,
+      "failed": 0
+    },
+    "revision_and_export": {
+      "passed": 12,
+      "failed": 0
+    }
+  },
+  "model_evidence": {
+    "grid_id": "E4125_N33891",
+    "reference_date": "2022-09-28",
+    "area_sha256": "7211471d56e98b8f64052f4744391f678025f8b0b84d2fb8a722766c8da34f41",
+    "raster_sha256": {
+      "datasets/extracted/03/urban-cooling-data-20261022/data/UBGG_Chengdu/chengdu_UBGG_3m.tif": "1799ed4a381549bb13dd3f591448165daa729ab0d89fc14fb17d37e8efcab8cb",
+      "datasets/extracted/03/urban-cooling-data-20261022/data/CNBH2020/CNBH10m_X105Y31.tif": "b3c94c4139fad665047520bdfb144ace7f84d98ab81b4d10943e10085a833dc9"
+    },
+    "run_id": "0a3e4331-7384-43ba-82fe-40154484b39e",
+    "model_sha256": "9a2c5db870c913f24215aee390864ca2ddaa22002c7428408d6e20e2db375ad2",
+    "dataset_sha256": "1ad57cb859bcfa30e9e329d030ed7dbddaad8ed45e62868bbe648b8143a93e54",
+    "baseline_lst_c": 32.97,
+    "scenario_lst_c": 32.996,
+    "predicted_delta_lst_c": -0.026
+  },
+  "history": [
+    {
+      "id": "88b7e97e-e3a3-4964-91a2-0dcaae19ba83",
+      "version": 1,
+      "snapshot_sha256": "2abdbfd965ab5a4f14765a4345544efe43b51a0f581d3dc684afd4966038b35b",
+      "preserved_after_restore": true
+    },
+    {
+      "id": "315b4410-7198-407e-ba5b-ecb293eb9995",
+      "version": 2,
+      "snapshot_sha256": "e1eae74c1de114873644ef6cc7fdd504b3dd5efb396f3ffab9e5fcfa136e4b17",
+      "preserved_after_restore": true
+    },
+    {
+      "id": "1b7a209b-dcb5-40c9-8dcb-ee686ba48398",
+      "version": 3,
+      "snapshot_sha256": "02afcc9c57476bb3fa248df5355a7d053ae908c34e9962d25920cf04850652bd",
+      "preserved_after_restore": true
+    }
+  ],
+  "restored": {
+    "id": "eb30df50-1d86-4fb0-b1b2-2fa73bec088e",
+    "version": 4,
+    "goal_version": 2,
+    "area_m2": 153,
+    "budget_rmb": 20000,
+    "unit_cost_rmb_per_m2": 200,
+    "construction_cost_rmb": 30600,
+    "result": null,
+    "change": {
+      "type": "restore",
+      "source_scenario_id": "88b7e97e-e3a3-4964-91a2-0dcaae19ba83",
+      "previous_scenario_id": "1b7a209b-dcb5-40c9-8dcb-ee686ba48398"
+    },
+    "constraints": {
+      "status": "failed",
+      "label": "存在约束冲突",
+      "checks": [
+        {
+          "id": "goal",
+          "state": "passed",
+          "detail": "对应目标 v2"
+        },
+        {
+          "id": "budget",
+          "state": "failed",
+          "detail": "超预算 10,600 元"
+        },
+        {
+          "id": "cost",
+          "state": "passed",
+          "detail": "费用与本版面积、单价一致"
+        },
+        {
+          "id": "area",
+          "state": "passed",
+          "detail": "声明面积上限内"
+        }
+      ]
+    }
+  },
+  "export": {
+    "path": "planning-progress-qa.zip",
+    "sha256": "4d72c604b73dd49e33117bf8c0ae57272e129b70b477fb5a380a672ed41a5ea4",
+    "report_status": "stale",
+    "members": [
+      {
+        "name": "规划进度.md",
+        "bytes": 2832,
+        "sha256": "819c94394c3e3128851acc1f0eecbfec06dd17bff22c8dd1128c3fb09de400be"
+      },
+      {
+        "name": "规划会话.json",
+        "bytes": 130741,
+        "sha256": "436d8fd99f6a21ef1c7d6230d3f2cc29921bdb5701985de63ba7dbc59f32255f"
+      },
+      {
+        "name": "温度情景.geojson",
+        "bytes": 14218,
+        "sha256": "6882ee0e3ca9e25f82abdc8f95081553af4a8e8e3a19fca4a20319e44fe0a208"
+      },
+      {
+        "name": "讨论范围.geojson",
+        "bytes": 4514,
+        "sha256": "b8f9e1ac8a7db34e3acdcf7a9afe05e842303184691264853476bf60cf3a8a03"
+      },
+      {
+        "name": "场地核查记录.json",
+        "bytes": 2,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "name": "情景约束检查.json",
+        "bytes": 3615,
+        "sha256": "1dd5e345a8eecd8f736e6605cb9cf70b46fc7b554ca607185eb5d3cea86eff35"
+      },
+      {
+        "name": "情景修改记录.json",
+        "bytes": 1228,
+        "sha256": "3d236059b3ec3b7b90d7cbe9577004c5b2c51c0e8a88c1bcfab4363a0deafdfa"
+      },
+      {
+        "name": "旧版讨论报告.md",
+        "bytes": 5725,
+        "sha256": "b5de1acee3580774c6b7b54acd45aa310d4a7229bea4dcc44e9f9e8e1f42fe15"
+      }
+    ],
+    "all_member_hashes_verified": true
+  },
+  "screenshot": {
+    "path": "planning-revision-ui.jpg",
+    "sha256": "616e5070dc3a1bebdf02c5b861a014f87db12d40e5c70593359518bac6671321"
+  },
+  "credentials_included": false,
+  "remaining": [
+    "CodeArts actual development and Skills/cloud execution",
+    "three spatial strategies",
+    "user protection ranges and priority areas",
+    "independent field case and language-model collaboration acceptance"
+  ]
+}

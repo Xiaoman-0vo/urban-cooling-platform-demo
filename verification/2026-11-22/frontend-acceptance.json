@@ -1,0 +1,148 @@
+{
+  "schema_version": "frontend-plan-acceptance/1",
+  "created_at": "2026-11-22T04:00:15.812Z",
+  "plan_source": "D:/华为ICT大赛/UrbanCool_AI_产品项目书_V2.0.md",
+  "plan_sha256": "93cef473b1bbbc5abe804598468b5e42a925c730852e48f7c8f5e0ebf6fb4611",
+  "official_rules": {
+    "checked_date": "2026-11-22",
+    "url": "https://e.huawei.com/cn/talent/#/ict/innovation-details?zoneCode=027425&zoneId=98269700&compId=85132021&type=C002",
+    "method": "browser-rendered official requirements, topic 1 and material table"
+  },
+  "browser_checks": {
+    "isolated_test_account": true,
+    "loaded_example": true,
+    "saved_budget_and_unit_price": true,
+    "generated_real_rectangles": true,
+    "adopted_two_versions": true,
+    "changed_budget": true,
+    "stale_candidates_marked": true,
+    "next_step_reverted_to_edit": true,
+    "version_selectors_changed": true,
+    "report_generated": true,
+    "progress_generation_notice": "15 records with member hashes",
+    "responsive": {
+      "width": 390,
+      "height": 844,
+      "page_width": 390,
+      "card_width": 312,
+      "card_scroll_width": 310
+    },
+    "mobile_more_menu_checked": true,
+    "keyboard_escape_closes_panel": true,
+    "panel_scroll_resets": true,
+    "desktop": {
+      "width": 1280,
+      "height": 720,
+      "panel_width": 376,
+      "page_width": 1280,
+      "scroll_top_after_reopen": 0
+    },
+    "final_build_reloaded": true,
+    "viewport_override_reset": true
+  },
+  "actual_state": {
+    "goal": {
+      "version": 2,
+      "preserve_buildings": true,
+      "assumptions": {
+        "budget_rmb": {
+          "source": "user_declared",
+          "evidence_quote": "预算2000元"
+        },
+        "unit_cost_rmb_per_m2": {
+          "source": "user_declared",
+          "evidence_quote": "预算15000元，建设单价300元/平方米"
+        }
+      },
+      "budget_rmb": 2000,
+      "unit_cost_rmb_per_m2": 300
+    },
+    "next_step": "edit",
+    "search_state": "stale",
+    "searches": [
+      {
+        "scanned": 6885,
+        "feasible": 3755,
+        "minimum": 10,
+        "candidates": [
+          {
+            "area_m2": 10,
+            "cost_rmb": 3000
+          },
+          {
+            "area_m2": 50,
+            "cost_rmb": 15000
+          }
+        ]
+      }
+    ],
+    "versions": [
+      {
+        "version": 1,
+        "area_m2": 10,
+        "cost_rmb": 3000,
+        "goal_version": 1,
+        "result": null
+      },
+      {
+        "version": 2,
+        "area_m2": 50,
+        "cost_rmb": 15000,
+        "goal_version": 1,
+        "result": null
+      },
+      {
+        "version": 3,
+        "area_m2": 50,
+        "cost_rmb": 15000,
+        "goal_version": 2,
+        "result": null
+      }
+    ],
+    "reports": 1,
+    "report_state": "current"
+  },
+  "archive": {
+    "path": "frontend-planning-qa.zip",
+    "source": "same exporter reading saved isolated QA account snapshot; not a confirmed browser-downloaded file",
+    "members": 15,
+    "member_hashes_verified": true,
+    "sha256": "44b92121066b67bec5b00cc9d9f0b35425c022e8e969f273759d13c8d3c712e8"
+  },
+  "software_checks": {
+    "accounts_build": "passed",
+    "default_regression": {
+      "total": 176,
+      "passed": 174,
+      "skipped": 2
+    },
+    "account_workflow_and_cloud_regression": {
+      "total": 19,
+      "passed": 19
+    },
+    "initial_search_and_workflow_regression": {
+      "total": 16,
+      "passed": 16
+    }
+  },
+  "actual_language_model_executed": false,
+  "temperature_model_executed": false,
+  "cloud_resources_created": false,
+  "codearts_real_usage": "not yet evidenced",
+  "huawei_cloud_deployment": "not yet evidenced",
+  "current_qwen_readiness": {
+    "state": "unavailable",
+    "available": false,
+    "code": "model_unreachable",
+    "message": "尚未连接到 Qwen 推理服务。使用云端模型时，请确认实例已开机、推理服务已启动，并保持 SSH 转发运行。",
+    "checked_at": "2026-11-22T04:03:48.509Z"
+  },
+  "screenshots": [
+    "workbench-before.jpg",
+    "workbench-after.jpg",
+    "version-comparison.jpg",
+    "version-comparison-final.jpg",
+    "constraints-changed.jpg",
+    "mobile-comparison.jpg"
+  ]
+}

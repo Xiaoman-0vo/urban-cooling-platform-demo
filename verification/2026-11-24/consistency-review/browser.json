@@ -1,0 +1,19 @@
+{
+  "verified_at": "2026-11-24T11:04:11.986Z",
+  "origin": "http://127.0.0.1:5312",
+  "desktop": {
+    "width": 1280,
+    "height": 720,
+    "candidate_preview_visible": true,
+    "exact_boundary_overlay_visible": true
+  },
+  "mobile": {
+    "width": 390,
+    "height": 844,
+    "document_scroll_width": 390,
+    "readiness_width": 300,
+    "readiness_scroll_width": 300
+  },
+  "result": "passed",
+  "scope": "real registered candidate map and current no-improvement explanation; inconsistent-output paths verified by module and report tests, not injected into live accounts"
+}

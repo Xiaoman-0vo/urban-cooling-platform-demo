@@ -14,3 +14,4 @@ __pycache__/
 credentials.json
 id_rsa
 id_ed25519
+deploy/huawei/target.json

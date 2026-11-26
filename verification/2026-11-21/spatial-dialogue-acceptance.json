@@ -1,0 +1,393 @@
+{
+  "schema_version": "spatial-dialogue-software-qa/1",
+  "created_at": "2026-11-21T12:17:22.497Z",
+  "execution": "scripted model responses with real multi-agent roles, goal checks and rectangle search",
+  "live_language_model_executed": false,
+  "temperature_model_executed": false,
+  "cloud_resources_created": false,
+  "default_qwen_health": {
+    "checked_at": "2026-11-21T12:15:12.421Z",
+    "endpoint": "http://127.0.0.1:18083/health",
+    "state": "unavailable",
+    "code": "model_unreachable"
+  },
+  "checks": {
+    "new_behavioral_tests": 14,
+    "default_regression": {
+      "total": 160,
+      "passed": 158,
+      "skipped": 2,
+      "scope": "final source and tests"
+    },
+    "final_related_regression": {
+      "total": 69,
+      "passed": 69
+    },
+    "accounts_build": "passed after final source changes",
+    "build_note": "Existing warning: frontend chunks above 500 kB"
+  },
+  "records": [
+    {
+      "input": "预算15000元，假设单价300元/平方米，最低改造面积10平方米，生成空间候选。",
+      "reply": "已保存本轮明确给出的条件。本轮搜索检查6885个整点矩形，3755个满足约束；最低改造面积10㎡。\n\n节约投入：10㎡，假设费用3000元，覆盖优先区0㎡；扩大面积：50㎡，假设费用15000元，覆盖优先区0㎡。\n\n请在候选卡片查看和采用，再手动评价温度。这里只比较几何和假设费用，未计算降温或核实可施工性。",
+      "goal": {
+        "version": 1,
+        "preserve_buildings": true,
+        "assumptions": {
+          "budget_rmb": {
+            "source": "user_declared",
+            "evidence_quote": "预算15000元，假设单价300元/平方米，最低改造面积10平方米，生成空间候选。"
+          },
+          "unit_cost_rmb_per_m2": {
+            "source": "user_declared",
+            "evidence_quote": "预算15000元，假设单价300元/平方米，最低改造面积10平方米，生成空间候选。"
+          }
+        },
+        "budget_rmb": 15000,
+        "unit_cost_rmb_per_m2": 300
+      },
+      "tools": [
+        {
+          "role": "coordinator",
+          "tool": "set_planning_goal",
+          "status": "goal_draft_saved",
+          "code": null
+        },
+        {
+          "role": "plan_exploration",
+          "tool": "generate_pilot_spatial_candidates",
+          "status": "spatial_candidates_ready",
+          "code": null
+        },
+        {
+          "role": "coordinator",
+          "tool": "delegate_plan_exploration",
+          "status": "completed",
+          "code": null
+        }
+      ],
+      "search_count": 1,
+      "physical_scenario_count": 0
+    },
+    {
+      "input": "预算改为2000元，最低面积不变，重新生成空间候选",
+      "reply": "已保存本轮明确给出的条件。未指定优先区域，本次只比较节约投入和扩大面积。 没有同时满足最低 10㎡、预算、面积上限和保留区的单矩形；请核对条件或调整目标。 最低面积按当前单价至少需要 3000 元，超过预算 2000 元。",
+      "goal": {
+        "version": 2,
+        "preserve_buildings": true,
+        "assumptions": {
+          "budget_rmb": {
+            "source": "user_declared",
+            "evidence_quote": "预算改为2000元，最低面积不变，重新生成空间候选"
+          },
+          "unit_cost_rmb_per_m2": {
+            "source": "user_declared",
+            "evidence_quote": "预算15000元，假设单价300元/平方米，最低改造面积10平方米，生成空间候选。"
+          }
+        },
+        "budget_rmb": 2000,
+        "unit_cost_rmb_per_m2": 300
+      },
+      "tools": [
+        {
+          "role": "coordinator",
+          "tool": "set_planning_goal",
+          "status": "goal_draft_saved",
+          "code": null
+        },
+        {
+          "role": "plan_exploration",
+          "tool": "generate_pilot_spatial_candidates",
+          "status": "no_feasible_candidates",
+          "code": null
+        },
+        {
+          "role": "coordinator",
+          "tool": "delegate_plan_exploration",
+          "status": "blocked",
+          "code": null
+        }
+      ],
+      "search_count": 2,
+      "physical_scenario_count": 0
+    },
+    {
+      "input": "最低改造面积20平方米，生成空间候选",
+      "reply": "未指定优先区域，本次只比较节约投入和扩大面积。 没有同时满足最低 20㎡、预算、面积上限和保留区的单矩形；请核对条件或调整目标。 最低面积按当前单价至少需要 6000 元，超过预算 2000 元。",
+      "goal": {
+        "version": 2,
+        "preserve_buildings": true,
+        "assumptions": {
+          "budget_rmb": {
+            "source": "user_declared",
+            "evidence_quote": "预算改为2000元，最低面积不变，重新生成空间候选"
+          },
+          "unit_cost_rmb_per_m2": {
+            "source": "user_declared",
+            "evidence_quote": "预算15000元，假设单价300元/平方米，最低改造面积10平方米，生成空间候选。"
+          }
+        },
+        "budget_rmb": 2000,
+        "unit_cost_rmb_per_m2": 300
+      },
+      "tools": [
+        {
+          "role": "coordinator",
+          "tool": "set_planning_goal",
+          "status": "rejected",
+          "code": "unsupported_goal_value"
+        },
+        {
+          "role": "plan_exploration",
+          "tool": "generate_pilot_spatial_candidates",
+          "status": "no_feasible_candidates",
+          "code": null
+        },
+        {
+          "role": "coordinator",
+          "tool": "delegate_plan_exploration",
+          "status": "blocked",
+          "code": null
+        }
+      ],
+      "search_count": 3,
+      "physical_scenario_count": 0
+    }
+  ],
+  "searches": [
+    {
+      "scanned_count": 6885,
+      "feasible_count": 3755,
+      "scope": {
+        "algorithm": "registered-rectangles-1m/1",
+        "site_id": "E4125_N33891",
+        "scenario_id": "E4125_N33891_preparation_baseline",
+        "baseline": {
+          "scene_sha256": "ab2c7bcdc210ebe674688da9fe3abf3c7702ce66b92946367a75669afad03d2d",
+          "grid_sha256": "cf2e7722453f7b59ae9c8e3a54dae88df93da76997b6d9fe0a46afb9f805a1c4",
+          "case_id": "CD_E4125_N33891_source_handoff_v1",
+          "scenario_id": "E4125_N33891_preparation_baseline",
+          "source": "public/data/scene.json"
+        },
+        "area_sha256": "7211471d56e98b8f64052f4744391f678025f8b0b84d2fb8a722766c8da34f41",
+        "area_bounds": [
+          412541,
+          3389123,
+          412550,
+          3389140
+        ],
+        "reference_date": "2022-09-28",
+        "raster_sha256": {
+          "datasets/extracted/03/urban-cooling-data-20261022/data/UBGG_Chengdu/chengdu_UBGG_3m.tif": "1799ed4a381549bb13dd3f591448165daa729ab0d89fc14fb17d37e8efcab8cb",
+          "datasets/extracted/03/urban-cooling-data-20261022/data/CNBH2020/CNBH10m_X105Y31.tif": "b3c94c4139fad665047520bdfb144ace7f84d98ab81b4d10943e10085a833dc9"
+        },
+        "goal_version": 1,
+        "budget_rmb": 15000,
+        "unit_cost_rmb_per_m2": 300,
+        "area_limit_m2": null,
+        "minimum_area_m2": 10,
+        "protection": {
+          "version": 0,
+          "areas": [],
+          "change": null
+        },
+        "priority": {
+          "version": 0,
+          "areas": []
+        }
+      },
+      "candidates": [
+        {
+          "bounds_utm": [
+            412541,
+            3389123,
+            412543,
+            3389128
+          ],
+          "area_m2": 10,
+          "cost_rmb": 3000,
+          "priority_overlap_m2": 0,
+          "perimeter_m": 14,
+          "id": "bcc1f355-fb6e-4981-9d0f-b592f5280b90",
+          "strategies": [
+            "cost"
+          ],
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  104.0873822875988,
+                  30.631536507863245
+                ],
+                [
+                  104.08740315498159,
+                  30.63153665432245
+                ],
+                [
+                  104.08740273157362,
+                  30.631581767272934
+                ],
+                [
+                  104.08738186418117,
+                  30.631581620813442
+                ],
+                [
+                  104.0873822875988,
+                  30.631536507863245
+                ]
+              ]
+            ]
+          }
+        },
+        {
+          "bounds_utm": [
+            412541,
+            3389123,
+            412546,
+            3389133
+          ],
+          "area_m2": 50,
+          "cost_rmb": 15000,
+          "priority_overlap_m2": 0,
+          "perimeter_m": 30,
+          "id": "490a30ff-09ca-493a-852c-1ab85c7aa4ad",
+          "strategies": [
+            "area"
+          ],
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  104.0873822875988,
+                  30.631536507863245
+                ],
+                [
+                  104.08743445605603,
+                  30.631536874005015
+                ],
+                [
+                  104.08743360926819,
+                  30.63162709990643
+                ],
+                [
+                  104.08738144076257,
+                  30.631626733763337
+                ],
+                [
+                  104.0873822875988,
+                  30.631536507863245
+                ]
+              ]
+            ]
+          }
+        }
+      ],
+      "notes": [
+        "未指定优先区域，本次只比较节约投入和扩大面积。"
+      ]
+    },
+    {
+      "scanned_count": 6885,
+      "feasible_count": 0,
+      "scope": {
+        "algorithm": "registered-rectangles-1m/1",
+        "site_id": "E4125_N33891",
+        "scenario_id": "E4125_N33891_preparation_baseline",
+        "baseline": {
+          "scene_sha256": "ab2c7bcdc210ebe674688da9fe3abf3c7702ce66b92946367a75669afad03d2d",
+          "grid_sha256": "cf2e7722453f7b59ae9c8e3a54dae88df93da76997b6d9fe0a46afb9f805a1c4",
+          "case_id": "CD_E4125_N33891_source_handoff_v1",
+          "scenario_id": "E4125_N33891_preparation_baseline",
+          "source": "public/data/scene.json"
+        },
+        "area_sha256": "7211471d56e98b8f64052f4744391f678025f8b0b84d2fb8a722766c8da34f41",
+        "area_bounds": [
+          412541,
+          3389123,
+          412550,
+          3389140
+        ],
+        "reference_date": "2022-09-28",
+        "raster_sha256": {
+          "datasets/extracted/03/urban-cooling-data-20261022/data/UBGG_Chengdu/chengdu_UBGG_3m.tif": "1799ed4a381549bb13dd3f591448165daa729ab0d89fc14fb17d37e8efcab8cb",
+          "datasets/extracted/03/urban-cooling-data-20261022/data/CNBH2020/CNBH10m_X105Y31.tif": "b3c94c4139fad665047520bdfb144ace7f84d98ab81b4d10943e10085a833dc9"
+        },
+        "goal_version": 2,
+        "budget_rmb": 2000,
+        "unit_cost_rmb_per_m2": 300,
+        "area_limit_m2": null,
+        "minimum_area_m2": 10,
+        "protection": {
+          "version": 0,
+          "areas": [],
+          "change": null
+        },
+        "priority": {
+          "version": 0,
+          "areas": []
+        }
+      },
+      "candidates": [],
+      "notes": [
+        "未指定优先区域，本次只比较节约投入和扩大面积。",
+        "没有同时满足最低 10㎡、预算、面积上限和保留区的单矩形；请核对条件或调整目标。",
+        "最低面积按当前单价至少需要 3000 元，超过预算 2000 元。"
+      ]
+    },
+    {
+      "scanned_count": 6885,
+      "feasible_count": 0,
+      "scope": {
+        "algorithm": "registered-rectangles-1m/1",
+        "site_id": "E4125_N33891",
+        "scenario_id": "E4125_N33891_preparation_baseline",
+        "baseline": {
+          "scene_sha256": "ab2c7bcdc210ebe674688da9fe3abf3c7702ce66b92946367a75669afad03d2d",
+          "grid_sha256": "cf2e7722453f7b59ae9c8e3a54dae88df93da76997b6d9fe0a46afb9f805a1c4",
+          "case_id": "CD_E4125_N33891_source_handoff_v1",
+          "scenario_id": "E4125_N33891_preparation_baseline",
+          "source": "public/data/scene.json"
+        },
+        "area_sha256": "7211471d56e98b8f64052f4744391f678025f8b0b84d2fb8a722766c8da34f41",
+        "area_bounds": [
+          412541,
+          3389123,
+          412550,
+          3389140
+        ],
+        "reference_date": "2022-09-28",
+        "raster_sha256": {
+          "datasets/extracted/03/urban-cooling-data-20261022/data/UBGG_Chengdu/chengdu_UBGG_3m.tif": "1799ed4a381549bb13dd3f591448165daa729ab0d89fc14fb17d37e8efcab8cb",
+          "datasets/extracted/03/urban-cooling-data-20261022/data/CNBH2020/CNBH10m_X105Y31.tif": "b3c94c4139fad665047520bdfb144ace7f84d98ab81b4d10943e10085a833dc9"
+        },
+        "goal_version": 2,
+        "budget_rmb": 2000,
+        "unit_cost_rmb_per_m2": 300,
+        "area_limit_m2": null,
+        "minimum_area_m2": 20,
+        "protection": {
+          "version": 0,
+          "areas": [],
+          "change": null
+        },
+        "priority": {
+          "version": 0,
+          "areas": []
+        }
+      },
+      "candidates": [],
+      "notes": [
+        "未指定优先区域，本次只比较节约投入和扩大面积。",
+        "没有同时满足最低 20㎡、预算、面积上限和保留区的单矩形；请核对条件或调整目标。",
+        "最低面积按当前单价至少需要 6000 元，超过预算 2000 元。"
+      ]
+    }
+  ],
+  "limitations": [
+    "No real Qwen conversation was executed",
+    "Tests do not validate cooling, field feasibility or arbitrary multi-parcel layouts",
+    "Existing deployment and scientific evidence are unchanged"
+  ]
+}

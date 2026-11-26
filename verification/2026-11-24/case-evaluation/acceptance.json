@@ -1,0 +1,162 @@
+{
+  "schema": "urbancool-reference-case-acceptance/1",
+  "completed_at": "2026-11-24T10:41:15.490Z",
+  "field_conditions": "unavailable_confirmed_by_user",
+  "case_scope": "registered_real_source_data_reference_case_not_field_intervention_trial",
+  "diagnostic": {
+    "protocol_sha256": "64b7cc66f35a02d29d95e4f06a521ed5559215c7a446c92241106b1456d5549b",
+    "results_sha256": "cb93b0c572987b707b532c24ce6aa8e7c9218516935dcda55ce8466554a5f356",
+    "model_calls": 7,
+    "repeatability": true,
+    "same_area_different_layout_same_inputs": true,
+    "historical_sample_error_c": -0.597,
+    "note": "One historical sample error is not a confidence interval, intervention uncertainty, or generalization benchmark."
+  },
+  "development": {
+    "codearts_observed_code_generation": true,
+    "codearts_final_task_completion_observed": false,
+    "computer_use_interrupted": true,
+    "original_generated_source_hashes": [
+      {
+        "path": "src/evaluation-readiness.js",
+        "sha256": "07541cd7e9cf2eb3e35fbdb2cb65ec55717ac5ff5a74fd2bf0710c4e4b4c996c"
+      },
+      {
+        "path": "tests/evaluation-readiness.test.mjs",
+        "sha256": "64a1fe9c9f810fd60b66dfa76cb7deed6da6cca08cfc3b771971d6e2564a8895"
+      },
+      {
+        "path": "CODEARTS_CASE_TASK.md",
+        "sha256": "398dd45f9a6616e59cccf03885f8c0dd82613c4593e34b9eb1a0a0bb59dee508"
+      }
+    ],
+    "host_review_fixes": [
+      "require explicit comparable=true",
+      "require complete finite temperature and feature metadata",
+      "validate provenance and delta arithmetic",
+      "adapt fixture paths and coherent fixtures"
+    ],
+    "integration_author": "Codex host",
+    "scope": "new evaluation readiness explanation in candidate UI, generated reports and progress ZIP"
+  },
+  "checks": {
+    "default": {
+      "tests": 200,
+      "pass": 198,
+      "skip": 2,
+      "fail": 0
+    },
+    "accounts": {
+      "tests": 15,
+      "pass": 15
+    },
+    "delivery": {
+      "tests": 8,
+      "pass": 8
+    },
+    "frontend_build": "passed",
+    "component_server_render": "passed",
+    "local_api_report_and_persistence": "passed",
+    "browser_visual_acceptance": "not_performed_after_computer_use_interruption",
+    "source_artifact": {
+      "sha256": "eeb24012bed900c4c15efd5d7b51f99a02cae611bf2ee7d40b36f8d4b5eb0b65",
+      "members": 292,
+      "bytes": 12274862,
+      "verification": "all member hashes and package hash passed",
+      "unpacked_build": "passed",
+      "unpacked_default_tests": {
+        "tests": 200,
+        "pass": 198,
+        "skip": 2,
+        "fail": 0
+      },
+      "dependencies": "reused existing workspace node_modules through a directory junction; no fresh npm install claimed",
+      "resolved_initial_failures": [
+        "release omitted test prerequisites; include tests, scripts, README and the specific public evidence record",
+        "build must precede default packaging checks",
+        "isolated Windows TEMP/TMP to resolve an esbuild temporary-file access failure"
+      ]
+    }
+  },
+  "deployment": {
+    "project": "urbancool-t1-298f3ef92e",
+    "origin": "http://127.0.0.1:5312",
+    "image": "urbancool-workbench:evaluation-readiness-20261124",
+    "container": {
+      "id": "80cdbfbea04c8efb112b2c88046dbba572ad911e2fb54b3ac65e07964ca1931c",
+      "image_id": "sha256:1e197d9d2acbe070306221f4ac8d4ba3bbf6d55f53a04f4d752910bbce01faaa"
+    },
+    "workspace_volume": "urbancool-t1-298f3ef92e_workspace",
+    "model_mount_read_only": true,
+    "codearts_execution_verified": false,
+    "cloud_provider_verified": false
+  },
+  "original_account_volume_preserved": true,
+  "counts_preserved": true,
+  "scientific_status": {
+    "field_effect": "not_validated",
+    "thermal_comfort": "not_validated",
+    "uncertainty": "not_available",
+    "human_task_efficiency": "not_measured",
+    "model_retrained": false,
+    "implementation_recommended": false
+  },
+  "cloud_status": {
+    "resources_created": false,
+    "skills_cloud_operations_verified": false,
+    "huawei_deployment_verified": false,
+    "target_fields": "left_blank"
+  },
+  "committed": false,
+  "pushed": false,
+  "source_hashes": [
+    {
+      "path": "src/evaluation-readiness.js",
+      "sha256": "ba9dcd1ce306e926fe0a44e5161023f5b3334c800d7b944cad339a70c79ca953"
+    },
+    {
+      "path": "src/EvaluationReadiness.jsx",
+      "sha256": "f8a7f64416d4e6fd8445cf48b3b729432ad4323aefa20b0d24e51b0215508c69"
+    },
+    {
+      "path": "src/evaluation-readiness-report.js",
+      "sha256": "ae96f19855332943747f690d41751d22b9b7fb75ed530ef4d0db129c52990f53"
+    },
+    {
+      "path": "src/CandidateDecision.jsx",
+      "sha256": "5cccaff9d7b023ab36b1f89c697b8f5ba6e610b5b831583255874eefe91ab890"
+    },
+    {
+      "path": "src/candidate-decision.js",
+      "sha256": "ae31681730694ac822c3a84530c8e267384954475dacd30ac4d7e522001ceef1"
+    },
+    {
+      "path": "src/planning-workflow.js",
+      "sha256": "00925db5f46aab8ad9adad700245820b6c7ea08bef9ca4b2b655f0913fac5927"
+    },
+    {
+      "path": "src/planning-workbench.css",
+      "sha256": "b2a924e1e681b1b37220f9906e6b7388f253e9c1fd7fd7cc1e4cceb414ead6b3"
+    },
+    {
+      "path": "tests/evaluation-readiness.test.mjs",
+      "sha256": "1a0bb1200a7a4be0c97f9f36276e0cd38845e61b29246fee07d09d8e5399c96c"
+    },
+    {
+      "path": "tests/candidate-evaluation.test.mjs",
+      "sha256": "f0882bc75c4212928ce1c0bc2a8de720c05a1f89a4d8e6d7578719d5abd643fb"
+    },
+    {
+      "path": "tests/topic1-delivery.test.mjs",
+      "sha256": "9b033460bdb29c784cd975b62ec3a65291ee16c7ebdfb3d234d8e8fcc4d3b728"
+    },
+    {
+      "path": "tests/fixtures/evaluation-readiness-real-case.json",
+      "sha256": "0ef56af2d312ae55c5277ee7930cc93056a7d6f77d1c7c74a7bc8c62f8306af5"
+    },
+    {
+      "path": "deploy/huawei/delivery.mjs",
+      "sha256": "f1322072940551cd1b2620cc8abdb45cc0e13052984a61d09d1b2ee225333de0"
+    }
+  ]
+}

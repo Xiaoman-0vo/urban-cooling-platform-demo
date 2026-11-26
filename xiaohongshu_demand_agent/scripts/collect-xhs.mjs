@@ -24,6 +24,8 @@ import os from 'node:os';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
+import { findAgentReach } from './agent-reach-bin.mjs';
+import { configuredOpenCliEntry, runOpenCliXhs } from './opencli-xhs.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -59,6 +61,7 @@ function parseArgs(argv) {
   return out;
 }
 const ARGS = parseArgs(process.argv);
+const openCliEntry = configuredOpenCliEntry();
 
 function log(...a) { console.log(...a); }
 
@@ -93,17 +96,11 @@ function writeProgress(patch) {
 }
 
 /* ---------------- agent-reach 调用 ---------------- */
-function agentReachBin() {
-  if (process.env.AGENT_REACH) return process.env.AGENT_REACH;
-  const home = os.homedir();
-  const exe = process.platform === 'win32' ? 'agent-reach.exe' : 'agent-reach';
-  const p = path.join(home, '.local', 'bin', exe);
-  return fs.existsSync(p) ? p : 'agent-reach';
-}
-
 // opencli（小红书渠道的浏览器桥）装在 agent-reach 自己的 npm 前缀里，PATH 里没有
 const CHILD_ENV = {
   ...process.env,
+  OPENCLI_WINDOW:process.env.OPENCLI_WINDOW||'background',
+  PYTHONUTF8: '1',
   PATH: [
     path.join(os.homedir(), '.local', 'bin'),
     path.join(os.homedir(), '.agent-reach', 'tools', 'npm-global'),
@@ -113,7 +110,14 @@ const CHILD_ENV = {
 
 /** 调一次 agent-reach，返回解析后的 JSON 对象 */
 function callAgentReach(args, label) {
-  const bin = agentReachBin();
+  if (openCliEntry && ARGS.backend === 'opencli') {
+    const [, action, input] = args;
+    const result=runOpenCliXhs(openCliEntry, action, input, { timeout: ARGS.timeout, maxComments: ARGS.comments });
+    if(result.error?.code==='BROWSER_CONNECT')throw Object.assign(new Error(result.error.message),{code:'BROWSER_CONNECT'});
+    return result;
+  }
+  const bin = findAgentReach();
+  if (!bin) throw new Error('找不到 Agent Reach。请安装后加入 PATH，或配置 AGENT_REACH。');
   const r = spawnSync(bin, args, {
     cwd: ROOT,
     env: CHILD_ENV,
@@ -227,11 +231,13 @@ async function main() {
   // 2) 逐条读正文（同一轮里立刻读，签名链接不落地缓存）
   const fetchedAt = new Date().toISOString();
   const posts = [];
+  const commentLinks = [];
   const errors = [];
   for (let i = 0; i < targets.length; i++) {
     const it = targets[i];
     const url = it.url || '';
     const id = noteIdOf(url);
+    if (openCliEntry && (!id||!/^https:\/\/(?:www\.)?xiaohongshu\.com\//i.test(url))) continue;
     try {
       log(`  · [${i + 1}/${targets.length}] 读正文：${String(it.title || '').slice(0, 30)}`);
       const r = callAgentReach(['xiaohongshu', 'read', url], '读正文');
@@ -267,8 +273,9 @@ async function main() {
         comments_collected: 0,
         read_ms: (r.meta && r.meta.elapsed_ms) || null,
       });
+      commentLinks.push(url);
     } catch (e) {
-      if (e.code === 'NEED_LOGIN') throw e;
+      if (e.code === 'NEED_LOGIN' || e.code === 'BROWSER_CONNECT') throw e;
       log(`    ! 读正文失败：${e.message}`);
       errors.push({ stage: 'read', url, message: e.message });
     }
@@ -287,7 +294,7 @@ async function main() {
   writeProgress({ phase: 'comments', comment_done: 0, comments: 0, message: `抓一级评论（0/${posts.length} 条笔记）` });
   for (let i = 0; i < posts.length; i++) {
     const p = posts[i];
-    const url = (targets[i] && targets[i].url) || p.source_url;
+    const url = commentLinks[i];
     try {
       log(`  · [${i + 1}/${posts.length}] 抓评论：${String(p.title || '').slice(0, 24)}`);
       const c = callAgentReach(['xiaohongshu', 'comments', url], '抓评论');
@@ -321,7 +328,7 @@ async function main() {
       p.comments_loaded = take.length;
       p.comments_total_unknown = true;
     } catch (e) {
-      if (e.code === 'NEED_LOGIN') throw e;
+      if (e.code === 'NEED_LOGIN' || e.code === 'BROWSER_CONNECT') throw e;
       log(`    ! 抓评论失败：${e.message}`);
       p.comments_fetched = false;
       p.comments_collected = 0;
@@ -391,6 +398,7 @@ main().catch((e) => {
     phase: 'failed',
     message: '采集失败：' + e.message,
     need_login: e.code === 'NEED_LOGIN' || undefined,
+    browser_disconnected: e.code === 'BROWSER_CONNECT' || undefined,
   });
   process.exit(e.code === 'NEED_LOGIN' ? 4 : 1);
 });

@@ -1,0 +1,16 @@
+{
+  "id": "chengdu-E4125_N33891-B-cover-v1",
+  "pilot_id": "chengdu-E4125_N33891-discussion-v1",
+  "candidate_id": "B",
+  "reference_date": "2022-09-28",
+  "scene_id": "LC09_L2SP_129039_20220928_02_T1",
+  "bounds_utm": [412541, 3389123, 412550, 3389140],
+  "measurement_crs": "EPSG:32648",
+  "source_cover_class": 1,
+  "scenario_cover_class": 2,
+  "height_evidence": "missing",
+  "raster_sha256": {
+    "datasets/extracted/03/urban-cooling-data-20261022/data/UBGG_Chengdu/chengdu_UBGG_3m.tif": "1799ed4a381549bb13dd3f591448165daa729ab0d89fc14fb17d37e8efcab8cb",
+    "datasets/extracted/03/urban-cooling-data-20261022/data/CNBH2020/CNBH10m_X105Y31.tif": "b3c94c4139fad665047520bdfb144ace7f84d98ab81b4d10943e10085a833dc9"
+  }
+}

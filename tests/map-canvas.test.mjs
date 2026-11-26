@@ -5,6 +5,7 @@ import vm from 'node:vm';
 import { transformSync } from 'esbuild';
 import { validateStyleMin, createPropertyExpression, featureFilter, latest } from '@maplibre/maplibre-gl-style-spec';
 import { GeoJSONVT } from '@maplibre/geojson-vt';
+import * as pilotPreview from '../src/pilot-preview.js';
 
 const source = readFileSync(new URL('../src/MapCanvas.jsx', import.meta.url), 'utf8');
 const code = transformSync(source, { loader: 'jsx', jsx: 'automatic', format: 'cjs', target: 'es2022',
@@ -20,6 +21,20 @@ const evaluatePaint = (value, property, zoom, properties = {}) => {
   assert.equal(parsed.result, 'success', JSON.stringify(parsed.value));
   return parsed.value.evaluate({ zoom }, { type: 1, properties });
 };
+
+test('small planning polygons retain exact source geometry and visible outlines above the basemap',async()=>{
+  const h=harness(),preview=fc([polygon({pilot_display:'temperature_selection'})]);
+  try{
+    h.render({offline:true,stage:'site',planningPilotPreview:preview});await flush();const map=h.instances[0];
+    const source=map.getSource('research-planning_pilot');
+    assert.equal(source.data,preview);assert.equal(source.tolerance,0);assert.equal(source.maxzoom,22);
+    assert.equal(map.getLayer('research-planning_pilot-line').paint['line-width'],4);
+    assert.equal(map.getLayer('research-planning_pilot-casing').paint['line-width'],8);
+    const style=h.api.localStyle();style.sources['research-planning_pilot']={type:'geojson',data:preview,tolerance:0,maxzoom:22};
+    style.layers.push(...h.api.researchDescriptors({planningPilotPreview:preview}).items.find(i=>i.key==='planning_pilot').layers);
+    assert.deepEqual(validateStyleMin(style).map(e=>e.message),[]);
+  }finally{h.dispose();}
+});
 
 test('whole-city sources keep display shares separate from G02, with valid multi-scale styles and persistent breathing',async()=>{
   const h=harness(),read=name=>JSON.parse(readFileSync(new URL('../public/data/'+name,import.meta.url),'utf8'));
@@ -368,6 +383,7 @@ function harness() {
     fetch: (url, options) => new Promise((resolve, reject) => fetchCalls.push({ url, options, resolve, reject })),
     require: (name) => {
       if (name === 'react') return { useRef, useEffect };
+      if (name === './pilot-preview.js') return pilotPreview;
       if (name === 'react/jsx-runtime') return { jsx: (_tag, props) => { props.ref.current = {}; return props; } };
       if (name === 'maplibre-gl') return { Map: FakeMap, setWorkerUrl: (url) => workerUrls.push(url) };
       if (name.endsWith('.css')) return {};

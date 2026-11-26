@@ -1,0 +1,7 @@
+*
+!.gitignore
+!skills/
+skills/*
+!skills/urbancool-huawei-delivery/
+skills/urbancool-huawei-delivery/*
+!skills/urbancool-huawei-delivery/SKILL.md

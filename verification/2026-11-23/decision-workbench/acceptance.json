@@ -1,0 +1,265 @@
+{
+  "schema": "urbancool-decision-workbench-acceptance/1",
+  "recorded_at": "2026-11-23T14:12:08.643Z",
+  "priorities": [
+    "useful_planning_decisions",
+    "clear_product_interface"
+  ],
+  "delivered": [
+    "manual_evaluation_before_adoption",
+    "same_basis_cost_temperature_comparison_with_current_state_reference",
+    "explicit_no_model_improvement_conclusion",
+    "checked_prediction_reuse_on_adoption",
+    "failed_cancelled_and_stale_evaluations_retained",
+    "evaluation_aware_report_freshness_and_archive",
+    "independent_planning_workspace",
+    "exact_projected_vector_selection_overlay_and_explicit_camera_padding",
+    "desktop_and_narrow_screen_navigation"
+  ],
+  "map_observation": "Preview cards sometimes appeared without rendered WebGL outlines. The upstream rendering timing was not fully isolated; an independent SVG overlay now projects the same source geometry, updates on map move/resize, and is removed on preview cleanup. No temperature surface is generated.",
+  "deployment": {
+    "project": "urbancool-t1-298f3ef92e",
+    "origin": "http://127.0.0.1:5312",
+    "image": "urbancool-workbench:product-review-20261123",
+    "container": {
+      "id": "95eb0be63d02bc8c743e5b3a1cc7ebdc672e543e4d944a8e9125fc193b43f8c1",
+      "image_id": "sha256:8647e7799f23ae32f38ec72a420e831cdeb5531a9a66663fecba2bbead4406f4"
+    },
+    "workspace_volume": "urbancool-t1-298f3ef92e_workspace",
+    "model_mount_read_only": true,
+    "codearts_execution_verified": false,
+    "cloud_provider_verified": false
+  },
+  "data_preservation": {
+    "verified_at": "2026-11-23T14:10:59.992Z",
+    "all_original_records_unchanged": true,
+    "comparison": "SHA-256 of complete rows from consistent before-upgrade and after-first-upgrade snapshots; added QA records allowed",
+    "tables": {
+      "users": {
+        "original_records": 4,
+        "all_original_records_unchanged": true
+      },
+      "projects": {
+        "original_records": 1,
+        "all_original_records_unchanged": true
+      },
+      "agent_sessions": {
+        "original_records": 3,
+        "all_original_records_unchanged": true
+      },
+      "model_settings": {
+        "original_records": 1,
+        "all_original_records_unchanged": true
+      },
+      "mcp_settings": {
+        "original_records": 0,
+        "all_original_records_unchanged": true
+      },
+      "inspection_items": {
+        "original_records": 0,
+        "all_original_records_unchanged": true
+      }
+    },
+    "backup_integrity": "ok",
+    "original_key_preserved": true
+  },
+  "checks": {
+    "default_tests": {
+      "command": "npm test",
+      "tests": 185,
+      "pass": 183,
+      "skip": 2,
+      "fail": 0
+    },
+    "accounts": {
+      "command": "npm run test:accounts",
+      "tests": 15,
+      "pass": 15
+    },
+    "cloud_topic1_candidate_quality": {
+      "command": "node --test tests/cloud-workbench.test.mjs tests/topic1-delivery.test.mjs tests/candidate-quality.test.mjs",
+      "tests": 15,
+      "pass": 15
+    },
+    "map_source": {
+      "command": "node --test --test-name-pattern='small planning polygons' tests/map-canvas.test.mjs",
+      "tests": 1,
+      "pass": 1
+    },
+    "build": {
+      "command": "Dockerfile.preview build:accounts",
+      "status": "passed",
+      "dependency_lock_compared_with_verified_base": true,
+      "node_image": "node:25.9-trixie-slim"
+    },
+    "startup_launcher": {
+      "command": "node scripts/start-topic1-preview.mjs --no-open",
+      "status": "passed"
+    }
+  },
+  "live_result": {
+    "origin": "http://127.0.0.1:5312",
+    "evaluate_before_adoption": true,
+    "actual_model_calls_in_original_evaluation": 2,
+    "repeated_evaluation_reused": true,
+    "adoption_reuses_prediction": true,
+    "candidates": [
+      {
+        "area_m2": 102,
+        "cost_rmb": 30600,
+        "baseline_lst_c": 32.97,
+        "scenario_lst_c": 33.027,
+        "delta_lst_c": -0.058,
+        "model_sha256": "9a2c5db870c913f24215aee390864ca2ddaa22002c7428408d6e20e2db375ad2",
+        "dataset_sha256": "1ad57cb859bcfa30e9e329d030ed7dbddaad8ed45e62868bbe648b8143a93e54"
+      },
+      {
+        "area_m2": 128,
+        "cost_rmb": 38400,
+        "baseline_lst_c": 32.97,
+        "scenario_lst_c": 33.028,
+        "delta_lst_c": -0.058,
+        "model_sha256": "9a2c5db870c913f24215aee390864ca2ddaa22002c7428408d6e20e2db375ad2",
+        "dataset_sha256": "1ad57cb859bcfa30e9e329d030ed7dbddaad8ed45e62868bbe648b8143a93e54"
+      }
+    ],
+    "extra_area_m2": 26,
+    "extra_cost_rmb": 7800,
+    "conclusion": "本轮未得到降温改善证据",
+    "implementation_recommended": false
+  },
+  "browser": {
+    "origin": "http://127.0.0.1:5312",
+    "desktop": {
+      "width": 1280,
+      "height": 900
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "document_scroll_width": 390,
+      "table_width": 300,
+      "table_container_width": 300,
+      "nav_height": 32
+    },
+    "candidate_switch_verified": true,
+    "zoom_updates_vector_geometry": true,
+    "selection_overlay_count_after_switch": 1,
+    "console_errors_observed": 0,
+    "viewport_override_reset": true,
+    "screenshots": [
+      "desktop-comparison.jpg",
+      "map-candidate.jpg",
+      "mobile-comparison.jpg"
+    ]
+  },
+  "remaining": [
+    "independent_intervention_effect_and_uncertainty_validation",
+    "real_CodeArts_development_evidence",
+    "existing_agent_and_Skills_real_Huawei_cloud_operations",
+    "actual_Huawei_cloud_deployment"
+  ],
+  "model_retrained": false,
+  "cloud_provider_verified": false,
+  "codearts_execution_verified": false,
+  "committed": false,
+  "pushed": false,
+  "source_hashes": [
+    {
+      "path": "src/AgentPanel.jsx",
+      "sha256": "3a2a0153cef36ede72c69db44a5fa3ceec7f9bb4105050994b872c6ec7ef8c6c"
+    },
+    {
+      "path": "src/App.jsx",
+      "sha256": "b3865f13c26e188eb6a20e0f65f2e0515ddce98df56854ef4e6c8d4bb5cb2010"
+    },
+    {
+      "path": "src/CandidateDecision.jsx",
+      "sha256": "c5f948a5ede9a419019c660f087bfd258207d0fbfc98b55d243f50ad0b954ce5"
+    },
+    {
+      "path": "src/PilotCandidateSearch.jsx",
+      "sha256": "48ced3213b73baabdcfd00de500b428e664f227fd715eeaa33159b9c705b3411"
+    },
+    {
+      "path": "src/PilotTemperature.jsx",
+      "sha256": "5b367ef09c89632ab6108894926a58df62f6f5426b47cc39be4ddf3c5c521329"
+    },
+    {
+      "path": "src/candidate-decision.js",
+      "sha256": "823e988dbde82efb87e07c88c0d0159cd6eb4cb7f1f5c1192071c9162fec0d3f"
+    },
+    {
+      "path": "src/candidate-evaluation-state.js",
+      "sha256": "ca6b034d5adbc049094e5abe1b578a65e4ae98309d61e8cfece2cb6ff34be146"
+    },
+    {
+      "path": "src/candidate-quality.js",
+      "sha256": "db0c0a87878b72f46ef5e0924942ca9583a433ae6f5bc089edaa975590628971"
+    },
+    {
+      "path": "src/pilot-preview.js",
+      "sha256": "34ba343ec19c889150b7778c0bd54f555446e905b58f0b7b7652aa8feed9b79c"
+    },
+    {
+      "path": "src/MapCanvas.jsx",
+      "sha256": "14425430c8f51ea70bd7076bc1f062080392a497d30c94b81ac6f79ab0fba80a"
+    },
+    {
+      "path": "src/planning-workbench.css",
+      "sha256": "3525cec81edaff0bd0c88a5018bc6e71b89ac2d671025fddeeba37eb3e3ac4e9"
+    },
+    {
+      "path": "src/planning-workflow.js",
+      "sha256": "eddae952ab287d99aa14755d7b766657a5f5312d5d692ff0054b6e0878a9203b"
+    },
+    {
+      "path": "src/pilot-map.js",
+      "sha256": "be49bcaa7383193f094549950f1b0bd9f0619b51677a8e9ca055376201cda0ea"
+    },
+    {
+      "path": "server/candidate-evaluation.mjs",
+      "sha256": "1f41c291c5b9542c9eb215adb9fc8562226ae870748eb0efe61b0ce6d1b3fe46"
+    },
+    {
+      "path": "server/pilot-search.mjs",
+      "sha256": "b343cd35f90171f7c892a96d752ee4ab26a2d72614dca839adac1520f985e208"
+    },
+    {
+      "path": "server/local-planning.mjs",
+      "sha256": "7b6b302f62dc5fcd934bc7e05a7ffc36b955edc495c3ad8aa8c07262298e11a2"
+    },
+    {
+      "path": "server/multi-agent.mjs",
+      "sha256": "04124d615cee4ea1270d1849cc4502c10cd6194971bc48f3b7a4abd7272fbc4f"
+    },
+    {
+      "path": "server/agent-tools.mjs",
+      "sha256": "df756c88c2bd05118cd6e6a04abe1af353273e77d2190a4dccdbf08fddc5f261"
+    },
+    {
+      "path": "tests/candidate-evaluation.test.mjs",
+      "sha256": "6dd01f8ea95655ffafb2ec13230ce86cc15db75ff3e049827a4c1ba86c443672"
+    },
+    {
+      "path": "tests/pilot-preview-camera.test.mjs",
+      "sha256": "b64ae3d08179b776d4e737601eef042e54799e8f11e044956389b172be0a61ce"
+    },
+    {
+      "path": "tests/map-canvas.test.mjs",
+      "sha256": "dac24851b1cd8e83634c1db6057c015b077650353183aa871974807ae49b1f1c"
+    },
+    {
+      "path": "tests/candidate-quality.test.mjs",
+      "sha256": "301a0c823b15d6e14572577a769eb4f7db37df7a30529d83f563077b6fdb592f"
+    },
+    {
+      "path": "deploy/huawei/Dockerfile.preview",
+      "sha256": "20ea32cc7d9a61a33994a6fc14151e251cf88484d6575b3d3f2da7e312f69cd1"
+    },
+    {
+      "path": "package.json",
+      "sha256": "95eec17e12f135ce0ca05dfbc7e2e51b766af49e95efd5b82319be3b7e3c8d42"
+    }
+  ]
+}

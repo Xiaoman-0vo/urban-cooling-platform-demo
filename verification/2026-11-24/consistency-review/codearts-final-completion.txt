@@ -1,0 +1,63 @@
+已继续只修改以下两个文件：
+• src/evaluation-readiness.js
+◦ 新增按“完整基准签名 + scenario_center”分组的冲突检测：hasInputOutputConflict。
+◦ 调整判定顺序：缺项、过期、未完成检查保持优先；随后先检查基准签名是否一致；同一基准下先检查任意相同输入组是否存在不同整数毫摄氏度输出；最后才检查外部 comparable 标记和 status=incomparable。
+◦ 因此，冲突结果被宿主写入 status=incomparable、comparable=false 后再次判定，仍会返回具体“同输入输出不一致”原因，不会提前落入泛化的“评价基准不一致”。
+◦ 冲突分支返回 incomparable、response=not_comparable、model_delta_distinguishable=null，保留全部 delta_millicelsius 原值；两项冲突使用“保留两个原值”，三项及以上使用“保留全部原值”，均明确不能排名。
+◦ 基准签名不一致仍会先判 incomparable，不会因调序绕过校验。
+• tests/evaluation-readiness.test.mjs
+◦ 新增回归用例：冲突报告二次判定仍保留同输入冲突原因（tests/evaluation-readiness.test.mjs:287）。
+◦ 新增回归用例：三候选中前两个输入不同，第三个复制第一个输入但温差 -0.020，第一项 -0.058，应检测任一相同输入组冲突并保留全部原值（tests/evaluation-readiness.test.mjs:317）。
+◦ 原有正反对照仍保留：同输入同输出为正常有限比较；不同输入不同输出仍为 different_features_different_delta 的有限比较。
+真实边界：本轮未运行任何终端命令，包括目录列举、搜索、npm test、node --test、构建、联网、云资源或模型操作；仅使用读取/写入文件工具，因此没有本轮真实测试结果，不能宣称通过。
+宿主请运行：
+￼
+bash
+
+￼
+￼
+
+npm test
+或：
+￼
+bash
+
+￼
+￼
+
+node --test
+ tests/evaluation-readiness.test.mjs
+产物汇总（2）
+￼
+2个文件已更改
+￼
++61
+-5
+
+
+
+
+￼
+￼
+变更文件（2）
+
+全部拒绝
+全部接受
+/ 调用快捷指令, # 添加上下文
+
+￼
+￼
+DeepSeek-V4.1-Flash-1017DeepSeek-V4.1-Flas…
+
+￼
+
+
+￼
+37.59
+·
+￼
+14.5%
+内容由AI生成
+￼
+￼
+￼
