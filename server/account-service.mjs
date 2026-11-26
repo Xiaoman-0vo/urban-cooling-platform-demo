@@ -1,5 +1,5 @@
 import {AgentError} from './agent-tools.mjs';
-import {openAccountDatabase,credentials,loginToken,sessionCookie} from './account-database.mjs';
+import {openAccountDatabase,credentials,loginToken,sessionCookie,accountCookieName} from './account-database.mjs';
 import {createDeepSeekClient} from './project-agent.mjs';
 import {createQwenClient} from './qwen-client.mjs';
 import {QWEN_DEFAULTS} from './qwen-config.mjs';
@@ -21,7 +21,7 @@ function allowedEndpoints(values) {
   }))];
 }
 
-export function createAccountService({filename,secureCookie=false,qwen={},maas={},defaultProvider='tuned',endpoints=[],mcpPresets=new Map(),fetchImpl=fetch}) {
+export function createAccountService({filename,cookieScope=filename,secureCookie=false,qwen={},maas={},defaultProvider='tuned',endpoints=[],mcpPresets=new Map(),fetchImpl=fetch}) {
   const compatibleEndpoints=allowedEndpoints(endpoints);
   if(!['tuned','base','local'].includes(defaultProvider))throw new Error('默认模型可配置为 tuned、base 或 local。');
   let maasUrl;try{maasUrl=new URL(maas.baseUrl||HUAWEI_MAAS_ENDPOINT);}catch{throw new Error('华为云 MaaS 地址无效。');}
@@ -31,6 +31,7 @@ export function createAccountService({filename,secureCookie=false,qwen={},maas={
   const maasEndpoint=maasUrl.href.replace(/\/$/,'');
   const defaultSettings={...DEFAULT,provider:defaultProvider};
   const db=openAccountDatabase(filename);
+  const cookieName=accountCookieName(cookieScope);
   const attemptBuckets=new Map();
   const tunedModel=qwen.model||QWEN_DEFAULTS.model;
   const baseModel=qwen.specialistModel||QWEN_DEFAULTS.specialistModel;
@@ -73,7 +74,7 @@ export function createAccountService({filename,secureCookie=false,qwen={},maas={
   }
 
   function authorize(request) {
-    const user=db.currentUser(loginToken(request));
+    const user=db.currentUser(loginToken(request,cookieName));
     if(!user)throw new AgentError('login_required','请登录后继续。',401);
     if(request.headers['x-urbancool-account']!==user.id)
       throw new AgentError('account_changed','浏览器中的账户已切换，请重新打开工作台。',409);
@@ -118,7 +119,7 @@ export function createAccountService({filename,secureCookie=false,qwen={},maas={
     },
     async route(path,request,response,json,body,catalog) {
       const {method}=request;
-      const token=loginToken(request);
+      const token=loginToken(request,cookieName);
       if(path==='/account'&&method==='GET')
         return json(response,200,{enabled:true,user:db.currentUser(token)||null});
       if((path==='/account/register'||path==='/account/login')&&method==='POST'){
@@ -127,7 +128,7 @@ export function createAccountService({filename,secureCookie=false,qwen={},maas={
         const registration=path.endsWith('/register');
         const user=registration?await db.register(entry):await db.login(entry);
         db.endSession(token);
-        response.setHeader('Set-Cookie',sessionCookie(db.startSession(user.id),secureCookie));
+        response.setHeader('Set-Cookie',sessionCookie(db.startSession(user.id),secureCookie,cookieName));
         return json(response,registration?201:200,{user});
       }
       const user=authorize(request);
@@ -146,7 +147,7 @@ export function createAccountService({filename,secureCookie=false,qwen={},maas={
       }
       if(path==='/account/logout'&&method==='POST'){
         db.endSession(token);
-        response.setHeader('Set-Cookie',sessionCookie(null,secureCookie));
+        response.setHeader('Set-Cookie',sessionCookie(null,secureCookie,cookieName));
         return json(response,200,{user:null});
       }
       if(path==='/model'&&method==='GET')return json(response,200,{settings:publicSettings(user)});

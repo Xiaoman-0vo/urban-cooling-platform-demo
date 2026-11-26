@@ -231,7 +231,7 @@ export async function startAgentServer({workbench=false}={}) {
       response.setHeader('Cache-Control',pathname.startsWith('/assets/')?'public, max-age=31536000, immutable':'no-cache');
     }});
   }
-  const accounts=workbench||process.env.URBANCOOL_ACCOUNTS==='1'?await startAccounts():null;
+  const accounts=workbench||process.env.URBANCOOL_ACCOUNTS==='1'?await startAccounts(siteOrigin):null;
   const classifierService=canManageClassifier({workbench,host})?createLocalClassifierService():null;
   const server=createAgentServer({catalog,client,store,accounts,staticFiles,classifierService,port,siteOrigin,historicalTemperature:createHistoricalTemperature()});
   if(accounts)server.on('close',()=>accounts.close());
@@ -242,10 +242,11 @@ export async function startAgentServer({workbench=false}={}) {
   return server;
 }
 
-async function startAccounts() {
+async function startAccounts(cookieScope) {
   const {createAccountService}=await import('./account-service.mjs');
   return createAccountService({
     filename:resolve(ROOT,process.env.URBANCOOL_ACCOUNT_DB||'.runtime/accounts/workspace.sqlite'),
+    cookieScope,
     secureCookie:process.env.URBANCOOL_SECURE_COOKIE==='1'||process.env.URBANCOOL_SITE_ORIGIN?.startsWith('https://'),
     endpoints:(process.env.URBANCOOL_MODEL_ENDPOINTS||'').split(',').map(item=>item.trim()).filter(Boolean),
     mcpPresets:loadTeamMcpPresets(process.env.URBANCOOL_MCP_SERVERS),

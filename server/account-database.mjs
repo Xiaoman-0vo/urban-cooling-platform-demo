@@ -205,12 +205,16 @@ export function openAccountDatabase(filename) {
   };
 }
 
-export function loginToken(request) {
-  const item=request.headers.cookie?.split(';').map(value=>value.trim()).find(value=>value.startsWith(COOKIE+'='));
-  const token=item?.slice(COOKIE.length+1);
+export function accountCookieName(scope) {
+  return COOKIE+'_'+createHash('sha256').update(scope).digest('hex').slice(0,16);
+}
+
+export function loginToken(request,cookieName=COOKIE) {
+  const item=request.headers.cookie?.split(';').map(value=>value.trim()).find(value=>value.startsWith(cookieName+'='));
+  const token=item?.slice(cookieName.length+1);
   return /^[\w-]{43}$/.test(token||'')?token:null;
 }
 
-export function sessionCookie(token,secure) {
-  return `${COOKIE}=${token||''}; Path=/api/agent; HttpOnly; SameSite=Strict; Max-Age=${token?SESSION_SECONDS:0}${secure?'; Secure':''}`;
+export function sessionCookie(token,secure,cookieName=COOKIE) {
+  return `${cookieName}=${token||''}; Path=/api/agent; HttpOnly; SameSite=Strict; Max-Age=${token?SESSION_SECONDS:0}${secure?'; Secure':''}`;
 }
