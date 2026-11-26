@@ -30,6 +30,8 @@
 
 ## 二、快速开始（Windows，3 步）
 
+本仓库开发机的 n8n 已迁移到 `urbancool-n8n` / `127.0.0.1:15678`。启动与部署入口自动读取助手或仓库根目录 `.env.local` 中的 `URBANCOOL_CLASSIFIER_ORIGIN`、`URBANCOOL_N8N_CONTAINER`，并查找本机 OpenCLI。下面5678和`n8n`命令用于全新默认安装；现有开发机直接使用启动器，不重复创建容器。详见[统一启动与部署说明](../documentation/工作台启动与验收.md#独立小红书助手2026-11-26)。
+
 **前置**：Docker Desktop 已装并启动、Node.js ≥ 20.19（或 ≥ 22.12）、这台电脑的 Edge 已登录小红书（浏览器桥复用登录态）。
 
 ### 第 1 步：起 n8n 并导入工作流

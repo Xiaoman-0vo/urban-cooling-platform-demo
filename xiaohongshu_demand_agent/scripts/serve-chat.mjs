@@ -9,6 +9,9 @@ import { readFile, stat } from 'node:fs/promises';
 import { spawn } from 'node:child_process';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {loadRuntimeEnvironment} from './runtime-config.mjs';
+
+const runtime=await loadRuntimeEnvironment();
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, '..');
@@ -23,7 +26,7 @@ const readArg = (name, fallback) => {
 const PORT = Number(readArg('port', process.env.CHAT_PORT || 4177));
 // 绑 127.0.0.1 只有本机能开；绑 0.0.0.0 同一局域网里别人也能开（演示"人人都能聊"用）
 const HOST = readArg('host', process.env.CHAT_HOST || '127.0.0.1');
-const N8N = readArg('n8n', process.env.N8N_URL || 'http://127.0.0.1:5678');
+const N8N = readArg('n8n', runtime.classifierOrigin);
 const OPEN = !args.includes('--no-open');
 
 const MIME = {
@@ -104,6 +107,11 @@ function proxyToN8n(req, res) {
 
 const server = http.createServer((req, res) => {
   const url = req.url || '/';
+  if(url==='/healthz'&&req.method==='GET'){
+    res.writeHead(200,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'});
+    res.end(JSON.stringify({service:'urbancool-xhs-chat',classifier_origin:N8N}));
+    return;
+  }
   if (url.startsWith('/webhook/') || url.startsWith('/rest/')) {
     proxyToN8n(req, res);
     return;

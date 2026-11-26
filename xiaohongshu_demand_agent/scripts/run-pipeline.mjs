@@ -7,8 +7,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import {loadRuntimeEnvironment} from './runtime-config.mjs';
 
-const BASE = new URL('/webhook/weibo-demand/v1',process.env.URBANCOOL_CLASSIFIER_ORIGIN||'http://127.0.0.1:5678').href;
+const runtime=await loadRuntimeEnvironment();
+const BASE = new URL('/webhook/weibo-demand/v1',runtime.classifierOrigin).href;
 const workbenchData = process.env.URBANCOOL_XHS_JOB_DATA_DIR;
 const DATA = workbenchData || 'data';
 const argv = process.argv.slice(2);

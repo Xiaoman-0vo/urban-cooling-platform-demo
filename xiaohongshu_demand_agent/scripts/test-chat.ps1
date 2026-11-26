@@ -2,9 +2,14 @@
 # 用法：powershell -NoProfile -ExecutionPolicy Bypass -File scripts\test-chat.ps1
 param(
     [string]$Hook = 'wc9d1f2a34b7e48c0',
-    [string]$Base = 'http://127.0.0.1:5678'
+    [string]$Base = ''
 )
 $ErrorActionPreference = 'Stop'
+if (-not $Base) {
+    $config = (& node (Join-Path $PSScriptRoot 'runtime-config.mjs')) | ConvertFrom-Json
+    if ($LASTEXITCODE -ne 0) { throw 'Cannot load classifier configuration.' }
+    $Base = $config.classifierOrigin
+}
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 $url = "$Base/webhook/$Hook/chat"
 

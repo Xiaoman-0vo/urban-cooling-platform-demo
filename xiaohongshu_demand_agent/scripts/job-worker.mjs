@@ -14,6 +14,12 @@ import { spawn } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {loadRuntimeEnvironment} from './runtime-config.mjs';
+import {createServer} from 'node:net';
+import {once} from 'node:events';
+import {createHash} from 'node:crypto';
+
+await loadRuntimeEnvironment();
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const workbenchData = process.env.URBANCOOL_XHS_JOB_DATA_DIR;
@@ -22,6 +28,25 @@ const JOBS = path.resolve(ROOT, DATA, 'jobs');
 const ONCE = process.argv.includes('--once');
 const POLL_MS = 1500;
 
+let canStart=true;
+// Windows 启动器可能被重复点击；同一队列只留一个工人，账户独立队列互不阻塞。
+if(process.platform==='win32'){
+  const guard=createServer();
+  const key=createHash('sha256').update(JOBS.toLowerCase()).digest('hex').slice(0,24);
+  try{
+    guard.listen('\\\\.\\pipe\\urbancool-xhs-worker-'+key);
+    await once(guard,'listening');
+    guard.unref();
+  }catch(error){
+    if(error.code!=='EADDRINUSE')throw error;
+    console.log('已有工人在处理这个队列，继续使用原进程。');
+    canStart=false;
+  }
+}
+
+if(canStart)await work();
+
+async function work(){
 fs.mkdirSync(JOBS, { recursive: true });
 
 const now = () => new Date().toISOString();
@@ -266,3 +291,4 @@ for (;;) {
   await sleep(POLL_MS);
 }
 console.log('工人退出。');
+}
