@@ -14,6 +14,8 @@ CodeArts 已实际生成本轮评价模块与测试；2026-11-24恢复后确认�
 
 ## 先看什么
 
+- 参赛报告关键代码：见[赛题一代码与素材](documentation/competition/2026-11-27/README.md)，含15组源码图与思路解读、24页Word及完整素材包。真实云服务创建和云部署仍待补证。
+
 - 第一次使用系统：按[系统操作指南](documentation/系统操作指南.md)体验预算登记、候选生成、采用、版本比较和成果导出。
 - 按赛题一推进：先看[赛题1部署与交付](documentation/赛题1部署与交付.md)及 [CodeArts 实际任务](CODEARTS_TASK.md)。已准备华为云容器部署和 MaaS 配置入口；CodeArts、Skills 云服务操作与真实云端验收分别补齐记录。
 - 赛题一交付雏形：`npm run topic1 -- help` 查看计划、源码包、CodeArts 自建技能包、官方 OBS SDK 与容器验收入口。主机和区域留空，本机验收不计作华为云证据，详见[本轮记录](verification/2026-11-22/topic1-prototype-acceptance.json)。

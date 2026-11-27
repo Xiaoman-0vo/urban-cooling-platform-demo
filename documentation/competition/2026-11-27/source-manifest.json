@@ -1,0 +1,314 @@
+{
+  "schema": "urbancool-competition-materials-publication/1",
+  "prepared_date": "2026-11-27",
+  "source_commit": "ca4e0e17b0c2a41120d48a298de4372cb4af4450",
+  "remote_main_checked": "3fbe67bd322eac2160964b1cfb81dc433be2bf0e",
+  "code_matches_checked_main": true,
+  "official_source": "https://e.huawei.com/cn/talent/#/ict/innovation-details?zoneCode=027425&zoneId=98269700&compId=85132021&type=C002",
+  "figures": [
+    {
+      "id": "01",
+      "title": "用户目标必须有原话依据",
+      "path": "server/agent-tools.mjs",
+      "ranges": [
+        [
+          104,
+          118
+        ]
+      ],
+      "file_sha256": "df756c88c2bd05118cd6e6a04abe1af353273e77d2190a4dccdbf08fddc5f261",
+      "image": "01_用户目标必须有原话依据.png"
+    },
+    {
+      "id": "02",
+      "title": "用状态图组织模型和工具循环",
+      "path": "server/agent-runtime.mjs",
+      "ranges": [
+        [
+          98,
+          116
+        ]
+      ],
+      "file_sha256": "97c1fe8c4894d9420f512c8caabbb2477c1b2516a2db9e9cca4a63dfbc4556c4",
+      "image": "02_用状态图组织模型和工具循环.png"
+    },
+    {
+      "id": "03",
+      "title": "工具权限与执行记录在服务端落实",
+      "path": "server/agent-runtime.mjs",
+      "ranges": [
+        [
+          60,
+          78
+        ]
+      ],
+      "file_sha256": "97c1fe8c4894d9420f512c8caabbb2477c1b2516a2db9e9cca4a63dfbc4556c4",
+      "image": "03_工具权限与执行记录在服务端落实.png"
+    },
+    {
+      "id": "04",
+      "title": "公众热感知线索按批次校验来源",
+      "path": "server/heat-collection.mjs",
+      "ranges": [
+        [
+          35,
+          51
+        ]
+      ],
+      "file_sha256": "d12ed5539ba2e4f6dc5a2ff02e76ad4da403af608ef7940a7e7b265e218d48d2",
+      "image": "04_公众热感知线索按批次校验来源.png"
+    },
+    {
+      "id": "05",
+      "title": "在预算和空间约束内生成候选",
+      "path": "server/pilot-search.mjs",
+      "ranges": [
+        [
+          51,
+          65
+        ]
+      ],
+      "file_sha256": "b343cd35f90171f7c892a96d752ee4ab26a2d72614dca839adac1520f985e208",
+      "image": "05_在预算和空间约束内生成候选.png"
+    },
+    {
+      "id": "06",
+      "title": "地图定位与候选边界同步显示",
+      "path": "src/pilot-preview.js",
+      "ranges": [
+        [
+          2,
+          13
+        ],
+        [
+          34,
+          43
+        ]
+      ],
+      "file_sha256": "34ba343ec19c889150b7778c0bd54f555446e905b58f0b7b7652aa8feed9b79c",
+      "image": "06_地图定位与候选边界同步显示.png"
+    },
+    {
+      "id": "07",
+      "title": "冻结数据与模型先核验再使用",
+      "path": "server/historical-lst.py",
+      "ranges": [
+        [
+          25,
+          46
+        ]
+      ],
+      "file_sha256": "8bae501394f8e3ac52c4d0f19b185d6bf1b99f23f6e39e41d1a668b50b7fedcb",
+      "image": "07_冻结数据与模型先核验再使用.png"
+    },
+    {
+      "id": "08",
+      "title": "把地图范围编译为覆盖情景特征",
+      "path": "server/historical-lst.py",
+      "ranges": [
+        [
+          96,
+          115
+        ]
+      ],
+      "file_sha256": "8bae501394f8e3ac52c4d0f19b185d6bf1b99f23f6e39e41d1a668b50b7fedcb",
+      "image": "08_把地图范围编译为覆盖情景特征.png"
+    },
+    {
+      "id": "09",
+      "title": "手动评价先检查当前版本和约束",
+      "path": "server/pilot-temperature.mjs",
+      "ranges": [
+        [
+          81,
+          103
+        ]
+      ],
+      "file_sha256": "67f74e3b69ba9fbfe2fef9dff70de1c91b368338eee29861e35db982b44d92e3",
+      "image": "09_手动评价先检查当前版本和约束.png"
+    },
+    {
+      "id": "10",
+      "title": "CodeArts 实现结果一致性判断",
+      "path": "src/evaluation-readiness.js",
+      "ranges": [
+        [
+          91,
+          102
+        ],
+        [
+          207,
+          220
+        ]
+      ],
+      "file_sha256": "d5496226e9dbc4bc675171f2fb9d19e27af8c9a3b5b7273c67d26946ded51d0a",
+      "image": "10_CodeArts 实现结果一致性判断.png"
+    },
+    {
+      "id": "11",
+      "title": "采用候选时再次核对版本",
+      "path": "server/pilot-search.mjs",
+      "ranges": [
+        [
+          86,
+          100
+        ]
+      ],
+      "file_sha256": "b343cd35f90171f7c892a96d752ee4ab26a2d72614dca839adac1520f985e208",
+      "image": "11_采用候选时再次核对版本.png"
+    },
+    {
+      "id": "12",
+      "title": "账户数据持久化与隔离",
+      "path": "server/account-database.mjs",
+      "ranges": [
+        [
+          89,
+          109
+        ]
+      ],
+      "file_sha256": "7e4088506536f8ec3dc380dd71190f43664dab121e7c89dbe9e37a2cf8a0ba38",
+      "image": "12_账户数据持久化与隔离.png"
+    },
+    {
+      "id": "13",
+      "title": "导出成果时保留版本和成员哈希",
+      "path": "src/planning-workflow.js",
+      "ranges": [
+        [
+          146,
+          158
+        ]
+      ],
+      "file_sha256": "00925db5f46aab8ad9adad700245820b6c7ea08bef9ca4b2b655f0913fac5927",
+      "image": "13_导出成果时保留版本和成员哈希.png"
+    },
+    {
+      "id": "14",
+      "title": "OBS 交付代码保留执行门槛",
+      "path": "deploy/huawei/delivery.mjs",
+      "ranges": [
+        [
+          92,
+          103
+        ],
+        [
+          115,
+          121
+        ]
+      ],
+      "file_sha256": "502eb931d14d3ee13bcf41c96adf6dc21866a0543b98cfd9113717acd20ec36e",
+      "image": "14_OBS 交付代码保留执行门槛.png"
+    },
+    {
+      "id": "15",
+      "title": "容器部署保留状态并限制权限",
+      "path": "deploy/huawei/compose.yaml",
+      "ranges": [
+        [
+          16,
+          34
+        ]
+      ],
+      "file_sha256": "9fe7d648f38ba69dc4befd5d92cdcfde63caa643405f793f7018e63c8e027f74",
+      "image": "15_容器部署保留状态并限制权限.png"
+    }
+  ],
+  "files": [
+    {
+      "path": "images/01_用户目标必须有原话依据.png",
+      "bytes": 184715,
+      "sha256": "7a63c18b0125333e763b2cb7c66aa016a9e49a384938866acd2e34b7f7921159"
+    },
+    {
+      "path": "images/02_用状态图组织模型和工具循环.png",
+      "bytes": 154828,
+      "sha256": "064bdb5c6ac3c136ddff04da3e237f4eb04e5e70c442e8bae66d3491fb1f6a35"
+    },
+    {
+      "path": "images/03_工具权限与执行记录在服务端落实.png",
+      "bytes": 157792,
+      "sha256": "876f1eb47cb4b96594982612f263120d02d1bd997b217e8a64700bf42927f982"
+    },
+    {
+      "path": "images/04_公众热感知线索按批次校验来源.png",
+      "bytes": 177286,
+      "sha256": "23cd32768fe14070c2c96adcf27bf7cc20201d477569ca8df9ff9f3a19528fc0"
+    },
+    {
+      "path": "images/05_在预算和空间约束内生成候选.png",
+      "bytes": 149778,
+      "sha256": "463e12d8fe046532546e69a87437a534879ebec89cc11b8d29e4344e45e48f98"
+    },
+    {
+      "path": "images/06_地图定位与候选边界同步显示.png",
+      "bytes": 202878,
+      "sha256": "9b6249c022108d8af1d780397a63cb5e7977839a5fb99f919c38e92a4a669889"
+    },
+    {
+      "path": "images/07_冻结数据与模型先核验再使用.png",
+      "bytes": 173940,
+      "sha256": "bb319d92886aa50c71cef53918325f2403eee4007832784b2d8a00744e3aa5c3"
+    },
+    {
+      "path": "images/08_把地图范围编译为覆盖情景特征.png",
+      "bytes": 181376,
+      "sha256": "2a4a8edc26142acb653bf837cd22c6559bd3f7924dbc9915380fe5e725705fad"
+    },
+    {
+      "path": "images/09_手动评价先检查当前版本和约束.png",
+      "bytes": 286366,
+      "sha256": "4e87cc995e2e040531d9c4842340d224ab88e420047f8b80ef0aac0573149017"
+    },
+    {
+      "path": "images/10_CodeArts 实现结果一致性判断.png",
+      "bytes": 197413,
+      "sha256": "8a73f635b05426a66fb25d55612d8a3f2e076562402aa1dd44ca1dc72377bd5e"
+    },
+    {
+      "path": "images/11_采用候选时再次核对版本.png",
+      "bytes": 200401,
+      "sha256": "731d36662f98d86301a4b78f40acee538b3567633e1468512756cd0bfa51a58e"
+    },
+    {
+      "path": "images/12_账户数据持久化与隔离.png",
+      "bytes": 181077,
+      "sha256": "d1563600c39913858a281beadc9605585619eebdf9d83aeb004c5ad0456eefc6"
+    },
+    {
+      "path": "images/13_导出成果时保留版本和成员哈希.png",
+      "bytes": 172332,
+      "sha256": "dcfd2529e4519bccc81cdbf22d3a0bcd6d9685567d551d7b6a7b35622a572b76"
+    },
+    {
+      "path": "images/14_OBS 交付代码保留执行门槛.png",
+      "bytes": 241077,
+      "sha256": "28ee0876f3d7fa9e06af5e24948bb7d7aa345edcbddd62649bc6099a6c35d80a"
+    },
+    {
+      "path": "images/15_容器部署保留状态并限制权限.png",
+      "bytes": 96893,
+      "sha256": "08c7c9178430472597be9150ee5c2d5573827ae32ef7a2efc26a98bef5bdd98d"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3619,
+      "sha256": "94214668a0cbf717680f899ac0cbdae6f5b629244d15d45270fff867afef4be5"
+    },
+    {
+      "path": "UrbanCool_AI_赛题一代码截图素材_2026-11-27.zip",
+      "bytes": 2753799,
+      "sha256": "58f8149d55b5b78063ef2287eaee1c9b48f6d801095f63974dfb2104caf16625"
+    },
+    {
+      "path": "UrbanCool_AI_赛题一参赛材料与关键代码说明_2026-11-27.docx",
+      "bytes": 2727879,
+      "sha256": "0e051ea3551e7a317a4caed11d4926665945c3e38bc5cdaf3673bdd88307f00d"
+    },
+    {
+      "path": "关键代码与实现思路.md",
+      "bytes": 37971,
+      "sha256": "4142b08134b9a42b92632dd2bf512daef84301229a12704a38a416a0052ca99d"
+    }
+  ]
+}
